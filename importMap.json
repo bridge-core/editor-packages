@@ -1,0 +1,6 @@
+{
+	"imports": {
+		"path": "https://deno.land/std@0.103.0/path/mod.ts",
+		"fflate": "https://cdn.skypack.dev/fflate?min"
+	}
+}
