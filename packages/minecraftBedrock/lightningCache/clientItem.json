@@ -1,0 +1,10 @@
+[
+	{
+		"cacheKey": "identifier",
+		"path": "minecraft:item/description/identifier"
+	},
+	{
+		"cacheKey": "itemTexture",
+		"path": "minecraft:item/components/minecraft:icon"
+	}
+]
