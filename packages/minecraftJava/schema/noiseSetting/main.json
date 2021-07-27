@@ -1,0 +1,207 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Noise Settings",
+	"type": "object",
+	"properties": {
+		"bedrock_roof_position": {
+			"description": "The Y offset of the bedrock roof below the top of the world. If out of world bounds, the roof does not disappear.",
+			"type": "integer"
+		},
+		"bedrock_floor_position": {
+			"description": "The Y offset of the bedrock floor above the bottom of the world.",
+			"type": "integer"
+		},
+		"sea_level": {
+			"description": "The sea level in this dimension.",
+			"type": "integer"
+		},
+		"disable_mob_generation": {
+			"description": "Whether mob generation during worldgen is disabled.",
+			"type": "boolean"
+		},
+		"noise_caves_enabled": {
+			"description": "Whether the different noise caves generate.",
+			"type": "boolean"
+		},
+		"noodle_caves_enabled": {
+			"description": "Whether noodle caves generate.",
+			"type": "boolean"
+		},
+		"deepslate_enabled": {
+			"description": "Whether stone is replaced with deepslate at the bottom of the world.",
+			"type": "boolean"
+		},
+		"ore_veins_enabled": {
+			"description": "Whether ore veins generate.",
+			"type": "boolean"
+		},
+		"aquifers_enabled": {
+			"description": "Whether aquifers generate.",
+			"type": "boolean"
+		},
+		"default_block": {
+			"description": "The default block used for the terrain.",
+			"$ref": "../general/blockReference.json"
+		},
+		"default_fluid": {
+			"description": "The block used for seas and lakes.",
+			"$ref": "../general/blockReference.json"
+		},
+		"structures": {
+			"description": "Structure settings.",
+			"additionalProperties": false,
+			"type": "object",
+			"properties": {
+				"stronghold": {
+					"description": "Settings for how strongholds should be spawned. The stronghold value under the  structures tag appears to be placeholders so that every structure has a value; these values are the ones that actually control stronghold spawning.",
+					"properties": {
+						"distance": {
+							"description": "Controls how far apart the strongholds are.",
+							"type": "integer"
+						},
+						"count": {
+							"description": "How many strongholds to generate.",
+							"type": "integer"
+						},
+						"spread": {
+							"type": "integer"
+						}
+					}
+				},
+				"structures": {
+					"description": "List of structures to use in this dimension.",
+					"propertyNames": {
+						// TODO STRUCTURE_ID
+					},
+					"patternProperties": {
+						".+": {
+							"description": "The key for this field should be the namespaced ID of a structure.",
+							"additionalProperties": false,
+							"properties": {
+								"spacing": {
+									"description": "Average distance between two structure placement attempts of this type in chunks.",
+									"type": "integer"
+								},
+								"separation": {
+									"description": "Minimum distance between two structures of this type in chunks. Must be less than spacing.",
+									"type": "integer"
+								},
+								"salt": {
+									"description": "A number that assists in randomization.",
+									"type": "integer"
+								}
+							}
+						}
+					}
+				},
+				"noise": {
+					"description": "Parameters for world generation.",
+					"additionalProperties": false,
+					"properties": {
+						"min_y": {
+							"description": "The minimum Y coordinate where terrain starts generating. Value between -2048 or -2032 and 2031. Must be divisible by 16. Note that if -2048 is used, the bottom face of the, likely, bedrock floor won't be lit up correctly.",
+							"minimum": -2048,
+							"maximum": 2031,
+							"type": "integer"
+						},
+						"height": {
+							"description": "The total height where terrain generates. Must be divisible by 16. Before 1.17, it squashes the world, for example, with height=128, the ground is set to Y=32. min_y + height cannot be higher than 2032 so its maximum is 4064 or 4080.",
+							"type": "integer",
+							"maximum": 2032
+						},
+						"size_horizontal": {
+							"description": "Changes the X/Z scale of the landmass, but not the biomes.",
+							"type": "integer"
+						},
+						"size_vertical": {
+							"description": "Changes the Y scale of the landmass. Values between 1 and 15 gradually increase the hill height, above 20 are all above the normal sea level of 63, and higher than 32 give normal land levels of 100+.",
+							"type": "integer"
+						},
+						"density_factor": {
+							"description": "Changes the gradient of terrain density from the bottom to the top of the world. Positive values result in terrain that is solid underneath with shapes that shrink at higher altitudes, negative values result in terrain that is solid on top with empty space underneath. Greater positive or negative values result in a sharper transition.",
+							"type": "number"
+						},
+						"density_offset": {
+							"description": "Moves the center height for terrain density relative to the middle of the world, by an amount inversely proportional to density_factor.",
+							"type": "number"
+						},
+						"simplex_surface_noise": {
+							"description": "Whether the surface builders should use simple noise instead of perlin noise.",
+							"type": "boolean"
+						},
+						"random_density_offset": {
+							"type": "boolean"
+						},
+						"island_noise_override": {
+							"description": "Causes the world to generate like The End with a big island in the center and smaller ones around.",
+							"type": "boolean"
+						},
+						"amplified": {
+							"description": "Toggles between amplified and normal terrain generation.",
+							"type": "boolean"
+						},
+						"sampling": {
+							"description": "Specifies how the noise is sampled.",
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"xz_scale": {
+									"description": "Scales the X and Z axis of the noise. Higher values results in more intricate horizontal shapes. Works similarly to coordinate scale from old customized worlds.",
+									"type": "number"
+								},
+								"xz_factor": {
+									"description": "Smoothes the noise on the horizontal axis. Works similarly to main noise scale X/Z from old customized worlds.",
+									"type": "number"
+								},
+								"y_scale": {
+									"description": "Scales the Y axis of the noise. Higher values result in more intricate vertical shapes. Works similarly to height scale from old customized worlds.",
+									"type": "number"
+								},
+								"y_factor": {
+									"description": "Smoothes the noise on the vertical axis. Works similarly to main noise scale Y from old customized worlds.",
+									"type": "number"
+								}
+							}
+						},
+						"top_slide": {
+							"description": "Settings for the curve at the top of the world.",
+							"additionalProperties": false,
+							"properties": {
+								"target": {
+									"description": "The value of the curve. Negative values round off the top of the hills in the affected area, positive values create a roof. Higher values produce larger effects.",
+									"type": "integer"
+								},
+								"size": {
+									"description": "Defines the size of the affected area from the top of the world. Calculated using the formula size = <height in blocks> * 0.25 / size_vertical.",
+									"type": "integer"
+								},
+								"offset": {
+									"description": "Moves the affected area from the top of the world. Uses the same formula as  size, so offset = <height in blocks> * 0.25 / size_vertical. For top_slide, positive values move the area down and negative values bring it up.",
+									"type": "integer"
+								}
+							}
+						},
+						"bottom_slide": {
+							"description": "Settings for the curve at the bottom of the world.",
+							"additionalProperties": false,
+							"properties": {
+								"target": {
+									"description": "The value of the curve. Negative values remove the floor and round off the bottom of the islands, positive values make a floor. Higher values produce larger effects.",
+									"type": "integer"
+								},
+								"size": {
+									"description": "Defines the size of the affected area from the bottom of the world. Uses the same formula as in top_slide.",
+									"type": "integer"
+								},
+								"offset": {
+									"description": "Moves the affected area from the bottom of the world. Uses the same formula as in  top_slide. For  bottom_slide, positive values move the area up and negative values bring it down.",
+									"type": "integer"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

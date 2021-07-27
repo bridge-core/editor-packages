@@ -1,0 +1,7 @@
+{
+	"id": "feature",
+	"scope": "DP/data/*/worldgen/configured_feature/",
+	"icon": "mdi-",
+	"matcher": "DP/data/*/worldgen/configured_feature/*.json",
+	"schema": "file:///data/packages/minecraftJava/schema/"
+}

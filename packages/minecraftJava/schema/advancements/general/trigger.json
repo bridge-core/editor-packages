@@ -1,0 +1,174 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "string",
+	"anyOf": [
+		{
+			"const": "minecraft:bee_nest_destroyed",
+			"description": "Triggers when the player breaks a bee nest or beehive."
+		},
+		{
+			"const": "minecraft:bred_animals",
+			"description": "Triggers after the player breeds 2 animals."
+		},
+		{
+			"const": "minecraft:brewed_potion",
+			"description": "Triggers after the player takes any item out of a brewing stand."
+		},
+		{
+			"const": "minecraft:changed_dimension",
+			"description": "Triggers after the player travels between two dimensions."
+		},
+		{
+			"const": "minecraft:channeled_lightning",
+			"description": "Triggers after the player successfully uses the Channeling enchantment on an entity."
+		},
+		{
+			"const": "minecraft:construct_beacon",
+			"description": "Triggers after the player changes the structure of a beacon. (When the beacon updates itself)"
+		},
+		{
+			"const": "minecraft:consume_item",
+			"description": "Triggers when the player consumes an item."
+		},
+		{
+			"const": "minecraft:cured_zombie_villager",
+			"description": "Triggers when the player cures a zombie villager."
+		},
+		{
+			"const": "minecraft:effects_changed",
+			"description": "Triggers after the player gets a status effect applied or taken from them."
+		},
+		{
+			"const": "minecraft:enchanted_item",
+			"description": "Triggers after the player enchants an item through an enchanting table (does not get triggered through an anvil, or through commands)."
+		},
+		{
+			"const": "minecraft:enter_block",
+			"description": "Triggers when the player stands in a block. Checks every tick and will try to trigger for each successful match (up to 8 times, the maximum amount of blocks a player can stand in), which only works if the advancement is revoked from within the advancement using a function reward."
+		},
+		{
+			"const": "minecraft:entity_hurt_player",
+			"description": "Triggers after a player gets hurt. It also triggers after player hurts without a source entity."
+		},
+		{
+			"const": "minecraft:entity_killed_player",
+			"description": "Triggers after an entity kills a player."
+		},
+		{
+			"const": "minecraft:filled_bucket",
+			"description": "Triggers after the player fills a bucket."
+		},
+		{
+			"const": "minecraft:fishing_rod_hooked",
+			"description": "Triggers after the player successfully catches an item with a fishing rod or pulls an entity with a fishing rod"
+		},
+		{
+			"const": "minecraft:hero_of_the_village",
+			"description": "Triggers when the player defeats a raid and checks where the player is."
+		},
+		{
+			"const": "minecraft:impossible",
+			"description": "Triggers only using commands."
+		},
+		{
+			"const": "minecraft:inventory_changed",
+			"description": "Triggers after any changes happen to the player's inventory."
+		},
+		{
+			"const": "minecraft:item_durability_changed",
+			"description": "Triggers after any item in the inventory has been damaged in any form."
+		},
+		{
+			"const": "minecraft:item_used_on_block",
+			"description": "Triggers when the player uses their hand or an item on a block."
+		},
+		{
+			"const": "minecraft:killed_by_crossbow",
+			"description": "Triggers after the player kills a mob or player using a crossbow in ranged combat."
+		},
+		{
+			"const": "minecraft:levitation",
+			"description": "Triggers when the player has the levitation status effect."
+		},
+		{
+			"const": "minecraft:location",
+			"description": "Triggers every 20 ticks (1 second) and checks where the player is."
+		},
+		{
+			"const": "minecraft:nether_travel",
+			"description": "Triggers when the player travels to the Nether and then returns to the Overworld."
+		},
+		{
+			"const": "minecraft:placed_block",
+			"description": "Triggers when the player places a block."
+		},
+		{
+			"const": "minecraft:player_generates_container_loot",
+			"description": "Triggers when the player generates the contents of a container with a loot table set."
+		},
+		{
+			"const": "minecraft:player_hurt_entity",
+			"description": "Triggers after the player hurts a mob or player."
+		},
+		{
+			"const": "minecraft:player_interacted_with_entity",
+			"description": "Triggers when the player interacts with an entity."
+		},
+		{
+			"const": "minecraft:player_killed_entity",
+			"description": "Triggers after a player is the source of a mob or player being killed."
+		},
+		{
+			"const": "minecraft:recipe_unlocked",
+			"description": "Triggers after the player unlocks a recipe (using a knowledge book for example)."
+		},
+		{
+			"const": "minecraft:shot_crossbow",
+			"description": "Triggers when the player shoots a crossbow."
+		},
+		{
+			"const": "minecraft:slept_in_bed",
+			"description": "Triggers when the player enters a bed."
+		},
+		{
+			"const": "minecraft:slide_down_block",
+			"description": "Triggers when the player slides down a block."
+		},
+		{
+			"const": "minecraft:summoned_entity",
+			"description": "Triggers after an entity has been summoned. Works with iron golems (pumpkin and iron blocks), snow golems (pumpkin and snow blocks), the ender dragon (end crystals) and the wither (wither skulls and soul sand/soul soil). Using dispensers to place the wither skulls or pumpkins will still activate this trigger. Spawn eggs, commands and mob spawners will not work however."
+		},
+		{
+			"const": "minecraft:tame_animal",
+			"description": "Triggers after the player tames an animal."
+		},
+		{
+			"const": "minecraft:target_hit",
+			"description": "Triggers when the player shoots a target block."
+		},
+		{
+			"const": "minecraft:thrown_item_picked_up_by_entity",
+			"description": "Triggers after the player throws an item and another entity picks it up."
+		},
+		{
+			"const": "minecraft:tick",
+			"description": "Triggers every tick (20 times a second)."
+		},
+		{
+			"const": "minecraft:used_ender_eye",
+			"description": "Triggers when the player uses an eye of ender (in a world where strongholds generate)."
+		},
+		{
+			"const": "minecraft:used_totem",
+			"description": "Triggers when the player uses a totem."
+		},
+		{
+			"const": "minecraft:villager_trade",
+			"description": "Triggers after the player trades with a villager or a wandering trader."
+		},
+		{
+			"const": "minecraft:voluntary_exile",
+			"description": "Triggers when the player causes a raid and checks where the player is."
+		}
+	]
+}

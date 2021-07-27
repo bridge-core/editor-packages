@@ -1,0 +1,7 @@
+{
+	"id": "dimensionType",
+	"scope": "DP/data/*/worldgen/dimension_type/",
+	"icon": "mdi-",
+	"matcher": "DP/data/*/worldgen/dimension_type/*.json",
+	"schema": "file:///data/packages/minecraftJava/schema/dimensionType/main.json"
+}

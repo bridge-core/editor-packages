@@ -1,0 +1,7 @@
+{
+	"id": "carver",
+	"scope": "DP/data/*/worldgen/configured_carver/",
+	"icon": "mdi-",
+	"matcher": "DP/data/*/worldgen/configured_carver/*.json",
+	"schema": "file:///data/packages/minecraftJava/schema/"
+}

@@ -1,0 +1,313 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"distance": {
+			"properties": {
+				"absoloute": {
+					"properties": {
+						"max": {
+							"description": "The maximum value.",
+							"type": "number"
+						},
+						"min": {
+							"description": "The minimum value.",
+							"type": "number"
+						}
+					}
+				},
+				"horizontal": {
+					"properties": {
+						"max": {
+							"description": "The maximum value.",
+							"type": "number"
+						},
+						"min": {
+							"description": "The minimum value.",
+							"type": "number"
+						}
+					}
+				},
+				"x": {
+					"properties": {
+						"max": {
+							"description": "The maximum value.",
+							"type": "number"
+						},
+						"min": {
+							"description": "The minimum value.",
+							"type": "number"
+						}
+					}
+				},
+				"y": {
+					"properties": {
+						"max": {
+							"description": "The maximum value.",
+							"type": "number"
+						},
+						"min": {
+							"description": "The minimum value.",
+							"type": "number"
+						}
+					}
+				},
+				"z": {
+					"properties": {
+						"max": {
+							"description": "The maximum value.",
+							"type": "number"
+						},
+						"min": {
+							"description": "The minimum value.",
+							"type": "number"
+						}
+					}
+				}
+			}
+		},
+		"effects": {
+			"description": "A list of status effects.",
+			"propertyNames": {
+				// TODO EFFECT_NAMES
+			},
+			"patternProperties": {
+				".+": {
+					"description": "A status effect with the key name being the status effect name.",
+					"properties": {
+						"ambient": {
+							"description": "Whether the effect is from a beacon.",
+							"type": "boolean"
+						},
+						"amplifier": {
+							"description": "The effect amplifier.",
+							"anyOf": [
+								{
+									"type": "integer"
+								},
+								{
+									"properties": {
+										"max": {
+											"type": "integer"
+										},
+										"min": {
+											"type": "integer"
+										}
+									}
+								}
+							]
+						},
+						"duration": {
+							"description": "The effect duration in ticks.",
+							"anyOf": [
+								{
+									"type": "integer"
+								},
+								{
+									"properties": {
+										"max": {
+											"type": "integer"
+										},
+										"min": {
+											"type": "integer"
+										}
+									}
+								}
+							]
+						},
+						"visible": {
+							"description": "Whether the effect has visible particles.",
+							"type": "boolean"
+						}
+					}
+				}
+			}
+		},
+		"equipment": {
+			"properties": {
+				"mainhand": {
+					"$ref": "./itemTags.json"
+				},
+				"offhand": {
+					"$ref": "./itemTags.json"
+				},
+				"headd": {
+					"$ref": "./itemTags.json"
+				},
+				"chest": {
+					"$ref": "./itemTags.json"
+				},
+				"legs": {
+					"$ref": "./itemTags.json"
+				},
+				"feet": {
+					"$ref": "./itemTags.json"
+				}
+			}
+		},
+		"flags": {
+			"description": "Predicate Flags to be checked.",
+			"properties": {
+				"is_on_fire": {
+					"description": "Test whether the entity is or is not on fire.",
+					"type": "boolean"
+				},
+				"is_sneaking": {
+					"description": "Test whether the entity is or is not sneaking.",
+					"type": "boolean"
+				},
+				"is_sprinting": {
+					"description": "Test whether the entity is or is not sprinting.",
+					"type": "boolean"
+				},
+				"is_swimming": {
+					"description": "Test whether the entity is or is not swimming.",
+					"type": "boolean"
+				},
+				"is_baby": {
+					"description": "Test whether the entity is or is not a baby variant.",
+					"type": "boolean"
+				}
+			}
+		},
+		"location": {
+			"$ref": "./locationProperties.json"
+		},
+		"nbt": {
+			"description": "An NBT string.",
+			"type": "string"
+		},
+		"player": {
+			"description": "Player properties to be checked. Fails when entity is not a player.",
+			"additionalProperties": false,
+			"properties": {
+				"advancements": {
+					"description": "A map of advancements to check.",
+					"propertyNames": {
+						// TODO ADVANCEMENT_ID
+					},
+					"patternProperties": {
+						".+": {
+							"anyOf": [
+								{
+									"type": "boolean"
+								},
+								{
+									"type": "object",
+									"propertyNames": {
+										// TODO CRITERIA_ID
+									},
+									"patternProperties": {
+										".+": {
+											"type": "boolean"
+										}
+									}
+								}
+							]
+						}
+					}
+				},
+				"gamemode": {
+					"description": "The game mode of the player. Must be survival, adventure, creative or spectator.",
+					"type": "string",
+					"enum": ["survival", "adventure", "creative", "spectator"]
+				},
+				"level": {
+					"description": "The experience level of the player.",
+					"anyOf": [
+						{
+							"type": "integer"
+						},
+						{
+							"properties": {
+								"max": {
+									"type": "integer"
+								},
+								"min": {
+									"type": "integer"
+								}
+							}
+						}
+					]
+				},
+				"recipes": {
+					"description": "A map of recipes to check.",
+					"propertyNames": {
+						// TODO RECIPE_ID
+					},
+					"patternProperties": {
+						".+": {
+							"type": "boolean"
+						}
+					}
+				},
+				"stats": {
+					"description": "List of statistics to match.",
+					"propertyNames": {
+						// TODO STATISTIC
+					},
+					"patternProperties": {
+						".+": {
+							"properties": {
+								"type": {
+									"description": "The statistic base.",
+									"type": "string",
+									"enum": [
+										"minecraft:custom",
+										"minecraft:crafted",
+										"minecraft:used",
+										"minecraft:broken",
+										"minecraft:mined",
+										"minecraft:killed",
+										"minecraft:picked_up",
+										"minecraft:dropped",
+										"minecraft:killed_by"
+									]
+								},
+								"stat": {
+									"description": "The statistic ID. Mostly mimics the criteria used for defining scoreboard objectives.",
+									"type": "string" // TODO STATISTIC_ID
+								},
+								"value": {
+									"description": "The value of the statistic.",
+									"anyOf": [
+										{
+											"type": "integer"
+										},
+										{
+											"properties": {
+												"max": {
+													"type": "integer"
+												},
+												"min": {
+													"type": "integer"
+												}
+											}
+										}
+									]
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"team": {
+			"description": "The team the entity belongs to.",
+			"type": "string"
+		},
+		"type": {
+			"description": "An entity ID.",
+			"type": "string" // TODO ENTITY_ID
+		},
+		"targeted_entity": {
+			"description": "The entity which this entity is targeting for attacks.",
+			"$ref": "#"
+		},
+		"vehicle": {
+			"description": "The vehicle that the entity is riding on.",
+			"$ref": "#"
+		}
+	}
+}

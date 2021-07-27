@@ -1,0 +1,6 @@
+{
+	"id": "structure",
+	"scope": "DP/data/*/structures/",
+	"icon": "mdi-",
+	"matcher": "DP/data/*/structures/*.nbt"
+}

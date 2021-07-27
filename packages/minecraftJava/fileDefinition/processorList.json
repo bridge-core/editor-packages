@@ -1,0 +1,7 @@
+{
+	"id": "processorList",
+	"scope": "DP/data/*/worldgen/processor_list/",
+	"icon": "mdi-",
+	"matcher": "DP/data/*/worldgen/processor_list/*.json",
+	"schema": "file:///data/packages/minecraftJava/schema/"
+}

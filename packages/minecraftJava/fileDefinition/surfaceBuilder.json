@@ -1,0 +1,7 @@
+{
+	"id": "surfaceBuilder",
+	"scope": "DP/data/*/worldgen/configured_surface_builder/",
+	"icon": "mdi-",
+	"matcher": "DP/data/*/worldgen/configured_surface_builder/*.json",
+	"schema": "file:///data/packages/minecraftJava/schema/"
+}

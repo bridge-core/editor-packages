@@ -1,0 +1,14 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"properties": {
+		"name": {
+			"description": "The namespaced ID of the block to use.",
+			"type": "string" // TODO BLOCK_ID
+		},
+		"properties": {
+			"description": "Block properties. All properties for the block need to be present.",
+			"type": "object" // TODO
+		}
+	}
+}

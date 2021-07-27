@@ -1,0 +1,9 @@
+{
+	"id": "function",
+	"scope": "DP/data/*/functions/",
+	"icon": "mdi-",
+	"matcher": [
+		"DP/data/*/functions/*.mcfunction",
+		"DP/data/*/functions/**/*.mcfunction"
+	]
+}

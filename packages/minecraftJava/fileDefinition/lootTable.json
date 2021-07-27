@@ -1,0 +1,10 @@
+{
+	"id": "lootTable",
+	"scope": "DP/data/*/loot_tables/",
+	"icon": "mdi-",
+	"matcher": [
+		"DP/data/*/loot_tables/*.json",
+		"DP/data/*/loot_tables/**/*.json"
+	],
+	"schema": "file:///data/packages/minecraftJava/schema/"
+}

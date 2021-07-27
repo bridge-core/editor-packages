@@ -1,0 +1,7 @@
+{
+	"id": "templatePool",
+	"scope": "DP/data/*/worldgen/template_pool/",
+	"icon": "mdi-",
+	"matcher": "DP/data/*/worldgen/template_pool/*.json",
+	"schema": "file:///data/packages/minecraftJava/schema/"
+}

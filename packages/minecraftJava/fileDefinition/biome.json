@@ -1,0 +1,7 @@
+{
+	"id": "biome",
+	"scope": "DP/data/*/worldgen/biome/",
+	"icon": "mdi-",
+	"matcher": "DP/data/*/worldgen/biome/*.json",
+	"schema": "file:///data/packages/minecraftJava/schema/"
+}

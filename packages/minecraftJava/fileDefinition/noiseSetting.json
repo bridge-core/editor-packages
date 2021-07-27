@@ -1,0 +1,7 @@
+{
+	"id": "noiseSetting",
+	"scope": "DP/data/*/worldgen/noise_settings/",
+	"icon": "mdi-",
+	"matcher": "DP/data/*/worldgen/noise_settings/*.json",
+	"schema": "file:///data/packages/minecraftJava/schema/noiseSetting/main.json"
+}

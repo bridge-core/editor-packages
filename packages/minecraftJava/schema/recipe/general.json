@@ -1,0 +1,55 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"definitions": {
+		"cooking_recipe": {
+			"properties": {
+				"ingredient": {
+					"anyOf": [
+						{
+							"description": "The ingredient.",
+							"properties": {
+								"item": {
+									"description": "An item ID.",
+									"type": "string" // TODO ITEM_ID
+								},
+								"tag": {
+									"description": "An item tag.",
+									"type": "string" // TODO ITEM_TAG
+								}
+							}
+						},
+						{
+							"description": "The list of ingredients.",
+							"type": "array",
+							"items": {
+								"description": "An acceptable ingredient.",
+								"properties": {
+									"item": {
+										"description": "An item ID.",
+										"type": "string" // TODO ITEM_ID
+									},
+									"tag": {
+										"description": "An item tag.",
+										"type": "string" // TODO ITEM_TAG
+									}
+								}
+							}
+						}
+					]
+				},
+				"result": {
+					"description": "The output item of the recipe.",
+					"type": "string" // TODO ITEM_ID
+				},
+				"experience": {
+					"description": "The output experience of the recipe.",
+					"type": "number"
+				},
+				"cookingtime": {
+					"description": "Optional. The cook time of the recipe in ticks. Will fallback to the default time if the field is absent. The default cooking time is 100 ticks, or 5 seconds.",
+					"type": "integer"
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"id": "predicate",
+	"scope": "DP/data/*/predicates/",
+	"icon": "mdi-",
+	"matcher": [
+		"DP/data/*/predicates/*.json",
+		"DP/data/*/predicates/**/*.json"
+	],
+	"schema": "file:///data/packages/minecraftJava/schema/"
+}

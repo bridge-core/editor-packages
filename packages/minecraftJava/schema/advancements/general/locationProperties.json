@@ -1,0 +1,145 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"biome": {
+			"description": "The biome the entity is currently in.",
+			"type": "string" // TODO BIOME_ID
+		},
+		"block": {
+			"description": "The block at the location.",
+			"additionalProperties": false,
+			"properties": {
+				"block": {
+					"description": "The block ID.",
+					"type": "string" // TODO BLOCK_ID
+				},
+				"tag": {
+					"description": "The block Tag.",
+					"type": "string" // TODO BLOCK_TAG
+				},
+				"nbt": {
+					"description": "The block NBT.",
+					"type": "string"
+				},
+				"state": {
+					"description": "A map of block property names to values. Test will fail if the block doesn't match."
+					// TODO BLOCK_STATES
+				}
+			}
+		},
+		"dimension": {
+			"description": "The dimension the entity is currently in.",
+			"type": "string",
+			"enum": [
+				"minecraft:overworld",
+				"minecraft:the_nether",
+				"minecraft:the_end"
+			]
+		},
+		"feature": {
+			"description": "Name of a structure.",
+			"type": "string" // TODO STRUCTURE_ID
+		},
+		"fluid": {
+			"description": "The fluid at the location.",
+			"additionalProperties": false,
+			"properties": {
+				"fluid": {
+					"description": "The fluid ID.",
+					"type": "string" // TODO FLUID_ID
+				},
+				"tag": {
+					"description": "The fluid Tag.",
+					"type": "string" // TODO FLUID_TAG
+				},
+				"state": {
+					"description": "A map of fluid property names to values. Test will fail if the fluid doesn't match."
+					// TODO BLOCK_STATE
+				}
+			}
+		},
+		"light": {
+			"description": "The light at the location.",
+			"properties": {
+				"light": {
+					"description": "The light Level of visible light. Calculated using: (max(sky-darkening,block)).",
+					"anyOf": [
+						{
+							"type": "integer"
+						},
+						{
+							"properties": {
+								"max": {
+									"type": "integer"
+								},
+								"min": {
+									"type": "integer"
+								}
+							}
+						}
+					]
+				}
+			}
+		},
+		"position": {
+			"properties": {
+				"x": {
+					"anyOf": [
+						{
+							"type": "integer"
+						},
+						{
+							"properties": {
+								"max": {
+									"type": "integer"
+								},
+								"min": {
+									"type": "integer"
+								}
+							}
+						}
+					]
+				},
+				"y": {
+					"anyOf": [
+						{
+							"type": "integer"
+						},
+						{
+							"properties": {
+								"max": {
+									"type": "integer"
+								},
+								"min": {
+									"type": "integer"
+								}
+							}
+						}
+					]
+				},
+				"z": {
+					"anyOf": [
+						{
+							"type": "integer"
+						},
+						{
+							"properties": {
+								"max": {
+									"type": "integer"
+								},
+								"min": {
+									"type": "integer"
+								}
+							}
+						}
+					]
+				}
+			}
+		},
+		"smokey": {
+			"description": "True if the block is closely above a campfire or soul campfire.",
+			"type": "boolean"
+		}
+	}
+}

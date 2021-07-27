@@ -1,0 +1,46 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"bypasses_armor": {
+			"description": "Checks if the damage bypassed the armor of the player (suffocation damage predominantly).",
+			"type": "boolean"
+		},
+		"bypasses_invulnerability": {
+			"description": "Checks if the damage bypassed the invulnerability status of the player (void or /kill damage).",
+			"type": "boolean"
+		},
+		"bypasses_magic": {
+			"description": "Checks if the damage was caused by starvation.",
+			"type": "boolean"
+		},
+		"direct_entity": {
+			"description": "The entity that was the direct cause of the damage.",
+			"$ref": "./entityProperties.json"
+		},
+		"is_explosion": {
+			"description": "Checks if the damage originated from an explosion.",
+			"type": "boolean"
+		},
+		"is_fire": {
+			"description": "Checks if the damage originated from fire.",
+			"type": "boolean"
+		},
+		"is_magic": {
+			"description": "Checks if the damage originated from magic.",
+			"type": "boolean"
+		},
+		"is_projectile": {
+			"description": "Checks if the damage originated from a projectile.",
+			"type": "boolean"
+		},
+		"is_lightning": {
+			"description": "Checks if the damage originated from lightning.",
+			"type": "boolean"
+		},
+		"source_entity": {
+			"description": "Checks the entity that was the source of the damage (for example: The skeleton that shot the arrow).",
+			"$ref": "./entityProperties.json"
+		}
+	}
+}

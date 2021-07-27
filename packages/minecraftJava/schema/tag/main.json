@@ -1,0 +1,42 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Tag",
+	"additionalProperties": false,
+	"properties": {
+		"replace": {
+			"description": "Optional. Whether or not contents of this tag should completely replace tag contents from different lower priority data packs with the same namespaced ID. When false the tag's content is appended to the contents of the higher priority data packs, instead. Defaults to false.",
+			"type": "boolean"
+		},
+		"values": {
+			"description": "A list of mix and match of object names and tag names. For tags, recursive reference is possible, but a circular reference causes a loading failure.",
+			"type": "array",
+			"items": {
+				"anyOf": [
+					{
+						"description": "An object's namespaced ID in the form (namespaced ID).",
+						"type": "string"
+					},
+					{
+						"description": "ID of another tag of the same type in the form #(namespaced ID).",
+						"type": "string",
+						"pattern": "^#.*"
+					},
+					{
+						"description": "An entry with additional options. (1.16.2+)",
+						"type": "object",
+						"properties": {
+							"id": {
+								"description": "A string in one of the string formats above.",
+								"type": "string"
+							},
+							"required": {
+								"description": "Whether or not loading this tag should fail if this entry is not found, true by default (also for the string entries). A tag that fails to load can still be referenced in any data pack and be (re)defined in other data packs. In other words, only the entries in this JSON file is ignored if this entry cannot be found.",
+								"type": "boolean"
+							}
+						}
+					}
+				]
+			}
+		}
+	}
+}

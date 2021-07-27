@@ -1,0 +1,7 @@
+{
+	"id": "packMeta",
+	"scope": "DP/pack.mcmeta",
+	"icon": "mdi-alpha-p-box-outline",
+	"matcher": "DP/pack.mcmeta",
+	"schema": "file:///data/packages/minecraftJava/schema/packMeta/main.json"
+}

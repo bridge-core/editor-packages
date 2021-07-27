@@ -1,0 +1,7 @@
+{
+	"id": "tag",
+	"scope": "DP/data/*/tags/*/",
+	"icon": "mdi-",
+	"matcher": ["DP/data/*/tags/*/*.json", "DP/data/*/tags/**/*.json"],
+	"schema": "file:///data/packages/minecraftJava/schema/tag/main.json"
+}

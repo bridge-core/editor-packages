@@ -1,0 +1,8 @@
+{
+	"id": "itemModifier",
+	"scope": "DP/data/*/item_modifiers/",
+	"icon": "mdi-",
+	"matcher": "DP/data/*/item_modifiers/*.json",
+	"target_version": "$project_target_version >= 1.17.0",
+	"schema": "file:///data/packages/minecraftJava/schema/"
+}

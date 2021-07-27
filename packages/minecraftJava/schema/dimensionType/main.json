@@ -1,0 +1,93 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Dimension Type",
+	"additionalProperties": false,
+	"properties": {
+		"name": {
+			"description": "The resource location used for the dimension type. Required only when importing world settings.",
+			"type": "string"
+		},
+		"ultrawarm": {
+			"description": "Whether the dimensions behaves like the nether (water evaporates and sponges dry) or not. Also causes lava to spread faster and thinner.",
+			"type": "boolean"
+		},
+		"natural": {
+			"description": "When false, compasses spin randomly, and using a bed to set the respawn point or sleep, is disabled. When true, nether portals can spawn zombified piglins.",
+			"type": "boolean"
+		},
+		"coordinate_scale": {
+			"description": "The multiplier applied to coordinates when traveling to the dimension.",
+			"type": "number"
+		},
+		"has_skylight": {
+			"description": "Whether the dimension has skylight access or not.",
+			"type": "boolean"
+		},
+		"has_ceiling": {
+			"description": "Whether the dimension has a bedrock ceiling or not.",
+			"type": "boolean"
+		},
+		"ambient_light": {
+			"description": "How much light the dimension has, default is 0.5 in the demo file (for upper and lower bounds as well as precise effect).",
+			"type": "number"
+		},
+		"fixed_time": {
+			"description": "Can be false or any integer from 0 to 24000. If this is set to a number, the time of the day is the specified value. However, in at least some worlds, false is interpreted as 0, giving constant sunrise. To ensure a normal time cycle, leave the attribute undefined (i.e, do not include it).",
+			"anyOf": [
+				{
+					"type": "boolean"
+				},
+				{
+					"minimum": 0,
+					"maximum": 24000,
+					"type": "integer"
+				}
+			]
+		},
+		"piglin_safe": {
+			"description": "Whether piglins shake and transform to zombified piglins.",
+			"type": "boolean"
+		},
+		"bed_works": {
+			"description": "When false, the bed blows up when trying to sleep.",
+			"type": "boolean"
+		},
+		"respawn_anchor_works": {
+			"description": "Whether players can charge and use respawn anchors.",
+			"type": "boolean"
+		},
+		"has_raids": {
+			"description": "Whether players with the Bad Omen effect can cause a raid.",
+			"type": "boolean"
+		},
+		"logical_height": {
+			"description": "The maximum height to which chorus fruits and nether portals can bring players within this dimension. This excludes portals that were already built above the limit as they still connect normally. May not be greater than height.",
+			"type": "integer"
+		},
+		"min_y": {
+			"description": "The minimum height in which blocks can exist within this dimension. Should be between -2032 and 2031 and be a multiple of 16 (effectively making 2016 the maximum). Setting it lower than -2048 will only allow the temporary placement of blocks below it as they won't be saved. Furthermore, lighting won't work correctly at Y-coordinate -2048 and below.",
+			"type": "integer",
+			"minimum": -2032,
+			"maximum": 2031
+		},
+		"height": {
+			"description": "The total height in which blocks can exist within this dimension. Should be between 0 and 4064 and be a multiple of 16. It can be set higher than the maximum by the same amount of temporary layers + 16. Max y = min y + height, and may not be more than 2032.",
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 4064
+		},
+		"infiniburn": {
+			"description": "A resource location defining what block tag to use for infiniburn.",
+			"type": "string" // TODO
+		},
+		"effects": {
+			"description": "Determines the dimension effect used for this dimension. Setting to overworld makes the dimension have clouds, sun, stars and moon. Setting to the nether makes the dimension have thick fog blocking that sight, similar to the nether. Setting to the end makes the dimension have dark spotted sky similar to the end, ignoring the sky and fog color. If undefined, the value will be automatically set to 'minecraft:overworld'.",
+			"type": "string",
+			"enum": [
+				"minecraft:overworld",
+				"minecraft:the_nether",
+				"minecraft:the_end"
+			]
+		}
+	}
+}

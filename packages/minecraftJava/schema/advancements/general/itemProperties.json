@@ -1,0 +1,118 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"count": {
+			"description": "Amount of the item.",
+			"anyOf": [
+				{
+					"type": "integer"
+				},
+				{
+					"properties": {
+						"max": {
+							"type": "integer"
+						},
+						"min": {
+							"type": "integer"
+						}
+					}
+				}
+			]
+		},
+		"durability": {
+			"description": "The durability of the item.",
+			"anyOf": [
+				{
+					"type": "integer"
+				},
+				{
+					"properties": {
+						"max": {
+							"type": "integer"
+						},
+						"min": {
+							"type": "integer"
+						}
+					}
+				}
+			]
+		},
+		"enchantments": {
+			"description": "List of enchantments.",
+			"type": "array",
+			"items": {
+				"properties": {
+					"enchantment": {
+						"description": "An enchantment ID.",
+						"type": "string" // TODO ENCHANT_ID https://minecraft.fandom.com/wiki/Java_Edition_data_values#Enchantments
+					},
+					"levels": {
+						"description": "The level of the enchantment.",
+						"anyOf": [
+							{
+								"type": "integer"
+							},
+							{
+								"properties": {
+									"max": {
+										"type": "integer"
+									},
+									"min": {
+										"type": "integer"
+									}
+								}
+							}
+						]
+					}
+				}
+			}
+		},
+		"stored_enchantments": {
+			"description": "List of stored enchantments.",
+			"type": "array",
+			"items": {
+				"properties": {
+					"enchantment": {
+						"description": "An enchantment ID.",
+						"type": "string" // TODO ENCHANT_ID https://minecraft.fandom.com/wiki/Java_Edition_data_values#Enchantments
+					},
+					"levels": {
+						"description": "The level of the enchantment.",
+						"anyOf": [
+							{
+								"type": "integer"
+							},
+							{
+								"properties": {
+									"max": {
+										"type": "integer"
+									},
+									"min": {
+										"type": "integer"
+									}
+								}
+							}
+						]
+					}
+				}
+			}
+		},
+		"item": {
+			"description": "An item ID.",
+			"type": "string" // TODO ITEM_ID
+		},
+		"nbt": {
+			"description": "An NBT string.",
+			"type": "string"
+		},
+		"potion": {
+			"description": "A brewed potion ID.",
+			"type": "string" // TODO POTIONS_ID https://minecraft.fandom.com/wiki/Potion#Item_data
+		},
+		"tag": {
+			"description": "An item data pack tag.",
+			"type": "string" // TODO ITEM_TAG
+		}
+	}
+}
