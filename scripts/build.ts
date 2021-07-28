@@ -1,17 +1,17 @@
 import { zipFolder } from './components/Zip/ZipFolder.ts'
+import { packageDirectory } from './components/Packager/Packager.ts'
 
 try {
-	await Deno.mkdir('./dist/packages', { recursive: true })
+	await Deno.mkdir('./dist', { recursive: true })
 } catch {}
 
-// TODO: Run packager first and then zip dist/ folder
-await zipFolder('./packages', './dist/packages.zip', 'packages')
+await packageDirectory('./packages', './dist')
+await zipFolder('./dist', './packages.zip', 'packages')
 
-for await (const entry of Deno.readDir('./packages')) {
-	if (entry.isDirectory)
-		// TODO: Run packager first and then zip packages from dist/ folder
-		await zipFolder(
-			`./packages/${entry.name}`,
-			`./dist/packages/${entry.name}.zip`
-		)
-}
+// for await (const entry of Deno.readDir('./packages')) {
+// 	if (entry.isDirectory)
+// 		await zipFolder(
+// 			`./dist/${entry.name}`,
+// 			`./dist/packages/${entry.name}.zip`
+// 		)
+// }
