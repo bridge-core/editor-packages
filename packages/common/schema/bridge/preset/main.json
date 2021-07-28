@@ -3,7 +3,7 @@
 	"title": "Preset Manifest",
 	"additionalProperties": false,
 	"properties": {
-		"display_name": {
+		"name": {
 			"description": "Name to display inside the preset window.",
 			"type": "string"
 		},
