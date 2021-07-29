@@ -41,7 +41,7 @@ jobs:
                   git add -A && git commit -m "Updated data packages"
 
             - name: Push changes 🔼
-              uses: ad-m/github-push-action@v0.6.0
+              uses: ad-m/github-push-action@v0.5.0
               with:
                   directory: './editor'
                   repository: 'bridge-core/editor'
