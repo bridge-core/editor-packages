@@ -18,7 +18,7 @@ export async function packageDirectory(path: string, outputPath: string) {
 	}
 }
 
-async function copyJson(path: string, outputPath: string) {
+export async function copyJson(path: string, outputPath: string) {
 	const json = json5.parse(await Deno.readTextFile(path))
 	await Deno.writeTextFile(outputPath, JSON.stringify(json))
 }

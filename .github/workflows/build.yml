@@ -2,15 +2,22 @@ name: Build Data
 
 on:
     push:
-        branches-ignore:
-            - main
+        - main
 
 jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            - name: Checkout 🛎
+            - name: Checkout Packages 🛎
               uses: actions/checkout@v1
+              with:
+                  path: './editor-packages'
+
+            - name: Checkout Editor 🛎
+              uses: actions/checkout@v1
+              with:
+                  repository: 'bridge-core/editor'
+                  path: './editor'
 
             - name: Setup Deno 🚧
               uses: denolib/setup-deno@v2
@@ -19,16 +26,20 @@ jobs:
 
             - name: Build data 🔧
               run: |
+                  cd editor-packages
                   deno run -A --import-map=importMap.json ./scripts/build.ts
+                  mv packages.zip ../editor/public
+                  cd ../editor
 
             - name: Commit files ✅
               run: |
                   git config --local user.email "action@github.com"
                   git config --local user.name "GitHub Action"
-                  git add -A && git commit -m "Updated extensions"
+                  git add -A && git commit -m "Updated data packages"
 
             - name: Push changes 🔼
               uses: ad-m/github-push-action@master
               with:
+                  repository: 'bridge-core/editor'
                   branch: main
                   github_token: ${{ secrets.GITHUB_TOKEN }}
