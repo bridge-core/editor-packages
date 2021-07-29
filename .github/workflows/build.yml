@@ -35,7 +35,6 @@ jobs:
 
             - name: Commit files ✅
               run: |
-                  ls
                   cd ./editor
                   git config --local user.email "action@github.com"
                   git config --local user.name "GitHub Action"
@@ -44,6 +43,7 @@ jobs:
             - name: Push changes 🔼
               uses: ad-m/github-push-action@v0.6.0
               with:
+                  directory: './editor'
                   repository: 'bridge-core/editor'
                   branch: 'dev'
                   github_token: ${{ secrets.EDITOR_DATA_PACKAGES }}
