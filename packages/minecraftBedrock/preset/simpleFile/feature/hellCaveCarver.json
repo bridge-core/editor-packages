@@ -1,0 +1,10 @@
+{
+    "format_version": {},
+    "minecraft:hell_cave_carver_feature": {
+        "description": {
+            "identifier": "{{PROJECT_PREFIX}}:{{FILE_NAME}}"
+        },
+        "fill_with": {},
+        "width_modifier": {}
+    }
+}

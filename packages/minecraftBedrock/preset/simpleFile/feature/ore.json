@@ -1,0 +1,15 @@
+{
+    "format_version": {},
+    "minecraft:ore_feature": {
+        "description": {
+            "identifier": "{{PROJECT_PREFIX}}:{{FILE_NAME}}"
+        },
+        "count": {},
+        "replace_rules": [
+            {
+                "places_block": {},
+                "may_replace": {}
+            }
+        ]
+    }
+}

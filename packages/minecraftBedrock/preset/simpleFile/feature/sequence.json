@@ -1,0 +1,9 @@
+{
+    "format_version": {},
+    "minecraft:sequence_feature": {
+        "description": {
+            "identifier": "{{PROJECT_PREFIX}}:{{FILE_NAME}}"
+        },
+        "features": {}
+    }
+}

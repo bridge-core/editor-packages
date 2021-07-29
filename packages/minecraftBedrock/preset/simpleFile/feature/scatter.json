@@ -1,0 +1,16 @@
+{
+    "format_version": {},
+    "minecraft:scatter_feature": {
+        "description": {
+            "identifier": "{{PROJECT_PREFIX}}:{{FILE_NAME}}"
+        },
+        "iterations": {},
+        "project_input_to_floor": {},
+        "coordinate_eval_order": {},
+        "scatter_chance": {},
+        "x": {},
+        "z": {},
+        "y": {},
+        "places_feature": {}
+    }
+}

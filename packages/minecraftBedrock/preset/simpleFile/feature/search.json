@@ -1,0 +1,15 @@
+{
+    "format_version": {},
+    "minecraft:search_feature": {
+        "description": {
+            "identifier": "{{PROJECT_PREFIX}}:{{FILE_NAME}}"
+        },
+        "places_features": {},
+        "search_volume": {
+            "min": {},
+            "max": {}
+        },
+        "search_axis": {},
+        "required_successes": {}
+    }
+}
