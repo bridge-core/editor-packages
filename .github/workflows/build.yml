@@ -10,16 +10,17 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout Packages 🛎
-              uses: actions/checkout@v1
+              uses: actions/checkout@v2
               with:
                   path: './editor-packages'
 
             - name: Checkout Editor 🛎
-              uses: actions/checkout@v1
+              uses: actions/checkout@v2
               with:
                   repository: 'bridge-core/editor'
                   ref: 'dev'
                   path: './editor'
+                  fetch-depth: 0
 
             - name: Setup Deno 🚧
               uses: denolib/setup-deno@v2
@@ -40,7 +41,7 @@ jobs:
                   git add -A && git commit -m "Updated data packages"
 
             - name: Push changes 🔼
-              uses: ad-m/github-push-action@v0.5.0
+              uses: ad-m/github-push-action@v0.6.0
               with:
                   repository: 'bridge-core/editor'
                   branch: 'dev'
