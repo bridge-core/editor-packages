@@ -29,6 +29,8 @@ jobs:
 
             - name: Build data 🔧
               run: |
+                  ls
+                  cd ../editor-packages
                   deno run -A --import-map=importMap.json ./scripts/build.ts
                   mv packages.zip ../editor/public
                   cd ../editor
