@@ -17,6 +17,8 @@ export async function zipFolder(
 }
 
 async function getDirectoryContents(path: string, dirContents: any) {
+	if (path === './dist') path = './packages'
+
 	for await (const entry of Deno.readDir(path)) {
 		const entryPath = join(path, entry.name)
 
