@@ -43,4 +43,4 @@ jobs:
               with:
                   repository: 'bridge-core/editor'
                   branch: main
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  github_token: ${{ secrets.EDITOR_DATA_PACKAGES }}
