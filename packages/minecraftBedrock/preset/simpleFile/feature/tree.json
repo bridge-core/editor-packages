@@ -1,0 +1,14 @@
+{
+    "format_version": {},
+    "minecraft:tree_feature": {
+        "description": {
+            "identifier": "{{PROJECT_PREFIX}}:{{FILE_NAME}}"
+        },
+        "can_be_submerged": {},
+        "base_block": {},
+        "base_cluster": {},
+        "may_grow_on": {},
+        "may_grow_through": {},
+        "may_replace": {}
+    }
+}

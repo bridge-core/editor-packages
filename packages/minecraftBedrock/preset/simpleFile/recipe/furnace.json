@@ -1,0 +1,11 @@
+{
+    "format_version": {},
+    "minecraft:recipe_furnace": {
+        "description": {
+            "identifier": "{{PROJECT_PREFIX}}:{{FILE_NAME}}"
+        },
+        "tags": {},
+        "input": {},
+        "output": {}
+    }
+}

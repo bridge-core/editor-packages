@@ -5,21 +5,69 @@
 	"category": "fileType.simpleFile",
 	"packTypes": ["behaviorPack"],
 	"additionalModels": {
-		"PRESET_PATH": "BP/features/"
+		"PRESET_PATH": "BP/features/",
+		"TEMPLATES": [
+			["Blank", "blank.json"],
+			["Ore Feature", "ore.json"],
+			["Single Block Feature", "singleBlock.json"],
+			["Aggregate Feature", "aggregate.json"],
+			["Scatter Feature", "scatter.json"],
+			["Tree Feature", "tree.json"],
+			["Weighted Random Feature", "weightedRandom.json"],
+			["Structure Feature", "structure.json"],
+			["Search Feature", "search.json"],
+			["Sequence Feature", "sequence.json"],
+			["Cave Carver Feature", "caveCarver.json"],
+			["Hell Cave Carver Feature", "hellCaveCarver.json"],
+			["Underwater Cave Carver Feature", "underwaterCaveCarver.json"],
+			["Growing Plant Feature", "growingPlant.json"],
+			["Snap to Surface Feature", "snapToSurface.json"],
+			["Vegetation Patch Feature", "vegetationPatch.json"],
+			["Geode Feature", "geode.json"],
+			["Multiface Feature", "multiface.json"],
+			["Beards and Shavers Feature", "beardsAndShavers.json"],
+			["Rect Layout Feature", "rectLayout.json"]
+		]
 	},
 	"fields": [
 		[
 			"File Name",
 			"FILE_NAME",
 			{ "validate": ["required", "alphanumeric", "lowercase"] }
+		],
+		[
+			"Template",
+			"TEMPLATE",
+			{
+				"type": "selectInput",
+				"optional": false,
+				"default": "Blank", 
+				"options": [
+					"Ore Feature",
+					"Single Block Feature",
+					"Aggregate Feature",
+					"Scatter Feature",
+					"Tree Feature",
+					"Weighted Random Feature",
+					"Structure Feature",
+					"Search Feature",
+					"Sequence Feature",
+					"Cave Carver Feature",
+					"Hell Cave Carver Feature",
+					"Underwater Cave Carver Feature",
+					"Growing Plant Feature",
+					"Snap to Surface Feature",
+					"Vegetation Patch Feature",
+					"Geode Feature",
+					"Multiface Feature",
+					"Beards and Shavers Feature",
+					"Rect Layout Feature"
+				]
+			}
 		]
 	],
 
 	"createFiles": [
-		[
-			"feature.json",
-			"{{PRESET_PATH}}{{FILE_NAME}}.json",
-			{ "inject": ["FILE_NAME", "PRESET_PATH"] }
-		]
+		"presetScript/fileTemplates.js"
 	]
 }
