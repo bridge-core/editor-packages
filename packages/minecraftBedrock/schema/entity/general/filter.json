@@ -117,14 +117,20 @@
 						"has_trade_supply",
 						"hourly_clock_time",
 						"inactivity_timer",
+						"in_block",
+						"in_caravan",
+						"in_clouds",
+						"in_contact_with_water",
+						"in_lava",
+						"in_nether",
+						"in_water",
+						"in_water_or_rain",
 						"is_altitude",
 						"is_avoiding_mobs",
 						"is_biome",
 						"is_block",
 						"is_brightness",
-						"is_caravan",
 						"is_climbing",
-						"is_clouds",
 						"is_color",
 						"is_daytime",
 						"is_difficulty",
@@ -133,12 +139,10 @@
 						"is_humid",
 						"is_immobile",
 						"is_in_village",
-						"is_lava",
 						"is_leashed",
 						"is_leashed_to",
 						"is_mark_variant",
 						"is_moving",
-						"in_nether",
 						"is_owner",
 						"is_persistent",
 						"is_riding",
@@ -153,8 +157,6 @@
 						"is_underwater",
 						"is_variant",
 						"is_visible",
-						"is_water",
-						"is_water_or_rain",
 						"is_weather",
 						"light_level",
 						"moon_intensity",
@@ -166,10 +168,7 @@
 						"surface_mob",
 						"trusts",
 						"weather",
-						"weather_at_position",
-						"in_contact_with_water",
-						"in_block",
-						"in_lava"
+						"weather_at_position"
 					]
 				}
 			}
@@ -505,7 +504,7 @@
 			"if": {
 				"properties": {
 					"test": {
-						"const": "is_caravan"
+						"const": "in_caravan"
 					}
 				}
 			},
@@ -537,7 +536,7 @@
 			"if": {
 				"properties": {
 					"test": {
-						"const": "is_clouds"
+						"const": "in_clouds"
 					}
 				}
 			},
@@ -1002,7 +1001,7 @@
 			"if": {
 				"properties": {
 					"test": {
-						"const": "is_water"
+						"const": "in_water"
 					}
 				}
 			},
@@ -1018,7 +1017,7 @@
 			"if": {
 				"properties": {
 					"test": {
-						"const": "is_water_or_rain"
+						"const": "in_water_or_rain"
 					}
 				}
 			},
