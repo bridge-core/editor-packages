@@ -2,7 +2,8 @@ name: Build Data
 
 on:
     push:
-        - main
+        branches:
+            - main
 
 jobs:
     build:
