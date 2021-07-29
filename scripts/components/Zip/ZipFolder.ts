@@ -21,10 +21,13 @@ async function getDirectoryContents(path: string, dirContents: any) {
 		const entryPath = join(path, entry.name)
 
 		if (entry.isDirectory) {
-			dirContents[entryPath + '/'] = new Uint8Array()
+			dirContents[entryPath.replaceAll('\\', '/') + '/'] =
+				new Uint8Array()
 			await getDirectoryContents(entryPath, dirContents)
 		} else if (basename(entryPath) !== '.DS_Store') {
-			dirContents[entryPath] = await Deno.readFile(entryPath)
+			dirContents[entryPath.replaceAll('\\', '/')] = await Deno.readFile(
+				entryPath
+			)
 		}
 	}
 }
