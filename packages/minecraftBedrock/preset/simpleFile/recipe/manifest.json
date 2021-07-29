@@ -5,21 +5,42 @@
 	"category": "fileType.simpleFile",
 	"packTypes": ["behaviorPack"],
 	"additionalModels": {
-		"PRESET_PATH": "BP/recipes/"
+		"PRESET_PATH": "BP/recipes/",
+		"TEMPLATES": [
+			["Blank", "blank.json"],
+			["Shaped Recipe", "shaped.json"],
+			["Shapeless Recipe", "shapeless.json"],
+			["Furnace Recipe", "furnace.json"],
+			["Brewing Mix Recipe", "brewingMix.json"],
+			["Brewing Container Recipe", "brewingContainer.json"]
+		]
 	},
 	"fields": [
 		[
 			"File Name",
 			"FILE_NAME",
 			{ "validate": ["required", "alphanumeric", "lowercase"] }
+		],
+		[
+			"Template",
+			"TEMPLATE",
+			{ 
+				"type": "selectInput", 
+				"optional": false,
+				"default": "Blank", 
+				"options": [
+					"Blank",
+					"Shaped Recipe",
+					"Shapeless Recipe",
+					"Furnace Recipe",
+					"Brewing Mix Recipe",
+					"Brewing Container Recipe"
+				] 
+			}
 		]
 	],
 
 	"createFiles": [
-		[
-			"recipe.json",
-			"{{PRESET_PATH}}{{FILE_NAME}}.json",
-			{ "inject": ["FILE_NAME", "PRESET_PATH"] }
-		]
+		"presetScript/fileTemplates.js"
 	]
 }
