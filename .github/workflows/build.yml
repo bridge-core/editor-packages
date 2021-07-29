@@ -31,6 +31,7 @@ jobs:
                   deno run -A --import-map=importMap.json ./scripts/build.ts
                   mv packages.zip ../editor/public
                   cd ../editor
+                  ls
 
             - name: Commit files ✅
               run: |
@@ -42,5 +43,5 @@ jobs:
               uses: ad-m/github-push-action@master
               with:
                   repository: 'bridge-core/editor'
-                  branch: main
+                  branch: 'dev'
                   github_token: ${{ secrets.EDITOR_DATA_PACKAGES }}
