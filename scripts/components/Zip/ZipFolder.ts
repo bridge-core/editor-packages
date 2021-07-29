@@ -23,6 +23,7 @@ async function getDirectoryContents(path: string, dirContents: any) {
 		const entryPath = join(path, entry.name)
 
 		if (entry.isDirectory) {
+			dirContents[entryPath + '/'] = new Uint8Array()
 			await getDirectoryContents(entryPath, dirContents)
 		} else {
 			dirContents[entryPath] = await Deno.readFile(entryPath)
