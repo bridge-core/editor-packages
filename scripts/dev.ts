@@ -44,8 +44,7 @@ const update = debounce(async () => {
 	events = {}
 	await zipFolder(
 		'./dist',
-		join(EDITOR_DIR, './public/packages.zip'),
-		'packages'
+		join(EDITOR_DIR, './public/packages.zip')
 	)
 }, 1000)
 
