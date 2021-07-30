@@ -6,14 +6,14 @@
 	"targetVersion": [">=", "1.8.0"],
 	"packTypes": ["behaviorPack", "resourcePack"],
 	"additionalModels": {
-		"IMAGE_SAVE_PATH": "RP/textures/items/",
-		"DEFAULT_IMAGE": "eggIcon.png",
-		"PRESET_PATH": ""
+		"PRESET_PATH": "",
+		"CLIENT_ENTITY_NO_EGG": "clientEntityNoEggTexture.json",
+		"CLIENT_ENTITY_EGG": "clientEntityEggTexture.json"
 	},
 	"fields": [
 		[
 			"Spawn Egg Image (Optional)",
-			"IMAGE",
+			"SPAWN_EGG",
 			{ "type": "fileInput", "accept": "image/png", "optional": true }
 		],
 		[
@@ -25,15 +25,10 @@
 	],
 
 	"createFiles": [
-		"presetScript/optionalImage.js",
+		"presetScript/spawnEggImage.js",
 		[
 			"entity.json",
 			"BP/entities/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"] }
-		],
-		[
-			"clientEntity.json",
-			"RP/entity/{{PRESET_PATH}}{{IDENTIFIER}}.json",
 			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"] }
 		],
 		[
@@ -73,11 +68,6 @@
 		]
 	],
 	"expandFiles": [
-		[
-			"itemTexture.json",
-			"RP/textures/item_texture.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"] }
-		],
 		[
 			"en_US.lang",
 			"RP/texts/en_US.lang",
