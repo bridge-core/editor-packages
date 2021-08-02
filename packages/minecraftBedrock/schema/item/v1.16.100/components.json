@@ -342,7 +342,7 @@
 				},
 				"minecraft:digger": {
 					"type": "object",
-					"description": "Digger item. Component put on items that dig.",
+					"description": "Digger item. Component put on items that dig, similar to pickaxes and axes.",
 					"properties": {
 						"use_efficiency": {
 							"type": "boolean",
@@ -383,12 +383,16 @@
 									"speed": {
 										"type": "number",
 										"description": "Destroy speed of the block."
+									},
+									"on_dig": {
+										"description": "Trigger for when you dig a block referenced to in 'block'.",
+										"$ref": "../general/eventDefinition.json"
 									}
 								}
 							}
 						},
 						"on_dig": {
-							"description": "Trigger for when you dig a block that isn't listed in destroy_speeds.",
+							"description": "Trigger for when you dig a block that isn't listed in 'destroy_speeds'.",
 							"$ref": "../general/eventDefinition.json"
 						}
 					}
@@ -406,7 +410,7 @@
 				},
 				"minecraft:fuel": {
 					"type": "object",
-					"description": "Fuel component. Allows this item to be used as fuel in a furnace to 'cook' other items.",
+					"description": "Fuel component. Allows this item to be used as fuel in a furnace, similar to coal.",
 					"properties": {
 						"duration": {
 							"type": "integer",
