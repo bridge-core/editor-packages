@@ -13,6 +13,10 @@
 			"description": "The name of the project.",
 			"type": "string"
 		},
+		"description": {
+			"description": "The description of the project.",
+			"type": "string"
+		},
 		"author": {
 			"description": "Creator of the project.",
 			"type": "string"
@@ -66,6 +70,9 @@
 				"scoreboardObjectives": {},
 				"names": {}
 			}
+		},
+		"bridge": {
+			"type": "object"
 		}
 	},
 	"definitions": {
