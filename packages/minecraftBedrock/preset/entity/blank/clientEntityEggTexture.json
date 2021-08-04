@@ -7,7 +7,7 @@
 				"default": "entity_alphatest"
 			},
 			"textures": {
-				"default": "textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}"
+				"default": "textures/entity/{{PRESET_PATH}}{{TEXTURE_FILE_NAME}}"
 			},
 			"geometry": {
 				"default": "geometry.{{IDENTIFIER}}"

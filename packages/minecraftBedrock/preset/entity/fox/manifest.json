@@ -25,7 +25,7 @@
 	],
 
 	"createFiles": [
-		"presetScript/spawnEggImage.js",
+		"presetScript/entityImages.js",
 		[
 			"entity.json",
 			"BP/entities/{{PRESET_PATH}}{{IDENTIFIER}}.json",

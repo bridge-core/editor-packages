@@ -1,6 +1,8 @@
 module.exports = async ({ createFile, loadPresetFile, models }) => {
 	let { MODEL, IDENTIFIER, MODEL_SAVE_PATH, DEFAULT_MODEL } = models
+	let FILE_NAME = IDENTIFIER
 	if (!MODEL) MODEL = await loadPresetFile(DEFAULT_MODEL)
+	else FILE_NAME = MODEL.name
 	let DATA = await MODEL.text()
 	let NEW_DATA = ''
 
@@ -16,7 +18,7 @@ module.exports = async ({ createFile, loadPresetFile, models }) => {
 		NEW_DATA = DATA
 	}
 
-	await createFile(`${MODEL_SAVE_PATH}${IDENTIFIER}.json`, NEW_DATA, {
+	await createFile(`${MODEL_SAVE_PATH}${FILE_NAME}.json`, NEW_DATA, {
 		inject: ['IDENTIFIER'],
 	})
 }

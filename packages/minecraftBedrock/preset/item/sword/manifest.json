@@ -6,14 +6,13 @@
 	"targetVersion": [">=", "1.16.100"],
 	"packTypes": ["behaviorPack", "resourcePack"],
 	"additionalModels": {
-		"IMAGE_SAVE_PATH": "RP/textures/items/",
-		"DEFAULT_IMAGE": "icon.png",
+		"DEFAULT_TEXTURE": "icon.png",
 		"PRESET_PATH": ""
 	},
 	"fields": [
 		[
 			"Image (Optional)",
-			"IMAGE",
+			"TEXTURE",
 			{ "type": "fileInput", "accept": "image/png", "optional": true }
 		],
 		[
@@ -25,7 +24,7 @@
 	],
 
 	"createFiles": [
-		"presetScript/optionalImage.js",
+		"presetScript/itemImages.js",
 		[
 			"item.json",
 			"BP/items/{{PRESET_PATH}}{{IDENTIFIER}}.json",
@@ -33,11 +32,6 @@
 		]
 	],
 	"expandFiles": [
-		[
-			"itemTexture.json",
-			"RP/textures/item_texture.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"] }
-		],
 		[
 			"en_US.lang",
 			"RP/texts/en_US.lang",

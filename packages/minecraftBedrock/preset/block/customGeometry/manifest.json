@@ -6,7 +6,6 @@
 	"targetVersion": [">=", "1.16.100"],
 	"packTypes": ["behaviorPack", "resourcePack"],
 	"additionalModels": {
-		"IMAGE_SAVE_PATH": "RP/textures/blocks/",
 		"DEFAULT_IMAGE": "texture.png",
 		"MODEL_SAVE_PATH": "RP/models/blocks/",
 		"DEFAULT_MODEL": "geometry.json",
@@ -31,7 +30,7 @@
 		],
 		[
 			"Block Texture",
-			"IMAGE",
+			"TEXTURE",
 			{
 				"type": "fileInput",
 				"accept": "image/png,image/jpeg",
@@ -48,14 +47,9 @@
 			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"] }
 		],
 		"presetScript/optionalModel.js",
-		"presetScript/optionalImage.js"
+		"presetScript/blockImages.js"
 	],
 	"expandFiles": [
-		[
-			"terrainTexture.json",
-			"RP/textures/terrain_texture.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"] }
-		],
 		[
 			"clientBlock.json",
 			"RP/blocks.json",

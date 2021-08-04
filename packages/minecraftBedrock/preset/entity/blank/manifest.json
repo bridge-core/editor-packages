@@ -6,8 +6,7 @@
 	"targetVersion": [">=", "1.8.0"],
 	"packTypes": ["behaviorPack", "resourcePack"],
 	"additionalModels": {
-		"IMAGE_SAVE_PATH": "RP/textures/entity/",
-		"DEFAULT_IMAGE": "texture.png",
+		"DEFAULT_TEXTURE": "texture.png",
 		"MODEL_SAVE_PATH": "RP/models/entity/",
 		"DEFAULT_MODEL": "geometry.json",
 		"PRESET_PATH": "",
@@ -17,7 +16,7 @@
 	"fields": [
 		[
 			"Entity Texture (Optional)",
-			"IMAGE",
+			"TEXTURE",
 			{ "type": "fileInput", "accept": "image/png", "optional": true }
 		],
 		[
@@ -44,8 +43,7 @@
 	],
 
 	"createFiles": [
-		"presetScript/optionalImage.js",
-		"presetScript/spawnEggImage.js",
+		"presetScript/entityImages.js",
 		"presetScript/optionalModel.js",
 		[
 			"entity.json",
