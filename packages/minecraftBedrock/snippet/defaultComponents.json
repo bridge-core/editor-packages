@@ -1,0 +1,33 @@
+{
+	"name": "Default Components",
+	"description": "Test Snippet",
+	"fileTypes": ["entity"],
+
+	"data": {
+		"minecraft:collision_box": {
+			"width": 1.0,
+			"height": 1.8
+		},
+		"minecraft:health": {
+			"value": 20,
+			"max": 20
+		},
+		"minecraft:movement": {
+			"value": 0.25
+		},
+		"minecraft:movement.generic": {},
+		"minecraft:navigation.generic": {},
+		"minecraft:jump.static": {},
+		"minecraft:can_climb": {},
+		"minecraft:breathable": {
+			"totalSupply": 15,
+			"suffocateTime": 0,
+			"breathesAir": true,
+			"breathesWater": false
+		},
+		"minecraft:loot": {
+			"table": {}
+		},
+		"minecraft:physics": {}
+	}
+}

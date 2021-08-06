@@ -1,0 +1,26 @@
+{
+	"name": "Marker Entity",
+	"description": "Test Snippet",
+	"fileTypes": ["entity"],
+
+	"data": {
+		"minecraft:scale": {
+			"value": 0.0
+		},
+		"minecraft:collision_box": {
+			"width": 0.0,
+			"height": 0.0
+		},
+		"minecraft:push_through": {
+			"value": 1.0
+		},
+		"minecraft:damage_sensor": {
+			"triggers": [
+				{
+					"deals_damage": false
+				}
+			]
+		},
+		"minecraft:physics": {}
+	}
+}
