@@ -5,6 +5,6 @@
 		"json5": "https://cdn.skypack.dev/json5@v2.2.0",
 		"dotenv": "https://deno.land/x/dotenv@v2.0.0/mod.ts",
 		"lodash": "https://cdn.skypack.dev/lodash@4.17.19",
-		"deno-dom": "https://deno.land/x/deno_dom/deno-dom-wasm.ts"
+		"deno-dom": "https://deno.land/x/deno_dom@v0.1.12-alpha/deno-dom-wasm.ts"
 	}
 }
