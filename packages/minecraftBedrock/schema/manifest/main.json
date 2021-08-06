@@ -156,6 +156,19 @@
 					"type": "string",
 					"format": "uri",
 					"description": "The home website of your pack."
+				},
+				"generated_with": {
+					"description": "Credit to tools that were used to create the pack.",
+					"patternProperties": {
+						"[a-zA-Z0-9_-]+": {
+							"type": "array",
+							"items": {
+								"type": "string",
+								"pattern": "^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$",
+								"description": "Version of the tool."
+							}
+						}
+					}
 				}
 			}
 		},
