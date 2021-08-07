@@ -2,6 +2,10 @@
 	"name": "Marker Entity",
 	"description": "Test Snippet",
 	"fileTypes": ["entity"],
+	"locations": [
+		"minecraft:entity/components",
+		"minecraft:entity/component_groups/*"
+	],
 
 	"data": {
 		"minecraft:scale": {
