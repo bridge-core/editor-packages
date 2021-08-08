@@ -68,6 +68,10 @@
 		"render_controllers/*/is_hurt_color/*",
 		"render_controllers/*/on_fire_color/*"
 	],
+	"RP/entity": [
+		"minecraft:client_entity/description/scripts/animate/*/*",
+		"minecraft:client_entity/description/render_controllers/*/*"
+	],
 	"RP/particles/": [
 		"particle_effect/curves/*/input",
 		"particle_effect/curves/*/horizontal_range",
