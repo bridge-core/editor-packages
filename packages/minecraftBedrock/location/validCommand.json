@@ -6,5 +6,10 @@
 	],
 	"block": ["minecraft:block/events/**/run_command/command"],
 	"entity": ["minecraft:entity/events/**/run_command/command"],
-	"item": ["minecraft:item/events/**/run_command/command"]
+	"item": ["minecraft:item/events/**/run_command/command"],
+	"dialogue": [
+		"minecraft:npc_dialogue/scenes/*/on_open_commands",
+		"minecraft:npc_dialogue/scenes/*/on_close_commands",
+		"minecraft:npc_dialogue/scenes/*/buttons/*/commands"
+	]
 }
