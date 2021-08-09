@@ -50,6 +50,12 @@
 									}
 								}
 							},
+							"on_open_command": {
+								"type": "array",
+								"items": {
+									"$ref": "../general/vanilla/command.json"
+								}
+							},
 							"on_close_command": {
 								"type": "array",
 								"items": {
