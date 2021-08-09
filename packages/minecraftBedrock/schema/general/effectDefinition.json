@@ -7,12 +7,19 @@
 			"$ref": "./vanilla/effectName.json"
 		},
 		"duration": {
-			"type": "integer",
+			"type": "number",
 			"description": "The time duration in seconds of the effect"
 		},
 		"amplifier": {
 			"type": "integer",
 			"description": "The amplifier for the effect"
+		},
+		"visible": {
+			"type": "boolean",
+			"description": "Show particles"
+		},
+		"display_on_screen_animation": {
+			"type": "boolean"
 		}
 	}
 }
