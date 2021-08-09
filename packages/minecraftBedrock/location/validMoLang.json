@@ -1,13 +1,13 @@
 {
-	"BP/animation_controllers/": [
+	"animationController": [
 		"animation_controllers/*/states/*/transitions/*/*",
 		"animation_controllers/*/states/*/on_entry/*",
 		"animation_controllers/*/states/*/on_exit/*"
 	],
-	"BP/biomes/": [
+	"biome": [
 		"minecraft:biome/components/minecraft:forced_features/*/*/iterations"
 	],
-	"BP/entities/": [
+	"entity": [
 		"minecraft:entity/permutations/*/condition",
 		"minecraft:entity/events/*/**/set_actor_property/*",
 		"minecraft:entity/description/scripts/animate/*/*",
@@ -24,31 +24,31 @@
 		"minecraft:entity/components/minecraft:rideable/seats/rotate_rider_by",
 		"minecraft:entity/component_groups/*/minecraft:rideable/seats/rotate_rider_by"
 	],
-	"BP/blocks/": [
+	"block": [
 		"minecraft:block/events/*/set_block_property/*",
 		"minecraft:block/permutations/*/components/**/condition",
 		"minecraft:block/components/**/condition",
 		"minecraft:block/events/**/sequence/*/condition"
 	],
-	"BP/items/": [
+	"item": [
 		"minecraft:item/components/minecraft:repairable/repair_items/*/repair_amount",
 		"minecraft:item/components/minecraft:icon/frame",
 		"minecraft:item/components/**/condition",
 		"minecraft:item/events/**/sequence/*/condition"
 	],
-	"BP/features/": [
+	"feature": [
 		"minecraft:growing_plant_feature/height_distribution/*/*",
 		"minecraft:growing_plant_feature/age"
 	],
 
-	"RP/animations/": [
+	"clientAnimation": [
 		"animations/*/anim_time_update",
 		"animations/*/bones/*/rotation/*",
 		"animations/*/bones/*/scale/*",
 		"animations/*/bones/*/position/*",
 		"animations/*/timeline/*"
 	],
-	"RP/animation_controllers/": [
+	"clientAnimationController": [
 		"animation_controllers/*/states/*/animations/*/*",
 		"animation_controllers/*/states/*/transitions/*/*",
 		"animation_controllers/*/states/*/on_entry/*",
@@ -56,7 +56,7 @@
 		"animation_controllers/*/states/*/parameters/*",
 		"animation_controllers/*/states/*/variables/*/input"
 	],
-	"RP/render_controllers/": [
+	"renderController": [
 		"render_controllers/*/uv_anim/offset/*",
 		"render_controllers/*/uv_anim/scale/*",
 		"render_controllers/*/geometry",
@@ -68,11 +68,11 @@
 		"render_controllers/*/is_hurt_color/*",
 		"render_controllers/*/on_fire_color/*"
 	],
-	"RP/entity": [
+	"clientEntity": [
 		"minecraft:client_entity/description/scripts/animate/*/*",
 		"minecraft:client_entity/description/render_controllers/*/*"
 	],
-	"RP/particles/": [
+	"particle": [
 		"particle_effect/curves/*/input",
 		"particle_effect/curves/*/horizontal_range",
 		"particle_effect/events/*/particle_effect/pre_effect_expression",
@@ -126,5 +126,5 @@
 		"particle_effect/components/minecraft:particle_initialization/per_update_expression",
 		"particle_effect/components/minecraft:particle_initialization/per_render_expression"
 	],
-	"RP/models/": ["minecraft:geometry/bones/*/binding"]
+	"geometry": ["minecraft:geometry/bones/*/binding"]
 }

@@ -1,10 +1,10 @@
 {
-	"BP/animations/": ["animations/*/timeline/*"],
-	"BP/animation_controllers/": [
+	"animation": ["animations/*/timeline/*"],
+	"animationController": [
 		"animation_controllers/*/states/*/on_entry",
 		"animation_controllers/*/states/*/on_exit"
 	],
-	"BP/blocks/": ["minecraft:block/events/**/run_command/command"],
-	"BP/entities/": ["minecraft:entity/events/**/run_command/command"],
-	"BP/items/": ["minecraft:item/events/**/run_command/command"]
+	"block": ["minecraft:block/events/**/run_command/command"],
+	"entity": ["minecraft:entity/events/**/run_command/command"],
+	"item": ["minecraft:item/events/**/run_command/command"]
 }
