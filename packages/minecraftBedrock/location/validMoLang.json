@@ -40,6 +40,7 @@
 		"minecraft:growing_plant_feature/height_distribution/*/*",
 		"minecraft:growing_plant_feature/age"
 	],
+	"recipe": ["*/result/data", "*/result/*/data"],
 
 	"clientAnimation": [
 		"animations/*/anim_time_update",
