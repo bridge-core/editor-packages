@@ -39,7 +39,7 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"const": "1.17.20"
+						"enum": ["1.17.20", "1.17.30"]
 					}
 				}
 			},
