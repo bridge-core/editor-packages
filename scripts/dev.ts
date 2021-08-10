@@ -13,6 +13,8 @@ const update = debounce(async () => {
 	await build(join(EDITOR_DIR, './public/packages.zip'))
 }, 1000)
 
+await build(join(EDITOR_DIR, './public/packages.zip'))
+
 for await (const event of watcher) {
 	if (event.kind === 'access' || event.kind === 'any') continue
 
