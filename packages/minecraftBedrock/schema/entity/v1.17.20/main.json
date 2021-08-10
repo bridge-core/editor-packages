@@ -4,57 +4,63 @@
 		"minecraft:entity": {
 			"required": ["description"],
 			"type": "object",
-			"properties": {
-				"description": {
-					"$ref": "../v1.17.0/description.json"
-				},
-				"components": {
-					"$ref": "./components.json"
-				},
-				"component_groups": {
-					"patternProperties": {
-						".*": {
+			"allOf": [
+				{
+					"properties": {
+						"description": {
+							"$ref": "../v1.17.0/description.json"
+						},
+						"components": {
 							"$ref": "./components.json"
-						}
-					}
-				},
-				"events": {
-					"type": "object",
-					"anyOf": [
-						{
-							"$ref": "../dynamic/currentContext/eventReferenceProperty.json"
 						},
-						{
-							"$ref": "../general/builtInEvent.json"
-						},
-						{
+						"component_groups": {
 							"patternProperties": {
 								".*": {
-									"$ref": "./event.json"
+									"$ref": "./components.json"
 								}
 							}
-						}
-					]
+						},
+						"events": {
+							"type": "object",
+							"anyOf": [
+								{
+									"$ref": "../dynamic/currentContext/eventReferenceProperty.json"
+								},
+								{
+									"$ref": "../general/builtInEvent.json"
+								},
+								{
+									"patternProperties": {
+										".*": {
+											"$ref": "./event.json"
+										}
+									}
+								}
+							]
+						},
+						"do_not_upgrade": {}
+					}
 				},
-				"do_not_upgrade": {}
-			},
-			"$ref": "../../project/experimentalGameplay/upcomingCreatorFeatures.json",
-			"then": {
-				"permutations": {
-					"type": "array",
-					"items": {
-						"type": "object",
-						"properties": {
-							"condition": {
-								"$ref": "../../molang/embeddedBeta.json"
-							},
-							"components": {
-								"$ref": "./components.json"
+				{
+					"$ref": "../../project/experimentalGameplay/upcomingCreatorFeatures.json",
+					"then": {
+						"permutations": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"condition": {
+										"$ref": "../../molang/embeddedBeta.json"
+									},
+									"components": {
+										"$ref": "./components.json"
+									}
+								}
 							}
 						}
 					}
 				}
-			}
+			]
 		}
 	}
 }
