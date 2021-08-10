@@ -30,7 +30,7 @@
 			"type": "object",
 			"propertyNames": {
 				"enum": [
-					"cavesandCliffs",
+					"cavesAndCliffs",
 					"holidayCreatorFeatures",
 					"creationOfCustomBiomes",
 					"additionalModdingCapabilities",
@@ -39,7 +39,7 @@
 				]
 			},
 			"patternProperties": {
-				"cavesandCliffs|holidayCreatorFeatures|creationOfCustomBiomes|additionalModdingCapabilities|upcomingCreatorFeatures|enableGameTestFramework": {
+				"cavesAndCliffs|holidayCreatorFeatures|creationOfCustomBiomes|additionalModdingCapabilities|upcomingCreatorFeatures|enableGameTestFramework": {
 					"type": "boolean"
 				}
 			}
@@ -76,6 +76,39 @@
 		},
 		"bridge": {
 			"type": "object"
+		},
+		"compiler": {
+			"description": "Settings for bridge.'s compiler.",
+			"type": "object",
+			"properties": {
+				"plugins": {
+					"description": "Plugins for bridge.'s compiler.",
+					"type": "array",
+					"items": {
+						"anyOf": [
+							{
+								"type": "string",
+								"description": "ID of a compiler plugin."
+							},
+							{
+								"type": "array",
+								"minItems": 2,
+								"maxItems": 2,
+								"items": [
+									{
+										"type": "string",
+										"description": "ID of a compiler plugin."
+									},
+									{
+										"type": "object",
+										"description": "Settings for the compiler plugin."
+									}
+								]
+							}
+						]
+					}
+				}
+			}
 		}
 	},
 	"definitions": {
