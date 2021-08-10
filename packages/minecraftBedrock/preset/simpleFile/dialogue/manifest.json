@@ -3,8 +3,10 @@
 	"icon": "mdi-forum",
 	"description": "Creates a blank dialogue.",
 	"category": "fileType.simpleFile",
-	"packTypes": ["behaviorPack"],
-	"targetVersion": [">=", "1.17.10"],
+	"requires": {
+		"packTypes": ["behaviorPack"],
+		"targetVersion": [">=", "1.17.10"]
+	},
 	"additionalModels": {
 		"PRESET_PATH": "BP/dialogue/"
 	},

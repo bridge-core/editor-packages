@@ -3,8 +3,10 @@
 	"icon": "mdi-panda",
 	"description": "Creates a new panda entity.",
 	"category": "fileType.entity",
-	"targetVersion": [">=", "1.10.0"],
-	"packTypes": ["behaviorPack", "resourcePack"],
+	"requires": {
+		"targetVersion": [">=", "1.10.0"],
+		"packTypes": ["behaviorPack", "resourcePack"]
+	},
 	"additionalModels": {
 		"PRESET_PATH": "",
 		"CLIENT_ENTITY_NO_EGG": "clientEntityNoEggTexture.json",

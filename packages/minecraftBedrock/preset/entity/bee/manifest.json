@@ -3,8 +3,10 @@
 	"icon": "mdi-bee",
 	"description": "Creates a new bee entity.",
 	"category": "fileType.entity",
-	"targetVersion": [">=", "1.8.0"],
-	"packTypes": ["behaviorPack", "resourcePack"],
+	"requires": {
+		"targetVersion": [">=", "1.8.0"],
+		"packTypes": ["behaviorPack", "resourcePack"]
+	},
 	"additionalModels": {
 		"CLIENT_ENTITY_NO_EGG": "clientEntityNoEggTexture.json",
 		"CLIENT_ENTITY_EGG": "clientEntityEggTexture.json",

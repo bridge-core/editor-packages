@@ -3,7 +3,9 @@
 	"icon": "mdi-minecraft",
 	"description": "Creates a blank client entity.",
 	"category": "fileType.simpleFile",
-	"packTypes": ["resourcePack"],
+	"requires": {
+		"packTypes": ["resourcePack"]
+	},
 	"additionalModels": {
 		"PRESET_PATH": "RP/entity/"
 	},

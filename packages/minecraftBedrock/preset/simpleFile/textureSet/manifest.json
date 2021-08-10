@@ -4,7 +4,9 @@
 	"description": "Creates a blank texture set.",
 	"category": "fileType.simpleFile",
 	"targetVersion": [">=", "1.16.100"],
-	"packTypes": ["resourcePack"],
+	"requires": {
+		"packTypes": ["resourcePack"]
+	},
 	"additionalModels": {
 		"PRESET_PATH": "RP/textures/blocks/"
 	},

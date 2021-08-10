@@ -3,8 +3,11 @@
 	"icon": "mdi-cube-outline",
 	"description": "Creates a new, basic block with custom geometry.",
 	"category": "fileType.block",
-	"targetVersion": [">=", "1.16.100"],
-	"packTypes": ["behaviorPack", "resourcePack"],
+	"requires": {
+		"targetVersion": [">=", "1.16.100"],
+		"packTypes": ["behaviorPack", "resourcePack"],
+		"experimentalGameplay": ["holidayCreatorFeatures"]
+	},
 	"additionalModels": {
 		"DEFAULT_IMAGE": "texture.png",
 		"MODEL_SAVE_PATH": "RP/models/blocks/",

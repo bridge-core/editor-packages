@@ -3,7 +3,9 @@
 	"icon": "mdi-script-text-outline",
 	"description": "Creates a blank custom command.",
 	"category": "fileType.simpleFile",
-	"packTypes": ["behaviorPack"],
+	"requires": {
+		"packTypes": ["behaviorPack"]
+	},
 	"additionalModels": {
 		"PRESET_PATH": "BP/commands/"
 	},

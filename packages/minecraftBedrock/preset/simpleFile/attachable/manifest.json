@@ -3,7 +3,9 @@
 	"icon": "mdi-hat-fedora",
 	"description": "Creates a blank attachable.",
 	"category": "fileType.simpleFile",
-	"packTypes": ["resourcePack"],
+	"requires": {
+		"packTypes": ["resourcePack"]
+	},
 	"additionalModels": {
 		"PRESET_PATH": "RP/attachables/"
 	},

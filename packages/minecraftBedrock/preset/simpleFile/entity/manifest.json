@@ -3,7 +3,9 @@
 	"icon": "mdi-minecraft",
 	"description": "Creates a blank entity.",
 	"category": "fileType.simpleFile",
-	"packTypes": ["behaviorPack"],
+	"requires": {
+		"packTypes": ["behaviorPack"]
+	},
 	"additionalModels": {
 		"PRESET_PATH": "BP/entities/"
 	},

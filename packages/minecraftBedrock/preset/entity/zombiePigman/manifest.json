@@ -3,7 +3,10 @@
 	"description": "Creates a new zombie pigman entity.",
 	"icon": "mdi-human",
 	"category": "fileType.entity",
-	"packTypes": ["behaviorPack", "resourcePack"],
+	"requires": {
+		"targetVersion": [">=", "1.8.0"],
+		"packTypes": ["behaviorPack", "resourcePack"]
+	},
 	"additionalModels": {
 		"PRESET_PATH": "",
 		"CLIENT_ENTITY_NO_EGG": "clientEntityNoEggTexture.json",

@@ -3,8 +3,11 @@
 	"icon": "mdi-weather-fog",
 	"description": "Creates a blank fog.",
 	"category": "fileType.simpleFile",
-	"targetVersion": [">=", "1.16.100"],
-	"packTypes": ["resourcePack"],
+	"requires": {
+		"packTypes": ["resourcePack"],
+		"targetVersion": [">=", "1.16.100"],
+		"experimentalGameplay": ["upcomingCreatorFeatures"]
+	},
 	"additionalModels": {
 		"PRESET_PATH": "RP/fogs/"
 	},

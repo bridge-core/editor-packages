@@ -3,7 +3,9 @@
 	"icon": "mdi-google-controller",
 	"description": "Creates a blank server animation controller.",
 	"category": "fileType.simpleFile",
-	"packTypes": ["behaviorPack"],
+	"requires": {
+		"packTypes": ["behaviorPack"]
+	},
 	"additionalModels": {
 		"PRESET_PATH": "BP/animation_controllers/"
 	},

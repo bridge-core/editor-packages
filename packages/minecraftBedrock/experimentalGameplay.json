@@ -15,7 +15,7 @@
 		"icon": "mdi-earth-box",
 		"name": "Creation of Custom Biomes",
 		"id": "creationOfCustomBiomes",
-		"description": "Enables the creation of custom biomes."
+		"description": "Enables the creation of custom biomes, features and feature rules."
 	},
 	{
 		"icon": "mdi-plus-circle",

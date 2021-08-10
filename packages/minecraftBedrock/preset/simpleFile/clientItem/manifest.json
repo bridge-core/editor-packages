@@ -3,8 +3,10 @@
 	"icon": "mdi-sword",
 	"description": "Creates a blank client item.",
 	"category": "fileType.simpleFile",
-	"targetVersion": ["<=", "1.16.0"],
-	"packTypes": ["resourcePack"],
+	"requires": {
+		"packTypes": ["resourcePack"],
+		"targetVersion": ["<=", "1.16.0"]
+	},
 	"additionalModels": {
 		"PRESET_PATH": "RP/items/"
 	},

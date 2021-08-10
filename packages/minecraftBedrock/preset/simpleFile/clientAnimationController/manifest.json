@@ -3,7 +3,9 @@
 	"icon": "mdi-movie-search-outline",
 	"description": "Creates a blank client animation controller.",
 	"category": "fileType.simpleFile",
-	"packTypes": ["resourcePack"],
+	"requires": {
+		"packTypes": ["resourcePack"]
+	},
 	"additionalModels": {
 		"PRESET_PATH": "RP/animation_controllers/"
 	},

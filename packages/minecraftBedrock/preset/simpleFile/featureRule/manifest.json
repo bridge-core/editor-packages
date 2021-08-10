@@ -3,7 +3,10 @@
 	"icon": "mdi-map-plus",
 	"description": "Creates a blank feature rule.",
 	"category": "fileType.simpleFile",
-	"packTypes": ["behaviorPack"],
+	"requires": {
+		"packTypes": ["behaviorPack"],
+		"experimentalGameplay": ["creationOfCustomBiomes"]
+	},
 	"additionalModels": {
 		"PRESET_PATH": "BP/feature_rules/"
 	},

@@ -3,7 +3,9 @@
 	"icon": "mdi-package-variant",
 	"description": "Creates a blank custom component.",
 	"category": "fileType.simpleFile",
-	"packTypes": ["behaviorPack"],
+	"requires": {
+		"packTypes": ["behaviorPack"]
+	},
 	"additionalModels": {
 		"PRESET_PATH": "BP/components/"
 	},

@@ -3,7 +3,9 @@
 	"icon": "mdi-face-outline",
 	"description": "Add a Steve to the skin pack",
 	"category": "fileType.skins",
-	"packTypes": ["skinPack"],
+	"requires": {
+		"packTypes": ["skinPack"]
+	},
 	"additionalModels": {
 		"IMAGE_SAVE_PATH": "SP/",
 		"DEFAULT_IMAGE": "skin.png",

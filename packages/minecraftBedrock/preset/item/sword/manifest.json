@@ -2,9 +2,11 @@
 	"name": "Sword",
 	"icon": "mdi-sword",
 	"description": "Creates a sword item.",
-	"category": "fileType.item",
-	"targetVersion": [">=", "1.16.100"],
-	"packTypes": ["behaviorPack", "resourcePack"],
+	"requires": {
+		"targetVersion": [">=", "1.16.100"],
+		"packTypes": ["behaviorPack", "resourcePack"],
+		"experimentalGameplay": ["holidayCreatorFeatures"]
+	},
 	"additionalModels": {
 		"DEFAULT_TEXTURE": "icon.png",
 		"PRESET_PATH": ""

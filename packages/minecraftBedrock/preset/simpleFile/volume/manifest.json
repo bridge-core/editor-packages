@@ -3,8 +3,11 @@
 	"icon": "mdi-shape-rectangle-plus",
 	"description": "Creates a blank volume.",
 	"category": "fileType.simpleFile",
-	"targetVersion": [">=", "1.17.0"],
-	"packTypes": ["worldTemplate"],
+	"requires": {
+		"targetVersion": [">=", "1.17.0"],
+		"packTypes": ["worldTemplate"],
+		"experimentalGameplay": ["upcomingCreatorFeatures"]
+	},
 	"additionalModels": {
 		"PRESET_PATH": "WT/volumes/"
 	},

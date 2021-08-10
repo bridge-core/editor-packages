@@ -3,8 +3,10 @@
 	"icon": "mdi-minecraft",
 	"description": "Creates a new, basic entity.",
 	"category": "fileType.entity",
-	"targetVersion": [">=", "1.8.0"],
-	"packTypes": ["behaviorPack", "resourcePack"],
+	"requires": {
+		"targetVersion": [">=", "1.8.0"],
+		"packTypes": ["behaviorPack", "resourcePack"]
+	},
 	"additionalModels": {
 		"DEFAULT_TEXTURE": "texture.png",
 		"MODEL_SAVE_PATH": "RP/models/entity/",

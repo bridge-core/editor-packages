@@ -8,20 +8,6 @@
 				"description": {
 					"$ref": "../v1.17.0/description.json"
 				},
-				"permutations": {
-					"type": "array",
-					"items": {
-						"type": "object",
-						"properties": {
-							"condition": {
-								"$ref": "../../molang/embeddedBeta.json"
-							},
-							"components": {
-								"$ref": "./components.json"
-							}
-						}
-					}
-				},
 				"components": {
 					"$ref": "./components.json"
 				},
@@ -51,6 +37,23 @@
 					]
 				},
 				"do_not_upgrade": {}
+			},
+			"$ref": "../../project/experimentalGameplay/upcomingCreatorFeatures.json",
+			"then": {
+				"permutations": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"condition": {
+								"$ref": "../../molang/embeddedBeta.json"
+							},
+							"components": {
+								"$ref": "./components.json"
+							}
+						}
+					}
+				}
 			}
 		}
 	}

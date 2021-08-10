@@ -6,28 +6,7 @@
 			"type": "object",
 			"properties": {
 				"description": {
-					"anyOf": [
-						{
-							"$ref": "../description.json"
-						},
-						{
-							"$ref": "./description.json"
-						}
-					]
-				},
-				"permutations": {
-					"type": "array",
-					"items": {
-						"type": "object",
-						"properties": {
-							"condition": {
-								"$ref": "../../molang/embeddedBeta.json"
-							},
-							"components": {
-								"$ref": "./components.json"
-							}
-						}
-					}
+					"$ref": "./description.json"
 				},
 				"components": {
 					"$ref": "./components.json"
@@ -58,6 +37,23 @@
 					]
 				},
 				"do_not_upgrade": {}
+			},
+			"$ref": "../../project/experimentalGameplay/upcomingCreatorFeatures.json",
+			"then": {
+				"permutations": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"condition": {
+								"$ref": "../../molang/embeddedBeta.json"
+							},
+							"components": {
+								"$ref": "./components.json"
+							}
+						}
+					}
+				}
 			}
 		}
 	}
