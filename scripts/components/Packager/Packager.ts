@@ -1,11 +1,23 @@
-import { join } from 'path'
+import { join, globToRegExp } from 'path'
 import json5 from 'json5'
+import { packageIntoSingleFile } from './packageIntoSingleFile.ts'
 
-// TODO: Minify all JSON files and copy them to dist/
+export const combineIntoSingleFile: RegExp[] = ['packages/*/schema'].map((p) =>
+	globToRegExp(p)
+)
+
 export async function packageDirectory(path: string, outputPath: string) {
 	for await (const entry of Deno.readDir(path)) {
 		const newPath = join(path, entry.name)
 		const newOutPath = join(outputPath, entry.name)
+
+		if (combineIntoSingleFile.some((p) => newPath.match(p))) {
+			await Deno.writeTextFile(
+				`${newOutPath}.json`,
+				JSON.stringify(await packageIntoSingleFile(newPath))
+			)
+			continue
+		}
 
 		if (entry.isDirectory) {
 			await Deno.mkdir(newOutPath, { recursive: true })
@@ -13,7 +25,8 @@ export async function packageDirectory(path: string, outputPath: string) {
 		} else if (entry.isFile) {
 			if (entry.name.endsWith('.json'))
 				await copyJson(newPath, newOutPath)
-			else await Deno.copyFile(newPath, newOutPath)
+			else if (entry.name !== '.DS_Store')
+				await Deno.copyFile(newPath, newOutPath)
 		}
 	}
 }

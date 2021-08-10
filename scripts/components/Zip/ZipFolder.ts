@@ -6,28 +6,26 @@ export async function zipFolder(path: string, outputPath: string) {
 	await getDirectoryContents(path, dirContents)
 
 	const zipped = zipSync(dirContents)
-	console.log(Object.keys(dirContents))
 
 	await Deno.writeFile(outputPath, zipped)
 }
 
 async function getDirectoryContents(path: string, dirContents: any) {
 	if (path === './dist') {
-		path = './packages'
 		dirContents['packages/'] = new Uint8Array()
 	}
+	const toOutPath = (path: string) => path.replace('dist', 'packages')
 
 	for await (const entry of Deno.readDir(path)) {
 		const entryPath = join(path, entry.name)
 
 		if (entry.isDirectory) {
-			dirContents[entryPath.replaceAll('\\', '/') + '/'] =
+			dirContents[toOutPath(entryPath.replaceAll('\\', '/')) + '/'] =
 				new Uint8Array()
 			await getDirectoryContents(entryPath, dirContents)
 		} else if (basename(entryPath) !== '.DS_Store') {
-			dirContents[entryPath.replaceAll('\\', '/')] = await Deno.readFile(
-				entryPath
-			)
+			dirContents[toOutPath(entryPath.replaceAll('\\', '/'))] =
+				await Deno.readFile(entryPath)
 		}
 	}
 }
