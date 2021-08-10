@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Caves and Cliffs",
+        "id": "cavesAndCliffs",
+        "description": "Enables auto-completions for the new mountain generation inside of biomes."
+    },
+    {
+        "name": "Holiday Creator Features",
+        "id": "holidayCreatorFeatures",
+        "description": "Enables auto-completions for the data driven item and block features."
+    },
+    {
+        "name": "Creation of Custom Biomes",
+        "id": "creationOfCustomBiomes",
+        "description": "Enables the creation of custom biomes."
+    },
+    {
+        "name": "Additional Modding Capabilities",
+        "id": "additionalModdingCapabilities",
+        "description": "Enables the Scripting API in the manifest and allows you to create scripts with auto-completions."
+    },
+    {
+        "name": "Upcoming Creator Features",
+        "id": "upcomingCreatorFeatures",
+        "description": "Enables the creation of fog volume files and provides auto-completions for entity properties."
+    },
+    {
+        "name": "Enable GameTest Framework",
+        "id": "enableGameTestFramework",
+        "description": "Enables the GameTest related modules in the manifest and allows you to create GameTets scripts with auto-completions."
+    }
+]

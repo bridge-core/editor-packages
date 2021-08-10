@@ -25,20 +25,23 @@
 			"description": "The Minecraft version this project targets.",
 			"type": "string"
 		},
-		"minecraftExperiments": {
+		"experimentalGameplay": {
 			"description": "Experimental gameplay the project intends to use.",
-			"type": "array",
-			"items": {
-				"type": "string",
-				"enum": ["upcomingCreatorFeatures", "cavesAndCliffs"]
-			}
-		},
-		"capabilities": {
-			"description": "Additional capabilities the project wants to use.",
-			"type": "array",
-			"items": {
-				"type": "string",
-				"enum": ["scriptingAPI", "gameTestAPI"]
+			"type": "object",
+			"propertyNames": {
+				"enum": [
+					"cavesandCliffs",
+					"holidayCreatorFeatures",
+					"creationOfCustomBiomes",
+					"additionalModdingCapabilities",
+					"upcomingCreatorFeatures",
+					"enableGameTestFramework"
+				]
+			},
+			"patternProperties": {
+				"cavesandCliffs|holidayCreatorFeatures|creationOfCustomBiomes|additionalModdingCapabilities|upcomingCreatorFeatures|enableGameTestFramework": {
+					"type": "boolean"
+				}
 			}
 		},
 		"namespace": {
