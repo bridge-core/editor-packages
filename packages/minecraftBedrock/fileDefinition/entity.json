@@ -46,5 +46,23 @@
 	},
 	"documentation": {
 		"baseUrl": "https://bedrock.dev/docs/stable/Entities"
+	},
+	"highlighterConfiguration": {
+		"variables": [
+			"description",
+			"component_groups",
+			"permutations",
+			"components",
+			"events"
+		],
+		"typeIdentifiers": ["format_version", "event"],
+		"definitions": [
+			"animations",
+			"scripts",
+			"filters",
+			"add",
+			"remove",
+			"run_commands"
+		]
 	}
 }

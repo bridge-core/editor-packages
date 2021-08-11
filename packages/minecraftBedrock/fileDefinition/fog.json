@@ -10,5 +10,9 @@
 	"documentation": {
 		"baseUrl": "https://bedrock.dev/docs/stable/Fogs",
 		"supportsQuerying": false
+	},
+	"highlighterConfiguration": {
+		"variables": ["description", "distance", "volumetric"],
+		"typeIdentifiers": ["format_version"]
 	}
 }

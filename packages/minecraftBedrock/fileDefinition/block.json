@@ -38,5 +38,10 @@
 	"documentation": {
 		"baseUrl": "https://bedrock.dev/docs/stable/Blocks",
 		"supportsQuerying": false
+	},
+	"highlighterConfiguration": {
+		"variables": ["description", "permutations", "components", "events"],
+		"typeIdentifiers": ["format_version", "event"],
+		"definitions": ["condition"]
 	}
 }

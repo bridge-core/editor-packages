@@ -21,5 +21,10 @@
 	"documentation": {
 		"baseUrl": "https://bedrock.dev/docs/stable/Entities#Data-Driven%20Spawning",
 		"supportsQuerying": false
+	},
+	"highlighterConfiguration": {
+		"variables": ["description", "conditions"],
+		"typeIdentifiers": ["format_version", "event"],
+		"definitions": ["filter"]
 	}
 }

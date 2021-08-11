@@ -55,5 +55,21 @@
 	"documentation": {
 		"baseUrl": "https://bedrock.dev/docs/stable/Entities#Client%20Entity%20Documentation",
 		"supportsQuerying": false
+	},
+	"highlighterConfiguration": {
+		"variables": ["description"],
+		"typeIdentifiers": ["format_version"],
+		"definitions": [
+			"animations",
+			"scripts",
+			"render_controllers",
+			"materials",
+			"textures",
+			"geometry",
+			"spawn_egg",
+			"particle_effects",
+			"particle_emitters",
+			"sound_effects"
+		]
 	}
 }

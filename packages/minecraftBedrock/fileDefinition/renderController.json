@@ -12,5 +12,26 @@
 	"documentation": {
 		"baseUrl": "https://bedrock.dev/docs/stable/Animations#Render%20Controllers",
 		"supportsQuerying": false
+	},
+	"highlighterConfiguration": {
+		"keywords": ["render_controllers"],
+		"typeIdentifiers": [
+			"format_version",
+			"textures",
+			"geometries",
+			"materials"
+		],
+		"definitions": [
+			"color",
+			"overlay_color",
+			"is_hurt_color",
+			"on_fire_color",
+			"uv_anim",
+			"arrays",
+			"geometry",
+			"materials",
+			"textures",
+			"part_visibility"
+		]
 	}
 }

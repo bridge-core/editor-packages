@@ -9,5 +9,9 @@
 	"documentation": {
 		"baseUrl": "https://bedrock.dev/docs/stable/Biomes",
 		"supportsQuerying": false
+	},
+	"highlighterConfiguration": {
+		"variables": ["description", "components"],
+		"typeIdentifiers": ["format_version"]
 	}
 }

@@ -15,5 +15,10 @@
 	"documentation": {
 		"baseUrl": "https://bedrock.dev/docs/stable/Particles",
 		"supportsQuerying": false
+	},
+	"highlighterConfiguration": {
+		"keywords": ["particle_effect"],
+		"variables": ["description", "curves", "components", "events"],
+		"typeIdentifiers": ["format_version", "event"]
 	}
 }

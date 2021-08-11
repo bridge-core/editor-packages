@@ -21,5 +21,20 @@
 	"documentation": {
 		"baseUrl": "https://bedrock.dev/docs/stable/Recipes",
 		"supportsQuerying": false
+	},
+	"highlighterConfiguration": {
+		"variables": [
+			"description",
+			"tags",
+			"groups",
+			"result",
+			"pattern",
+			"key",
+			"ingredients",
+			"input",
+			"output",
+			"reagent"
+		],
+		"typeIdentifiers": ["format_version"]
 	}
 }

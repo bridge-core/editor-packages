@@ -28,5 +28,10 @@
 	"documentation": {
 		"baseUrl": "https://bedrock.dev/docs/stable/Item",
 		"supportsQuerying": false
+	},
+	"highlighterConfiguration": {
+		"variables": ["description", "components", "events"],
+		"typeIdentifiers": ["format_version", "event"],
+		"definitions": ["condition"]
 	}
 }

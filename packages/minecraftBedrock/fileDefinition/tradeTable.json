@@ -3,5 +3,12 @@
 	"icon": "mdi-store-outline",
 	"scope": "BP/trading/",
 	"matcher": ["BP/trading/**/*.json", "BP/trading/*.json"],
-	"schema": "file:///data/packages/minecraftBedrock/schema/tradeTable/main.json"
+	"schema": "file:///data/packages/minecraftBedrock/schema/tradeTable/main.json",
+
+	"highlighterConfiguration": {
+		"keywords": ["tiers"],
+		"variables": ["functions"],
+		"typeIdentifiers": ["item"],
+		"definitions": ["trades", "groups"]
+	}
 }

@@ -4,5 +4,10 @@
 	"scope": "BP/loot_tables/",
 	"matcher": ["BP/loot_tables/**/*.json", "BP/loot_tables/*.json"],
 	"schema": "file:///data/packages/minecraftBedrock/schema/lootTable/main.json",
-	"lightningCache": "lootTable.json"
+	"lightningCache": "lootTable.json",
+	"highlighterConfiguration": {
+		"keywords": ["pools"],
+		"typeIdentifiers": ["function"],
+		"definitions": ["conditions", "rools", "tiers", "entries", "functions"]
+	}
 }

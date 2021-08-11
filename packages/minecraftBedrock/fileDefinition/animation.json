@@ -18,5 +18,10 @@
 	},
 	"meta": {
 		"commandsUseSlash": true
+	},
+	"highlighterConfiguration": {
+		"keywords": ["animations"],
+		"typeIdentifiers": ["format_version"],
+		"definitions": ["timeline"]
 	}
 }

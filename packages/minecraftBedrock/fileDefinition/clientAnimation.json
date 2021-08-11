@@ -31,5 +31,15 @@
 	"documentation": {
 		"baseUrl": "https://bedrock.dev/docs/stable/Animations#Animations",
 		"supportsQuerying": false
+	},
+	"highlighterConfiguration": {
+		"keywords": ["animations"],
+		"typeIdentifiers": ["format_version", "scale", "rotation", "position"],
+		"definitions": [
+			"timeline",
+			"bones",
+			"particle_effects",
+			"sound_effects"
+		]
 	}
 }

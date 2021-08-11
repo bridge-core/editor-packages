@@ -17,5 +17,19 @@
 	"documentation": {
 		"baseUrl": "https://bedrock.dev/docs/stable/Animations#Animation%20Controllers",
 		"supportsQuerying": false
+	},
+	"highlighterConfiguration": {
+		"keywords": ["animation_controllers"],
+		"variables": ["states"],
+		"typeIdentifiers": ["format_version", "initial_state"],
+		"definitions": [
+			"animations",
+			"transitions",
+			"variables",
+			"particle_effects",
+			"sound_effects",
+			"on_entry",
+			"on_exit"
+		]
 	}
 }

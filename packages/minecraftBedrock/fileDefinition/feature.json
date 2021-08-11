@@ -21,5 +21,9 @@
 
 	"documentation": {
 		"baseUrl": "https://bedrock.dev/docs/stable/Features"
+	},
+	"highlighterConfiguration": {
+		"variables": ["description"],
+		"typeIdentifiers": ["format_version"]
 	}
 }

@@ -10,5 +10,9 @@
 	],
 	"scope": "RP/models/",
 	"lightningCache": "geometry.json",
-	"schema": "file:///data/packages/minecraftBedrock/schema/geometry/main.json"
+	"schema": "file:///data/packages/minecraftBedrock/schema/geometry/main.json",
+	"highlighterConfiguration": {
+		"variables": ["description", "bones", "cubes"],
+		"typeIdentifiers": ["format_version"]
+	}
 }

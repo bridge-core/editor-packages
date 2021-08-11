@@ -21,5 +21,11 @@
 	},
 	"meta": {
 		"commandsUseSlash": true
+	},
+	"highlighterConfiguration": {
+		"keywords": ["animation_controllers"],
+		"variables": ["states"],
+		"typeIdentifiers": ["format_version", "initial_state"],
+		"definitions": ["animations", "transitions", "on_entry", "on_exit"]
 	}
 }

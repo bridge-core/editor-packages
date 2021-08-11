@@ -9,5 +9,9 @@
 	"documentation": {
 		"baseUrl": "https://bedrock.dev/docs/stable/Volumes",
 		"supportsQuerying": false
+	},
+	"highlighterConfiguration": {
+		"variables": ["description", "components"],
+		"typeIdentifiers": ["format_version"]
 	}
 }
