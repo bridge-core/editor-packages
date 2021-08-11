@@ -1703,7 +1703,10 @@
 						},
 						{
 							"argumentName": "objective",
-							"type": "string"
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/scoreboardObjectiveEnum.json"
+							}
 						}
 					]
 				},
@@ -1731,7 +1734,10 @@
 						},
 						{
 							"argumentName": "objective",
-							"type": "string"
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/scoreboardObjectiveEnum.json"
+							}
 						}
 					]
 				},
@@ -1759,7 +1765,10 @@
 						},
 						{
 							"argumentName": "objective",
-							"type": "string"
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/scoreboardObjectiveEnum.json"
+							}
 						},
 						{
 							"type": "string",
@@ -1813,7 +1822,10 @@
 						},
 						{
 							"argumentName": "objective",
-							"type": "string"
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/scoreboardObjectiveEnum.json"
+							}
 						}
 					]
 				},
@@ -1839,7 +1851,10 @@
 						},
 						{
 							"argumentName": "objective",
-							"type": "string"
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/scoreboardObjectiveEnum.json"
+							}
 						},
 						{
 							"argumentName": "min",
@@ -1873,7 +1888,10 @@
 						},
 						{
 							"argumentName": "objective",
-							"type": "string"
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/scoreboardObjectiveEnum.json"
+							}
 						},
 						{
 							"argumentName": "min",
@@ -1907,7 +1925,10 @@
 						},
 						{
 							"argumentName": "objective",
-							"type": "string"
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/scoreboardObjectiveEnum.json"
+							}
 						},
 						{
 							"argumentName": "count",
@@ -1937,7 +1958,10 @@
 						},
 						{
 							"argumentName": "targetObjective",
-							"type": "string"
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/scoreboardObjectiveEnum.json"
+							}
 						},
 						{
 							"argumentName": "operation",
@@ -1962,7 +1986,10 @@
 						},
 						{
 							"argumentName": "objective",
-							"type": "string"
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/scoreboardObjectiveEnum.json"
+							}
 						}
 					]
 				},
@@ -2426,7 +2453,10 @@
 						{
 							"argumentName": "name",
 							"description": "Specifies the name of the tag to be added into or removed from the targets.",
-							"type": "string"
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/entityTagEnum.json"
+							}
 						}
 					]
 				},
@@ -2448,7 +2478,10 @@
 						{
 							"argumentName": "name",
 							"description": "Specifies the name of the tag to be added into or removed from the targets.",
-							"type": "string"
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/entityTagEnum.json"
+							}
 						}
 					]
 				},
