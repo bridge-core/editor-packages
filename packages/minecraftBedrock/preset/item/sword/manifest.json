@@ -2,6 +2,7 @@
 	"name": "Sword",
 	"icon": "mdi-sword",
 	"description": "Creates a sword item.",
+	"category": "fileType.item",
 	"requires": {
 		"targetVersion": [">=", "1.16.100"],
 		"packTypes": ["behaviorPack", "resourcePack"],
