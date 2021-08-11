@@ -13,7 +13,7 @@ export async function packageDirectory(path: string, outputPath: string) {
 
 		if (combineIntoSingleFile.some((p) => newPath.match(p))) {
 			await Deno.writeTextFile(
-				`${newOutPath}.json`,
+				`${newOutPath}s.json`,
 				JSON.stringify(await packageIntoSingleFile(newPath))
 			)
 			continue
