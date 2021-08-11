@@ -62,7 +62,7 @@
 			"filters",
 			"add",
 			"remove",
-			"run_commands"
+			"run_command"
 		]
 	}
 }
