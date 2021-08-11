@@ -1,7 +1,7 @@
 {
 	"name": "Script",
 	"icon": "mdi-language-javascript",
-	"description": "Creates a blank server script.",
+	"description": "Creates a blank server or client script.",
 	"category": "fileType.simpleFile",
 	"requires": {
 		"packTypes": ["behaviorPack"],

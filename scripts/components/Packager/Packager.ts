@@ -23,7 +23,11 @@ export async function packageDirectory(path: string, outputPath: string) {
 			await Deno.mkdir(newOutPath, { recursive: true })
 			await packageDirectory(newPath, newOutPath)
 		} else if (entry.isFile) {
-			if (entry.name.endsWith('.json'))
+			if (
+				entry.name.endsWith('.json') &&
+				(!newPath.startsWith('packages/minecraftBedrock/preset') ||
+					entry.name === 'manifest.json')
+			)
 				await copyJson(newPath, newOutPath)
 			else if (entry.name !== '.DS_Store')
 				await Deno.copyFile(newPath, newOutPath)
