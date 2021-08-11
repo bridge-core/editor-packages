@@ -23,19 +23,27 @@ export async function packageDirectory(path: string, outputPath: string) {
 			await Deno.mkdir(newOutPath, { recursive: true })
 			await packageDirectory(newPath, newOutPath)
 		} else if (entry.isFile) {
-			if (
-				entry.name.endsWith('.json') &&
-				(!newPath.startsWith('packages/minecraftBedrock/preset') ||
-					entry.name === 'manifest.json')
-			)
-				await copyJson(newPath, newOutPath)
+			if (entry.name.endsWith('.json'))
+				await copyJson(
+					newPath,
+					newOutPath,
+					newPath.startsWith('packages/minecraftBedrock/preset') &&
+						entry.name !== 'manifest.json'
+				)
 			else if (entry.name !== '.DS_Store')
 				await Deno.copyFile(newPath, newOutPath)
 		}
 	}
 }
 
-export async function copyJson(path: string, outputPath: string) {
+export async function copyJson(
+	path: string,
+	outputPath: string,
+	beautify = true
+) {
 	const json = json5.parse(await Deno.readTextFile(path))
-	await Deno.writeTextFile(outputPath, JSON.stringify(json))
+	await Deno.writeTextFile(
+		outputPath,
+		JSON.stringify(json, null, beautify ? '\t' : undefined)
+	)
 }
