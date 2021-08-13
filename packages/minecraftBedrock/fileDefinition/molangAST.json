@@ -1,0 +1,11 @@
+{
+	"id": "molang",
+	"icon": "mdi-alpha-m",
+	"scope": "BP/scripts/molang/",
+	"matcher": [
+        "BP/scripts/molang/**/*.js", 
+        "BP/scripts/molang/*.js",
+        "BP/scripts/molang/**/*.ts", 
+        "BP/scripts/molang/*.ts"
+    ]
+}
