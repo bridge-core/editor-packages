@@ -1,0 +1,28 @@
+{
+	"name": "Molang AST Script",
+	"icon": "mdi-alpha-m",
+	"description": "Creates a blank molang AST script.",
+	"category": "fileType.simpleFile",
+	"requires": {
+		"packTypes": ["behaviorPack"]
+	},
+	"additionalModels": {
+		"PRESET_PATH": "BP/scripts/molang/"
+	},
+	"fields": [["File Name", "FILE_NAME", { "validate": ["required"] }]],
+
+	"fields": [
+		[
+			"Language",
+			"LANGUAGE",
+			{
+				"type": "selectInput",
+				"default": "JavaScript",
+				"options": ["JavaScript", "TypeScript"]
+			}
+		],
+		["File Name", "FILE_NAME", { "validate": ["required"] }]
+	],
+
+	"createFiles": ["./preset.js"]
+}
