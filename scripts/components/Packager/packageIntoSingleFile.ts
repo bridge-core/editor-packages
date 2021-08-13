@@ -11,7 +11,7 @@ export async function packageIntoSingleFile(
 		if (entry.isDirectory) {
 			await packageIntoSingleFile(newPath, current)
 		} else if (entry.isFile && entry.name.endsWith('.json')) {
-			current[`file:///data/${newPath.replaceAll('\\\\', '/')}`] =
+			current[`file:///data/${newPath.replaceAll('\\', '/')}`] =
 				json5.parse(await Deno.readTextFile(newPath))
 		}
 	}
