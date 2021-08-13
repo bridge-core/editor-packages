@@ -63,10 +63,7 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [
-							"1.17.20",
-							"1.17.30"
-						]
+						"const": "1.17.20"
 					}
 				}
 			},
@@ -79,6 +76,24 @@
 					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.0/main.json"
 				}
 			}
-		}	
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"const": "1.17.30"
+					}
+				}
+			},
+			"then": {
+				"$ref": "../project/experimentalGameplay/holidayCreatorFeatures.json",
+				"then": {
+					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.17.30/main.json"
+				},
+				"else": {
+					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.0/main.json"
+				}
+			}
+		}
 	]
 }

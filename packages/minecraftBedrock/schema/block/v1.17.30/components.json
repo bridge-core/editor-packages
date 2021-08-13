@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "allOf": [
+        {
+            "$ref": "../v1.17.20/components.json"
+        },
+        {
+            "properties": {
+                "minecraft:part_visibility": {
+                    "description": "Specify Molang conditions for each 'bone' listed in the geometry JSON that turn on/off bones based on the block state.",
+                    "properties": {
+                        "rules": {
+                            "patternProperties": {
+                                ".+": {
+                                    "$ref": "../../molang/embeddedBeta.json"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}
