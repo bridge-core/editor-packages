@@ -17,9 +17,12 @@
 			"description": "The description of the project.",
 			"type": "string"
 		},
-		"author": {
-			"description": "Creator of the project.",
-			"type": "string"
+		"authors": {
+			"description": "Creators of the project.",
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
 		},
 		"targetVersion": {
 			"description": "The Minecraft version this project targets.",
