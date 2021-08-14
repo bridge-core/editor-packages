@@ -145,8 +145,18 @@
 			"type": "object",
 			"properties": {
 				"authors": {
-					"type": "string",
-					"description": "Name of the author(s) of the pack."
+					"description": "Name of the author(s) of the pack.",
+					"anyOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					]
 				},
 				"license": {
 					"type": "string",
