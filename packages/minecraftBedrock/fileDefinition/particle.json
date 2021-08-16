@@ -1,8 +1,12 @@
 {
 	"id": "particle",
 	"icon": "mdi-snowflake",
-	"scope": "RP/particles/",
-	"matcher": ["RP/particles/**/*.json", "RP/particles/*.json"],
+	"detect": {
+		"scope": "RP/particles/",
+		"matcher": ["RP/particles/**/*.json", "RP/particles/*.json"],
+		"fileContent": ["particle_effect"]
+	},
+
 	"schema": "file:///data/packages/minecraftBedrock/schema/particle/main.json",
 	"packSpider": "particle.json",
 	"lightningCache": "particle.json",

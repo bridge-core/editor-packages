@@ -1,14 +1,18 @@
 {
 	"id": "geometry",
 	"icon": "mdi-cube-outline",
-	"matcher": [
-		"RP/models/entity/**/*.json",
-		"RP/models/block/**/*.json",
-		"RP/models/entity/*.json",
-		"RP/models/block/*.json",
-		"RP/models/mobs.json"
-	],
-	"scope": "RP/models/",
+	"detect": {
+		"matcher": [
+			"RP/models/entity/**/*.json",
+			"RP/models/block/**/*.json",
+			"RP/models/entity/*.json",
+			"RP/models/block/*.json",
+			"RP/models/mobs.json"
+		],
+		"scope": "RP/models/",
+		"fileContent": ["minecraft:geometry"]
+	},
+
 	"lightningCache": "geometry.json",
 	"schema": "file:///data/packages/minecraftBedrock/schema/geometry/main.json",
 	"highlighterConfiguration": {

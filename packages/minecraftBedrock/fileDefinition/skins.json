@@ -1,6 +1,10 @@
 {
 	"id": "skins",
 	"scope": "SP/skins.json",
-	"matcher": "SP/skins.json",
+	"detect": {
+		"matcher": "SP/skins.json",
+		"fileContent": ["skins"]
+	},
+
 	"schema": "file:///data/packages/minecraftBedrock/schema/skins/main.json"
 }

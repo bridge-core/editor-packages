@@ -1,8 +1,12 @@
 {
 	"id": "attachable",
 	"icon": "mdi-hat-fedora",
-	"scope": "RP/attachables/",
-	"matcher": ["RP/attachables/**/*.json", "RP/attachables/*.json"],
+	"detect": {
+		"scope": "RP/attachables/",
+		"matcher": ["RP/attachables/**/*.json", "RP/attachables/*.json"],
+		"fileContent": ["minecraft:attachable"]
+	},
+
 	"schema": "file:///data/packages/minecraftBedrock/schema/attachable/main.json",
 	"lightningCache": "attachable.json",
 

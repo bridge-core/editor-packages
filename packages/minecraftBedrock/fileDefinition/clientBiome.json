@@ -1,7 +1,10 @@
 {
 	"id": "clientBiome",
-	"scope": "RP/biomes_client.json",
-	"matcher": "RP/biomes_client.json",
+	"detect": {
+		"scope": "RP/biomes_client.json",
+		"matcher": "RP/biomes_client.json"
+	},
+
 	"schema": "file:///data/packages/minecraftBedrock/schema/clientBiome/main.json",
 	"lightningCache": "clientBiome.json",
 

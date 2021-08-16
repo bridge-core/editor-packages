@@ -1,8 +1,12 @@
 {
 	"id": "clientLang",
+	"type": "text",
 	"icon": "mdi-web",
-	"scope": ["RP/texts/"],
-	"matcher": "RP/texts/**/*.lang",
+	"detect": {
+		"scope": ["RP/texts/"],
+		"matcher": "RP/texts/**/*.lang"
+	},
+
 	"formatOnSaveCapable": false,
 	"lightningCache": "lang.js"
 }

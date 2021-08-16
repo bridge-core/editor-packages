@@ -1,7 +1,10 @@
 {
 	"id": "bridgeConfig",
 	"icon": "mdi-cog-outline",
-	"matcher": ["config.json"],
+	"detect": {
+		"matcher": ["config.json"]
+	},
+
 	"schema": "file:///data/packages/common/schema/bridge/config/main.json",
 
 	"documentation": {

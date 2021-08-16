@@ -1,8 +1,12 @@
 {
 	"id": "serverScript",
+	"type": "text",
 	"icon": "mdi-language-javascript",
-	"scope": "BP/scripts/server/",
-	"matcher": ["BP/scripts/server/**/*.js", "BP/scripts/server/**/*.ts"],
+	"detect": {
+		"scope": "BP/scripts/server/",
+		"matcher": ["BP/scripts/server/**/*.js", "BP/scripts/server/**/*.ts"]
+	},
+
 	"types": [
 		"types/scriptingApi/common.d.ts",
 		"types/scriptingApi/server.d.ts"

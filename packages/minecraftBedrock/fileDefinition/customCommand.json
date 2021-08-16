@@ -1,8 +1,12 @@
 {
 	"id": "customCommand",
+	"type": "text",
 	"icon": "mdi-script-text-outline",
-	"scope": "BP/commands/",
-	"matcher": ["BP/commands/**/*.js", "BP/commands/**/*.ts"],
+	"detect": {
+		"scope": "BP/commands/",
+		"matcher": ["BP/commands/**/*.js", "BP/commands/**/*.ts"]
+	},
+
 	"types": ["types/customCommand/main.d.ts"],
 
 	"documentation": {

@@ -1,8 +1,12 @@
 {
 	"id": "spawnRule",
 	"icon": "mdi-egg-outline",
-	"scope": "BP/spawn_rules/",
-	"matcher": ["BP/spawn_rules/**/*.json", "BP/spawn_rules/*.json"],
+	"detect": {
+		"scope": "BP/spawn_rules/",
+		"matcher": ["BP/spawn_rules/**/*.json", "BP/spawn_rules/*.json"],
+		"fileContent": ["minecraft:spawn_rules"]
+	},
+
 	"schema": "file:///data/packages/minecraftBedrock/schema/spawnRule/main.json",
 	"lightningCache": "spawnRule.json",
 

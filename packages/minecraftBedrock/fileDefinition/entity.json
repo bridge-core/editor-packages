@@ -1,8 +1,12 @@
 {
 	"id": "entity",
 	"icon": "mdi-minecraft",
-	"scope": "BP/entities/",
-	"matcher": ["BP/entities/**/*.json", "BP/entities/*.json"],
+	"detect": {
+		"scope": "BP/entities/",
+		"matcher": ["BP/entities/**/*.json", "BP/entities/*.json"],
+		"fileContent": ["minecraft:entity"]
+	},
+
 	"schema": "file:///data/packages/minecraftBedrock/schema/entity/main.json",
 	"packSpider": "entity.json",
 	"lightningCache": "entity.json",

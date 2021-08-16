@@ -1,8 +1,12 @@
 {
 	"id": "featureRule",
 	"icon": "mdi-map-plus",
-	"scope": "BP/feature_rules/",
-	"matcher": "BP/feature_rules/*.json",
+	"detect": {
+		"scope": "BP/feature_rules/",
+		"matcher": "BP/feature_rules/*.json",
+		"fileContent": ["minecraft:feature_rules"]
+	},
+
 	"schema": "file:///data/packages/minecraftBedrock/schema/featureRule/main.json",
 	"lightningCache": "featureRule.json",
 

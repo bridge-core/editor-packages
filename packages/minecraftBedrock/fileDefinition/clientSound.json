@@ -1,6 +1,9 @@
 {
 	"id": "clientSound",
-	"scope": "RP/sounds.json",
-	"matcher": "RP/sounds.json",
+	"detect": {
+		"scope": "RP/sounds.json",
+		"matcher": "RP/sounds.json"
+	},
+
 	"schema": "file:///data/packages/minecraftBedrock/schema/sounds/main.json"
 }

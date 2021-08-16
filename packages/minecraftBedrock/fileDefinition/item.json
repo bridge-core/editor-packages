@@ -1,8 +1,12 @@
 {
 	"id": "item",
 	"icon": "mdi-sword",
-	"scope": "BP/items/",
-	"matcher": ["BP/items/**/*.json", "BP/items/*.json"],
+	"detect": {
+		"scope": "BP/items/",
+		"matcher": ["BP/items/**/*.json", "BP/items/*.json"],
+		"fileContent": ["minecraft:item"]
+	},
+
 	"schema": "file:///data/packages/minecraftBedrock/schema/item/main.json",
 	"lightningCache": "item.json",
 	"packSpider": "item.json",

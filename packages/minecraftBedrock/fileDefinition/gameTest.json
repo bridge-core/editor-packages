@@ -1,13 +1,17 @@
 {
 	"id": "gameTest",
+	"type": "text",
 	"icon": "mdi-test-tube",
-	"scope": "BP/scripts/",
-	"matcher": [
-		"BP/scripts/*.js",
-		"BP/scripts/**/*.js",
-		"BP/scripts/*.ts",
-		"BP/scripts/**/*.ts"
-	],
+	"detect": {
+		"scope": "BP/scripts/",
+		"matcher": [
+			"BP/scripts/*.js",
+			"BP/scripts/**/*.js",
+			"BP/scripts/*.ts",
+			"BP/scripts/**/*.ts"
+		]
+	},
+
 	"types": [
 		"types/gameTest/componentData.d.ts",
 		[

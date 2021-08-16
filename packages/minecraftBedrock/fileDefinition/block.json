@@ -1,8 +1,12 @@
 {
 	"id": "block",
 	"icon": "mdi-cube-outline",
-	"scope": "BP/blocks/",
-	"matcher": ["BP/blocks/**/*.json", "BP/blocks/*.json"],
+	"detect": {
+		"scope": "BP/blocks/",
+		"matcher": ["BP/blocks/**/*.json", "BP/blocks/*.json"],
+		"fileContent": ["minecraft:block"]
+	},
+
 	"schema": "file:///data/packages/minecraftBedrock/schema/block/main.json",
 	"lightningCache": "block.json",
 	"packSpider": "block.json",

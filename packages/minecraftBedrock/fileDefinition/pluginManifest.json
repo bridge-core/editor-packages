@@ -1,5 +1,7 @@
 {
 	"id": "pluginManifest",
-	"matcher": "BP/.bridge/plugins/*/manifest.json",
+	"detect": {
+		"matcher": "BP/.bridge/plugins/*/manifest.json"
+	},
 	"schema": "file:///data/packages/minecraftBedrock/schema/bridge/manifest/main.json"
 }

@@ -1,7 +1,11 @@
 {
 	"id": "lang",
+	"type": "text",
 	"icon": "mdi-web",
-	"scope": ["SP/texts/", "BP/texts/"],
-	"matcher": "(BP|SP)/texts/**/*.lang",
+	"detect": {
+		"scope": ["SP/texts/", "BP/texts/"],
+		"matcher": "(BP|SP)/texts/**/*.lang"
+	},
+
 	"formatOnSaveCapable": false
 }

@@ -1,8 +1,15 @@
 {
 	"id": "customComponent",
+	"type": "text",
 	"icon": "mdi-language-javascript",
-	"scope": "BP/components/block/",
-	"matcher": ["BP/components/block/**/*.js", "BP/components/block/**/*.ts"],
+	"detect": {
+		"scope": "BP/components/block/",
+		"matcher": [
+			"BP/components/block/**/*.js",
+			"BP/components/block/**/*.ts"
+		]
+	},
+
 	"types": [
 		"types/customComponent/common.d.ts",
 		"types/customComponent/block.d.ts"

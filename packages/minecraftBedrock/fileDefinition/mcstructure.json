@@ -1,6 +1,10 @@
 {
 	"id": "mcstructure",
+	"type": "nbt",
 	"icon": "mdi-castle",
-	"scope": "BP/structures/",
+	"detect": {
+		"scope": "BP/structures/"
+	},
+
 	"matcher": ["BP/structures/**/*.mcstructure", "BP/structures/*.mcstructure"]
 }
