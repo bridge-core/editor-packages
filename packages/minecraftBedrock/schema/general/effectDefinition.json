@@ -16,10 +16,11 @@
 		},
 		"visible": {
 			"type": "boolean",
-			"description": "Show particles"
+			"description": "Whether to show effect particles"
 		},
 		"display_on_screen_animation": {
-			"type": "boolean"
+			"type": "boolean",
+			"description": "Whether to show an on screen effect icon animation upon applying the effect"
 		}
 	}
 }
