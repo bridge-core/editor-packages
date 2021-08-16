@@ -4,27 +4,27 @@
 		"packPath": "BP",
 		"icon": "mdi-wrench",
 		"matcher": "projects/*/BP/**",
-		"color": "error"
+		"color": "behaviorPack"
 	},
 	{
 		"id": "resourcePack",
 		"packPath": "RP",
 		"icon": "mdi-image",
 		"matcher": "projects/*/RP/**",
-		"color": "info"
+		"color": "resourcePack"
 	},
 	{
 		"id": "skinPack",
 		"packPath": "SP",
 		"icon": "mdi-human",
 		"matcher": "projects/*/SP/**",
-		"color": "warning"
+		"color": "skinPack"
 	},
 	{
 		"id": "worldTemplate",
 		"packPath": "WT",
 		"icon": "mdi-earth",
 		"matcher": "projects/*/WT/**",
-		"color": "success"
+		"color": "worldTemplate"
 	}
 ]
