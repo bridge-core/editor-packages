@@ -1,0 +1,8 @@
+{
+	"id": "texture",
+	"icon": "mdi-file-image-outline",
+	"detect": {
+		"scope": ["RP/textures/"],
+		"fileExtensions": [".png", ".jpeg", ".jpg", ".tga"]
+	}
+}

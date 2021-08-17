@@ -4,7 +4,11 @@
 	"icon": "mdi-function",
 	"detect": {
 		"scope": "BP/functions/",
-		"matcher": ["BP/functions/**/*.mcfunction", "BP/functions/*.mcfunction"]
+		"matcher": [
+			"BP/functions/**/*.mcfunction",
+			"BP/functions/*.mcfunction"
+		],
+		"fileExtensions": [".mcfunction"]
 	},
 
 	"packSpider": "function.json",

@@ -3,8 +3,11 @@
 	"type": "nbt",
 	"icon": "mdi-castle",
 	"detect": {
-		"scope": "BP/structures/"
-	},
-
-	"matcher": ["BP/structures/**/*.mcstructure", "BP/structures/*.mcstructure"]
+		"scope": "BP/structures/",
+		"matcher": [
+			"BP/structures/**/*.mcstructure",
+			"BP/structures/*.mcstructure"
+		],
+		"fileExtensions": [".mcstructure"]
+	}
 }
