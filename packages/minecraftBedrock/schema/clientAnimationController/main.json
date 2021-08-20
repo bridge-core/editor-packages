@@ -9,7 +9,7 @@
 			"patternProperties": {
 				"^controller.animation\\..+$": {
 					"properties": {
-						"initial_state": { "type": "string" },
+						"initial_state": { "$ref": "./dynamic/currentContext/stateEnum.json" },
 						"states": {
 							"patternProperties": {
 								".+": {
