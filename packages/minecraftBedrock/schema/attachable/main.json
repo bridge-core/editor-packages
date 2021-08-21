@@ -109,17 +109,17 @@
 									{
 										"type": "object",
 										"propertyNames": {
-											"$ref": "../../general/reference/renderController.json"
+											"$ref": "../general/reference/renderController.json"
 										},
 										"patternProperties": {
 											".+": {
-												"$ref": "../../molang/embeddedBeta.json"
+												"$ref": "../molang/embeddedBeta.json"
 											}
 										}
 									},
 									{
 										"type": "string",
-										"$ref": "../../general/reference/renderController.json"
+										"$ref": "../general/reference/renderController.json"
 									}
 								]
 							}
