@@ -51,12 +51,24 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.17.0", "1.17.10", "1.17.20", "1.17.30"]
+						"enum": ["1.17.0", "1.17.10", "1.17.20"]
 					}
 				}
 			},
 			"then": {
 				"$ref": "./v1.17.0/features.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"const": "1.17.30"
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.17.30/features.json"
 			}
 		}
 	]
