@@ -44,16 +44,18 @@
 				{
 					"$ref": "../../project/experimentalGameplay/upcomingCreatorFeatures.json",
 					"then": {
-						"permutations": {
-							"type": "array",
-							"items": {
-								"type": "object",
-								"properties": {
-									"condition": {
-										"$ref": "../../molang/embeddedBeta.json"
-									},
-									"components": {
-										"$ref": "./components.json"
+						"properties": {
+							"permutations": {
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"condition": {
+											"$ref": "/data/packages/minecraftBedrock/schema/molang/embeddedBeta.json"
+										},
+										"components": {
+											"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.17.20/components.json"
+										}
 									}
 								}
 							}

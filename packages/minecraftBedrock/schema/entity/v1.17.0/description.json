@@ -23,30 +23,49 @@
 							".*": {
 								"type": "object",
 								"properties": {
-									"min": {
-										"type": "number"
-									},
-									"max": {
-										"type": "number"
-									},
 									"values": {
-										"type": "array",
-										"items": {
-											"anyOf": [
-												{
-													"type": "string"
-												},
-												{
-													"type": "number"
-												},
-												{
-													"type": "boolean"
+										"anyOf": [
+											{
+												"type": "object",
+												"properties": {
+													"min": {
+														"type": "number"
+													},
+													"max": {
+														"type": "number"
+													}
 												}
-											]
-										}
+											},
+											{
+												"type": "array",
+												"items": {
+													"anyOf": [
+														{
+															"type": "string"
+														},
+														{
+															"type": "number"
+														},
+														{
+															"type": "boolean"
+														}
+													]
+												}
+											}
+										]
 									},
 									"default": {
-										"type": "number"
+										"anyOf": [
+											{
+												"type": "string"
+											},
+											{
+												"type": "number"
+											},
+											{
+												"type": "boolean"
+											}
+										]
 									},
 									"client_sync": {
 										"type": "boolean"

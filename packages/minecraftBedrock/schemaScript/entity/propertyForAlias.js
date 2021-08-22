@@ -18,8 +18,8 @@ return {
 					  }
 					: {
 							type: ['number', 'integer'],
-							minimum: propertyDef.min,
-							maximum: propertyDef.max,
+							minimum: propertyDef.values.min ?? 0,
+							maximum: propertyDef.values.max ?? 0,
 					  },
 			])
 	),

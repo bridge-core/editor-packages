@@ -21,6 +21,9 @@
 				{
 					"type": "string",
 					"pattern": "^minecraft:[a-z_]*<[a-z_:]*>$"
+				},
+				{
+					"$ref": "../../entity/dynamic/aliasEnum.json"
 				}
 			]
 		},

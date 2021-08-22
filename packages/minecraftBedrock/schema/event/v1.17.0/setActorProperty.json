@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "properties": {
+        "set_actor_property": {
+            "description": "Set a property on the entity.",
+            "type": "object",
+			"anyOf": [
+				{
+					"$ref": "../../entity/dynamic/currentContext/propertyProperty.json"
+				},
+				{
+					"patternProperties": {
+						".*": {
+							"$ref": "../../molang/embeddedBeta.json"
+						}
+					}
+				}
+			]
+        }
+    }
+}
