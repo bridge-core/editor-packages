@@ -14,18 +14,25 @@
 							"properties": {
 								"properties": {
 									"description": "Define block properties and their possible values",
-									"patternProperties": {
-										".*": {
-											"type": "array",
-											"items": {
-												"type": [
-													"boolean",
-													"integer",
-													"string"
-												]
+									"anyOf": [
+										{
+											"$ref": "../../project/projectPrefix.json"
+										},
+										{
+											"patternProperties": {
+												".*": {
+													"type": "array",
+													"items": {
+														"type": [
+															"boolean",
+															"integer",
+															"string"
+														]
+													}
+												}
 											}
 										}
-									}
+									]
 								}
 							}
 						}
@@ -56,6 +63,9 @@
 					"anyOf": [
 						{
 							"$ref": "../dynamic/currentContext/eventReferenceProperty.json"
+						},
+						{
+							"$ref": "../../project/projectPrefix.json"
 						},
 						{
 							"patternProperties": {

@@ -12,11 +12,18 @@
 					"$ref": "./components.json"
 				},
 				"component_groups": {
-					"patternProperties": {
-						".*": {
-							"$ref": "./components.json"
+					"anyOf": [
+						{
+							"patternProperties": {
+								".*": {
+									"$ref": "./components.json"
+								}
+							}
+						},
+						{
+							"$ref": "../../project/projectPrefix.json"
 						}
-					}
+					]
 				},
 				"events": {
 					"type": "object",
@@ -26,6 +33,9 @@
 						},
 						{
 							"$ref": "../general/builtInEvent.json"
+						},
+						{
+							"$ref": "../../project/projectPrefix.json"
 						},
 						{
 							"patternProperties": {

@@ -18,6 +18,9 @@
 							"$ref": "../dynamic/currentContext/eventReferenceProperty.json"
 						},
 						{
+							"$ref": "../../project/projectPrefix.json"
+						},
+						{
 							"patternProperties": {
 								".*": {
 									"$ref": "./event.json"
