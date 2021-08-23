@@ -321,7 +321,7 @@
 				}
 			}
 		},
-		"minecraft:behavior.controller_by_player": {
+		"minecraft:behavior.controlled_by_player": {
 			"description": "Allows the mob to be controlled by the player.",
 			"additionalProperties": false,
 			"properties": {
