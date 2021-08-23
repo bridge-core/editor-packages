@@ -12,7 +12,7 @@ return {
 			.flat()
 			.map(([propertyName, propertyDef]) => [
 				propertyName,
-				Array.isArray(propertyDef.values)
+				Array.isArray(propertyDef.values ?? [])
 					? {
 							enum: propertyDef.values,
 					  }
