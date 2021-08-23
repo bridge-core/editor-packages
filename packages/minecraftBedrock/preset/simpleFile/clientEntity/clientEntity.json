@@ -1,16 +1,16 @@
 {
-	"format_version": {},
+	"format_version": "",
 	"minecraft:client_entity": {
 		"description": {
-			"identifier": {},
+			"identifier": "",
 			"materials": {
-				"default": {}
+				"default": ""
 			},
 			"textures": {
-				"default": {}
+				"default": ""
 			},
 			"geometry": {
-				"default": {}
+				"default": ""
 			},
 			"animations": {},
 			"scripts": {

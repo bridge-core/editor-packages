@@ -1,5 +1,5 @@
 {
-    "format_version": {},
+    "format_version": "",
     "minecraft:geode_feature": {
         "description": {
             "identifier": "{{PROJECT_PREFIX}}:{{FILE_NAME}}"

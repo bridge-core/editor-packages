@@ -1,8 +1,8 @@
 {
-	"format_version": {},
+	"format_version": "",
 	"minecraft:entity": {
 		"description": {
-			"identifier": {},
+			"identifier": "",
 			"is_summonable": true,
 			"is_spawnable": true
 		},

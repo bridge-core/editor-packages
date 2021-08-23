@@ -1,9 +1,9 @@
 {
-	"format_version": {},
+	"format_version": "",
 	"minecraft:spawn_rules": {
 		"description": {
-			"identifier": {},
-			"population_control": {}
+			"identifier": "",
+			"population_control": ""
 		},
 		"conditions": [{}]
 	}
