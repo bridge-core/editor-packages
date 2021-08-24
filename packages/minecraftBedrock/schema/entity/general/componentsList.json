@@ -314,7 +314,7 @@
 		"minecraft:behavior.wither_random_attack_pos_goal",
 		"minecraft:behavior.wither_target_highest_damage",
 		"minecraft:behavior.work",
-		"minecraft.annotation.open_door",
-		"minecraft.annotation.break_door"
+		"minecraft:annotation.open_door",
+		"minecraft:annotation.break_door"
 	]
 }
