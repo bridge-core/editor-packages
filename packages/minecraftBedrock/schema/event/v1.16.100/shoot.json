@@ -7,7 +7,7 @@
 			"additionalProperties": false,
 			"properties": {
 				"target": { "$ref": "../../general/filter/subject.json" },
-				"projectile": { "type": "string" },
+				"projectile": { "$ref": "../../general/reference/identifiers.json#/definitions/entity_identifiers" },
 				"launch_power": { "type": "number" },
 				"angle_offset": { "type": ["string", "number"] }
 			}
