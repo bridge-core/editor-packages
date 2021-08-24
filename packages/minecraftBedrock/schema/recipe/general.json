@@ -41,25 +41,46 @@
 			"type": "string"
 		},
 		"result": {
-			"type": "array",
-			"description": "Defines the result item of this recipe.",
-			"items": {
-				"type": "object",
-				"properties": {
-					"item": {
-						"description": "Provides the identifier for the result item",
-						"$ref": "../general/vanilla/identifiers.json#/definitions/item_identifiers"
-					},
-					"data": {
-						"description": "Sets the result item's data value",
-						"type": "integer"
-					},
-					"count": {
-						"type": "integer",
-						"description": "Sets how many of the result item should be output"
+			"anyOf": [
+				{
+					"type": "array",
+					"description": "Defines the result item of this recipe.",
+					"items": {
+						"type": "object",
+						"properties": {
+							"item": {
+								"description": "Provides the identifier for the result item",
+								"$ref": "../general/vanilla/identifiers.json#/definitions/item_identifiers"
+							},
+							"data": {
+								"description": "Sets the result item's data value",
+								"type": "integer"
+							},
+							"count": {
+								"type": "integer",
+								"description": "Sets how many of the result item should be output"
+							}
+						}
+					}
+				},
+				{
+					"type": "object",
+					"properties": {
+						"item": {
+							"description": "Provides the identifier for the result item",
+							"$ref": "../general/vanilla/identifiers.json#/definitions/item_identifiers"
+						},
+						"data": {
+							"description": "Sets the result item's data value",
+							"type": "integer"
+						},
+						"count": {
+							"type": "integer",
+							"description": "Sets how many of the result item should be output"
+						}
 					}
 				}
-			}
+			]
 		},
 		"input": {
 			"$ref": "../general/vanilla/identifiers.json#/definitions/item_identifiers",
