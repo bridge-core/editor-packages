@@ -29,10 +29,16 @@
 												"type": "object",
 												"properties": {
 													"min": {
-														"type": "number"
+														"type": [
+															"number",
+															"integer"
+														]
 													},
 													"max": {
-														"type": "number"
+														"type": [
+															"number",
+															"integer"
+														]
 													}
 												}
 											},
