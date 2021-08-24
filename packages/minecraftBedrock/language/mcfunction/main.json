@@ -1551,7 +1551,7 @@
 							"description": "Specify the function to be cleared.",
 							"type": "string",
 							"additionalData": {
-								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/functionPathEnum.json"
+								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/commandPathEnum.json"
 							}
 						}
 					]
@@ -1593,7 +1593,7 @@
 							"description": "Specify the function to be cleared.",
 							"type": "string",
 							"additionalData": {
-								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/functionPathEnum.json"
+								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/commandPathEnum.json"
 							}
 						}
 					]
@@ -1630,7 +1630,7 @@
 							"description": "Specify the function to be cleared.",
 							"type": "string",
 							"additionalData": {
-								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/functionPathEnum.json"
+								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/commandPathEnum.json"
 							}
 						}
 					]
