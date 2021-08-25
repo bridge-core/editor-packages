@@ -6,6 +6,7 @@ module.exports = async ({ createFile, loadPresetFile, models }) => {
 		`BP/scripts/molang/${FILE_NAME}.${
 			LANGUAGE === 'JavaScript' ? 'js' : 'ts'
 		}`,
-		file
+		file,
+		{ openFile: true }
 	)
 }

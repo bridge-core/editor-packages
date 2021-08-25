@@ -29,7 +29,7 @@
 		[
 			"commandSelector.js",
 			"{{PRESET_PATH}}{{FILE_NAME}}.{{LANGUAGE}}",
-			{ "inject": ["FILE_NAME", "LANGUAGE", "PRESET_PATH"] }
+			{ "inject": ["FILE_NAME", "LANGUAGE", "PRESET_PATH"], "openFile": true }
 		]
 	]
 }

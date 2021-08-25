@@ -15,7 +15,7 @@
 		[
 			"molang.molang",
 			"{{PRESET_PATH}}{{FILE_NAME}}.molang",
-			{ "inject": ["FILE_NAME", "PRESET_PATH"] }
+			{ "inject": ["FILE_NAME", "PRESET_PATH"], "openFile": true }
 		]
 	]
 }

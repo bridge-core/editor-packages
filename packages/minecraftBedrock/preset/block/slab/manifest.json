@@ -23,7 +23,7 @@
 		[
 			"block.json",
 			"BP/blocks/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"] }
+			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "openFile": true }
 		],
 		[
 			"texture.png",

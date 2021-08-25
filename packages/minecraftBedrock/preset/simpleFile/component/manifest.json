@@ -42,7 +42,7 @@
 		[
 			"component.js",
 			"{{PRESET_PATH}}{{TYPE}}/{{FILE_NAME}}.{{LANGUAGE}}",
-			{ "inject": ["FILE_NAME", "LANGUAGE", "TYPE", "PRESET_PATH"] }
+			{ "inject": ["FILE_NAME", "LANGUAGE", "TYPE", "PRESET_PATH"], "openFile": true }
 		]
 	]
 }

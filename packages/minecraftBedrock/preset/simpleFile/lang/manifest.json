@@ -17,7 +17,7 @@
 		[
 			"language.lang",
 			"{{PRESET_PATH}}{{FILE_NAME}}.lang",
-			{ "inject": ["FILE_NAME", "PRESET_PATH"] }
+			{ "inject": ["FILE_NAME", "PRESET_PATH"], "openFile": true }
 		]
 	]
 }

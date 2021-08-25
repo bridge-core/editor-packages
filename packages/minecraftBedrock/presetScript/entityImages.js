@@ -1,13 +1,13 @@
-module.exports = async ({ createFile, expandFile, models, loadPresetFile }) => {
+module.exports = async ({ createFile, expandFile, models, loadPresetFile, createJSONFile }) => {
 	async function createClientEntity(hasEggTexture) {
 		const CLIENT_ENTITY_MODEL = await loadPresetFile(hasEggTexture ? CLIENT_ENTITY_EGG : CLIENT_ENTITY_NO_EGG)
 		let CLIENT_ENTITY_DATA = await CLIENT_ENTITY_MODEL.text()
 		CLIENT_ENTITY_DATA = CLIENT_ENTITY_DATA.replaceAll('{{TEXTURE_FILE_NAME}}', FILE_NAME)
 
-		await createFile(
+		await createJSONFile(
 			`RP/entity/${PRESET_PATH}${IDENTIFIER}.json`,
-			CLIENT_ENTITY_DATA,
-			{ inject: ['IDENTIFIER', 'PROJECT_PREFIX', 'PRESET_PATH'] }
+			JSON.parse(CLIENT_ENTITY_DATA),
+			{ inject: ['IDENTIFIER', 'PROJECT_PREFIX', 'PRESET_PATH'], openFile: true }
 		)
 	}
 

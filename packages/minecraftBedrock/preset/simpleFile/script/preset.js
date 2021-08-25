@@ -9,6 +9,7 @@ module.exports = async ({ createFile, loadPresetFile, models }) => {
 		`BP/scripts/${SCRIPT_TYPE.toLowerCase()}/${FILE_NAME}.${
 			LANGUAGE === 'JavaScript' ? 'js' : 'ts'
 		}`,
-		file
+		file,
+		{ openFile: true }
 	)
 }

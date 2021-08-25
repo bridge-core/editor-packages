@@ -1,4 +1,4 @@
-module.exports = async ({createFile, loadPresetFile, models}) => {
+module.exports = async ({ loadPresetFile, models, createJSONFile }) => {
     const {
         FILE_NAME,
         PRESET_PATH,
@@ -18,7 +18,8 @@ module.exports = async ({createFile, loadPresetFile, models}) => {
     const DATA = await MODEL.text()
 
     // Create file with chosen template data
-    await createFile(`${PRESET_PATH}${FILE_NAME}.json`, DATA, {
-        inject: ['FILE_NAME', 'PROJECT_PREFIX']
+    await createJSONFile(`${PRESET_PATH}${FILE_NAME}.json`, JSON.parse(DATA), {
+        inject: ['FILE_NAME', 'PROJECT_PREFIX'],
+        openFile: true
     })
 }

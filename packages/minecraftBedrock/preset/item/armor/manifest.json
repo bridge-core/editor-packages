@@ -34,7 +34,7 @@
 		[
 			"itemBoots.json",
 			"BP/items/{{IDENTIFIER}}_boots.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX"] }
+			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX"], "openFile": true }
 		],
 		[
 			"iconBoots.png",
@@ -49,7 +49,7 @@
 		[
 			"itemLeggings.json",
 			"BP/items/{{PRESET_PATH}}{{IDENTIFIER}}_leggings.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"] }
+			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "openFile": true }
 		],
 		[
 			"iconLeggings.png",
@@ -64,7 +64,7 @@
 		[
 			"itemChestplate.json",
 			"BP/items/{{PRESET_PATH}}{{IDENTIFIER}}_chestplate.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"] }
+			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "openFile": true }
 		],
 		[
 			"iconChestplate.png",
@@ -79,7 +79,7 @@
 		[
 			"itemHelmet.json",
 			"BP/items/{{PRESET_PATH}}{{IDENTIFIER}}_helmet.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"] }
+			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "openFile": true }
 		],
 		[
 			"iconHelmet.png",
