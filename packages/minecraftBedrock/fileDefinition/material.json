@@ -1,0 +1,10 @@
+{
+	"id": "material",
+	"icon": "mdi-texture",
+	"detect": {
+		"scope": "RP/materials/",
+		"matcher": ["RP/materials/**/*.material", "RP/materials/*.material"]
+	},
+
+	"schema": "file:///data/packages/minecraftBedrock/schema/material/main.json"
+}
