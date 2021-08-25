@@ -183,6 +183,7 @@
 						"description": "Sets the file path, relative to the project's folder, of where to create the file"
 					},
 					{
+						"description": "Options",
 						"type": "object",
 						"properties": {
 							"inject": {
@@ -191,6 +192,10 @@
 									"description": "Variable name defined under fields to inject into the file and file path.",
 									"type": "string"
 								}
+							},
+							"openFile": {
+								"type": "boolean",
+								"description": "Whether to open the file on preset creation."
 							}
 						}
 					}
@@ -213,6 +218,7 @@
 						"description": "Sets the file path, relative to the project's folder, of the file to add to."
 					},
 					{
+						"description": "Options",
 						"type": "object",
 						"properties": {
 							"inject": {
@@ -221,6 +227,10 @@
 									"description": "Variable name defined under fields to inject into the file and file path.",
 									"type": "string"
 								}
+							},
+							"openFile": {
+								"type": "boolean",
+								"description": "Whether to open the file on preset creation."
 							}
 						}
 					}
