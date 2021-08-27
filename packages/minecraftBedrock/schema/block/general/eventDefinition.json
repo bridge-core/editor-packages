@@ -8,7 +8,7 @@
 		},
 		"target": {
 			"type": "string",
-			"description": "Target to trigger the event on",
+			"description": "Target to trigger the event on.",
 			"enum": ["self", "other", "target", "parent", "baby"]
 		}
 	},
@@ -27,7 +27,9 @@
 					{
 						"properties": {
 							"target": {
-								"type": "null"
+								"not": {
+									"type": "string"
+								}
 							}
 						}
 					}

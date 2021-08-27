@@ -19,6 +19,7 @@
 			]
 		},
 		"target": {
+			"description": "Target to trigger the event on.",
 			"type": "string",
 			"$ref": "../../general/filter/subject.json"
 		}
