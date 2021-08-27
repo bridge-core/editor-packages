@@ -19,6 +19,7 @@
 			]
 		},
 		"target": {
+			"type": "string",
 			"$ref": "../../general/filter/subject.json"
 		}
 	},
@@ -37,7 +38,9 @@
 					{
 						"properties": {
 							"target": {
-								"type": "null"
+								"not": {
+									"type": "string"
+								}
 							}
 						}
 					}
