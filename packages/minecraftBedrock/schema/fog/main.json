@@ -60,7 +60,7 @@
 									"$ref": "#/definitions/hex_color",
 									"description": "The color that the fog will take on."
 								},
-								"render_distance_types": {
+								"render_distance_type": {
 									"type": "string",
 									"enum": ["fixed", "render"],
 									"description": "Determines how distance value is used. Fixed distance is measured in blocks. Dynamic distance is multiplied by the current render distance."
