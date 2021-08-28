@@ -21,6 +21,9 @@
 			"minecraft:icon": {
 				"texture": "{{PROJECT_PREFIX}}_{{IDENTIFIER}}"
 			},
+			"minecraft:creative_category": {
+				"parent": "itemGroup.name.hoe"
+			},
 			"tag:minecraft:is_hoe": {}
 		}
 	}

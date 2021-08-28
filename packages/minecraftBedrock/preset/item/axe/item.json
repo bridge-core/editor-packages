@@ -45,6 +45,9 @@
       "minecraft:icon": {
         "texture": "{{PROJECT_PREFIX}}_{{IDENTIFIER}}"
       },
+      "minecraft:creative_category": {
+				"parent": "itemGroup.name.pickaxe"
+			},
       "tag:minecraft:is_axe": {}
     }
   }
