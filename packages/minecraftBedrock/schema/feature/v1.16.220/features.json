@@ -102,7 +102,7 @@
 								"items": [
 									{
 										"description": "Plant height.",
-										"$ref": "../../molang/embeddedBeta.json"
+										"$ref": "../../molang/embedded.json"
 									},
 									{
 										"type": "number",
@@ -121,7 +121,7 @@
 						},
 						"age": {
 							"description": "Age of the head of the plant.",
-							"$ref": "../../molang/embeddedBeta.json"
+							"$ref": "../../molang/embedded.json"
 						},
 						"body_blocks": {
 							"type": "array",

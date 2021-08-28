@@ -1047,7 +1047,7 @@
 							"description": "Specifies the conditions for stopping animation.",
 							"type": "string",
 							"additionalData": {
-								"schemaReference": "/data/packages/minecraftBedrock/schema/molang/embeddedBeta.json"
+								"schemaReference": "/data/packages/minecraftBedrock/schema/molang/embedded.json"
 							}
 						},
 						{

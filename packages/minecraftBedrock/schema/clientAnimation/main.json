@@ -14,7 +14,7 @@
 							"enum": [true, false, "hold_on_last_frame"]
 						},
 						"anim_time_update": {
-							"$ref": "../molang/embeddedBeta.json"
+							"$ref": "../molang/embedded.json"
 						},
 						"blend_weight": {
 							"type": "number"
@@ -38,7 +38,7 @@
 																"$ref": "../general/degree.json"
 															},
 															{
-																"$ref": "../molang/embeddedBeta.json"
+																"$ref": "../molang/embedded.json"
 															}
 														]
 													}
@@ -55,7 +55,7 @@
 																		"$ref": "../general/degree.json"
 																	},
 																	{
-																		"$ref": "../molang/embeddedBeta.json"
+																		"$ref": "../molang/embedded.json"
 																	}
 																]
 															}
@@ -76,7 +76,7 @@
 																"$ref": "../general/degree.json"
 															},
 															{
-																"$ref": "../molang/embeddedBeta.json"
+																"$ref": "../molang/embedded.json"
 															}
 														]
 													}
@@ -93,7 +93,7 @@
 																		"$ref": "../general/degree.json"
 																	},
 																	{
-																		"$ref": "../molang/embeddedBeta.json"
+																		"$ref": "../molang/embedded.json"
 																	}
 																]
 															}
@@ -114,7 +114,7 @@
 																"$ref": "../general/degree.json"
 															},
 															{
-																"$ref": "../molang/embeddedBeta.json"
+																"$ref": "../molang/embedded.json"
 															}
 														]
 													}
@@ -131,7 +131,7 @@
 																		"$ref": "../general/degree.json"
 																	},
 																	{
-																		"$ref": "../molang/embeddedBeta.json"
+																		"$ref": "../molang/embedded.json"
 																	}
 																]
 															}
@@ -182,7 +182,7 @@
 							},
 							"patternProperties": {
 								"^\\d+(\\.\\d+)?$": {
-									"$ref": "../molang/embeddedBeta.json"
+									"$ref": "../molang/embedded.json"
 								}
 							}
 						}

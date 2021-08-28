@@ -1,0 +1,33 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "string",
+    "enum": [
+        "math.abs",
+        "math.acos",
+        "math.asin",
+        "math.atan",
+        "math.atan2",
+        "math.ceil",
+        "math.clamp",
+        "math.cos",
+        "math.die_roll",
+        "math.die_roll_integer",
+        "math.exp",
+        "math.floor",
+        "math.hermite_blend",
+        "math.lerp",
+        "math.lerprotate",
+        "math.ln",
+        "math.max",
+        "math.min",
+        "math.mod",
+        "math.pi",
+        "math.pow",
+        "math.random",
+        "math.random_integer",
+        "math.round",
+        "math.sin",
+        "math.sqrt",
+        "math.trunc"
+    ]
+}

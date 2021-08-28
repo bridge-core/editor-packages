@@ -28,7 +28,7 @@
 														},
 														"patternProperties": {
 															".+": {
-																"$ref": "../molang/embeddedBeta.json"
+																"$ref": "../molang/embedded.json"
 															}
 														}
 													}
@@ -44,7 +44,7 @@
 												},
 												"patternProperties": {
 													".+": {
-														"$ref": "../molang/embeddedBeta.json"
+														"$ref": "../molang/embedded.json"
 													}
 												}
 											}
@@ -53,14 +53,14 @@
 											"description": "Molang scripts to execute when entering this state.",
 											"type": "array",
 											"items": {
-												"$ref": "../molang/embeddedBeta.json"
+												"$ref": "../molang/embedded.json"
 											}
 										},
 										"on_exit": {
 											"description": "Molang scripts to execute when exiting this state.",
 											"type": "array",
 											"items": {
-												"$ref": "../molang/embeddedBeta.json"
+												"$ref": "../molang/embedded.json"
 											}
 										},
 										"blend_transition": {
@@ -79,7 +79,7 @@
 										"parameters": {
 											"type": "array",
 											"items": {
-												"$ref": "../molang/embeddedBeta.json"
+												"$ref": "../molang/embedded.json"
 											}
 										},
 										"variables": {
@@ -88,7 +88,7 @@
 													"additionalProperties": false,
 													"properties": {
 														"input": {
-															"$ref": "../molang/embeddedBeta.json"
+															"$ref": "../molang/embedded.json"
 														},
 														"remap_curve": {
 															"patternProperties": {

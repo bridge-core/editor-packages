@@ -363,7 +363,7 @@
 									},
 									"condition": {
 										"description": "Condition for placing associated Feature.",
-										"$ref": "../../molang/embeddedBeta.json"
+										"$ref": "../../molang/embedded.json"
 									}
 								}
 							}

@@ -1166,11 +1166,11 @@
 					"properties": {
 						"on_bred": {
 							"description": "A molang expression defining the amount of experience rewarded when this entity is successfully bred. An array of expressions adds each expression's result together for a final total.",
-							"$ref": "../../molang/embeddedBeta.json"
+							"$ref": "../../molang/embedded.json"
 						},
 						"on_death": {
 							"description": "A molang expression defining the amount of experience rewarded when this entity dies. An array of expressions adds each expression's result together for a final total.",
-							"$ref": "../../molang/embeddedBeta.json"
+							"$ref": "../../molang/embedded.json"
 						}
 					}
 				},
@@ -3013,7 +3013,7 @@
 								"impact_damage": {
 									"properties": {
 										"filter": {
-											"$ref": "../../molang/embeddedBeta.json"
+											"$ref": "../../molang/embedded.json"
 										},
 										"damage": {
 											"anyOf": [
@@ -3417,7 +3417,7 @@
 														"$ref": "../../general/degree.json"
 													},
 													{
-														"$ref": "../../molang/embeddedBeta.json"
+														"$ref": "../../molang/embedded.json"
 													}
 												]
 											}
@@ -3455,7 +3455,7 @@
 													"$ref": "../../general/degree.json"
 												},
 												{
-													"$ref": "../../molang/embeddedBeta.json"
+													"$ref": "../../molang/embedded.json"
 												}
 											]
 										}

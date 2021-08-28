@@ -124,7 +124,7 @@
 												},
 												"patternProperties": {
 													".+": {
-														"$ref": "../../molang/embeddedBeta.json"
+														"$ref": "../../molang/embedded.json"
 													}
 												}
 											},
@@ -165,7 +165,7 @@
 										},
 										"patternProperties": {
 											".+": {
-												"$ref": "../../molang/embeddedBeta.json"
+												"$ref": "../../molang/embedded.json"
 											}
 										}
 									},

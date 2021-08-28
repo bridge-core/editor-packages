@@ -38,11 +38,12 @@
 					"creationOfCustomBiomes",
 					"additionalModdingCapabilities",
 					"upcomingCreatorFeatures",
-					"enableGameTestFramework"
+					"enableGameTestFramework",
+					"experimentalMolangFeatures"
 				]
 			},
 			"patternProperties": {
-				"cavesAndCliffs|holidayCreatorFeatures|creationOfCustomBiomes|additionalModdingCapabilities|upcomingCreatorFeatures|enableGameTestFramework": {
+				"cavesAndCliffs|holidayCreatorFeatures|creationOfCustomBiomes|additionalModdingCapabilities|upcomingCreatorFeatures|enableGameTestFramework|experimentalMolangFeatures": {
 					"type": "boolean"
 				}
 			}

@@ -22,5 +22,9 @@
 	{
 		"icon": "mdi-ab-testing",
 		"id": "enableGameTestFramework"
+	},
+	{
+		"icon": "mdi-alpha-m",
+		"id": "experimentalMolangFeatures"
 	}
 ]

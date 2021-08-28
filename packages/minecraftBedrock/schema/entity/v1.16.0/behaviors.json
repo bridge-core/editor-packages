@@ -629,7 +629,7 @@
 					"type": "number"
 				},
 				"success_chance": {
-					"$ref": "../../molang/embeddedBeta.json"
+					"$ref": "../../molang/embedded.json"
 				},
 				"time_until_eat": {
 					"type": "number"

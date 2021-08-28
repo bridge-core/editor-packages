@@ -61,7 +61,7 @@
 									"type": "object",
 									"properties": {
 										"condition": {
-											"$ref": "/data/packages/minecraftBedrock/schema/molang/embeddedBeta.json"
+											"$ref": "/data/packages/minecraftBedrock/schema/molang/embedded.json"
 										},
 										"components": {
 											"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.17.10/components.json"

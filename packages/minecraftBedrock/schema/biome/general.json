@@ -116,7 +116,7 @@
 			"properties": {
 				"iterations": {
 					"description": "Number of scattered positions to generate.",
-					"$ref": "../molang/embeddedBeta.json"
+					"$ref": "../molang/embedded.json"
 				},
 				"scatter_chance": {
 					"anyOf": [

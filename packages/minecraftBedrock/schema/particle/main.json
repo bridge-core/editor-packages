@@ -50,10 +50,10 @@
 									}
 								},
 								"input": {
-									"$ref": "../molang/embeddedBeta.json"
+									"$ref": "../molang/embedded.json"
 								},
 								"horizontal_range": {
-									"$ref": "../molang/embeddedBeta.json"
+									"$ref": "../molang/embedded.json"
 								}
 							}
 						}

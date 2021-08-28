@@ -98,7 +98,7 @@
 								"type": "array"
 							},
 							"binding": {
-								"$ref": "../molang/embeddedBeta.json"
+								"$ref": "../molang/embedded.json"
 							},
 							"locators": {
 								"type": "object"

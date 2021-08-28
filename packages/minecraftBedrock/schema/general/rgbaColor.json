@@ -10,7 +10,7 @@
 					"type": "integer"
 				},
 				{
-					"$ref": "../molang/embeddedBeta.json"
+					"$ref": "../molang/embedded.json"
 				}
 			]
 		},
@@ -20,7 +20,7 @@
 					"type": "integer"
 				},
 				{
-					"$ref": "../molang/embeddedBeta.json"
+					"$ref": "../molang/embedded.json"
 				}
 			]
 		},
@@ -30,7 +30,7 @@
 					"type": "integer"
 				},
 				{
-					"$ref": "../molang/embeddedBeta.json"
+					"$ref": "../molang/embedded.json"
 				}
 			]
 		},
@@ -40,7 +40,7 @@
 					"type": "integer"
 				},
 				{
-					"$ref": "../molang/embeddedBeta.json"
+					"$ref": "../molang/embedded.json"
 				}
 			]
 		}

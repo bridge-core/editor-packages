@@ -38,4 +38,9 @@ To check whether an experimental toggle is enabled in a schema:
 
 If the experimental toggle is removed in Minecraft, the `if` boolean should be set to `true` in the corresponding file.
 
+To add an experimental toggle:
+- Specify an `icon` and `id` in `experimentalToggles.json`
+- Add a `name` and `description` in the `en.ts` locale file
+- Add a schemaScript to `schemaScript/general/experimentalGameplay` to generate the schema
+
 Experimental toggles can be added in the `experimentalToggles.json` file.

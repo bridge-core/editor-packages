@@ -1,0 +1,11 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "string",
+	"enum": [
+		"query.block_neighbor_has_all_tags",
+		"query.block_neighbor_has_any_tags",
+		"query.is_cooldown_type",
+		"query.cooldown_time",
+		"query.cooldown_time_remaining"
+	]
+}

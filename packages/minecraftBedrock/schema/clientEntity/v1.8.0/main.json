@@ -133,7 +133,7 @@
 										},
 										"patternProperties": {
 											".+": {
-												"$ref": "../../molang/embeddedBeta.json"
+												"$ref": "../../molang/embedded.json"
 											}
 										}
 									},

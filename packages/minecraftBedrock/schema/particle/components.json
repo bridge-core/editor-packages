@@ -16,11 +16,11 @@
 			"properties": {
 				"creation_expression": {
 					"description": "This is run once at emitter startup",
-					"$ref": "../molang/embeddedBeta.json"
+					"$ref": "../molang/embedded.json"
 				},
 				"per_update_expression": {
 					"description": "This is run once per emitter update",
-					"$ref": "../molang/embeddedBeta.json"
+					"$ref": "../molang/embedded.json"
 				}
 			}
 		},
@@ -29,7 +29,7 @@
 			"additionalProperties": false,
 			"properties": {
 				"num_particles": {
-					"$ref": "../molang/embeddedBeta.json"
+					"$ref": "../molang/embedded.json"
 				}
 			}
 		},
@@ -38,11 +38,11 @@
 			"properties": {
 				"spawn_rate": {
 					"description": "How often a particle is emitted, in particles/sec. Evaluated once per particle emitted",
-					"$ref": "../molang/embeddedBeta.json"
+					"$ref": "../molang/embedded.json"
 				},
 				"max_particles": {
 					"description": "Maximum number of particles that can be active at once for this emitter. Evaluated once per particle emitter loop",
-					"$ref": "../molang/embeddedBeta.json"
+					"$ref": "../molang/embedded.json"
 				}
 			}
 		},
@@ -51,7 +51,7 @@
 			"properties": {
 				"max_particles": {
 					"description": "Evaluated once per particle emitted",
-					"$ref": "../molang/embeddedBeta.json"
+					"$ref": "../molang/embedded.json"
 				}
 			}
 		},
@@ -60,11 +60,11 @@
 			"properties": {
 				"active_time": {
 					"description": "Emitter will emit particles for this time per loop. Evaluated once per particle emitter loop",
-					"$ref": "../molang/embeddedBeta.json"
+					"$ref": "../molang/embedded.json"
 				},
 				"sleep_time": {
 					"description": "Emitter will pause emitting particles for this time per loop. Evaluated once per particle emitter loop",
-					"$ref": "../molang/embeddedBeta.json"
+					"$ref": "../molang/embedded.json"
 				}
 			}
 		},
@@ -73,7 +73,7 @@
 			"properties": {
 				"active_time": {
 					"description": "How long the particles emit for evaluated once",
-					"$ref": "../molang/embeddedBeta.json"
+					"$ref": "../molang/embedded.json"
 				}
 			}
 		},
@@ -82,11 +82,11 @@
 			"properties": {
 				"activation_expression": {
 					"description": "When the expression is non-zero, the emitter will emit particles. Evaluated every frame",
-					"$ref": "../molang/embeddedBeta.json"
+					"$ref": "../molang/embedded.json"
 				},
 				"expiration_expression": {
 					"description": "Emitter will expire if the expression is non-zero. Evaluated every frame",
-					"$ref": "../molang/embeddedBeta.json"
+					"$ref": "../molang/embedded.json"
 				}
 			}
 		},
@@ -158,7 +158,7 @@
 					"minItems": 3,
 					"maxItems": 3,
 					"items": {
-						"$ref": "../molang/embeddedBeta.json"
+						"$ref": "../molang/embedded.json"
 					}
 				},
 				"direction": {
@@ -167,7 +167,7 @@
 					"minItems": 3,
 					"maxItems": 3,
 					"items": {
-						"$ref": "../molang/embeddedBeta.json"
+						"$ref": "../molang/embedded.json"
 					}
 				}
 			}
@@ -177,7 +177,7 @@
 			"properties": {
 				"radius": {
 					"description": "Sphere radius. Evaluated once per particle emitted",
-					"$ref": "../molang/embeddedBeta.json"
+					"$ref": "../molang/embedded.json"
 				},
 				"surface_only": {
 					"description": "Emit only from the surface of the sphere",
@@ -189,7 +189,7 @@
 					"minItems": 3,
 					"maxItems": 3,
 					"items": {
-						"$ref": "../molang/embeddedBeta.json"
+						"$ref": "../molang/embedded.json"
 					}
 				},
 				"direction": {
@@ -206,7 +206,7 @@
 							"minItems": 3,
 							"maxItems": 3,
 							"items": {
-								"$ref": "../molang/embeddedBeta.json"
+								"$ref": "../molang/embedded.json"
 							}
 						}
 					]
@@ -222,7 +222,7 @@
 					"minItems": 3,
 					"maxItems": 3,
 					"items": {
-						"$ref": "../molang/embeddedBeta.json"
+						"$ref": "../molang/embedded.json"
 					}
 				},
 				"surface_only": {
@@ -235,7 +235,7 @@
 					"minItems": 3,
 					"maxItems": 3,
 					"items": {
-						"$ref": "../molang/embeddedBeta.json"
+						"$ref": "../molang/embedded.json"
 					}
 				},
 				"direction": {
@@ -251,7 +251,7 @@
 							"minItems": 3,
 							"maxItems": 3,
 							"items": {
-								"$ref": "../molang/embeddedBeta.json"
+								"$ref": "../molang/embedded.json"
 							}
 						}
 					]
@@ -267,7 +267,7 @@
 					"minItems": 3,
 					"maxItems": 3,
 					"items": {
-						"$ref": "../molang/embeddedBeta.json"
+						"$ref": "../molang/embedded.json"
 					}
 				},
 				"direction": {
@@ -284,7 +284,7 @@
 							"minItems": 3,
 							"maxItems": 3,
 							"items": {
-								"$ref": "../molang/embeddedBeta.json"
+								"$ref": "../molang/embedded.json"
 							}
 						}
 					]
@@ -311,7 +311,7 @@
 							"minItems": 3,
 							"maxItems": 3,
 							"items": {
-								"$ref": "../molang/embeddedBeta.json"
+								"$ref": "../molang/embedded.json"
 							}
 						}
 					]
@@ -323,7 +323,7 @@
 			"properties": {
 				"radius": {
 					"description": "Disc radius. Evaluated once per particle emitted",
-					"$ref": "../molang/embeddedBeta.json"
+					"$ref": "../molang/embedded.json"
 				},
 				"plane_normal": {
 					"description": "Specifies the normal of the disc plane, the disc will be perpendicular to this direction",
@@ -355,7 +355,7 @@
 					"minItems": 3,
 					"maxItems": 3,
 					"items": {
-						"$ref": "../molang/embeddedBeta.json"
+						"$ref": "../molang/embedded.json"
 					}
 				},
 				"direction": {
@@ -371,7 +371,7 @@
 							"minItems": 3,
 							"maxItems": 3,
 							"items": {
-								"$ref": "../molang/embeddedBeta.json"
+								"$ref": "../molang/embedded.json"
 							}
 						}
 					]
@@ -383,11 +383,11 @@
 			"properties": {
 				"rotation": {
 					"description": "Specifies the initial rotation in degrees. Evaluated once",
-					"$ref": "../molang/embeddedBeta.json"
+					"$ref": "../molang/embedded.json"
 				},
 				"rotation_rate": {
 					"description": "Specifies the spin rate in degrees/second. Evaluated once",
-					"$ref": "../molang/embeddedBeta.json"
+					"$ref": "../molang/embedded.json"
 				}
 			}
 		},
@@ -399,11 +399,11 @@
 					"minItems": 3,
 					"maxItems": 3,
 					"items": {
-						"$ref": "../molang/embeddedBeta.json"
+						"$ref": "../molang/embedded.json"
 					}
 				},
 				{
-					"$ref": "../molang/embeddedBeta.json"
+					"$ref": "../molang/embedded.json"
 				}
 			]
 		},
@@ -416,20 +416,20 @@
 					"minItems": 3,
 					"maxItems": 3,
 					"items": {
-						"$ref": "../molang/embeddedBeta.json"
+						"$ref": "../molang/embedded.json"
 					}
 				},
 				"linear_drag_coefficient": {
 					"description": "Using the equation: acceleration = -linear_drag_coefficient*velocity where velocity is the current direction times speed. Think of this as air-drag. The higher the value, the more drag. Evaluated every frame",
-					"$ref": "../molang/embeddedBeta.json"
+					"$ref": "../molang/embedded.json"
 				},
 				"rotating_acceleration": {
 					"description": "Acceleration applies to the rotation speed of the particle, think of a disc spinning up or a smoke puff that starts rotating but slows down over time. Evaluated every frame. Acceleration is in degrees/sec/sec",
-					"$ref": "../molang/embeddedBeta.json"
+					"$ref": "../molang/embedded.json"
 				},
 				"rotation_drag_coefficient": {
 					"description": "Drag applied to retard rotation equation is rotation_acceleration += -rotation_rate*rotation_drag_coefficient. Useful to slow a rotation, or to limit the rotation acceleration. Think of a disc that speeds up (acceleration) but reaches a terminal speed (drag). Another use is if you have a particle growing in size, having the rotation slow down due to drag can add 'weight' to the particle's motion",
-					"$ref": "../molang/embeddedBeta.json"
+					"$ref": "../molang/embedded.json"
 				}
 			}
 		},
@@ -442,7 +442,7 @@
 					"minItems": 3,
 					"maxItems": 3,
 					"items": {
-						"$ref": "../molang/embeddedBeta.json"
+						"$ref": "../molang/embedded.json"
 					}
 				},
 				"direction": {
@@ -451,12 +451,12 @@
 					"minItems": 3,
 					"maxItems": 3,
 					"items": {
-						"$ref": "../molang/embeddedBeta.json"
+						"$ref": "../molang/embedded.json"
 					}
 				},
 				"rotation": {
 					"description": "Directly set the rotation of the particle. Evaluated every frame",
-					"$ref": "../molang/embeddedBeta.json"
+					"$ref": "../molang/embedded.json"
 				}
 			}
 		},
@@ -465,7 +465,7 @@
 			"properties": {
 				"enabled": {
 					"description": "Enables motion collision on the particle. Evaluates every frame",
-					"$ref": "../molang/embeddedBeta.json"
+					"$ref": "../molang/embedded.json"
 				},
 				"expire_on_contact": {
 					"description": "Triggers expiration on contact if true",
@@ -511,7 +511,7 @@
 					"minItems": 2,
 					"maxItems": 2,
 					"items": {
-						"$ref": "../molang/embeddedBeta.json"
+						"$ref": "../molang/embedded.json"
 					}
 				},
 				"facing_camera_mode": {
@@ -547,7 +547,7 @@
 							"minItems": 3,
 							"maxItems": 3,
 							"items": {
-								"$ref": "../molang/embeddedBeta.json"
+								"$ref": "../molang/embedded.json"
 							}
 						}
 					}
@@ -568,7 +568,7 @@
 							"minItems": 2,
 							"maxItems": 2,
 							"items": {
-								"$ref": "../molang/embeddedBeta.json"
+								"$ref": "../molang/embedded.json"
 							}
 						},
 						"uv_size": {
@@ -576,7 +576,7 @@
 							"minItems": 2,
 							"maxItems": 2,
 							"items": {
-								"$ref": "../molang/embeddedBeta.json"
+								"$ref": "../molang/embedded.json"
 							}
 						},
 						"flipbook": {
@@ -588,7 +588,7 @@
 									"minItems": 2,
 									"maxItems": 2,
 									"items": {
-										"$ref": "../molang/embeddedBeta.json"
+										"$ref": "../molang/embedded.json"
 									}
 								},
 								"size_UV": {
@@ -611,7 +611,7 @@
 									"type": "number"
 								},
 								"max_frame": {
-									"$ref": "../molang/embeddedBeta.json"
+									"$ref": "../molang/embedded.json"
 								},
 								"stretch_to_lifetime": {
 									"description": "Optional, adjust fps to match lifetime of particle. default=false",
@@ -648,7 +648,7 @@
 										"minItems": 4,
 										"maxItems": 4,
 										"items": {
-											"$ref": "../molang/embeddedBeta.json"
+											"$ref": "../molang/embedded.json"
 										}
 									}
 								},
@@ -663,7 +663,7 @@
 							]
 						},
 						"interpolant": {
-							"$ref": "../molang/embeddedBeta.json"
+							"$ref": "../molang/embedded.json"
 						}
 					}
 				}
@@ -677,11 +677,11 @@
 			"properties": {
 				"expiration_expression": {
 					"description": "This expression makes the particle expire when true (non-zero). The float/expr is evaluated once per particle. Evaluated every frame",
-					"$ref": "../molang/embeddedBeta.json"
+					"$ref": "../molang/embedded.json"
 				},
 				"max_lifetime": {
 					"description": "Alternate way to express lifetime particle will expire after this much time. Evaluated once",
-					"$ref": "../molang/embeddedBeta.json"
+					"$ref": "../molang/embedded.json"
 				}
 			}
 		},
@@ -742,10 +742,10 @@
 			"additionalProperties": false,
 			"properties": {
 				"per_update_expression": {
-					"$ref": "../molang/embeddedBeta.json"
+					"$ref": "../molang/embedded.json"
 				},
 				"per_render_expression": {
-					"$ref": "../molang/embeddedBeta.json"
+					"$ref": "../molang/embedded.json"
 				}
 			}
 		}
