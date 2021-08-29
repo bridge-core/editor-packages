@@ -1,6 +1,5 @@
 const config = await getProjectConfig()
 const expId = 'experimentalMolangFeatures'
-console.log(expId, config.experimentalGameplay && config.experimentalGameplay[expId])
 
 return {
 	type: 'custom',
