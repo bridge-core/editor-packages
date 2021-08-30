@@ -13,6 +13,7 @@
 						"loop": {
 							"enum": [true, false, "hold_on_last_frame"]
 						},
+						"loop_delay": { "$ref": "../molang/embedded.json" },
 						"anim_time_update": {
 							"$ref": "../molang/embedded.json"
 						},
