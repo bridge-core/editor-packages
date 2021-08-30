@@ -1,5 +1,5 @@
 declare interface TemplateContext {
-	mode: 'build' | 'dev'
+	compilerMode: 'build' | 'dev'
 	create: (template: any, location: string) => void
 	animation: (animation: any, condition?: string | false) => void
 	animationController: (
