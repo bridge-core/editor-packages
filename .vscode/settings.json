@@ -2,5 +2,16 @@
 	"deno.enable": true,
 	"deno.lint": false,
 	"deno.unstable": false,
-	"deno.importMap": "importMap.json"
+	"deno.importMap": "importMap.json",
+
+	"json.schemas": [
+		{
+			"fileMatch": ["packages/*/preset/**/manifest.json"],
+			"url": "/packages/common/schema/bridge/preset/main.json"
+		},
+		{
+			"fileMatch": ["packages/*/themes/**/*.json", "packages/*/themes/*.json"],
+			"url": "/packages/common/schema/bridge/theme/main.json"
+		}
+	]
 }

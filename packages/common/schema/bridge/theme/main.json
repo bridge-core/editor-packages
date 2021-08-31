@@ -5,7 +5,7 @@
 		"style_object": {
 			"properties": {
 				"color": {
-					"$ref": "../../general/hexColor.json"
+					"type": "string"
 				},
 				"text_decoration": {
 					"type": "string",
@@ -23,6 +23,10 @@
 			"description": "UUID for your theme.",
 			"type": "string"
 		},
+		"name": {
+			"description": "Name of the theme.",
+			"type": "string"
+		},
 		"colorScheme": {
 			"enum": ["dark", "light"],
 			"description": "The color scheme of this theme.",
@@ -32,64 +36,49 @@
 			"description": "Colors of this theme.",
 			"properties": {
 				"text": {
-					"description": "Text color.",
-					"$ref": "../../general/hexColor.json"
+					"description": "Text color."
 				},
 				"primary": {
-					"description": "Color; affects menu icons, active tabs, MoLang edit icons, and more.",
-					"$ref": "../../general/hexColor.json"
+					"description": "Color; affects menu icons, active tabs, MoLang edit icons, and more."
 				},
 				"secondary": {
-					"description": "Color.",
-					"$ref": "../../general/hexColor.json"
+					"description": "Color."
 				},
 				"accent": {
-					"description": "Color; affects toolbar icons.",
-					"$ref": "../../general/hexColor.json"
+					"description": "Color; affects toolbar icons."
 				},
 				"error": {
-					"description": "Color; affects hovered errors, ! error marks, close button on close prompt, and more.",
-					"$ref": "../../general/hexColor.json"
+					"description": "Color; affects hovered errors, ! error marks, close button on close prompt, and more."
 				},
 				"info": {
-					"description": "Color.",
-					"$ref": "../../general/hexColor.json"
+					"description": "Color."
 				},
 				"success": {
-					"description": "Color; affects save button on close prompt.",
-					"$ref": "../../general/hexColor.json"
+					"description": "Color; affects save button on close prompt."
 				},
 				"warning": {
-					"description": "Color.",
-					"$ref": "../../general/hexColor.json"
+					"description": "Color."
 				},
 				"background": {
-					"description": "Color; affects background of editor.",
-					"$ref": "../../general/hexColor.json"
+					"description": "Color; affects background of editor."
 				},
 				"sidebarNavigation": {
-					"description": "Color; affects navigation sidebar.",
-					"$ref": "../../general/hexColor.json"
+					"description": "Color; affects navigation sidebar."
 				},
 				"expandedSidebar": {
-					"description": "Color; affects sidebar containing folders and files.",
-					"$ref": "../../general/hexColor.json"
+					"description": "Color; affects sidebar containing folders and files."
 				},
 				"menu": {
-					"description": "Color; affects menus.",
-					"$ref": "../../general/hexColor.json"
+					"description": "Color; affects menus."
 				},
 				"toolbar": {
-					"description": "Color; affects toolbar.",
-					"$ref": "../../general/hexColor.json"
+					"description": "Color; affects toolbar."
 				},
 				"footer": {
-					"description": "Color; affects footer containing notifications.",
-					"$ref": "../../general/hexColor.json"
+					"description": "Color; affects footer containing notifications."
 				},
 				"tooltip": {
-					"description": "Color; affects the tooltip that shows when you hover over buttons.",
-					"$ref": "../../general/hexColor.json"
+					"description": "Color; affects the tooltip that shows when you hover over buttons."
 				}
 			}
 		},
@@ -142,7 +131,7 @@
 			"description": "Colors for the monaco editor.",
 			"patternProperties": {
 				".*": {
-					"$ref": "../../general/hexColor.json"
+					"type": "string"
 				}
 			}
 		}

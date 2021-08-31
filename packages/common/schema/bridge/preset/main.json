@@ -20,48 +20,47 @@
 		"category": {
 			"type": "string"
 		},
-		"requiredModules": {
-			"type": "array",
-			"items": {
-				"type": "string",
-				"enum": ["gameTest", "scripting"]
-			}
-		},
-		"targetVersion": {
-			"type": "array",
-			"minItems": 2,
-			"maxItems": 2,
-			"items": [
-				{
-					"type": "string",
-					"description": "Format version"
+		"requires": {
+			"description": "Preset requirements.",
+			"properties": {
+				"targetVersion": {
+					"type": "array",
+					"minItems": 2,
+					"maxItems": 2,
+					"items": [
+						{
+							"type": "string",
+							"description": "Format version"
+						},
+						{
+							"type": "string",
+							"description": "Operator",
+							"enum": [">", ">=", "=", "<", "<="]
+						}
+					]
 				},
-				{
-					"type": "string",
-					"description": "Operator",
-					"enum": [">", ">=", "=", "<", "<="]
+				"packTypes": {
+					"type": "array",
+					"items": {
+						"type": "string",
+						"enum": [
+							"worldTemplate",
+							"behaviorPack",
+							"resourcePack",
+							"skinPack"
+						]
+					}
+				},
+				"experimentalGameplay": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
 				}
-			]
-		},
-		"packTypes": {
-			"type": "array",
-			"items": {
-				"type": "string",
-				"enum": [
-					"worldTemplate",
-					"behaviorPack",
-					"resourcePack",
-					"skinPack"
-				]
 			}
 		},
 		"additionalModels": {
-			"type": "object",
-			"patternProperties": {
-				".+": {
-					"type": "string"
-				}
-			}
+			"type": "object"
 		},
 		"fields": {
 			"type": "array",
@@ -170,34 +169,41 @@
 		"createFiles": {
 			"type": "array",
 			"items": {
-				"type": "array",
-				"minItems": 2,
-				"maxItems": 3,
-				"items": [
+				"anyOf": [
 					{
-						"type": "string",
-						"description": "File name in the preset folder to create."
-					},
-					{
-						"type": "string",
-						"description": "Sets the file path, relative to the project's folder, of where to create the file"
-					},
-					{
-						"description": "Options",
-						"type": "object",
-						"properties": {
-							"inject": {
-								"type": "array",
-								"items": {
-									"description": "Variable name defined under fields to inject into the file and file path.",
-									"type": "string"
-								}
+						"type": "array",
+						"minItems": 2,
+						"maxItems": 3,
+						"items": [
+							{
+								"type": "string",
+								"description": "File name in the preset folder to create."
 							},
-							"openFile": {
-								"type": "boolean",
-								"description": "Whether to open the file on preset creation."
+							{
+								"type": "string",
+								"description": "Sets the file path, relative to the project's folder, of where to create the file"
+							},
+							{
+								"description": "Options",
+								"type": "object",
+								"properties": {
+									"inject": {
+										"type": "array",
+										"items": {
+											"description": "Variable name defined under fields to inject into the file and file path.",
+											"type": "string"
+										}
+									},
+									"openFile": {
+										"type": "boolean",
+										"description": "Whether to open the file on preset creation."
+									}
+								}
 							}
-						}
+						]
+					},
+					{
+						"type": "string"
 					}
 				]
 			}
