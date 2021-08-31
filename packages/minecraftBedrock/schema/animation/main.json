@@ -13,6 +13,7 @@
 				"^animation\\..+$": {
 					"properties": {
 						"animation_length": { "type": "number" },
+						"start_delay": { "$ref": "../molang/embedded.json" },
 						"loop": {
 							"enum": [true, false, "hold_on_last_frame"]
 						},
