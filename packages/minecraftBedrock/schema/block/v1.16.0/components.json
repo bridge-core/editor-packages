@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"description": "Components allow for block functionality.",
-	"allOf": [
+	"anyOf": [
 		{
 			"$ref": "../dynamic/customComponents.json"
 		},
