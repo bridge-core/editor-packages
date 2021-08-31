@@ -7,171 +7,207 @@
 			"const": "1.12"
 		}
 	},
-	"anyOf": [
+	"allOf": [
 		{
-			"properties": {
-				"minecraft:recipe_furnace": {
-					"type": "object",
+			"anyOf": [
+				{
 					"properties": {
-						"description": {
-							"$ref": "./general.json#/definitions/description"
-						},
-						"tags": {
-							"$ref": "./general.json#/definitions/tags"
-						},
-						"group": {
-							"$ref": "./general.json#/definitions/group"
-						},
-						"input": {
-							"$ref": "./general.json#/definitions/input"
-						},
-						"output": {
-							"$ref": "./general.json#/definitions/output"
+						"minecraft:recipe_furnace": {
+							"additionalProperties": false,
+							"type": "object",
+							"properties": {
+								"description": {
+									"$ref": "./general.json#/definitions/description"
+								},
+								"tags": {
+									"$ref": "./general.json#/definitions/tags"
+								},
+								"group": {
+									"$ref": "./general.json#/definitions/group"
+								},
+								"input": {
+									"$ref": "./general.json#/definitions/input"
+								},
+								"output": {
+									"$ref": "./general.json#/definitions/output"
+								}
+							}
 						}
 					}
-				}
-			}
-		},
-		{
-			"properties": {
-				"minecraft:recipe_shaped": {
-					"type": "object",
+				},
+				{
 					"properties": {
-						"description": {
-							"$ref": "./general.json#/definitions/description"
-						},
-						"tags": {
-							"$ref": "./general.json#/definitions/tags"
-						},
-						"group": {
-							"$ref": "./general.json#/definitions/group"
-						},
-						"pattern": {
-							"type": "array",
-							"description": "Characters that represent a pattern to be defined by keys",
-							"maxItems": 3,
-							"items": {
-								"type": "string",
-								"minLength": 3,
-								"maxLength": 3
-							}
-						},
-						"key": {
+						"minecraft:recipe_shaped": {
+							"additionalProperties": false,
 							"type": "object",
-							"description": "Keys to map characters to item names to be used in 'pattern'",
-							"propertyNames": {
-								"$ref": "./dynamic/currentContext/recipeKey.json"
-							},
-							"patternProperties": {
-								".*": {
+							"properties": {
+								"description": {
+									"$ref": "./general.json#/definitions/description"
+								},
+								"tags": {
+									"$ref": "./general.json#/definitions/tags"
+								},
+								"group": {
+									"$ref": "./general.json#/definitions/group"
+								},
+								"pattern": {
+									"type": "array",
+									"description": "Characters that represent a pattern to be defined by keys",
+									"maxItems": 3,
+									"items": {
+										"type": "string",
+										"minLength": 3,
+										"maxLength": 3
+									}
+								},
+								"key": {
 									"type": "object",
-									"properties": {
-										"item": {
-											"$ref": "../general/vanilla/identifiers.json#/definitions/item_identifiers"
-										},
-										"data": {
-											"anyOf": [
-												{
-													"type": "integer"
+									"description": "Keys to map characters to item names to be used in 'pattern'",
+									"propertyNames": {
+										"$ref": "./dynamic/currentContext/recipeKey.json"
+									},
+									"patternProperties": {
+										".*": {
+											"type": "object",
+											"properties": {
+												"item": {
+													"$ref": "../general/vanilla/identifiers.json#/definitions/item_identifiers"
 												},
-												{
-													"$ref": "../molang/embedded.json"
+												"data": {
+													"anyOf": [
+														{
+															"type": "integer"
+														},
+														{
+															"$ref": "../molang/embedded.json"
+														}
+													]
 												}
-											]
+											}
 										}
 									}
+								},
+								"result": {
+									"$ref": "./general.json#/definitions/result"
 								}
 							}
-						},
-						"result": {
-							"$ref": "./general.json#/definitions/result"
 						}
 					}
-				}
-			}
-		},
-		{
-			"properties": {
-				"minecraft:recipe_shapeless": {
-					"type": "object",
+				},
+				{
 					"properties": {
-						"description": {
-							"$ref": "./general.json#/definitions/description"
-						},
-						"tags": {
-							"$ref": "./general.json#/definitions/tags"
-						},
-						"group": {
-							"$ref": "./general.json#/definitions/group"
-						},
-						"ingredients": {
-							"type": "array",
-							"items": {
-								"type": "object",
-								"properties": {
-									"item": {
-										"description": "Provides the identifier for the result item",
-										"$ref": "../general/vanilla/identifiers.json#/definitions/item_identifiers"
-									},
-									"data": {
-										"description": "Sets the result item's data value",
-										"type": "integer"
-									},
-									"count": {
-										"type": "integer",
-										"description": "Sets how many of the result item should be output"
+						"minecraft:recipe_shapeless": {
+							"additionalProperties": false,
+							"type": "object",
+							"properties": {
+								"description": {
+									"$ref": "./general.json#/definitions/description"
+								},
+								"tags": {
+									"$ref": "./general.json#/definitions/tags"
+								},
+								"group": {
+									"$ref": "./general.json#/definitions/group"
+								},
+								"ingredients": {
+									"type": "array",
+									"items": {
+										"type": "object",
+										"properties": {
+											"item": {
+												"description": "Provides the identifier for the result item",
+												"$ref": "../general/vanilla/identifiers.json#/definitions/item_identifiers"
+											},
+											"data": {
+												"description": "Sets the result item's data value",
+												"type": "integer"
+											},
+											"count": {
+												"type": "integer",
+												"description": "Sets how many of the result item should be output"
+											}
+										}
 									}
+								},
+								"result": {
+									"$ref": "./general.json#/definitions/result"
 								}
 							}
-						},
-						"result": {
-							"$ref": "./general.json#/definitions/result"
+						}
+					}
+				},
+				{
+					"properties": {
+						"minecraft:recipe_brewing_mix": {
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"description": {
+									"$ref": "./general.json#/definitions/description"
+								},
+								"tags": {
+									"$ref": "./general.json#/definitions/tags"
+								},
+								"input": {
+									"$ref": "./general.json#/definitions/input"
+								},
+								"output": {
+									"$ref": "./general.json#/definitions/output"
+								},
+								"reagent": {
+									"$ref": "./general.json#/definitions/reagent"
+								}
+							}
+						}
+					}
+				},
+				{
+					"properties": {
+						"minecraft:recipe_brewing_container": {
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"description": {
+									"$ref": "./general.json#/definitions/description"
+								},
+								"tags": {
+									"$ref": "./general.json#/definitions/tags"
+								},
+								"input": {
+									"$ref": "./general.json#/definitions/input"
+								},
+								"output": {
+									"$ref": "./general.json#/definitions/output"
+								},
+								"reagent": {
+									"$ref": "./general.json#/definitions/reagent"
+								}
+							}
 						}
 					}
 				}
-			}
+			]
 		},
 		{
-			"properties": {
-				"minecraft:recipe_brewing_mix": {
-					"properties": {
-						"description": {
-							"$ref": "./general.json#/definitions/description"
-						},
-						"tags": {
-							"$ref": "./general.json#/definitions/tags"
-						},
-						"input": {
-							"$ref": "./general.json#/definitions/input"
-						},
-						"output": {
-							"$ref": "./general.json#/definitions/output"
-						},
-						"reagent": {
-							"$ref": "./general.json#/definitions/reagent"
-						}
-					}
-				}
-			}
-		},
-		{
-			"properties": {
-				"minecraft:recipe_brewing_container": {
-					"properties": {
-						"description": {
-							"$ref": "./general.json#/definitions/description"
-						},
-						"tags": {
-							"$ref": "./general.json#/definitions/tags"
-						},
-						"input": {
-							"$ref": "./general.json#/definitions/input"
-						},
-						"output": {
-							"$ref": "./general.json#/definitions/output"
-						},
-						"reagent": {
-							"$ref": "./general.json#/definitions/reagent"
+			"$ref": "../project/experimentalGameplay/educationEdition.json",
+			"then": {
+				"properties": {
+					"minecraft:recipe_material_reduction": {
+						"type": "object",
+						"additionalProperties": false,
+						"properties": {
+							"description": {
+								"$ref": "/data/packages/minecraftBedrock/schema/recipe/general.json#/definitions/description"
+							},
+							"tags": {
+								"$ref": "/data/packages/minecraftBedrock/schema/recipe/general.json#/definitions/tags"
+							},
+							"input": {
+								"$ref": "/data/packages/minecraftBedrock/schema/recipe/general.json#/definitions/input"
+							},
+							"output": {
+								"$ref": "/data/packages/minecraftBedrock/schema/recipe/general.json#/definitions/result"
+							}
 						}
 					}
 				}

@@ -3540,6 +3540,77 @@
 					]
 				}
 			]
+		},
+		{
+			"experimentalGameplay": ["educationEdition"],
+			"commands": [
+				{
+					"commandName": "ability",
+					"description": "Grant an ability to the target.",
+					"arguments": [
+						{
+							"type": "selector",
+							"argumentName": "Target"
+						},
+						{
+							"type": "string",
+							"argumentName": "ability",
+							"additionalData": {
+								"values": ["mayfly"]
+							},
+							"description": "This allows players to fly around the world, or be limited to ground travel only."
+						},
+						{
+							"type": "boolean",
+							"argumentName": "value"
+						}
+					]
+				},
+				{
+					"commandName": "ability",
+					"description": "Grant an ability to the target.",
+					"arguments": [
+						{
+							"type": "selector",
+							"argumentName": "Target"
+						},
+						{
+							"type": "string",
+							"argumentName": "ability",
+							"additionalData": {
+								"values": ["mute"]
+							},
+							"description": "If you want to prevent a target from talking, you can set this ability to true. The user(s) will see the message 'chat has been disabled'."
+						},
+						{
+							"type": "boolean",
+							"argumentName": "value"
+						}
+					]
+				},
+				{
+					"commandName": "ability",
+					"description": "Grant an ability to the target.",
+					"arguments": [
+						{
+							"type": "selector",
+							"argumentName": "Target"
+						},
+						{
+							"type": "string",
+							"argumentName": "ability",
+							"additionalData": {
+								"values": ["worldbuilder"]
+							},
+							"description": "You can control who is allowed to build and change the world with this command."
+						},
+						{
+							"type": "boolean",
+							"argumentName": "value"
+						}
+					]
+				}
+			]
 		}
 	]
 }

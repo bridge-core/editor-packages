@@ -5,7 +5,7 @@
 	"category": "fileType.simpleFile",
 	"requires": {
 		"packTypes": ["behaviorPack"],
-		"experimentalGameplay": ["!educationEdition"]
+		"experimentalGameplay": ["educationEdition"]
 	},
 	"additionalModels": {
 		"PRESET_PATH": "BP/recipes/",
@@ -15,7 +15,8 @@
 			["Shapeless Recipe", "shapeless.json"],
 			["Furnace Recipe", "furnace.json"],
 			["Brewing Mix Recipe", "brewingMix.json"],
-			["Brewing Container Recipe", "brewingContainer.json"]
+			["Brewing Container Recipe", "brewingContainer.json"],
+			["Material Reducer Recipe", "materialReducer.json"]
 		]
 	},
 	"fields": [
@@ -37,7 +38,8 @@
 					"Shapeless Recipe",
 					"Furnace Recipe",
 					"Brewing Mix Recipe",
-					"Brewing Container Recipe"
+					"Brewing Container Recipe",
+					"Material Reducer Recipe"
 				] 
 			}
 		]

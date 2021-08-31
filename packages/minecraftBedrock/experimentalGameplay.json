@@ -26,5 +26,9 @@
 	{
 		"icon": "mdi-alpha-m",
 		"id": "experimentalMolangFeatures"
+	},
+	{
+		"icon": "mdi-school-outline",
+		"id": "educationEdition"
 	}
 ]

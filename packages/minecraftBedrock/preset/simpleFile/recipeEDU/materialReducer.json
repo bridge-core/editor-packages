@@ -1,0 +1,11 @@
+{
+    "format_version": "",
+    "minecraft:recipe_material_reduction": {
+        "description": {
+            "identifier": ""
+        },
+        "input": {},
+        "output": {},
+        "tags": ["material_reducer"]
+    }
+}

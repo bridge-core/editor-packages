@@ -2941,233 +2941,260 @@
 					"additionalProperties": false,
 					"properties": {
 						"on_hit": {
-							"properties": {
-								"definition_event": {
+							"allOf": [
+								{
 									"properties": {
-										"affect_projectile": {
-											"type": "boolean"
-										},
-										"affect_shooter": {
-											"type": "boolean"
-										},
-										"affect_target": {
-											"type": "boolean"
-										},
-										"affect_splash_area": {
-											"type": "boolean"
-										},
-										"splash_area": {
-											"type": "number"
-										},
-										"event_trigger": {
-											"$ref": "../general/eventDefinition.json"
-										}
-									}
-								},
-								"grant_xp": {
-									"properties": {
-										"minXP": {
-											"type": "number"
-										},
-										"maxXP": {
-											"type": "number"
-										},
-										"xp": {
-											"type": "number"
-										}
-									}
-								},
-								"spawn_aoe_cloud": {
-									"properties": {
-										"radius": {
-											"type": "number"
-										},
-										"radius_on_use": {
-											"type": "number"
-										},
-										"potion": {
-											"$ref": "../../general/vanilla/potionIds.json"
-										},
-										"particle": {
-											"$ref": "../../general/particleName.json"
-										},
-										"duration": {
-											"type": "number"
-										},
-										"color": {
-											"type": "array",
-											"minItems": 3,
-											"maxItems": 3,
-											"items": {
-												"type": "number"
+										"definition_event": {
+											"properties": {
+												"affect_projectile": {
+													"type": "boolean"
+												},
+												"affect_shooter": {
+													"type": "boolean"
+												},
+												"affect_target": {
+													"type": "boolean"
+												},
+												"affect_splash_area": {
+													"type": "boolean"
+												},
+												"splash_area": {
+													"type": "number"
+												},
+												"event_trigger": {
+													"$ref": "../general/eventDefinition.json"
+												}
 											}
 										},
-										"affect_owner": {
-											"type": "boolean"
+										"grant_xp": {
+											"properties": {
+												"minXP": {
+													"type": "number"
+												},
+												"maxXP": {
+													"type": "number"
+												},
+												"xp": {
+													"type": "number"
+												}
+											}
 										},
-										"reapplication_delay": {
-											"type": "number"
-										}
-									}
-								},
-								"impact_damage": {
-									"properties": {
-										"filter": {
-											"$ref": "../../molang/embedded.json"
-										},
-										"damage": {
-											"anyOf": [
-												{
+										"spawn_aoe_cloud": {
+											"properties": {
+												"radius": {
+													"type": "number"
+												},
+												"radius_on_use": {
+													"type": "number"
+												},
+												"potion": {
+													"$ref": "../../general/vanilla/potionIds.json"
+												},
+												"particle": {
+													"$ref": "../../general/particleName.json"
+												},
+												"duration": {
+													"type": "number"
+												},
+												"color": {
 													"type": "array",
-													"minItems": 2,
-													"maxItems": 2,
+													"minItems": 3,
+													"maxItems": 3,
 													"items": {
-														"type": "integer"
+														"type": "number"
 													}
 												},
-												{
-													"type": "integer"
+												"affect_owner": {
+													"type": "boolean"
+												},
+												"reapplication_delay": {
+													"type": "number"
 												}
-											]
+											}
 										},
-										"knockback": {
-											"description": "If true, the projectile will knock back the entity it hits.",
-											"type": "boolean"
+										"impact_damage": {
+											"properties": {
+												"filter": {
+													"$ref": "../../molang/embedded.json"
+												},
+												"damage": {
+													"anyOf": [
+														{
+															"type": "array",
+															"minItems": 2,
+															"maxItems": 2,
+															"items": {
+																"type": "integer"
+															}
+														},
+														{
+															"type": "integer"
+														}
+													]
+												},
+												"knockback": {
+													"description": "If true, the projectile will knock back the entity it hits.",
+													"type": "boolean"
+												},
+												"semi_random_diff_damage": {
+													"type": "boolean"
+												},
+												"destroy_on_hit": {
+													"description": "If true, this entity will be destroyed when hit.",
+													"type": "boolean"
+												},
+												"max_critical_damage": {
+													"type": "number"
+												},
+												"min_critical_damage": {
+													"type": "number"
+												},
+												"power_multiplier": {
+													"type": "number"
+												},
+												"should_bounce": {
+													"type": "boolean"
+												},
+												"channeling": {
+													"type": "boolean"
+												},
+												"set_last_hurt_requires_damage": {
+													"type": "boolean"
+												},
+												"destroy_on_hit_requres_damage": {
+													"type": "boolean"
+												}
+											}
 										},
-										"semi_random_diff_damage": {
-											"type": "boolean"
+										"spawn_chance": {
+											"properties": {
+												"first_spawn_percent_chance": {
+													"type": "number"
+												},
+												"first_spawn_chance": {
+													"type": "number"
+												},
+												"second_spawn_percent_chance": {
+													"type": "number"
+												},
+												"second_spawn_chance": {
+													"type": "number"
+												},
+												"first_spawn_count": {
+													"type": "number"
+												},
+												"second_spawn_count": {
+													"type": "number"
+												},
+												"spawn_mob": {
+													"$ref": "../../general/reference/identifiers.json#/definitions/entity_identifiers"
+												},
+												"spawn_definition": {
+													"$ref": "../../general/reference/identifiers.json#/definitions/entity_identifiers"
+												},
+												"spawn_baby": {
+													"type": "boolean"
+												}
+											}
 										},
-										"destroy_on_hit": {
-											"description": "If true, this entity will be destroyed when hit.",
-											"type": "boolean"
+										"mob_effect": {
+											"properties": {
+												"effect": {
+													"$ref": "../../general/vanilla/effectName.json"
+												},
+												"duration": {
+													"type": "number"
+												},
+												"duration_easy": {
+													"type": "number"
+												},
+												"duration_normal": {
+													"type": "number"
+												},
+												"duration_hard": {
+													"type": "number"
+												},
+												"amplifier": {
+													"type": "number"
+												}
+											}
 										},
-										"max_critical_damage": {
-											"type": "number"
+										"stick_in_ground": {
+											"properties": {
+												"shake_time": {
+													"type": "number"
+												}
+											}
 										},
-										"min_critical_damage": {
-											"type": "number"
+										"thrown_potion_effect": {
+											"additionalProperties": false
 										},
-										"power_multiplier": {
-											"type": "number"
+										"douse_fire": {
+											"additionalProperties": false
 										},
-										"should_bounce": {
-											"type": "boolean"
+										"arrow_effect": {
+											"additionalProperties": false
 										},
-										"channeling": {
-											"type": "boolean"
+										"remove_on_hit": {
+											"additionalProperties": false
 										},
-										"set_last_hurt_requires_damage": {
-											"type": "boolean"
+										"teleport_owner": {
+											"additionalProperties": false
 										},
-										"destroy_on_hit_requres_damage": {
-											"type": "boolean"
+										"particle_on_hit": {
+											"properties": {
+												"particle_type": {
+													"$ref": "../../general/particleName.json"
+												},
+												"num_particles": {
+													"type": "number"
+												},
+												"on_entity_hit": {
+													"type": "boolean"
+												},
+												"on_other_hit": {
+													"type": "boolean"
+												}
+											}
+										},
+										"catch_fire": {
+											"properties": {
+												"fire_affected_by_griefing": {
+													"description": "If true, whether the projectile causes fire is affected by the mob griefing game rule.",
+													"type": "boolean"
+												},
+												"on_fire_time": {
+													"description": "Time in seconds that the entity hit will be on fire for.",
+													"type": "number"
+												}
+											}
 										}
 									}
 								},
-								"spawn_chance": {
-									"properties": {
-										"first_spawn_percent_chance": {
-											"type": "number"
-										},
-										"first_spawn_chance": {
-											"type": "number"
-										},
-										"second_spawn_percent_chance": {
-											"type": "number"
-										},
-										"second_spawn_chance": {
-											"type": "number"
-										},
-										"first_spawn_count": {
-											"type": "number"
-										},
-										"second_spawn_count": {
-											"type": "number"
-										},
-										"spawn_mob": {
-											"$ref": "../../general/reference/identifiers.json#/definitions/entity_identifiers"
-										},
-										"spawn_definition": {
-											"$ref": "../../general/reference/identifiers.json#/definitions/entity_identifiers"
-										},
-										"spawn_baby": {
-											"type": "boolean"
-										}
-									}
-								},
-								"mob_effect": {
-									"properties": {
-										"effect": {
-											"$ref": "../../general/vanilla/effectName.json"
-										},
-										"duration": {
-											"type": "number"
-										},
-										"duration_easy": {
-											"type": "number"
-										},
-										"duration_normal": {
-											"type": "number"
-										},
-										"duration_hard": {
-											"type": "number"
-										},
-										"amplifier": {
-											"type": "number"
-										}
-									}
-								},
-								"stick_in_ground": {
-									"properties": {
-										"shake_time": {
-											"type": "number"
-										}
-									}
-								},
-								"thrown_potion_effect": {
-									"additionalProperties": false
-								},
-								"douse_fire": {
-									"additionalProperties": false
-								},
-								"arrow_effect": {
-									"additionalProperties": false
-								},
-								"remove_on_hit": {
-									"additionalProperties": false
-								},
-								"teleport_owner": {
-									"additionalProperties": false
-								},
-								"particle_on_hit": {
-									"properties": {
-										"particle_type": {
-											"$ref": "../../general/particleName.json"
-										},
-										"num_particles": {
-											"type": "number"
-										},
-										"on_entity_hit": {
-											"type": "boolean"
-										},
-										"on_other_hit": {
-											"type": "boolean"
-										}
-									}
-								},
-								"catch_fire": {
-									"properties": {
-										"fire_affected_by_griefing": {
-											"description": "If true, whether the projectile causes fire is affected by the mob griefing game rule.",
-											"type": "boolean"
-										},
-										"on_fire_time": {
-											"description": "Time in seconds that the entity hit will be on fire for.",
-											"type": "number"
+								{
+									"$ref": "../../project/experimentalGameplay/educationEdition.json",
+									"then": {
+										"properties": {
+											"freeze_on_hit": {
+												"description": "Freezes water on hit.",
+												"additionalProperties": false,
+												"properties": {
+													"shape": {
+														"type": "string",
+														"enum": ["sphere", "cube"]
+													},
+													"snap_to_block": {
+														"type": "boolean"
+													},
+													"size": {
+														"type": "integer"
+													}
+												}
+											}
 										}
 									}
 								}
-							}
+							]
 						},
 						"shoot_sound": {
 							"type": "string"
