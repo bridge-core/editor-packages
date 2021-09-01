@@ -3483,7 +3483,9 @@
 			]
 		},
 		{
-			"targetVersion": [">=", "v1.17.10"],
+			"requires": {
+				"targetVersion": [">=", "v1.17.10"]
+			},
 			"commands": [
 				{
 					"commandName": "dialogue",
@@ -3542,7 +3544,9 @@
 			]
 		},
 		{
-			"experimentalGameplay": ["educationEdition"],
+			"requires": {
+				"experimentalGameplay": ["educationEdition"]
+			},
 			"commands": [
 				{
 					"commandName": "ability",
