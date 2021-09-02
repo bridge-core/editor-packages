@@ -1,0 +1,80 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows the mob to use close combat melee attacks.",
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"attack_once": {
+			"description": "If true, this mob will attack only one time.",
+			"type": "boolean"
+		},
+		"max_dist": {
+			"type": "number"
+		},
+		"melee_fov": {
+			"description": "The allowable FOV the actor will use to determine if it can make a valid melee attack.",
+			"$ref": "../../../general/degree.json"
+		},
+		"random_stop_interval": {
+			"description": "Defines the probability the mob will stop fighting. A value of 0 disables randomly stopping, while a value of 1 defines a 50% chance.",
+			"type": "number"
+		},
+		"reach_multiplier": {
+			"description": "Multiplier for how far outside its box the mob can reach its target (this can be used to simulate a mob with longer arms by making this bigger).",
+			"type": "number"
+		},
+		"require_complete_path": {
+			"description": "If true, this goal will only trigger if the mob can reach its target.",
+			"type": "boolean"
+		},
+		"speed_multiplier": {
+			"description": "Movement speed multiplier of the mob when using this AI Goal.",
+			"type": "number"
+		},
+		"track_target": {
+			"description": "If true, this mob will chase after the target as long as it's a valid target.",
+			"type": "boolean"
+		},
+		"target_dist": {
+			"type": "number"
+		},
+		"look_distance": {
+			"type": "number"
+		},
+		"untrackable_cooldown_delay": {
+			"type": "number"
+		},
+		"target_tracking": {
+			"properties": {
+				"refresh_period_min": {
+					"type": "number"
+				},
+				"refresh_period_max": {
+					"type": "number"
+				},
+				"backoff": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"distance_squared_gt": {
+								"type": "number"
+							},
+							"refresh_period_delta": {
+								"type": "number"
+							}
+						}
+					}
+				}
+			}
+		},
+		"on_attack": {
+			"$ref": "../../general/eventDefinition.json"
+		},
+		"on_kill": {
+			"$ref": "../../general/eventDefinition.json"
+		}
+	}
+}

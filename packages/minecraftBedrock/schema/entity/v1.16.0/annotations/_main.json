@@ -1,0 +1,11 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"properties": {
+		"minecraft:annotation.open_door": {
+			"$ref": "./annotation.open_door.json"
+		},
+		"minecraft:annotation.break_door": {
+			"$ref": "./annotation.break_door.json"
+		}
+	}
+}

@@ -1,0 +1,29 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"search_width": {
+			"type": "number"
+		},
+		"search_height": {
+			"type": "number"
+		},
+		"minimum_path_length": {
+			"type": "number"
+		},
+		"scale_factor": {
+			"type": "number"
+		},
+		"cooldown_range": {
+			"type": "array",
+			"maxItems": 2,
+			"minItems": 2,
+			"items": {
+				"type": "number"
+			}
+		}
+	}
+}

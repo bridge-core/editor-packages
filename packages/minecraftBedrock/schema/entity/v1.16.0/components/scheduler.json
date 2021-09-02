@@ -1,0 +1,20 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Fires off scheduled mob events at time of day events.",
+	"properties": {
+		"min_delay_secs": {
+			"type": "number"
+		},
+		"max_delay_secs": {
+			"type": "number"
+		},
+		"scheduled_events": {
+			"description": "The list of triggers that fire when the conditions match the given filter criteria. If any filter criteria overlap the first defined event will be picked.",
+			"type": "array",
+			"items": {
+				"$ref": "../../general/eventDefinition.json"
+			}
+		}
+	}
+}

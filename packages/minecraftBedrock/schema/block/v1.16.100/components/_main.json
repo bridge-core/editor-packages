@@ -1,0 +1,101 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"properties": {
+		"minecraft:crafting_table": {
+			"$ref": "./crafting_table.json"
+		},
+		"minecraft:display_name": {
+			"$ref": "./display_name.json"
+		},
+		"minecraft:unit_cube": {
+			"$ref": "./unit_cube.json"
+		},
+		"minecraft:material_instances": {
+			"$ref": "./material_instances.json"
+		},
+		"minecraft:geometry": {
+			"$ref": "./geometry.json"
+		},
+		"minecraft:on_step_on": {
+			"$ref": "./on_step_on.json"
+		},
+		"minecraft:on_step_off": {
+			"$ref": "./on_step_off.json"
+		},
+		"minecraft:on_player_destroyed": {
+			"$ref": "./on_player_destroyed.json"
+		},
+		"minecraft:on_fall_on": {
+			"$ref": "./on_fall_on.json"
+		},
+		"minecraft:on_placed": {
+			"$ref": "./on_placed.json"
+		},
+		"minecraft:on_player_placing": {
+			"$ref": "./on_player_placing.json"
+		},
+		"minecraft:on_interact": {
+			"$ref": "./on_interact.json"
+		},
+		"minecraft:ticking": {
+			"$ref": "./ticking.json"
+		},
+		"minecraft:random_ticking": {
+			"$ref": "./random_ticking.json"
+		},
+		"minecraft:entity_collision": {
+			"$ref": "./entity_collision.json"
+		},
+		"minecraft:pick_collision": {
+			"$ref": "./pick_collision.json"
+		},
+		"minecraft:breakonpush": {
+			"$ref": "./breakonpush.json"
+		},
+		"minecraft:immovable": {
+			"$ref": "./immovable.json"
+		},
+		"minecraft:breathability": {
+			"$ref": "./breathability.json"
+		},
+		"minecraft:onlypistonpush": {
+			"$ref": "./onlypistonpush.json"
+		},
+		"minecraft:placement_filter": {
+			"$ref": "./placement_filter.json"
+		},
+		"minecraft:preventsjumping": {
+			"$ref": "./preventsjumping.json"
+		},
+		"minecraft:rotation": {
+			"$ref": "./rotation.json"
+		},
+		"minecraft:unwalkable": {
+			"$ref": "./unwalkable.json"
+		},
+		"minecraft:destroy_time": {
+			"$ref": "../../v1.16.0/components/destroy_time.json"
+		},
+		"minecraft:block_light_emission": {
+			"$ref": "../../v1.16.0/components/block_light_emission.json"
+		},
+		"minecraft:block_light_absorption": {
+			"$ref": "../../v1.16.0/components/block_light_absorption.json"
+		},
+		"minecraft:map_color": {
+			"$ref": "../../v1.16.0/components/map_color.json"
+		},
+		"minecraft:flammable": {
+			"$ref": "../../v1.16.0/components/flammable.json"
+		},
+		"minecraft:friction": {
+			"$ref": "../../v1.16.0/components/friction.json"
+		},
+		"minecraft:explosion_resistance": {
+			"$ref": "../../v1.16.0/components/explosion_resistance.json"
+		},
+		"minecraft:loot": {
+			"$ref": "../../v1.16.0/components/loot.json"
+		}
+	}
+}

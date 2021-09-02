@@ -1,0 +1,19 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Saves a home pos for when the the entity is spawned.",
+	"properties": {
+		"restriction_radius": {
+			"description": "The radius that the entity will be restricted to in relation to its home.",
+			"type": "number"
+		},
+		"home_block_list": {
+			"description": "Optional block list that the home position will be associated with. If any of the blocks no longer exist at that position, the home restriction is removed.",
+			"type": "array",
+			"items": {
+				"type": "string",
+				"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+			}
+		}
+	}
+}

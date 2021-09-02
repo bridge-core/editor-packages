@@ -1,0 +1,43 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"celebration_sound": {
+			"type": "string",
+			"description": "The sound to occasionally play."
+		},
+		"sound_interval": {
+			"description": "The range of time in seconds to randomly wait before playing the sound again.",
+			"properties": {
+				"range_min": {
+					"type": "number"
+				},
+				"range_max": {
+					"type": "number"
+				}
+			}
+		},
+		"jump_interval": {
+			"description": "The range of time in seconds to randomly wait before jumping again.",
+			"properties": {
+				"range_min": {
+					"type": "number"
+				},
+				"range_max": {
+					"type": "number"
+				}
+			}
+		},
+		"duration": {
+			"description": "The duration of the celebration (in seconds).",
+			"type": "number"
+		},
+		"on_celebration_end_event": {
+			"description": "The event to trigger when the goal's duration expires.",
+			"$ref": "../../general/eventDefinition.json"
+		}
+	}
+}

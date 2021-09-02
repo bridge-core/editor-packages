@@ -1,0 +1,12 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"type": "object",
+	"description": "Fuel component. Allows this item to be used as fuel in a furnace, similar to coal.",
+	"properties": {
+		"duration": {
+			"type": "integer",
+			"description": "How long in seconds will this fuel cook items for."
+		}
+	}
+}

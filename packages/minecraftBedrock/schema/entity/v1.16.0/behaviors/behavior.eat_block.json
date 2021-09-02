@@ -1,0 +1,34 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows the mob to eat a block (for example, sheep eating grass).",
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"success_chance": {
+			"$ref": "../../../molang/embedded.json"
+		},
+		"time_until_eat": {
+			"type": "number"
+		},
+		"eat_and_replace_block_pairs": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"eat_block": {
+						"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+					},
+					"replace_block": {
+						"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+					}
+				}
+			}
+		},
+		"on_eat": {
+			"description": "Trigger to fire when the mob eats a block of grass.",
+			"$ref": "../../general/eventDefinition.json"
+		}
+	}
+}

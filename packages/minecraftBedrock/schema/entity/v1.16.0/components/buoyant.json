@@ -1,0 +1,38 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Enables an entity to float on the specified liquid blocks.",
+	"properties": {
+		"apply_gravity": {
+			"description": "Applies gravity each tick. Causes more of a wave simulation, but will cause more gravity to be applied outside liquids.",
+			"type": "boolean"
+		},
+		"base_buoyancy": {
+			"description": "Base buoyancy used to calculate how much will a mob float.",
+			"type": "number"
+		},
+		"big_wave_probability": {
+			"description": "Probability for a big wave hitting the entity. Only used if `simulate_waves` is true.",
+			"type": "number"
+		},
+		"big_wave_speed": {
+			"description": "Multiplier for the speed to make a big wave. Triggered depending on 'big_wave_probability'.",
+			"type": "number"
+		},
+		"drag_down_on_buoyancy_removed": {
+			"description": "How much an actor will be dragged down when the Buoyancy Component is removed.",
+			"type": "number"
+		},
+		"liquid_blocks": {
+			"description": "List of blocks this entity can float on. Must be a liquid block.",
+			"type": "array",
+			"items": {
+				"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+			}
+		},
+		"simulate_waves": {
+			"description": "Should the movement simulate waves going through.",
+			"type": "boolean"
+		}
+	}
+}

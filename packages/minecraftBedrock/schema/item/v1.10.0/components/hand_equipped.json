@@ -1,0 +1,6 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"type": "boolean",
+	"description": "Is this a hand equipped item."
+}

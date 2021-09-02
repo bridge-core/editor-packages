@@ -1,0 +1,54 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Defines the entity as a dweller in a village.",
+	"properties": {
+		"dwelling_type": {
+			"const": "village",
+			"type": "string"
+		},
+		"dweller_role": {
+			"type": "string",
+			"enum": [
+				"hostile",
+				"inhabitant",
+				"defender",
+				"passive"
+			]
+		},
+		"update_interval_base": {
+			"type": "number"
+		},
+		"update_interval_variant": {
+			"type": "number"
+		},
+		"can_find_poi": {
+			"type": "boolean"
+		},
+		"can_migrate": {
+			"type": "boolean"
+		},
+		"first_founding_reward": {
+			"type": "number"
+		},
+		"preferred_profession": {
+			"type": "string",
+			"enum": [
+				"farmer",
+				"fisherman",
+				"shepard",
+				"fletcher",
+				"librarian",
+				"cartographer",
+				"cleric",
+				"shepherd",
+				"armorer",
+				"weaponsmith",
+				"toolsmith",
+				"butcher",
+				"leatherworker",
+				"mason"
+			]
+		}
+	}
+}

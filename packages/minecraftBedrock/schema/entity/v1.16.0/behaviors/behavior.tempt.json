@@ -1,0 +1,45 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows the mob to be tempted by food they like.",
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"can_get_scared": {
+			"description": "If true, the mob can stop being tempted if the player moves too fast while close to this mob.",
+			"type": "boolean"
+		},
+		"can_tempt_vertically": {
+			"type": "boolean"
+		},
+		"items": {
+			"description": "List of items this mob is tempted by.",
+			"type": "array",
+			"items": {
+				"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
+			}
+		},
+		"speed_multiplier": {
+			"description": "Movement speed multiplier of the mob when using this AI Goal.",
+			"type": "number"
+		},
+		"within_radius": {
+			"description": "Distance in blocks this mob can get tempted by a player holding an item they like.",
+			"type": "number"
+		},
+		"tempt_sound": {
+			"type": "string"
+		},
+		"sound_interval": {
+			"properties": {
+				"range_min": {
+					"type": "number"
+				},
+				"range_max": {
+					"type": "number"
+				}
+			}
+		}
+	}
+}

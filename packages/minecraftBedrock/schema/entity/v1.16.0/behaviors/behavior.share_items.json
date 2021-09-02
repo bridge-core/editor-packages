@@ -1,0 +1,22 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows the mob to give items it has to others.",
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"max_dist": {
+			"type": "number"
+		},
+		"goal_radius": {
+			"type": "number"
+		},
+		"speed_multiplier": {
+			"type": "number"
+		},
+		"entity_types": {
+			"$ref": "../../general/entityType.json"
+		}
+	}
+}

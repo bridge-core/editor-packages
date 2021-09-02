@@ -1,0 +1,45 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows the mob to eat/raid crops out of farms until they are full.",
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"blocks": {
+			"description": "Blocks that the mob is looking for to eat/raid.",
+			"type": "array",
+			"items": {
+				"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+			}
+		},
+		"eat_delay": {
+			"description": "Time in seconds between each time it eats/raids.",
+			"type": "number"
+		},
+		"initial_eat_delay": {
+			"description": "Time in seconds before starting to eat/raid once it arrives at it.",
+			"type": "number"
+		},
+		"full_delay": {
+			"description": "Amount of time in seconds before this mob wants to eat/raid again after eating its maximum.",
+			"type": "number"
+		},
+		"max_to_eat": {
+			"description": "Maximum number of crops this entity wants to eat/raid. If set to zero or less then it doesn't have a maximum.",
+			"type": "number"
+		},
+		"search_range": {
+			"description": "Distance in blocks the mob will look for crops to eat.",
+			"type": "number"
+		},
+		"goal_radius": {
+			"description": "Distance in blocks within the mob considers it has reached the goal. This is the 'wiggle room' to stop the AI from bouncing back and forth trying to reach a specific spot.",
+			"type": "number"
+		},
+		"speed_multiplier": {
+			"description": "Movement speed multiplier of the mob when using this AI Goal.",
+			"type": "number"
+		}
+	}
+}

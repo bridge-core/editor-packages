@@ -1,0 +1,71 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Adds a timer for the entity to grow up. It can be accelerated by giving the entity the items it likes as defined by feedItems.",
+	"properties": {
+		"duration": {
+			"description": "Amount of time before the entity grows up, -1 for always a baby.",
+			"type": "number"
+		},
+		"feed_items": {
+			"description": "List of items that can be fed to the entity. Includes 'item' for the item name and 'growth' to define how much time it grows up by.",
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"anyOf": [
+							{
+								"type": "object",
+								"properties": {
+									"item": {
+										"anyOf": [
+											{
+												"type": "string",
+												"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
+											},
+											{
+												"type": "object",
+												"additionalProperties": false,
+												"properties": {
+													"any_tag": {
+														"type": "array",
+														"items": {
+															"type": "string"
+														}
+													}
+												}
+											}
+										]
+									},
+									"growth": {
+										"type": "number"
+									}
+								}
+							},
+							{
+								"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
+							}
+						]
+					}
+				},
+				{
+					"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
+				}
+			]
+		},
+		"drop_items": {
+			"description": "List of items that the entity drops when it grows up.",
+			"type": "array",
+			"items": {
+				"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
+			}
+		},
+		"grow_up": {
+			"description": "Event to run when this entity grows up.",
+			"$ref": "../../general/eventDefinition.json"
+		},
+		"transform_to_item": {
+			"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
+		}
+	}
+}

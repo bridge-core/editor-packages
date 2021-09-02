@@ -1,0 +1,362 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows the entity to be a thrown entity.",
+	"properties": {
+		"on_hit": {
+			"allOf": [
+				{
+					"properties": {
+						"definition_event": {
+							"properties": {
+								"affect_projectile": {
+									"type": "boolean"
+								},
+								"affect_shooter": {
+									"type": "boolean"
+								},
+								"affect_target": {
+									"type": "boolean"
+								},
+								"affect_splash_area": {
+									"type": "boolean"
+								},
+								"splash_area": {
+									"type": "number"
+								},
+								"event_trigger": {
+									"$ref": "../../general/eventDefinition.json"
+								}
+							}
+						},
+						"grant_xp": {
+							"properties": {
+								"minXP": {
+									"type": "number"
+								},
+								"maxXP": {
+									"type": "number"
+								},
+								"xp": {
+									"type": "number"
+								}
+							}
+						},
+						"spawn_aoe_cloud": {
+							"properties": {
+								"radius": {
+									"type": "number"
+								},
+								"radius_on_use": {
+									"type": "number"
+								},
+								"potion": {
+									"$ref": "../../../general/vanilla/potionIds.json"
+								},
+								"particle": {
+									"$ref": "../../../general/particleName.json"
+								},
+								"duration": {
+									"type": "number"
+								},
+								"color": {
+									"type": "array",
+									"minItems": 3,
+									"maxItems": 3,
+									"items": {
+										"type": "number"
+									}
+								},
+								"affect_owner": {
+									"type": "boolean"
+								},
+								"reapplication_delay": {
+									"type": "number"
+								}
+							}
+						},
+						"impact_damage": {
+							"properties": {
+								"filter": {
+									"$ref": "../../../molang/embedded.json"
+								},
+								"damage": {
+									"anyOf": [
+										{
+											"type": "array",
+											"minItems": 2,
+											"maxItems": 2,
+											"items": {
+												"type": "integer"
+											}
+										},
+										{
+											"type": "integer"
+										}
+									]
+								},
+								"knockback": {
+									"description": "If true, the projectile will knock back the entity it hits.",
+									"type": "boolean"
+								},
+								"semi_random_diff_damage": {
+									"type": "boolean"
+								},
+								"destroy_on_hit": {
+									"description": "If true, this entity will be destroyed when hit.",
+									"type": "boolean"
+								},
+								"max_critical_damage": {
+									"type": "number"
+								},
+								"min_critical_damage": {
+									"type": "number"
+								},
+								"power_multiplier": {
+									"type": "number"
+								},
+								"should_bounce": {
+									"type": "boolean"
+								},
+								"channeling": {
+									"type": "boolean"
+								},
+								"set_last_hurt_requires_damage": {
+									"type": "boolean"
+								},
+								"destroy_on_hit_requres_damage": {
+									"type": "boolean"
+								}
+							}
+						},
+						"spawn_chance": {
+							"properties": {
+								"first_spawn_percent_chance": {
+									"type": "number"
+								},
+								"first_spawn_chance": {
+									"type": "number"
+								},
+								"second_spawn_percent_chance": {
+									"type": "number"
+								},
+								"second_spawn_chance": {
+									"type": "number"
+								},
+								"first_spawn_count": {
+									"type": "number"
+								},
+								"second_spawn_count": {
+									"type": "number"
+								},
+								"spawn_mob": {
+									"$ref": "../../../general/reference/identifiers.json#/definitions/entity_identifiers"
+								},
+								"spawn_definition": {
+									"$ref": "../../../general/reference/identifiers.json#/definitions/entity_identifiers"
+								},
+								"spawn_baby": {
+									"type": "boolean"
+								}
+							}
+						},
+						"mob_effect": {
+							"properties": {
+								"effect": {
+									"$ref": "../../../general/vanilla/effectName.json"
+								},
+								"duration": {
+									"type": "number"
+								},
+								"duration_easy": {
+									"type": "number"
+								},
+								"duration_normal": {
+									"type": "number"
+								},
+								"duration_hard": {
+									"type": "number"
+								},
+								"amplifier": {
+									"type": "number"
+								}
+							}
+						},
+						"stick_in_ground": {
+							"properties": {
+								"shake_time": {
+									"type": "number"
+								}
+							}
+						},
+						"thrown_potion_effect": {
+							"additionalProperties": false
+						},
+						"douse_fire": {
+							"additionalProperties": false
+						},
+						"arrow_effect": {
+							"additionalProperties": false
+						},
+						"remove_on_hit": {
+							"additionalProperties": false
+						},
+						"teleport_owner": {
+							"additionalProperties": false
+						},
+						"particle_on_hit": {
+							"properties": {
+								"particle_type": {
+									"$ref": "../../../general/particleName.json"
+								},
+								"num_particles": {
+									"type": "number"
+								},
+								"on_entity_hit": {
+									"type": "boolean"
+								},
+								"on_other_hit": {
+									"type": "boolean"
+								}
+							}
+						},
+						"catch_fire": {
+							"properties": {
+								"fire_affected_by_griefing": {
+									"description": "If true, whether the projectile causes fire is affected by the mob griefing game rule.",
+									"type": "boolean"
+								},
+								"on_fire_time": {
+									"description": "Time in seconds that the entity hit will be on fire for.",
+									"type": "number"
+								}
+							}
+						}
+					}
+				},
+				{
+					"$ref": "../../../project/experimentalGameplay/educationEdition.json",
+					"then": {
+						"properties": {
+							"freeze_on_hit": {
+								"description": "Freezes water on hit.",
+								"additionalProperties": false,
+								"properties": {
+									"shape": {
+										"type": "string",
+										"enum": [
+											"sphere",
+											"cube"
+										]
+									},
+									"snap_to_block": {
+										"type": "boolean"
+									},
+									"size": {
+										"type": "integer"
+									}
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"shoot_sound": {
+			"type": "string"
+		},
+		"hit_sound": {
+			"description": "The sound that plays when the projectile hits something.",
+			"type": "string"
+		},
+		"hit_ground_sound": {
+			"type": "string"
+		},
+		"is_dangerous": {
+			"description": "If true, the projectile will be treated as dangerous to the players.",
+			"type": "boolean"
+		},
+		"inertia": {
+			"description": "The fraction of the projectile's speed maintained every frame while traveling in air.",
+			"type": "number"
+		},
+		"liquid_inertia": {
+			"description": "The fraction of the projectile's speed maintained every frame while traveling in water.",
+			"type": "number"
+		},
+		"power": {
+			"description": "Determines the velocity of the projectile.",
+			"type": "number"
+		},
+		"gravity": {
+			"description": "The gravity applied to this entity when thrown. The higher the value, the faster the entity falls.",
+			"type": "number"
+		},
+		"uncertainty_base": {
+			"description": "The base accuracy. Accuracy is determined by the formula uncertaintyBase - difficultyLevel * uncertaintyMultiplier.",
+			"type": "number"
+		},
+		"uncertainty_multiplier": {
+			"description": "Determines how much difficulty affects accuracy. Accuracy is determined by the formula uncertaintyBase - difficultyLevel * uncertaintyMultiplier.",
+			"type": "number"
+		},
+		"anchor": {
+			"type": "number"
+		},
+		"lightning": {
+			"description": "If true, the entity hit will be struck by lightning.",
+			"type": "boolean"
+		},
+		"angle_offset": {
+			"description": "Determines the angle at which the projectile is thrown.",
+			"type": "number"
+		},
+		"semi_random_diff_damage": {
+			"description": "If true, damage will be randomized based on damage and speed.",
+			"type": "boolean"
+		},
+		"shoot_target": {
+			"description": "If true, the projectile will be shot towards the target of the entity firing it.",
+			"type": "boolean"
+		},
+		"stop_on_hurt": {
+			"type": "boolean"
+		},
+		"multiple_targets": {
+			"description": "If true, the projectile can hit multiple entities per flight.",
+			"type": "boolean"
+		},
+		"should_bounce": {
+			"description": "If true, the projectile will bounce upon hit.",
+			"type": "boolean"
+		},
+		"reflect_on_hurt": {
+			"description": "If true, this entity will be reflected back when hit.",
+			"type": "boolean"
+		},
+		"catch_fire": {
+			"description": "If true, the entity hit will be set on fire.",
+			"type": "boolean"
+		},
+		"offset": {
+			"description": "The offset from the entity's anchor where the projectile will spawn.",
+			"type": "array",
+			"minItems": 3,
+			"maxItems": 3,
+			"items": {
+				"type": "number"
+			}
+		},
+		"crit_particle_on_hurt": {
+			"description": "If true, the projectile will produce additional particles when a critical hit happens.",
+			"type": "boolean"
+		},
+		"homing": {
+			"description": "If true, the projectile homes in to the nearest entity.",
+			"type": "boolean"
+		},
+		"destroyOnHurt": {
+			"type": "boolean"
+		}
+	}
+}

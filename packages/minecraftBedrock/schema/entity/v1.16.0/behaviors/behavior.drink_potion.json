@@ -1,0 +1,34 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows the mob to drink potions based on specified environment conditions.",
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"speed_modifier": {
+			"type": "number"
+		},
+		"potions": {
+			"description": "A list of potions that this entity can drink.",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"description": "The registry ID of the potion to use.",
+						"$ref": "../../../general/vanilla/potionIds.json"
+					},
+					"chance": {
+						"description": "The percent chance (from 0.0 to 1.0) of this potion being selected when searching for a potion to use.",
+						"type": "number"
+					},
+					"filters": {
+						"description": "The filters to use when determining if this potion can be selected.",
+						"$ref": "../../general/filter.json"
+					}
+				}
+			}
+		}
+	}
+}

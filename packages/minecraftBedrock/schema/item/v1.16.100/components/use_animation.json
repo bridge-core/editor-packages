@@ -1,0 +1,13 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"type": "string",
+	"description": "The animation to use when this item is being used, e.g when the item is being eaten.",
+	"enum": [
+		"bow",
+		"eat",
+		"drink",
+		"crossbow",
+		"camera"
+	]
+}

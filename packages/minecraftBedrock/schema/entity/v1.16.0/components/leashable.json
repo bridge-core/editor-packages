@@ -1,0 +1,31 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows this entity to be leashed and defines the conditions and events for this entity when is leashed.",
+	"properties": {
+		"soft_distance": {
+			"description": "Distance in blocks at which the 'spring' effect starts acting to keep this entity close to the entity that leashed it.",
+			"type": "number"
+		},
+		"hard_distance": {
+			"description": "Distance in blocks at which the leash stiffens, restricting movement.",
+			"type": "number"
+		},
+		"max_distance": {
+			"description": "Distance in blocks at which the leash breaks.",
+			"type": "number"
+		},
+		"on_leash": {
+			"description": "Event to call when this entity is leashed.",
+			"$ref": "../../general/eventDefinition.json"
+		},
+		"on_unleash": {
+			"description": "Event to call when this entity is unleashed.",
+			"$ref": "../../general/eventDefinition.json"
+		},
+		"can_be_stolen": {
+			"description": "Event to call when this entity is unleashed.",
+			"type": "boolean"
+		}
+	}
+}

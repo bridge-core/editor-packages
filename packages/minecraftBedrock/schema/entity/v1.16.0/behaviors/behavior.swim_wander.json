@@ -1,0 +1,22 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Has the fish swim around when they can't pathfind.",
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"speed_multiplier": {
+			"description": "Speed of the entity."
+		},
+		"interval": {
+			"type": "number"
+		},
+		"look_ahead": {
+			"type": "number"
+		},
+		"wander_time": {
+			"type": "number"
+		}
+	}
+}

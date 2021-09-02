@@ -1,0 +1,24 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"type": "object",
+	"description": "Trigger an event at a regular interval between two values",
+	"properties": {
+		"looping": {
+			"type": "boolean",
+			"description": "Whether the event should loop"
+		},
+		"range": {
+			"type": "array",
+			"description": "Range between which the component will trigger its event",
+			"minItems": 2,
+			"maxItems": 2,
+			"items": {
+				"type": "number"
+			}
+		},
+		"on_tick": {
+			"$ref": "../../general/eventDefinition.json"
+		}
+	}
+}

@@ -1,0 +1,15 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Keeps track of entity group size in the given radius.",
+	"properties": {
+		"radius": {
+			"description": "Radius from center of entity.",
+			"type": "number"
+		},
+		"filters": {
+			"description": "The list of conditions that must be satisfied for other entities to be counted towards group size.",
+			"$ref": "../../general/filter.json"
+		}
+	}
+}

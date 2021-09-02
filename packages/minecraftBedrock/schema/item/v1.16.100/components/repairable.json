@@ -1,0 +1,30 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"type": "object",
+	"description": "Repairable item component: how much damage can this item repair, what items can repair it.",
+	"properties": {
+		"on_repaired": {
+			"description": "Event that is called when this item has been repaired.",
+			"$ref": "../../general/eventDefinition.json"
+		},
+		"repair_items": {
+			"type": "array",
+			"description": "Repair item entries.",
+			"items": {
+				"type": "object",
+				"properties": {
+					"items": {
+						"type": "array",
+						"items": {
+							"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
+						}
+					},
+					"repair_amount": {
+						"$ref": "../../../molang/embedded.json"
+					}
+				}
+			}
+		}
+	}
+}

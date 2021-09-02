@@ -1,0 +1,19 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Sets the entity's delay between playing its ambient sound.",
+	"properties": {
+		"range": {
+			"description": "Maximum time in seconds to randomly add to the ambient sound delay time.",
+			"type": "number"
+		},
+		"value": {
+			"description": "Minimum time in seconds before the entity plays its ambient sound again.",
+			"type": "number"
+		},
+		"event_name": {
+			"description": "Level sound event to be played as the ambient sound.",
+			"type": "string"
+		}
+	}
+}

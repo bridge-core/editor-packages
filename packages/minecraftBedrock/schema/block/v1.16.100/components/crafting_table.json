@@ -1,0 +1,25 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"type": "object",
+	"description": "Makes this block a crafting table",
+	"properties": {
+		"custom_description": {
+			"description": "Crafting table name",
+			"type": "string"
+		},
+		"grid_size": {
+			"description": "Recipe grid size",
+			"enum": [
+				3
+			]
+		},
+		"crafting_tags": {
+			"type": "array",
+			"description": "List of recipe tags",
+			"items": {
+				"type": "string"
+			}
+		}
+	}
+}

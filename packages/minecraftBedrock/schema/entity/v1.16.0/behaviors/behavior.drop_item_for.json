@@ -1,0 +1,90 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows the mob to move near a target and drop an item.",
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"cooldown": {
+			"type": "number"
+		},
+		"drop_item_chance": {
+			"description": "The probability that the mob will drop an item.",
+			"type": "number"
+		},
+		"entity_types": {
+			"description": "List of entity types this mob will drop items for.",
+			"$ref": "../../general/entityType.json"
+		},
+		"goal_radius": {
+			"description": "Distance in blocks within the mob considers it has reached the goal. This is the 'wiggle room' to stop the AI from bouncing back and forth trying to reach a specific spot.",
+			"type": "number"
+		},
+		"loot_table": {
+			"description": "Loot table to select items from.",
+			"type": "string"
+		},
+		"max_dist": {
+			"description": "Maximum distance in blocks this mob will look for entities to drop an item for.",
+			"type": "number"
+		},
+		"max_head_look_at_height": {
+			"type": "number"
+		},
+		"minimum_teleport_distance": {
+			"type": "number"
+		},
+		"offering_distance": {
+			"description": "The distance in blocks the mob will try to be away from the entity when it drops the item.",
+			"type": "number"
+		},
+		"on_drop_attempt": {
+			"description": "Event to run when this mob attempts to drop an item.",
+			"$ref": "../../general/eventDefinition.json"
+		},
+		"search_count": {
+			"type": "number"
+		},
+		"search_height": {
+			"description": "Height in blocks from the target the mob can be.",
+			"type": "number"
+		},
+		"search_range": {
+			"description": "The distance in blocks from the target the mob can be.",
+			"type": "number"
+		},
+		"seconds_before_pickup": {
+			"type": "number"
+		},
+		"speed_multiplier": {
+			"description": "Movement speed multiplier of the mob when using this AI Goal.",
+			"type": "number"
+		},
+		"time_of_day_range": {
+			"description": "The valid times of day that this goal can be used. For reference: noon is 0.0, sunset is 0.25, midnight is 0.5, and sunrise is 0.75, and back to noon for 1.0.",
+			"type": "array",
+			"minItems": 2,
+			"maxItems": 2,
+			"items": {
+				"type": "number"
+			}
+		},
+		"target_range": {
+			"type": "array",
+			"minItems": 3,
+			"maxItems": 3,
+			"items": {
+				"type": "number"
+			}
+		},
+		"teleport_offset": {
+			"type": "array",
+			"minItems": 3,
+			"maxItems": 3,
+			"items": {
+				"type": "number"
+			}
+		}
+	}
+}

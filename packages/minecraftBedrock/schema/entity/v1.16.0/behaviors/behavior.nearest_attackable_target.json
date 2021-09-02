@@ -1,0 +1,69 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows an entity to attack the closest target within a given subset of specific target types.",
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"set_persistent": {
+			"type": "boolean"
+		},
+		"attack_owner": {
+			"description": "If true, this entity can attack its owner.",
+			"type": "boolean"
+		},
+		"attack_interval": {
+			"description": "Time range (in seconds) between searching for an attack target, range is in (0, 'attack_interval']. Only used if 'attack_interval' is greater than 0, otherwise 'scan_interval' is used.",
+			"type": "number"
+		},
+		"attack_interval_min": {
+			"description": "Alias for 'attack_interval'; provides the same functionality as 'attack_interval'.",
+			"type": "number"
+		},
+		"entity_types": {
+			"description": "Filters which types of targets are valid for this entity.",
+			"$ref": "../../general/entityType.json"
+		},
+		"must_reach": {
+			"description": "If true, this entity requires a path to the target.",
+			"type": "boolean"
+		},
+		"must_see": {
+			"description": "Determines if target-validity requires this entity to be in range only, or both in range and in sight.",
+			"type": "boolean"
+		},
+		"must_see_forget_duration": {
+			"description": "Time (in seconds) the target must not be seen by this entity to become invalid. Used only if 'must_see' is true.",
+			"type": "number"
+		},
+		"persist_time": {
+			"description": "Time (in seconds) this entity can continue attacking the target after the target is no longer valid.",
+			"type": "number"
+		},
+		"reselect_targets": {
+			"description": "Allows the attacking entity to update the nearest target, otherwise a target is only reselected after each 'scan_interval' or 'attack_interval'.",
+			"type": "boolean"
+		},
+		"scan_interval": {
+			"description": "If 'attack_interval' is 0 or isn't declared, then between attacks: scanning for a new target occurs every amount of ticks equal to 'scan_interval', minimum value is 10.",
+			"type": "number"
+		},
+		"target_search_height": {
+			"description": "Maximum vertical target-search distance, if it's greater than the target type's 'max_dist'. A negative value defaults to 'entity_types' greatest 'max_dist'.",
+			"type": "number"
+		},
+		"target_invisible_multiplier": {
+			"description": "Multiplied with the target's armor coverage percentage to modify 'max_dist' when detecting an invisible target.",
+			"type": "number"
+		},
+		"target_sneak_visibility_multiplier": {
+			"description": "Multiplied with the target type's 'max_dist' when trying to detect a sneaking target.",
+			"type": "number"
+		},
+		"within_radius": {
+			"description": "Maximum distance this entity can be from the target when following it, otherwise the target becomes invalid. This value is only used if the entity doesn't declare 'minecraft:follow_range'.",
+			"type": "number"
+		}
+	}
+}

@@ -1,0 +1,120 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Determines whether this entity can be ridden. Allows specifying the different seat positions and quantity.",
+	"properties": {
+		"controlling_seat": {
+			"description": "The seat that designates the driver of the entity.",
+			"type": "number"
+		},
+		"crouching_skip_interact": {
+			"description": "If true, this entity can't be interacted with if the entity interacting with it is crouching.",
+			"type": "boolean"
+		},
+		"family_types": {
+			"description": "List of entities that can ride this entity.",
+			"type": "array",
+			"items": {
+				"$ref": "../../general/family.json"
+			}
+		},
+		"interact_text": {
+			"description": "The text to display when the player can interact with the entity when playing with Touch-screen controlsThe text to display when the player can interact with the entity when playing with Touch-screen controls.",
+			"$ref": "../../../general/reference/actionText.json"
+		},
+		"pull_in_entities": {
+			"description": "If true, this entity will pull in entities that are in the correct family_types into any available seats.",
+			"type": "boolean"
+		},
+		"rider_can_interact": {
+			"description": "If true, this entity will be picked when looked at by the rider.",
+			"type": "boolean"
+		},
+		"seat_count": {
+			"description": "The number of entities that can ride this entity at the same time.",
+			"type": "number"
+		},
+		"seats": {
+			"anyOf": [
+				{
+					"description": "The list of positions and number of riders for each position for entities riding this entity.",
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"lock_rider_rotation": {
+								"description": "Angle in degrees that a rider is allowed to rotate while riding this entity. Omit this property for no limit.",
+								"$ref": "../../../general/degree.json"
+							},
+							"max_rider_count": {
+								"description": "Defines the maximum number of riders that can be riding this entity for this seat to be valid.",
+								"type": "number"
+							},
+							"min_rider_count": {
+								"description": "Defines the minimum number of riders that need to be riding this entity before this seat can be used.",
+								"type": "number"
+							},
+							"position": {
+								"description": "Position of this seat relative to this entity's position.",
+								"type": "array",
+								"minItems": 3,
+								"maxItems": 3,
+								"items": {
+									"type": "number"
+								}
+							},
+							"rotate_rider_by": {
+								"description": "Offset to rotate riders by.",
+								"anyOf": [
+									{
+										"$ref": "../../../general/degree.json"
+									},
+									{
+										"$ref": "../../../molang/embedded.json"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"type": "object",
+					"properties": {
+						"lock_rider_rotation": {
+							"description": "Angle in degrees that a rider is allowed to rotate while riding this entity. Omit this property for no limit.",
+							"$ref": "../../../general/degree.json"
+						},
+						"max_rider_count": {
+							"description": "Defines the maximum number of riders that can be riding this entity for this seat to be valid.",
+							"type": "number"
+						},
+						"min_rider_count": {
+							"description": "Defines the minimum number of riders that need to be riding this entity before this seat can be used.",
+							"type": "number"
+						},
+						"position": {
+							"description": "Position of this seat relative to this entity's position.",
+							"type": "array",
+							"minItems": 3,
+							"maxItems": 3,
+							"items": {
+								"type": "number"
+							}
+						},
+						"rotate_rider_by": {
+							"description": "Offset to rotate riders by.",
+							"anyOf": [
+								{
+									"$ref": "../../../general/degree.json"
+								},
+								{
+									"$ref": "../../../molang/embedded.json"
+								}
+							]
+						}
+					}
+				}
+			]
+		}
+	}
+}

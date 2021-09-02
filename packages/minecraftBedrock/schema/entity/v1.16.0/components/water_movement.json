@@ -1,0 +1,11 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Sets the entity's movement speed in water.",
+	"properties": {
+		"drag_factor": {
+			"description": "Drag factor to determine movement speed when in water.",
+			"type": "number"
+		}
+	}
+}

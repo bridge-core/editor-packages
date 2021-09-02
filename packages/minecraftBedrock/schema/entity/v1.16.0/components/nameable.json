@@ -1,0 +1,36 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows this entity to be named (e.g. using a name tag).",
+	"properties": {
+		"allow_name_tag_renaming": {
+			"description": "If true, this entity can be renamed with name tags.",
+			"type": "boolean"
+		},
+		"always_show": {
+			"description": "If true, the name will always be shown.",
+			"type": "boolean"
+		},
+		"default_trigger": {
+			"description": "Trigger to run when the entity gets named.",
+			"$ref": "../../general/eventDefinition.json"
+		},
+		"name_actions": {
+			"description": "Describes the special names for this entity and the events to call when the entity acquires those names.",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"name_filter": {
+						"description": "List of special names that will cause the events defined in 'on_named' to fire.",
+						"type": "string"
+					},
+					"on_named": {
+						"description": "Event to be called when this entity acquires the name specified in 'name_filter'.",
+						"$ref": "../../general/eventDefinition.json"
+					}
+				}
+			}
+		}
+	}
+}

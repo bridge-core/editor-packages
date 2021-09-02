@@ -1,0 +1,47 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Defines the Conditional Spatial Update Bandwidth Optimizations of this entity.",
+	"properties": {
+		"conditional_values": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"max_dropped_ticks": {
+						"type": "number"
+					},
+					"max_optimized_distance": {
+						"type": "number"
+					},
+					"use_motion_prediction_hints": {
+						"type": "boolean"
+					},
+					"conditional_values": {
+						"type": "array",
+						"items": {
+							"$ref": "../../general/filter.json"
+						}
+					}
+				}
+			}
+		},
+		"default_values": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"max_dropped_ticks": {
+						"type": "number"
+					},
+					"max_optimized_distance": {
+						"type": "number"
+					},
+					"use_motion_prediction_hints": {
+						"type": "boolean"
+					}
+				}
+			}
+		}
+	}
+}

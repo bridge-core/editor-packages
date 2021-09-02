@@ -1,0 +1,22 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Defines what items can be used to control this entity while ridden.",
+	"properties": {
+		"control_items": {
+			"anyOf": [
+				{
+					"description": "List of items that can be used to control this entity.",
+					"type": "array",
+					"items": {
+						"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
+					}
+				},
+				{
+					"description": "Item that can be used to control this entity.",
+					"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
+				}
+			]
+		}
+	}
+}

@@ -9,7 +9,14 @@
 					"$ref": "../description.json"
 				},
 				"components": {
-					"$ref": "./components.json"
+					"allOf": [
+						{
+							"$ref": "../dynamic/customComponents.json"
+						},
+						{
+							"$ref": "./components/_main.json"
+						}
+					]
 				}
 			},
 			"additionalProperties": false

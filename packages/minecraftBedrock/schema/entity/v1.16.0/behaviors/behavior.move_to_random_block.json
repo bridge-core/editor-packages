@@ -1,0 +1,21 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows mob to move towards a random block.",
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"speed_multiplier": {
+			"type": "number"
+		},
+		"within_radius": {
+			"description": "Defines the distance in blocks the mob has to be from the block for the movement to be finished.",
+			"type": "number"
+		},
+		"block_distance": {
+			"description": "Defines the distance from the mob, in blocks, that the block to move to will be chosen.",
+			"type": "number"
+		}
+	}
+}

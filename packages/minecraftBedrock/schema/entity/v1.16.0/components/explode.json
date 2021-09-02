@@ -1,0 +1,65 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Defines how the entity explodes.",
+	"properties": {
+		"fuse_length": {
+			"description": "The range for the random amount of time the fuse will be lit before exploding, a negative value means the explosion will be immediate.",
+			"anyOf": [
+				{
+					"type": "number"
+				},
+				{
+					"type": "array",
+					"minItems": 2,
+					"maxItems": 2,
+					"items": {
+						"type": "number"
+					}
+				},
+				{
+					"type": "object",
+					"properties": {
+						"range_min": {
+							"type": "number"
+						},
+						"range_max": {
+							"type": "number"
+						}
+					}
+				}
+			]
+		},
+		"power": {
+			"description": "The radius of the explosion in blocks and the amount of damage the explosion deals.",
+			"type": "number"
+		},
+		"max_resistance": {
+			"description": "A blocks explosion resistance will be capped at this value when an explosion occurs.",
+			"type": "number"
+		},
+		"fuse_lit": {
+			"description": "If true, the fuse is already lit when this component is added to the entity.",
+			"type": "boolean"
+		},
+		"causes_fire": {
+			"description": "If true, blocks in the explosion radius will be set on fire.",
+			"type": "boolean"
+		},
+		"breaks_blocks": {
+			"description": "If true, the explosion will destroy blocks in the explosion radius.",
+			"type": "boolean"
+		},
+		"fire_affected_by_griefing": {
+			"description": "If true, whether the explosion causes fire is affected by the mob griefing game rule.",
+			"type": "boolean"
+		},
+		"destroy_affected_by_griefing": {
+			"description": "If true, whether the explosion breaks blocks is affected by the mob griefing game rule.",
+			"type": "boolean"
+		},
+		"allow_damage_underwater": {
+			"type": "boolean"
+		}
+	}
+}

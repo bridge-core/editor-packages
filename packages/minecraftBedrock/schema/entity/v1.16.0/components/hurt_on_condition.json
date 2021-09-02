@@ -1,0 +1,26 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Defines a set of conditions under which an entity should take damage.",
+	"properties": {
+		"damage_conditions": {
+			"type": "array",
+			"items": {
+				"additionalProperties": false,
+				"type": "object",
+				"properties": {
+					"filters": {
+						"$ref": "../../general/filter.json"
+					},
+					"cause": {
+						"$ref": "../../../general/vanilla/damageType.json"
+					},
+					"damage_per_tick": {
+						"description": "The amount of damage done each tick that the conditions are met.",
+						"type": "number"
+					}
+				}
+			}
+		}
+	}
+}

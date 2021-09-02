@@ -1,0 +1,12 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"type": "object",
+	"description": "Display name item component. Display names display the name of an item.",
+	"properties": {
+		"value": {
+			"type": "string",
+			"description": "Set the display name for an item."
+		}
+	}
+}

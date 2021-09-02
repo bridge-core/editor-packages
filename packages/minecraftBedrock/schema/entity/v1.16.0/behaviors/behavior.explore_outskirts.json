@@ -1,0 +1,54 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows a mob to explore the outskirts of a village.",
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"explore_dist": {
+			"description": "The distance in which the mob will proceed past the village bounds.",
+			"type": "number"
+		},
+		"wait_time": {
+			"description": "The time the mob will stand around 'searching' for POIs.",
+			"type": "number"
+		},
+		"speed_multiplier": {
+			"description": "Movement speed multiplier of the mob when using this AI Goal.",
+			"type": "number"
+		},
+		"next_xz": {
+			"type": "number"
+		},
+		"next_y": {
+			"type": "number"
+		},
+		"min_wait_time": {
+			"type": "number"
+		},
+		"max_wait_time": {
+			"type": "number"
+		},
+		"max_travel_time": {
+			"type": "number"
+		},
+		"min_perimeter": {
+			"type": "number"
+		},
+		"min_dist_from_target": {
+			"type": "number"
+		},
+		"timer_ratio": {
+			"type": "number"
+		},
+		"dist_from_boundary": {
+			"type": "array",
+			"minItems": 3,
+			"maxItems": 3,
+			"items": {
+				"type": "number"
+			}
+		}
+	}
+}

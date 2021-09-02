@@ -1,0 +1,79 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows entities to flock in groups in water or not.",
+	"properties": {
+		"in_water": {
+			"description": "Tells the Flocking Component if the entity exists in water.",
+			"type": "boolean"
+		},
+		"match_variants": {
+			"description": "Tells the flockers that they can only match similar entities that also match the variant, mark variants, and color data of the other potential flockers.",
+			"type": "boolean"
+		},
+		"use_center_of_mass": {
+			"description": "Tells the flockers that they will follow flocks based on the center of mass.",
+			"type": "boolean"
+		},
+		"low_flock_limit": {
+			"description": "Determines the low bound amount of entities that can be allowed in the flock.",
+			"type": "number"
+		},
+		"high_flock_limit": {
+			"description": "Determines the high bound amount of entities that can be allowed in the flock.",
+			"type": "number"
+		},
+		"goal_weight": {
+			"description": "The weight on which to apply on the goal output.",
+			"type": "number"
+		},
+		"loner_chance": {
+			"description": "The percentage chance between 0-1 that a fish will spawn and not want to join flocks. Invalid values will be capped at the end points.",
+			"type": "number"
+		},
+		"influence_radius": {
+			"description": "The area around the entity that allows others to be added to the flock.",
+			"type": "number"
+		},
+		"breach_influence": {
+			"description": "The amount of push back given to a flocker that breaches out of the water.",
+			"type": "number"
+		},
+		"separation_weight": {
+			"description": "The weight applied to the separation of the flock.",
+			"type": "number"
+		},
+		"separation_threshold": {
+			"description": "The distance that is determined to be to close to another flocking and to start applying separation.",
+			"type": "number"
+		},
+		"cohesion_weight": {
+			"description": "The weight applied for the cohesion steering of the flock.",
+			"type": "number"
+		},
+		"cohesion_threshold": {
+			"description": "The threshold in which to start applying cohesion.",
+			"type": "number"
+		},
+		"inner_cohesion_threshold": {
+			"description": "The distance in which the flocker will stop applying cohesion.",
+			"type": "number"
+		},
+		"min_height": {
+			"description": "The min height allowable in the air or water.",
+			"type": "number"
+		},
+		"max_height": {
+			"description": "The max height allowable in the air or water.",
+			"type": "number"
+		},
+		"block_distance": {
+			"description": "The amount of blocks away the entity will look at to push away from.",
+			"type": "number"
+		},
+		"block_weight": {
+			"description": "The weight of the push back away from blocks.",
+			"type": "number"
+		}
+	}
+}

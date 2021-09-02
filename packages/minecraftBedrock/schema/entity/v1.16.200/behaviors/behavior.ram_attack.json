@@ -1,0 +1,21 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"run_speed": {
+			"type": "number"
+		},
+		"ram_speed": {
+			"type": "number"
+		},
+		"ram_distance": {
+			"type": "number"
+		},
+		"on_start": {
+			"$ref": "../../general/eventDefinition.json"
+		}
+	}
+}

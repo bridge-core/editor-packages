@@ -1,0 +1,15 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Defines the entity's 'sit' state.",
+	"properties": {
+		"sit_event": {
+			"description": "Event to run when the entity enters the 'sit' state.",
+			"$ref": "../../general/eventDefinition.json"
+		},
+		"stand_event": {
+			"description": "Event to run when the entity exits the 'sit' state.",
+			"$ref": "../../general/eventDefinition.json"
+		}
+	}
+}

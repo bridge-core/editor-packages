@@ -9,19 +9,44 @@
 					"$ref": "../description.json"
 				},
 				"components": {
-					"$ref": "./components.json"
-				},
-				"component_groups": {
-					"anyOf": [
+					"allOf": [
 						{
-							"patternProperties": {
-								".*": {
-									"$ref": "./components.json"
-								}
-							}
+							"$ref": "./annotations/_main.json"
 						},
 						{
+							"$ref": "./behaviors/_main.json"
+						},
+						{
+							"$ref": "./components/_main.json"
+						},
+						{
+							"$ref": "../dynamic/customComponents.json"
+						}
+					]
+				},
+				"component_groups": {
+					"type": "object",
+					"allOf": [
+						{
 							"$ref": "../../project/projectPrefix.json"
+						},
+						{
+							"additionalProperties": {
+								"allOf": [
+									{
+										"$ref": "./annotations/_main.json"
+									},
+									{
+										"$ref": "./behaviors/_main.json"
+									},
+									{
+										"$ref": "./components/_main.json"
+									},
+									{
+										"$ref": "/data/packages/minecraftBedrock/schema/entity/dynamic/customComponents.json"
+									}
+								]
+							}
 						}
 					]
 				},
@@ -46,7 +71,9 @@
 						}
 					]
 				},
-				"do_not_upgrade": {}
+				"do_not_upgrade": {
+					"additionalProperties": false
+				}
 			}
 		}
 	}

@@ -1,0 +1,31 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Verifies whether the entity is inside any of the listed blocks.",
+	"properties": {
+		"block_list": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"block": {
+						"properties": {
+							"name": {
+								"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+							},
+							"states": {
+								"$ref": "../../../general/vanilla/blockState.json"
+							}
+						}
+					},
+					"entered_block_event": {
+						"type": "string"
+					},
+					"exited_block_event": {
+						"type": "string"
+					}
+				}
+			}
+		}
+	}
+}

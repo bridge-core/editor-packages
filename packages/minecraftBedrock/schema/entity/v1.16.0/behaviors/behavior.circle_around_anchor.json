@@ -1,0 +1,59 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows the mob to move in a circle around a point or a target.",
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"radius_range": {
+			"description": "Range of radius in blocks of the circle to move around.",
+			"type": "array",
+			"minItems": 2,
+			"maxItems": 2,
+			"items": {
+				"type": "number"
+			}
+		},
+		"radius_change": {
+			"type": "number"
+		},
+		"radius_adjustment_chance": {
+			"description": "A random value to determine when to increase the size of the radius up to the maximum. This has a 1/value chance every tick to do so.",
+			"type": "number"
+		},
+		"height_above_target_range": {
+			"description": "When the mob finds a target, the range of height in blocks above the target to start the anchor point.",
+			"type": "array",
+			"minItems": 2,
+			"maxItems": 2,
+			"items": {
+				"type": "number"
+			}
+		},
+		"height_offset_range": {
+			"description": "The range of height in blocks offset the mob can have from it's anchor point.",
+			"type": "array",
+			"minItems": 2,
+			"maxItems": 2,
+			"items": {
+				"type": "number"
+			}
+		},
+		"height_adjustment_chance": {
+			"description": "A random value to determine when to change the height of the mob from the anchor point. This has a 1/value chance every tick to do so.",
+			"type": "number"
+		},
+		"goal_radius": {
+			"description": "Distance in blocks within the mob considers it has reached the goal. This is the 'wiggle room' to stop the AI from bouncing back and forth trying to reach a specific spot.",
+			"type": "number"
+		},
+		"angle_chance": {
+			"type": "number"
+		},
+		"speed_multiplier": {
+			"description": "Movement speed multiplier of the mob when using this AI Goal.",
+			"type": "number"
+		}
+	}
+}

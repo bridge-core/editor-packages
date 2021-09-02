@@ -1,0 +1,40 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows the mob to target another mob that hurts an entity it trusts.",
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"attack_interval": {
+			"description": "Time in seconds between attacks.",
+			"type": "number"
+		},
+		"within_radius": {
+			"type": "number",
+			"description": "Distance in blocks that the target can be within to launch an attack."
+		},
+		"must_see": {
+			"description": "If true, only entities in this mob's viewing range can be selected as targets.",
+			"type": "boolean"
+		},
+		"aggro_sound": {
+			"description": "Sound to occasionally play while defending.",
+			"type": "string"
+		},
+		"sound_chance": {
+			"type": "number"
+		},
+		"on_defend_start": {
+			"$ref": "../../general/eventDefinition.json"
+		},
+		"must_see_forget_duration": {
+			"description": "Determines the amount of time in seconds that this mob will look for a target before forgetting about it and looking for a new one when the target isn't visible any more.",
+			"type": "number"
+		},
+		"entity_types": {
+			"description": "List of entity types that this mob considers valid targets.",
+			"$ref": "../../general/entityType.json"
+		}
+	}
+}

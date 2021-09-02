@@ -1,0 +1,28 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows mobs to occassionally stop and take a nap under certain conditions.",
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"cooldown_min": {
+			"type": "number"
+		},
+		"cooldown_max": {
+			"type": "number"
+		},
+		"mob_detect_dist": {
+			"type": "number"
+		},
+		"mob_detect_height": {
+			"type": "number"
+		},
+		"cap_nap_filters": {
+			"$ref": "../../general/filter.json"
+		},
+		"wake_mob_exceptions": {
+			"$ref": "../../general/filter.json"
+		}
+	}
+}

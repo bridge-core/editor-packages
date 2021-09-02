@@ -1,0 +1,14 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"type": "object",
+	"description": "Makes an item enchantable.",
+	"properties": {
+		"slot": {
+			"type": "string"
+		},
+		"value": {
+			"type": "integer"
+		}
+	}
+}

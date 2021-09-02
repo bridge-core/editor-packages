@@ -1,0 +1,90 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows the mob to attack the player by summoning other entities.",
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"summon_choices": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"do_casting": {
+						"type": "boolean"
+					},
+					"filters": {
+						"$ref": "../../general/filter.json"
+					},
+					"min_activation_range": {
+						"type": "number"
+					},
+					"max_activation_range": {
+						"type": "number"
+					},
+					"cooldown_time": {
+						"type": "number"
+					},
+					"weight": {
+						"type": "number"
+					},
+					"cast_duration": {
+						"type": "number"
+					},
+					"particle_color": {
+						"type": "string"
+					},
+					"start_sound_event": {
+						"type": "string"
+					},
+					"sequence": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"shape": {
+									"type": "string",
+									"enum": [
+										"circle",
+										"line"
+									]
+								},
+								"target": {
+									"$ref": "../../../general/filter/subject.json"
+								},
+								"base_delay": {
+									"type": "number"
+								},
+								"delay_per_summon": {
+									"type": "number"
+								},
+								"num_entities_spawned": {
+									"type": "number"
+								},
+								"entity_type": {
+									"$ref": "../../../general/reference/identifiers.json#/definitions/entity_identifiers"
+								},
+								"size": {
+									"type": "number"
+								},
+								"entity_lifespan": {
+									"type": "number"
+								},
+								"sound_event": {
+									"type": "string"
+								},
+								"summon_cap": {
+									"type": "number"
+								},
+								"summon_cap_radius": {
+									"type": "number"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

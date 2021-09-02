@@ -1,0 +1,36 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"speed_multiplier": {
+			"type": "number"
+		},
+		"attack_once": {
+			"type": "boolean"
+		},
+		"require_complete_path": {
+			"type": "boolean"
+		},
+		"random_stop_interval": {
+			"type": "number"
+		},
+		"reach_multiplier": {
+			"type": "number"
+		},
+		"attack_duration": {
+			"type": "number"
+		},
+		"hit_delay_pct": {
+			"type": "number"
+		},
+		"track_target": {
+			"type": "boolean"
+		},
+		"sound_event": {
+			"type": "string"
+		}
+	}
+}

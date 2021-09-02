@@ -1,0 +1,36 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Defines the conditions and behavior of a rideable entity's boost.",
+	"properties": {
+		"speed_multiplier": {
+			"description": "Factor by which the entity's normal speed increases. E.g. 2.0 means go twice as fast.",
+			"type": "number"
+		},
+		"duration": {
+			"description": "Time in seconds for the boost.",
+			"type": "number"
+		},
+		"boost_items": {
+			"description": "List of items that can be used to boost while riding this entity.",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"item": {
+						"description": "Name of the item that can be used to boost.",
+						"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
+					},
+					"damage": {
+						"description": "This is the damage that the item will take each time it is used.",
+						"type": "number"
+					},
+					"replace_item": {
+						"description": "The item used to boost will become this item once it is used up.",
+						"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,22 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows mob to move towards its current target captain.",
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"speed_multiplier": {
+			"description": "Movement speed multiplier of the mob when using this AI Goal.",
+			"type": "number"
+		},
+		"follow_distance": {
+			"description": "Defines the distance in blocks the mob will stay from its target while following.",
+			"type": "number"
+		},
+		"within_radius": {
+			"description": "Defines the maximum distance in blocks a mob can get from its target captain before giving up trying to follow it.",
+			"type": "number"
+		}
+	}
+}

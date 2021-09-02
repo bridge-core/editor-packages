@@ -1,0 +1,22 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows the mob to follow mobs that are in a caravan.",
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"speed_multiplier": {
+			"description": "Movement speed multiplier of the mob when using this AI Goal.",
+			"type": "number"
+		},
+		"entity_count": {
+			"description": "Number of entities that can be in the caravan.",
+			"type": "number"
+		},
+		"entity_types": {
+			"description": "List of entity types that this mob can follow in a caravan.",
+			"$ref": "../../general/entityType.json"
+		}
+	}
+}

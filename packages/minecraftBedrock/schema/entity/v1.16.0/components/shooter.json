@@ -1,0 +1,15 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Defines the entity's ranged attack behavior.",
+	"properties": {
+		"def": {
+			"description": "Actor definition to use as projectile for the ranged attack. The actor definition must have the projectile component to be able to be shot as a projectile.",
+			"$ref": "../../../general/reference/identifiers.json#/definitions/entity_identifiers"
+		},
+		"aux_val": {
+			"description": "ID of the Potion effect to be applied on hit.",
+			"$ref": "../../../general/vanilla/potionIds.json"
+		}
+	}
+}

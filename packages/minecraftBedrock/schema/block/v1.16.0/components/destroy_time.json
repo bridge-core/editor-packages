@@ -1,0 +1,6 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"type": "number",
+	"description": "Sets the destroy time property for the block. Greater numbers result in greater mining times"
+}

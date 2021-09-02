@@ -1,0 +1,26 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Sets the Equipment table to use for this Entity.",
+	"properties": {
+		"table": {
+			"description": "The file path to the equipment table, relative to the behavior pack's root.",
+			"$ref": "../../../general/reference/paths.json#/definitions/loot_table_paths"
+		},
+		"slot_drop_chance": {
+			"description": "A list of slots with the chance to drop an equipped item from that slot.",
+			"type": "array",
+			"items": {
+				"additionalProperties": false,
+				"properties": {
+					"slot": {
+						"$ref": "../../../general/slotType.json"
+					},
+					"drop_chance": {
+						"type": "number"
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,27 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows a mob with the hide component to attempt to move to - and hide at - an owned or nearby POI.",
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"speed_multiplier": {
+			"description": "Movement speed multiplier of the mob when using this AI Goal.",
+			"type": "number"
+		},
+		"poi_type": {
+			"description": "Defines what POI type to hide at.",
+			"type": "string",
+			"const": "bed"
+		},
+		"duration": {
+			"description": "Amount of time in seconds that the mob reacts.",
+			"type": "number"
+		},
+		"timeout_cooldown": {
+			"description": "The cooldown time in seconds before the goal can be reused after a internal failure or timeout condition.",
+			"type": "number"
+		}
+	}
+}

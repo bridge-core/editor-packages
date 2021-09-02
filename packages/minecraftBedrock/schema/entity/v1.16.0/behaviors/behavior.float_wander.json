@@ -1,0 +1,39 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows the mob to float around like the Ghast.",
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"float_duration": {
+			"description": "Range of time in seconds the mob will float around before landing and choosing to do something else.",
+			"type": "array",
+			"minItems": 2,
+			"maxItems": 2,
+			"items": {
+				"type": "number"
+			}
+		},
+		"random_reselect": {
+			"description": "If true, the mob will randomly pick a new point while moving to the previously selected one.",
+			"type": "boolean"
+		},
+		"must_reach": {
+			"description": "If true, the point has to be reachable to be a valid target.",
+			"type": "boolean"
+		},
+		"xz_dist": {
+			"description": "Distance in blocks on ground that the mob will look for a new spot to move to. Must be at least 1.",
+			"type": "number"
+		},
+		"y_dist": {
+			"description": "Distance in blocks that the mob will look up or down for a new spot to move to. Must be at least 1.",
+			"type": "number"
+		},
+		"y_offset": {
+			"description": "Height in blocks to add to the selected target position.",
+			"type": "number"
+		}
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows the mob to be ridden by the player after being tamed.",
+	"properties": {
+		"priority": {
+			"type": "number"
+		}
+	}
+}

@@ -1,0 +1,30 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows the mob to randomly sit for a duration.",
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"start_chance": {
+			"description": "This is the chance that the mob will start this goal, from 0 to 1.",
+			"type": "number"
+		},
+		"stop_chance": {
+			"description": "This is the chance that the mob will stop this goal, from 0 to 1.",
+			"type": "number"
+		},
+		"cooldown_time": {
+			"description": "Time in seconds the mob has to wait before using the goal again.",
+			"type": "number"
+		},
+		"cooldown": {
+			"description": "Time in seconds the mob has to wait before using the goal again.",
+			"type": "number"
+		},
+		"min_sit_time": {
+			"description": "The minimum amount of time in seconds before the mob can stand back up.",
+			"type": "number"
+		}
+	}
+}

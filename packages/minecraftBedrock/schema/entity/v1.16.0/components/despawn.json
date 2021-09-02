@@ -1,0 +1,48 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Despawns the Actor when the despawn rules or optional filters evaluate to true.",
+	"properties": {
+		"remove_child_entities": {
+			"description": "If true, all entities linked to this entity in a child relationship (eg. leashed) will also be despawned.",
+			"type": "boolean"
+		},
+		"filters": {
+			"description": "The list of conditions that must be satisfied before the Actor is despawned. If a filter is defined then standard despawn rules are ignored.",
+			"$ref": "../../general/filter.json"
+		},
+		"despawn_from_distance": {
+			"additionalProperties": false,
+			"properties": {
+				"max_distance": {
+					"description": "Maximum distance for standard despawn rules to instantly despawn the mob.",
+					"type": "number"
+				},
+				"min_distance": {
+					"description": "Minimum distance for standard despawn rules to try to despawn the mob.",
+					"type": "number"
+				}
+			}
+		},
+		"despawn_from_chance": {
+			"description": "Determines if 'min_range_random_chance' is used in the standard despawn rules.",
+			"type": "boolean"
+		},
+		"despawn_from_inactivity": {
+			"description": "Determines if the 'min_range_inactivity_timer' is used in the standard despawn rules.",
+			"type": "boolean"
+		},
+		"despawn_from_simulation_edge": {
+			"description": "Determines if the mob is instantly despawned at the edge of simulation distance in the standard despawn rules.",
+			"type": "boolean"
+		},
+		"min_range_inactivity_timer": {
+			"description": "The amount of time in seconds that the mob must be inactive.",
+			"type": "number"
+		},
+		"min_range_random_chance": {
+			"description": "A random chance between 1 and the given value.",
+			"type": "number"
+		}
+	}
+}

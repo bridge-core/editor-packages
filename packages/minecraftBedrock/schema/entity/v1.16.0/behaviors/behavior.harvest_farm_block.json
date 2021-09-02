@@ -1,0 +1,23 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows the villager to harvest nearby farms. Can only be used by Villagers.",
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"speed_multiplier": {
+			"description": "Movement speed multiplier of the mob when using this AI Goal.",
+			"type": "number"
+		},
+		"max_seconds_before_search": {
+			"type": "number"
+		},
+		"search_cooldown_max_seconds": {
+			"type": "number"
+		},
+		"seconds_until_new_task": {
+			"type": "number"
+		}
+	}
+}

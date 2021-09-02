@@ -1,0 +1,19 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows the mob to rise to the liquid surface.",
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"liquid_y_offset": {
+			"type": "number"
+		},
+		"rise_delta": {
+			"type": "number"
+		},
+		"sink_delta": {
+			"type": "number"
+		}
+	}
+}

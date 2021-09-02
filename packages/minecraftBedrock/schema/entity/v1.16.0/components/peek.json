@@ -1,0 +1,19 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Defines the entity's 'peek' behavior, defining the events that should be called during it.",
+	"properties": {
+		"on_open": {
+			"description": "Event to call when the entity starts peeking.",
+			"$ref": "../../general/eventDefinition.json"
+		},
+		"on_close": {
+			"description": "Event to call when the entity is done peeking.",
+			"$ref": "../../general/eventDefinition.json"
+		},
+		"on_target_open": {
+			"description": "Event to call when the entity's target entity starts peeking.",
+			"$ref": "../../general/eventDefinition.json"
+		}
+	}
+}

@@ -1,0 +1,26 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows a mob to randomly stroll around.",
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"interval": {
+			"description": "A random value to determine when to randomly move somewhere. This has a 1/interval chance to choose this goal.",
+			"type": "number"
+		},
+		"speed_multiplier": {
+			"description": "Movement speed multiplier of the mob when using this AI Goal.",
+			"type": "number"
+		},
+		"xz_dist": {
+			"description": "Distance in blocks on ground that the mob will look for a new spot to move to. Must be at least 1.",
+			"type": "number"
+		},
+		"y_dist": {
+			"description": "Distance in blocks that the mob will look up or down for a new spot to move to. Must be at least 1.",
+			"type": "number"
+		}
+	}
+}

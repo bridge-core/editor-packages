@@ -1,0 +1,16 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"type": "object",
+	"description": "Makes this block flammable",
+	"properties": {
+		"burn_odds": {
+			"description": "How likely the block will be destroyed by flames when on fire",
+			"type": "integer"
+		},
+		"flame_odds": {
+			"description": "How likely the block will catch flame when next to a fire",
+			"type": "integer"
+		}
+	}
+}

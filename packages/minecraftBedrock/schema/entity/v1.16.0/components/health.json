@@ -1,0 +1,30 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Sets the health for the entity.",
+	"properties": {
+		"value": {
+			"anyOf": [
+				{
+					"type": "number"
+				},
+				{
+					"properties": {
+						"range_min": {
+							"type": "number"
+						},
+						"range_max": {
+							"type": "number"
+						}
+					}
+				}
+			]
+		},
+		"max": {
+			"type": "number"
+		},
+		"min": {
+			"type": "number"
+		}
+	}
+}

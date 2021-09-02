@@ -1,0 +1,14 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Defines the families this entity belongs to.",
+	"properties": {
+		"family": {
+			"description": "List of family names.",
+			"type": "array",
+			"items": {
+				"$ref": "../../general/family.json"
+			}
+		}
+	}
+}

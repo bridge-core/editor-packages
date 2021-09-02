@@ -1,0 +1,7 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"type": "number",
+	"default": 64,
+	"description": "The max stack size of the item."
+}

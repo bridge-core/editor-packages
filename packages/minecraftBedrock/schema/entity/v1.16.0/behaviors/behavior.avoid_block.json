@@ -1,0 +1,38 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows this entity to avoid certain blocks.",
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"tick_interval": {
+			"type": "number"
+		},
+		"search_range": {
+			"type": "number"
+		},
+		"search_height": {
+			"type": "number"
+		},
+		"walk_speed_modifier": {
+			"type": "number"
+		},
+		"sprint_speed_modifier": {
+			"type": "number"
+		},
+		"target_selection_method": {
+			"type": "string",
+			"const": "nearest"
+		},
+		"target_blocks": {
+			"type": "array",
+			"items": {
+				"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+			}
+		},
+		"on_escape": {
+			"$ref": "../../general/eventDefinition.json"
+		}
+	}
+}

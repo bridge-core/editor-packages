@@ -1,0 +1,51 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Specifies costing information for mobs that prefer to walk on preferred paths.",
+	"properties": {
+		"max_fall_blocks": {
+			"description": "Distance mob can fall without taking damage.",
+			"type": "number"
+		},
+		"jump_cost": {
+			"description": "Added cost for jumping up a node.",
+			"type": "number"
+		},
+		"default_block_cost": {
+			"description": "Cost for non-preferred blocks.",
+			"type": "number"
+		},
+		"preferred_path_blocks": {
+			"description": "A list of blocks with their associated cost.",
+			"type": "array",
+			"items": {
+				"properties": {
+					"cost": {
+						"type": "number"
+					},
+					"blocks": {
+						"type": "array",
+						"items": {
+							"anyOf": [
+								{
+									"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+								},
+								{
+									"type": "object",
+									"properties": {
+										"name": {
+											"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+										},
+										"states": {
+											"$ref": "../../../general/vanilla/blockState.json"
+										}
+									}
+								}
+							]
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows the villager to look for a mate to spawn other villagers with. Can only be used by Villagers.",
+	"properties": {
+		"priority": {
+			"type": "number"
+		}
+	}
+}

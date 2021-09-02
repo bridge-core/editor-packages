@@ -1,0 +1,16 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "This move causes the mob to glide.",
+	"properties": {
+		"max_turn": {
+			"$ref": "../../../general/degree.json"
+		},
+		"start_speed": {
+			"type": "number"
+		},
+		"speed_when_turning": {
+			"type": "number"
+		}
+	}
+}

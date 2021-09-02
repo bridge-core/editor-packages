@@ -1,0 +1,17 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"description": "Trigger an event when a player falls onto this block",
+	"allOf": [
+		{
+			"$ref": "../../general/eventDefinition.json"
+		},
+		{
+			"properties": {
+				"min_fall_distance": {
+					"type": "number"
+				}
+			}
+		}
+	]
+}

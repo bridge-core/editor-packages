@@ -1,0 +1,33 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Defines what mob effects to add and remove to the entity when adding this component.",
+	"properties": {
+		"add_effects": {
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../../../general/effectDefinition.json"
+					}
+				},
+				{
+					"$ref": "../../../general/effectDefinition.json"
+				}
+			]
+		},
+		"remove_effects": {
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../../../general/vanilla/effectName.json"
+					}
+				},
+				{
+					"$ref": "../../../general/vanilla/effectName.json"
+				}
+			]
+		}
+	}
+}

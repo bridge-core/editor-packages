@@ -1,0 +1,11 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"type": "object",
+	"description": "Triggers an event at random intervals",
+	"properties": {
+		"on_tick": {
+			"$ref": "../../general/eventDefinition.json"
+		}
+	}
+}

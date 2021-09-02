@@ -1,0 +1,6 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"type": "number",
+	"description": "How long to use before item is done being used."
+}

@@ -1,0 +1,6 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"description": "Trigger an event when a player leaves this block",
+	"$ref": "../../general/eventDefinition.json"
+}

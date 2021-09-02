@@ -50,13 +50,27 @@
 							},
 							"components": {
 								"description": "Components to add when the condition evaluates to 'true'",
-								"$ref": "./components.json"
+								"allOf": [
+									{
+										"$ref": "../dynamic/customComponents.json"
+									},
+									{
+										"$ref": "./components/_main.json"
+									}
+								]
 							}
 						}
 					}
 				},
 				"components": {
-					"$ref": "./components.json"
+					"allOf": [
+						{
+							"$ref": "../dynamic/customComponents.json"
+						},
+						{
+							"$ref": "./components/_main.json"
+						}
+					]
 				},
 				"events": {
 					"type": "object",

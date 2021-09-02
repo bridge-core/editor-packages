@@ -1,0 +1,5 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"description": "Adds a trigger to call when this pet's owner awakes after sleeping with the pet.",
+	"$ref": "../../general/eventDefinition.json"
+}

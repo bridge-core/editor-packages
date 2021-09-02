@@ -1,0 +1,30 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"admire_item_sound": {
+			"description": "The sound event to play when admiring the item.",
+			"type": "string"
+		},
+		"sound_interval": {
+			"description": "The range of time in seconds to randomly wait before playing the sound again.",
+			"properties": {
+				"range_min": {
+					"type": "number"
+				},
+				"range_max": {
+					"type": "number"
+				}
+			}
+		},
+		"on_admire_item_start": {
+			"$ref": "../../general/eventDefinition.json"
+		},
+		"on_admire_item_stop": {
+			"$ref": "../../general/eventDefinition.json"
+		}
+	}
+}

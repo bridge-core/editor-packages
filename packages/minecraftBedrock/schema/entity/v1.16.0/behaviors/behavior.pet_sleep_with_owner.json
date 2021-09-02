@@ -1,0 +1,29 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows the pet mob to move onto a bed with it's owner while sleeping.",
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"goal_radius": {
+			"description": "Distance in blocks within the mob considers it has reached the goal. This is the 'wiggle room' to stop the AI from bouncing back and forth trying to reach a specific spot.",
+			"type": "number"
+		},
+		"search_height": {
+			"description": "Height in blocks from the owner the pet can be to sleep with owner.",
+			"type": "number"
+		},
+		"search_range": {
+			"description": "The distance in blocks from the owner the pet can be to sleep with owner.",
+			"type": "number"
+		},
+		"search_radius": {
+			"type": "number"
+		},
+		"speed_multiplier": {
+			"description": "Movement speed multiplier of the mob when using this AI Goal.",
+			"type": "number"
+		}
+	}
+}

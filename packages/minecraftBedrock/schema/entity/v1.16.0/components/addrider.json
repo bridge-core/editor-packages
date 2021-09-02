@@ -1,0 +1,15 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Adds a rider to the entity. Requires minecraft:rideable.",
+	"properties": {
+		"entity_type": {
+			"description": "The entity type that will be riding this entity.",
+			"$ref": "../../../general/reference/identifiers.json#/definitions/entity_identifiers"
+		},
+		"spawn_event": {
+			"description": "The spawn event that will be used when the riding entity is created.",
+			"type": "string"
+		}
+	}
+}

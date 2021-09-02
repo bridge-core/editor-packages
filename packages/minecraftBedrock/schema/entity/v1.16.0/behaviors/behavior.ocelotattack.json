@@ -1,0 +1,43 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Can only be used by the Ocelot. Allows it to perform the sneak and pounce attack.",
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"sneak_speed_multiplier": {
+			"description": "Multiplier for the sneaking speed. 1.0 means the ocelot will move at the speed it normally sneaks.",
+			"type": "number"
+		},
+		"sprint_speed_multiplier": {
+			"description": "Multiplier for the running speed of this mob while using this attack.",
+			"type": "number"
+		},
+		"walk_speed_multiplier": {
+			"description": "Multiplier for the walking speed while using this attack.",
+			"type": "number"
+		},
+		"cooldown_time": {
+			"type": "number"
+		},
+		"x_max_rotation": {
+			"type": "number"
+		},
+		"y_max_head_rotation": {
+			"type": "number"
+		},
+		"max_distance": {
+			"type": "number"
+		},
+		"max_sneak_range": {
+			"type": "number"
+		},
+		"max_sprint_range": {
+			"type": "number"
+		},
+		"reach_multiplier": {
+			"type": "number"
+		}
+	}
+}

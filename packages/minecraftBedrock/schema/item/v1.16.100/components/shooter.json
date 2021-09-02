@@ -1,0 +1,51 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"type": "object",
+	"properties": {
+		"max_draw_duration": {
+			"type": "number",
+			"description": "Draw Duration. Default is set to 0."
+		},
+		"charge_on_draw": {
+			"type": "boolean",
+			"description": "Charge on draw? Default is set to false."
+		},
+		"scale_power_by_draw_duration": {
+			"type": "boolean",
+			"description": "Scale power by draw duration? Default is set to false."
+		},
+		"launch_power_scale": {
+			"type": "number",
+			"description": "Launch power scale. Default is set to 1.0."
+		},
+		"max_launch_power": {
+			"type": "number",
+			"description": "Launch power. Default is set to 1.0."
+		},
+		"ammunition": {
+			"type": "array",
+			"description": "Define the ammunition item to use.",
+			"items": {
+				"type": "object",
+				"properties": {
+					"item": {
+						"type": "string"
+					},
+					"use_offhand": {
+						"description": "Whether ammunition can be taken from the offhand.",
+						"type": "boolean"
+					},
+					"search_inventory": {
+						"description": "Whether the whole inventory should be searched for the ammunition.",
+						"type": "boolean"
+					},
+					"use_in_creative": {
+						"description": "Whether this ammunition can be used in creative mode.",
+						"type": "boolean"
+					}
+				}
+			}
+		}
+	}
+}

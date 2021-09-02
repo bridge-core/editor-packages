@@ -1,0 +1,16 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"type": "object",
+	"description": "Allows the item to speed the growth of crops like bone meal.",
+	"properties": {
+		"type": {
+			"type": "string",
+			"description": "The type of fertilizer.",
+			"enum": [
+				"bonemeal",
+				"rapid"
+			]
+		}
+	}
+}

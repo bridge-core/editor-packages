@@ -1,0 +1,30 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows the mob to randomly sit and look around for a duration. Note: Must have a sitting animation set up to use this.",
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"min_look_count": {
+			"description": "The min amount of unique looks a mob will have while looking around.",
+			"type": "number"
+		},
+		"max_look_count": {
+			"description": "The max amount of unique looks a mob will have while looking around.",
+			"type": "number"
+		},
+		"min_look_time": {
+			"description": "The min amount of time (in ticks) a mob will stay looking at a direction while looking around.",
+			"type": "number"
+		},
+		"max_look_time": {
+			"description": "The max amount of time (in ticks) a mob will stay looking at a direction while looking around.",
+			"type": "number"
+		},
+		"probability": {
+			"description": "The probability of randomly looking around/sitting.",
+			"type": "number"
+		}
+	}
+}

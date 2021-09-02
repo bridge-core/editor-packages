@@ -1,0 +1,21 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows the mob to randomly look around.",
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"look_time": {
+			"type": "array",
+			"maxItems": 2,
+			"minItems": 2,
+			"items": {
+				"type": "number"
+			}
+		},
+		"look_distance": {
+			"type": "number"
+		}
+	}
+}

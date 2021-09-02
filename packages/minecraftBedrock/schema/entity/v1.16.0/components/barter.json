@@ -1,0 +1,15 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Enables the component to drop an item as a barter exchange.",
+	"properties": {
+		"barter_table": {
+			"description": "Loot table that's used to drop a random item.",
+			"$ref": "../../../general/reference/paths.json#/definitions/loot_table_paths"
+		},
+		"cooldown_after_being_attacked": {
+			"description": "Duration, in seconds, for which mob won't barter items if it was hurt.",
+			"type": "number"
+		}
+	}
+}

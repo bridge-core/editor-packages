@@ -1,0 +1,44 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Defines an entity's teleporting behavior.",
+	"properties": {
+		"random_teleports": {
+			"description": "If true, the entity will teleport randomly.",
+			"type": "boolean"
+		},
+		"max_random_teleport_time": {
+			"description": "Maximum amount of time in seconds between random teleports.",
+			"type": "number"
+		},
+		"min_random_teleport_time": {
+			"description": "Minimum amount of time in seconds between random teleports.",
+			"type": "number"
+		},
+		"random_teleport_cube": {
+			"description": "Entity will teleport to a random position within the area defined by this cube.",
+			"type": "array",
+			"minItems": 3,
+			"maxItems": 3,
+			"items": {
+				"type": "number"
+			}
+		},
+		"target_distance": {
+			"description": "Maximum distance the entity will teleport when chasing a target.",
+			"type": "number"
+		},
+		"target_teleport_chance": {
+			"description": "The chance that the entity will teleport between 0.0 and 1.0. 1.0 means 100%.",
+			"type": "number"
+		},
+		"light_teleport_chance": {
+			"description": "Modifies the chance that the entity will teleport if the entity is in daylight.",
+			"type": "number"
+		},
+		"dark_teleport_chance": {
+			"description": "Modifies the chance that the entity will teleport if the entity is in darkness.",
+			"type": "number"
+		}
+	}
+}

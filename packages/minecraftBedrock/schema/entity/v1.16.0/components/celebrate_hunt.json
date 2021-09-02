@@ -1,0 +1,39 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Specifies hunt celebration behaviour.",
+	"properties": {
+		"celebration_targets": {
+			"description": "The list of conditions that target of hunt must satisfy to initiate celebration.",
+			"$ref": "../../general/filter.json"
+		},
+		"broadcast": {
+			"description": "If true, celebration will be broadcasted to other entities in the radius.",
+			"type": "boolean"
+		},
+		"duration": {
+			"description": "Duration, in seconds, of celebration.",
+			"type": "number"
+		},
+		"radius": {
+			"description": "If broadcast is enabled, specifies the radius in which it will notify other entities for celebration.",
+			"type": "number"
+		},
+		"celebrate_sound": {
+			"description": "The sound event to play when the mob is celebrating.",
+			"type": "string"
+		},
+		"sound_interval": {
+			"additionalProperties": false,
+			"description": "The range of time in seconds to randomly wait before playing the sound again.",
+			"properties": {
+				"range_min": {
+					"type": "number"
+				},
+				"range_max": {
+					"type": "number"
+				}
+			}
+		}
+	}
+}

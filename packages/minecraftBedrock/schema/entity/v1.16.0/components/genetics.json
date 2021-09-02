@@ -1,0 +1,131 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Defines the way a mob's genes and alleles are passed on to it's offspring, and how those traits manifest in the child. Compatible parent genes are crossed together, the alleles are handed down from the parents to the child, and any matching genetic variants fire off JSON events to modify the child and express the traits.",
+	"properties": {
+		"mutation_rate": {
+			"description": "Chance that an allele will be replaced with a random one instead of the parent's allele during birth.",
+			"type": "number"
+		},
+		"genes": {
+			"description": "The list of genes that this entity has and will cross with a partner during breeding.",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"name": {
+						"description": "The name of the gene.",
+						"type": "string"
+					},
+					"allele_range": {
+						"description": "The range of positive integer allele values for this gene. Spawned mobs will have a random number in this range assigned to them.",
+						"anyOf": [
+							{
+								"type": "integer"
+							},
+							{
+								"properties": {
+									"range_min": {
+										"description": "Lower bound of the allele values for this gene.",
+										"type": "integer"
+									},
+									"range_max": {
+										"description": "Upper bound of the allele values for this gene.",
+										"type": "integer"
+									}
+								}
+							}
+						]
+					},
+					"genetic_variants": {
+						"description": "The list of genetic variants for this gene. These check for particular allele combinations and fire events when all of them are satisfied.",
+						"type": "array",
+						"items": {
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"main_allele": {
+									"description": "If this value is non-negative, compare the mob's main allele with this value for a match. Can also be a range of integers.",
+									"anyOf": [
+										{
+											"type": "number"
+										},
+										{
+											"properties": {
+												"range_min": {
+													"type": "number"
+												},
+												"range_max": {
+													"type": "number"
+												}
+											}
+										}
+									]
+								},
+								"both_allele": {
+									"description": "If this value is non-negative, compare both the mob's main and hidden alleles with this value for a match with both. Can also be a range of integers.",
+									"anyOf": [
+										{
+											"type": "number"
+										},
+										{
+											"properties": {
+												"range_min": {
+													"type": "number"
+												},
+												"range_max": {
+													"type": "number"
+												}
+											}
+										}
+									]
+								},
+								"hidden_allele": {
+									"description": "If this value is non-negative, compare the mob's hidden allele with this value for a match. Can also be a range of integers.",
+									"anyOf": [
+										{
+											"type": "number"
+										},
+										{
+											"properties": {
+												"range_min": {
+													"type": "number"
+												},
+												"range_max": {
+													"type": "number"
+												}
+											}
+										}
+									]
+								},
+								"either_allele": {
+									"description": "If this value is non-negative, compare both the mob's main and hidden alleles with this value for a match with either. Can also be a range of integers.",
+									"anyOf": [
+										{
+											"type": "number"
+										},
+										{
+											"properties": {
+												"range_min": {
+													"type": "number"
+												},
+												"range_max": {
+													"type": "number"
+												}
+											}
+										}
+									]
+								},
+								"birth_event": {
+									"description": "Event to run when this mob is created and matches the above allele conditions.",
+									"$ref": "../../general/eventDefinition.json"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

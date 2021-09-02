@@ -1,0 +1,104 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "properties": {
+        "is_amphibious": {
+            "description": "Tells the pathfinder whether or not it can walk on the ground underwater",
+			"type": "boolean",
+            "default": false
+		},
+		"avoid_portals": {
+			"description": "Tells the pathfinder to avoid portals (like nether portals) when finding a path.",
+			"type": "boolean",
+            "default": false
+		},
+		"avoid_sun": {
+			"description": "Whether or not the pathfinder should avoid tiles that are exposed to the sun when creating paths.",
+			"type": "boolean",
+            "default": false
+		},
+		"avoid_water": {
+			"description": "Tells the pathfinder to avoid water when creating a path.",
+			"type": "boolean",
+            "default": false
+		},
+		"avoid_damage_blocks": {
+            "description": "Tells the pathfinder to avoid blocks that cause damage when finding a path.",
+			"type": "boolean",
+            "default": false
+		},
+		"can_break_doors": {
+			"description": "Tells the pathfinder that it can path through a closed door and break it.",
+			"type": "boolean",
+            "default": false
+		},
+		"can_open_doors": {
+			"description": "Tells the pathfinder that it can path through a closed door assuming the AI will open the door.",
+			"type": "boolean",
+            "default": false
+		},
+		"can_pass_doors": {
+			"description": "Whether a path can be created through a door.",
+			"type": "boolean",
+            "default": true
+		},
+		"can_open_iron_doors": {
+			"description": "Tells the pathfinder that it can path through a closed iron door assuming the AI will open the door.",
+			"type": "boolean",
+            "default": false
+		},
+		"can_path_over_water": {
+			"description": "Tells the pathfinder whether or not it can travel on the surface of the water.",
+			"type": "boolean",
+            "default": false
+		},
+		"can_path_over_lava": {
+			"description": "Tells the pathfinder whether or not it can travel on the surface of the lava.",
+			"type": "boolean",
+            "default": false
+		},
+		"can_path_from_air": {
+            "description": "Tells the pathfinder that it can start pathing when in the air.",
+			"type": "boolean",
+            "default": false
+		},
+		"can_sink": {
+			"description": "Tells the pathfinder whether or not it will be pulled down by gravity while in water.",
+			"type": "boolean",
+            "default": true
+		},
+		"can_walk_in_lava": {
+			"description": "Tells the pathfinder whether or not it can travel in lava like walking on ground.",
+			"type": "boolean",
+            "default": false
+		},
+        "blocks_to_avoid": {
+            "description": "Tells the pathfinder which blocks to avoid when creating a path.",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
+            }
+        },
+        "can_breach": {
+            "description": "Tells the pathfinder whether or not it can jump out of water (like a dolphin).",
+            "type": "boolean",
+            "default": false
+        },
+        "can_swim": {
+            "description": "Tells the pathfinder whether or not it can path anywhere through water and plays swimming animation along that path.",
+            "type": "boolean",
+            "default": false
+        },
+        "can_jump": {
+            "description": "Tells the pathfinder whether or not it can jump up blocks.",
+            "type": "boolean",
+            "default": true
+        },
+        "can_walk": {
+            "description": "Tells the pathfinder whether or not it can walk on the ground outside water.",
+            "type": "boolean",
+            "default": true
+        }
+    }
+}

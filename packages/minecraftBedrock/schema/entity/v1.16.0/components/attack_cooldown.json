@@ -1,0 +1,27 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Adds a cooldown to a mob. The intention of this cooldown is to be used to prevent the mob from attempting to aquire new attack targets.",
+	"properties": {
+		"attack_cooldown_time": {
+			"description": "Amount of time in seconds for the cooldown. Can be specified as a number or a pair of numbers (min and max).",
+			"anyOf": [
+				{
+					"type": "number"
+				},
+				{
+					"type": "array",
+					"minItems": 2,
+					"maxItems": 2,
+					"items": {
+						"type": "number"
+					}
+				}
+			]
+		},
+		"attack_cooldown_complete_event": {
+			"description": "Event to be runned when the cooldown is complete.",
+			"$ref": "../../general/eventDefinition.json"
+		}
+	}
+}

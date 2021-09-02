@@ -1,0 +1,78 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows mob to move towards a certain block.",
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"speed_multiplier": {
+			"type": "number"
+		},
+		"tick_interval": {
+			"type": "number"
+		},
+		"start_chance": {
+			"type": "number"
+		},
+		"search_range": {
+			"type": "number"
+		},
+		"search_height": {
+			"type": "number"
+		},
+		"goal_radius": {
+			"type": "number"
+		},
+		"stay_duration": {
+			"type": "number"
+		},
+		"target_selection_method": {
+			"type": "string",
+			"enum": [
+				"nearest",
+				"random"
+			]
+		},
+		"target_offset": {
+			"type": "array",
+			"minItems": 3,
+			"maxItems": 3,
+			"items": {
+				"type": "number"
+			}
+		},
+		"target_blocks": {
+			"type": "array",
+			"items": {
+				"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+			}
+		},
+		"on_stay_completed": {
+			"anyOf": [
+				{
+					"$ref": "../../general/eventDefinition.json"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../../general/eventDefinition.json"
+					}
+				}
+			]
+		},
+		"on_reach": {
+			"anyOf": [
+				{
+					"$ref": "../../general/eventDefinition.json"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../../general/eventDefinition.json"
+					}
+				}
+			]
+		}
+	}
+}

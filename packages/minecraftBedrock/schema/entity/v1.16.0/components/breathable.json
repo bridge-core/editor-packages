@@ -1,0 +1,61 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Defines what blocks this entity can breathe in and gives them the ability to suffocate.",
+	"properties": {
+		"breathe_blocks": {
+			"description": "List of blocks this entity can breathe in, in addition to the above.",
+			"type": "array",
+			"items": {
+				"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+			}
+		},
+		"breathes_water": {
+			"description": "If true, this entity can breathe in water.",
+			"type": "boolean"
+		},
+		"breathes_lava": {
+			"description": "If true, this entity can breathe in lava.",
+			"type": "boolean"
+		},
+		"breathes_air": {
+			"description": "If true, this entity can breathe in air.",
+			"type": "boolean"
+		},
+		"breathes_solids": {
+			"description": "If true, this entity can breathe in solid blocks.",
+			"type": "boolean"
+		},
+		"generates_bubbles": {
+			"description": "If true, this entity will have visible bubbles while in water.",
+			"type": "boolean"
+		},
+		"inhale_time": {
+			"description": "Time in seconds to recover breath to maximum.",
+			"type": "number"
+		},
+		"suffocate_time": {
+			"description": "Time in seconds between suffocation damage.",
+			"type": "number"
+		},
+		"suffocateTime": {
+			"description": "Time in seconds between suffocation damage.",
+			"type": "number"
+		},
+		"total_supply": {
+			"description": "Time in seconds the entity can hold its breath.",
+			"type": "number"
+		},
+		"totalSupply": {
+			"description": "Time in seconds the entity can hold its breath.",
+			"type": "number"
+		},
+		"non_breathe_blocks": {
+			"description": "List of blocks this entity can't breathe in, in addition to the above.",
+			"type": "array",
+			"items": {
+				"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+			}
+		}
+	}
+}

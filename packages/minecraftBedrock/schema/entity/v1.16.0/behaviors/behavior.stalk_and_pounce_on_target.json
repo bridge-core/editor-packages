@@ -1,0 +1,48 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows a mob to stalk a target, then once within range pounce onto a target, on success the target will be attacked dealing damage defined by the attack component. On failure, the mob will risk getting stuck.",
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"set_persistent": {
+			"type": "boolean"
+		},
+		"stalk_speed": {
+			"description": "The movement speed in which you stalk your target.",
+			"type": "number"
+		},
+		"max_stalk_dist": {
+			"description": "The maximum distance away a target can be before the mob gives up on stalking.",
+			"type": "number"
+		},
+		"leap_height": {
+			"description": "The height in blocks the mob jumps when leaping at its target.",
+			"type": "number"
+		},
+		"leap_dist": {
+			"description": "The distance in blocks the mob jumps in the direction of its target.",
+			"type": "number"
+		},
+		"pounce_max_dist": {
+			"description": "The maximum distance away from the target in blocks to begin pouncing at the target.",
+			"type": "number"
+		},
+		"interest_time": {
+			"description": "The amount of time the mob will be interested before pouncing. This happens when the mob is within range of pouncing.",
+			"type": "number"
+		},
+		"stuck_time": {
+			"description": "The amount of time the mob will be stuck if they fail and land on a block they can be stuck on.",
+			"type": "number"
+		},
+		"strike_dist": {
+			"description": "The max distance away from the target when landing from the pounce that will still result in damaging the target.",
+			"type": "number"
+		},
+		"struck_blocks": {
+			"$ref": "../../general/filter.json"
+		}
+	}
+}

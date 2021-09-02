@@ -1,0 +1,35 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Triggers based on rail conditions",
+	"properties": {
+		"check_block_types": {
+			"description": "If true, on tick this entity will trigger its on_deactivate behavior.",
+			"type": "boolean"
+		},
+		"eject_on_activate": {
+			"description": "If true, this entity will eject all of its riders when it passes over an activated rail.",
+			"type": "boolean"
+		},
+		"eject_on_deactivate": {
+			"description": "If true, this entity will eject all of its riders when it passes over a deactivated rail.",
+			"type": "boolean"
+		},
+		"on_activate": {
+			"description": "Event to call when the rail is activated.",
+			"$ref": "../../general/eventDefinition.json"
+		},
+		"on_deactivate": {
+			"description": "Event to call when the rail is deactivated.",
+			"$ref": "../../general/eventDefinition.json"
+		},
+		"tick_command_block_on_activate": {
+			"description": "If true, command blocks will start ticking when passing over an activated rail.",
+			"type": "boolean"
+		},
+		"tick_command_block_on_deactivate": {
+			"description": "If true, command blocks will start ticking when passing over an activated rail.",
+			"type": "boolean"
+		}
+	}
+}

@@ -1,0 +1,57 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows the mob to use ranged attacks like shooting arrows.",
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"attack_interval": {
+			"description": "Time in seconds the entity will wait after an attack before launching another.",
+			"type": "number"
+		},
+		"attack_interval_max": {
+			"description": "Maximum amount of time in seconds the entity will wait after an attack before launching another.",
+			"type": "number"
+		},
+		"attack_interval_min": {
+			"description": "Minimum amount of time in seconds the entity will wait after an attack before launching another.",
+			"type": "number"
+		},
+		"attack_radius": {
+			"description": "Maximum distance the target can be for this mob to fire. If the target is further away, this mob will move first before firing.",
+			"type": "number"
+		},
+		"attack_radius_min": {
+			"description": "Minimum distance the target can be for this mob to fire. If the target is further away, this mob will move first before firing.",
+			"type": "number"
+		},
+		"burst_shots": {
+			"description": "Number of shots fired every time the mob uses a charged attack.",
+			"type": "number"
+		},
+		"burst_interval": {
+			"description": "Amount of time in seconds between each individual shot when firing multiple shots per attack.",
+			"type": "number"
+		},
+		"charge_charged_trigger": {
+			"description": "The minimum amount of time in ticks the mob has to charge before firing a charged attack.",
+			"type": "number"
+		},
+		"charge_shoot_trigger": {
+			"description": "The minimum amount of time in ticks for the mob to start charging a charged shot. Must be greater than 0 to enable burst shots.",
+			"type": "number"
+		},
+		"ranged_fov": {
+			"description": "The allowable FOV the actor will use to determine if it can make a valid ranged attack.",
+			"$ref": "../../../general/degree.json"
+		},
+		"speed_multiplier": {
+			"description": "Movement speed multiplier of the mob when using this AI Goal.",
+			"type": "number"
+		},
+		"target_in_sight_time": {
+			"type": "number"
+		}
+	}
+}

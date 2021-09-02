@@ -1,0 +1,18 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows the creeper to swell up when a player is nearby. It can only be used by Creepers.",
+	"properties": {
+		"priority": {
+			"type": "number"
+		},
+		"start_distance": {
+			"description": "This mob starts swelling when a target is at least this many blocks away.",
+			"type": "number"
+		},
+		"stop_distance": {
+			"description": "This mob stops swelling when a target has moved away at least this many blocks.",
+			"type": "number"
+		}
+	}
+}

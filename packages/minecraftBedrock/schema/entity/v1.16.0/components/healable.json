@@ -1,0 +1,56 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Defines the interactions with this entity for healing it.",
+	"properties": {
+		"force_use": {
+			"description": "Determines if item can be used regardless of entity being at full health.",
+			"type": "boolean"
+		},
+		"filters": {
+			"description": "The filter group that defines the conditions for using this item to heal the entity.",
+			"$ref": "../../general/filter.json"
+		},
+		"items": {
+			"description": "The array of items that can be used to heal this entity.",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"item": {
+						"description": "Item identifier that can be used to heal this entity.",
+						"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
+					},
+					"heal_amount": {
+						"description": "The amount of health this entity gains when fed this item.",
+						"type": "number"
+					},
+					"filters": {
+						"$ref": "../../general/filter.json"
+					},
+					"effects": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"name": {
+									"$ref": "../../../general/vanilla/effectName.json"
+								},
+								"chance": {
+									"type": "number"
+								},
+								"duration": {
+									"type": "number"
+								},
+								"amplifier": {
+									"type": "number"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
