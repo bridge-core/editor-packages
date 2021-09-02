@@ -1,0 +1,33 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"description": "Generates surface on blocks with non-solid blocks above or below.",
+	"additionalProperties": false,
+	"properties": {
+		"floor_materials": {
+			"description": "Materials used for the surface floor.",
+			"type": "array",
+			"items": {
+				"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+			}
+		},
+		"ceiling_materials": {
+			"description": "Materials used for the surface ceiling.",
+			"type": "array",
+			"items": {
+				"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+			}
+		},
+		"sea_material": {
+			"description": "Material used to replace air blocks below sea level.",
+			"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+		},
+		"foundation_material": {
+			"description": "Material used to repalce solid blocks that are not surface blocks.",
+			"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+		},
+		"beach_material": {
+			"description": "Material used to decorate surface near sea level.",
+			"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+		}
+	}
+}

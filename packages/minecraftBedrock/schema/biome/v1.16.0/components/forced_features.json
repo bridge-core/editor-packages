@@ -1,0 +1,73 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"description": "Force specific decorative features (trees, plants, etc.) to appear in this Biome, regardless of normal decoration rules.",
+	"additionalProperties": false,
+	"properties": {
+		"first_pass": {
+			"type": "array",
+			"items": {
+				"$ref": "../../general.json#/definitions/forced_features"
+			}
+		},
+		"before_underground_pass": {
+			"type": "array",
+			"items": {
+				"$ref": "../../general.json#/definitions/forced_features"
+			}
+		},
+		"underground_pass": {
+			"type": "array",
+			"items": {
+				"$ref": "../../general.json#/definitions/forced_features"
+			}
+		},
+		"after_underground_pass": {
+			"type": "array",
+			"items": {
+				"$ref": "../../general.json#/definitions/forced_features"
+			}
+		},
+		"before_surface_pass": {
+			"type": "array",
+			"items": {
+				"$ref": "../../general.json#/definitions/forced_features"
+			}
+		},
+		"surface_pass": {
+			"type": "array",
+			"items": {
+				"$ref": "../../general.json#/definitions/forced_features"
+			}
+		},
+		"after_surface_pass": {
+			"type": "array",
+			"items": {
+				"$ref": "../../general.json#/definitions/forced_features"
+			}
+		},
+		"before_sky_pass": {
+			"type": "array",
+			"items": {
+				"$ref": "../../general.json#/definitions/forced_features"
+			}
+		},
+		"sky_pass": {
+			"type": "array",
+			"items": {
+				"$ref": "../../general.json#/definitions/forced_features"
+			}
+		},
+		"after_sky_pass": {
+			"type": "array",
+			"items": {
+				"$ref": "../../general.json#/definitions/forced_features"
+			}
+		},
+		"final_pass": {
+			"type": "array",
+			"items": {
+				"$ref": "../../general.json#/definitions/forced_features"
+			}
+		}
+	}
+}

@@ -1,0 +1,66 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"description": "Specify fine-detail changes to blocks used in terrain generation (based on a noise function).",
+	"additionalProperties": false,
+	"properties": {
+		"adjustments": {
+			"description": "All adjustments that match the column's noise values will be applied in the order listed.",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"materials": {
+						"additionalProperties": false,
+						"properties": {
+							"floor_material": {
+								"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+							},
+							"foundation_material": {
+								"description": "Controls the block type used deep underground in this biome when this adjustment is active.",
+								"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+							},
+							"mid_material": {
+								"description": "Controls the block type used in a layer below the surface of this biome when this adjustment is active.",
+								"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+							},
+							"top_material": {
+								"description": "Controls the block type used for the surface of this biome when this adjustment is active.",
+								"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+							},
+							"sea_floor_material": {
+								"description": "Controls the block type used as a floor for bodies of water in this biome when this adjustment is active.",
+								"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+							},
+							"sea_material": {
+								"description": "Controls the block type used in the bodies of water in this biome when this adjustment is active.",
+								"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+							}
+						}
+					},
+					"noise_range": {
+						"description": "Defines a range of noise values [min, max) for which this adjustment should be applied.",
+						"type": "array",
+						"minItems": 2,
+						"maxItems": 2,
+						"items": {
+							"type": "number"
+						}
+					},
+					"height_range": {
+						"description": "Defines a range of noise values [min, max] for which this adjustment should be applied.",
+						"type": "array",
+						"minItems": 2,
+						"maxItems": 2,
+						"items": {
+							"type": "number"
+						}
+					},
+					"noise_frequency_scale": {
+						"description": "The scale to multiply by the position when accessing the noise value for the material adjustments.",
+						"type": "number"
+					}
+				}
+			}
+		}
+	}
+}

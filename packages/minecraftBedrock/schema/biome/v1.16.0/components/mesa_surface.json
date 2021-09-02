@@ -1,0 +1,25 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"description": "Similar to overworld_surface. Adds colored strata and optional pillars.",
+	"allOf": [
+		{
+			"$ref": "./surface_parameters.json"
+		},
+		{
+			"properties": {
+				"clay_material": {
+					"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+				},
+				"hard_clay_material": {
+					"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+				},
+				"bryce_pillars": {
+					"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+				},
+				"has_forest": {
+					"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+				}
+			}
+		}
+	]
+}

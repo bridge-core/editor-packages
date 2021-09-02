@@ -16,7 +16,7 @@
 				},
 				"components": {
 					"required": ["minecraft:bounds"],
-					"$ref": "./components.json"
+					"$ref": "./components/_main.json"
 				}
 			}
 		}

@@ -18,10 +18,10 @@
 				"components": {
 					"allOf": [
 						{
-							"$ref": "./tag.json"
+							"$ref": "../tag.json"
 						},
 						{
-							"$ref": "./components.json"
+							"$ref": "./components/_main.json"
 						}
 					]
 				}

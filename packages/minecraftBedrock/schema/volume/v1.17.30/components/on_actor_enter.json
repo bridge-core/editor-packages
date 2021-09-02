@@ -1,0 +1,15 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"description": "Component that defines what happens when an actor enters the volume.",
+	"required": ["on_enter"],
+	"additionalProperties": false,
+	"properties": {
+		"on_enter": {
+			"type": "array",
+			"description": "Array of triggers.",
+			"items": {
+				"$ref": "../../general/eventDefinition.json"
+			}
+		}
+	}
+}

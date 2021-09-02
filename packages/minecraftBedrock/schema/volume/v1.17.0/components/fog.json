@@ -1,0 +1,15 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"description": "Displays the given fog whenever a player enters the volume. Each volume can only have one fog attached.",
+	"additionalProperties": false,
+	"properties": {
+		"fog_identifier": {
+			"description": "The identifier of a fog definition. Note that you will not receive any feedback if the definition does not exist.",
+			"$ref": "../../../general/reference/identifiers.json#/definitions/fog_identifiers"
+		},
+		"priority": {
+			"description": "The priority for this fog definition setting. Smaller numbers have higher priority. Fogs with equal priority will be combined together.",
+			"type": "integer"
+		}
+	}
+}
