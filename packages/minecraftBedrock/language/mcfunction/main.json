@@ -24,7 +24,8 @@
 						{
 							"type": "boolean",
 							"argumentName": "lock",
-							"description": "Specifies whether the eternal daytime is locked or not."
+							"description": "Specifies whether the eternal daytime is locked or not.",
+							"isOptional": true
 						}
 					]
 				},
@@ -45,19 +46,22 @@
 						{
 							"type": "number",
 							"argumentName": "intensity",
-							"description": "Specifies the intensity of the camera shake."
+							"description": "Specifies the intensity of the camera shake.",
+							"isOptional": true
 						},
 						{
 							"type": "number",
 							"argumentName": "seconds",
-							"description": "Specifies the duration of the camera shake."
+							"description": "Specifies the duration of the camera shake.",
+							"isOptional": true
 						},
 						{
 							"description": "Specifies the type of camera shake direction.",
 							"argumentName": "shakeType",
 							"additionalData": {
 								"values": ["positional", "rotational"]
-							}
+							},
+							"isOptional": true
 						}
 					]
 				},
@@ -84,7 +88,8 @@
 						{
 							"type": "selector",
 							"argumentName": "player",
-							"description": "Specifies the player(s) whose items are cleared. If not specified, defaults to the player who executes the command."
+							"description": "Specifies the player(s) whose items are cleared. If not specified, defaults to the player who executes the command.",
+							"isOptional": true
 						},
 						{
 							"type": "string",
@@ -92,17 +97,20 @@
 								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/item_identifiers"
 							},
 							"argumentName": "itemName",
-							"description": "Specifies the item to be cleared. If not specified, all items are cleared."
+							"description": "Specifies the item to be cleared. If not specified, all items are cleared.",
+							"isOptional": true
 						},
 						{
 							"type": "number",
 							"argumentName": "data",
-							"description": "Specifies the data value of the item to be cleared. If not specified, or if -1, all items that match itemName are cleared, regardless of their data."
+							"description": "Specifies the data value of the item to be cleared. If not specified, or if -1, all items that match itemName are cleared, regardless of their data.",
+							"isOptional": true
 						},
 						{
 							"type": "number",
 							"argumentName": "maxCount",
-							"description": "Specifies the maximum number of items to be cleared. If not specified, or if -1, all items that match item, or itemName and data are cleared. If 0, instead of clearing of items, detects and queries the amount of specified items."
+							"description": "Specifies the maximum number of items to be cleared. If not specified, or if -1, all items that match item, or itemName and data are cleared. If 0, instead of clearing of items, detects and queries the amount of specified items.",
+							"isOptional": true
 						}
 					]
 				},
@@ -113,7 +121,8 @@
 						{
 							"type": "selector",
 							"argumentName": "player",
-							"description": "Specifies the player whose spawn point should be removed. If not specified, defaults to the command's executor (@s)."
+							"description": "Specifies the player whose spawn point should be removed. If not specified, defaults to the command's executor (@s).",
+							"isOptional": true
 						}
 					]
 				},
@@ -136,14 +145,16 @@
 							"description": "Specifies whether to filter the blocks being cloned.",
 							"additionalData": {
 								"values": ["replace", "masked"]
-							}
+							},
+							"isOptional": true
 						},
 						{
 							"type": "string",
 							"description": "Specifies how to treat the source region.",
 							"additionalData": {
 								"values": ["force", "move", "normal"]
-							}
+							},
+							"isOptional": true
 						}
 					]
 				},
@@ -278,17 +289,20 @@
 						{
 							"argumentName": "seconds",
 							"description": "Specifies the effect's duration in seconds (or in gameticks for instant_damage, instant_health, and saturation). If not specified, defaults to 30 seconds (or 1 gameticks for instant_damage, instant_health, and saturation).",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						},
 						{
 							"argumentName": "amplifier",
 							"description": "Specifies the number of additional levels to add to the effect. If not specified, defaults to 0. Note that the first tier of a status effect (e.g. Regeneration I) is 0, so the second tier, for example Regeneration II, would be specified by an amplifier level of 1.",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						},
 						{
 							"argumentName": "hideParticles",
 							"description": "Specifies whether the particles and the HUD indicator‌ of the status effect should be hidden. If not specified, defaults to false.",
-							"type": "boolean"
+							"type": "boolean",
+							"isOptional": true
 						}
 					]
 				},
@@ -309,7 +323,8 @@
 						{
 							"argumentName": "level",
 							"description": "Specifies the enchantment level. Should be not greater than the maximum level for the specified enchantment. If not specified, defaults to 1.",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						}
 					]
 				},
@@ -333,7 +348,8 @@
 						{
 							"argumentName": "level",
 							"description": "Specifies the enchantment level. Should be not greater than the maximum level for the specified enchantment. If not specified, defaults to 1.",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						}
 					]
 				},
@@ -453,7 +469,8 @@
 						{
 							"argumentName": "tileData",
 							"description": "Specifies the block data to match when finding blocks to clone.",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						},
 						{
 							"argumentName": "oldBlockHandling",
@@ -466,7 +483,8 @@
 									"outline",
 									"replace"
 								]
-							}
+							},
+							"isOptional": true
 						}
 					]
 				},
@@ -495,7 +513,8 @@
 						{
 							"argumentName": "blockStates",
 							"description": "Specifies the block states to use for the block.",
-							"type": "blockState"
+							"type": "blockState",
+							"isOptional": true
 						},
 						{
 							"argumentName": "oldBlockHandling",
@@ -508,7 +527,8 @@
 									"outline",
 									"replace"
 								]
-							}
+							},
+							"isOptional": true
 						}
 					]
 				},
@@ -551,11 +571,13 @@
 							"type": "string",
 							"additionalData": {
 								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/block_identifiers"
-							}
+							},
+							"isOptional": true
 						},
 						{
 							"argumentName": "replaceDataValue",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						}
 					]
 				},
@@ -598,11 +620,13 @@
 							"type": "string",
 							"additionalData": {
 								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/block_identifiers"
-							}
+							},
+							"isOptional": true
 						},
 						{
 							"argumentName": "replaceDataValue",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						}
 					]
 				},
@@ -701,7 +725,8 @@
 						{
 							"argumentName": "player",
 							"description": "Specifies the target(s). If not specified, defaults to the player who executes the command.",
-							"type": "selector"
+							"type": "selector",
+							"isOptional": true
 						}
 					]
 				},
@@ -746,7 +771,8 @@
 						{
 							"argumentName": "value",
 							"description": "Specifies the value to set the game rule to.",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						}
 					]
 				},
@@ -791,7 +817,8 @@
 						{
 							"argumentName": "value",
 							"description": "Specifies the value to set the game rule to.",
-							"type": "boolean"
+							"type": "boolean",
+							"isOptional": true
 						}
 					]
 				},
@@ -815,17 +842,20 @@
 						{
 							"argumentName": "amount",
 							"description": "Specifies the number of items to give. If not specified, defaults to 1.",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						},
 						{
 							"argumentName": "data",
 							"description": "Specifies the item data value of the given item(s).",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						},
 						{
 							"argumentName": "components",
 							"description": "Specifies the item components of the given item(s).",
-							"type": "jsonData"
+							"type": "jsonData",
+							"isOptional": true
 						}
 					]
 				},
@@ -841,7 +871,8 @@
 						{
 							"type": "string",
 							"argumentName": "reason",
-							"description": "Message to display to the kicked player."
+							"description": "Message to display to the kicked player.",
+							"isOptional": true
 						}
 					]
 				},
@@ -852,7 +883,8 @@
 						{
 							"type": "selector",
 							"argumentName": "target",
-							"description": "Specifies the target(s) to kill. If not specified, defaults to the player who executed the command."
+							"description": "Specifies the target(s) to kill. If not specified, defaults to the player who executed the command.",
+							"isOptional": true
 						}
 					]
 				},
@@ -904,7 +936,8 @@
 						{
 							"argumentName": "value",
 							"description": "If specified, true enables the events and false disables them. If omitted, the current enabled status is displayed.",
-							"type": "boolean"
+							"type": "boolean",
+							"isOptional": true
 						}
 					]
 				},
@@ -942,12 +975,14 @@
 						{
 							"argumentName": "volume",
 							"description": "Specifies the volume of the music.",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						},
 						{
 							"argumentName": "fadeSeconds",
 							"description": "Specifies the duration music fades in/out.",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						},
 						{
 							"argumentName": "repeatMode",
@@ -955,7 +990,8 @@
 							"type": "string",
 							"additionalData": {
 								"values": ["loop", "play_once"]
-							}
+							},
+							"isOptional": true
 						}
 					]
 				},
@@ -972,7 +1008,8 @@
 						{
 							"argumentName": "fadeSeconds",
 							"description": "Specifies the duration music fades in/out.",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						}
 					]
 				},
@@ -1035,12 +1072,14 @@
 							"type": "string",
 							"additionalData": {
 								"schemaReference": "/data/packages/minecraftBedrock/schema/animationController/identifierEnum.json"
-							}
+							},
+							"isOptional": true
 						},
 						{
 							"argumentName": "blendOutTime",
 							"description": "Specifies the duration of the gradient animation.",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						},
 						{
 							"argumentName": "stopExpression",
@@ -1048,7 +1087,8 @@
 							"type": "string",
 							"additionalData": {
 								"schemaReference": "/data/packages/minecraftBedrock/schema/molang/embedded.json"
-							}
+							},
+							"isOptional": true
 						},
 						{
 							"argumentName": "controller",
@@ -1056,7 +1096,8 @@
 							"type": "string",
 							"additionalData": {
 								"schemaReference": "/data/packages/minecraftBedrock/schema/animationController/identifierEnum.json"
-							}
+							},
+							"isOptional": true
 						}
 					]
 				},
@@ -1075,27 +1116,32 @@
 						{
 							"argumentName": "player",
 							"description": "Specifies the sound's target.",
-							"type": "selector"
+							"type": "selector",
+							"isOptional": true
 						},
 						{
 							"argumentName": "position",
 							"description": "Specifies the position to play the sounds from.",
-							"type": "$coordinates"
+							"type": "$coordinates",
+							"isOptional": true
 						},
 						{
 							"argumentName": "volume",
 							"description": "Specifies the distance that the sound can be heard. If not specified, defaults to 1. For values less than 1, the volume diminishes and the sound has a smaller sphere in which it may be heard. For values greater than 1, the sound does not actually grow louder, but its audible range (a 16-block radius at 1) is multiplied by volume. There is always a gradual falloff to silence based on distance from the center of the sphere. For values equal to or less than 0, no one can hear the sound.",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						},
 						{
 							"argumentName": "pitch",
 							"description": "Specifies the pitch of the sound. If not specified, defaults to 1.",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						},
 						{
 							"argumentName": "minimumVolume",
 							"description": "Specifies the volume for targets outside the sound's normal audible sphere. If a target is outside the normal sphere, the sound is instead centered some short distance from the target (less than four blocks away), and this argument determines its volume.",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						}
 					]
 				},
@@ -1140,17 +1186,20 @@
 						{
 							"argumentName": "amount",
 							"description": "Specifies the number of items to be placed in the block or entity's inventory slot.",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						},
 						{
 							"argumentName": "data",
 							"description": "Specifies the item data for the item(s) to be placed in the block or entity's inventory slot. Values which are invalid for the specified item id will default to 0. If not specified, defaults to 0.",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						},
 						{
 							"argumentName": "components",
 							"description": "Specifies the item components.",
-							"type": "jsonData"
+							"type": "jsonData",
+							"isOptional": true
 						}
 					]
 				},
@@ -1206,17 +1255,20 @@
 						{
 							"argumentName": "amount",
 							"description": "Specifies the number of items to be placed in the block or entity's inventory slot.",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						},
 						{
 							"argumentName": "data",
 							"description": "Specifies the item data for the item(s) to be placed in the block or entity's inventory slot. Values which are invalid for the specified item id will default to 0. If not specified, defaults to 0.",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						},
 						{
 							"argumentName": "components",
 							"description": "Specifies the item components.",
-							"type": "jsonData"
+							"type": "jsonData",
+							"isOptional": true
 						}
 					]
 				},
@@ -1264,17 +1316,20 @@
 						{
 							"argumentName": "amount",
 							"description": "Specifies the number of items to be placed in the block or entity's inventory slot.",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						},
 						{
 							"argumentName": "data",
 							"description": "Specifies the item data for the item(s) to be placed in the block or entity's inventory slot. Values which are invalid for the specified item id will default to 0. If not specified, defaults to 0.",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						},
 						{
 							"argumentName": "components",
 							"description": "Specifies the item components.",
-							"type": "jsonData"
+							"type": "jsonData",
+							"isOptional": true
 						}
 					]
 				},
@@ -1342,12 +1397,14 @@
 						{
 							"argumentName": "data",
 							"description": "Specifies the item data for the item(s) to be placed in the block or entity's inventory slot. Values which are invalid for the specified item id will default to 0. If not specified, defaults to 0.",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						},
 						{
 							"argumentName": "components",
 							"description": "Specifies the item components.",
-							"type": "jsonData"
+							"type": "jsonData",
+							"isOptional": true
 						}
 					]
 				},
@@ -1377,14 +1434,16 @@
 							"type": "string",
 							"additionalData": {
 								"values": ["teleport_ride", "teleport_rider"]
-							}
+							},
+							"isOptional": true
 						},
 						{
 							"argumentName": "howToFill",
 							"type": "string",
 							"additionalData": {
 								"values": ["if_group_fits", "until_full"]
-							}
+							},
+							"isOptional": true
 						}
 					]
 				},
@@ -1451,12 +1510,14 @@
 							"type": "string",
 							"additionalData": {
 								"schemaReference": "/data/packages/minecraftBedrock/schema/entity/dynamic/eventReference.json"
-							}
+							},
+							"isOptional": true
 						},
 						{
 							"argumentName": "nameTag",
 							"description": "Specifies the name of the to-be-summoned entities.",
-							"type": "string"
+							"type": "string",
+							"isOptional": true
 						}
 					]
 				},
@@ -1492,7 +1553,8 @@
 									"reassign_rides",
 									"skip_riders"
 								]
-							}
+							},
+							"isOptional": true
 						},
 						{
 							"argumentName": "spawnEvent",
@@ -1500,12 +1562,14 @@
 							"type": "string",
 							"additionalData": {
 								"schemaReference": "/data/packages/minecraftBedrock/schema/entity/dynamic/eventReference.json"
-							}
+							},
+							"isOptional": true
 						},
 						{
 							"argumentName": "nameTag",
 							"description": "Specifies the name of the to-be-summoned entities.",
-							"type": "string"
+							"type": "string",
+							"isOptional": true
 						}
 					]
 				},
@@ -1663,7 +1727,8 @@
 						},
 						{
 							"argumentName": "displayName",
-							"type": "string"
+							"type": "string",
+							"isOptional": true
 						}
 					]
 				},
@@ -1737,7 +1802,8 @@
 							"type": "string",
 							"additionalData": {
 								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/scoreboardObjectiveEnum.json"
-							}
+							},
+							"isOptional": true
 						}
 					]
 				},
@@ -1768,13 +1834,15 @@
 							"type": "string",
 							"additionalData": {
 								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/scoreboardObjectiveEnum.json"
-							}
+							},
+							"isOptional": true
 						},
 						{
 							"type": "string",
 							"additionalData": {
 								"values": ["ascending", "descending"]
-							}
+							},
+							"isOptional": true
 						}
 					]
 				},
@@ -1796,7 +1864,8 @@
 						},
 						{
 							"argumentName": "playername",
-							"type": "selector"
+							"type": "selector",
+							"isOptional": true
 						}
 					]
 				},
@@ -1825,7 +1894,8 @@
 							"type": "string",
 							"additionalData": {
 								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/scoreboardObjectiveEnum.json"
-							}
+							},
+							"isOptional": true
 						}
 					]
 				},
@@ -1862,7 +1932,8 @@
 						},
 						{
 							"argumentName": "max",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						}
 					]
 				},
@@ -2013,7 +2084,8 @@
 						{
 							"argumentName": "tileData",
 							"description": "Specifies the block data to use for the new block. Values that are invalid for the specified block id revert to 0. If not specified, defaults to 0.",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						},
 						{
 							"argumentName": "mode",
@@ -2021,7 +2093,8 @@
 							"type": "string",
 							"additionalData": {
 								"values": ["destroy", "keep", "replace"]
-							}
+							},
+							"isOptional": true
 						}
 					]
 				},
@@ -2045,7 +2118,8 @@
 						{
 							"argumentName": "blockStates",
 							"description": "Specifies the block states to use for the block.",
-							"type": "jsonData"
+							"type": "jsonData",
+							"isOptional": true
 						},
 						{
 							"argumentName": "mode",
@@ -2053,7 +2127,8 @@
 							"type": "string",
 							"additionalData": {
 								"values": ["destroy", "keep", "replace"]
-							}
+							},
+							"isOptional": true
 						}
 					]
 				},
@@ -2064,7 +2139,8 @@
 						{
 							"argumentName": "spawnPoint",
 							"description": "Specifies the coordinates of the world spawn. If not specified, defaults to the block position of the command's execution.",
-							"type": "$coordinates"
+							"type": "$coordinates",
+							"isOptional": true
 						}
 					]
 				},
@@ -2075,12 +2151,14 @@
 						{
 							"argumentName": "player",
 							"description": "Specifies the player whose spawn point should be set. If not specified, defaults to the command's executor.",
-							"type": "selector"
+							"type": "selector",
+							"isOptional": true
 						},
 						{
 							"argumentName": "spawnPos",
 							"description": "Specifies the coordinates of the player's new spawn point. If not specified, defaults to the position of the specified player(s).",
-							"type": "$coordinates"
+							"type": "$coordinates",
+							"isOptional": true
 						}
 					]
 				},
@@ -2129,7 +2207,8 @@
 							"type": "string",
 							"additionalData": {
 								"schemaReference": "/data/packages/minecraftBedrock/schema/soundDefinition/identifierEnum.json"
-							}
+							},
+							"isOptional": true
 						}
 					]
 				},
@@ -2166,7 +2245,8 @@
 							"type": "string",
 							"additionalData": {
 								"values": ["disk", "memory"]
-							}
+							},
+							"isOptional": true
 						}
 					]
 				},
@@ -2200,7 +2280,8 @@
 						{
 							"argumentName": "includeEntities",
 							"description": "Specifies whether including entities or not. If unspecified, defaults to true.",
-							"type": "boolean"
+							"type": "boolean",
+							"isOptional": true
 						},
 						{
 							"argumentName": "saveMode",
@@ -2208,12 +2289,14 @@
 							"type": "string",
 							"additionalData": {
 								"values": ["disk", "memory"]
-							}
+							},
+							"isOptional": true
 						},
 						{
 							"argumentName": "includeBlocks",
 							"description": "Specifies whether including blocks or not. If unspecified, defaults to true.",
-							"type": "boolean"
+							"type": "boolean",
+							"isOptional": true
 						}
 					]
 				},
@@ -2250,7 +2333,8 @@
 									"180_degrees",
 									"270_degrees"
 								]
-							}
+							},
+							"isOptional": true
 						},
 						{
 							"argumentName": "mirror",
@@ -2258,27 +2342,32 @@
 							"type": "string",
 							"additionalData": {
 								"values": ["x", "z", "xz", "none"]
-							}
+							},
+							"isOptional": true
 						},
 						{
 							"argumentName": "includeEntities",
 							"description": "Specifies whether including entities or not. If unspecified, defaults to true.",
-							"type": "boolean"
+							"type": "boolean",
+							"isOptional": true
 						},
 						{
 							"argumentName": "includeBlocks",
 							"description": "Specifies whether including blocks or not. If unspecified, defaults to true.",
-							"type": "boolean"
+							"type": "boolean",
+							"isOptional": true
 						},
 						{
 							"argumentName": "integrity",
 							"description": "Specifies the integrity (probability of each block being loaded). If 100, all blocks in the structure are loaded. If 0, no blocks are loaded. If unspecified, defaults to 100.",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						},
 						{
 							"argumentName": "seed",
 							"description": "Specifies the seed when calculating whether a block should be loaded according to integrity. If unspecified, a random seed is taken.",
-							"type": "string"
+							"type": "string",
+							"isOptional": true
 						}
 					]
 				},
@@ -2315,7 +2404,8 @@
 									"180_degrees",
 									"270_degrees"
 								]
-							}
+							},
+							"isOptional": true
 						},
 						{
 							"argumentName": "mirror",
@@ -2323,7 +2413,8 @@
 							"type": "string",
 							"additionalData": {
 								"values": ["x", "z", "xz", "none"]
-							}
+							},
+							"isOptional": true
 						},
 						{
 							"argumentName": "animationMode",
@@ -2331,32 +2422,38 @@
 							"type": "string",
 							"additionalData": {
 								"values": ["block_by_block", "layer_by_layer"]
-							}
+							},
+							"isOptional": true
 						},
 						{
 							"argumentName": "animationSeconds",
 							"description": "Specifies the duration of the animation.",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						},
 						{
 							"argumentName": "includeEntities",
 							"description": "Specifies whether including entities or not. If unspecified, defaults to true.",
-							"type": "boolean"
+							"type": "boolean",
+							"isOptional": true
 						},
 						{
 							"argumentName": "includeBlocks",
 							"description": "Specifies whether including blocks or not. If unspecified, defaults to true.",
-							"type": "boolean"
+							"type": "boolean",
+							"isOptional": true
 						},
 						{
 							"argumentName": "integrity",
 							"description": "Specifies the integrity (probability of each block being loaded). If 100, all blocks in the structure are loaded. If 0, no blocks are loaded. If unspecified, defaults to 100.",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						},
 						{
 							"argumentName": "seed",
 							"description": "Specifies the seed when calculating whether a block should be loaded according to integrity. If unspecified, a random seed is taken.",
-							"type": "string"
+							"type": "string",
+							"isOptional": true
 						}
 					]
 				},
@@ -2394,7 +2491,8 @@
 						{
 							"argumentName": "spawnPos",
 							"description": "Specifies the position to summon the entity. If not specified, defaults to the position of the command's execution.",
-							"type": "$coordinates"
+							"type": "$coordinates",
+							"isOptional": true
 						},
 						{
 							"argumentName": "spawnEvent",
@@ -2402,12 +2500,14 @@
 							"type": "string",
 							"additionalData": {
 								"schemaReference": "/data/packages/minecraftBedrock/schema/entity/dynamic/eventReference.json"
-							}
+							},
+							"isOptional": true
 						},
 						{
 							"argumentName": "nameTag",
 							"description": "Specifies the name of the entity.",
-							"type": "string"
+							"type": "string",
+							"isOptional": true
 						}
 					]
 				},
@@ -2431,7 +2531,8 @@
 						{
 							"argumentName": "spawnPos",
 							"description": "Specifies the position to summon the entity. If not specified, defaults to the position of the command's execution.",
-							"type": "$coordinates"
+							"type": "$coordinates",
+							"isOptional": true
 						}
 					]
 				},
@@ -2514,7 +2615,8 @@
 						{
 							"argumentName": "checkForBlocks",
 							"description": "If set to true, teleports the target(s) only if the target(s) would not collide with a block it cannot be inside (Note: this allows teleporting into flowers as well as midair). If false or not specified, the default behavior applies (do no check; just teleport the target(s)).",
-							"type": "boolean"
+							"type": "boolean",
+							"isOptional": true
 						}
 					]
 				},
@@ -2540,7 +2642,8 @@
 						{
 							"argumentName": "checkForBlocks",
 							"description": "If set to true, teleports the target(s) only if the target(s) would not collide with a block it cannot be inside (Note: this allows teleporting into flowers as well as midair). If false or not specified, the default behavior applies (do no check; just teleport the target(s)).",
-							"type": "boolean"
+							"type": "boolean",
+							"isOptional": true
 						}
 					]
 				},
@@ -2567,7 +2670,8 @@
 						{
 							"argumentName": "checkForBlocks",
 							"description": "If set to true, teleports the target(s) only if the target(s) would not collide with a block it cannot be inside (Note: this allows teleporting into flowers as well as midair). If false or not specified, the default behavior applies (do no check; just teleport the target(s)).",
-							"type": "boolean"
+							"type": "boolean",
+							"isOptional": true
 						}
 					]
 				},
@@ -2594,7 +2698,8 @@
 						{
 							"argumentName": "checkForBlocks",
 							"description": "If set to true, teleports the target(s) only if the target(s) would not collide with a block it cannot be inside (Note: this allows teleporting into flowers as well as midair). If false or not specified, the default behavior applies (do no check; just teleport the target(s)).",
-							"type": "boolean"
+							"type": "boolean",
+							"isOptional": true
 						}
 					]
 				},
@@ -2615,17 +2720,20 @@
 						{
 							"argumentName": "yRot",
 							"description": "Specifies the rotation.",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						},
 						{
 							"argumentName": "xRot",
 							"description": "Specifies the rotation.",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						},
 						{
 							"argumentName": "checkForBlocks",
 							"description": "If set to true, teleports the target(s) only if the target(s) would not collide with a block it cannot be inside (Note: this allows teleporting into flowers as well as midair). If false or not specified, the default behavior applies (do no check; just teleport the target(s)).",
-							"type": "boolean"
+							"type": "boolean",
+							"isOptional": true
 						}
 					]
 				},
@@ -2657,7 +2765,8 @@
 						{
 							"argumentName": "checkForBlocks",
 							"description": "If set to true, teleports the target(s) only if the target(s) would not collide with a block it cannot be inside (Note: this allows teleporting into flowers as well as midair). If false or not specified, the default behavior applies (do no check; just teleport the target(s)).",
-							"type": "boolean"
+							"type": "boolean",
+							"isOptional": true
 						}
 					]
 				},
@@ -2689,7 +2798,8 @@
 						{
 							"argumentName": "checkForBlocks",
 							"description": "If set to true, teleports the target(s) only if the target(s) would not collide with a block it cannot be inside (Note: this allows teleporting into flowers as well as midair). If false or not specified, the default behavior applies (do no check; just teleport the target(s)).",
-							"type": "boolean"
+							"type": "boolean",
+							"isOptional": true
 						}
 					]
 				},
@@ -2705,7 +2815,8 @@
 						{
 							"argumentName": "checkForBlocks",
 							"description": "If set to true, teleports the target(s) only if the target(s) would not collide with a block it cannot be inside (Note: this allows teleporting into flowers as well as midair). If false or not specified, the default behavior applies (do no check; just teleport the target(s)).",
-							"type": "boolean"
+							"type": "boolean",
+							"isOptional": true
 						}
 					]
 				},
@@ -2726,7 +2837,8 @@
 						{
 							"argumentName": "checkForBlocks",
 							"description": "If set to true, teleports the target(s) only if the target(s) would not collide with a block it cannot be inside (Note: this allows teleporting into flowers as well as midair). If false or not specified, the default behavior applies (do no check; just teleport the target(s)).",
-							"type": "boolean"
+							"type": "boolean",
+							"isOptional": true
 						}
 					]
 				},
@@ -2793,7 +2905,8 @@
 						{
 							"argumentName": "dataValue",
 							"description": "Specifies the block data to match when testfor. Values (bitwise AND 0xFFFF) that are invalid for the specified block id revert to 0. If it is negative, all blocks that match tileName are tested.",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						}
 					]
 				},
@@ -2822,7 +2935,8 @@
 							"type": "string",
 							"additionalData": {
 								"values": ["all", "masked"]
-							}
+							},
+							"isOptional": true
 						}
 					]
 				},
@@ -2849,7 +2963,8 @@
 						{
 							"argumentName": "name",
 							"description": "Specifies an optional name for a ticking area.",
-							"type": "string"
+							"type": "string",
+							"isOptional": true
 						}
 					]
 				},
@@ -2882,7 +2997,8 @@
 						{
 							"argumentName": "name",
 							"description": "Specifies an optional name for a ticking area.",
-							"type": "string"
+							"type": "string",
+							"isOptional": true
 						}
 					]
 				},
@@ -2948,7 +3064,8 @@
 							"type": "string",
 							"additionalData": {
 								"values": ["all-dimensions"]
-							}
+							},
+							"isOptional": true
 						}
 					]
 				},
@@ -3195,7 +3312,8 @@
 						{
 							"argumentName": "checkForBlocks",
 							"description": "If set to true, teleports the target(s) only if the target(s) would not collide with a block it cannot be inside (Note: this allows teleporting into flowers as well as midair). If false or not specified, the default behavior applies (do no check; just teleport the target(s)).",
-							"type": "boolean"
+							"type": "boolean",
+							"isOptional": true
 						}
 					]
 				},
@@ -3211,17 +3329,20 @@
 						{
 							"argumentName": "yRot",
 							"description": "Specifies the rotation.",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						},
 						{
 							"argumentName": "xRot",
 							"description": "Specifies the rotation.",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						},
 						{
 							"argumentName": "checkForBlocks",
 							"description": "If set to true, teleports the target(s) only if the target(s) would not collide with a block it cannot be inside (Note: this allows teleporting into flowers as well as midair). If false or not specified, the default behavior applies (do no check; just teleport the target(s)).",
-							"type": "boolean"
+							"type": "boolean",
+							"isOptional": true
 						}
 					]
 				},
@@ -3248,7 +3369,8 @@
 						{
 							"argumentName": "checkForBlocks",
 							"description": "If set to true, teleports the target(s) only if the target(s) would not collide with a block it cannot be inside (Note: this allows teleporting into flowers as well as midair). If false or not specified, the default behavior applies (do no check; just teleport the target(s)).",
-							"type": "boolean"
+							"type": "boolean",
+							"isOptional": true
 						}
 					]
 				},
@@ -3275,7 +3397,8 @@
 						{
 							"argumentName": "checkForBlocks",
 							"description": "If set to true, teleports the target(s) only if the target(s) would not collide with a block it cannot be inside (Note: this allows teleporting into flowers as well as midair). If false or not specified, the default behavior applies (do no check; just teleport the target(s)).",
-							"type": "boolean"
+							"type": "boolean",
+							"isOptional": true
 						}
 					]
 				},
@@ -3296,17 +3419,20 @@
 						{
 							"argumentName": "yRot",
 							"description": "Specifies the rotation.",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						},
 						{
 							"argumentName": "xRot",
 							"description": "Specifies the rotation.",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						},
 						{
 							"argumentName": "checkForBlocks",
 							"description": "If set to true, teleports the target(s) only if the target(s) would not collide with a block it cannot be inside (Note: this allows teleporting into flowers as well as midair). If false or not specified, the default behavior applies (do no check; just teleport the target(s)).",
-							"type": "boolean"
+							"type": "boolean",
+							"isOptional": true
 						}
 					]
 				},
@@ -3338,7 +3464,8 @@
 						{
 							"argumentName": "checkForBlocks",
 							"description": "If set to true, teleports the target(s) only if the target(s) would not collide with a block it cannot be inside (Note: this allows teleporting into flowers as well as midair). If false or not specified, the default behavior applies (do no check; just teleport the target(s)).",
-							"type": "boolean"
+							"type": "boolean",
+							"isOptional": true
 						}
 					]
 				},
@@ -3370,7 +3497,8 @@
 						{
 							"argumentName": "checkForBlocks",
 							"description": "If set to true, teleports the target(s) only if the target(s) would not collide with a block it cannot be inside (Note: this allows teleporting into flowers as well as midair). If false or not specified, the default behavior applies (do no check; just teleport the target(s)).",
-							"type": "boolean"
+							"type": "boolean",
+							"isOptional": true
 						}
 					]
 				},
@@ -3386,7 +3514,8 @@
 						{
 							"argumentName": "checkForBlocks",
 							"description": "If set to true, teleports the target(s) only if the target(s) would not collide with a block it cannot be inside (Note: this allows teleporting into flowers as well as midair). If false or not specified, the default behavior applies (do no check; just teleport the target(s)).",
-							"type": "boolean"
+							"type": "boolean",
+							"isOptional": true
 						}
 					]
 				},
@@ -3407,7 +3536,8 @@
 						{
 							"argumentName": "checkForBlocks",
 							"description": "If set to true, teleports the target(s) only if the target(s) would not collide with a block it cannot be inside (Note: this allows teleporting into flowers as well as midair). If false or not specified, the default behavior applies (do no check; just teleport the target(s)).",
-							"type": "boolean"
+							"type": "boolean",
+							"isOptional": true
 						}
 					]
 				},
@@ -3441,7 +3571,8 @@
 						{
 							"argumentName": "duration",
 							"description": "Specifies the time in seconds for the specified weather to last. If not specified, the duration defaults to 5 minutes. If 0, resets to random weather duration.",
-							"type": "number"
+							"type": "number",
+							"isOptional": true
 						}
 					]
 				},
@@ -3476,7 +3607,8 @@
 						{
 							"argumentName": "player",
 							"description": "Specifies the target of the command.",
-							"type": "selector"
+							"type": "selector",
+							"isOptional": true
 						}
 					]
 				}
@@ -3510,7 +3642,8 @@
 						},
 						{
 							"type": "selector",
-							"argumentName": "player"
+							"argumentName": "player",
+							"isOptional": true
 						}
 					]
 				},
@@ -3537,7 +3670,8 @@
 							"argumentName": "sceneName",
 							"additionalData": {
 								"schemaReference": "/data/packages/minecraftBedrock/schema/dialogue/dynamic/sceneTagEnum.json"
-							}
+							},
+							"isOptional": true
 						}
 					]
 				}
@@ -3566,7 +3700,8 @@
 						},
 						{
 							"type": "boolean",
-							"argumentName": "value"
+							"argumentName": "value",
+							"isOptional": true
 						}
 					]
 				},
@@ -3588,7 +3723,8 @@
 						},
 						{
 							"type": "boolean",
-							"argumentName": "value"
+							"argumentName": "value",
+							"isOptional": true
 						}
 					]
 				},
@@ -3610,7 +3746,8 @@
 						},
 						{
 							"type": "boolean",
-							"argumentName": "value"
+							"argumentName": "value",
+							"isOptional": true
 						}
 					]
 				}
