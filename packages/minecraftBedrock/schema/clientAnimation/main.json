@@ -124,19 +124,41 @@
 												{
 													"patternProperties": {
 														"[0-9]+.?[0-9]*": {
-															"type": "array",
-															"minItems": 3,
-															"maxItems": 3,
-															"items": {
-																"anyOf": [
-																	{
-																		"$ref": "../general/degree.json"
-																	},
-																	{
-																		"$ref": "../molang/embedded.json"
+															"anyOf": [
+																{
+																	"type": "array",
+																	"minItems": 3,
+																	"maxItems": 3,
+																	"items": {
+																		"anyOf": [
+																			{
+																				"$ref": "../general/degree.json"
+																			},
+																			{
+																				"$ref": "../molang/embedded.json"
+																			}
+																		]
 																	}
-																]
-															}
+																},
+																{
+																	"type": "object",
+																	"additionalProperties": false,
+																	"properties": {
+																		"post": {
+																			"type": "array",
+																			"minItems": 3,
+																			"maxItems": 3,
+																			"items": {
+																				"type": "number"
+																			}
+																		},
+																		"lerp_mode": {
+																			"type": "string",
+																			"const": "catmullrom"
+																		}
+																	}
+																}
+															]
 														}
 													}
 												}
