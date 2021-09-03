@@ -4,8 +4,9 @@
 	"description": "Creates a new, basic block.",
 	"category": "fileType.block",
 	"requires": {
-		"targetVersion": [">=", "1.16.0"],
-		"packTypes": ["behaviorPack", "resourcePack"]
+		"targetVersion": [">=", "1.16.100"],
+		"packTypes": ["behaviorPack", "resourcePack"],
+		"experimentalGameplay": ["holidayCreatorFeatures"]
 	},
 	"additionalModels": {
 		"DEFAULT_TEXTURE": "texture.png",
@@ -30,15 +31,10 @@
 		[
 			"block.json",
 			"BP/blocks/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "openFile": true }
+			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"] }
 		]
 	],
 	"expandFiles": [
-		[
-			"clientBlock.json",
-			"RP/blocks.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX"] }
-		],
 		[
 			"en_US.lang",
 			"RP/texts/en_US.lang",
