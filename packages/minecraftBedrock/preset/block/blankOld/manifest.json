@@ -1,11 +1,12 @@
 {
-	"name": "Ore",
+	"name": "Blank Block",
 	"icon": "mdi-cube-outline",
-	"description": "Creates a new ore block with natural generation.",
+	"description": "Creates a new, basic block.",
 	"category": "fileType.block",
 	"requires": {
 		"targetVersion": [">=", "1.16.0"],
-		"packTypes": ["behaviorPack", "resourcePack"]
+		"packTypes": ["behaviorPack", "resourcePack"],
+		"experimentalGameplay": ["!holidayCreatorFeatures"]
 	},
 	"additionalModels": {
 		"DEFAULT_TEXTURE": "texture.png",
@@ -31,16 +32,6 @@
 			"block.json",
 			"BP/blocks/{{PRESET_PATH}}{{IDENTIFIER}}.json",
 			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"] }
-		],
-		[
-			"feature.json",
-			"BP/features/{{IDENTIFIER}}_feature.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX"] }
-		],
-		[
-			"featureRule.json",
-			"BP/feature_rules/overworld_underground_{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX"] }
 		]
 	],
 	"expandFiles": [

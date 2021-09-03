@@ -8,6 +8,7 @@
 			"minecraft:destroy_time": 1,
 			"minecraft:explosion_resistance": 1,
 			"minecraft:map_color": "#ffffff",
+			"minecraft:unit_cube": {},
 			"minecraft:material_instances": {
 				"*": {
 					"texture": "{{PROJECT_PREFIX}}_{{IDENTIFIER}}",
