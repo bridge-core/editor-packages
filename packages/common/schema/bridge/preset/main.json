@@ -30,12 +30,12 @@
 					"items": [
 						{
 							"type": "string",
-							"description": "Format version"
+							"description": "Operator",
+							"enum": [">", ">=", "=", "<", "<="]
 						},
 						{
 							"type": "string",
-							"description": "Operator",
-							"enum": [">", ">=", "=", "<", "<="]
+							"description": "Format version"
 						}
 					]
 				},
