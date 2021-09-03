@@ -93,23 +93,19 @@
 											"type": "number"
 										},
 										{
-											"type": "string"
+											"$ref": "../../molang/embedded.json"
 										}
 									]
-								},
-								"initialize": {
-									"description": "Initializes variables.",
-									"type": "array",
-									"items": {
-										"type": "string"
-									}
 								},
 								"pre_animation": {
 									"description": "Pre-computes any expensive and complex values you may want to reuse in your scripts, long-living index variable updates, or generally any one-off computation per render tick.",
 									"type": "array",
 									"items": {
-										"type": "string"
+										"$ref": "../../molang/embedded.json"
 									}
+								},
+								"parent_setup": {
+									"$ref": "../../molang/embedded.json"
 								}
 							}
 						},

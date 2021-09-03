@@ -74,6 +74,9 @@
 								}
 							}
 						},
+						"queryable_geometry": {
+							"$ref": "../../general/reference/geometry.json"
+						},
 						"animations": {
 							"description": "Defines animations and animation controllers to be used in this entity.",
 							"type": "object",
@@ -94,7 +97,8 @@
 											"type": "number"
 										},
 										{
-											"type": "string"
+											"type": "string",
+											"$ref": "../../molang/embedded.json"
 										}
 									]
 								},
@@ -102,15 +106,18 @@
 									"description": "Initializes variables.",
 									"type": "array",
 									"items": {
-										"type": "string"
+										"$ref": "../../molang/embedded.json"
 									}
 								},
 								"pre_animation": {
 									"description": "Pre-computes any expensive and complex values you may want to reuse in your scripts, long-living index variable updates, or generally any one-off computation per render tick.",
 									"type": "array",
 									"items": {
-										"type": "string"
+										"$ref": "../../molang/embedded.json"
 									}
+								},
+								"parent_setup": {
+									"$ref": "../../molang/embedded.json"
 								},
 								"animate": {
 									"description": "Runs animations and animation controllers that are defines under 'animations'",
@@ -135,13 +142,21 @@
 										]
 									}
 								},
-								"variable": {
-									"description": "Exposes read-only access to variables from other entities.",
+								"variables": {
+									"description": "A list of variables that need certain settings applied to them.",
 									"patternProperties": {
 										".*": {
 											"const": "public"
 										}
 									}
+								},
+								"should_update_bones_and_effects_offscreen": {
+									"description": "Bones and effects will still be updated if the entity is off screen if this expression returns anything other than 0.0.",
+									"$ref": "../../molang/embedded.json"
+								},
+								"should_update_effects_offscreen": {
+									"description": "Effects will still be updated if the entity is off screen if this expression or 'should_update_bones_and_effects_offscreen' returns anything other than 0.0.",
+									"$ref": "../../molang/embedded.json"
 								}
 							}
 						},

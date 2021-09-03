@@ -21,6 +21,9 @@
 						"ignore_lighting": {
 							"type": "boolean"
 						},
+						"filter_lighting": {
+							"type": "boolean"
+						},
 						"color": {
 							"$ref": "../general/rgbaColor.json"
 						},

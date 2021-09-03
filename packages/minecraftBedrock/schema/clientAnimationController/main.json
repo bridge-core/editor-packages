@@ -64,6 +64,7 @@
 											}
 										},
 										"blend_transition": {
+											"description": "Specifies the cross-fade time in seconds when transitioning to another state.",
 											"anyOf": [
 												{
 													"type": "boolean"
@@ -74,6 +75,7 @@
 											]
 										},
 										"blend_via_shortest_path": {
+											"description": "When blending a transition to another state, animate each euler axis through the shortest rotation, instead of by value.",
 											"type": "boolean"
 										},
 										"parameters": {
@@ -84,13 +86,14 @@
 										},
 										"variables": {
 											"patternProperties": {
-												".*": {
+												".+": {
 													"additionalProperties": false,
 													"properties": {
 														"input": {
 															"$ref": "../molang/embedded.json"
 														},
 														"remap_curve": {
+															"type": "object",
 															"patternProperties": {
 																"^[0-9]*$": {
 																	"type": "number"
@@ -108,10 +111,20 @@
 												"additionalProperties": false,
 												"properties": {
 													"effect": {
+														"description": "The name of a particle effect that should be played.",
 														"$ref": "../clientEntity/dynamic/particleReferenceEnum.json"
 													},
 													"locator": {
+														"description": "The name of a locator on the actor where the effect should be located.",
 														"$ref": "../geometry/dynamic/locatorEnum.json"
+													},
+													"pre_effect_script": {
+														"description": "A Molang script that will be run when the particle emitter is initialized.",
+														"$ref": "../molang/embedded.json"
+													},
+													"bind_to_actor": {
+														"description": "Set to false to have the effect spawned in the world without being bound to an actor (by default an effect is bound to the actor).",
+														"type": "boolean"
 													}
 												}
 											}
@@ -122,6 +135,7 @@
 												"type": "object",
 												"patternProperties": {
 													"effect": {
+														"description": "Valid sound effect names should be listed in the entity's resource definition json file.",
 														"$ref": "../clientEntity/dynamic/soundEffectReferenceEnum.json"
 													}
 												}

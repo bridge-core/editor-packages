@@ -27,9 +27,23 @@
 						},
 						"item": {
 							"description": "Sets an item identifier with a Molang script to decide when to render the attachable.",
-							"propertyNames": {
-								"$ref": "../general/reference/identifiers.json#/definitions/item_identifiers"
-							}
+							"anyOf": [
+								{
+									"type": "object",
+									"propertyNames": {
+										"$ref": "../general/reference/identifiers.json#/definitions/item_identifiers"
+									},
+									"patternProperties": {
+										".+": {
+											"$ref": "../molang/embedded.json"
+										}
+									}
+								},
+								{
+									"type": "string",
+									"$ref": "../general/reference/identifiers.json#/definitions/item_identifiers"
+								}
+							]
 						},
 						"materials": {
 							"description": "Defines the materials used in the attachable.",
@@ -54,6 +68,9 @@
 									"$ref": "../general/reference/geometry.json"
 								}
 							}
+						},
+						"queryable_geometry": {
+							"$ref": "../../general/reference/geometry.json"
 						},
 						"scripts": {
 							"additionalProperties": false,
@@ -90,6 +107,14 @@
 											}
 										]
 									}
+								},
+								"should_update_bones_and_effects_offscreen": {
+									"description": "Bones and effects will still be updated if the entity is off screen if this expression returns anything other than 0.0.",
+									"$ref": "../../molang/embedded.json"
+								},
+								"should_update_effects_offscreen": {
+									"description": "Effects will still be updated if the entity is off screen if this expression or 'should_update_bones_and_effects_offscreen' returns anything other than 0.0.",
+									"$ref": "../../molang/embedded.json"
 								}
 							}
 						},
