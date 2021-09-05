@@ -27,7 +27,8 @@
 									"any_tag": {
 										"type": "array",
 										"items": {
-											"type": "string"
+											"type": "string",
+											"$ref": "../../../item/dynamic/tagEnum.json"
 										}
 									}
 								}
@@ -57,7 +58,8 @@
 									"any_tag": {
 										"type": "array",
 										"items": {
-											"type": "string"
+											"type": "string",
+											"$ref": "../../../item/dynamic/tagEnum.json"
 										}
 									}
 								}
