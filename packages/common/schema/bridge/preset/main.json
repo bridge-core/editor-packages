@@ -93,7 +93,7 @@
 							},
 							"default": {
 								"description": "Default value for the input.",
-								"type": "string"
+								"type": ["string", "boolean", "number", "integer"]
 							},
 							"optional": {
 								"type": "boolean",
