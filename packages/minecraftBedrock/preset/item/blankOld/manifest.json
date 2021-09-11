@@ -4,8 +4,9 @@
 	"description": "Creates a new, blank item.",
 	"category": "fileType.item",
 	"requires": {
-		"targetVersion": ["<=", "1.16.0"],
-		"packTypes": ["behaviorPack", "resourcePack"]
+		"targetVersion": [">=", "1.10.0"],
+		"packTypes": ["behaviorPack", "resourcePack"],
+		"experimentalGameplay": ["!holidayCreatorFeatures"]
 	},
 	"additionalModels": {
 		"DEFAULT_TEXTURE": "icon.png",
