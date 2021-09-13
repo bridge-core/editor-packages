@@ -25,7 +25,7 @@ declare interface TemplateContext {
 	/**
 	 * Add a new dialogue scene to the entity
 	 */
-	dialogueScene: (scene: any) => void
+	dialogueScene: (scene: any, openDialogue?: boolean) => void
 	/**
 	 * React to the component being activated
 	 */
