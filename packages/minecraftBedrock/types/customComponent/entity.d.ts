@@ -1,6 +1,6 @@
 declare interface TemplateContext {
 	compilerMode: 'build' | 'dev'
-	fileContent: () => any
+	sourceEntity: () => any
 	create: (template: any, location: string) => void
 	animation: (animation: any, condition?: string | false) => void
 	animationController: (
