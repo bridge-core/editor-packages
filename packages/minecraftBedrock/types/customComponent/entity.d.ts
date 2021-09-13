@@ -14,14 +14,27 @@ declare interface TemplateContext {
 	/**
 	 * Add an animation to the entity
 	 */
-	animation: (animation: any, condition?: string | false) => void
+	animation: (animation: any, condition?: string | false) => string
 	/**
 	 * Add an animation to the entity
 	 */
 	animationController: (
 		animationController: any,
 		condition?: string | false
-	) => void
+	) => string
+	/**
+	 * Add a new dialogue scene to the entity
+	 */
+	dialogueScene: (scene: any) => void
+	/**
+	 * React to the component being activated
+	 */
+	onActivated: (eventResponse: any) => void
+	/**
+	 * React to the component being deactivated
+	 */
+	onDeactivated: (eventResponse: any) => void
+
 	/**
 	 * Where inside the source file the custom component is located
 	 */

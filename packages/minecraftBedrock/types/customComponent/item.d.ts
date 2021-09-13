@@ -30,13 +30,13 @@ declare interface TemplateContext {
 		/**
 		 * Add an animation to the player entity
 		 */
-		animation: (animation: any, condition?: string | false) => void
+		animation: (animation: any, condition?: string | false) => string
 		/**
 		 * Add an animation controller to the player entity
 		 */
 		animationController: (
 			animationController: any,
 			condition?: string | false
-		) => void
+		) => string
 	}
 }
