@@ -36,6 +36,20 @@ declare interface TemplateContext {
 	onDeactivated: (eventResponse: any) => void
 
 	/**
+	 * Methods for interacting with the client side of an entity
+	 */
+	client: {
+		/**
+		 * [!!!] Experimental:
+		 * Create a client entity file for entities using this component
+		 * The clientEntity JSON object you pass in as an argument should not
+		 * include the top level "minecraft:client_entity" field.
+		 * The correct identifier gets inserted automatically
+		 */
+		create: (clientEntity: any, formatVersion?: string) => void
+	}
+
+	/**
 	 * Where inside the source file the custom component is located
 	 */
 	location: string
