@@ -39,7 +39,8 @@
 					"additionalModdingCapabilities",
 					"upcomingCreatorFeatures",
 					"enableGameTestFramework",
-					"experimentalMolangFeatures"
+					"experimentalMolangFeatures",
+					"educationEdition"
 				]
 			},
 			"patternProperties": {
