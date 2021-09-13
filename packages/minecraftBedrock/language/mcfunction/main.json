@@ -2118,7 +2118,7 @@
 						{
 							"argumentName": "blockStates",
 							"description": "Specifies the block states to use for the block.",
-							"type": "jsonData",
+							"type": "blockState",
 							"isOptional": true
 						},
 						{
