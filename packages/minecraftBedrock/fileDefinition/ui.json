@@ -11,5 +11,9 @@
 	"documentation": {
 		"baseUrl": "https://wiki.bedrock.dev/json-ui/json-ui-intro.html",
 		"supportsQuerying": false
+	},
+	"highlighterConfiguration": {
+		"variables": ["controls", "bindings", "factory", "button_mappings"],
+		"typeIdentifiers": ["namespace", "type"]
 	}
 }
