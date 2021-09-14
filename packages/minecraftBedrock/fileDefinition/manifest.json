@@ -6,5 +6,10 @@
 		"matcher": "BP/manifest.json"
 	},
 
-	"schema": "file:///data/packages/minecraftBedrock/schema/manifest/main.json"
+	"schema": "file:///data/packages/minecraftBedrock/schema/manifest/main.json",
+
+	"highlighterConfiguration": {
+		"variables": ["metadata", "header", "modules", "dependencies"],
+		"typeIdentifiers": ["format_version"]
+	}
 }

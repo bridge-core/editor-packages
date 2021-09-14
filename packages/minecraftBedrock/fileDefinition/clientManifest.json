@@ -7,5 +7,10 @@
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/manifest/main.json",
-	"lightningCache": "clientManifest.json"
+	"lightningCache": "clientManifest.json",
+
+	"highlighterConfiguration": {
+		"variables": ["metadata", "header", "modules", "dependencies"],
+		"typeIdentifiers": ["format_version"]
+	}
 }
