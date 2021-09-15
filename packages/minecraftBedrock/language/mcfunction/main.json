@@ -16,6 +16,34 @@
 
 	"vanilla": [
 		{
+			"selectorArguments": [
+				{
+					"type": "string",
+					"argumentName": "tag",
+					"additionalData": {
+						"multipleInstancesAllowed": "always",
+						"supportsNegation": true,
+						"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/entityTagEnum.json"
+					}
+				},
+				{
+					"type": "string",
+					"argumentName": "type",
+					"additionalData": {
+						"multipleInstancesAllowed": "whenNegated",
+						"supportsNegation": true,
+						"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/entity_identifiers"
+					}
+				},
+				{
+					"type": "number",
+					"argumentName": "c",
+					"additionalData": {
+						"multipleInstancesAllowed": "never",
+						"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/entity_identifiers"
+					}
+				}
+			],
 			"commands": [
 				{
 					"commandName": "alwaysday",
