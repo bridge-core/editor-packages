@@ -7,7 +7,7 @@
 			"description": "List of family names.",
 			"type": "array",
 			"items": {
-				"$ref": "../../general/family.json"
+				"$ref": "../../../reference/general/family.json"
 			}
 		}
 	}

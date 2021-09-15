@@ -607,7 +607,7 @@
 			"then": {
 				"properties": {
 					"value": {
-						"$ref": "./family.json"
+						"$ref": "../../general/reference/family.json"
 					}
 				}
 			}
@@ -655,7 +655,7 @@
 			"then": {
 				"properties": {
 					"value": {
-						"$ref": "./family.json"
+						"type": "boolean"
 					}
 				}
 			}

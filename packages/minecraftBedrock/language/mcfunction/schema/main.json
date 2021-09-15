@@ -8,22 +8,11 @@
 		"vanilla": {
 			"type": "array",
 			"items": {
+				"additionalProperties": false,
 				"type": "object",
 				"properties": {
-					"targetVersion": {
-						"type": "array",
-						"minItems": 2,
-						"maxItems": 2,
-						"items": [
-							{
-								"type": "string",
-								"description": "Operator"
-							},
-							{
-								"type": "string",
-								"description": "Version"
-							}
-						]
+					"requires": {
+						"$ref": "../../../../common/schema/bridge/requires.json"
 					},
 					"commands": {
 						"type": "array",
@@ -75,6 +64,46 @@
 														"type": "string"
 													}
 												}
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"selectorArguments": {
+						"type": "array",
+						"items": {
+							"additionalProperties": false,
+							"properties": {
+								"type": {
+									"type": "string",
+									"enum": ["string", "number"]
+								},
+								"argumentName": {
+									"type": "string"
+								},
+								"description": {
+									"type": "string"
+								},
+								"additionalData": {
+									"type": "object",
+									"additionalProperties": false,
+									"properties": {
+										"multipleInstancesAllowed": {
+											"type": "string",
+											"enum": ["always", "whenNegated", "never"]
+										},
+										"supportsNegation": {
+											"type": "boolean"
+										},
+										"schemaReference": {
+											"type": "string"
+										},
+										"values": {
+											"type": "array",
+											"items": {
+												"type": "string"
 											}
 										}
 									}

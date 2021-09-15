@@ -22,42 +22,7 @@
 		},
 		"requires": {
 			"description": "Preset requirements.",
-			"properties": {
-				"targetVersion": {
-					"type": "array",
-					"minItems": 2,
-					"maxItems": 2,
-					"items": [
-						{
-							"type": "string",
-							"description": "Operator",
-							"enum": [">", ">=", "=", "<", "<="]
-						},
-						{
-							"type": "string",
-							"description": "Format version"
-						}
-					]
-				},
-				"packTypes": {
-					"type": "array",
-					"items": {
-						"type": "string",
-						"enum": [
-							"worldTemplate",
-							"behaviorPack",
-							"resourcePack",
-							"skinPack"
-						]
-					}
-				},
-				"experimentalGameplay": {
-					"type": "array",
-					"items": {
-						"type": "string"
-					}
-				}
-			}
+			"$ref": "../requires.json"
 		},
 		"additionalModels": {
 			"type": "object"

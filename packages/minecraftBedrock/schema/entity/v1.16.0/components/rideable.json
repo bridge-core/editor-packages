@@ -15,7 +15,7 @@
 			"description": "List of entities that can ride this entity.",
 			"type": "array",
 			"items": {
-				"$ref": "../../general/family.json"
+				"$ref": "../../../general/reference/family.json"
 			}
 		},
 		"interact_text": {

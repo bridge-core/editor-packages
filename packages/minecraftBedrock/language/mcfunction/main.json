@@ -18,12 +18,151 @@
 		{
 			"selectorArguments": [
 				{
+					"type": "number",
+					"argumentName": "x",
+					"additionalData": {
+						"multipleInstancesAllowed": "never"
+					}
+				},
+				{
+					"type": "number",
+					"argumentName": "y",
+					"additionalData": {
+						"multipleInstancesAllowed": "never"
+					}
+				},
+				{
+					"type": "number",
+					"argumentName": "z",
+					"additionalData": {
+						"multipleInstancesAllowed": "never"
+					}
+				},
+				{
+					"type": "number",
+					"argumentName": "r",
+					"additionalData": {
+						"multipleInstancesAllowed": "never"
+					}
+				},
+				{
+					"type": "number",
+					"argumentName": "rm",
+					"additionalData": {
+						"multipleInstancesAllowed": "never"
+					}
+				},
+				{
+					"type": "number",
+					"argumentName": "dx",
+					"additionalData": {
+						"multipleInstancesAllowed": "never"
+					}
+				},
+				{
+					"type": "number",
+					"argumentName": "dy",
+					"additionalData": {
+						"multipleInstancesAllowed": "never"
+					}
+				},
+				{
+					"type": "number",
+					"argumentName": "dz",
+					"additionalData": {
+						"multipleInstancesAllowed": "never"
+					}
+				},
+				// {
+				// 	"type": "json",
+				// 	"argumentName": "scores",
+				// 	"additionalData": {
+				// 		"multipleInstancesAllowed": "never"
+				// 	}
+				// },
+				{
 					"type": "string",
 					"argumentName": "tag",
 					"additionalData": {
 						"multipleInstancesAllowed": "always",
 						"supportsNegation": true,
 						"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/entityTagEnum.json"
+					}
+				},
+				{
+					"type": "number",
+					"argumentName": "c",
+					"additionalData": {
+						"multipleInstancesAllowed": "never"
+					}
+				},
+				{
+					"type": "number",
+					"argumentName": "l",
+					"additionalData": {
+						"multipleInstancesAllowed": "never"
+					}
+				},
+				{
+					"type": "number",
+					"argumentName": "lm",
+					"additionalData": {
+						"multipleInstancesAllowed": "never"
+					}
+				},
+				{
+					"type": "string",
+					"argumentName": "m",
+					"additionalData": {
+						"multipleInstancesAllowed": "whenNegated",
+						"values": [
+							"survival",
+							"s",
+							"0",
+							"creative",
+							"c",
+							"1",
+							"adventure",
+							"a",
+							"2"
+						],
+						"supportsNegation": true
+					}
+				},
+				{
+					"type": "string",
+					"argumentName": "name",
+					"additionalData": {
+						"supportsNegation": true,
+						"multipleInstancesAllowed": "whenNegated"
+					}
+				},
+				{
+					"type": "number",
+					"argumentName": "rx",
+					"additionalData": {
+						"multipleInstancesAllowed": "never"
+					}
+				},
+				{
+					"type": "number",
+					"argumentName": "rxm",
+					"additionalData": {
+						"multipleInstancesAllowed": "never"
+					}
+				},
+				{
+					"type": "number",
+					"argumentName": "ry",
+					"additionalData": {
+						"multipleInstancesAllowed": "never"
+					}
+				},
+				{
+					"type": "number",
+					"argumentName": "rym",
+					"additionalData": {
+						"multipleInstancesAllowed": "never"
 					}
 				},
 				{
@@ -36,10 +175,12 @@
 					}
 				},
 				{
-					"type": "number",
-					"argumentName": "c",
+					"type": "string",
+					"argumentName": "family",
 					"additionalData": {
-						"multipleInstancesAllowed": "never"
+						"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/family.json",
+						"multipleInstancesAllowed": "always",
+						"supportsNegation": true
 					}
 				}
 			],

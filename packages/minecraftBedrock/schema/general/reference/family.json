@@ -3,10 +3,10 @@
 	"type": "string",
 	"anyOf": [
 		{
-			"$ref": "../../general/vanilla/family.json"
+			"$ref": "../vanilla/family.json"
 		},
 		{
-			"$ref": "../dynamic/familyEnum.json"
+			"$ref": "../../entity/dynamic/familyEnum.json"
 		},
 		{
 			"type": "string"
