@@ -39,8 +39,7 @@
 					"type": "number",
 					"argumentName": "c",
 					"additionalData": {
-						"multipleInstancesAllowed": "never",
-						"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/entity_identifiers"
+						"multipleInstancesAllowed": "never"
 					}
 				}
 			],
