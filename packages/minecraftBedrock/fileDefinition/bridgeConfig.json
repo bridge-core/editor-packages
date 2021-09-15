@@ -8,7 +8,19 @@
 	"schema": "file:///data/packages/common/schema/bridge/config/main.json",
 
 	"documentation": {
-		"baseUrl": "https://github.com/bridge-core/project-config-standard",
+		"baseUrl": "https://github.com/bedrock-oss/project-config-standard",
 		"supportsQuerying": false
+	},
+	"highlighterConfiguration": {
+		"variables": [
+			"packs",
+			"experimentalGameplay",
+			"packDefinitions",
+			"bridge",
+			"regolith",
+			"compiler",
+			"authors"
+		],
+		"typeIdentifiers": ["type"]
 	}
 }
