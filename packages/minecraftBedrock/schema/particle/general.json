@@ -27,7 +27,10 @@
 		},
 		"materials": {
 			"type": "string",
-			"const": "particles_alpha"
+			"enum": [
+				"particles_alpha",
+				"particles_blend"
+			]
 		}
 	}
 }
