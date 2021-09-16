@@ -18,6 +18,7 @@
 		{
 			"selectorArguments": [
 				{
+					"description": "Define an x position in the world the selector starts at, for use with the distance argument, the volume arguments, or the limit argument. Using these arguments alone will not restrict the entities found, and will only affect the sorting of targets.",
 					"type": "number",
 					"argumentName": "x",
 					"additionalData": {
@@ -25,6 +26,7 @@
 					}
 				},
 				{
+					"description": "Define a y position in the world the selector starts at, for use with the distance argument, the volume arguments, or the limit argument. Using these arguments alone will not restrict the entities found, and will only affect the sorting of targets",
 					"type": "number",
 					"argumentName": "y",
 					"additionalData": {
@@ -32,6 +34,7 @@
 					}
 				},
 				{
+					"description": "Define a z position in the world the selector starts at, for use with the distance argument, the volume arguments, or the limit argument. Using these arguments alone will not restrict the entities found, and will only affect the sorting of targets",
 					"type": "number",
 					"argumentName": "z",
 					"additionalData": {
@@ -39,6 +42,7 @@
 					}
 				},
 				{
+					"description": "Specifies the minimum range to find entities, respectively. Only unsigned values are allowed.",
 					"type": "number",
 					"argumentName": "r",
 					"additionalData": {
@@ -46,6 +50,7 @@
 					}
 				},
 				{
+					"description": "Specifies the maximum range to find entities, respectively. Only unsigned values are allowed.",
 					"type": "number",
 					"argumentName": "rm",
 					"additionalData": {
@@ -53,6 +58,7 @@
 					}
 				},
 				{
+					"description": "Filter target selection based on their x-difference from some point, as measured by entities' feet position.",
 					"type": "number",
 					"argumentName": "dx",
 					"additionalData": {
@@ -60,6 +66,7 @@
 					}
 				},
 				{
+					"description": "Filter target selection based on their y-difference from some point, as measured by entities' feet position.",
 					"type": "number",
 					"argumentName": "dy",
 					"additionalData": {
@@ -67,6 +74,7 @@
 					}
 				},
 				{
+					"description": "Filter target selection based on their z-difference from some point, as measured by entities' feet position.",
 					"type": "number",
 					"argumentName": "dz",
 					"additionalData": {
@@ -81,6 +89,7 @@
 				// 	}
 				// },
 				{
+					"description": "Filter target selection based on the entity's scoreboard tags. Multiple tag arguments are allowed, and all arguments must be fulfilled for an entity to be selected.",
 					"type": "string",
 					"argumentName": "tag",
 					"additionalData": {
@@ -90,6 +99,7 @@
 					}
 				},
 				{
+					"description": "Limit the number of targets. For @p, @a, and @e, selects only the specified number of targets by increasing distance from the selector's position. When c is negative, it will reverse the order of targeting (for example, @p[c=-1] will target the furthest player). Inverse sorting does not work with @r.",
 					"type": "number",
 					"argumentName": "c",
 					"additionalData": {
@@ -97,6 +107,7 @@
 					}
 				},
 				{
+					"description": "The minimum level range to search for, respectively.",
 					"type": "number",
 					"argumentName": "l",
 					"additionalData": {
@@ -104,6 +115,7 @@
 					}
 				},
 				{
+					"description": "The maximum level range to search for, respectively.",
 					"type": "number",
 					"argumentName": "lm",
 					"additionalData": {
@@ -111,6 +123,7 @@
 					}
 				},
 				{
+					"description": "Filter target selection by game mode. This naturally filters out all non-player targets.",
 					"type": "string",
 					"argumentName": "m",
 					"additionalData": {
@@ -130,6 +143,7 @@
 					}
 				},
 				{
+					"description": "Filter target selection by name. Values are strings, so spaces are allowed only if quotes are applied. This cannot be a JSON text compound.",
 					"type": "string",
 					"argumentName": "name",
 					"additionalData": {
@@ -138,6 +152,7 @@
 					}
 				},
 				{
+					"description": "Specifies the minimum x-rotation. Filter target selection based on the entity's rotation along the pitch axis, measured in degrees. Values range from -90 (straight up) to 0 (at the horizon) to +90 (straight down).",
 					"type": "number",
 					"argumentName": "rx",
 					"additionalData": {
@@ -145,6 +160,7 @@
 					}
 				},
 				{
+					"description": "Specifies the maximum x-rotation. Filter target selection based on the entity's rotation along the pitch axis, measured in degrees. Values range from -90 (straight up) to 0 (at the horizon) to +90 (straight down).",
 					"type": "number",
 					"argumentName": "rxm",
 					"additionalData": {
@@ -152,6 +168,7 @@
 					}
 				},
 				{
+					"description": "Specifies the minimum y-rotation values. Filter target selection based on the entity's rotation along the yaw axis, measured clockwise in degrees from due south (or the positive Z direction). Values vary from -180 (facing due north) to -90 (facing due east) to 0 (facing due south) to +90 (facing due west) to +180 (facing due north again).",
 					"type": "number",
 					"argumentName": "ry",
 					"additionalData": {
@@ -159,6 +176,7 @@
 					}
 				},
 				{
+					"description": "Specifies the maximum y-rotation values. Filter target selection based on the entity's rotation along the yaw axis, measured clockwise in degrees from due south (or the positive Z direction). Values vary from -180 (facing due north) to -90 (facing due east) to 0 (facing due south) to +90 (facing due west) to +180 (facing due north again).",
 					"type": "number",
 					"argumentName": "rym",
 					"additionalData": {
@@ -166,6 +184,7 @@
 					}
 				},
 				{
+					"description": "Filter target selection based on the entity's identifier.",
 					"type": "string",
 					"argumentName": "type",
 					"additionalData": {
@@ -175,6 +194,7 @@
 					}
 				},
 				{
+					"description": "Filter target selection based on the entity's type_family behavior component.",
 					"type": "string",
 					"argumentName": "family",
 					"additionalData": {
