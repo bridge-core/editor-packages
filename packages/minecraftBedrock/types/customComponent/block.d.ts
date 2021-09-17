@@ -10,7 +10,7 @@ declare interface TemplateContext {
 	/**
 	 * Modify the block that is using this component
 	 */
-	 create: (template: any, location: string, operation?: (deepMerge: (oldData: any, newData: any) => any, oldData: any, newData: any) => any) => void
+	create: (template: any, location?: string, operation?: (deepMerge: (oldData: any, newData: any) => any, oldData: any, newData: any) => any) => void
 	/**
 	 * Where inside the source file the custom component is located
 	 */
