@@ -105,7 +105,7 @@
 											"type": "string"
 										},
 										"multiple": {
-											"type": "boolean",
+											"type": "boolean"
 										}
 									}
 								}
