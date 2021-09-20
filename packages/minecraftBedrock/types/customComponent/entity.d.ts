@@ -10,7 +10,7 @@ declare interface TemplateContext {
 	/**
 	 * Modify the entity that is using this component
 	 */
-	create: (template: any, location: string) => void
+	create: (template: any, location?: string, operation?: (deepMerge: (oldData: any, newData: any) => any, oldData: any, newData: any) => any) => void
 	/**
 	 * Add an animation to the entity
 	 */
