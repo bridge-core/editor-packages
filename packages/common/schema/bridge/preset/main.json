@@ -103,6 +103,9 @@
 										},
 										"icon": {
 											"type": "string"
+										},
+										"multiple": {
+											"type": "boolean",
 										}
 									}
 								}
