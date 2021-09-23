@@ -2,12 +2,15 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"properties": {
 		"minecraft:spawns_on_surface": {
+			"type": "object",
 			"additionalProperties": false
 		},
 		"minecraft:spawns_underground": {
+			"type": "object",
 			"additionalProperties": false
 		},
 		"minecraft:spawns_underwater": {
+			"type": "object",
 			"additionalProperties": false
 		},
 		"minecraft:spawns_on_block_filter": {
@@ -39,6 +42,7 @@
 			]
 		},
 		"minecraft:brightness_filter": {
+			"type": "object",
 			"additionalProperties": false,
 			"properties": {
 				"min": {
@@ -57,6 +61,7 @@
 		},
 		"minecraft:difficulty_filter": {
 			"additionalProperties": false,
+			"type": "object",
 			"properties": {
 				"min": {
 					"description": "This is the minimum difficulty level that a mob spawns.",
@@ -90,6 +95,7 @@
 		},
 		"minecraft:weight": {
 			"additionalProperties": false,
+			"type": "object",
 			"properties": {
 				"default": {
 					"description": "This is the priority of the mob spawning.",
@@ -98,6 +104,7 @@
 			}
 		},
 		"minecraft:herd": {
+			"type": "object",
 			"additionalProperties": false,
 			"properties": {
 				"min_size": {
@@ -125,6 +132,7 @@
 			}
 		},
 		"minecraft:density_limit": {
+			"type": "object",
 			"additionalProperties": false,
 			"properties": {
 				"surface": {
@@ -138,6 +146,7 @@
 			}
 		},
 		"minecraft:biome_filter": {
+			"type": "object",
 			"additionalProperties": false,
 			"properties": {
 				"all_of": {
@@ -165,6 +174,7 @@
 			}
 		},
 		"minecraft:player_in_village_filter": {
+			"type": "object",
 			"additionalProperties": false,
 			"properties": {
 				"distance": {
@@ -177,6 +187,7 @@
 		},
 		"minecraft:delay_filter": {
 			"additionalProperties": false,
+			"type": "object",
 			"properties": {
 				"min": {
 					"type": "number"
@@ -193,6 +204,8 @@
 			}
 		},
 		"minecraft:distance_filter": {
+			"type": "object",
+			"additionalProperties": false,
 			"properties": {
 				"min": {
 					"type": "number"
@@ -203,6 +216,8 @@
 			}
 		},
 		"minecraft:height_filter": {
+			"type": "object",
+			"additionalProperties": false,
 			"properties": {
 				"min": {
 					"type": "number"
@@ -216,6 +231,7 @@
 			"type": "array",
 			"items": {
 				"type": "object",
+				"additionalProperties": false,
 				"properties": {
 					"weight": {
 						"type": "integer"

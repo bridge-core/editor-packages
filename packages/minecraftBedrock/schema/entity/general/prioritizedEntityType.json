@@ -3,6 +3,7 @@
 	"type": "array",
 	"items": {
 		"type": "object",
+		"additionalProperties": false,
 		"properties": {
 			"priority": {
 				"type": "number"

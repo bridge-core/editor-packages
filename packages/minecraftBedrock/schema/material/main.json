@@ -1,313 +1,292 @@
 // https://github.com/stirante/bedrock-shader-schema/blob/master/materials.schema.json
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "definitions": {
-      "library": {
-        "primitiveMode": {
-          "type": "string",
-          "enum": [
-            "None",
-            "QuadList",
-            "TriangleList",
-            "LineList",
-            "Line"
-          ]
-        },
-        "stencilOperation": {
-          "type": "string",
-          "enum": [
-            "Keep",
-            "Replace"
-          ]
-        },
-        "face": {
-          "type": "object",
-          "properties": {
-            "stencilFunc": {
-              "description": "Specifies the test function.",
-              "$ref": "#/definitions/library/functions"
-            },
-            "stencilFailOp": {
-              "$ref": "#/definitions/library/stencilOperation"
-            },
-            "stencilDepthFailOp": {
-              "$ref": "#/definitions/library/stencilOperation"
-            },
-            "stencilPassOp": {
-              "$ref": "#/definitions/library/stencilOperation"
-            }
-          }
-        },
-        "functions": {
-          "type": "string",
-          "enum": [
-            "Always",
-            "Equal",
-            "Less",
-            "LessEqual",
-            "Greater",
-            "GreaterEqual",
-            "NotEqual"
-          ]
-        },
-        "blending": {
-          "type": "string",
-          "enum": [
-            "DestColor",
-            "DestAlpha",
-            "SourceColor",
-            "One",
-            "OneMinusDestAlpha",
-            "OneMinusDestColor",
-            "OneMinusSrcAlpha",
-            "OneMinusSrcColor",
-            "SourceAlpha",
-            "Zero"
-          ]
-        },
-        "blendSrc": {
-          "description": "Specifies how the red, green, blue, and alpha source blending factors are computed.",
-          "$ref": "#/definitions/library/blending"
-        },
-        "blendDst": {
-          "description": "Specifies how the red, green, blue, and alpha destination blending factors are computed.",
-          "$ref": "#/definitions/library/blending"
-        },
-        "vertexField": {
-          "type": "object",
-          "properties": {
-            "field": {
-              "type": "string",
-              "description": "Field name."
-            }
-          }
-        },
-        "samplerState": {
-          "type": "object",
-          "description": "Texture configuration.",
-          "properties": {
-            "samplerIndex": {
-              "type": "integer",
-              "description": "Texture index."
-            },
-            "textureFilter": {
-              "type": "string",
-              "description": "Texture mapping option.",
-              "enum": [
-                "Bilinear",
-                "MipMapBilinear",
-                "PCF",
-                "Point",
-                "TexelAA",
-                "Trilinear"
-              ]
-            },
-            "textureWrap": {
-              "type": "string",
-              "description": "Behavior, when accessing coordinates outside of the texture.",
-              "enum": [
-                "Clamp",
-                "Repeat"
-              ]
-            }
-          }
-        },
-        "vertexShader": {
-          "type": "string",
-          "description": "Path to the shader relative to glsl/hlsl folder. For hlsl shader, the .hlsl suffix is added"
-        },
-        "vrGeometryShader": {
-          "type": "string",
-          "description": "Path to the shader relative to glsl/hlsl folder. For hlsl shader, the .hlsl suffix is added"
-        },
-        "geometryShader": {
-          "type": "string",
-          "description": "Path to the shader relative to glsl/hlsl folder. For hlsl shader, the .hlsl suffix is added"
-        },
-        "fragmentShader": {
-          "type": "string",
-          "description": "Path to the shader relative to glsl/hlsl folder. For hlsl shader, the .hlsl suffix is added"
-        },
-        "vertexFields": {
-          "type": "array",
-          "description": "A list of fields, that are passed to the vertex shader.",
-          "items": {
-            "$ref": "#/definitions/library/vertexField"
-          }
-        },
-        "+defines": {
-          "type": "array",
-          "description": "A list of #define directives to add",
-          "items": {
-            "type": "string"
-          }
-        },
-        "+states": {
-          "type": "array",
-          "description": "A list of states to enable",
-          "items": {
-            "type": "string",
-            "enum": [
-              "Blending",
-              "DisableAlphaWrite",
-              "DisableColorWrite",
-              "DisableCulling",
-              "DisableDepthWrite",
-              "EnableAlphaToCoverage",
-              "EnableStencilTest",
-              "StencilWrite",
-              "InvertCulling",
-              "Wireframe"
-            ]
-          }
-        },
-        "-defines": {
-          "type": "array",
-          "description": "A list of #define directives to remove",
-          "items": {
-            "type": "string"
-          }
-        },
-        "variant": {
-          "type": "object",
-          "properties": {
-            "vertexFields": {
-              "$ref": "#/definitions/library/vertexFields"
-            },
-            "+defines": {
-              "$ref": "#/definitions/library/+defines"
-            },
-            "+states": {
-              "$ref": "#/definitions/library/+states"
-            },
-            "-defines": {
-              "$ref": "#/definitions/library/-defines"
-            }
-          }
-        }
-      },
-      "material": {
-        "type": "object",
-        "properties": {
-          "vertexShader": {
-            "$ref": "#/definitions/library/vertexShader"
-          },
-          "vrGeometryShader": {
-            "$ref": "#/definitions/library/vrGeometryShader"
-          },
-          "fragmentShader": {
-            "$ref": "#/definitions/library/fragmentShader"
-          },
-          "vertexFields": {
-            "$ref": "#/definitions/library/vertexFields"
-          },
-          "variants": {
-            "type": "array",
-            "description": "An explanation about the purpose of this instance.",
-            "items": {
-              "anyOf": [
-                {
-                  "type": "object",
-                  "description": "An explanation about the purpose of this instance.",
-                  "properties": {
-                    "skinning": {
-                      "$ref": "#/definitions/library/variant"
-                    }
-                  }
-                },
-                {
-                  "type": "object",
-                  "description": "An explanation about the purpose of this instance.",
-                  "properties": {
-                    "skinning_color": {
-                      "$ref": "#/definitions/library/variant"
-                    }
-                  }
-                }
-              ]
-            }
-          },
-          "msaaSupport": {
-            "type": "string",
-            "description": "Multisample anti-aliasing support.",
-            "enum": [
-              "Both",
-              "MSAA",
-              "NonMSAA"
-            ]
-          },
-          "+samplerStates": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/library/samplerState"
-            }
-          },
-          "blendSrc": {
-            "$ref": "#/definitions/library/blendSrc"
-          },
-          "blendDst": {
-            "$ref": "#/definitions/library/blendDst"
-          },
-          "+defines": {
-            "$ref": "#/definitions/library/+defines"
-          },
-          "+states": {
-            "$ref": "#/definitions/library/+states"
-          },
-          "-defines": {
-            "$ref": "#/definitions/library/-defines"
-          },
-          "depthBias": {
-            "type": "number"
-          },
-          "slopeScaledDepthBias": {
-            "type": "number"
-          },
-          "depthBiasOGL": {
-            "type": "number"
-          },
-          "slopeScaledDepthBiasOGL": {
-            "type": "number"
-          },
-          "depthFunc": {
-            "description": "Specifies the depth comparison function.",
-            "$ref": "#/definitions/library/functions"
-          },
-          "stencilRefOverride": {
-            "type": "integer"
-          },
-          "stencilRef": {
-            "type": "integer"
-          },
-          "stencilReadMask": {
-            "type": "integer"
-          },
-          "stencilWriteMask": {
-            "type": "integer"
-          },
-          "primitiveMode": {
-            "$ref": "#/definitions/library/primitiveMode"
-          },
-          "frontFace": {
-            "$ref": "#/definitions/library/face"
-          },
-          "backFace": {
-            "$ref": "#/definitions/library/face"
-          }
-        }
-      }
-    },
-    "properties": {
-      "version": {
-        "type": "string"
-      },
-      "materials": {
-        "type": "object",
-        "patternProperties": {
-          ".+": {
-            "$ref": "#/definitions/material"
-          }
-        }
-      }
-    }
-  }
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"definitions": {
+		"library": {
+			"primitiveMode": {
+				"type": "string",
+				"enum": ["None", "QuadList", "TriangleList", "LineList", "Line"]
+			},
+			"stencilOperation": {
+				"type": "string",
+				"enum": ["Keep", "Replace"]
+			},
+			"face": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"stencilFunc": {
+						"description": "Specifies the test function.",
+						"$ref": "#/definitions/library/functions"
+					},
+					"stencilFailOp": {
+						"$ref": "#/definitions/library/stencilOperation"
+					},
+					"stencilDepthFailOp": {
+						"$ref": "#/definitions/library/stencilOperation"
+					},
+					"stencilPassOp": {
+						"$ref": "#/definitions/library/stencilOperation"
+					}
+				}
+			},
+			"functions": {
+				"type": "string",
+				"enum": [
+					"Always",
+					"Equal",
+					"Less",
+					"LessEqual",
+					"Greater",
+					"GreaterEqual",
+					"NotEqual"
+				]
+			},
+			"blending": {
+				"type": "string",
+				"enum": [
+					"DestColor",
+					"DestAlpha",
+					"SourceColor",
+					"One",
+					"OneMinusDestAlpha",
+					"OneMinusDestColor",
+					"OneMinusSrcAlpha",
+					"OneMinusSrcColor",
+					"SourceAlpha",
+					"Zero"
+				]
+			},
+			"blendSrc": {
+				"description": "Specifies how the red, green, blue, and alpha source blending factors are computed.",
+				"$ref": "#/definitions/library/blending"
+			},
+			"blendDst": {
+				"description": "Specifies how the red, green, blue, and alpha destination blending factors are computed.",
+				"$ref": "#/definitions/library/blending"
+			},
+			"vertexField": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"field": {
+						"type": "string",
+						"description": "Field name."
+					}
+				}
+			},
+			"samplerState": {
+				"type": "object",
+				"additionalProperties": false,
+				"description": "Texture configuration.",
+				"properties": {
+					"samplerIndex": {
+						"type": "integer",
+						"description": "Texture index."
+					},
+					"textureFilter": {
+						"type": "string",
+						"description": "Texture mapping option.",
+						"enum": [
+							"Bilinear",
+							"MipMapBilinear",
+							"PCF",
+							"Point",
+							"TexelAA",
+							"Trilinear"
+						]
+					},
+					"textureWrap": {
+						"type": "string",
+						"description": "Behavior, when accessing coordinates outside of the texture.",
+						"enum": ["Clamp", "Repeat"]
+					}
+				}
+			},
+			"vertexShader": {
+				"type": "string",
+				"description": "Path to the shader relative to glsl/hlsl folder. For hlsl shader, the .hlsl suffix is added"
+			},
+			"vrGeometryShader": {
+				"type": "string",
+				"description": "Path to the shader relative to glsl/hlsl folder. For hlsl shader, the .hlsl suffix is added"
+			},
+			"geometryShader": {
+				"type": "string",
+				"description": "Path to the shader relative to glsl/hlsl folder. For hlsl shader, the .hlsl suffix is added"
+			},
+			"fragmentShader": {
+				"type": "string",
+				"description": "Path to the shader relative to glsl/hlsl folder. For hlsl shader, the .hlsl suffix is added"
+			},
+			"vertexFields": {
+				"type": "array",
+				"description": "A list of fields, that are passed to the vertex shader.",
+				"items": {
+					"$ref": "#/definitions/library/vertexField"
+				}
+			},
+			"+defines": {
+				"type": "array",
+				"description": "A list of #define directives to add",
+				"items": {
+					"type": "string"
+				}
+			},
+			"+states": {
+				"type": "array",
+				"description": "A list of states to enable",
+				"items": {
+					"type": "string",
+					"enum": [
+						"Blending",
+						"DisableAlphaWrite",
+						"DisableColorWrite",
+						"DisableCulling",
+						"DisableDepthWrite",
+						"EnableAlphaToCoverage",
+						"EnableStencilTest",
+						"StencilWrite",
+						"InvertCulling",
+						"Wireframe"
+					]
+				}
+			},
+			"-defines": {
+				"type": "array",
+				"description": "A list of #define directives to remove",
+				"items": {
+					"type": "string"
+				}
+			},
+			"variant": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"vertexFields": {
+						"$ref": "#/definitions/library/vertexFields"
+					},
+					"+defines": {
+						"$ref": "#/definitions/library/+defines"
+					},
+					"+states": {
+						"$ref": "#/definitions/library/+states"
+					},
+					"-defines": {
+						"$ref": "#/definitions/library/-defines"
+					}
+				}
+			}
+		},
+		"material": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"vertexShader": {
+					"$ref": "#/definitions/library/vertexShader"
+				},
+				"vrGeometryShader": {
+					"$ref": "#/definitions/library/vrGeometryShader"
+				},
+				"fragmentShader": {
+					"$ref": "#/definitions/library/fragmentShader"
+				},
+				"vertexFields": {
+					"$ref": "#/definitions/library/vertexFields"
+				},
+				"variants": {
+					"type": "array",
+					"description": "An explanation about the purpose of this instance.",
+					"items": {
+						"type": "object",
+						"additionalProperties": false,
+						"properties": {
+							"skinning": {
+								"$ref": "#/definitions/library/variant"
+							},
+							"skinning_color": {
+								"$ref": "#/definitions/library/variant"
+							}
+						}
+					}
+				},
+				"msaaSupport": {
+					"type": "string",
+					"description": "Multisample anti-aliasing support.",
+					"enum": ["Both", "MSAA", "NonMSAA"]
+				},
+				"+samplerStates": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/library/samplerState"
+					}
+				},
+				"blendSrc": {
+					"$ref": "#/definitions/library/blendSrc"
+				},
+				"blendDst": {
+					"$ref": "#/definitions/library/blendDst"
+				},
+				"+defines": {
+					"$ref": "#/definitions/library/+defines"
+				},
+				"+states": {
+					"$ref": "#/definitions/library/+states"
+				},
+				"-defines": {
+					"$ref": "#/definitions/library/-defines"
+				},
+				"depthBias": {
+					"type": "number"
+				},
+				"slopeScaledDepthBias": {
+					"type": "number"
+				},
+				"depthBiasOGL": {
+					"type": "number"
+				},
+				"slopeScaledDepthBiasOGL": {
+					"type": "number"
+				},
+				"depthFunc": {
+					"description": "Specifies the depth comparison function.",
+					"$ref": "#/definitions/library/functions"
+				},
+				"stencilRefOverride": {
+					"type": "integer"
+				},
+				"stencilRef": {
+					"type": "integer"
+				},
+				"stencilReadMask": {
+					"type": "integer"
+				},
+				"stencilWriteMask": {
+					"type": "integer"
+				},
+				"primitiveMode": {
+					"$ref": "#/definitions/library/primitiveMode"
+				},
+				"frontFace": {
+					"$ref": "#/definitions/library/face"
+				},
+				"backFace": {
+					"$ref": "#/definitions/library/face"
+				}
+			}
+		}
+	},
+	"properties": {
+		"version": {
+			"type": "string"
+		},
+		"materials": {
+			"type": "object",
+			"patternProperties": {
+				".+": {
+					"$ref": "#/definitions/material"
+				}
+			}
+		}
+	}
+}

@@ -206,6 +206,7 @@
 							"type": "array",
 							"items": {
 								"type": "object",
+								"additionalProperties": false,
 								"properties": {
 									"places_block": {
 										"description": "Reference to the block to be placed.",

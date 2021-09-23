@@ -13,6 +13,7 @@
 			"description": "Destroy speed per block.",
 			"items": {
 				"type": "object",
+				"additionalProperties": false,
 				"properties": {
 					"block": {
 						"description": "Blocks/block tags that are broken at the set speed.",
@@ -22,6 +23,7 @@
 							},
 							{
 								"type": "object",
+								"additionalProperties": false,
 								"properties": {
 									"tags": {
 										"anyOf": [

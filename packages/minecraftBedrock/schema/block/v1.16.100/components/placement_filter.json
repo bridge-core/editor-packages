@@ -38,6 +38,7 @@
 					"type": "array",
 					"items": {
 						"type": "object",
+						"additionalProperties": false,
 						"properties": {
 							"block_filter": {
 								"type": "array",
@@ -71,6 +72,8 @@
 		{
 			"properties": {
 				"conditions": {
+					"type": "object",
+					"additionalProperties": false,
 					"properties": {
 						"block_filter": {
 							"type": "array",

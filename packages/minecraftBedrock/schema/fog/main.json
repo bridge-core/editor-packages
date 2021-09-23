@@ -15,9 +15,11 @@
 		},
 		"minecraft:fog_settings": {
 			"type": "object",
+			"additionalProperties": false,
 			"properties": {
 				"description": {
 					"type": "object",
+					"additionalProperties": false,
 					"properties": {
 						"identifier": {
 							"anyOf": [
@@ -71,6 +73,7 @@
 				},
 				"volumetric": {
 					"type": "object",
+					"additionalProperties": false,
 					"description": "The volumetric fog settings. RTX is required for volumetric fogs.",
 					"properties": {
 						"media_coefficients": {
@@ -109,6 +112,7 @@
 							"patternProperties": {
 								"^water|air|weather|lava|lava_resistance$": {
 									"type": "object",
+									"additionalProperties": false,
 									"properties": {
 										"max_density": {
 											"description": "The maximum amount of opaqueness that the ground fog will take on. A value from [0.0, 1.0].",

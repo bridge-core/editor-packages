@@ -3,18 +3,21 @@
 	"$id": "bridge.loot_tables",
 	"title": "Loot Table",
 	"type": "object",
+	"additionalProperties": false,
 	"properties": {
 		"pools": {
 			"description": "Lists the loot pools for this loot table.",
 			"type": "array",
 			"items": {
 				"type": "object",
+				"additionalProperties": false,
 				"properties": {
 					"conditions": {
 						"$ref": "./conditions.json"
 					},
 					"tiers": {
 						"type": "object",
+						"additionalProperties": false,
 						"properties": {
 							"initial_range": {
 								"type": "number"

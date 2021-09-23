@@ -8,6 +8,7 @@
 			"type": "array",
 			"items": {
 				"type": "object",
+				"additionalProperties": false,
 				"properties": {
 					"total_exp_required": {
 						"type": "number"
@@ -19,6 +20,7 @@
 						"type": "array",
 						"items": {
 							"type": "object",
+							"additionalProperties": false,
 							"properties": {
 								"trades": {
 									"$ref": "./trades.json"

@@ -10,6 +10,7 @@
 			"type": "array",
 			"items": {
 				"type": "object",
+				"additionalProperties": false,
 				"properties": {
 					"do_casting": {
 						"type": "boolean"
@@ -42,6 +43,7 @@
 						"type": "array",
 						"items": {
 							"type": "object",
+							"additionalProperties": false,
 							"properties": {
 								"shape": {
 									"type": "string",

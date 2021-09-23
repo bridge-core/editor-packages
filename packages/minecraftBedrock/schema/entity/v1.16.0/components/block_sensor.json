@@ -10,6 +10,7 @@
 			"type": "array",
 			"items": {
 				"type": "object",
+				"additionalProperties": false,
 				"properties": {
 					"block_list": {
 						"type": "array",

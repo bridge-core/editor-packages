@@ -16,6 +16,7 @@
 			"type": "array",
 			"items": {
 				"type": "object",
+				"additionalProperties": false,
 				"properties": {
 					"eat_block": {
 						"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"

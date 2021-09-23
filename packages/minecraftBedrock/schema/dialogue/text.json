@@ -6,12 +6,14 @@
 			"pattern": ".+"
 		},
 		{
+			"additionalProperties": false,
 			"type": "object",
 			"properties": {
 				"rawtext": {
 					"type": "array",
 					"items": {
 						"type": "object",
+						"additionalProperties": false,
 						"properties": {
 							"translate": {
 								"type": "string"

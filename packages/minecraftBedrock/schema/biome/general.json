@@ -113,6 +113,7 @@
 		},
 		"forced_features": {
 			"type": "object",
+			"additionalProperties": false,
 			"properties": {
 				"iterations": {
 					"description": "Number of scattered positions to generate.",
@@ -155,6 +156,7 @@
 				},
 				{
 					"type": "object",
+					"additionalProperties": false,
 					"properties": {
 						"extent": {
 							"minItems": 2,

@@ -33,6 +33,7 @@
 						"type": "array",
 						"items": {
 							"type": "object",
+							"additionalProperties": false,
 							"properties": {
 								"name": {
 									"$ref": "../../../general/vanilla/effectName.json"

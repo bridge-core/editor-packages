@@ -136,6 +136,7 @@
 					"description": "A series of events that occur at set intervals. These get fired every time the emitter has moved the specified input distance from the last time it was fired.",
 					"items": {
 						"type": "object",
+						"additionalProperties": false,
 						"properties": {
 							"distance": {
 								"type": "number"

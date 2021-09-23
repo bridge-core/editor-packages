@@ -5,6 +5,7 @@
 			"type": "array",
 			"items": {
 				"type": "object",
+				"additionalProperties": false,
 				"properties": {
 					"filters": {
 						"description": "Conditions that make this entry in the list valid.",
@@ -38,6 +39,7 @@
 		},
 		{
 			"type": "object",
+			"additionalProperties": false,
 			"properties": {
 				"filters": {
 					"description": "Conditions that make this entry in the list valid.",

@@ -9,6 +9,7 @@
 					"type": "array",
 					"items": {
 						"type": "object",
+						"additionalProperties": false,
 						"properties": {
 							"should_leash": {
 								"description": "If true, this the spawned entity will be leashed to the parent.",

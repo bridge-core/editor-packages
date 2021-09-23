@@ -16,6 +16,7 @@
 			"type": "array",
 			"items": {
 				"type": "object",
+				"additionalProperties": false,
 				"properties": {
 					"item": {
 						"description": "Name of the item that can be used to boost.",

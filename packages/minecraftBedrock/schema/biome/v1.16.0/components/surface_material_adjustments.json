@@ -8,6 +8,7 @@
 			"type": "array",
 			"items": {
 				"type": "object",
+				"additionalProperties": false,
 				"properties": {
 					"materials": {
 						"additionalProperties": false,

@@ -423,6 +423,7 @@
 							"type": "array",
 							"items": {
 								"type": "object",
+								"additionalProperties": false,
 								"properties": {
 									"id": {
 										"$ref": "../general/vanilla/enchantName.json"

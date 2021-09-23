@@ -41,6 +41,7 @@
 					"type": "array",
 					"items": {
 						"type": "object",
+						"additionalProperties": false,
 						"properties": {
 							"lock_rider_rotation": {
 								"description": "Angle in degrees that a rider is allowed to rotate while riding this entity. Omit this property for no limit.",
@@ -79,6 +80,7 @@
 				},
 				{
 					"type": "object",
+					"additionalProperties": false,
 					"properties": {
 						"lock_rider_rotation": {
 							"description": "Angle in degrees that a rider is allowed to rotate while riding this entity. Omit this property for no limit.",

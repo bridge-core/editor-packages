@@ -10,6 +10,7 @@
 			"type": "array",
 			"items": {
 				"type": "object",
+				"additionalProperties": false,
 				"properties": {
 					"min_activation_range": {
 						"type": "number"
@@ -47,6 +48,7 @@
 						"type": "array",
 						"items": {
 							"type": "object",
+							"additionalProperties": false,
 							"properties": {
 								"base_delay": {
 									"description": "Amount of time in seconds before starting this step.",

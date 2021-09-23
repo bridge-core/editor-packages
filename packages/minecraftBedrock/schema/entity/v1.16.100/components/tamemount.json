@@ -12,6 +12,7 @@
 			"type": "array",
 			"items": {
 				"type": "object",
+				"additionalProperties": false,
 				"properties": {
 					"item": {
 						"description": "Name of the item this entity dislikes and will cause it to get angry if used while untamed.",

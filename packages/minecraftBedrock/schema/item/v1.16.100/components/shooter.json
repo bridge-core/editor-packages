@@ -28,6 +28,7 @@
 			"description": "Define the ammunition item to use.",
 			"items": {
 				"type": "object",
+				"additionalProperties": false,
 				"properties": {
 					"item": {
 						"type": "string"

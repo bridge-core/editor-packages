@@ -14,7 +14,7 @@
 					"properties": {
 						"identifier": {
 							"description": "Entity definition and Client Block definition files refer to this geometry via this identifier.",
-							"pattern": "^geometry\..*",
+							"pattern": "^geometry\\..*",
 							"type": "string"
 						},
 						"texture_width": {
@@ -52,6 +52,7 @@
 					"type": "array",
 					"items": {
 						"type": "object",
+						"additionalProperties": false,
 						"properties": {
 							"name": {
 								"description": "Animation files refer to this bone via this identifier.",

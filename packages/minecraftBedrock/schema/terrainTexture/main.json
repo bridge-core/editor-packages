@@ -39,6 +39,7 @@
 											},
 											{
 												"type": "object",
+												"additionalProperties": false,
 												"properties": {
 													"path": {
 														"type": "string"
@@ -50,6 +51,7 @@
 														"type": "array",
 														"items": {
 															"type": "object",
+															"additionalProperties": false,
 															"properties": {
 																"weight": {
 																	"type": "integer"

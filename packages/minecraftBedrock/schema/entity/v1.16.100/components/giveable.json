@@ -9,6 +9,7 @@
 					"type": "array",
 					"items": {
 						"type": "object",
+						"additionalProperties": false,
 						"properties": {
 							"cooldown": {
 								"description": "An optional cool down in seconds to prevent spamming interactions.",

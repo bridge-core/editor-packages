@@ -13,6 +13,7 @@
 			"description": "Repair item entries.",
 			"items": {
 				"type": "object",
+				"additionalProperties": false,
 				"properties": {
 					"items": {
 						"type": "array",

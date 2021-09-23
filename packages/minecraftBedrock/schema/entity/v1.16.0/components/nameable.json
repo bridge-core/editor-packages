@@ -20,6 +20,7 @@
 			"type": "array",
 			"items": {
 				"type": "object",
+				"additionalProperties": false,
 				"properties": {
 					"name_filter": {
 						"description": "List of special names that will cause the events defined in 'on_named' to fire.",

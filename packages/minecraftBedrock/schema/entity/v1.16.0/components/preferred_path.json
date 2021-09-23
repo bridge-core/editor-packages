@@ -32,6 +32,7 @@
 								},
 								{
 									"type": "object",
+									"additionalProperties": false,
 									"properties": {
 										"name": {
 											"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"

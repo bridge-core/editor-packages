@@ -79,6 +79,7 @@
 					"type": "array",
 					"items": {
 						"type": "object",
+						"additionalProperties": false,
 						"properties": {
 							"blocks": {
 								"description": "The block types required nearby for the entity to breed.",

@@ -58,6 +58,7 @@
 					"type": "array",
 					"items": {
 						"type": "object",
+						"additionalProperties": false,
 						"properties": {
 							"distance_squared_gt": {
 								"type": "number"

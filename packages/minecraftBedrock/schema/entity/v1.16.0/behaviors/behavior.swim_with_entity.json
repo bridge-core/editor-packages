@@ -36,6 +36,7 @@
 			"type": "array",
 			"items": {
 				"type": "object",
+				"additionalProperties": false,
 				"properties": {
 					"filters": {
 						"$ref": "../../general/entityType.json"

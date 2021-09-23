@@ -24,6 +24,7 @@
 			"type": "array",
 			"items": {
 				"type": "object",
+				"additionalProperties": false,
 				"properties": {
 					"priority": {
 						"description": "Prioritizes which items the entity prefers. 0 is the highest priority.",

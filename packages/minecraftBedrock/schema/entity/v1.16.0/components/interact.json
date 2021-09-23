@@ -5,6 +5,7 @@
 	"definitions": {
 		"interaction": {
 			"type": "object",
+			"additionalProperties": false,
 			"properties": {
 				"add_items": {
 					"description": "Loot table with items to add to the player's inventory upon successful interaction.",

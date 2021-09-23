@@ -4,6 +4,7 @@
 	"properties": {
 		"add": {
 			"type": "object",
+			"additionalProperties": false,
 			"properties": {
 				"component_groups": {
 					"type": "array",
@@ -15,6 +16,7 @@
 		},
 		"remove": {
 			"type": "object",
+			"additionalProperties": false,
 			"properties": {
 				"component_groups": {
 					"type": "array",

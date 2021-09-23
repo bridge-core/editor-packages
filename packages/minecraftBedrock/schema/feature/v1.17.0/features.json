@@ -154,6 +154,7 @@
 								},
 								{
 									"type": "object",
+									"additionalProperties": false,
 									"properties": {
 										"range_min": {
 											"type": "number"
@@ -181,6 +182,7 @@
 								},
 								{
 									"type": "object",
+									"additionalProperties": false,
 									"properties": {
 										"range_min": {
 											"type": "number"
@@ -320,6 +322,7 @@
 							"type": "array",
 							"items": {
 								"type": "object",
+								"additionalProperties": false,
 								"properties": {
 									"feature": {
 										"description": "Feature to be placed.",
@@ -356,6 +359,7 @@
 							"type": "array",
 							"items": {
 								"type": "object",
+								"additionalProperties": false,
 								"properties": {
 									"places_feature": {
 										"description": "Feature to be placed.",

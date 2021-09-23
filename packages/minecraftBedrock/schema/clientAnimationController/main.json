@@ -87,6 +87,7 @@
 										"variables": {
 											"patternProperties": {
 												".+": {
+													"type": "object",
 													"additionalProperties": false,
 													"properties": {
 														"input": {

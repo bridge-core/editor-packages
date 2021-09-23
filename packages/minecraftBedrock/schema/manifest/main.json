@@ -28,6 +28,7 @@
 			"title": "Header",
 			"description": "This is the heading of the manifest and is required for the manifest to be valid.",
 			"required": ["name", "description", "uuid", "version"],
+			"additionalProperties": false,
 			"properties": {
 				"name": {
 					"type": "string",
@@ -71,6 +72,7 @@
 			"title": "Modules",
 			"items": {
 				"type": "object",
+				"additionalProperties": false,
 				"title": "Module",
 				"required": ["type", "uuid", "version"],
 				"properties": {
@@ -113,6 +115,7 @@
 			"description": "Defines the dependencies of the pack",
 			"items": {
 				"type": "object",
+				"additionalProperties": false,
 				"required": ["uuid", "version"],
 				"properties": {
 					"uuid": {
@@ -143,6 +146,7 @@
 		},
 		"metadata": {
 			"type": "object",
+			"additionalProperties": false,
 			"properties": {
 				"authors": {
 					"description": "Name of the author(s) of the pack.",
@@ -209,6 +213,7 @@
 			"type": "array",
 			"items": {
 				"type": "object",
+				"additionalProperties": false,
 				"properties": {
 					"folder_name": {
 						"type": "string",
