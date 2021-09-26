@@ -28,7 +28,7 @@ module.exports = async ({ createFile, createJSONFile, loadPresetFile, models }) 
                 icon
             )
             await createJSONFile(
-                `RP/attachables/${PRESET_PATH}${IDENTIFIER}_${itemType}.json`,
+                `RP/attachables/${PRESET_PATH}${IDENTIFIER}_${itemType.toLowerCase()}.json`,
                 JSON.parse(attachableData),
                 { inject: ['IDENTIFIER', 'PROJECT_PREFIX', 'PRESET_PATH'] }
             )
