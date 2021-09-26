@@ -28,13 +28,15 @@
 						"textures": {
 							"anyOf": [
 								{
-									"$ref": "../general/reference/paths.json#/definitions/block_texture_paths"
+									"$ref": "../general/reference/paths.json#/definitions/block_texture_paths",
+									"type": "string"
 								},
 								{
 									"type": "array",
 									"items": {
 										"anyOf": [
 											{
+												"type": "string",
 												"$ref": "../general/reference/paths.json#/definitions/block_texture_paths"
 											},
 											{
@@ -42,7 +44,8 @@
 												"additionalProperties": false,
 												"properties": {
 													"path": {
-														"type": "string"
+														"type": "string",
+														"$ref": "../general/reference/paths.json#/definitions/block_texture_paths"
 													},
 													"overlay_color": {
 														"$ref": "../general/hexColor.json"
