@@ -13,24 +13,48 @@
 	},
 
 	"types": [
-		"types/gameTest/componentData.d.ts",
 		[
-			"types/gameTest/v1.16.220.d.ts",
+			"types/gameTest/legacy/componentData.d.ts",
+			{ "targetVersion": ["<=", "v1.17.30"] }
+		],
+
+		[
+			"types/gameTest/legacy/v1.16.220.d.ts",
 			{ "targetVersion": ["<=", "v1.16.220"] }
 		],
-		["types/gameTest/v1.17.0.d.ts", { "targetVersion": ["=", "v1.17.0"] }],
+
 		[
-			"types/gameTest/v1.17.10.d.ts",
+			"types/gameTest/legacy/v1.17.0.d.ts",
+			{ "targetVersion": ["=", "v1.17.0"] }
+		],
+
+		[
+			"types/gameTest/legacy/v1.17.10.d.ts",
 			{ "targetVersion": ["=", "v1.17.10"] }
 		],
+
 		[
-			"types/gameTest/v1.17.20.d.ts",
-			{ "targetVersion": [">=", "v1.17.20"] }
+			"types/gameTest/legacy/v1.17.20.d.ts",
+			{
+				"targetVersion": ["=", "v1.17.20"]
+			}
+		],
+		[
+			"types/gameTest/legacy/v1.17.20.d.ts",
+			{
+				"targetVersion": ["=", "v1.17.30"]
+			}
+		],
+
+		// From 1.17.40 we now use official types provided by Mojang
+		[
+			"types/gameTest/v1.17.40.d.ts",
+			{ "targetVersion": [">=", "v1.17.40"] }
 		]
 	],
 
 	"documentation": {
-		"baseUrl": "https://docs.microsoft.com/de-de/minecraft/creator/documents/gametestgettingstarted",
+		"baseUrl": "https://docs.microsoft.com/en-us/minecraft/creator/documents/gametestgettingstarted",
 		"supportsQuerying": false
 	}
 }
