@@ -28,8 +28,7 @@
 						"textures": {
 							"anyOf": [
 								{
-									"$ref": "../general/reference/paths.json#/definitions/block_texture_paths",
-									"type": "string"
+									"$ref": "#/properties/texture_data/patternProperties/.*/properties/textures/anyOf/1/items"
 								},
 								{
 									"type": "array",
