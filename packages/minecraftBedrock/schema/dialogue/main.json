@@ -50,13 +50,13 @@
 									}
 								}
 							},
-							"on_open_command": {
+							"on_open_commands": {
 								"type": "array",
 								"items": {
 									"$ref": "../general/vanilla/command.json"
 								}
 							},
-							"on_close_command": {
+							"on_close_commands": {
 								"type": "array",
 								"items": {
 									"$ref": "../general/vanilla/command.json"
