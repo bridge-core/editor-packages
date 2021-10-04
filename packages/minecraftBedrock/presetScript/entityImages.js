@@ -2,7 +2,7 @@ module.exports = async ({ createFile, expandFile, models, loadPresetFile, create
 	async function createClientEntity(hasEggTexture) {
 		const CLIENT_ENTITY_MODEL = await loadPresetFile(hasEggTexture ? CLIENT_ENTITY_EGG : CLIENT_ENTITY_NO_EGG)
 		let CLIENT_ENTITY_DATA = await CLIENT_ENTITY_MODEL.text()
-		CLIENT_ENTITY_DATA = CLIENT_ENTITY_DATA.replaceAll('{{TEXTURE_FILE_NAME}}', FILE_NAME)
+		CLIENT_ENTITY_DATA = CLIENT_ENTITY_DATA.replaceAll('{{TEXTURE_FILE_NAME}}', fileNameNoExtension)
 
 		await createJSONFile(
 			`RP/entity/${PRESET_PATH}${IDENTIFIER}.json`,
@@ -21,24 +21,29 @@ module.exports = async ({ createFile, expandFile, models, loadPresetFile, create
 		TEXTURE,
 		DEFAULT_TEXTURE
 	} = models
-	let FILE_NAME = IDENTIFIER
+	let fileName = `${IDENTIFIER}.png`
+	let fileNameNoExtension = IDENTIFIER
 
 	if (DEFAULT_TEXTURE) {
 		if (!TEXTURE) TEXTURE = await loadPresetFile(DEFAULT_TEXTURE)
-		else FILE_NAME = TEXTURE.name.replace(/.png|.tga|.jpg|.jpeg/gi, '')
+		else fileName = TEXTURE.name
+		fileNameNoExtension = fileName.replace(/.png|.tga|.jpg|.jpeg/gi, '')
 
-		await createFile(`RP/textures/entity/${PRESET_PATH}${FILE_NAME}.png`, TEXTURE)
+		await createFile(`RP/textures/entity/${PRESET_PATH}${fileName}`, TEXTURE)
 	}
 
 	if (!SPAWN_EGG) {
 		// Client entity
 		await createClientEntity(false)
 	} else {
-		const EGG_FILE_NAME = SPAWN_EGG.name.replace(/.png|.tga|.jpg|.jpeg/gi, '')
+		// Add "_egg" before file extension
+		const eggFileExtension = SPAWN_EGG.name.split('.').pop()
+		const eggFileNameNoExtension = SPAWN_EGG.name.replace(/.png|.tga|.jpg|.jpeg/gi, '')
+		const eggFileName = `${eggFileNameNoExtension}.${eggFileExtension}`
 
 		// Spawn egg texture
 		await createFile(
-			`RP/textures/items/${PRESET_PATH}${EGG_FILE_NAME}_egg.png`,
+			`RP/textures/items/${PRESET_PATH}${eggFileName}`,
 			SPAWN_EGG
 		)
 		// Item textures
@@ -47,7 +52,7 @@ module.exports = async ({ createFile, expandFile, models, loadPresetFile, create
 			{
 				texture_data: {
 					[`${PROJECT_PREFIX}_${IDENTIFIER}_egg`]: {
-						textures: `textures/items/${PRESET_PATH}${EGG_FILE_NAME}_egg`
+						textures: `textures/items/${PRESET_PATH}${eggFileNameNoExtension}`
 					}
 				}
 			}

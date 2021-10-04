@@ -6,16 +6,17 @@ module.exports = async ({ createFile, loadPresetFile, models, expandFile }) => {
 		DEFAULT_TEXTURE,
 		PRESET_PATH
 	} = models
-    let FILE_NAME = IDENTIFIER
+    let fileName = `${IDENTIFIER}.png`
 	
 	if (!TEXTURE) TEXTURE = await loadPresetFile(DEFAULT_TEXTURE)
-    else FILE_NAME = TEXTURE.name.replace(/.png|.tga|.jpg|.jpeg/gi, '')
+    else fileName = TEXTURE.name
+    const fileNameNoExtension = fileName.replace(/.png|.tga|.jpg|.jpeg/gi, '')
 
-	await createFile(`RP/textures/blocks/${PRESET_PATH}${FILE_NAME}.png`, TEXTURE)
+	await createFile(`RP/textures/blocks/${PRESET_PATH}${fileName}`, TEXTURE)
     await expandFile('RP/textures/terrain_texture.json', {
         texture_data: {
             [`${PROJECT_PREFIX}_${IDENTIFIER}`]: {
-                textures: `textures/blocks/${PRESET_PATH}${FILE_NAME}`
+                textures: `textures/blocks/${PRESET_PATH}${fileNameNoExtension}`
             }
         }
     })
