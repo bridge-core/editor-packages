@@ -71,7 +71,7 @@
 											"type": "object",
 											"properties": {
 												"item": {
-													"$ref": "../general/vanilla/identifiers.json#/definitions/item_identifiers"
+													"$ref": "../general/reference/identifiers.json#/definitions/item_identifiers"
 												},
 												"data": {
 													"anyOf": [
@@ -116,7 +116,7 @@
 										"properties": {
 											"item": {
 												"description": "Provides the identifier for the result item",
-												"$ref": "../general/vanilla/identifiers.json#/definitions/item_identifiers"
+												"$ref": "../general/reference/identifiers.json#/definitions/item_identifiers"
 											},
 											"data": {
 												"description": "Sets the result item's data value",
