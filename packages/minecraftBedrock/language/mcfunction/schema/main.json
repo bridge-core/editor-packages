@@ -39,6 +39,7 @@
 															"molang",
 															"blockState",
 															"jsonData",
+															"scoreData",
 															"coordinate"
 														]
 													},
@@ -78,7 +79,7 @@
 							"properties": {
 								"type": {
 									"type": "string",
-									"enum": ["string", "number"]
+									"enum": ["string", "number", "scoreData"]
 								},
 								"argumentName": {
 									"type": "string"
@@ -92,7 +93,11 @@
 									"properties": {
 										"multipleInstancesAllowed": {
 											"type": "string",
-											"enum": ["always", "whenNegated", "never"]
+											"enum": [
+												"always",
+												"whenNegated",
+												"never"
+											]
 										},
 										"supportsNegation": {
 											"type": "boolean"
