@@ -2,8 +2,9 @@
 	"id": "item",
 	"icon": "mdi-sword",
 	"detect": {
-		"scope": "BP/items/",
-		"matcher": ["BP/items/**/*.json", "BP/items/*.json"],
+		"packType": "behaviorPack",
+		"scope": "items/",
+		"matcher": ["items/**/*.json", "items/*.json"],
 		"fileContent": ["minecraft:item"]
 	},
 

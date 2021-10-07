@@ -3,12 +3,13 @@
 	"type": "text",
 	"icon": "mdi-test-tube",
 	"detect": {
-		"scope": "BP/scripts/",
+		"packType": "behaviorPack",
+		"scope": "scripts/",
 		"matcher": [
-			"BP/scripts/*.js",
-			"BP/scripts/**/*.js",
-			"BP/scripts/*.ts",
-			"BP/scripts/**/*.ts"
+			"scripts/*.js",
+			"scripts/**/*.js",
+			"scripts/*.ts",
+			"scripts/**/*.ts"
 		]
 	},
 

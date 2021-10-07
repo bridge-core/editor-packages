@@ -2,8 +2,9 @@
 	"id": "clientItem",
 	"icon": "mdi-sword",
 	"detect": {
-		"scope": "RP/items/",
-		"matcher": ["RP/items/**/*.json", "RP/items/*.json"]
+		"packType": "resourcePack",
+		"scope": "items/",
+		"matcher": ["items/**/*.json", "items/*.json"]
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/clientItem/main.json",

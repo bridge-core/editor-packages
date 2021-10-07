@@ -2,8 +2,9 @@
 	"id": "fog",
 	"icon": "mdi-weather-fog",
 	"detect": {
-		"scope": "RP/fogs/",
-		"matcher": ["RP/fogs/**/*.json", "RP/fogs/*.json"],
+		"packType": "resourcePack",
+		"scope": "fogs/",
+		"matcher": ["fogs/**/*.json", "fogs/*.json"],
 		"fileContent": ["minecraft:fog"]
 	},
 

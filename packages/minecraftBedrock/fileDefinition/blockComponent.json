@@ -3,11 +3,9 @@
 	"type": "text",
 	"icon": "mdi-language-javascript",
 	"detect": {
-		"scope": "BP/components/block/",
-		"matcher": [
-			"BP/components/block/**/*.js",
-			"BP/components/block/**/*.ts"
-		]
+		"packType": "behaviorPack",
+		"scope": "components/block/",
+		"matcher": ["components/block/**/*.js", "components/block/**/*.ts"]
 	},
 
 	"types": [

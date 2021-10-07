@@ -2,8 +2,9 @@
 	"id": "biome",
 	"icon": "mdi-earth-box",
 	"detect": {
-		"scope": "BP/biomes/",
-		"matcher": ["BP/biomes/**/*.json", "BP/biomes/*.json"],
+		"packType": "behaviorPack",
+		"scope": "biomes/",
+		"matcher": ["biomes/**/*.json", "biomes/*.json"],
 		"fileContent": ["minecraft:biome"]
 	},
 

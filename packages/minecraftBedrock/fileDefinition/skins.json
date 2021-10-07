@@ -2,7 +2,8 @@
 	"id": "skins",
 	"scope": "SP/skins.json",
 	"detect": {
-		"matcher": "SP/skins.json",
+		"packType": "skinPack",
+		"matcher": "skins.json",
 		"fileContent": ["skins"]
 	},
 

@@ -2,8 +2,9 @@
 	"id": "lootTable",
 	"icon": "mdi-skull-outline",
 	"detect": {
-		"scope": "BP/loot_tables/",
-		"matcher": ["BP/loot_tables/**/*.json", "BP/loot_tables/*.json"],
+		"packType": "behaviorPack",
+		"scope": "loot_tables/",
+		"matcher": ["loot_tables/**/*.json", "loot_tables/*.json"],
 		"fileContent": ["pools"]
 	},
 

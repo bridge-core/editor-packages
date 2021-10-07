@@ -3,8 +3,9 @@
 	"type": "text",
 	"icon": "mdi-web",
 	"detect": {
-		"scope": ["RP/texts/"],
-		"matcher": "RP/texts/**/*.lang"
+		"packType": "resourcePack",
+		"scope": ["texts/"],
+		"matcher": "texts/**/*.lang"
 	},
 
 	"formatOnSaveCapable": false,

@@ -2,8 +2,9 @@
 	"id": "spawnRule",
 	"icon": "mdi-egg-outline",
 	"detect": {
-		"scope": "BP/spawn_rules/",
-		"matcher": ["BP/spawn_rules/**/*.json", "BP/spawn_rules/*.json"],
+		"packType": "behaviorPack",
+		"scope": "spawn_rules/",
+		"matcher": ["spawn_rules/**/*.json", "spawn_rules/*.json"],
 		"fileContent": ["minecraft:spawn_rules"]
 	},
 

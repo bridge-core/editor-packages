@@ -2,8 +2,9 @@
 	"id": "feature",
 	"icon": "mdi-flower",
 	"detect": {
-		"scope": "BP/features/",
-		"matcher": "BP/features/*.json"
+		"packType": "behaviorPack",
+		"scope": "features/",
+		"matcher": "features/*.json"
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/feature/main.json",

@@ -1,7 +1,7 @@
 {
 	"id": "theme",
 	"detect": {
-		"matcher": "BP/.bridge/plugins/*/themes/*.json"
+		"matcher": ".bridge/extensions/*/themes/*.json"
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/bridge/theme/main.json"

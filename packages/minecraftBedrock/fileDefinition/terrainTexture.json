@@ -1,8 +1,9 @@
 {
 	"id": "terrainTexture",
 	"detect": {
-		"scope": "RP/textures/terrain_texture.json",
-		"matcher": "RP/textures/terrain_texture.json"
+		"packType": "resourcePack",
+		"scope": "textures/terrain_texture.json",
+		"matcher": "textures/terrain_texture.json"
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/terrainTexture/main.json",

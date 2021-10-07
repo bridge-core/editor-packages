@@ -1,8 +1,9 @@
 {
 	"id": "animation",
 	"detect": {
-		"scope": "BP/animations/",
-		"matcher": ["BP/animations/**/*.json", "BP/animations/*.json"],
+		"packType": "behaviorPack",
+		"scope": "animations/",
+		"matcher": ["animations/**/*.json", "animations/*.json"],
 		"fileContent": ["animations"]
 	},
 	"icon": "mdi-movie-open-outline",

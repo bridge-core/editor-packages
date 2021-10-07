@@ -2,8 +2,9 @@
 	"id": "material",
 	"icon": "mdi-texture",
 	"detect": {
-		"scope": "RP/materials/",
-		"matcher": ["RP/materials/**/*.material", "RP/materials/*.material"],
+		"packType": "resourcePack",
+		"scope": "materials/",
+		"matcher": ["materials/**/*.material", "materials/*.material"],
 		"fileExtensions": [".material"]
 	},
 

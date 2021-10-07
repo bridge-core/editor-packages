@@ -2,8 +2,9 @@
 	"id": "clientManifest",
 	"icon": "mdi-alpha-m-box-outline",
 	"detect": {
-		"scope": "RP/manifest.json",
-		"matcher": "RP/manifest.json"
+		"packType": "resourcePack",
+		"scope": "manifest.json",
+		"matcher": "manifest.json"
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/manifest/main.json",

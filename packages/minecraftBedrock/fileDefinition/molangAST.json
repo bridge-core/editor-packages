@@ -3,12 +3,13 @@
 	"type": "text",
 	"icon": "mdi-alpha-m",
 	"detect": {
-		"scope": "BP/scripts/molang/",
+		"packType": "behaviorPack",
+		"scope": "scripts/molang/",
 		"matcher": [
-			"BP/scripts/molang/**/*.js",
-			"BP/scripts/molang/*.js",
-			"BP/scripts/molang/**/*.ts",
-			"BP/scripts/molang/*.ts"
+			"scripts/molang/**/*.js",
+			"scripts/molang/*.js",
+			"scripts/molang/**/*.ts",
+			"scripts/molang/*.ts"
 		]
 	}
 }

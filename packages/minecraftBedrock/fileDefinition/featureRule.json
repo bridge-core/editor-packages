@@ -2,8 +2,9 @@
 	"id": "featureRule",
 	"icon": "mdi-map-plus",
 	"detect": {
-		"scope": "BP/feature_rules/",
-		"matcher": "BP/feature_rules/*.json",
+		"packType": "behaviorPack",
+		"scope": "feature_rules/",
+		"matcher": "feature_rules/*.json",
 		"fileContent": ["minecraft:feature_rules"]
 	},
 

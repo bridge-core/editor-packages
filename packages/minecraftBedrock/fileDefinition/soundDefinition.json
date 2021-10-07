@@ -1,8 +1,9 @@
 {
 	"id": "soundDefinition",
 	"detect": {
-		"scope": "RP/sounds/sound_definitions.json",
-		"matcher": "RP/sounds/sound_definitions.json"
+		"packType": "resourcePack",
+		"scope": "sounds/sound_definitions.json",
+		"matcher": "sounds/sound_definitions.json"
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/soundDefinition/main.json",

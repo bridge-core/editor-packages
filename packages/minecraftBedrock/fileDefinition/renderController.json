@@ -2,10 +2,11 @@
 	"id": "renderController",
 	"icon": "mdi-pentagon-outline",
 	"detect": {
-		"scope": "RP/render_controllers/",
+		"packType": "resourcePack",
+		"scope": "render_controllers/",
 		"matcher": [
-			"RP/render_controllers/**/*.json",
-			"RP/render_controllers/*.json"
+			"render_controllers/**/*.json",
+			"render_controllers/*.json"
 		],
 		"fileContent": ["render_controllers"]
 	},

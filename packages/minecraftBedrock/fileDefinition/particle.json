@@ -2,8 +2,9 @@
 	"id": "particle",
 	"icon": "mdi-snowflake",
 	"detect": {
-		"scope": "RP/particles/",
-		"matcher": ["RP/particles/**/*.json", "RP/particles/*.json"],
+		"packType": "resourcePack",
+		"scope": "particles/",
+		"matcher": ["particles/**/*.json", "particles/*.json"],
 		"fileContent": ["particle_effect"]
 	},
 
