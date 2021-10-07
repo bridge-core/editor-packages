@@ -5,7 +5,8 @@
 	"category": "fileType.block",
 	"requires": {
 		"targetVersion": [">=", "1.16.100"],
-		"packTypes": ["behaviorPack", "resourcePack"]
+		"packTypes": ["behaviorPack", "resourcePack"],
+		"experimentalGameplay": ["holidayCreatorFeatures"]
 	},
 	"additionalModels": {
 		"PRESET_PATH": ""
