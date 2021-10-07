@@ -2,8 +2,9 @@
 	"id": "clientEntity",
 	"icon": "mdi-minecraft",
 	"detect": {
-		"scope": "RP/entity/",
-		"matcher": ["RP/entity/**/*.json", "RP/entity/*.json"],
+		"packType": "resourcePack",
+		"scope": "entity/",
+		"matcher": ["entity/**/*.json", "entity/*.json"],
 		"fileContent": ["minecraft:client_entity"]
 	},
 

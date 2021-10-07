@@ -1,8 +1,9 @@
 {
 	"id": "functionTick",
 	"detect": {
-		"scope": "BP/functions/tick.json",
-		"matcher": "BP/functions/tick.json",
+		"packType": "behaviorPack",
+		"scope": "functions/tick.json",
+		"matcher": "functions/tick.json",
 		"fileContent": ["values"]
 	},
 

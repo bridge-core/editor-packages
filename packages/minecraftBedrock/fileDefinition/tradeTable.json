@@ -2,8 +2,9 @@
 	"id": "tradeTable",
 	"icon": "mdi-store-outline",
 	"detect": {
-		"scope": "BP/trading/",
-		"matcher": ["BP/trading/**/*.json", "BP/trading/*.json"],
+		"packType": "behaviorPack",
+		"scope": "trading/",
+		"matcher": ["trading/**/*.json", "trading/*.json"],
 		"fileContent": ["tiers"]
 	},
 

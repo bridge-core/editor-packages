@@ -2,8 +2,9 @@
 	"id": "recipe",
 	"icon": "mdi-book-outline",
 	"detect": {
-		"scope": "BP/recipes/",
-		"matcher": ["BP/recipes/**/*.json", "BP/recipes/*.json"]
+		"packType": "behaviorPack",
+		"scope": "recipes/",
+		"matcher": ["recipes/**/*.json", "recipes/*.json"]
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/recipe/main.json",

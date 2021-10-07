@@ -2,8 +2,9 @@
 	"id": "dialogue",
 	"icon": "mdi-forum",
 	"detect": {
-		"scope": "BP/dialogue/",
-		"matcher": ["BP/dialogue/**/*.json", "BP/dialogue/*.json"],
+		"packType": "behaviorPack",
+		"scope": "dialogue/",
+		"matcher": ["dialogue/**/*.json", "dialogue/*.json"],
 		"fileContent": ["minecraft:npc_dialogue"]
 	},
 

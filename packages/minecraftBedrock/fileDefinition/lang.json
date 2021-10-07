@@ -3,8 +3,9 @@
 	"type": "text",
 	"icon": "mdi-web",
 	"detect": {
-		"scope": ["SP/texts/", "BP/texts/"],
-		"matcher": "(BP|SP)/texts/**/*.lang"
+		"packType": ["behaviorPack", "skinPack"],
+		"scope": "texts/",
+		"matcher": "texts/**/*.lang"
 	},
 
 	"formatOnSaveCapable": false

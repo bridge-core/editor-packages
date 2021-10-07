@@ -2,8 +2,9 @@
 	"id": "volume",
 	"icon": "mdi-shape-rectangle-plus",
 	"detect": {
-		"scope": "WT/volumes/",
-		"matcher": ["WT/volumes/**/*.json", "WT/volumes/*.json"],
+		"packType": "worldTemplate",
+		"scope": "volumes/",
+		"matcher": ["volumes/**/*.json", "volumes/*.json"],
 		"fileContent": ["minecraft:volume"]
 	},
 

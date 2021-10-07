@@ -2,8 +2,9 @@
 	"id": "block",
 	"icon": "mdi-cube-outline",
 	"detect": {
-		"scope": "BP/blocks/",
-		"matcher": ["BP/blocks/**/*.json", "BP/blocks/*.json"],
+		"packType": "behaviorPack",
+		"scope": "blocks/",
+		"matcher": ["blocks/**/*.json", "blocks/*.json"],
 		"fileContent": ["minecraft:block"]
 	},
 

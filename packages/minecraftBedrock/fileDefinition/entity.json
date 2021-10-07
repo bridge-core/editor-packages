@@ -2,8 +2,9 @@
 	"id": "entity",
 	"icon": "mdi-minecraft",
 	"detect": {
-		"scope": "BP/entities/",
-		"matcher": ["BP/entities/**/*.json", "BP/entities/*.json"],
+		"packType": "behaviorPack",
+		"scope": "entities/",
+		"matcher": ["entities/**/*.json", "entities/*.json"],
 		"fileContent": ["minecraft:entity"]
 	},
 

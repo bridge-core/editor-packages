@@ -1,8 +1,9 @@
 {
 	"id": "langDef",
 	"detect": {
-		"scope": ["BP/texts/languages.json", "RP/texts/languages.json"],
-		"matcher": "*/texts/languages.json"
+		"packType": ["behaviorPack", "resourcePack", "skinPack"],
+		"scope": "texts/languages.json",
+		"matcher": "texts/languages.json"
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/langDef/main.json"

@@ -1,8 +1,9 @@
 {
 	"id": "clientBiome",
 	"detect": {
-		"scope": "RP/biomes_client.json",
-		"matcher": "RP/biomes_client.json"
+		"packType": "resourcePack",
+		"scope": "biomes_client.json",
+		"matcher": "biomes_client.json"
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/clientBiome/main.json",

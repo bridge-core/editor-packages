@@ -3,8 +3,9 @@
 	"type": "text",
 	"icon": "mdi-alpha-m",
 	"detect": {
-		"scope": ["RP/molang/", "BP/molang/"],
-		"matcher": ["*/molang/**/*.molang", "*/molang/*.molang"]
+		"packType": ["behaviorPack", "resourcePack"],
+		"scope": "molang/",
+		"matcher": ["molang/**/*.molang", "molang/*.molang"]
 	},
 
 	"formatOnSaveCapable": false,

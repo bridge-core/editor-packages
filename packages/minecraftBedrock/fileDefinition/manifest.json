@@ -2,8 +2,9 @@
 	"id": "manifest",
 	"icon": "mdi-alpha-m-box-outline",
 	"detect": {
-		"scope": "BP/manifest.json",
-		"matcher": "BP/manifest.json"
+		"packType": "behaviorPack",
+		"scope": "manifest.json",
+		"matcher": "manifest.json"
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/manifest/main.json",

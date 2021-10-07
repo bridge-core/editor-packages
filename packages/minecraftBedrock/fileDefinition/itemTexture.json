@@ -1,8 +1,9 @@
 {
 	"id": "itemTexture",
 	"detect": {
-		"scope": "RP/textures/item_texture.json",
-		"matcher": "RP/textures/item_texture.json"
+		"packType": "resourcePack",
+		"scope": "textures/item_texture.json",
+		"matcher": "textures/item_texture.json"
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/itemTexture/main.json",

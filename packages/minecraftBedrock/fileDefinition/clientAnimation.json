@@ -2,8 +2,9 @@
 	"id": "clientAnimation",
 	"icon": "mdi-movie-open-outline",
 	"detect": {
-		"scope": "RP/animations/",
-		"matcher": ["RP/animations/**/*.json", "RP/animations/*.json"]
+		"packType": "resourcePack",
+		"scope": "animations/",
+		"matcher": ["animations/**/*.json", "animations/*.json"]
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/clientAnimation/main.json",

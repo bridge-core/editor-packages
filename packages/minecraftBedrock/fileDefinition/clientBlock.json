@@ -1,8 +1,9 @@
 {
 	"id": "clientBlock",
 	"detect": {
-		"scope": "RP/blocks.json",
-		"matcher": "RP/blocks.json"
+		"packType": "resourcePack",
+		"scope": "blocks.json",
+		"matcher": "blocks.json"
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/clientBlock/main.json",

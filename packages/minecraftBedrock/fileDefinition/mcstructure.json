@@ -3,11 +3,9 @@
 	"type": "nbt",
 	"icon": "mdi-castle",
 	"detect": {
-		"scope": "BP/structures/",
-		"matcher": [
-			"BP/structures/**/*.mcstructure",
-			"BP/structures/*.mcstructure"
-		],
+		"packType": "behaviorPack",
+		"scope": "structures/",
+		"matcher": ["structures/**/*.mcstructure", "structures/*.mcstructure"],
 		"fileExtensions": [".mcstructure"]
 	}
 }

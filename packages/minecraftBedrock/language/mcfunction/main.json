@@ -81,13 +81,13 @@
 						"multipleInstancesAllowed": "never"
 					}
 				},
-				// {
-				// 	"type": "json",
-				// 	"argumentName": "scores",
-				// 	"additionalData": {
-				// 		"multipleInstancesAllowed": "never"
-				// 	}
-				// },
+				{
+					"type": "scoreData",
+					"argumentName": "scores",
+					"additionalData": {
+						"multipleInstancesAllowed": "never"
+					}
+				},
 				{
 					"description": "Filter target selection based on the entity's scoreboard tags. Multiple tag arguments are allowed, and all arguments must be fulfilled for an entity to be selected.",
 					"type": "string",

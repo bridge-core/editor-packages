@@ -2,14 +2,15 @@
 	"id": "geometry",
 	"icon": "mdi-cube-outline",
 	"detect": {
+		"packType": "resourcePack",
 		"matcher": [
-			"RP/models/entity/**/*.json",
-			"RP/models/block/**/*.json",
-			"RP/models/entity/*.json",
-			"RP/models/block/*.json",
-			"RP/models/mobs.json"
+			"models/entity/**/*.json",
+			"models/block/**/*.json",
+			"models/entity/*.json",
+			"models/block/*.json",
+			"models/mobs.json"
 		],
-		"scope": "RP/models/",
+		"scope": "models/",
 		"fileContent": ["minecraft:geometry"]
 	},
 

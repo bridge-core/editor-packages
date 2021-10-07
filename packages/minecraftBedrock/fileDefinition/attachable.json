@@ -2,8 +2,9 @@
 	"id": "attachable",
 	"icon": "mdi-hat-fedora",
 	"detect": {
-		"scope": "RP/attachables/",
-		"matcher": ["RP/attachables/**/*.json", "RP/attachables/*.json"],
+		"packType": "resourcePack",
+		"scope": "attachables/",
+		"matcher": ["attachables/**/*.json", "attachables/*.json"],
 		"fileContent": ["minecraft:attachable"]
 	},
 

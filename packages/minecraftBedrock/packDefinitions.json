@@ -1,28 +1,28 @@
 [
 	{
 		"id": "behaviorPack",
-		"packPath": "BP",
+		"defaultPackPath": "BP",
 		"icon": "mdi-wrench",
 		"matcher": "projects/*/BP/**",
 		"color": "behaviorPack"
 	},
 	{
 		"id": "resourcePack",
-		"packPath": "RP",
+		"defaultPackPath": "RP",
 		"icon": "mdi-image",
 		"matcher": "projects/*/RP/**",
 		"color": "resourcePack"
 	},
 	{
 		"id": "skinPack",
-		"packPath": "SP",
+		"defaultPackPath": "SP",
 		"icon": "mdi-human",
 		"matcher": "projects/*/SP/**",
 		"color": "skinPack"
 	},
 	{
 		"id": "worldTemplate",
-		"packPath": "WT",
+		"defaultPackPath": "WT",
 		"icon": "mdi-earth",
 		"matcher": "projects/*/WT/**",
 		"color": "worldTemplate"
