@@ -185,6 +185,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Compares the current time with a float value in the range (0.0, 1.0). 0.0= Noon 0.25= Sunset 0.5= Midnight 0.75= Sunrise",
 						"type": "number"
 					}
 				}
@@ -201,6 +202,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Compares the distance to the nearest Player with a float value.",
 						"type": "integer"
 					}
 				}
@@ -217,6 +219,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true when the subject entity has the named ability.",
 						"$ref": "../../general/ability.json"
 					}
 				}
@@ -233,6 +236,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Tests whether the biome the subject is in has the specified tag.",
 						"$ref": "../../general/reference/biomeTag.json"
 					}
 				}
@@ -249,6 +253,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true when the subject entity contains the named component.",
 						"$ref": "./componentsList.json"
 					}
 				}
@@ -265,6 +270,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true when the subject Player entity has opened a container.",
 						"type": "boolean"
 					}
 				}
@@ -281,6 +287,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true when the subject entity receives the named damage type.",
 						"$ref": "../../general/vanilla/damageType.json"
 					}
 				}
@@ -297,6 +304,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Tests for the presence of a named item in the designated slot of the subject entity.",
 						"anyOf": [
 							{
 								"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
@@ -320,6 +328,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Tests if the subject has been given a custom name.",
 						"type": "boolean"
 					}
 				}
@@ -336,6 +345,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Tests whether the Subject has the specified mob effect.",
 						"$ref": "../../general/vanilla/effectName.json"
 					}
 				}
@@ -352,6 +362,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true when the subject entity is holding a ranged weapon like a bow or crossbow.",
 						"type": "boolean"
 					}
 				}
@@ -368,6 +379,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true if the subject entity has the tag provided.",
 						"$ref": "../../function/dynamic/entityTagEnum.json"
 					}
 				}
@@ -384,6 +396,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true if the subject entity has a valid target.",
 						"type": "boolean"
 					}
 				}
@@ -400,6 +413,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Tests whether the target has any trade supply left. Will return false if the target cannot be traded with.",
 						"type": "boolean"
 					}
 				}
@@ -416,6 +430,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Compares the current 24 hour time with an int value in the range[0, 24000]",
 						"$ref": "../../general/hourlyClockTime.json"
 					}
 				}
@@ -432,6 +447,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Tests if the specified duration in seconds of inactivity for despawning has been reached.",
 						"type": "number"
 					}
 				}
@@ -448,6 +464,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Tests the current altitude against a provided value. 0= bedrock elevation.",
 						"type": "number"
 					}
 				}
@@ -464,6 +481,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true if the subject entity is fleeing from other mobs.",
 						"type": "boolean"
 					}
 				}
@@ -480,6 +498,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Tests whether the Subject is currently in the named biome.",
 						"$ref": "../../general/vanilla/biomeName.json"
 					}
 				}
@@ -496,6 +515,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true when the block has the given name.",
 						"$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
 					}
 				}
@@ -512,7 +532,10 @@
 			"then": {
 				"properties": {
 					"value": {
-						"type": "number"
+						"description": "Tests the current brightness against a provided value in the range (0.0f, 1.0f).",
+						"type": "number",
+						"minimum": 0.0,
+						"maximum": 1.0
 					}
 				}
 			}
@@ -528,6 +551,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true if the subject entity is in a caravan.",
 						"type": "boolean"
 					}
 				}
@@ -544,6 +568,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true if the subject entity is climbing.",
 						"type": "boolean"
 					}
 				}
@@ -560,6 +585,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true when the subject entity is in the clouds.",
 						"type": "boolean"
 					}
 				}
@@ -576,6 +602,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true if the subject entity is the named color.",
 						"$ref": "../../general/colorPalette.json"
 					}
 				}
@@ -592,6 +619,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true during the daylight hours.",
 						"type": "boolean"
 					}
 				}
@@ -608,6 +636,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Tests the current difficulty level of the game.",
 						"$ref": "../../general/gameDifficulty.json"
 					}
 				}
@@ -624,6 +653,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true when the subject entity is a member of the named family.",
 						"$ref": "../../general/reference/family.json"
 					}
 				}
@@ -640,6 +670,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Tests whether a named game rule is active.",
 						"type": "boolean"
 					}
 				}
@@ -656,6 +687,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Tests whether the Subject is in an area with humidity",
 						"type": "boolean"
 					}
 				}
@@ -672,6 +704,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true if the subject entity is immobile. An entity is immobile if it lacks AI goals, has just changed dimensions or if it is a mob and has no health.",
 						"type": "boolean"
 					}
 				}
@@ -688,22 +721,7 @@
 			"then": {
 				"properties": {
 					"value": {
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_lava"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
+						"description": "Tests whether the Subject is inside the bounds of a village.",
 						"type": "boolean"
 					}
 				}
@@ -720,6 +738,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true if the subject entity is leashed.",
 						"type": "boolean"
 					}
 				}
@@ -736,6 +755,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true if the subject entity leashed to the calling entity.",
 						"type": "boolean"
 					}
 				}
@@ -752,6 +772,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true if the subject entity is the mark variant number provided.",
 						"type": "integer"
 					}
 				}
@@ -768,6 +789,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true if the subject entity is moving.",
 						"type": "boolean"
 					}
 				}
@@ -784,6 +806,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true when the subject entity is in Nether.",
 						"type": "boolean"
 					}
 				}
@@ -800,6 +823,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true if the subject entity is the owner of the calling entity.",
 						"type": "boolean"
 					}
 				}
@@ -816,6 +840,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Tests if the subject's persistence matches the bool value passed in.",
 						"type": "boolean"
 					}
 				}
@@ -832,6 +857,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true if the subject entity is riding on another entity.",
 						"type": "boolean"
 					}
 				}
@@ -848,6 +874,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true if the subject entity is the skin id number provided.",
 						"type": "integer"
 					}
 				}
@@ -864,6 +891,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Tests whether the Subject is sleeping.",
 						"type": "boolean"
 					}
 				}
@@ -880,6 +908,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true if the subject entity is sneaking.",
 						"type": "boolean"
 					}
 				}
@@ -896,6 +925,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Tests whether the Subject is in an area with snow cover",
 						"type": "boolean"
 					}
 				}
@@ -912,6 +942,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true if the subject entity is the target of the calling entity.",
 						"type": "boolean"
 					}
 				}
@@ -928,6 +959,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Tests whether the current temperature is a given type.",
 						"type": "string",
 						"enum": ["cold", "ocean", "mild", "warm"]
 					}
@@ -945,7 +977,10 @@
 			"then": {
 				"properties": {
 					"value": {
-						"type": "number"
+						"description": "Tests the current temperature against a provided value in the range (0.0, 1.0) where 0.0f is the coldest temp and 1.0f is the hottest.",
+						"type": "number",
+						"minimum": 0.0,
+						"maximum": 1.0
 					}
 				}
 			}
@@ -961,6 +996,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true when the subject entity is underground. An entity is considered underground if there are non-solid blocks above it.",
 						"type": "boolean"
 					}
 				}
@@ -977,6 +1013,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true when the subject entity is under water. An entity is considered underwater if it is completely submerged in water blocks.",
 						"type": "boolean"
 					}
 				}
@@ -993,6 +1030,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true if the subject entity is the variant number provided.",
 						"type": "integer"
 					}
 				}
@@ -1009,6 +1047,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true if the subject entity is visible.",
 						"type": "boolean"
 					}
 				}
@@ -1025,6 +1064,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true when the subject entity is in water.",
 						"type": "boolean"
 					}
 				}
@@ -1041,6 +1081,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true when the subject entity is in water or rain.",
 						"type": "boolean"
 					}
 				}
@@ -1057,6 +1098,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "DEPRECATED",
 						"type": "string"
 					}
 				}
@@ -1073,6 +1115,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Tests is the mob is outside of the specified light level range (0, 16).",
 						"type": "integer",
 						"maximum": 15,
 						"minimum": 0
@@ -1091,6 +1134,9 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Compares the current moon intensity with a float value in the range (0.0, 1.0)",
+						"minimum": 0.0,
+						"maximum": 1.0,
 						"type": "number"
 					}
 				}
@@ -1107,6 +1153,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Compares the current moon phase with an integer value in the range (0, 7).",
 						"type": "integer",
 						"minimum": 0,
 						"maximum": 7
@@ -1125,6 +1172,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true when the subject entity is on ground.",
 						"type": "boolean"
 					}
 				}
@@ -1141,6 +1189,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true when the subject entity is on a ladder.",
 						"type": "boolean"
 					}
 				}
@@ -1157,6 +1206,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true if the random chance rolls 0 out of a specified max range.",
 						"type": "number"
 					}
 				}
@@ -1173,6 +1223,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns the number of riders on this entity.",
 						"type": "integer"
 					}
 				}
@@ -1189,6 +1240,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Tests if the subject is a surface mob.",
 						"type": "boolean"
 					}
 				}
@@ -1205,6 +1257,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true if the subject is trusted by entity.",
 						"type": "boolean"
 					}
 				}
@@ -1221,6 +1274,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Tests the current weather in the dimension against a provided weather value.",
 						"type": "string",
 						"enum": [
 							"clear",
@@ -1243,6 +1297,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Tests the current weather, at the actor's position, against a provided weather value.",
 						"type": "string",
 						"enum": [
 							"clear",
@@ -1265,6 +1320,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true when the subject entity in contact with any water: water, rain, splash water bottle.",
 						"type": "boolean"
 					}
 				}
@@ -1281,6 +1337,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true when the subject entity is inside a specified Block type.",
 						"type": "string",
 						"$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
 					}
@@ -1298,6 +1355,7 @@
 			"then": {
 				"properties": {
 					"value": {
+						"description": "Returns true when the subject entity is in lava.",
 						"type": "boolean"
 					}
 				}

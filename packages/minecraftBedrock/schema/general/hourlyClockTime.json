@@ -1,7 +1,9 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"type": "number",
-	"enum": [
+	"minimum": 0,
+	"maximum": 24000,
+	"examples": [
 		0,
 		1000,
 		2000,
