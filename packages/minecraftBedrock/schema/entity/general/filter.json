@@ -111,6 +111,7 @@
 						"has_damage",
 						"has_equipment",
 						"has_mob_effect",
+						"has_nametag", // v1.18.0+
 						"has_ranged_weapon",
 						"has_tag",
 						"has_target",
@@ -304,6 +305,22 @@
 								"$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
 							}
 						]
+					}
+				}
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"test": {
+						"const": "has_nametag"
+					}
+				}
+			},
+			"then": {
+				"properties": {
+					"value": {
+						"type": "boolean"
 					}
 				}
 			}

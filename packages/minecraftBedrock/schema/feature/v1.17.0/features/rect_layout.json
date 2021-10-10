@@ -1,0 +1,42 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"description": "Scans the surface of a Chunk, calling place() on the surface of each block column.",
+	"additionalProperties": false,
+	"properties": {
+		"description": {
+			"additionalProperties": false,
+			"properties": {
+				"identifier": {
+					// Needs to strictly match file name - don't change reference to "general/reference..." schema
+					"$ref": "../../../project/prefixedFileIdentifierEnum.json"
+				}
+			}
+		},
+		"ratio_of_empty_space": {
+			"description": "Ratio of a Chunk to be filled with empty space rather than features.",
+			"type": "number"
+		},
+		"feature_areas": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"feature": {
+						"description": "Feature to be placed.",
+						"$ref": "../../../general/reference/feature.json"
+					},
+					"area_dimensions": {
+						"description": "Dimensions (size) of the associated Feature.",
+						"type": "array",
+						"minItems": 2,
+						"maxItems": 2,
+						"items": {
+							"type": "integer"
+						}
+					}
+				}
+			}
+		}
+	}
+}

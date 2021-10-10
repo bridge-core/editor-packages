@@ -1,0 +1,29 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"description": "Snaps the y-value of a feature placement pos to the floor or the ceiling within the provided 'vertical_search_range'. The placement biome is preserved. If the snap position goes outside of the placement biome, placement will fail.",
+	"additionalProperties": false,
+	"properties": {
+		"description": {
+			"additionalProperties": false,
+			"properties": {
+				"identifier": {
+					// Needs to strictly match file name - don't change reference to "general/reference..." schema
+					"$ref": "../../../project/prefixedFileIdentifierEnum.json"
+				}
+			}
+		},
+		"feature_to_snap": {
+			"description": "Named reference of feature to be snapped.",
+			"$ref": "../../dynamic/identifierEnum.json"
+		},
+		"vertical_search_range": {
+			"description": "Range to search for a floor or ceiling for snaping the feature.",
+			"type": "integer"
+		},
+		"surface": {
+			"description": "Defines the surface that the y-value of the placement position will be snapped to.",
+			"type": "string",
+			"enum": ["ceiling", "floor"]
+		}
+	}
+}

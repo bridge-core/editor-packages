@@ -1,0 +1,58 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"description": "Will build a 'beard' or 'shave' out space so as to provide a clear space for a feature to place.",
+	"additionalProperties": false,
+	"properties": {
+		"description": {
+			"additionalProperties": false,
+			"properties": {
+				"identifier": {
+					// Needs to strictly match file name - don't change reference to "general/reference..." schema
+					"$ref": "../../../project/prefixedFileIdentifierEnum.json"
+				}
+			}
+		},
+		"places_feature": {
+			"description": "Named reference of feature to be placed.",
+			"$ref": "../../../general/reference/feature.json"
+		},
+		"bounding_box_min": {
+			"description": "Dimensions of the Bounding Box.",
+			"type": "array",
+			"minItems": 3,
+			"maxItems": 3,
+			"items": {
+				"type": "number"
+			}
+		},
+		"bounding_box_max": {
+			"description": "Dimensions of the Bounding Box.",
+			"type": "array",
+			"minItems": 3,
+			"maxItems": 3,
+			"items": {
+				"type": "number"
+			}
+		},
+		"y_delta": {
+			"description": "Y Delta for BAS.",
+			"type": "number"
+		},
+		"surface_block_type": {
+			"description": "Reference to the block to be placed.",
+			"$ref": "../../general.json#/definitions/block_reference"
+		},
+		"subsurface_block_type": {
+			"description": "Reference to the block to be placed.",
+			"$ref": "../../general.json#/definitions/block_reference"
+		},
+		"beard_raggedness_min": {
+			"description": "Y Delta for BAS.",
+			"type": "number"
+		},
+		"beard_raggedness_max": {
+			"description": "Y Delta for BAS.",
+			"type": "number"
+		}
+	}
+}

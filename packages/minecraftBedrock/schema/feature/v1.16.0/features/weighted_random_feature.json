@@ -1,0 +1,38 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"description": "randomly selects and places a feature based on a weight value. Weights are relative, with higher values making selection more likely.",
+	"additionalProperties": false,
+	"properties": {
+		"description": {
+			"additionalProperties": false,
+			"properties": {
+				"identifier": {
+					// Needs to strictly match file name - don't change reference to "general/reference..." schema
+					"$ref": "../../../project/prefixedFileIdentifierEnum.json"
+				}
+			}
+		},
+		"early_out": {
+			"$ref": "../../general.json#/definitions/early_outs"
+		},
+		"features": {
+			"description": "Collection of weighted features that placement will select from.",
+			"type": "array",
+			"items": {
+				"type": "array",
+				"minItems": 2,
+				"maxItems": 2,
+				"items": [
+					{
+						"description": "Named reference to a feature.",
+						"$ref": "../../../general/reference/feature.json"
+					},
+					{
+						"description": "Weight used in random selection. Value is relative to other weights in the collection.",
+						"type": "integer"
+					}
+				]
+			}
+		}
+	}
+}

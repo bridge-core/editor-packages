@@ -1,0 +1,48 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"description": "Carves a cave through the world in the current chunk, and in every chunk around the current chunk in an 8 radial pattern. This feature will also only work when placed specifically in the pass 'pregeneration_pass'.",
+	"additionalProperties": false,
+	"properties": {
+		"description": {
+			"additionalProperties": false,
+			"properties": {
+				"identifier": {
+					// Needs to strictly match file name - don't change reference to "general/reference..." schema
+					"$ref": "../../../project/prefixedFileIdentifierEnum.json"
+				}
+			}
+		},
+		"fill_with": {
+			"description": "Reference to the block to fill the cave with.",
+			"$ref": "../../general.json#/definitions/block_reference"
+		},
+		"width_modifier": {
+			"description": "How many blocks to increase the cave radius by, from the center point of the cave.",
+			"$ref": "../../../molang/embedded.json"
+		},
+		"skip_carve_chance": {
+			"description": "The chance to skip doing the carve (1 / value).",
+			"type": "number"
+		},
+		"height_limit": {
+			"description": "The height limit where we attempt to carve.",
+			"type": "number"
+		},
+		"y_scale": {
+			"description": "The scaling in y.",
+			"type": "number"
+		},
+		"horizontal_radius_multiplier": {
+			"description": "Horizontal radius multiplier.",
+			"type": "number"
+		},
+		"vertical_radius_multiplier": {
+			"description": "Vertical radius multiplier.",
+			"type": "number"
+		},
+		"floor_level": {
+			"description": "Floor Level.",
+			"type": "number"
+		}
+	}
+}
