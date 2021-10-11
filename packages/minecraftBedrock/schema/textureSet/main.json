@@ -28,7 +28,7 @@
 						},
 						{
 							"type": "string",
-							"description": "Reference to a texture"
+							"$ref": "../general/reference/terrainTexture.json"
 						},
 						{
 							"type": "integer",
@@ -44,7 +44,7 @@
 						},
 						{
 							"type": "string",
-							"description": "Reference to a texture"
+							"$ref": "../general/reference/terrainTexture.json"
 						},
 						{
 							"type": "integer",
@@ -60,7 +60,7 @@
 						},
 						{
 							"type": "string",
-							"description": "Reference to a texture"
+							"$ref": "../general/reference/terrainTexture.json"
 						},
 						{
 							"type": "integer",
@@ -79,7 +79,7 @@
 						},
 						{
 							"type": "string",
-							"description": "Reference to a texture"
+							"$ref": "../general/reference/terrainTexture.json"
 						},
 						{
 							"type": "integer",
