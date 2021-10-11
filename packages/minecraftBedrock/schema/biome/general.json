@@ -120,6 +120,7 @@
 					"$ref": "../molang/embedded.json"
 				},
 				"scatter_chance": {
+					"description": "Probability numerator / denominator that this scatter will occur.  Not evaluated each iteration; either no iterations will run, or all will.",
 					"anyOf": [
 						{
 							"$ref": "../feature/general.json#/definitions/chance_information"
@@ -130,6 +131,7 @@
 					]
 				},
 				"coordinate_eval_order": {
+					"description": "The order in which coordinates will be evaluated. Should be used when a coordinate depends on another. If omitted, defaults to 'xzy'.",
 					"$ref": "../feature/general.json#/definitions/coordinate_eval_order"
 				},
 				"x": {
@@ -152,10 +154,12 @@
 		"forced_feature_coordinate": {
 			"anyOf": [
 				{
-					"type": "string"
+					"description": "Expression for the coordinate (evaluated each iteration).",
+					"$ref": "../molang/embedded.json"
 				},
 				{
 					"type": "object",
+					"description": "Distribution for the coordinate (evaluated each iteration).",
 					"additionalProperties": false,
 					"properties": {
 						"extent": {
@@ -163,23 +167,19 @@
 							"maxItems": 2,
 							"type": "array",
 							"items": {
-								"anyOf": [
-									{
-										"type": "number"
-									},
-									{
-										"type": "string"
-									}
-								]
+								"$ref": "../molang/embedded.json"
 							}
 						},
 						"distribution": {
+							"description": "Type of distribution - uniform random, gaussian (centered in the range), or grid (either fixed-step or jittered).",
 							"$ref": "../feature/general.json#/definitions/distributions"
 						},
 						"step_size": {
+							"description": "When the distribution type is grid, defines the distance between steps along this axis.",
 							"type": "number"
 						},
 						"grid_offset": {
+							"description": "When the distribution type is grid, defines the offset along this axis.",
 							"type": "number"
 						}
 					}
