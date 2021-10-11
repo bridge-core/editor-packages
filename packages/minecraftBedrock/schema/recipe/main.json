@@ -9,184 +9,193 @@
 	},
 	"allOf": [
 		{
-			"anyOf": [
-				{
+			"properties": {
+				"minecraft:recipe_furnace": {
+					"description": "Represents a recipe for use with a Furnace.",
+					"additionalProperties": false,
+					"type": "object",
 					"properties": {
-						"minecraft:recipe_furnace": {
-							"additionalProperties": false,
-							"type": "object",
-							"properties": {
-								"description": {
-									"$ref": "./general.json#/definitions/description"
-								},
-								"tags": {
-									"$ref": "./general.json#/definitions/tags"
-								},
-								"group": {
-									"$ref": "./general.json#/definitions/group"
-								},
-								"input": {
-									"$ref": "./general.json#/definitions/input"
-								},
-								"output": {
-									"$ref": "./general.json#/definitions/output"
-								}
-							}
+						"description": {
+							"$ref": "./general.json#/definitions/description"
+						},
+						"tags": {
+							"description": "Item that can create the furnace recipe, such as 'furnace'.",
+							"$ref": "./general.json#/definitions/tags"
+						},
+						"group": {
+							"$ref": "./general.json#/definitions/group"
+						},
+						"input": {
+							"description": "Items used as input for the furnace recipe.",
+							"$ref": "./general.json#/definitions/input"
+						},
+						"output": {
+							"description": "Items used as output for the furnace recipe.",
+							"$ref": "./general.json#/definitions/output"
 						}
 					}
 				},
-				{
+				"minecraft:recipe_shaped": {
+					"description": "Represents a recipe that requires a dedicated pattern when using a Crafting Table.",
+					"additionalProperties": false,
+					"type": "object",
 					"properties": {
-						"minecraft:recipe_shaped": {
-							"additionalProperties": false,
+						"description": {
+							"$ref": "./general.json#/definitions/description"
+						},
+						"tags": {
+							"description": "Item that can create the shaped recipe, such as 'crafting_table'.",
+							"$ref": "./general.json#/definitions/tags"
+						},
+						"group": {
+							"$ref": "./general.json#/definitions/group"
+						},
+						"priority": {
+							"description": "Sets the priority order of the recipe. Lower numbers represent a higher priority.",
+							"type": "integer"
+						},
+						"pattern": {
+							"type": "array",
+							"description": "Characters that represent a pattern to be defined by keys",
+							"maxItems": 3,
+							"items": {
+								"type": "string",
+								"minLength": 3,
+								"maxLength": 3
+							}
+						},
+						"key": {
 							"type": "object",
-							"properties": {
-								"description": {
-									"$ref": "./general.json#/definitions/description"
-								},
-								"tags": {
-									"$ref": "./general.json#/definitions/tags"
-								},
-								"group": {
-									"$ref": "./general.json#/definitions/group"
-								},
-								"pattern": {
-									"type": "array",
-									"description": "Characters that represent a pattern to be defined by keys",
-									"maxItems": 3,
-									"items": {
-										"type": "string",
-										"minLength": 3,
-										"maxLength": 3
-									}
-								},
-								"key": {
+							"description": "Keys to map characters to item names to be used in 'pattern'",
+							"propertyNames": {
+								"$ref": "./dynamic/currentContext/recipeKey.json"
+							},
+							"patternProperties": {
+								".*": {
 									"type": "object",
-									"description": "Keys to map characters to item names to be used in 'pattern'",
-									"propertyNames": {
-										"$ref": "./dynamic/currentContext/recipeKey.json"
-									},
-									"patternProperties": {
-										".*": {
-											"type": "object",
-											"properties": {
-												"item": {
-													"$ref": "../general/reference/identifiers.json#/definitions/item_identifiers"
+									"properties": {
+										"item": {
+											"$ref": "../general/reference/identifiers.json#/definitions/item_identifiers"
+										},
+										"data": {
+											"anyOf": [
+												{
+													"type": "integer"
 												},
-												"data": {
-													"anyOf": [
-														{
-															"type": "integer"
-														},
-														{
-															"$ref": "../molang/embedded.json"
-														}
-													]
+												{
+													"$ref": "../molang/embedded.json"
 												}
-											}
+											]
 										}
 									}
-								},
-								"result": {
-									"$ref": "./general.json#/definitions/result"
 								}
 							}
+						},
+						"result": {
+							"description": "When input items match the pattern then these items are the result.",
+							"$ref": "./general.json#/definitions/result"
 						}
 					}
 				},
-				{
+				"minecraft:recipe_shapeless": {
+					"description": "Represents a recipe that does not require a dedicated pattern.",
+					"additionalProperties": false,
+					"type": "object",
 					"properties": {
-						"minecraft:recipe_shapeless": {
-							"additionalProperties": false,
-							"type": "object",
-							"properties": {
-								"description": {
-									"$ref": "./general.json#/definitions/description"
-								},
-								"tags": {
-									"$ref": "./general.json#/definitions/tags"
-								},
-								"group": {
-									"$ref": "./general.json#/definitions/group"
-								},
-								"ingredients": {
-									"type": "array",
-									"items": {
-										"type": "object",
-										"properties": {
-											"item": {
-												"description": "Provides the identifier for the result item",
-												"$ref": "../general/reference/identifiers.json#/definitions/item_identifiers"
-											},
-											"data": {
-												"description": "Sets the result item's data value",
-												"type": "integer"
-											},
-											"count": {
-												"type": "integer",
-												"description": "Sets how many of the result item should be output"
-											}
-										}
+						"description": {
+							"$ref": "./general.json#/definitions/description"
+						},
+						"tags": {
+							"description": "Item that can create the shapeless recipe such as 'stonecutter'.",
+							"$ref": "./general.json#/definitions/tags"
+						},
+						"group": {
+							"$ref": "./general.json#/definitions/group"
+						},
+						"priority": {
+							"description": "Sets the priority order of the recipe. Lower numbers represent a higher priority.",
+							"type": "integer"
+						},
+						"ingredients": {
+							"description": "Items used as input (without a shape) for the recipe.",
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"item": {
+										"description": "Provides the identifier for the result item",
+										"$ref": "../general/reference/identifiers.json#/definitions/item_identifiers"
+									},
+									"data": {
+										"description": "Sets the result item's data value",
+										"type": "integer"
+									},
+									"count": {
+										"type": "integer",
+										"description": "Sets how many of the result item should be output"
 									}
-								},
-								"result": {
-									"$ref": "./general.json#/definitions/result"
 								}
 							}
+						},
+						"result": {
+							"description": "These items are the result.",
+							"$ref": "./general.json#/definitions/result"
 						}
 					}
 				},
-				{
+				"minecraft:recipe_brewing_mix": {
+					"description": "Represents a recipe that for use with a Potion Brewing station.",
+					"type": "object",
+					"additionalProperties": false,
 					"properties": {
-						"minecraft:recipe_brewing_mix": {
-							"type": "object",
-							"additionalProperties": false,
-							"properties": {
-								"description": {
-									"$ref": "./general.json#/definitions/description"
-								},
-								"tags": {
-									"$ref": "./general.json#/definitions/tags"
-								},
-								"input": {
-									"$ref": "./general.json#/definitions/input"
-								},
-								"output": {
-									"$ref": "./general.json#/definitions/output"
-								},
-								"reagent": {
-									"$ref": "./general.json#/definitions/reagent"
-								}
-							}
+						"description": {
+							"$ref": "./general.json#/definitions/description"
+						},
+						"tags": {
+							"description": "Item that can create the Brewing Container Recipe, such as 'brewing_stand'.",
+							"$ref": "./general.json#/definitions/tags"
+						},
+						"input": {
+							"description": "Input potion used in the brewing container recipe.",
+							"$ref": "./general.json#/definitions/input"
+						},
+						"output": {
+							"description": "Output potion from the brewing container recipe.",
+							"$ref": "./general.json#/definitions/output"
+						},
+						"reagent": {
+							"description": "Item used in the brewing container recipe with the input potion.",
+							"$ref": "./general.json#/definitions/reagent"
 						}
 					}
 				},
-				{
+				"minecraft:recipe_brewing_container": {
+					"description": "Represents a recipe that for use with a Potion Brewing station.",
+					"type": "object",
+					"additionalProperties": false,
 					"properties": {
-						"minecraft:recipe_brewing_container": {
-							"type": "object",
-							"additionalProperties": false,
-							"properties": {
-								"description": {
-									"$ref": "./general.json#/definitions/description"
-								},
-								"tags": {
-									"$ref": "./general.json#/definitions/tags"
-								},
-								"input": {
-									"$ref": "./general.json#/definitions/input"
-								},
-								"output": {
-									"$ref": "./general.json#/definitions/output"
-								},
-								"reagent": {
-									"$ref": "./general.json#/definitions/reagent"
-								}
-							}
+						"description": {
+							"$ref": "./general.json#/definitions/description"
+						},
+						"tags": {
+							"description": "Item that can create the Brewing Container Recipe, such as 'brewing_stand'.",
+							"$ref": "./general.json#/definitions/tags"
+						},
+						"input": {
+							"description": "Input potion used in the brewing container recipe.",
+							"$ref": "./general.json#/definitions/input"
+						},
+						"output": {
+							"description": "Output potion from the brewing container recipe.",
+							"$ref": "./general.json#/definitions/output"
+						},
+						"reagent": {
+							"description": "Item used in the brewing container recipe with the input potion.",
+							"$ref": "./general.json#/definitions/reagent"
 						}
 					}
 				}
-			]
+			}
 		},
 		{
 			"$ref": "../project/experimentalGameplay/educationEdition.json",
