@@ -1,5 +1,6 @@
 [
 	{
+		// < 1.18.0
 		"icon": "mdi-image-filter-hdr",
 		"id": "cavesAndCliffs"
 	},
