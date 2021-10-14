@@ -4,6 +4,7 @@
 	"anyOf": [
 		{
 			"enum": [
+				"/",
 				"/alwaysday",
 				"/ability",
 				"/clear",

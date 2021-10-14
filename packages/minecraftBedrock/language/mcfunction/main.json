@@ -3940,6 +3940,89 @@
 					]
 				}
 			]
+		},
+		{
+			"requires": {
+				"targetVersion": [">=", "1.18.0"]
+			},
+			"commands": [
+				{
+					"commandName": "loot",
+					"description": "Drops the given loot table into the world.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["spawn"]
+							}
+						},
+						{
+							"type": "$coordinates",
+							"argumentName": "position",
+							"description": "Specifies the position to spawn the loot table."
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["loot"]
+							}
+						},
+						{
+							"type": "string",
+							"argumentName": "lootTable",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/lootTable/dynamic/shortLootTablePathEnum.json"
+							}
+						},
+						{
+							"argumentName": "tool",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/item_identifiers"
+							},
+							"isOptional": true
+						}
+					]
+				},
+				{
+					"commandName": "loot",
+					"description": "Drops the given loot table into the world.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["spawn"]
+							}
+						},
+						{
+							"type": "$coordinates",
+							"argumentName": "position",
+							"description": "Specifies the position to spawn the loot table."
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["loot"]
+							}
+						},
+						{
+							"type": "string",
+							"argumentName": "lootTable",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/lootTable/dynamic/shortLootTablePathEnum.json"
+							}
+						},
+						{
+							"argumentName": "slot",
+							"type": "string",
+							"additionalData": {
+								"values": ["mainhand", "offhand"]
+							},
+							"isOptional": true
+						}
+					]
+				}
+			]
 		}
 	]
 }
