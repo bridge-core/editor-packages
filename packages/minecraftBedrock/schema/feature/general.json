@@ -8,7 +8,8 @@
 				"uniform",
 				"inverse_gaussian",
 				"fixed_grid",
-				"jittered_grid"
+				"jittered_grid",
+				"triangle"
 			]
 		},
 		"early_outs": {

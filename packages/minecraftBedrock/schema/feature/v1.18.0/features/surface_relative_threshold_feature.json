@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "additionalProperties": false,
+    "type": "object",
+    "description": "Determines whether the provided position is below the estimated surface level of the world, and places a feature if so.If the provided position is above configured surface or the surface is not available, placement will fail.",
+    "properties": {
+        "description": {
+			"additionalProperties": false,
+			"properties": {
+				"identifier": {
+					// Needs to strictly match file name - don't change reference to "general/reference..." schema
+					"$ref": "../../../project/prefixedFileIdentifierEnum.json"
+				}
+			}
+		},
+        "feature_to_place": {
+            "description": "Named reference of feature to be placed.",
+            "type": "string",
+            "$ref": "../../../general/reference/feature.json"
+        },
+        "minimum_distance_below_surface": {
+            "type": "integer",
+            "description": "The minimum number of blocks required to be between the estimated surface level and a valid place for this feature. Defaults to zero."
+        }
+    }
+}

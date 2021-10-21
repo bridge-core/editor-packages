@@ -108,7 +108,8 @@
 				"gaussian",
 				"inverse_gaussian",
 				"fixed_grid",
-				"jittered_grid"
+				"jittered_grid",
+				"triangle"
 			]
 		},
 		"forced_features": {

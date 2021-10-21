@@ -1,6 +1,12 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "properties": {
+        "minecraft:partially_exposed_blob_feature": {
+            "$ref": "./partially_exposed_blob_feature.json"
+        },
+        "minecraft:surface_relative_threshold_feature": {
+            "$ref": "./surface_relative_threshold_feature.json"
+        },
         "minecraft:ore_feature": {
             "$ref": "./ore_feature.json"
         },
