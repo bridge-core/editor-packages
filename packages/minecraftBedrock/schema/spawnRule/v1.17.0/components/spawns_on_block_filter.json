@@ -1,0 +1,16 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "additionalProperties": false,
+    "anyOf": [
+        {
+            "type": "array",
+            "items": {
+                "$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
+            }
+        },
+        {
+            "type": "string",
+            "$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
+        }
+    ]
+}

@@ -33,7 +33,7 @@
 				"conditions": {
 					"type": "array",
 					"items": {
-						"$ref": "./components.json"
+						"$ref": "./components/_main.json"
 					}
 				}
 			}

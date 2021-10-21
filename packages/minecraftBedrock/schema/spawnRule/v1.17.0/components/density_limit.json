@@ -1,0 +1,15 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"surface": {
+			"description": "This is the maximum number of mobs of this type spawnable on the surface.",
+			"type": "integer"
+		},
+		"underground": {
+			"description": "This is the maximum number of mobs of this type spawnable underground.",
+			"type": "integer"
+		}
+	}
+}

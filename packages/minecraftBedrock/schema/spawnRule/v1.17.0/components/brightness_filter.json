@@ -1,0 +1,19 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"min": {
+			"description": "This is the minimum light level value that allows the mob to spawn.",
+			"type": "number"
+		},
+		"max": {
+			"description": "This is the maximum light level value that allows the mob to spawn.",
+			"type": "number"
+		},
+		"adjust_for_weather": {
+			"description": "This determines if weather can affect the light level conditions that cause the mob to spawn (e.g. Allowing hostile mobs to spawn during the day when it rains.)",
+			"type": "boolean"
+		}
+	}
+}

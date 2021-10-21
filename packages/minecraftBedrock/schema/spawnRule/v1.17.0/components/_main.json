@@ -1,0 +1,56 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "properties": {
+        "minecraft:spawns_on_surface": {
+            "$ref": "./spawns_on_surface.json"
+        },
+        "minecraft:spawns_underground": {
+            "$ref": "./spawns_underground.json"
+        },
+        "minecraft:spawns_underwater": {
+            "$ref": "./spawns_underwater.json"
+        },
+        "minecraft:spawns_on_block_filter": {
+            "$ref": "./spawns_on_block_filter.json"
+        },
+        "minecraft:spawns_on_block_prevented_filter": {
+            "$ref": "./spawns_on_block_prevented_filter.json"
+        },
+        "minecraft:brightness_filter": {
+            "$ref": "./brightness_filter.json"
+        },
+        "minecraft:difficulty_filter": {
+            "$ref": "./difficulty_filter.json"
+        },
+        "minecraft:weight": {
+            "$ref": "./weight.json"
+        },
+        "minecraft:herd": {
+            "$ref": "./herd.json"
+        },
+        "minecraft:density_limit": {
+            "$ref": "./density_limit.json"
+        },
+        "minecraft:biome_filter": {
+            "$ref": "./biome_filter.json"
+        },
+        "minecraft:player_in_village_filter": {
+            "$ref": "./player_in_village_filter.json"
+        },
+        "minecraft:delay_filter": {
+            "$ref": "./delay_filter.json"
+        },
+        "minecraft:distance_filter": {
+            "$ref": "./distance_filter.json"
+        },
+        "minecraft:height_filter": {
+            "$ref": "./height_filter.json"
+        },
+        "minecraft:permute_type": {
+            "$ref": "./permute_type.json"
+        },
+        "minecraft:world_age_filter": {
+            "$ref": "./world_age_filter.json"
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"type": "object",
+	"properties": {
+		"default": {
+			"description": "This is the priority of the mob spawning.",
+			"type": "integer"
+		}
+	}
+}
