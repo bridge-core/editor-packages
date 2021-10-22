@@ -52,7 +52,7 @@
 				},
 				"events": {
 					"type": "object",
-					"anyOf": [
+					"allOf": [
 						{
 							"$ref": "../dynamic/currentContext/eventReferenceProperty.json"
 						},
@@ -63,15 +63,14 @@
 							"$ref": "../../project/projectPrefix.json"
 						},
 						{
-							"patternProperties": {
-								".*": {
-									"$ref": "./event.json"
-								}
+							"additionalProperties": {
+								"$ref": "./event.json"
 							}
 						}
 					]
 				},
 				"do_not_upgrade": {
+					"type": "object",
 					"additionalProperties": false
 				}
 			}

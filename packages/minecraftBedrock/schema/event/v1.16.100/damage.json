@@ -1,24 +1,20 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"type": "object",
+	"description": "Deals damage to the target",
+	"additionalProperties": false,
 	"properties": {
-		"damage": {
-			"description": "Deals damage to the target",
-			"additionalProperties": false,
-			"properties": {
-				"type": { "$ref": "../../general/vanilla/damageType.json" },
-				"amount": { "type": "integer" },
-				"target": {
-					"anyOf": [
-						{
-							"$ref": "../../general/filter/subject.json"
-						},
-						{
-							"const": "item"
-						}
-					]
+		"type": { "$ref": "../../general/vanilla/damageType.json" },
+		"amount": { "type": "integer" },
+		"target": {
+			"anyOf": [
+				{
+					"$ref": "../../general/filter/subject.json"
+				},
+				{
+					"const": "item"
 				}
-			}
+			]
 		}
 	}
 }

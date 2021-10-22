@@ -1,0 +1,19 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"description": "Sets a block relative to this block to another block type.",
+    "type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"block_offset": {
+			"type": "array",
+			"maxItems": 3,
+			"minItems": 3,
+			"items": {
+				"type": "number"
+			}
+		},
+		"block_type": {
+			"$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
+		}
+	}
+}

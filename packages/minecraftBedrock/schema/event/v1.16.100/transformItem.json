@@ -1,13 +1,11 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"type": "object",
+	"description": "Transforms item into another item.",
+	"additionalProperties": false,
 	"properties": {
-		"transform_item": {
-			"description": "Transforms item into another item",
-			"additionalProperties": false,
-			"properties": {
-				"transform": { "$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers" }
-			}
+		"transform": {
+			"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
 		}
 	}
 }

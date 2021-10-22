@@ -1,77 +1,51 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"anyOf": [
-		{
-			"type": "object",
-			"properties": {
-				"randomize": {
-					"type": "array",
-					"items": {
-						"allOf": [
-							{
-								"type": "object",
-								"properties": {
-									"weight": { "type": "number" }
-								}
-							},
-							{
-								"$ref": "#"
-							}
-						]
+	"type": "object",
+		"properties": {
+		"add": { "$ref": "../../event/componentGroup/add.json" },
+		"remove": { "$ref": "../../event/componentGroup/remove.json" },
+		"trigger": { "$ref": "../../event/v1.16.100/triggerEntity.json" },
+		"damage": { "$ref": "../../event/v1.16.100/damage.json" },
+		"decrement_stack": { "$ref": "../../event/v1.16.200/decrementStack.json" },
+		"die": { "$ref": "../../event/v1.16.100/die.json" },
+		"add_mob_effect": { "$ref": "../../event/v1.16.100/addMobEffect.json" },
+		"remove_mob_effect": { "$ref": "../../event/v1.16.100/removeMobEffect.json" },
+		"play_effect": { "$ref": "../../event/v1.16.100/playEffect.json" },
+		"play_sound": { "$ref": "../../event/v1.16.100/playSound.json" },
+		"run_command": { "$ref": "../../event/v1.16.100/runCommand.json" },
+		"teleport": { "$ref": "../../event/v1.16.100/teleport.json" },
+		"transform_item": { "$ref": "../../event/v1.16.100/transformItem.json" },
+		"randomize": {
+			"type": "array",
+			"items": {
+				"allOf": [
+					{
+						"properties": {
+							"weight": { "type": "number" }
+						}
+					},
+					{
+						"$ref": "#"
 					}
-				},
-				"sequence": {
-					"type": "array",
-					"items": {
-						"allOf": [
-							{
-								"type": "object",
-								"properties": {
-									"filters": {
-										"$ref": "../general/filter.json"
-									}
-								}
-							},
-							{
-								"$ref": "#"
-							}
-						]
-					}
-				}
+				]
 			}
 		},
-		{
-			"$ref": "../../event/componentGroup.json"
-		},
-		{
-			"$ref": "../../event/v1.16.100/damage.json"
-		},
-		{
-			"$ref": "../../event/v1.16.200/decrementStack.json"
-		},
-		{
-			"$ref": "../../event/v1.16.100/die.json"
-		},
-		{
-			"$ref": "../../event/v1.16.100/mobEffect.json"
-		},
-		{
-			"$ref": "../../event/v1.16.100/playEffect.json"
-		},
-		{
-			"$ref": "../../event/v1.16.100/playSound.json"
-		},
-		{
-			"$ref": "../../event/v1.16.100/runCommand.json"
-		},
-		{
-			"$ref": "../../event/v1.16.100/teleport.json"
-		},
-		{
-			"$ref": "../../event/v1.16.100/transformItem.json"
-		},
-		{
-			"$ref": "../../event/v1.16.100/triggerEntity.json"
-		}
-	]
+		"sequence": {
+			"type": "array",
+			"items": {
+				"allOf": [
+					{
+						"properties": {
+							"filters": {
+								"$ref": "../general/filter.json"
+							}
+						}
+					},
+					{
+						"$ref": "#"
+					}
+				]
+			}
+		} 
+	}
 }
