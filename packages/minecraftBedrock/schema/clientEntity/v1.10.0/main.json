@@ -28,6 +28,9 @@
 							"type": "boolean",
 							"description": "Whether to enable attachables on the entity."
 						},
+						"hide_armor": {
+							"type": "boolean"
+						},
 						"spawn_egg": {
 							"description": "Defines the spawn egg texture/color for the entity.",
 							"additionalProperties": false,
