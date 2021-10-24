@@ -1,8 +1,11 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"properties": {
+		"minecraft:part_visibility": {
+			"$ref": "../../v1.16.100/part_visibility.json"
+		},
 		"minecraft:creative_category": {
-			"$ref": "./creative_category.json"
+			"$ref": "../../v1.16.100/creative_category.json"
 		},
 		"minecraft:crafting_table": {
 			"$ref": "../../v1.16.100/components/crafting_table.json"
