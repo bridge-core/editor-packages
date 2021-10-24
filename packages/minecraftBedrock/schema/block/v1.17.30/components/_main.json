@@ -2,7 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"properties": {
 		"minecraft:part_visibility": {
-			"$ref": "../../v1.16.100/part_visibility.json"
+			"$ref": "../../v1.16.100/components/part_visibility.json"
 		},
 		"minecraft:creative_category": {
 			"$ref": "../../v1.16.100/components/creative_category.json"
