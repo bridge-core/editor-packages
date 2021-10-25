@@ -35,6 +35,7 @@
 		"temperature",
 		"all",
 		"stalactite",
-		"stalagmite"
+		"stalagmite",
+		"durability"
 	]
 }
