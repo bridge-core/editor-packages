@@ -13,6 +13,6 @@
 			"animation_controllers/*/states/*/on_exit",
 			"animation_controllers/*/states/*/on_entry"
 		],
-		"script": "const func = /\\/function\\s+([aA-zZ0-9\\/]+)/g.exec(Bridge.value); if(func) return `BP/functions/${func[1]}.mcfunction`"
+		"script": "const func = /\\/function\\s+([aA-zZ0-9\\/]+)/g.exec(Bridge.value); if(func) return Bridge.resolvePackPath('behaviorPack', `functions/${func[1]}.mcfunction`)"
 	}
 ]

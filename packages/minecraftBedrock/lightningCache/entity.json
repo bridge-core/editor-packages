@@ -95,7 +95,7 @@
 			"minecraft:entity/components/minecraft:interact/interactions/*/spawn_items/table",
 			"minecraft:entity/component_groups/*/minecraft:interact/interactions/*/spawn_items/table"
 		],
-		"script": "return `BP/${Bridge.value}`"
+		"script": "return Bridge.resolvePackPath('behaviorPack', Bridge.value)"
 	},
 	{
 		"cacheKey": "tradeTablePath",
@@ -105,12 +105,12 @@
 			"minecraft:entity/components/minecraft:economy_trade_table/table",
 			"minecraft:entity/component_groups/*/minecraft:economy_trade_table/table"
 		],
-		"script": "return `BP/${Bridge.value}`"
+		"script": "return Bridge.resolvePackPath('behaviorPack', Bridge.value)"
 	},
 	{
 		"cacheKey": "functionPath",
 		"path": "minecraft:entity/events/*/run_command",
-		"script": "const func = /\\/function\\s+([aA-zZ0-9\\/]+)/g.exec(Bridge.value); if(func) return `BP/functions/${func[1]}.mcfunction`"
+		"script": "const func = /\\/function\\s+([aA-zZ0-9\\/]+)/g.exec(Bridge.value); if(func) return Bridge.resolvePackPath('behaviorPack', `functions/${func[1]}.mcfunction`)"
 	},
 	{
 		"cacheKey": "animationIdentifier",

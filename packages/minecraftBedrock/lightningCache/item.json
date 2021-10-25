@@ -28,6 +28,6 @@
 	{
 		"cacheKey": "lootTablePath",
 		"path": "minecraft:item/events/*/spawn_loot/table",
-		"script": "return 'BP/' + Bridge.value"
+		"script": "return Bridge.resolvePackPath('behaviorPack', Bridge.value)"
 	}
 ]

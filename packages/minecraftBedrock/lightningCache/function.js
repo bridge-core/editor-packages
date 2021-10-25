@@ -1,4 +1,4 @@
-module.exports = (text) => {
+module.exports = (text, { resolvePackPath }) => {
 	const lines = text.split('\n')
 
 	const entityTags = []
@@ -25,7 +25,12 @@ module.exports = (text) => {
 	lines.filter((line) => {
 		let funcName = /function\s+([aA-zZ0-9\/]+)/g.exec(line)
 		if (funcName)
-			functionPaths.push(`BP/functions/${funcName[1]}.mcfunction`)
+			functionPaths.push(
+				resolvePackPath(
+					'behaviorPack',
+					`functions/${funcName[1]}.mcfunction`
+				)
+			)
 	})
 
 	return {

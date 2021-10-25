@@ -42,7 +42,7 @@
 			"minecraft:block/permutations/*/components/minecraft:loot",
 			"minecraft:block/events/*/spawn_loot/table"
 		],
-		"script": "return `BP/${Bridge.value}`"
+		"script": "return Bridge.resolvePackPath('behaviorPack', Bridge.value)"
 	},
 	{
 		"cacheKey": "geometryIdentifier",

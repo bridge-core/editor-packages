@@ -2,6 +2,6 @@
 	{
 		"cacheKey": "lootTablePath",
 		"path": "pools/**/entries/*/name",
-		"script": "if (Bridge.value.endsWith('.json')) return 'BP/' + Bridge.value"
+		"script": "if (Bridge.value.endsWith('.json')) return Bridge.resolvePackPath('behaviorPack', Bridge.value)"
 	}
 ]
