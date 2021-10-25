@@ -3,6 +3,6 @@
 	{
 		"cacheKey": "texturePath",
 		"path": "*/flipbook_texture",
-		"script": "return await Bridge.withExtension('RP/' + Bridge.value, ['.tga', '.png', '.jpg', '.jpeg'])"
+		"script": "return await Bridge.withExtension(Bridge.resolvePackPath('resourcePack', Bridge.value), ['.tga', '.png', '.jpg', '.jpeg'])"
 	}
 ]

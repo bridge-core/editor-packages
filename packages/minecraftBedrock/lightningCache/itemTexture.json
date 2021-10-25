@@ -3,6 +3,6 @@
 	{
 		"cacheKey": "texturePath",
 		"path": ["texture_data/*/textures", "texture_data/*/textures/*"],
-		"script": "return await Bridge.withExtension('RP/' + Bridge.value, ['.tga', '.png', '.jpg', '.jpeg'])"
+		"script": "return await Bridge.withExtension(Bridge.resolvePackPath('resourcePack', Bridge.value), ['.tga', '.png', '.jpg', '.jpeg'])"
 	}
 ]
