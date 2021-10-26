@@ -31,19 +31,30 @@
 		[
 			"item.json",
 			"items/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "openFile": true, "packPath": "behaviorPack" }
+			{
+				"inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"],
+				"openFile": true,
+				"packPath": "behaviorPack"
+			}
 		],
 		[
 			"clientItem.json",
-			"RP/items/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "openFile": true, "packPath": "resourcePack" }
+			"items/{{PRESET_PATH}}{{IDENTIFIER}}.json",
+			{
+				"inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"],
+				"openFile": true,
+				"packPath": "resourcePack"
+			}
 		]
 	],
 	"expandFiles": [
 		[
 			"en_US.lang",
-			"RP/texts/en_US.lang",
-			{ "inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"], "packPath": "resourcePack" }
+			"texts/en_US.lang",
+			{
+				"inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"],
+				"packPath": "resourcePack"
+			}
 		]
 	]
 }
