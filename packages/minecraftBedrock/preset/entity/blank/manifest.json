@@ -9,7 +9,7 @@
 	},
 	"additionalModels": {
 		"DEFAULT_TEXTURE": "texture.png",
-		"MODEL_SAVE_PATH": "RP/models/entity/",
+		"MODEL_SAVE_PATH": ["resourcePack", "models/entity/"],
 		"DEFAULT_MODEL": "geometry.json",
 		"PRESET_PATH": "",
 		"CLIENT_ENTITY_NO_EGG": "clientEntityNoEggTexture.json",
@@ -49,20 +49,20 @@
 		"presetScript/optionalModel.js",
 		[
 			"entity.json",
-			"BP/entities/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "openFile": true }
+			"entities/{{PRESET_PATH}}{{IDENTIFIER}}.json",
+			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "openFile": true, "packPath": "behaviorPack" }
 		],
 		[
 			"renderController.json",
-			"RP/render_controllers/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"] }
+			"render_controllers/{{PRESET_PATH}}{{IDENTIFIER}}.json",
+			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
 		]
 	],
 	"expandFiles": [
 		[
 			"en_US.lang",
-			"RP/texts/en_US.lang",
-			{ "inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"] }
+			"texts/en_US.lang",
+			{ "inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"], "packPath": "resourcePack" }
 		]
 	]
 }

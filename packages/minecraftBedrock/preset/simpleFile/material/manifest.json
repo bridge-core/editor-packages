@@ -7,7 +7,7 @@
 		"packTypes": ["resourcePack"]
 	},
 	"additionalModels": {
-		"PRESET_PATH": "RP/materials/"
+		"PRESET_PATH": "materials/"
 	},
 	"fields": [["File Name", "FILE_NAME", { "validate": ["required"] }]],
 
@@ -15,7 +15,7 @@
 		[
 			"material.material",
 			"{{PRESET_PATH}}{{FILE_NAME}}.material",
-			{ "inject": ["FILE_NAME", "PRESET_PATH"], "openFile": true }
+			{ "inject": ["FILE_NAME", "PRESET_PATH"], "openFile": true, "packPath": "resourcePack" }
 		]
 	]
 }

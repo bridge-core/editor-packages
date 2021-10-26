@@ -9,7 +9,7 @@
 		"experimentalGameplay": ["upcomingCreatorFeatures"]
 	},
 	"additionalModels": {
-		"PRESET_PATH": "WT/volumes/"
+		"PRESET_PATH": "volumes/"
 	},
 	"fields": [
 		[
@@ -23,7 +23,7 @@
 		[
 			"volume.json",
 			"{{PRESET_PATH}}{{FILE_NAME}}.json",
-			{ "inject": ["FILE_NAME", "PRESET_PATH"], "openFile": true }
+			{ "inject": ["FILE_NAME", "PRESET_PATH"], "openFile": true, "packPath": "worldTemplate" }
 		]
 	]
 }

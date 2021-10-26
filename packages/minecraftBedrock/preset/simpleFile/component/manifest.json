@@ -7,7 +7,7 @@
 		"packTypes": ["behaviorPack"]
 	},
 	"additionalModels": {
-		"PRESET_PATH": "BP/components/"
+		"PRESET_PATH": "components/"
 	},
 	"fields": [
 		[
@@ -42,7 +42,7 @@
 		[
 			"component.js",
 			"{{PRESET_PATH}}{{TYPE}}/{{FILE_NAME}}.{{LANGUAGE}}",
-			{ "inject": ["FILE_NAME", "LANGUAGE", "TYPE", "PRESET_PATH"], "openFile": true }
+			{ "inject": ["FILE_NAME", "LANGUAGE", "TYPE", "PRESET_PATH"], "openFile": true, "packPath": "behaviorPack" }
 		]
 	]
 }

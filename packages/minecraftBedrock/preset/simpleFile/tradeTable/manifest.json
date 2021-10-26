@@ -7,7 +7,7 @@
 		"packTypes": ["behaviorPack"]
 	},
 	"additionalModels": {
-		"PRESET_PATH": "BP/trading/"
+		"PRESET_PATH": "trading/"
 	},
 	"fields": [
 		[
@@ -21,7 +21,7 @@
 		[
 			"tradeTable.json",
 			"{{PRESET_PATH}}{{FILE_NAME}}.json",
-			{ "inject": ["FILE_NAME", "PRESET_PATH"], "openFile": true }
+			{ "inject": ["FILE_NAME", "PRESET_PATH"], "openFile": true, "packPath": "behaviorPack" }
 		]
 	]
 }

@@ -19,18 +19,19 @@ module.exports = async ({ createFile, createJSONFile, loadPresetFile, models }) 
             const icon = await loadPresetFile(`icon${itemType}.png`)
 
             await createJSONFile(
-                `BP/items/${IDENTIFIER}_${itemType.toLowerCase()}.json`,
+                `items/${IDENTIFIER}_${itemType.toLowerCase()}.json`,
                 JSON.parse(itemData),
-                { inject: ['IDENTIFIER', 'PROJECT_PREFIX'], openFile: true }
+                { inject: ['IDENTIFIER', 'PROJECT_PREFIX'], openFile: true, packPath: 'behaviorPack' }
             )
             await createFile(
-                `RP/textures/items/${PRESET_PATH}${IDENTIFIER}_${itemType.toLowerCase()}.png`,
-                icon
+                `textures/items/${PRESET_PATH}${IDENTIFIER}_${itemType.toLowerCase()}.png`,
+                icon,
+                { packPath: 'resourcePack' }
             )
             await createJSONFile(
-                `RP/attachables/${PRESET_PATH}${IDENTIFIER}_${itemType.toLowerCase()}.json`,
+                `attachables/${PRESET_PATH}${IDENTIFIER}_${itemType.toLowerCase()}.json`,
                 JSON.parse(attachableData),
-                { inject: ['IDENTIFIER', 'PROJECT_PREFIX', 'PRESET_PATH'] }
+                { inject: ['IDENTIFIER', 'PROJECT_PREFIX', 'PRESET_PATH'], packPath: 'resourcePack' }
             )
         }
     }

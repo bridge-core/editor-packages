@@ -7,7 +7,7 @@
 		"packTypes": ["resourcePack"]
 	},
 	"additionalModels": {
-		"PRESET_PATH": "RP/texts/"
+		"PRESET_PATH": "texts/"
 	},
 	"fields": [
 		["File Name", "FILE_NAME", { "validate": ["required", "alphanumeric"] }]
@@ -17,7 +17,7 @@
 		[
 			"language.lang",
 			"{{PRESET_PATH}}{{FILE_NAME}}.lang",
-			{ "inject": ["FILE_NAME", "PRESET_PATH"], "openFile": true }
+			{ "inject": ["FILE_NAME", "PRESET_PATH"], "openFile": true, "packPath": "resourcePack" }
 		]
 	]
 }

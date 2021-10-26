@@ -12,12 +12,12 @@ module.exports = async ({ createFile, loadPresetFile, models, expandFile }) => {
     else fileName = TEXTURE.name
     const fileNameNoExtension = fileName.replace(/.png|.tga|.jpg|.jpeg/gi, '')
 
-	await createFile(`RP/textures/items/${PRESET_PATH}${fileName}`, TEXTURE)
-    await expandFile('RP/textures/item_texture.json', {
+	await createFile(`textures/items/${PRESET_PATH}${fileName}`, TEXTURE, { packPath: 'resourcePack' })
+    await expandFile('textures/item_texture.json', {
         texture_data: {
             [`${PROJECT_PREFIX}_${IDENTIFIER}`]: {
                 textures: `textures/items/${PRESET_PATH}${fileNameNoExtension}`
             }
         }
-    })
+    }, { packPath: 'resourcePack' })
 }

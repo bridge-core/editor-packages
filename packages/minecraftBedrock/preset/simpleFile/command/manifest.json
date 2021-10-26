@@ -7,7 +7,7 @@
 		"packTypes": ["behaviorPack"]
 	},
 	"additionalModels": {
-		"PRESET_PATH": "BP/commands/"
+		"PRESET_PATH": "commands/"
 	},
 	"fields": [
 		[
@@ -29,7 +29,7 @@
 		[
 			"command.js",
 			"{{PRESET_PATH}}{{FILE_NAME}}.{{LANGUAGE}}",
-			{ "inject": ["FILE_NAME", "LANGUAGE", "PRESET_PATH"], "openFile": true }
+			{ "inject": ["FILE_NAME", "LANGUAGE", "PRESET_PATH"], "openFile": true, "packPath": "behaviorPack" }
 		]
 	]
 }

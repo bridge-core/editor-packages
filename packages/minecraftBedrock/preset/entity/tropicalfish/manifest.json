@@ -30,120 +30,120 @@
 		"presetScript/entityImages.js",
 		[
 			"entity.json",
-			"BP/entities/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "openFile": true }
+			"entities/{{PRESET_PATH}}{{IDENTIFIER}}.json",
+			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "openFile": true, "packPath": "behaviorPack" }
 		],
 		[
 			"animation.json",
-			"RP/animations/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"] }
+			"animations/{{PRESET_PATH}}{{IDENTIFIER}}.json",
+			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
 		],
 		[
 			"geometry.json",
-			"RP/models/entity/{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER"] }
+			"models/entity/{{IDENTIFIER}}.json",
+			{ "inject": ["IDENTIFIER"], "packPath": "resourcePack" }
 		],
 		[
 			"lootTable.json",
-			"BP/loot_tables/entities/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"] }
+			"loot_tables/entities/{{PRESET_PATH}}{{IDENTIFIER}}.json",
+			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "behaviorPack" }
 		],
 		[
 			"renderController.json",
-			"RP/render_controllers/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"] }
+			"render_controllers/{{PRESET_PATH}}{{IDENTIFIER}}.json",
+			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
 		],
 		[
 			"spawnRule.json",
-			"BP/spawn_rules/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX"] }
+			"spawn_rules/{{PRESET_PATH}}{{IDENTIFIER}}.json",
+			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX"], "packPath": "behaviorPack" }
 		],
 		[
 			"textureA.png",
-			"RP/textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_a.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"] }
+			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_a.png",
+			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
 		],
 		[
 			"textureAPattern1.png",
-			"RP/textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_a_pattern_1.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"] }
+			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_a_pattern_1.png",
+			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
 		],
 		[
 			"textureAPattern2.png",
-			"RP/textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_a_pattern_2.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"] }
+			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_a_pattern_2.png",
+			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
 		],
 		[
 			"textureAPattern3.png",
-			"RP/textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_a_pattern_3.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"] }
+			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_a_pattern_3.png",
+			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
 		],
 		[
 			"textureAPattern4.png",
-			"RP/textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_a_pattern_4.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"] }
+			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_a_pattern_4.png",
+			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
 		],
 		[
 			"textureAPattern5.png",
-			"RP/textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_a_pattern_5.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"] }
+			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_a_pattern_5.png",
+			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
 		],
 		[
 			"textureAPattern6.png",
-			"RP/textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_a_pattern_6.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"] }
+			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_a_pattern_6.png",
+			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
 		],
 		[
 			"textureB.png",
-			"RP/textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_b.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"] }
+			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_b.png",
+			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
 		],
 		[
 			"textureBPattern1.png",
-			"RP/textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_b_pattern_1.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"] }
+			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_b_pattern_1.png",
+			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
 		],
 		[
 			"textureBPattern2.png",
-			"RP/textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_b_pattern_2.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"] }
+			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_b_pattern_2.png",
+			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
 		],
 		[
 			"textureBPattern3.png",
-			"RP/textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_b_pattern_3.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"] }
+			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_b_pattern_3.png",
+			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
 		],
 		[
 			"textureBPattern4.png",
-			"RP/textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_b_pattern_4.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"] }
+			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_b_pattern_4.png",
+			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
 		],
 		[
 			"textureBPattern5.png",
-			"RP/textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_b_pattern_5.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"] }
+			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_b_pattern_5.png",
+			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
 		],
 		[
 			"textureBPattern6.png",
-			"RP/textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_b_pattern_6.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"] }
+			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_b_pattern_6.png",
+			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
 		]
 	],
 	"expandFiles": [
 		[
 			"en_US.lang",
-			"RP/texts/en_US.lang",
-			{ "inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"] }
+			"texts/en_US.lang",
+			{ "inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"], "packPath": "resourcePack" }
 		],
 		[
 			"soundDefinitions.json",
-			"RP/sounds/sound_definitions.json",
-			{ "inject": ["IDENTIFIER"] }
+			"sounds/sound_definitions.json",
+			{ "inject": ["IDENTIFIER"], "packPath": "resourcePack" }
 		],
 		[
 			"sounds.json",
-			"RP/sounds.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX"] }
+			"sounds.json",
+			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX"], "packPath": "resourcePack" }
 		]
 	]
 }

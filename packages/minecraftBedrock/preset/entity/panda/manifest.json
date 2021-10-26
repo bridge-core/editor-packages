@@ -30,95 +30,95 @@
 		"presetScript/entityImages.js",
 		[
 			"entity.json",
-			"BP/entities/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "openFile": true }
+			"entities/{{PRESET_PATH}}{{IDENTIFIER}}.json",
+			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "openFile": true, "packPath": "behaviorPack" }
 		],
 		[
 			"animation.json",
-			"RP/animations/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"] }
+			"animations/{{PRESET_PATH}}{{IDENTIFIER}}.json",
+			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
 		],
 		[
 			"animationController.json",
-			"RP/animation_controllers/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"] }
+			"animation_controllers/{{PRESET_PATH}}{{IDENTIFIER}}.json",
+			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
 		],
 		[
 			"geometry.json",
-			"RP/models/entity/{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER"] }
+			"models/entity/{{IDENTIFIER}}.json",
+			{ "inject": ["IDENTIFIER"], "packPath": "resourcePack" }
 		],
 		[
 			"lootTable.json",
-			"BP/loot_tables/entities/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"] }
+			"loot_tables/entities/{{PRESET_PATH}}{{IDENTIFIER}}.json",
+			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "behaviorPack" }
 		],
 		[
 			"lootTableSneeze.json",
-			"BP/loot_tables/entities/{{PRESET_PATH}}{{IDENTIFIER}}_sneeze.json",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"] }
+			"loot_tables/entities/{{PRESET_PATH}}{{IDENTIFIER}}_sneeze.json",
+			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "behaviorPack" }
 		],
 		[
 			"renderController.json",
-			"RP/render_controllers/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"] }
+			"render_controllers/{{PRESET_PATH}}{{IDENTIFIER}}.json",
+			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
 		],
 		[
 			"spawnRule.json",
-			"BP/spawn_rules/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"] }
+			"spawn_rules/{{PRESET_PATH}}{{IDENTIFIER}}.json",
+			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "packPath": "behaviorPack" }
 		],
 		[
 			"texture.png",
-			"RP/textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"] }
+			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}.png",
+			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
 		],
 		[
 			"textureAggressive.png",
-			"RP/textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_aggressive.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"] }
+			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_aggressive.png",
+			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
 		],
 		[
 			"textureBrown.png",
-			"RP/textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_brown.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"] }
+			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_brown.png",
+			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
 		],
 		[
 			"textureLazy.png",
-			"RP/textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_lazy.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"] }
+			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_lazy.png",
+			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
 		],
 		[
 			"texturePlayful.png",
-			"RP/textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_playful.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"] }
+			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_playful.png",
+			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
 		],
 		[
 			"textureSneezy.png",
-			"RP/textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_sneezy.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"] }
+			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_sneezy.png",
+			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
 		],
 		[
 			"textureWorried.png",
-			"RP/textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_worried.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"] }
+			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_worried.png",
+			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
 		]
 	],
 	"expandFiles": [
 		[
 			"en_US.lang",
-			"RP/texts/en_US.lang",
-			{ "inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"] }
+			"texts/en_US.lang",
+			{ "inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"], "packPath": "resourcePack" }
 		],
 		[
 			"soundDefinitions.json",
-			"RP/sounds/sound_definitions.json",
-			{ "inject": ["IDENTIFIER"] }
+			"sounds/sound_definitions.json",
+			{ "inject": ["IDENTIFIER"], "packPath": "resourcePack" }
 		],
 		[
 			"sounds.json",
-			"RP/sounds.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX"] }
+			"sounds.json",
+			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX"], "packPath": "resourcePack" }
 		]
 	]
 }

@@ -8,7 +8,7 @@
 		"targetVersion": [">=", "1.17.10"]
 	},
 	"additionalModels": {
-		"PRESET_PATH": "BP/dialogue/"
+		"PRESET_PATH": "dialogue/"
 	},
 	"fields": [
 		[
@@ -22,7 +22,7 @@
 		[
 			"dialogue.json",
 			"{{PRESET_PATH}}{{FILE_NAME}}.json",
-			{ "inject": ["FILE_NAME", "PRESET_PATH"], "openFile": true }
+			{ "inject": ["FILE_NAME", "PRESET_PATH"], "openFile": true, "packPath": "behaviorPack" }
 		]
 	]
 }

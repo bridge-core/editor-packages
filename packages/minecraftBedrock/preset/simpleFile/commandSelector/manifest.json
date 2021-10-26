@@ -7,7 +7,7 @@
 		"packTypes": ["behaviorPack", "disabledPreset"]
 	},
 	"additionalModels": {
-		"PRESET_PATH": "BP/commands/selectors/"
+		"PRESET_PATH": "commands/selectors/"
 	},
 	"fields": [
 		[
@@ -29,7 +29,7 @@
 		[
 			"commandSelector.js",
 			"{{PRESET_PATH}}{{FILE_NAME}}.{{LANGUAGE}}",
-			{ "inject": ["FILE_NAME", "LANGUAGE", "PRESET_PATH"], "openFile": true }
+			{ "inject": ["FILE_NAME", "LANGUAGE", "PRESET_PATH"], "openFile": true, "packPath": "behaviorPack" }
 		]
 	]
 }

@@ -7,7 +7,7 @@
 		"packTypes": ["behaviorPack"]
 	},
 	"additionalModels": {
-		"PRESET_PATH": "BP/molang/"
+		"PRESET_PATH": "molang/"
 	},
 	"fields": [["File Name", "FILE_NAME", { "validate": ["required"] }]],
 
@@ -15,7 +15,7 @@
 		[
 			"molang.molang",
 			"{{PRESET_PATH}}{{FILE_NAME}}.molang",
-			{ "inject": ["FILE_NAME", "PRESET_PATH"], "openFile": true }
+			{ "inject": ["FILE_NAME", "PRESET_PATH"], "openFile": true, "packPath": "behaviorPack" }
 		]
 	]
 }

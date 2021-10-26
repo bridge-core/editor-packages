@@ -7,9 +7,9 @@ module.exports = async ({ loadPresetFile, models, createJSONFile }) => {
     } = models
     let CHOSEN_TEMPLATE = ''
 
-    // TEMPLATES: [[option, file],...]
+    // TEMPLATES: { options: [[option, file],...], packPath }
     // Find which template has been chosen
-    for (const [option, file] of TEMPLATES) {
+    for (const [option, file] of TEMPLATES.options) {
         if (option === TEMPLATE) CHOSEN_TEMPLATE = file
     }
 
@@ -20,6 +20,7 @@ module.exports = async ({ loadPresetFile, models, createJSONFile }) => {
     // Create file with chosen template data
     await createJSONFile(`${PRESET_PATH}${FILE_NAME}.json`, JSON.parse(DATA), {
         inject: ['FILE_NAME', 'PROJECT_PREFIX'],
-        openFile: true
+        openFile: true,
+        packPath: TEMPLATES.packPath
     })
 }

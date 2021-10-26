@@ -23,35 +23,35 @@
 	"createFiles": [
 		[
 			"block.json",
-			"BP/blocks/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "openFile": true }
+			"blocks/{{PRESET_PATH}}{{IDENTIFIER}}.json",
+			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "openFile": true, "packPath": "behaviorPack" }
 		],
 		[
 			"texture.png",
-			"RP/textures/blocks/{{PRESET_PATH}}{{IDENTIFIER}}.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"] }
+			"textures/blocks/{{PRESET_PATH}}{{IDENTIFIER}}.png",
+			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
 		],
 		[
 			"geometry.json",
-			"RP/models/blocks/{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER"] }
+			"models/blocks/{{IDENTIFIER}}.json",
+			{ "inject": ["IDENTIFIER"], "packPath": "resourcePack" }
 		]
 	],
 	"expandFiles": [
 		[
 			"terrainTexture.json",
-			"RP/textures/terrain_texture.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"] }
+			"textures/terrain_texture.json",
+			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "packPath": "resourcePack" }
 		],
 		[
 			"clientBlock.json",
-			"RP/blocks.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX"] }
+			"blocks.json",
+			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX"], "packPath": "resourcePack" }
 		],
 		[
 			"en_US.lang",
-			"RP/texts/en_US.lang",
-			{ "inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"] }
+			"texts/en_US.lang",
+			{ "inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"], "packPath": "resourcePack" }
 		]
 	]
 }

@@ -8,15 +8,18 @@
 		"experimentalGameplay": ["!educationEdition"]
 	},
 	"additionalModels": {
-		"PRESET_PATH": "BP/recipes/",
-		"TEMPLATES": [
-			["Blank", "blank.json"],
-			["Shaped Recipe", "shaped.json"],
-			["Shapeless Recipe", "shapeless.json"],
-			["Furnace Recipe", "furnace.json"],
-			["Brewing Mix Recipe", "brewingMix.json"],
-			["Brewing Container Recipe", "brewingContainer.json"]
-		]
+		"PRESET_PATH": "recipes/",
+		"TEMPLATES": {
+			"packPath": "behaviorPack",
+			"options": [
+				["Blank", "blank.json"],
+				["Shaped Recipe", "shaped.json"],
+				["Shapeless Recipe", "shapeless.json"],
+				["Furnace Recipe", "furnace.json"],
+				["Brewing Mix Recipe", "brewingMix.json"],
+				["Brewing Container Recipe", "brewingContainer.json"]
+			]
+		}
 	},
 	"fields": [
 		[

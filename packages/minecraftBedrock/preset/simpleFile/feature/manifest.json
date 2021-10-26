@@ -8,29 +8,32 @@
 		"experimentalGameplay": ["creationOfCustomBiomes"]
 	},
 	"additionalModels": {
-		"PRESET_PATH": "BP/features/",
-		"TEMPLATES": [
-			["Blank", "blank.json"],
-			["Ore Feature", "ore.json"],
-			["Single Block Feature", "singleBlock.json"],
-			["Aggregate Feature", "aggregate.json"],
-			["Scatter Feature", "scatter.json"],
-			["Tree Feature", "tree.json"],
-			["Weighted Random Feature", "weightedRandom.json"],
-			["Structure Feature", "structure.json"],
-			["Search Feature", "search.json"],
-			["Sequence Feature", "sequence.json"],
-			["Cave Carver Feature", "caveCarver.json"],
-			["Hell Cave Carver Feature", "hellCaveCarver.json"],
-			["Underwater Cave Carver Feature", "underwaterCaveCarver.json"],
-			["Growing Plant Feature", "growingPlant.json"],
-			["Snap to Surface Feature", "snapToSurface.json"],
-			["Vegetation Patch Feature", "vegetationPatch.json"],
-			["Geode Feature", "geode.json"],
-			["Multiface Feature", "multiface.json"],
-			["Beards and Shavers Feature", "beardsAndShavers.json"],
-			["Rect Layout Feature", "rectLayout.json"]
-		]
+		"PRESET_PATH": "features/",
+		"TEMPLATES": {
+			"packPath": "behaviorPack",
+			"options": [
+				["Blank", "blank.json"],
+				["Ore Feature", "ore.json"],
+				["Single Block Feature", "singleBlock.json"],
+				["Aggregate Feature", "aggregate.json"],
+				["Scatter Feature", "scatter.json"],
+				["Tree Feature", "tree.json"],
+				["Weighted Random Feature", "weightedRandom.json"],
+				["Structure Feature", "structure.json"],
+				["Search Feature", "search.json"],
+				["Sequence Feature", "sequence.json"],
+				["Cave Carver Feature", "caveCarver.json"],
+				["Hell Cave Carver Feature", "hellCaveCarver.json"],
+				["Underwater Cave Carver Feature", "underwaterCaveCarver.json"],
+				["Growing Plant Feature", "growingPlant.json"],
+				["Snap to Surface Feature", "snapToSurface.json"],
+				["Vegetation Patch Feature", "vegetationPatch.json"],
+				["Geode Feature", "geode.json"],
+				["Multiface Feature", "multiface.json"],
+				["Beards and Shavers Feature", "beardsAndShavers.json"],
+				["Rect Layout Feature", "rectLayout.json"]
+			]
+		}
 	},
 	"fields": [
 		[

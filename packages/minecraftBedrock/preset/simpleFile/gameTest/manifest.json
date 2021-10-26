@@ -30,15 +30,15 @@
 	"createFiles": [
 		[
 			"gameTest.js",
-			"BP/{{PRESET_PATH}}{{FILE_NAME}}.{{LANGUAGE}}",
-			{ "inject": ["FILE_NAME", "LANGUAGE", "PRESET_PATH"], "openFile": true }
+			"{{PRESET_PATH}}{{FILE_NAME}}.{{LANGUAGE}}",
+			{ "inject": ["FILE_NAME", "LANGUAGE", "PRESET_PATH"], "openFile": true, "packPath": "behaviorPack" }
 		]
 	],
 	"expandFiles": [
 		[
 			"Main.js",
-			"BP/scripts/main.js",
-			{ "inject": ["FILE_NAME", "LANGUAGE", "PRESET_PATH"] }
+			"scripts/main.js",
+			{ "inject": ["FILE_NAME", "LANGUAGE", "PRESET_PATH"], "packPath": "behaviorPack" }
 		]
 	]
 }

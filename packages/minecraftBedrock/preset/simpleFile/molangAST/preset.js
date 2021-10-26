@@ -3,10 +3,10 @@ module.exports = async ({ createFile, loadPresetFile, models }) => {
 	const file = await loadPresetFile('script.js')
 
 	await createFile(
-		`BP/scripts/molang/${FILE_NAME}.${
+		`scripts/molang/${FILE_NAME}.${
 			LANGUAGE === 'JavaScript' ? 'js' : 'ts'
 		}`,
 		file,
-		{ openFile: true }
+		{ openFile: true, "packPath": "behaviorPack" }
 	)
 }

@@ -7,7 +7,7 @@
 		"packTypes": ["behaviorPack"]
 	},
 	"additionalModels": {
-		"PRESET_PATH": "BP/functions/"
+		"PRESET_PATH": "functions/"
 	},
 	"fields": [
 		[
@@ -21,7 +21,7 @@
 		[
 			"function.mcfunction",
 			"{{PRESET_PATH}}{{FILE_NAME}}.mcfunction",
-			{ "inject": ["FILE_NAME", "PRESET_PATH"], "openFile": true }
+			{ "inject": ["FILE_NAME", "PRESET_PATH"], "openFile": true, "packPath": "behaviorPack" }
 		]
 	]
 }

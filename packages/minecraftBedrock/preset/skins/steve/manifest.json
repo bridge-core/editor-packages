@@ -7,7 +7,7 @@
 		"packTypes": ["skinPack"]
 	},
 	"additionalModels": {
-		"IMAGE_SAVE_PATH": "SP/",
+		"IMAGE_SAVE_PATH": ["skinPack", ""],
 		"DEFAULT_IMAGE": "skin.png",
 		"PRESET_PATH": ""
 	},
@@ -32,11 +32,11 @@
 
 	"createFiles": ["presetScript/optionalImage.js"],
 	"expandFiles": [
-		["skins.json", "SP/skins.json", { "inject": ["IDENTIFIER"] }],
+		["skins.json", "skins.json", { "inject": ["IDENTIFIER"], "packPath": "skinPack" }],
 		[
 			"en_US.lang",
-			"SP/texts/en_US.lang",
-			{ "inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"] }
+			"texts/en_US.lang",
+			{ "inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"], "packPath": "skinPack" }
 		]
 	]
 }

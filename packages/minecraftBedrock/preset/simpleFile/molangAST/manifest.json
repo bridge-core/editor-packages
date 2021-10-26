@@ -7,10 +7,8 @@
 		"packTypes": ["behaviorPack"]
 	},
 	"additionalModels": {
-		"PRESET_PATH": "BP/scripts/molang/"
+		"PRESET_PATH": "scripts/molang/"
 	},
-	"fields": [["File Name", "FILE_NAME", { "validate": ["required"] }]],
-
 	"fields": [
 		[
 			"Language",

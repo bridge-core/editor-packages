@@ -5,9 +5,9 @@ module.exports = async ({ createFile, expandFile, models, loadPresetFile, create
 		CLIENT_ENTITY_DATA = CLIENT_ENTITY_DATA.replaceAll('{{TEXTURE_FILE_NAME}}', fileNameNoExtension)
 
 		await createJSONFile(
-			`RP/entity/${PRESET_PATH}${IDENTIFIER}.json`,
+			`entity/${PRESET_PATH}${IDENTIFIER}.json`,
 			JSON.parse(CLIENT_ENTITY_DATA),
-			{ inject: ['IDENTIFIER', 'PROJECT_PREFIX', 'PRESET_PATH'], openFile: true }
+			{ inject: ['IDENTIFIER', 'PROJECT_PREFIX', 'PRESET_PATH'], openFile: true, packPath: 'resourcePack' }
 		)
 	}
 
@@ -29,7 +29,7 @@ module.exports = async ({ createFile, expandFile, models, loadPresetFile, create
 		else fileName = TEXTURE.name
 		fileNameNoExtension = fileName.replace(/.png|.tga|.jpg|.jpeg/gi, '')
 
-		await createFile(`RP/textures/entity/${PRESET_PATH}${fileName}`, TEXTURE)
+		await createFile(`textures/entity/${PRESET_PATH}${fileName}`, TEXTURE, { packPath: 'resourcePack' })
 	}
 
 	if (!SPAWN_EGG) {
@@ -43,19 +43,21 @@ module.exports = async ({ createFile, expandFile, models, loadPresetFile, create
 
 		// Spawn egg texture
 		await createFile(
-			`RP/textures/items/${PRESET_PATH}${eggFileName}`,
-			SPAWN_EGG
+			`textures/items/${PRESET_PATH}${eggFileName}`,
+			SPAWN_EGG,
+			{ packPath: 'resourcePack' }
 		)
 		// Item textures
 		await expandFile(
-			'RP/textures/item_texture.json',
+			'textures/item_texture.json',
 			{
 				texture_data: {
 					[`${PROJECT_PREFIX}_${IDENTIFIER}_egg`]: {
 						textures: `textures/items/${PRESET_PATH}${eggFileNameNoExtension}`
 					}
 				}
-			}
+			},
+			{ packPath: 'resourcePack' }
 		)
 		// Client entity
 		await createClientEntity(true)

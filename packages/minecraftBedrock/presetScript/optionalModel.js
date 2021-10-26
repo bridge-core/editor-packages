@@ -18,7 +18,8 @@ module.exports = async ({ createFile, loadPresetFile, models }) => {
 		NEW_DATA = DATA
 	}
 
-	await createFile(`${MODEL_SAVE_PATH}${FILE_NAME}`, NEW_DATA, {
+	await createFile(`${MODEL_SAVE_PATH[1]}${FILE_NAME}`, NEW_DATA, {
 		inject: ['IDENTIFIER'],
+		packPath: MODEL_SAVE_PATH[0]
 	})
 }

@@ -6,10 +6,10 @@ module.exports = async ({ createFile, loadPresetFile, models }) => {
 			: await loadPresetFile('scriptServer.js')
 
 	await createFile(
-		`BP/scripts/${SCRIPT_TYPE.toLowerCase()}/${FILE_NAME}.${
+		`scripts/${SCRIPT_TYPE.toLowerCase()}/${FILE_NAME}.${
 			LANGUAGE === 'JavaScript' ? 'js' : 'ts'
 		}`,
 		file,
-		{ openFile: true }
+		{ openFile: true, packPath: 'behaviorPack' }
 	)
 }

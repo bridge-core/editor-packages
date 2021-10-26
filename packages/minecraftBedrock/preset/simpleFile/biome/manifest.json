@@ -8,7 +8,7 @@
 		"experimentalGameplay": ["creationOfCustomBiomes"]
 	},
 	"additionalModels": {
-		"PRESET_PATH": "BP/biomes/"
+		"PRESET_PATH": "biomes/"
 	},
 	"fields": [
 		[
@@ -22,7 +22,7 @@
 		[
 			"biome.json",
 			"{{PRESET_PATH}}{{FILE_NAME}}.json",
-			{ "inject": ["FILE_NAME", "PROJECT_PREFIX", "PRESET_PATH"], "openFile": true }
+			{ "inject": ["FILE_NAME", "PROJECT_PREFIX", "PRESET_PATH"], "openFile": true, "packPath": "behaviorPack" }
 		]
 	]
 }

@@ -10,7 +10,7 @@
 	},
 	"additionalModels": {
 		"DEFAULT_IMAGE": "texture.png",
-		"MODEL_SAVE_PATH": "RP/models/blocks/",
+		"MODEL_SAVE_PATH": ["resourcePack", "models/blocks/"],
 		"DEFAULT_MODEL": "geometry.json",
 		"PRESET_PATH": ""
 	},
@@ -46,8 +46,8 @@
 	"createFiles": [
 		[
 			"block.json",
-			"BP/blocks/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "openFile": true }
+			"blocks/{{PRESET_PATH}}{{IDENTIFIER}}.json",
+			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "openFile": true, "packPath": "beahviorPack" }
 		],
 		"presetScript/optionalModel.js",
 		"presetScript/blockImages.js"
@@ -55,13 +55,13 @@
 	"expandFiles": [
 		[
 			"clientBlock.json",
-			"RP/blocks.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX"] }
+			"blocks.json",
+			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX"], "packPath": "resourcePack" }
 		],
 		[
 			"en_US.lang",
-			"RP/texts/en_US.lang",
-			{ "inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"] }
+			"texts/en_US.lang",
+			{ "inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"], "packPath": "resourcePack" }
 		]
 	]
 }
