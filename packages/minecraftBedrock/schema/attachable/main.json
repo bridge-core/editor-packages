@@ -110,11 +110,11 @@
 								},
 								"should_update_bones_and_effects_offscreen": {
 									"description": "Bones and effects will still be updated if the entity is off screen if this expression returns anything other than 0.0.",
-									"$ref": "../../molang/embedded.json"
+									"$ref": "../molang/embedded.json"
 								},
 								"should_update_effects_offscreen": {
 									"description": "Effects will still be updated if the entity is off screen if this expression or 'should_update_bones_and_effects_offscreen' returns anything other than 0.0.",
-									"$ref": "../../molang/embedded.json"
+									"$ref": "../molang/embedded.json"
 								}
 							}
 						},
