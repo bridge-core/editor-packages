@@ -60,7 +60,7 @@
 							"maxItems": 3,
 							"items": {
 								"type": "string",
-								"minLength": 3,
+								"minLength": 0,
 								"maxLength": 3
 							}
 						},
