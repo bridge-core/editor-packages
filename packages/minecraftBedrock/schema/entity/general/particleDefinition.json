@@ -3,7 +3,7 @@
 	"type": "object",
 	"properties": {
 		"particle_type": {
-			"$ref": "../../general/vanilla/identifiers.json#/definitions/particle_identifiers"
+			"$ref": "../../general/reference/identifiers.json#/definitions/particle_identifiers"
 		},
 		"particle_y_offset": {
 			"type": "number"
