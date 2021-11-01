@@ -101,7 +101,7 @@
 							}
 						]
 					},
-					"verison": {
+					"version": {
 						"$ref": "#/definitions/triple_integer"
 					},
 					"entry": {
