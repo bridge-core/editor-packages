@@ -1,12 +1,12 @@
 {
 	"name": "Slab",
 	"icon": "mdi-cube-outline",
-	"description": "Creates a new, slab block.",
+	"description": "Creates a new slab block.",
 	"category": "fileType.block",
 	"requires": {
 		"targetVersion": [">=", "1.16.100"],
 		"packTypes": ["behaviorPack", "resourcePack"],
-		"experimentalGameplay": ["holidayCreatorFeatures"]
+		"experimentalGameplay": ["holidayCreatorFeatures", "upcomingCreatorFeatures"]
 	},
 	"additionalModels": {
 		"PRESET_PATH": ""
@@ -17,40 +17,44 @@
 			"IDENTIFIER",
 			{ "validate": ["required", "alphanumeric", "lowercase"] }
 		],
-		["Display Name", "IDENTIFIER_NAME", { "validate": ["required"] }]
+		[
+			"Display Name",
+			"IDENTIFIER_NAME",
+			{ "validate": ["required"] }
+		]
 	],
 
 	"createFiles": [
 		[
 			"block.json",
-			"blocks/{{PRESET_PATH}}{{IDENTIFIER}}.json",
+			"BP/blocks/{{PRESET_PATH}}{{IDENTIFIER}}.json",
 			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "openFile": true, "packPath": "behaviorPack" }
 		],
 		[
-			"texture.png",
-			"textures/blocks/{{PRESET_PATH}}{{IDENTIFIER}}.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			"doubleBlock.json",
+			"BP/blocks/{{PRESET_PATH}}double_{{IDENTIFIER}}.json",
+			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "packPath": "behaviorPack" }
+		],
+		[
+			"lootTable.json",
+			"BP/loot_tables/blocks/double_{{IDENTIFIER}}.json",
+			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX"], "packPath": "behaviorPack" }
 		],
 		[
 			"geometry.json",
-			"models/blocks/{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER"], "packPath": "resourcePack" }
+			"RP/models/blocks/slab.geo.json",
+			{ "packPath": "resourcePack" }
 		]
 	],
 	"expandFiles": [
 		[
-			"terrainTexture.json",
-			"textures/terrain_texture.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "packPath": "resourcePack" }
-		],
-		[
 			"clientBlock.json",
-			"blocks.json",
+			"RP/blocks.json",
 			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX"], "packPath": "resourcePack" }
 		],
 		[
 			"en_US.lang",
-			"texts/en_US.lang",
+			"RP/texts/en_US.lang",
 			{ "inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"], "packPath": "resourcePack" }
 		]
 	]
