@@ -1,5 +1,18 @@
 {
-  "{{PROJECT_PREFIX}}:{{IDENTIFIER}}": {
-		"sound": "stone"
-  }
+    "{{PROJECT_PREFIX}}:{{IDENTIFIER}}": {
+        "sound": "stone",
+        "textures": {
+            "down": "stone_slab_bottom",
+            "side": "stone_slab_side",
+            "up": "stone_slab_top"
+        }
+    },
+    "{{PROJECT_PREFIX}}:double_{{IDENTIFIER}}": {
+        "sound": "stone",
+        "textures": {
+            "down": "stone_slab_bottom",
+            "side": "stone_slab_side",
+            "up": "stone_slab_top"
+        }
+    }
 }
