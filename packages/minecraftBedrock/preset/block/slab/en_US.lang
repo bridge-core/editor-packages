@@ -1,1 +1,2 @@
 tile.{{PROJECT_PREFIX}}:{{IDENTIFIER}}.name={{IDENTIFIER_NAME}}
+tile.{{PROJECT_PREFIX}}:double_{{IDENTIFIER}}.name=Double {{IDENTIFIER_NAME}}
