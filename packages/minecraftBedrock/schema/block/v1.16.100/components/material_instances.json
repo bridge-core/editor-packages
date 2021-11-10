@@ -1,13 +1,15 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"additionalProperties": false,
 	"type": "object",
 	"description": "Maps face or material_instance names in a geometry file to an actual material instance. Material instance can either be a full material instance or a name to another already defined instance",
 	"propertyNames": {
 		"anyOf": [
 			{
 				"enum": [
-					"*"
+					"*",
+					"up",
+					"down",
+					"sides"
 				]
 			},
 			{
@@ -15,28 +17,26 @@
 			}
 		]
 	},
-	"patternProperties": {
-		".*": {
-			"properties": {
-				"texture": {
-					"description": "Name of a texture from the terrain_texture.json file",
-					"$ref": "../../../general/reference/terrainTexture.json"
-				},
-				"render_method": {
-					"description": "Method to use for rendering this face",
-					"enum": [
-						"opaque",
-						"blend",
-						"alpha_test",
-						"double_sided"
-					]
-				},
-				"ambient_occlusion": {
-					"type": "boolean"
-				},
-				"face_dimming": {
-					"type": "boolean"
-				}
+	"additionalProperties": {
+		"properties": {
+			"texture": {
+				"description": "Name of a texture from the terrain_texture.json file",
+				"$ref": "../../../general/reference/terrainTexture.json"
+			},
+			"render_method": {
+				"description": "Method to use for rendering this face",
+				"enum": [
+					"opaque",
+					"blend",
+					"alpha_test",
+					"double_sided"
+				]
+			},
+			"ambient_occlusion": {
+				"type": "boolean"
+			},
+			"face_dimming": {
+				"type": "boolean"
 			}
 		}
 	}
