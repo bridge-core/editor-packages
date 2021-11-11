@@ -71,7 +71,8 @@
 						},
 						"count": {
 							"type": "integer",
-							"description": "How many items of the specified identifier the player must have selected"
+							"description": "How many items of the specified identifier the player must have selected",
+							"minimum": 1
 						},
 						"enchantments": {
 							"type": "array",
