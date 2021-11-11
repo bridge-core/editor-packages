@@ -58,6 +58,49 @@
 				"if": {
 					"properties": {
 						"condition": {
+							"const": "match_tool"
+						}
+					},
+					"required": ["condition"]
+				},
+				"then": {
+					"properties": {
+						"item": {
+							"description": "The item identifier to match for",
+							"$ref": "../general/reference/identifiers.json#/definitions/item_identifiers"
+						},
+						"count": {
+							"type": "integer",
+							"description": "How many items of the specified identifier the player must have selected"
+						},
+						"enchantments": {
+							"type": "array",
+							"description": "Specify enchantments that the tool must have",
+							"items": {
+								"type": "object",
+								"properties": {
+									"enchantment": {
+										"description": "The enchantment to test for",
+										"$ref": "../general/vanilla/enchantName.json"
+									},
+									"min": {
+										"type": "integer",
+										"description": "Minimum enchantment level for this condition to pass"
+									},
+									"max": {
+										"type": "integer",
+										"description": "Maximum enchantment level for this condition to pass"
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			{
+				"if": {
+					"properties": {
+						"condition": {
 							"const": "random_chance"
 						}
 					},

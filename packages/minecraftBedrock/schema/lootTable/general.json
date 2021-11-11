@@ -8,6 +8,7 @@
 				"has_mark_variant",
 				"killed_by_player",
 				"killed_by_player_or_pets",
+				"match_tool",
 				"random_chance",
 				"random_chance_with_looting",
 				"random_difficulty_chance",
