@@ -47,7 +47,7 @@
 							]
 						},
 						"minecraft:biome_filter": {
-							"$ref": "../spawnRule/components.json#/properties/minecraft:biome_filter"
+							"$ref": "../spawnRule/v1.17.0/components/biome_filter.json"
 						}
 					}
 				},
