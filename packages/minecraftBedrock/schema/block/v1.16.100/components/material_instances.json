@@ -9,7 +9,11 @@
 					"*",
 					"up",
 					"down",
-					"sides"
+					"sides",
+					"north",
+					"south",
+					"east",
+					"west"
 				]
 			},
 			{
