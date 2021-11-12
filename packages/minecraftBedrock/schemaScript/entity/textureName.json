@@ -1,0 +1,5 @@
+{
+    "type": "properties",
+    "generateFile": "clientEntity/dynamic/textureNameProperty.json",
+    "script": "return readdir(resolvePackPath('resourcePack', 'textures/entity')).then((dirents) => dirents.map((dirent) => dirent.name.split('/').pop().replace(/\\.png|\\.jpeg|\\.jpg|\\.tga/g, '')))"
+}

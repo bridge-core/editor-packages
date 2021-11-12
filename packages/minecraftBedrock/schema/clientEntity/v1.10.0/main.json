@@ -63,14 +63,28 @@
 						},
 						"textures": {
 							"description": "Defines the textures used in the entity.",
-							"patternProperties": {
-								".*": {
-									"$ref": "../../general/reference/paths.json#/definitions/entity_texture_paths"
+							"type": "object",
+							"allOf": [
+								{
+									"$ref": "../dynamic/textureNameProperty.json"
+								},
+								{
+									"properties": {
+										"default": {}
+									}
+								},
+								{
+									"patternProperties": {
+										".*": {
+											"$ref": "../../general/reference/paths.json#/definitions/entity_texture_paths"
+										}
+									}
 								}
-							}
+							]
 						},
 						"geometry": {
 							"description": "Defines the geometries used in the entity.",
+							"type": "object",
 							"patternProperties": {
 								".*": {
 									"$ref": "../../general/reference/geometry.json"
@@ -83,11 +97,21 @@
 						"animations": {
 							"description": "Defines animations and animation controllers to be used in this entity.",
 							"type": "object",
-							"patternProperties": {
-								".*": {
-									"$ref": "../../general/reference/clientAnimation.json"
+							"allOf": [
+								{
+									"$ref": "../../animation/dynamic/shortNameProperty.json"
+								},
+								{
+									"$ref": "../../animationController/dynamic/shortNameProperty.json"
+								},
+								{
+									"patternProperties": {
+										".*": {
+											"$ref": "../../general/reference/clientAnimation.json"
+										}
+									}
 								}
-							}
+							]
 						},
 						"scripts": {
 							"description": "Calculates variables to be used on the entity pre-animation and can run animations.",

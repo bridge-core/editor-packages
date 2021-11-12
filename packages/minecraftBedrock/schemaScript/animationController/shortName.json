@@ -1,0 +1,5 @@
+{
+    "type": "properties",
+    "generateFile": "animationController/dynamic/shortNameProperty.json",
+    "script": "return getCacheDataFor('animationController', undefined, 'identifier').then(ids => (ids || []).map(id => id.split('.').pop()))"
+}
