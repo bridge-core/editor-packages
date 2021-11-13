@@ -3,28 +3,24 @@
 		"id": "behaviorPack",
 		"defaultPackPath": "BP",
 		"icon": "mdi-wrench",
-		"matcher": "projects/*/BP/**",
 		"color": "behaviorPack"
 	},
 	{
 		"id": "resourcePack",
 		"defaultPackPath": "RP",
 		"icon": "mdi-image",
-		"matcher": "projects/*/RP/**",
 		"color": "resourcePack"
 	},
 	{
 		"id": "skinPack",
 		"defaultPackPath": "SP",
 		"icon": "mdi-human",
-		"matcher": "projects/*/SP/**",
 		"color": "skinPack"
 	},
 	{
 		"id": "worldTemplate",
 		"defaultPackPath": "WT",
 		"icon": "mdi-earth",
-		"matcher": "projects/*/WT/**",
 		"color": "worldTemplate"
 	}
 ]
