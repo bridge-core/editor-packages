@@ -1,0 +1,5 @@
+{
+	"type": "properties",
+	"generateFile": "clientAnimation/dynamic/shortNameProperty.json",
+	"script": "return getCacheDataFor('clientAnimation', undefined, 'identifier').then(ids => (ids || []).map(id => id.split('.').pop()))"
+}
