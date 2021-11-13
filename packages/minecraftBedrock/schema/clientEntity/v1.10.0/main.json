@@ -189,11 +189,19 @@
 						},
 						"sound_effects": {
 							"description": "Defines the sounds to be played on the entity.",
-							"patternProperties": {
-								".*": {
-									"$ref": "../../soundDefinition/dynamic/identifierEnum.json"
+							"type": "object",
+							"allOf": [
+								{
+									"$ref": "../../soundDefinition/dynamic/shortNameProperty.json"
+								},
+								{
+									"patternProperties": {
+										".*": {
+											"$ref": "../../soundDefinition/dynamic/identifierEnum.json"
+										}
+									}
 								}
-							}
+							]
 						},
 						"render_controllers": {
 							"description": "References all render controllers used to render the entity.",
@@ -219,20 +227,35 @@
 							}
 						},
 						"particle_effects": {
-							"description": "Defines the particles to be played on the entity",
-							"patternProperties": {
-								".*": {
-									"$ref": "../../general/reference/identifiers.json#/definitions/particle_identifiers"
+							"description": "Defines the particles to be played on the entity.",
+							"type": "object",
+							"allOf": [
+								{
+									"$ref": "../../particle/dynamic/shortNameProperty.json"
+								},
+								{
+									"patternProperties": {
+										".*": {
+											"$ref": "../../general/reference/identifiers.json#/definitions/particle_identifiers"
+										}
+									}
 								}
-							}
+							]
 						},
 						"particle_emitters": {
 							"description": "Defines the entity's particle emitters.",
-							"patternProperties": {
-								".*": {
-									"$ref": "../../general/reference/identifiers.json#/definitions/particle_identifiers"
+							"allOf": [
+								{
+									"$ref": "../../particle/dynamic/shortNameProperty.json"
+								},
+								{
+									"patternProperties": {
+										".*": {
+											"$ref": "../../general/reference/identifiers.json#/definitions/particle_identifiers"
+										}
+									}
 								}
-							}
+							]
 						}
 					}
 				}

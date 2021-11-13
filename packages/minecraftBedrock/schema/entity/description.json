@@ -21,11 +21,22 @@
 		},
 		"animations": {
 			"description": "List server animations and animation controllers to be used in this entity.",
-			"patternProperties": {
-				".*": {
-					"$ref": "../general/reference/serverAnimation.json"
+			"type": "object",
+			"allOf": [
+				{
+					"$ref": "../animation/dynamic/shortNameProperty.json"
+				},
+				{
+					"$ref": "../animationController/dynamic/shortNameProperty.json"
+				},
+				{
+					"patternProperties": {
+						".*": {
+							"$ref": "../general/reference/serverAnimation.json"
+						}
+					}
 				}
-			}
+			]
 		},
 		"scripts": {
 			"properties": {

@@ -1,0 +1,5 @@
+{
+	"type": "properties",
+	"generateFile": "particle/dynamic/shortNameProperty.json",
+	"script": "return getCacheDataFor('particle', undefined, 'identifier').then(ids => (ids || []).map(id => id.split(':').pop()))"
+}
