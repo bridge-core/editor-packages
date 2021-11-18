@@ -48,9 +48,19 @@
 		],
 
 		// From 1.17.40 we now use official types provided by Mojang
+		// 1.17.40
 		[
 			"types/gameTest/v1.17.40.d.ts",
-			{ "targetVersion": [">=", "v1.17.40"] }
+			{ "targetVersion": ["=", "v1.17.40"] }
+		],
+		[
+			"types/gameTest/v1.17.40.d.ts",
+			{ "targetVersion": ["=", "v1.18.0"] }
+		],
+		// 1.18.10
+		[
+			"types/gameTest/v1.18.10.d.ts",
+			{ "targetVersion": [">=", "v1.18.10"] }
 		]
 	],
 
