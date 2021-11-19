@@ -8,7 +8,11 @@
 			"$ref": "../../../general/degree.json"
 		},
 		"sway_amplitude": {
+			"description": "Strength of the sway movement.",
 			"type": "number"
+		},
+		"sway_frequency": {
+			"description": "Multiplier for the frequency of the sway movement."
 		}
 	}
 }

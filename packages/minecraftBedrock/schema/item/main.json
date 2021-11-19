@@ -89,6 +89,26 @@
 					"$ref": "/data/packages/minecraftBedrock/schema/item/v1.10.0/main.json"
 				}
 			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": [
+							"1.18.10"
+						]
+					}
+				}
+			},
+			"then": {
+				"$ref": "../project/experimentalGameplay/holidayCreatorFeatures.json",
+				"then": {
+					"$ref": "/data/packages/minecraftBedrock/schema/item/v1.18.10/main.json"
+				},
+				"else": {
+					"$ref": "/data/packages/minecraftBedrock/schema/item/v1.10.0/main.json"
+				}
+			}
 		}
 	]
 }

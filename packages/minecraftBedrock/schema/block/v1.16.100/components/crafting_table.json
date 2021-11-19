@@ -2,21 +2,19 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"type": "object",
-	"description": "Makes this block a crafting table",
+	"description": "Describes the component of a custom crafting table. This component supports only 'recipe_shaped' and 'recipe_shapeless' typed recipes and not others like 'recipe_furnace' or 'recipe_brewing_mix'. If there are two recipes for one item, the recipe book will pick the first that was parsed. If two input recipes are the same, crafting may assert and the resulting item may vary.",
 	"properties": {
 		"custom_description": {
-			"description": "Crafting table name",
+			"description": "Defines the name in the UI of this table. If not specified, the name of the block will be used.",
 			"type": "string"
 		},
 		"grid_size": {
-			"description": "Recipe grid size",
-			"enum": [
-				3
-			]
+			"description": "Recipe grid size.",
+			"const": 3
 		},
 		"crafting_tags": {
 			"type": "array",
-			"description": "List of recipe tags",
+			"description": "Defines the name in the UI of this table. If not specified, the name of the block will be used.",
 			"items": {
 				"type": "string"
 			}

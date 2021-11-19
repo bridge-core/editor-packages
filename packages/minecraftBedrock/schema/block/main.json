@@ -1,6 +1,5 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"$id": "bridge.block",
 	"title": "Block",
 	"type": "object",
 	"required": ["format_version", "minecraft:block"],
@@ -57,6 +56,26 @@
 				"$ref": "../project/experimentalGameplay/holidayCreatorFeatures.json",
 				"then": {
 					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/main.json"
+				},
+				"else": {
+					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.0/main.json"
+				}
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": [
+							"1.18.10"
+						]
+					}
+				}
+			},
+			"then": {
+				"$ref": "../project/experimentalGameplay/holidayCreatorFeatures.json",
+				"then": {
+					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.18.10/main.json"
 				},
 				"else": {
 					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.0/main.json"

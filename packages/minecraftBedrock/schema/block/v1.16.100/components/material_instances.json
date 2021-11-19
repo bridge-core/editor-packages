@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"type": "object",
-	"description": "Maps face or material_instance names in a geometry file to an actual material instance. Material instance can either be a full material instance or a name to another already defined instance",
+	"description": "The material instances for a block. Maps face or material_instance names in a geometry file to an actual material instance. Material instance can either be a full material instance or a name to another already defined instance.",
 	"propertyNames": {
 		"anyOf": [
 			{
@@ -24,11 +24,11 @@
 	"additionalProperties": {
 		"properties": {
 			"texture": {
-				"description": "Name of a texture from the terrain_texture.json file",
+				"description": "Name of a texture from the terrain_texture.json file.",
 				"$ref": "../../../general/reference/terrainTexture.json"
 			},
 			"render_method": {
-				"description": "Method to use for rendering this face",
+				"description": "The render method to use.",
 				"enum": [
 					"opaque",
 					"blend",
@@ -37,9 +37,11 @@
 				]
 			},
 			"ambient_occlusion": {
+				"description": "Should this material have ambient occlusion applied when lighting.",
 				"type": "boolean"
 			},
 			"face_dimming": {
+				"description": "Should this material have ambient occlusion applied when lighting.",
 				"type": "boolean"
 			}
 		}

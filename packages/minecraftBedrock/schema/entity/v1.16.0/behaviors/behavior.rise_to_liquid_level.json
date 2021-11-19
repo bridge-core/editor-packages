@@ -7,12 +7,15 @@
 			"type": "number"
 		},
 		"liquid_y_offset": {
+			"description": "Target distance down from the liquid surface. i.e. Positive values move the target Y down.",
 			"type": "number"
 		},
 		"rise_delta": {
+			"description": "Movement up in Y per tick when below the liquid surface.",
 			"type": "number"
 		},
 		"sink_delta": {
+			"description": "Movement down in Y per tick when above the liquid surface.",
 			"type": "number"
 		}
 	}

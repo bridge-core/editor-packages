@@ -16,6 +16,7 @@
 			"type": "number"
 		},
 		"entity_filter": {
+			"description": "The set of entities that are valid to apply the mob effect to.",
 			"$ref": "../../general/filter.json"
 		}
 	}

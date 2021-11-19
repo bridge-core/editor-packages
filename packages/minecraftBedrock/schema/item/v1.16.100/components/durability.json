@@ -10,7 +10,7 @@
 			"minimum": 0
 		},
 		"damage_chance": {
-			"description": "Damage chance is the chance of this item losing durability. Could be an int or an int range with min and max value.",
+			"description": "Damage chance is the percentage chance of this item losing durability. Default is set to 100. Defined as an int range with min and max value.",
 			"type": "object",
 			"additionalProperties": false,
 			"properties": {

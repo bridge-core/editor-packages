@@ -27,6 +27,7 @@
 			"type": "number"
 		},
 		"hover_height": {
+			"description": "The height above the surface which the mob will try to maintain.",
 			"type": "array",
 			"maxItems": 2,
 			"minItems": 2,

@@ -2,7 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"type": "string",
-	"description": "Property describing the breathability of this block and whether it is treated as a solid or as air",
+	"description": "The breathing type of this block that affects the breathing state of mobs when they have their breathing points inside this block.",
 	"enum": [
 		"air",
 		"solid"

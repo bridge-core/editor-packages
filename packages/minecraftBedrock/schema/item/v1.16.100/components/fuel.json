@@ -5,8 +5,9 @@
 	"description": "Fuel component. Allows this item to be used as fuel in a furnace, similar to coal.",
 	"properties": {
 		"duration": {
-			"type": "integer",
-			"description": "How long in seconds will this fuel cook items for."
+			"type": "number",
+			"description": "How long in seconds will this fuel cook items for.",
+			"minimum": 0.05
 		}
 	}
 }

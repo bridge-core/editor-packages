@@ -226,6 +226,9 @@
 		"minecraft:behavior.move_to_lava": {
 			"$ref": "../../v1.16.0/behaviors/behavior.move_to_lava.json"
 		},
+		"minecraft:behavior.move_to_liquid": {
+			"$ref": "../../v1.16.0/behaviors/behavior.move_to_liquid.json"
+		},
 		"minecraft:behavior.move_to_random_block": {
 			"$ref": "../../v1.16.0/behaviors/behavior.move_to_random_block.json"
 		},

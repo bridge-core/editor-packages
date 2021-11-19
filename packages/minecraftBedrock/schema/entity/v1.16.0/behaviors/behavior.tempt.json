@@ -11,6 +11,7 @@
 			"type": "boolean"
 		},
 		"can_tempt_vertically": {
+			"description": "If true, vertical distance to the player will be considered when tempting.",
 			"type": "boolean"
 		},
 		"items": {
@@ -29,9 +30,11 @@
 			"type": "number"
 		},
 		"tempt_sound": {
+			"description": "Sound to play while the mob is being tempted.",
 			"type": "string"
 		},
 		"sound_interval": {
+			"description": "Range of random ticks to wait between tempt sounds.",
 			"properties": {
 				"range_min": {
 					"type": "number"
