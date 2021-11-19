@@ -5,7 +5,7 @@
 			"$ref": "./food.json"
 		},
 		"minecraft:creative_category": {
-			"$ref": "./creative_category.json"
+			"$ref": "../../v1.17.20/components/creative_category.json"
 		},
 		"minecraft:can_destroy_in_creative": {
 			"$ref": "../../v1.16.100/components/can_destroy_in_creative.json"
