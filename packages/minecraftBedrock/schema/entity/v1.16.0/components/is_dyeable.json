@@ -1,5 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
 	"additionalProperties": false,
 	"description": "Allows dyes to be used on this entity to change its color.",
 	"properties": {
