@@ -60,6 +60,13 @@
 			"items": {
 				"type": "number"
 			}
+		},
+		"cooldown_type": {
+			"type": "string",
+			"enum": ["chorus_fruit"]
+		},
+		"cooldown_time": {
+			"type": "number"
 		}
 	}
 }

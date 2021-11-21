@@ -11,9 +11,9 @@
             "description": "The material type of the liquid block to find.",
             "type": "string",
             "enum": [
-                "any",
-                "water",
-                "lava"
+                "Any",
+                "Water",
+                "Lava"
             ]
         },
         "search_count": {

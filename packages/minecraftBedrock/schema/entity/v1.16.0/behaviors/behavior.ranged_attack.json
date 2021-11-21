@@ -52,6 +52,9 @@
 		},
 		"target_in_sight_time": {
 			"type": "number"
+		},
+		"swing": {
+			"type": "boolean"
 		}
 	}
 }

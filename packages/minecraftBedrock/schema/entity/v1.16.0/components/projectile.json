@@ -168,17 +168,23 @@
 								"duration": {
 									"type": "number"
 								},
-								"duration_easy": {
+								"durationeasy": {
 									"type": "number"
 								},
-								"duration_normal": {
+								"durationnormal": {
 									"type": "number"
 								},
-								"duration_hard": {
+								"durationhard": {
 									"type": "number"
 								},
 								"amplifier": {
 									"type": "number"
+								},
+								"ambient": {
+									"type":"boolean"
+								},
+								"visible": {
+									"type": "boolean"
 								}
 							}
 						},
@@ -355,7 +361,8 @@
 			"description": "If true, the projectile homes in to the nearest entity.",
 			"type": "boolean"
 		},
-		"destroyOnHurt": {
+		"destroy_on_hurt": {
+			"description": "If true, this entity will be destroyed when hit.",
 			"type": "boolean"
 		}
 	}

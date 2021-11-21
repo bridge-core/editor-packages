@@ -11,6 +11,7 @@
 			"type": "boolean"
 		},
 		"damage_sources": {
+			"description": "The list of Entity Damage Sources that will cause this mob to panic.",
 			"$ref": "../../../general/vanilla/damageType.json"
 		},
 		"ignore_mob_damage": {
@@ -24,6 +25,27 @@
 		"speed_multiplier": {
 			"description": "Movement speed multiplier of the mob when using this AI Goal.",
 			"type": "number"
+		},
+		"panic_sound": {
+			"type": "string"
+		},
+		"sound_interval": {
+			"anyOf": [
+				{
+					"type": "number"
+				},
+				{
+					"type": "object",
+					"properties": {
+						"range_min": {
+							"type": "number"
+						},
+						"range_max": {
+							"type": "number"
+						}
+					}
+				}
+			]
 		}
 	}
 }

@@ -33,6 +33,27 @@
 		},
 		"on_escape": {
 			"$ref": "../../general/eventDefinition.json"
+		},
+		"avoid_block_sound": {
+			"type": "string"
+		},
+		"sound_interval": {
+			"anyOf": [
+				{
+					"type": "number"
+				},
+				{
+					"type": "object",
+					"properties": {
+						"range_min": {
+							"type": "number"
+						},
+						"range_max": {
+							"type": "number"
+						}
+					}
+				}
+			]
 		}
 	}
 }

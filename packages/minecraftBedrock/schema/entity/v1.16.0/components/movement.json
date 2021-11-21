@@ -4,7 +4,22 @@
 	"description": "Defines the movement speed for the entity.",
 	"properties": {
 		"value": {
-			"type": "number"
+			"anyOf": [
+				{
+					"type": "number"
+				},
+				{
+					"type": "object",
+					"properties": {
+						"range_min": {
+							"type": "number"
+						},
+						"range_max": {
+							"type": "number"
+						}
+					}
+				}
+			]
 		},
 		"max": {
 			"type": "number"

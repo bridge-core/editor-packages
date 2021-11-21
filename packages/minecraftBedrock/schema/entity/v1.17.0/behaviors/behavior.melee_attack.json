@@ -76,6 +76,9 @@
 		},
 		"on_kill": {
 			"$ref": "../../general/eventDefinition.json"
+		},
+		"cooldown_time": {
+			"type": "number"
 		}
 	}
 }

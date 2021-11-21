@@ -13,12 +13,12 @@
 				"component_groups": {
 					"type": "array",
 					"items": {
-						"type": "string"
+						"$ref": "../../dynamic/componentGroupEnum.json"
 					}
 				}
 			}
 		},
-		"begin_transformation_sound": {
+		"begin_transform_sound": {
 			"description": "Sound to play when the transformation starts.",
 			"type": "string"
 		},

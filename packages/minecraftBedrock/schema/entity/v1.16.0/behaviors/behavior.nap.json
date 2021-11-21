@@ -7,18 +7,22 @@
 			"type": "number"
 		},
 		"cooldown_min": {
+			"description": "Maximum time in seconds the mob has to wait before using the goal again.",
 			"type": "number"
 		},
 		"cooldown_max": {
+			"description": "Maximum time in seconds the mob has to wait before using the goal again.",
 			"type": "number"
 		},
 		"mob_detect_dist": {
+			"description": "The block distance in x and z that will be checked for mobs that this mob detects.",
 			"type": "number"
 		},
 		"mob_detect_height": {
+			"description": "The block distance in y that will be checked for mobs that this mob detects.",
 			"type": "number"
 		},
-		"cap_nap_filters": {
+		"can_nap_filters": {
 			"$ref": "../../general/filter.json"
 		},
 		"wake_mob_exceptions": {

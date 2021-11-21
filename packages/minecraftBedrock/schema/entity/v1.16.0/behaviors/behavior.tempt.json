@@ -43,6 +43,10 @@
 					"type": "number"
 				}
 			}
+		},
+		"can_tempt_while_ridden": {
+			"description": "If true, the mob can be tempted even if it has a passenger (i.e. if being ridden).",
+			"type": "boolean"
 		}
 	}
 }

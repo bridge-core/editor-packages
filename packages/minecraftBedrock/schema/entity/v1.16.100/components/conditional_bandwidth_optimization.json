@@ -2,48 +2,78 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Defines the Conditional Spatial Update Bandwidth Optimizations of this entity.",
-	"properties": {
+	"definitions": {
 		"conditional_values": {
-			"type": "array",
-			"items": {
-				"type": "object",
-				"additionalProperties": false,
-				"properties": {
-					"max_dropped_ticks": {
-						"type": "number"
-					},
-					"max_optimized_distance": {
-						"type": "number"
-					},
-					"use_motion_prediction_hints": {
-						"type": "boolean"
-					},
-					"conditional_values": {
-						"type": "array",
-						"items": {
-							"$ref": "../../general/filter.json"
-						}
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"max_dropped_ticks": {
+					"description": "In relation to the optimization value, determines the maximum ticks spatial update packets can be not sent.",
+					"type": "number"
+				},
+				"max_optimized_distance": {
+					"description": "The maximum distance considered during bandwidth optimizations. Any value below the max is interpolated to find optimization, and any value greater than or equal to this max results in max optimization.",
+					"type": "number"
+				},
+				"use_motion_prediction_hints": {
+					"description": "When set to true, smaller motion packets will be sent during drop packet intervals, resulting in the same amount of packets being sent as without optimizations but with much less data being sent. This should be used when actors are travelling very quickly or teleporting to prevent visual oddities.",
+					"type": "boolean"
+				},
+				"conditional_values": {
+					"type": "array",
+					"items": {
+						"$ref": "../../general/filter.json"
 					}
 				}
 			}
 		},
 		"default_values": {
-			"type": "array",
-			"items": {
-				"type": "object",
-				"additionalProperties": false,
-				"properties": {
-					"max_dropped_ticks": {
-						"type": "number"
-					},
-					"max_optimized_distance": {
-						"type": "number"
-					},
-					"use_motion_prediction_hints": {
-						"type": "boolean"
-					}
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"max_dropped_ticks": {
+					"description": "In relation to the optimization value, determines the maximum ticks spatial update packets can be not sent.",
+					"type": "number"
+				},
+				"max_optimized_distance": {
+					"description": "The maximum distance considered during bandwidth optimizations. Any value below the max is interpolated to find optimization, and any value greater than or equal to this max results in max optimization.",
+					"type": "number"
+				},
+				"use_motion_prediction_hints": {
+					"description": "The maximum distance considered during bandwidth optimizations. Any value below the max is interpolated to find optimization, and any value greater than or equal to this max results in max optimization.",
+					"type": "boolean"
 				}
 			}
+		}
+	},
+	"properties": {
+		"conditional_values": {
+			"description": "The object containing the conditional bandwidth optimization values.",
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/conditional_values"
+					}
+				},
+				{
+					"$ref": "#/definitions/conditional_values"
+				}
+			]
+		},
+		"default_values": {
+			"description": "The object containing the default bandwidth optimization values.",
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/default_values"
+					}
+				},
+				{
+					"$ref": "#/definitions/default_values"
+				}
+			]
 		}
 	}
 }

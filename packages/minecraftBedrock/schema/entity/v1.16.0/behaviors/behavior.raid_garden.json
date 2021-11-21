@@ -40,6 +40,9 @@
 		"speed_multiplier": {
 			"description": "Movement speed multiplier of the mob when using this AI Goal.",
 			"type": "number"
+		},
+		"search_height": {
+			"type": "number"
 		}
 	}
 }
