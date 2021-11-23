@@ -17,14 +17,14 @@
 		},
 		"event": {
 			"description": "This is an event that can be triggered from spawning.",
-			"$ref": "../../entity/dynamic/eventEnum.json"
+			"$ref": "../../../entity/dynamic/eventEnum.json"
 		},
 		"initial_event_count": {
 			"type": "number"
 		},
 		"initial_event": {
             "type": "string",
-			"$ref": "../../entity/dynamic/eventEnum.json"
+			"$ref": "../../../entity/dynamic/eventEnum.json"
 		}
 	}
 }

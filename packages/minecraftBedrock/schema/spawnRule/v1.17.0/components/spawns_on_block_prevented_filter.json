@@ -5,12 +5,12 @@
         {
             "type": "array",
             "items": {
-                "$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
+                "$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
             }
         },
         {
             "type": "string",
-            "$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
+            "$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
         }
     ]
 }

@@ -69,16 +69,16 @@
 							"enum": ["xyz", "zyx", "yxz", "xzy", "zxy", "yzx"]
 						},
 						"scatter_chance": {
-							"$ref": "../feature/v1.16.0/features.json#/properties/minecraft:scatter_feature/properties/scatter_chance"
+							"$ref": "../feature/v1.16.0/features/scatter_feature.json#/properties/scatter_chance"
 						},
 						"x": {
-							"$ref": "../feature/v1.16.0/features.json#/properties/minecraft:scatter_feature/properties/x"
+							"$ref": "../feature/v1.16.0/features/scatter_feature.json#/properties/x"
 						},
 						"y": {
-							"$ref": "../feature/v1.16.0/features.json#/properties/minecraft:scatter_feature/properties/y"
+							"$ref": "../feature/v1.16.0/features/scatter_feature.json#/properties/x"
 						},
 						"z": {
-							"$ref": "../feature/v1.16.0/features.json#/properties/minecraft:scatter_feature/properties/z"
+							"$ref": "../feature/v1.16.0/features/scatter_feature.json#/properties/x"
 						}
 					}
 				}

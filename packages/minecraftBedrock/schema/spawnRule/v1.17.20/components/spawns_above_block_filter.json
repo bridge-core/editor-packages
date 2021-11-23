@@ -7,7 +7,7 @@
 		"blocks": {
 			"type": "array",
 			"items": {
-				"$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
+				"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
 			}
 		},
 		"distance": {

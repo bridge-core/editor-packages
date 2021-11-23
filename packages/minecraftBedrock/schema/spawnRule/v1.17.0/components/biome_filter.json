@@ -22,10 +22,10 @@
 					"const": "has_biome_tag"
 				},
 				"operator": {
-					"$ref": "../../general/filter/operator.json"
+					"$ref": "../../../general/filter/operator.json"
 				},
 				"value": {
-					"$ref": "../../general/reference/biomeTag.json"
+					"$ref": "../../../general/reference/biomeTag.json"
 				}
 			}
 		},
