@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "description": "Generates a skeletal structure composed of bone blocks and parametric ore blocks.Succeeds if: The fossil is placed. Fails if: The fossil is not placed because it overlaps with another structure or because its bounding box has too many corners occupied by air or fluid.",
+    "additionalProperties": false,
+    "properties": {
+        "description": {
+			"additionalProperties": false,
+			"properties": {
+				"identifier": {
+					// Needs to strictly match file name - don't change reference to "general/reference..." schema
+					"$ref": "../../../project/prefixedFileIdentifierEnum.json"
+				}
+			}
+		},
+        "ore_block": {
+            "$ref": "../../general.json#/definitions/block_reference"
+        },
+        "max_empty_corners": {
+            "type": "integer"
+        }
+    }
+}
