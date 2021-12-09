@@ -25,6 +25,10 @@
         },
         {
             "$ref": "./v1.17.30/queryExperimental.json"
-        }
+        },
+		
+		{
+			"$ref": "./v1.18.10/query.json"
+		}
     ]
 }
