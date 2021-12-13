@@ -9,7 +9,7 @@
 		"experimentalGameplay": ["holidayCreatorFeatures"]
 	},
 	"additionalModels": {
-		"DEFAULT_IMAGE": "texture.png",
+		"DEFAULT_TEXTURE": "texture.png",
 		"MODEL_SAVE_PATH": ["resourcePack", "models/blocks/"],
 		"DEFAULT_MODEL": "geometry.json",
 		"PRESET_PATH": ""
@@ -47,7 +47,7 @@
 		[
 			"block.json",
 			"blocks/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "openFile": true, "packPath": "beahviorPack" }
+			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "openFile": true, "packPath": "behaviorPack" }
 		],
 		"presetScript/optionalModel.js",
 		"presetScript/blockImages.js"
