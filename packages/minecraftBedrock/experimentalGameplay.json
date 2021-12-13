@@ -1,10 +1,5 @@
 [
 	{
-		// < 1.18.0
-		"icon": "mdi-image-filter-hdr",
-		"id": "cavesAndCliffs"
-	},
-	{
 		"icon": "mdi-gift",
 		"id": "holidayCreatorFeatures"
 	},
@@ -33,3 +28,6 @@
 		"id": "educationEdition"
 	}
 ]
+
+// Removed toggles
+// { "icon": "mdi-image-filter-hdr", "id": "cavesAndCliffs" } < 1.18.0
