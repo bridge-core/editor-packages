@@ -3,7 +3,7 @@
 	"particle_effect": {
 		"description": {
 			"identifier": "",
-			"basic_render_parameters": ""
+			"basic_render_parameters": {}
 		},
 		"components": {}
 	}
