@@ -9,6 +9,8 @@
     "enum": [
         "query.is_item_name_any",
         "query.is_name_any",
-        "query.is_owner_identifier_any"
+        "query.is_owner_identifier_any",
+        "query.is_croaking",
+        "query.is_eating_mob"
     ]
 }

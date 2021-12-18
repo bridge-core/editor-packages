@@ -24,10 +24,17 @@
 		"id": "experimentalMolangFeatures"
 	},
 	{
+		"icon": "mdi-pine-tree",
+		"id": "theWildUpdate"
+	},
+	{
 		"icon": "mdi-school-outline",
 		"id": "educationEdition"
 	}
 ]
 
-// Removed toggles
-// { "icon": "mdi-image-filter-hdr", "id": "cavesAndCliffs" } < 1.18.0
+/**
+ * Removed toggles:
+ * { "icon": "mdi-image-filter-hdr", "id": "cavesAndCliffs" } < 1.18.0
+ *
+*/

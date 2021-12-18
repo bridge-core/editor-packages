@@ -13,6 +13,7 @@
 		"slot.inventory",
 		"slot.saddle",
 		"slot.weapon.mainhand",
-		"slot.weapon.offhand"
+		"slot.weapon.offhand",
+		"slot.equippable"
 	]
 }
