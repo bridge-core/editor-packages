@@ -40,13 +40,12 @@
 					"upcomingCreatorFeatures",
 					"enableGameTestFramework",
 					"experimentalMolangFeatures",
-					"educationEdition"
+					"educationEdition",
+					"theWildUpdate"
 				]
 			},
-			"patternProperties": {
-				"cavesAndCliffs|holidayCreatorFeatures|creationOfCustomBiomes|additionalModdingCapabilities|upcomingCreatorFeatures|enableGameTestFramework|experimentalMolangFeatures": {
-					"type": "boolean"
-				}
+			"additionalProperties": {
+				"type": "boolean"
 			}
 		},
 		"namespace": {
