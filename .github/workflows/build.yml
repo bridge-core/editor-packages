@@ -35,6 +35,7 @@ jobs:
                   cd ./editor-packages
                   deno run -A --import-map=importMap.json ./scripts/build.ts
                   mv packages.zip ../editor/public
+                  mv dataPackage.ts ../editor/src/utils/app
 
             - name: Commit files ✅
               run: |
