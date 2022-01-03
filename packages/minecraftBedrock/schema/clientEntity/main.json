@@ -1,7 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"title": "Client Entity",
-	"$id": "bridge.clientEntity",
 	"type": "object",
 
 	"allOf": [

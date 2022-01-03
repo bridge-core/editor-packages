@@ -1,6 +1,5 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"$id": "bridge.serverAnimationController",
 	"title": "Server Animation Controller",
 	"required": ["format_version"],
 	"properties": {
@@ -12,7 +11,9 @@
 			"patternProperties": {
 				"^controller.animation\\..+$": {
 					"properties": {
-						"initial_state": { "$ref": "./dynamic/currentContext/stateEnum.json" },
+						"initial_state": {
+							"$ref": "./dynamic/currentContext/stateEnum.json"
+						},
 						"states": {
 							"patternProperties": {
 								".+": {

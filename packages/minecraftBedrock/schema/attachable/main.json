@@ -3,7 +3,6 @@
 	"title": "Attachable",
 	"required": ["format_version", "minecraft:attachable"],
 	"additionalProperties": false,
-	"$id": "bridge.attachable",
 	"properties": {
 		"format_version": {
 			"$ref": "../project/formatVersionEnum.json"
