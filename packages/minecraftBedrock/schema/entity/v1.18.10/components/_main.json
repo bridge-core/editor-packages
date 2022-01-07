@@ -1,6 +1,9 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"properties": {
+		"minecraft:interact": {
+			"$ref": "./interact.json"
+		},
 		"minecraft:block_climber": {
 			"$ref": "../../v1.17.10/components/block_climber.json"
 		},
@@ -228,9 +231,6 @@
 		},
 		"minecraft:instant_despawn": {
 			"$ref": "../../v1.16.0/components/instant_despawn.json"
-		},
-		"minecraft:interact": {
-			"$ref": "../../v1.16.0/components/interact.json"
 		},
 		"minecraft:inventory": {
 			"$ref": "../../v1.16.0/components/inventory.json"
