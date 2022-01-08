@@ -4023,6 +4023,73 @@
 					]
 				}
 			]
+		},
+		{
+			"requires": {
+				"targetVersion": [">=", "1.18.10"]
+			},
+			"commands": [
+				{
+					"commandName": "damage",
+					"description": "Apply damage to the specified entities.",
+					"arguments": [
+						{
+							"argumentName": "target",
+							"type": "selector",
+							"description": "Specifies the target(s) to damage."
+						},
+						{
+							"argumentName": "amount",
+							"type": "number",
+							"description": "Specifies the value of damage to deal to."
+						},
+						{
+							"argumentName": "cause",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/vanilla/damageType.json"
+							},
+							"description": "Specifies the type of the damage. Affects death messages for example.",
+							"isOptional": true
+						}
+					]
+				},
+				{
+					"commandName": "damage",
+					"description": "Apply damage to the specified entities.",
+					"arguments": [
+						{
+							"argumentName": "target",
+							"type": "selector",
+							"description": "Specifies the target(s) to damage."
+						},
+						{
+							"argumentName": "amount",
+							"type": "number",
+							"description": "Specifies the value of damage to deal to."
+						},
+						{
+							"argumentName": "cause",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/vanilla/damageType.json"
+							},
+							"description": "Specifies the type of the damage. Affects death messages for example."
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["entity"]
+							}
+						},
+						{
+							"argumentName": "damager",
+							"type": "selector",
+							"description": "Specifies the damager who dealt the damage."
+						}
+					]
+				}
+			]
 		}
 	]
 }
