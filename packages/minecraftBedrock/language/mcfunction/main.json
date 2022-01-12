@@ -561,7 +561,7 @@
 							"description": "Specifies the in-game event for the entity.",
 							"type": "string",
 							"additionalData": {
-								"schemaReference": "/data/packages/minecraftBedrock/schema/entity/dynamic/eventReference.json"
+								"schemaReference": "/data/packages/minecraftBedrock/schema/entity/dynamic/eventEnum.json"
 							}
 						}
 					]
