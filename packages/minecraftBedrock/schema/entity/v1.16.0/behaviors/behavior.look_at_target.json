@@ -27,7 +27,7 @@
 				"type": "number"
 			}
 		},
-		"probablity": {
+		"probability": {
 			"description": "The probability of looking at the target. A value of 1.00 is 100%.",
 			"type": "number"
 		}
