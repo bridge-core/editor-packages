@@ -8,8 +8,6 @@
 		"fileContent": ["minecraft:fog"]
 	},
 
-	"target_version": "$project_target_version >= 1.16.100",
-
 	"schema": "file:///data/packages/minecraftBedrock/schema/fog/main.json",
 	"lightningCache": "fog.json",
 
