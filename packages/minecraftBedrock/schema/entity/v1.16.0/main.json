@@ -9,6 +9,7 @@
 					"$ref": "../description.json"
 				},
 				"components": {
+					"type": "object",
 					"allOf": [
 						{
 							"$ref": "./annotations/_main.json"

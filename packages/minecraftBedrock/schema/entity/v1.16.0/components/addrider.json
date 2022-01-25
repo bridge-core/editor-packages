@@ -9,7 +9,8 @@
 		},
 		"spawn_event": {
 			"description": "The spawn event that will be used when the riding entity is created.",
-			"type": "string"
+			"type": "string",
+			"$ref": "../../dynamic/currentContext/eventEnum.json"
 		}
 	}
 }
