@@ -149,6 +149,7 @@
 								"animate": {
 									"description": "Runs animations and animation controllers that are defines under 'animations'",
 									"type": "array",
+									"minItems": 1,
 									"items": {
 										"anyOf": [
 											{
