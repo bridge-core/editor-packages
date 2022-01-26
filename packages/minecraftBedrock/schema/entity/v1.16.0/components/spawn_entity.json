@@ -34,7 +34,7 @@
 							"spawn_event": {
 								"description": "Event to call when the entity is spawned.",
 								"type": "string",
-								"$ref": "../../../dynamic/currentContext/eventEnum.json"
+								"$ref": "../../dynamic/currentContext/eventEnum.json"
 							},
 							"spawn_item": {
 								"description": "Item identifier of the item to spawn.",
