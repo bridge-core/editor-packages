@@ -202,17 +202,6 @@
 						"multipleInstancesAllowed": "always",
 						"supportsNegation": true
 					}
-				},
-				// TODO: support "requires" for selector arguments
-				// 1.18.20.21+
-				{
-					"argumentName": "hasitem",
-					"description": "Filter target selection based on the items that target entities have in their inventory or are wearing.",
-					"type": "scoreData", // Support other json data arguments than just "scoreData"
-					"additionalData": {
-						"multipleInstancesAllowed": "never",
-						"supportsNegation": false
-					}
 				}
 			],
 			"commands": [
@@ -4106,6 +4095,17 @@
 			"requires": {
 				"targetVersion": [">=", "1.18.20"]
 			},
+			"selectorArguments": [
+				{
+					"argumentName": "hasitem",
+					"description": "Filter target selection based on the items that target entities have in their inventory or are wearing.",
+					"type": "scoreData", // Support other json data arguments than just "scoreData"
+					"additionalData": {
+						"multipleInstancesAllowed": "never",
+						"supportsNegation": false
+					}
+				}
+			],
 			"commands": [
 				{
 					"commandName": "volumearea",
