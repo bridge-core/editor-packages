@@ -88,7 +88,10 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.18.10"]
+						"enum": [
+							"1.18.10",
+							"1.18.20"
+						]
 					}
 				}
 			},

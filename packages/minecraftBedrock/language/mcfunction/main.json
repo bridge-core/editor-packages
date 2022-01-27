@@ -202,6 +202,17 @@
 						"multipleInstancesAllowed": "always",
 						"supportsNegation": true
 					}
+				},
+				// TODO: support "requires" for selector arguments
+				// 1.18.20.21+
+				{
+					"argumentName": "hasitem",
+					"description": "Filter target selection based on the items that target entities have in their inventory or are wearing.",
+					"type": "scoreData", // Support other json data arguments than just "scoreData"
+					"additionalData": {
+						"multipleInstancesAllowed": "never",
+						"supportsNegation": false
+					}
 				}
 			],
 			"commands": [
@@ -4086,6 +4097,453 @@
 							"argumentName": "damager",
 							"type": "selector",
 							"description": "Specifies the damager who dealt the damage."
+						}
+					]
+				}
+			]
+		},
+		{
+			"requires": {
+				"targetVersion": [">=", "1.18.20"]
+			},
+			"commands": [
+				{
+					"commandName": "volumearea",
+					"description": "Add, remove or list volumes in the current dimension.",
+					"arguments": [
+						{
+							"argumentName": "mode",
+							"type": "string",
+							"additionalData": {
+								"values": ["add"]
+							}
+						},
+						{
+							"argumentName": "identifier",
+							"description": "Identifier of the volume to be added.",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/volume/dynamic/identifierEnum.json"
+							}
+						},
+						{
+							"argumentName": "from",
+							"type": "$coordinates",
+							"description": "Where the volume should start in the world."
+						},
+						{
+							"argumentName": "to",
+							"type": "$coordinates",
+							"description": "Where the volume should end in the world."
+						},
+						{
+							"argumentName": "name",
+							"type": "string",
+							"isOptional": true,
+							"description": "The optional name of the volume to be used when removing it."
+						}
+					]
+				},
+				{
+					"commandName": "volumearea",
+					"description": "Add, remove or list volumes in the current dimension.",
+					"arguments": [
+						{
+							"argumentName": "mode",
+							"type": "string",
+							"additionalData": {
+								"values": ["list"]
+							}
+						},
+						{
+							"argumentName": "volumeDimension",
+							"type": "string",
+							"additionalData": {
+								"values": ["all-dimensions"]
+							}
+						}
+					]
+				},
+				{
+					"commandName": "volumearea",
+					"description": "Add, remove or list volumes in the current dimension.",
+					"arguments": [
+						{
+							"argumentName": "mode",
+							"type": "string",
+							"additionalData": {
+								"values": ["remove"]
+							}
+						},
+						{
+							"argumentName": "name",
+							"type": "string",
+							"isOptional": true,
+							"description": "The name of the volume to remove."
+						}
+					]
+				},
+				{
+					"commandName": "volumearea",
+					"description": "Add, remove or list volumes in the current dimension.",
+					"arguments": [
+						{
+							"argumentName": "mode",
+							"type": "string",
+							"additionalData": {
+								"values": ["remove"]
+							}
+						},
+						{
+							"argumentName": "position",
+							"type": "$coordinates",
+							"isOptional": true,
+							"description": "The position of the volume to be removed."
+						}
+					]
+				},
+				{
+					"commandName": "volumearea",
+					"description": "Add, remove or list volumes in the current dimension.",
+					"arguments": [
+						{
+							"argumentName": "mode",
+							"type": "string",
+							"additionalData": {
+								"values": ["remove_all"]
+							}
+						}
+					]
+				},
+				{
+					"commandName": "loot",
+					"description": "Drops the given loot table into the specified inventory or into the world.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["spawn"]
+							}
+						},
+						{
+							"type": "$coordinates",
+							"argumentName": "position",
+							"description": "Specifies the position to spawn the loot table."
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["kill"]
+							}
+						},
+						{
+							"type": "selector",
+							"argumentName": "entity"
+						},
+						{
+							"argumentName": "tool",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/item_identifiers"
+							},
+							"isOptional": true
+						}
+					]
+				},
+				{
+					"commandName": "loot",
+					"description": "Drops the given loot table into the world.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["spawn"]
+							}
+						},
+						{
+							"type": "$coordinates",
+							"argumentName": "position",
+							"description": "Specifies the position to spawn the loot table."
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["kill"]
+							}
+						},
+						{
+							"type": "selector",
+							"argumentName": "entity"
+						},
+						{
+							"argumentName": "slot",
+							"type": "string",
+							"additionalData": {
+								"values": ["mainhand", "offhand"]
+							},
+							"isOptional": true
+						}
+					]
+				},
+				{
+					"commandName": "loot",
+					"description": "Drops the given loot table into the specified inventory or into the world.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["give"]
+							}
+						},
+						{
+							"type": "$coordinates",
+							"argumentName": "position",
+							"description": "Specifies the position to spawn the loot table."
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["kill"]
+							}
+						},
+						{
+							"type": "selector",
+							"argumentName": "entity"
+						},
+						{
+							"argumentName": "tool",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/item_identifiers"
+							},
+							"isOptional": true
+						}
+					]
+				},
+				{
+					"commandName": "loot",
+					"description": "Drops the given loot table into the world.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["give"]
+							}
+						},
+						{
+							"type": "$coordinates",
+							"argumentName": "position",
+							"description": "Specifies the position to spawn the loot table."
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["kill"]
+							}
+						},
+						{
+							"type": "selector",
+							"argumentName": "entity"
+						},
+						{
+							"argumentName": "slot",
+							"type": "string",
+							"additionalData": {
+								"values": ["mainhand", "offhand"]
+							},
+							"isOptional": true
+						}
+					]
+				},
+				{
+					"commandName": "loot",
+					"description": "Drops the given loot table into the world.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["give"]
+							}
+						},
+						{
+							"type": "$coordinates",
+							"argumentName": "position",
+							"description": "Specifies the position to spawn the loot table."
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["loot"]
+							}
+						},
+						{
+							"type": "string",
+							"argumentName": "lootTable",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/lootTable/dynamic/shortLootTablePathEnum.json"
+							}
+						},
+						{
+							"argumentName": "tool",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/item_identifiers"
+							},
+							"isOptional": true
+						}
+					]
+				},
+				{
+					"commandName": "loot",
+					"description": "Drops the given loot table into the world.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["give"]
+							}
+						},
+						{
+							"type": "$coordinates",
+							"argumentName": "position",
+							"description": "Specifies the position to spawn the loot table."
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["loot"]
+							}
+						},
+						{
+							"type": "string",
+							"argumentName": "lootTable",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/lootTable/dynamic/shortLootTablePathEnum.json"
+							}
+						},
+						{
+							"argumentName": "slot",
+							"type": "string",
+							"additionalData": {
+								"values": ["mainhand", "offhand"]
+							},
+							"isOptional": true
+						}
+					]
+				},
+				{
+					"commandName": "tickingarea",
+					"description": "Add, remove, or list ticking areas.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["add"]
+							}
+						},
+						{
+							"argumentName": "from",
+							"description": "Specifies the coordinates of opposite corners of a rectangular area used to define a loaded area.",
+							"type": "$coordinates"
+						},
+						{
+							"argumentName": "to",
+							"description": "Specifies the coordinates of opposite corners of a rectangular area used to define a loaded area.",
+							"type": "$coordinates"
+						},
+						{
+							"argumentName": "name",
+							"description": "Specifies an optional name for a ticking area.",
+							"type": "string",
+							"isOptional": true
+						},
+						{
+							"argumentName": "preload",
+							"type": "boolean",
+							"isOptional": true
+						}
+					]
+				},
+				{
+					"commandName": "tickingarea",
+					"description": "Add, remove, or list ticking areas.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["add"]
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["circle"]
+							}
+						},
+						{
+							"argumentName": "center",
+							"description": "Specifies the coordinates of the center point of a circular area used to define a ticking area.",
+							"type": "$coordinates"
+						},
+						{
+							"argumentName": "radius",
+							"description": "Specifies the radius of a circular ticking area as the number of chunks from the center to the edge of the circle.",
+							"type": "$coordinates"
+						},
+						{
+							"argumentName": "name",
+							"description": "Specifies an optional name for a ticking area.",
+							"type": "string",
+							"isOptional": true
+						},
+						{
+							"argumentName": "preload",
+							"type": "boolean",
+							"isOptional": true
+						}
+					]
+				},
+				{
+					"commandName": "tickingarea",
+					"description": "Add, remove, or list ticking areas.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["preload"]
+							}
+						},
+						{
+							"argumentName": "name",
+							"description": "The name of the ticking area to preload.",
+							"type": "string"
+						},
+						{
+							"argumentName": "preload",
+							"type": "boolean",
+							"isOptional": true
+						}
+					]
+				},
+				{
+					"commandName": "tickingarea",
+					"description": "Add, remove, or list ticking areas.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["preload"]
+							}
+						},
+						{
+							"argumentName": "position",
+							"description": "The position of the ticking area to preload.",
+							"type": "$coordinates"
+						},
+						{
+							"argumentName": "preload",
+							"type": "boolean",
+							"isOptional": true
 						}
 					]
 				}

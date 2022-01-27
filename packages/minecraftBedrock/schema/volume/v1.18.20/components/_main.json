@@ -1,0 +1,9 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "properties": {
+        "minecraft:bounds": { "$ref": "./components/bounds.json" },
+        "minecraft:on_actor_enter": { "$ref": "../../v1.17.30/on_actor_enter.json" },
+        "minecraft:on_actor_leave": { "$ref": "../../v1.17.30/on_actor_leave.json" },
+        "minecraft:fog": { "$ref": "../../v1.17.0/components/fog.json" }
+    }
+}

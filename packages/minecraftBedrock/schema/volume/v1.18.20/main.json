@@ -1,0 +1,23 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Volume",
+	"properties": {
+		"minecraft:volume": {
+			"additionalProperties": false,
+			"properties": {
+				"description": {
+					"additionalProperties": false,
+					"properties": {
+						"identifier": {
+							"description": "The unique identifier for this volume.",
+							"$ref": "../../general/reference/prefixedFileIdentifier.json"
+						}
+					}
+				},
+				"components": {
+					"$ref": "./components/_main.json"
+				}
+			}
+		}
+	}
+}
