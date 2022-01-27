@@ -2,3 +2,4 @@
 dist/
 .env
 packages.zip
+dataPackage.ts
