@@ -4,23 +4,45 @@
 	"description": "Creates a new armor set.",
 	"category": "fileType.item",
 	"requires": {
-		"targetVersion": [">=", "1.16.100"],
-		"packTypes": ["behaviorPack", "resourcePack"],
-		"experimentalGameplay": ["holidayCreatorFeatures"]
+		"targetVersion": [
+			">=",
+			"1.16.100"
+		],
+		"packTypes": [
+			"behaviorPack",
+			"resourcePack"
+		],
+		"experimentalGameplay": [
+			"holidayCreatorFeatures"
+		]
 	},
 	"additionalModels": {
 		"PRESET_PATH": ""
 	},
 	"fields": [
 		[
-			"Identifier",
+			"Identifier (e.g. \"iron\")",
 			"IDENTIFIER",
-			{ "validate": ["required", "alphanumeric", "lowercase"] }
+			{
+				"validate": [
+					"required",
+					"alphanumeric",
+					"lowercase"
+				]
+			}
 		],
-		["Display Name", "IDENTIFIER_NAME", { "validate": ["required"] }],
+		[
+			"Display Name (e.g. \"Iron\")",
+			"IDENTIFIER_NAME",
+			{
+				"validate": [
+					"required"
+				]
+			}
+		],
 		[
 			"Helmet",
-			"HELMET", 
+			"HELMET",
 			{
 				"type": "switch",
 				"default": true,
@@ -29,7 +51,7 @@
 		],
 		[
 			"Chestplate",
-			"CHESTPLATE", 
+			"CHESTPLATE",
 			{
 				"type": "switch",
 				"default": true,
@@ -38,7 +60,7 @@
 		],
 		[
 			"Leggings",
-			"LEGGINGS", 
+			"LEGGINGS",
 			{
 				"type": "switch",
 				"default": true,
@@ -47,7 +69,7 @@
 		],
 		[
 			"Boots",
-			"BOOTS", 
+			"BOOTS",
 			{
 				"type": "switch",
 				"default": true,
@@ -55,30 +77,55 @@
 			}
 		]
 	],
-
 	"createFiles": [
 		"./armorSelection.js",
 		[
 			"armor1.png",
 			"textures/models/armor/{{PRESET_PATH}}{{IDENTIFIER}}_1.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": [
+					"IDENTIFIER",
+					"PRESET_PATH"
+				],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"armor2.png",
 			"textures/models/armor/{{PRESET_PATH}}{{IDENTIFIER}}_2.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": [
+					"IDENTIFIER",
+					"PRESET_PATH"
+				],
+				"packPath": "resourcePack"
+			}
 		]
 	],
 	"expandFiles": [
 		[
 			"itemTexture.json",
 			"textures/item_texture.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": [
+					"IDENTIFIER",
+					"PROJECT_PREFIX",
+					"PRESET_PATH"
+				],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"en_US.lang",
 			"texts/en_US.lang",
-			{ "inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"], "packPath": "resourcePack" }
+			{
+				"inject": [
+					"IDENTIFIER",
+					"IDENTIFIER_NAME",
+					"PROJECT_PREFIX"
+				],
+				"packPath": "resourcePack"
+			}
 		]
 	]
 }
