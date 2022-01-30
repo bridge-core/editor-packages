@@ -5,22 +5,22 @@
             "$ref": "./fossil_feature.json"
         }, 
         "minecraft:partially_exposed_blob_feature": {
-            "$ref": "../../v1.18.0/partially_exposed_blob_feature.json"
+            "$ref": "../../v1.18.0/features/partially_exposed_blob_feature.json"
         },
         "minecraft:surface_relative_threshold_feature": {
-            "$ref": "../../v1.18.0/surface_relative_threshold_feature.json"
+            "$ref": "../../v1.18.0/features/surface_relative_threshold_feature.json"
         },
         "minecraft:ore_feature": {
-            "$ref": "../../v1.18.0/ore_feature.json"
+            "$ref": "../../v1.18.0/features/ore_feature.json"
         },
         "minecraft:cave_carver_feature": {
-            "$ref": "../../v1.18.0/cave_carver_feature.json"
+            "$ref": "../../v1.18.0/features/cave_carver_feature.json"
         },
         "minecraft:hell_cave_carver_feature": {
-            "$ref": "../../v1.18.0/hell_cave_carver_feature.json"
+            "$ref": "../../v1.18.0/features/hell_cave_carver_feature.json"
         },
         "minecraft:underwater_cave_carver_feature": {
-            "$ref": "../../v1.18.0/underwater_cave_carver_feature.json"
+            "$ref": "../../v1.18.0/features/underwater_cave_carver_feature.json"
         },
         "minecraft:catalyst_feature": {
             "$ref": "../../v1.17.30/features/catalyst_feature.json"
