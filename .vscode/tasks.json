@@ -13,6 +13,16 @@
 				"--import-map=importMap.json",
 				"./scripts/dev.ts"
 			]
+		},
+		{
+			"type": "deno",
+			"command": "run",
+			"label": "deno run: build-identifiers",
+			"args": [
+				"-A",
+				"--import-map=importMap.json",
+				"./scripts/schemaGeneration/main.ts"
+			]
 		}
 	]
 }
