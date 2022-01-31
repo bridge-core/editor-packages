@@ -105,15 +105,26 @@
 			"if": {
 				"properties": {
 					"format_version": {
+						"const": "1.18.10"
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.18.10/main.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
 						"enum": [
-							"1.18.10",
 							"1.18.20"
 						]
 					}
 				}
 			},
 			"then": {
-				"$ref": "./v1.18.10/main.json"
+				"$ref": "./v1.18.20/main.json"
 			}
 		}
 	]
