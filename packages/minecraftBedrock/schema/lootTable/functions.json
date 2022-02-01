@@ -429,12 +429,19 @@
 										"$ref": "../general/vanilla/enchantName.json"
 									},
 									"level": {
-										"type": "array",
-										"minItems": 2,
-										"maxItems": 2,
-										"items": {
-											"type": "number"
-										}
+										"anyOf": [
+											{
+												"type": "integer"
+											},
+											{
+												"type": "array",
+												"minItems": 2,
+												"maxItems": 2,
+												"items": {
+													"type": "integer"
+												}
+											}
+										]
 									}
 								}
 							}
