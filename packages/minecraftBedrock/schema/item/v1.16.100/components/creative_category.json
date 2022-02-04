@@ -5,7 +5,14 @@
 	"description": "The category for the item to be in the creative menu.",
 	"properties": {
 		"parent": {
-			"$ref": "../../general/itemGroups.json"
+			"anyOf": [
+				{
+					"$ref": "../../../general/vanilla/itemGroup.json"
+				},
+				{
+					"$ref": "../../../general/vanilla/creativeCategory.json"
+				}
+			]
 		}
 	}
 }
