@@ -5,7 +5,14 @@
 	"description": "The category and item group for the item.",
 	"properties": {
 		"group": {
-			"$ref": "../../../general/vanilla/itemGroup.json"
+			"anyOf": [
+				{
+					"$ref": "../../../general/vanilla/creativeCategory.json"
+				},
+				{
+					"$ref": "../../../general/vanilla/itemGroup.json"
+				}
+			]
 		},
 		"category": {
 			"$ref": "../../../general/vanilla/creativeCategory.json"
