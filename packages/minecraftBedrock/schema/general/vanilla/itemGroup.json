@@ -9,12 +9,6 @@
 		{
 			"type": "string",
 			"enum": [
-				"nature",
-				"construction",
-				"items",
-				"equipment",
-				"none",
-				"commands",
 				"itemGroup.name.anvil",
 				"itemGroup.name.arrow",
 				"itemGroup.name.axe",
