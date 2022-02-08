@@ -7,6 +7,9 @@
 		},
 		{
 			"$ref": "../vanilla/terrainTexture.json"
+		},
+		{
+			"$ref": "../../flipbookTexture/dynamic/textureEnum.json"
 		}
 	]
 }
