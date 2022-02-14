@@ -4,6 +4,9 @@
 		"minecraft:creative_category": {
 			"$ref": "./creative_category.json"
 		},
+		"minecraft:item_storage": {
+			"$ref": "../../v1.16.100/components/item_storage.json"
+		},
 		"minecraft:can_destroy_in_creative": {
 			"$ref": "../../v1.16.100/components/can_destroy_in_creative.json"
 		},

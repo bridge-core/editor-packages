@@ -1,6 +1,9 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"properties": {
+		"minecraft:item_storage": {
+			"$ref": "./item_storage.json"
+		},
 		"minecraft:can_destroy_in_creative": {
 			"$ref": "./can_destroy_in_creative.json"
 		},

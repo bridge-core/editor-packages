@@ -2,7 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"properties": {
 		"minecraft:item_storage": {
-			"$ref": "./item_storage.json"
+			"$ref": "../../v1.16.100/components/item_storage.json"
 		},
         "minecraft:food": {
 			"$ref": "./food.json"
