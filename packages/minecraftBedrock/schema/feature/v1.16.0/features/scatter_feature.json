@@ -100,7 +100,7 @@
 			"description": "Named reference of feature to be placed.",
 			"type": "array",
 			"items": {
-				"$ref": "../../../general/reference/feature.json"
+				"$ref": "../../../general/reference/identifiers.json#/definitions/feature_identifiers"
 			}
 		}
 	}

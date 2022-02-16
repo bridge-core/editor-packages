@@ -27,7 +27,7 @@
 			"$ref": "../../general.json#/definitions/block_reference"
 		},
 		"growth_feature": {
-			"$ref": "../../../general/reference/feature.json"
+			"$ref": "../../../general/reference/identifiers.json#/definitions/feature_identifiers"
 		},
 		"surface": {
 			"$ref": "../../general.json#/definitions/block_reference"

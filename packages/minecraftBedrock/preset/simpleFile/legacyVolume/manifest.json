@@ -4,8 +4,11 @@
 	"description": "Creates a blank volume.",
 	"category": "fileType.simpleFile",
 	"requires": {
-		"targetVersion": [">=", "1.18.20"],
-		"packTypes": ["behaviorPack"],
+		"targetVersion": {
+			"min": "1.17.0",
+			"max": "1.18.10"
+		},
+		"packTypes": ["worldTemplate"],
 		"experimentalGameplay": ["upcomingCreatorFeatures"]
 	},
 	"additionalModels": {
@@ -23,7 +26,7 @@
 		[
 			"volume.json",
 			"{{PRESET_PATH}}{{FILE_NAME}}.json",
-			{ "inject": ["FILE_NAME", "PRESET_PATH"], "openFile": true, "packPath": "behaviorPack" }
+			{ "inject": ["FILE_NAME", "PRESET_PATH"], "openFile": true, "packPath": "worldTemplate" }
 		]
 	]
 }

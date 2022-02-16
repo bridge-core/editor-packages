@@ -16,7 +16,7 @@
 			"description": "List of features to be placed in sequence. The output position of the previous feature is used as the input position to the next.",
 			"type": "array",
 			"items": {
-				"$ref": "../../../general/reference/feature.json"
+				"$ref": "../../../general/reference/identifiers.json#/definitions/feature_identifiers"
 			}
 		}
 	}

@@ -21,7 +21,7 @@
 				"properties": {
 					"places_feature": {
 						"description": "Feature to be placed.",
-						"$ref": "../../../general/reference/feature.json"
+						"$ref": "../../../general/reference/identifiers.json#/definitions/feature_identifiers"
 					},
 					"condition": {
 						"description": "Condition for placing associated Feature.",

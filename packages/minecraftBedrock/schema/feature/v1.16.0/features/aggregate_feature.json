@@ -20,7 +20,7 @@
 			"description": "Collection of features to be placed one by one. No guarantee of order. All features use the same input position.",
 			"type": "array",
 			"items": {
-				"$ref": "../../../general/reference/feature.json"
+				"$ref": "../../../general/reference/identifiers.json#/definitions/feature_identifiers"
 			}
 		}
 	}

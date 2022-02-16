@@ -24,7 +24,7 @@
 				"properties": {
 					"feature": {
 						"description": "Feature to be placed.",
-						"$ref": "../../../general/reference/feature.json"
+						"$ref": "../../../general/reference/identifiers.json#/definitions/feature_identifiers"
 					},
 					"area_dimensions": {
 						"description": "Dimensions (size) of the associated Feature.",

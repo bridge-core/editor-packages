@@ -52,6 +52,9 @@
 											"argumentName": {
 												"type": "string"
 											},
+											"isOptional": {
+												"type": "boolean"
+											},
 											"description": { "type": "string" },
 											"additionalData": {
 												"properties": {

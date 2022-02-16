@@ -2,5 +2,9 @@
 	{
 		"cacheKey": "featureIdentifier",
 		"path": "minecraft:feature_rules/description/places_feature"
+	},
+	{
+		"cacheKey": "identifier",
+		"path": "minecraft:feature_rules/description/identifier"
 	}
 ]

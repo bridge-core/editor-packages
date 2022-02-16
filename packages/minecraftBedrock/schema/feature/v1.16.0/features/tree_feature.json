@@ -125,7 +125,7 @@
 					"$ref": "../../general.json#/definitions/block_reference"
 				},
 				"log_decoration_feature": {
-					"$ref": "../../../general/reference/feature.json"
+					"$ref": "../../../general/reference/identifiers.json#/definitions/feature_identifiers"
 				},
 				"trunk_decoration": {
 					"additionalProperties": false,

@@ -25,7 +25,7 @@
 				"items": [
 					{
 						"description": "Named reference to a feature.",
-						"$ref": "../../../general/reference/feature.json"
+						"$ref": "../../../general/reference/identifiers.json#/definitions/feature_identifiers"
 					},
 					{
 						"description": "Weight used in random selection. Value is relative to other weights in the collection.",

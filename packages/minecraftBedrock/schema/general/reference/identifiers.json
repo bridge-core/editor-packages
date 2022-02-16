@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"definitions": {
 		"entity_identifiers": {
+			"type": "string",
 			"anyOf": [
 				{
 					"$ref": "../vanilla/identifiers.json#/definitions/entity_identifiers"
@@ -28,6 +29,7 @@
 			]
 		},
 		"block_identifiers": {
+			"type": "string",
 			"anyOf": [
 				{
 					"$ref": "../vanilla/identifiers.json#/definitions/block_identifiers"
@@ -45,6 +47,7 @@
 			]
 		},
 		"item_identifiers": {
+			"type": "string",
 			"anyOf": [
 				{
 					"$ref": "../vanilla/identifiers.json#/definitions/item_identifiers"
@@ -71,6 +74,7 @@
 			]
 		},
 		"particle_identifiers": {
+			"type": "string",
 			"anyOf": [
 				{
 					"$ref": "../vanilla/identifiers.json#/definitions/particle_identifiers"
@@ -87,6 +91,7 @@
 			]
 		},
 		"fog_identifiers": {
+			"type": "string",
 			"anyOf": [
 				{
 					"$ref": "../vanilla/identifiers.json#/definitions/fog_identifiers"
@@ -99,6 +104,28 @@
 				},
 				{
 					"$ref": "../../volume/dynamic/fogIdentifierEnum.json"
+				}
+			]
+		},
+		"feature_identifiers": {
+			"type": "string",
+			"anyOf": [
+				{
+					"$ref": "../../feature/dynamic/identifierEnum.json"
+				},
+				{
+					"$ref": "../vanilla/identifiers.json#/definitions/feature_identifiers"
+				}
+			]
+		},
+		"feature_rule_identifiers": {
+			"type": "string",
+			"anyOf": [
+				{
+					"$ref": "../vanilla/identifiers.json#/definitions/feature_rule_identifiers"
+				},
+				{
+					"$ref": "../../featureRule/dynamic/identifierEnum.json"
 				}
 			]
 		}

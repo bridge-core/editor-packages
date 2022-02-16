@@ -14,7 +14,7 @@
 		},
 		"places_feature": {
 			"description": "Named reference of feature to be placed.",
-			"$ref": "../../../general/reference/feature.json"
+			"$ref": "../../../general/reference/identifiers.json#/definitions/feature_identifiers"
 		},
 		"bounding_box_min": {
 			"description": "Dimensions of the Bounding Box.",

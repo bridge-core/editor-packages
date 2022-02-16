@@ -4546,6 +4546,45 @@
 							"isOptional": true
 						}
 					]
+				},
+				{
+					"commandName": "placefeature",
+					"description": "Places a feature or feature rule in the given chunk.",
+					"arguments": [
+						{
+							"argumentName": "featureName",
+							"description": "Feature to be placed.",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/feature_identifiers"
+							}
+						},
+						{
+							"argumentName": "position",
+							"description": "Position to place the feature at.",
+							"type": "$coordinates",
+							"isOptional": true
+						}
+					]
+				},
+				{
+					"commandName": "placefeature",
+					"description": "Places a feature or feature rule in the given chunk.",
+					"arguments": [
+						{
+							"argumentName": "featureRule",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/feature_rule_identifiers"
+							}
+						},
+						{
+							"argumentName": "position",
+							"description": "Position to place the feature at.",
+							"type": "$coordinates",
+							"isOptional": true
+						}
+					]
 				}
 			]
 		}

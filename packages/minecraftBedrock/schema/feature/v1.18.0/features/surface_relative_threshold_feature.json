@@ -16,7 +16,7 @@
         "feature_to_place": {
             "description": "Named reference of feature to be placed.",
             "type": "string",
-            "$ref": "../../../general/reference/feature.json"
+            "$ref": "../../../general/reference/identifiers.json#/definitions/feature_identifiers"
         },
         "minimum_distance_below_surface": {
             "type": "integer",

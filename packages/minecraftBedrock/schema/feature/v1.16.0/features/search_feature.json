@@ -13,7 +13,7 @@
 		},
 		"places_feature": {
 			"description": "Named reference of feature to be placed.",
-			"$ref": "../../../general/reference/feature.json"
+			"$ref": "../../../general/reference/identifiers.json#/definitions/feature_identifiers"
 		},
 		"search_volume": {
 			"description": "Axis-aligned bounding box that will be searched for valid placement positions. Expressed as offsets from the input position.",

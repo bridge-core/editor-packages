@@ -4,7 +4,9 @@
     "additionalProperties": false,
     "properties": {
         "targetVersion": {
-            "type": "array",
+            "anyOf": [
+                {
+                    "type": "array",
             "minItems": 2,
             "maxItems": 2,
             "items": [
@@ -15,6 +17,19 @@
                 {
                     "type": "string",
                     "description": "Version"
+                }
+            ]
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "min": {
+                            "type": "string"
+                        },
+                        "max": {
+                            "type": "string"
+                        }
+                    }
                 }
             ]
         },
