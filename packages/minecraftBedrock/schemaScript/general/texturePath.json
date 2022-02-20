@@ -1,0 +1,5 @@
+{
+	"type": "enum",
+	"generateFile": "project/texturePathEnum.json",
+	"script": "return getIndexedPaths('texture').then((paths) => paths.map((path) => path.replace(`${resolvePackPath('resourcePack')}/`, '').replace(/\\.png|\\.jpeg|\\.jpg|\\.tga/g, '')))"
+}
