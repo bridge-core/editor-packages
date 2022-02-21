@@ -1,6 +1,9 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"properties": {
+		"minecraft:behavior.go_home": {
+			"$ref": "./behavior.go_home.json"
+		},
 		"minecraft:behavior.lay_egg": {
 			"$ref": "../../../project/experimentalGameplay/theWildUpdate.json",
 			"then": {
@@ -159,9 +162,6 @@
 		},
 		"minecraft:behavior.follow_target_captain": {
 			"$ref": "../../v1.16.0/behaviors/behavior.follow_target_captain.json"
-		},
-		"minecraft:behavior.go_home": {
-			"$ref": "../../v1.16.0/behaviors/behavior.go_home.json"
 		},
 		"minecraft:behavior.guardian_attack": {
 			"$ref": "../../v1.16.0/behaviors/behavior.guardian_attack.json"

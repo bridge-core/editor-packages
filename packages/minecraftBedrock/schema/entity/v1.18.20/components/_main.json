@@ -1,11 +1,11 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"properties": {
+		"minecraft:interact": {
+			"$ref": "./interact.json"
+		},
 		"minecraft:shareables": {
 			"$ref": "./shareables.json"
-		},
-		"minecraft:interact": {
-			"$ref": "../../v1.18.10/components/interact.json"
 		},
 		"minecraft:block_climber": {
 			"$ref": "../../v1.17.10/components/block_climber.json"
