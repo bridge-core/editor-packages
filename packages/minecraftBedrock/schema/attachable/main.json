@@ -69,7 +69,7 @@
 							}
 						},
 						"queryable_geometry": {
-							"$ref": "../../general/reference/geometry.json"
+							"$ref": "../general/reference/geometry.json"
 						},
 						"scripts": {
 							"additionalProperties": false,
