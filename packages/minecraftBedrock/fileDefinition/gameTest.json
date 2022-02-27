@@ -60,7 +60,12 @@
 		// 1.18.10
 		[
 			"types/gameTest/v1.18.10.d.ts",
-			{ "targetVersion": [">=", "v1.18.10"] }
+			{ "targetVersion": ["=", "v1.18.10"] }
+		],
+		// 1.18.20
+		[
+			"types/gameTest/v1.18.20.d.ts",
+			{ "targetVersion": [">=", "v1.18.20"] }
 		]
 	],
 
