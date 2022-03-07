@@ -3,6 +3,7 @@
 	"icon": "mdi-cube-outline",
 	"description": "Creates a new, basic block.",
 	"category": "fileType.block",
+	"showIfDisabled": false,
 	"requires": {
 		"targetVersion": [">=", "1.16.100"],
 		"packTypes": ["behaviorPack", "resourcePack"],

@@ -3,6 +3,7 @@
 	"icon": "mdi-sword",
 	"description": "Creates a new, blank item.",
 	"category": "fileType.item",
+	"showIfDisabled": false,
 	"requires": {
 		"targetVersion": [">=", "1.10.0"],
 		"packTypes": ["behaviorPack", "resourcePack"],

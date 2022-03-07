@@ -3,6 +3,7 @@
 	"icon": "mdi-shape-rectangle-plus",
 	"description": "Creates a blank volume.",
 	"category": "fileType.simpleFile",
+	"showIfDisabled": false,
 	"requires": {
 		"targetVersion": {
 			"min": "1.17.0",
