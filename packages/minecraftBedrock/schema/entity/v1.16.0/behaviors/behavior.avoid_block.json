@@ -7,37 +7,47 @@
 			"type": "number"
 		},
 		"tick_interval": {
+			"description": "Should start tick interval.",
 			"type": "number"
 		},
 		"search_range": {
+			"description": "Maximum distance to look for a block in xz.",
 			"type": "number"
 		},
 		"search_height": {
+			"description": "Maximum distance to look for a block in y.",
 			"type": "number"
 		},
 		"walk_speed_modifier": {
+			"description": "Modifier for walking speed. 1.0 means keep the regular speed, while higher numbers make the walking speed faster.",
 			"type": "number"
 		},
 		"sprint_speed_modifier": {
+			"description": "Modifier for sprint speed. 1.0 means keep the regular speed, while higher numbers make the sprint speed faster.",
 			"type": "number"
 		},
 		"target_selection_method": {
+			"description": "Block search method.",
 			"type": "string",
 			"const": "nearest"
 		},
 		"target_blocks": {
+			"description": "List of block types this mob avoids.",
 			"type": "array",
 			"items": {
 				"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
 			}
 		},
 		"on_escape": {
+			"description": "Escape trigger.",
 			"$ref": "../../general/eventDefinition.json"
 		},
 		"avoid_block_sound": {
+			"description": "The sound event to play when the mob is avoiding a block.",
 			"type": "string"
 		},
 		"sound_interval": {
+			"description": "The range of time in seconds to randomly wait before playing the sound again.",
 			"anyOf": [
 				{
 					"type": "number"

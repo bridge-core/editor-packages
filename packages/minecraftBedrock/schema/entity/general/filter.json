@@ -113,6 +113,7 @@
 						"has_mob_effect",
 						"has_nametag", // v1.18.0+
 						"has_ranged_weapon",
+						"has_silk_touch", // 1.18.30+
 						"has_tag",
 						"has_target",
 						"has_trade_supply",
@@ -364,6 +365,23 @@
 				"properties": {
 					"value": {
 						"description": "Returns true when the subject entity is holding a ranged weapon like a bow or crossbow.",
+						"type": "boolean"
+					}
+				}
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"test": {
+						"const": "has_silk_touch"
+					}
+				}
+			},
+			"then": {
+				"properties": {
+					"value": {
+						"description": "Tests if the subject is holding an item with silk touch.",
 						"type": "boolean"
 					}
 				}

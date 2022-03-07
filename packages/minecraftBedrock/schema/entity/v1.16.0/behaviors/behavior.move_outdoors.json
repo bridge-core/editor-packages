@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "description": "Allows this entity to move outdoors.",
+    "properties": {
+        "goal_radius": {
+            "description": "The radius away from the target block to count as reaching the goal.",
+            "type": "number"
+        },
+        "search_count": {
+            "description": "The amount of times to try finding a random outdoors position before failing.",
+            "type": "integer"
+        },
+        "search_height": {
+            "description": "The y range to search for an outdoors position for.",
+            "type": "integer"
+        },
+        "search_range": {
+            "description": "The x and z range to search for an outdoors position for.",
+            "type": "integer"
+        },
+        "speed_multiplier": {
+            "description": "The movement speed modifier to apply to the entity while it is moving outdoors.",
+            "type": "number"
+        },
+        "timeout_cooldown": {
+            "description": "The cooldown time in seconds before the goal can be reused after pathfinding fails.",
+            "type": "number"
+        }
+    }
+}

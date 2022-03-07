@@ -1,38 +1,50 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
+	"type": "object",
+	"description": "Allows the entity follow another entity. Both entities must be swimming [ie, in water].",
 	"properties": {
 		"priority": {
 			"type": "number"
 		},
 		"success_rate": {
+			"description": "Percent chance to start following another entity, if not already doing so. 1.0 = 100%.",
 			"type": "number"
 		},
 		"chance_to_stop": {
+			"description": "Percent chance to stop following the current entity, if they're riding another entity or they're not swimming. 1.0 = 100%.",
 			"type": "number"
 		},
 		"state_check_interval": {
+			"description": "Time (in seconds) between checks to determine if this entity should catch up to the entity being followed or match the direction of the entity being followed.",
 			"type": "number"
 		},
 		"catch_up_threshold": {
+			"description": "Distance, from the entity being followed, at which this entity will speed up to reach that entity.",
 			"type": "number"
 		},
 		"match_direction_threshold": {
+			"description": "Distance, from the entity being followed, at which this entity will try to match that entity's direction.",
 			"type": "number"
 		},
 		"catch_up_multiplier": {
+			"description": "The multiplier this entity's speed is modified by when matching another entity's direction.",
 			"type": "number"
 		},
 		"speed_multiplier": {
+			"description": "The multiplier this entity's speed is modified by when trying to catch up to the entity being followed.",
 			"type": "number"
 		},
 		"search_range": {
+			"description": "Radius around this entity to search for another entity to follow.",
 			"type": "number"
 		},
 		"stop_distance": {
+			"description": "Distance, from the entity being followed, at which this entity will stop following that entity.",
 			"type": "number"
 		},
 		"entity_types": {
+			"description": "Filters which types of entities are valid to follow.",
 			"type": "array",
 			"items": {
 				"type": "object",

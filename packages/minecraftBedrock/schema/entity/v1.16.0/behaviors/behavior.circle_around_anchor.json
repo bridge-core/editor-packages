@@ -1,13 +1,13 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
-	"description": "Allows the mob to move in a circle around a point or a target.",
+	"description": "Causes an entity to circle around an anchor point placed near a point or target.",
 	"properties": {
 		"priority": {
 			"type": "number"
 		},
 		"radius_range": {
-			"description": "Range of radius in blocks of the circle to move around.",
+			"description": "Horizontal distance from the anchor point this entity must stay within upon a successful radius adjustment.",
 			"type": "array",
 			"minItems": 2,
 			"maxItems": 2,
@@ -16,14 +16,15 @@
 			}
 		},
 		"radius_change": {
+			"description": "The number of blocks to increase the current movement radius by, upon successful 'radius_adjustment_chance'. If the current radius increases over the range maximum, the current radius will be set back to the range minimum and the entity will change between clockwise and counter-clockwise movement.",
 			"type": "number"
 		},
 		"radius_adjustment_chance": {
-			"description": "A random value to determine when to increase the size of the radius up to the maximum. This has a 1/value chance every tick to do so.",
+			"description": "Percent chance to determine how often to increase the size of the current movement radius around the anchor point. 1 = 100%.",
 			"type": "number"
 		},
 		"height_above_target_range": {
-			"description": "When the mob finds a target, the range of height in blocks above the target to start the anchor point.",
+			"description": "The number of blocks above the target that the next anchor point can be set. This value is used only when the entity is tracking a target.",
 			"type": "array",
 			"minItems": 2,
 			"maxItems": 2,
@@ -32,7 +33,7 @@
 			}
 		},
 		"height_offset_range": {
-			"description": "The range of height in blocks offset the mob can have from it's anchor point.",
+			"description": "Vertical distance from the anchor point this entity must stay within, upon a successful height adjustment.",
 			"type": "array",
 			"minItems": 2,
 			"maxItems": 2,
@@ -41,18 +42,19 @@
 			}
 		},
 		"height_adjustment_chance": {
-			"description": "A random value to determine when to change the height of the mob from the anchor point. This has a 1/value chance every tick to do so.",
+			"description": "Percent chance to determine how often to increase or decrease the current height around the anchor point. 1 = 100%.",
 			"type": "number"
 		},
 		"goal_radius": {
-			"description": "Distance in blocks within the mob considers it has reached the goal. This is the 'wiggle room' to stop the AI from bouncing back and forth trying to reach a specific spot.",
+			"description": "Maximum distance from the anchor-point in which this entity considers itself to have reached the anchor point. This is to prevent the entity from bouncing back and forth trying to reach a specific spot.",
 			"type": "number"
 		},
 		"angle_change": {
+			"description": "Number of degrees to change this entity's facing by, when the entity selects its next anchor point.",
 			"type": "number"
 		},
 		"speed_multiplier": {
-			"description": "Movement speed multiplier of the mob when using this AI Goal.",
+			"description": "Multiplies the speed at which this entity travels to its next desired position.",
 			"type": "number"
 		}
 	}

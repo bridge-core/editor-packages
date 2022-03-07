@@ -1,42 +1,49 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
-	"description": "Can only be used by the Ocelot. Allows it to perform the sneak and pounce attack.",
+	"description": "Allows an entity to attack by sneaking and pouncing.",
 	"properties": {
 		"priority": {
 			"type": "number"
 		},
 		"sneak_speed_multiplier": {
-			"description": "Multiplier for the sneaking speed. 1.0 means the ocelot will move at the speed it normally sneaks.",
+			"description": "Modifies the attacking entity's movement speed while sneaking.",
 			"type": "number"
 		},
 		"sprint_speed_multiplier": {
-			"description": "Multiplier for the running speed of this mob while using this attack.",
+			"description": "Modifies the attacking entity's movement speed while sprinting.",
 			"type": "number"
 		},
 		"walk_speed_multiplier": {
-			"description": "Multiplier for the walking speed while using this attack.",
+			"description": "Modifies the attacking entity's movement speed when not sneaking or sprinting, but still within attack range.",
 			"type": "number"
 		},
 		"cooldown_time": {
+			"description": "Time (in seconds) between attacks.",
 			"type": "number"
 		},
 		"x_max_rotation": {
+			"description": "Maximum rotation (in degrees), on the X-axis, this entity can rotate while trying to look at the target.",
 			"type": "number"
 		},
 		"y_max_head_rotation": {
+			"description": "Maximum rotation (in degrees), on the Y-axis, this entity can rotate its head while trying to look at the target.",
 			"type": "number"
 		},
 		"max_distance": {
+			"description": "Max distance from the target, this entity will use this attack behavior.",
 			"type": "number"
 		},
 		"max_sneak_range": {
+			"description": "Max distance from the target, this entity starts sneaking.",
 			"type": "number"
 		},
 		"max_sprint_range": {
+			"description": "Max distance from the target, this entity starts sprinting (sprinting takes priority over sneaking).",
 			"type": "number"
 		},
 		"reach_multiplier": {
+			"description": "Used with the base size of the entity to determine minimum target-distance before trying to deal attack damage.",
 			"type": "number"
 		}
 	}

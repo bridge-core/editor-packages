@@ -1,44 +1,98 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
-	"description": "Allows the mob to use the polar bear's melee attack.",
+	"description": "Allows an entity to attack using stomp AoE damage behavior.",
 	"properties": {
 		"priority": {
 			"type": "number"
 		},
 		"attack_once": {
-			"description": "If true, this mob will attack only one time.",
+			"description": "Allows the entity to use this attack behavior, only once EVER.",
 			"type": "boolean"
 		},
 		"attack_types": {
-			"description": "Defines the entity types this mob will attack.",
+			"description": "Defines the entity types this entity will attack.",
 			"type": "string"
 		},
 		"random_stop_interval": {
-			"description": "Defines the probability the mob will stop fighting. A value of 0 disables randomly stopping, while a value of 1 defines a 50% chance.",
+			"description": "This entity will have a 1 in N chance to stop it's current attack, where N = 'random_stop_interval'.",
 			"type": "number"
 		},
 		"reach_multiplier": {
-			"description": "Multiplier for how far outside its box the mob can reach its target (this can be used to simulate a mob with longer arms by making this bigger).",
+			"description": "Used with the base size of the entity to determine minimum target-distance before trying to deal attack damage.",
 			"type": "number"
 		},
 		"track_target": {
-			"description": "If true, this mob will chase after the target as long as it's a valid target.",
+			"description": "Allows the entity to track the attack target, even if the entity has no sensing.",
 			"type": "boolean"
 		},
 		"speed_multiplier": {
-			"description": "Movement speed multiplier of the mob when using this AI Goal.",
+			"description": "This multiplier modifies the attacking entity's speed when moving toward the target.",
 			"type": "number"
 		},
 		"require_complete_path": {
-			"description": "If true, this goal will only trigger if the mob can reach its target.",
+			"description": "Toggles (on/off) the need to have a full path from the entity to the target when using this melee attack behavior.",
 			"type": "boolean"
 		},
 		"stomp_range_multiplier": {
+			"description": "Multiplied with the base size of the entity to determine stomp AoE damage range.",
 			"type": "number"
 		},
 		"no_damage_range_multiplier": {
+			"description": "Multiplied with the final AoE damage range to determine a no damage range. The stomp attack will go on cooldown if target is in this no damage range.",
 			"type": "number"
+		},
+		"cooldown_time": {
+			"description": "Cooldown time (in seconds) between attacks.",
+			"type": "number"
+		},
+		"inner_boundary_time_increase": {
+			"description": "Time (in seconds) to add to attack path recalculation when the target is beyond the 'path_inner_boundary'.",
+			"type": "number"
+		},
+		"max_path_time": {
+			"description": "Maximum base time (in seconds) to recalculate new attack path to target (before increases applied).",
+			"type": "number"
+		},
+		"melee_fov": {
+			"description": "Field of view (in degrees) when using the sensing component to detect an attack target.",
+			"type": "number"
+		},
+		"min_path_time": {
+			"description": "Minimum base time (in seconds) to recalculate new attack path to target (before increases applied).",
+			"type": "number"
+		},
+		"on_attack": {
+			"description": "Defines the event to trigger when this entity successfully attacks.",
+			"$ref": "../../general/eventDefinition.json"
+		},
+		"outer_boundary_time_increase": {
+			"description": "Time (in seconds) to add to attack path recalculation when the target is beyond the 'path_outer_boundary'.",
+			"type": "number"
+		},
+		"path_fail_time_increase": {
+			"description": "Time (in seconds) to add to attack path recalculation when this entity cannot move along the current path.",
+			"type": "number"
+		},
+		"path_inner_boundary": {
+			"description": "Distance at which to increase attack path recalculation by 'inner_boundary_tick_increase'.",
+			"type": "number"
+		},
+		"path_outer_boundary": {
+			"description": "Distance at which to increase attack path recalculation by 'outer_boundary_tick_increase'.",
+			"type": "number"
+		},
+		"set_persistent": {
+			"description": "Allows the actor to be set to persist upon targeting a player.",
+			"type": "boolean"
+		},
+		"x_max_rotation": {
+			"description": "Maximum rotation (in degrees), on the X-axis, this entity can rotate while trying to look at the target.",
+			"$ref": "../../../general/degree.json"
+		},
+		"y_max_head_rotation": {
+			"description": "Maximum rotation (in degrees), on the Y-axis, this entity can rotate its head while trying to look at the target.",
+			"$ref": "../../../general/degree.json"
 		}
 	}
 }

@@ -22,6 +22,9 @@
 		"minecraft:behavior.breed": {
 			"$ref": "./behavior.breed.json"
 		},
+		"minecraft:behavior.celebrate_survive": {
+			"$ref": "./behavior.celebrate_survive.json"
+		},
 		"minecraft:behavior.celebrate": {
 			"$ref": "./behavior.celebrate.json"
 		},
@@ -73,6 +76,9 @@
 		"minecraft:behavior.dragondeath": {
 			"$ref": "./behavior.dragondeath.json"
 		},
+		"minecraft:behavior.dragonflaming": {
+			"$ref": "./behavior.dragonflaming.json"
+		},
 		"minecraft:behavior.drop_item_for": {
 			"$ref": "./behavior.drop_item_for.json"
 		},
@@ -93,6 +99,9 @@
 		},
 		"minecraft:behavior.explore_outskirts": {
 			"$ref": "./behavior.explore_outskirts.json"
+		},
+		"minecraft:behavior.fertilize_farm_block": {
+			"$ref": "./behavior.fertilize_farm_block.json"
 		},
 		"minecraft:behavior.find_cover": {
 			"$ref": "./behavior.find_cover.json"
@@ -187,11 +196,14 @@
 		"minecraft:behavior.move_indoors": {
 			"$ref": "./behavior.move_indoors.json"
 		},
+		"minecraft:behavior.move_outdoors": {
+			"$ref": "./behavior.move_outdoors.json"
+		},
 		"minecraft:behavior.move_through_village": {
 			"$ref": "./behavior.move_through_village.json"
 		},
-		"minecraft:behavior.move_towards_restiction": {
-			"$ref": "./behavior.move_towards_restiction.json"
+		"minecraft:behavior.move_towards_restriction": {
+			"$ref": "./behavior.move_towards_restriction.json"
 		},
 		"minecraft:behavior.move_towards_target": {
 			"$ref": "./behavior.move_towards_target.json"

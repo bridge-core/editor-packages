@@ -1,18 +1,21 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
-	"description": "Allows the mob to eat a block (for example, sheep eating grass).",
+	"description": "Allows the entity to consume a block, replace the eaten block with another block, and trigger an event as a result.",
 	"properties": {
 		"priority": {
 			"type": "number"
 		},
 		"success_chance": {
+			"description": "A molang expression defining the success chance the entity has to consume a block.",
 			"$ref": "../../../molang/embedded.json"
 		},
 		"time_until_eat": {
+			"description": "The amount of time (in seconds) it takes for the block to be eaten upon a successful eat attempt.",
 			"type": "number"
 		},
 		"eat_and_replace_block_pairs": {
+			"description": "A collection of pairs of blocks; the first ('eat_block') is the block the entity should eat, the second ('replace_block') is the block that should replace the eaten block.",
 			"type": "array",
 			"items": {
 				"type": "object",
@@ -28,7 +31,7 @@
 			}
 		},
 		"on_eat": {
-			"description": "Trigger to fire when the mob eats a block of grass.",
+			"description": "the event to trigger when the block eating animation has completed.",
 			"$ref": "../../general/eventDefinition.json"
 		}
 	}

@@ -1,0 +1,116 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"properties": {
+		"minecraft:entity": {
+			"required": ["description"],
+			"type": "object",
+			"allOf": [
+				{
+					"properties": {
+						"description": {
+							"$ref": "../v1.17.0/description.json"
+						},
+						"components": {
+							"allOf": [
+								{
+									"$ref": "./annotations/_main.json"
+								},
+								{
+									"$ref": "./behaviors/_main.json"
+								},
+								{
+									"$ref": "./components/_main.json"
+								},
+								{
+									"$ref": "../dynamic/customComponents.json"
+								}
+							]
+						},
+						"component_groups": {
+							"allOf": [
+								{
+									"$ref": "../../project/projectPrefix.json"
+								},
+								{
+									"additionalProperties": {
+										"allOf": [
+											{
+												"$ref": "./annotations/_main.json"
+											},
+											{
+												"$ref": "./behaviors/_main.json"
+											},
+											{
+												"$ref": "./components/_main.json"
+											},
+											{
+												"$ref": "/data/packages/minecraftBedrock/schema/entity/dynamic/customComponents.json"
+											}
+										]
+									}
+								}
+							]
+						},
+						"events": {
+							"type": "object",
+							"allOf": [
+								{
+									"$ref": "../dynamic/currentContext/eventReferenceProperty.json"
+								},
+								{
+									"$ref": "../general/builtInEvent.json"
+								},
+								{
+									"$ref": "../../project/projectPrefix.json"
+								},
+								{
+									"additionalProperties": {
+										"$ref": "./event.json"
+									}
+								}
+							]
+						},
+						"do_not_upgrade": {
+							"type": "object",
+							"additionalProperties": false
+						}
+					}
+				},
+				{
+					"$ref": "../../project/experimentalGameplay/upcomingCreatorFeatures.json",
+					"then": {
+						"properties": {
+							"permutations": {
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"condition": {
+											"$ref": "/data/packages/minecraftBedrock/schema/molang/embedded.json"
+										},
+										"components": {
+											"allOf": [
+												{
+													"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.18.10/components/_main.json"
+												},
+												{
+													"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.18.10/annotations/_main.json"
+												},
+												{
+													"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.18.10/behaviors/_main.json"
+												},
+												{
+													"$ref": "/data/packages/minecraftBedrock/schema/entity/dynamic/customComponents.json"
+												}
+											]
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			]
+		}
+	}
+}

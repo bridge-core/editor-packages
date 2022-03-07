@@ -39,12 +39,15 @@
 			"type": "number"
 		},
 		"knockback_filters": {
+			"description": "The list of conditions another entity must meet to be a valid target to apply knockback to.",
 			"$ref": "../../general/filter.json"
 		},
 		"damage_filters": {
+			"description": "The list of conditions another entity must meet to be a valid target to apply damage to.",
 			"$ref": "../../general/filter.json"
 		},
 		"on_roar_end": {
+			"description": "Event that is triggered when the roar ends.",
 			"$ref": "../../general/eventDefinition.json"
 		}
 	}

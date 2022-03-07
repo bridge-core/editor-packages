@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "additionalProperties": false,
+    "type": "object",
+    "description": "Allows this entity to use a flame-breath attack. Can only be used by the Ender Dragon.",
+    "properties": {
+        "cooldown_time": {
+            "description": "Time (in seconds), after roar, to breath flame.",
+            "type": "number"
+        },
+        "flame_time": {
+            "description": "Time (in seconds), after roar, to breath flame.",
+            "type": "number"
+        },
+        "ground_flame_count": {
+            "description": "Number of ground flame-breath attacks to use before flight-takeoff.",
+            "type": "integer"
+        },
+        "roar_time": {
+            "description": "Time (in seconds) to roar, before breathing flame.",
+            "type": "number"
+        }
+    }
+}

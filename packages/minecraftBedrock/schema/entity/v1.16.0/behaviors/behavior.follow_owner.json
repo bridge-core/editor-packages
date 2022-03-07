@@ -17,6 +17,10 @@
 		"stop_distance": {
 			"description": "The distance in blocks this mob will stop from its owner while following it.",
 			"type": "number"
+		},
+		"can_teleport": {
+			"description": "Specify if the mob can teleport to the player if it is too far away.",
+			"type": "boolean"
 		}
 	}
 }

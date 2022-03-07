@@ -1,17 +1,14 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
-	"description": "Allows the mob to use close combat melee attacks.",
+	"description": "Allows an entity to deal damage through a melee attack.",
 	"properties": {
 		"priority": {
 			"type": "number"
 		},
 		"attack_once": {
-			"description": "If true, this mob will attack only one time.",
+			"description": "Allows the entity to use this attack behavior, only once EVER.",
 			"type": "boolean"
-		},
-		"max_dist": {
-			"type": "number"
 		},
 		"melee_fov": {
 			"description": "The allowable FOV the actor will use to determine if it can make a valid melee attack.",
@@ -36,9 +33,6 @@
 		"track_target": {
 			"description": "If true, this mob will chase after the target as long as it's a valid target.",
 			"type": "boolean"
-		},
-		"target_dist": {
-			"type": "number"
 		},
 		"look_distance": {
 			"type": "number"
@@ -73,6 +67,46 @@
 		},
 		"on_attack": {
 			"$ref": "../../general/eventDefinition.json"
+		},
+		"inner_boundary_time_increase": {
+			"description": "Time (in seconds) to add to attack path recalculation when the target is beyond the 'path_inner_boundary'.",
+			"type": "number"
+		},
+		"max_path_time": {
+			"description": "Maximum base time (in seconds) to recalculate new attack path to target (before increases applied).",
+			"type": "number"
+		},
+		"min_path_time": {
+			"description": "Minimum base time (in seconds) to recalculate new attack path to target (before increases applied).",
+			"type": "number"
+		},
+		"outer_boundary_time_increase": {
+			"description": "Time (in seconds) to add to attack path recalculation when the target is beyond the 'path_outer_boundary'.",
+			"type": "number"
+		},
+		"path_fail_time_increase": {
+			"description": "Time (in seconds) to add to attack path recalculation when this entity cannot move along the current path.",
+			"type": "number"
+		},
+		"path_inner_boundary": {
+			"description": "Distance at which to increase attack path recalculation by 'inner_boundary_tick_increase'.",
+			"type": "number"
+		},
+		"path_outer_boundary": {
+			"description": "Distance at which to increase attack path recalculation by 'outer_boundary_tick_increase'.",
+			"type": "number"
+		},
+		"set_persistent": {
+			"description": "Allows the actor to be set to persist upon targeting a player.",
+			"type": "boolean"
+		},
+		"x_max_rotation": {
+			"description": "Maximum rotation (in degrees), on the X-axis, this entity can rotate while trying to look at the target.",
+			"type": "number"
+		},
+		"y_max_head_rotation": {
+			"description": "Maximum rotation (in degrees), on the Y-axis, this entity can rotate its head while trying to look at the target.",
+			"type": "number"
 		}
 	}
 }

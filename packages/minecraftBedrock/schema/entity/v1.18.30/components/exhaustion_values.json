@@ -1,0 +1,44 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "additionalProperties": false,
+    "type": "object",
+    "description": "Defines how much exhaustion each player action should take.",
+    "properties": {
+        "attack": {
+            "description": "Amount of exhaustion applied when attacking.",
+            "type": "number"
+        },
+        "damage": {
+            "description": "Amount of exhaustion applied when taking damage.",
+            "type": "number"
+        },
+        "heal": {
+            "description": "Amount of exhaustion applied when healed through food regeneration.",
+            "type": "number"
+        },
+        "jump": {
+            "description": "Amount of exhaustion applied when jumping.",
+            "type": "number"
+        },
+        "mine": {
+            "description": "Amount of exhaustion applied when mining.",
+            "type": "number"
+        },
+        "sprint": {
+            "description": "Amount of exhaustion applied when sprinting.",
+            "type": "number"
+        },
+        "sprint_jump": {
+            "description": "Amount of exhaustion applied when sprint jumping.",
+            "type": "number"
+        },
+        "swim": {
+            "description": "Amount of exhaustion applied when swimming.",
+            "type": "number"
+        },
+        "walk": {
+            "description": "Amount of exhaustion applied when walking.",
+            "type": "number"
+        }
+    }
+}

@@ -1,21 +1,26 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
-	"description": "Has the fish swim around when they can't pathfind.",
+	"type": "object",
+	"description": "Allows the entity to wander around while swimming, when not path-finding.",
 	"properties": {
 		"priority": {
 			"type": "number"
 		},
 		"speed_multiplier": {
-			"description": "Speed of the entity."
+			"description": "This multiplier modifies the entity's speed when wandering.",
+			"type": "number"
 		},
 		"interval": {
+			"description": "Percent chance to start wandering, when not path-finding. 1 = 100%.",
 			"type": "number"
 		},
 		"look_ahead": {
+			"description": "Distance to look ahead for obstacle avoidance, while wandering.",
 			"type": "number"
 		},
 		"wander_time": {
+			"description": "Amount of time (in seconds) to wander after wandering behavior was successfully started.",
 			"type": "number"
 		}
 	}

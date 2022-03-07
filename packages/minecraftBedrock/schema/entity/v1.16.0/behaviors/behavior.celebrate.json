@@ -1,5 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
+	"description": "Allows this entity to celebrate surviving a raid by making celebration sounds and jumping.",
 	"additionalProperties": false,
 	"properties": {
 		"priority": {
@@ -7,10 +8,11 @@
 		},
 		"celebration_sound": {
 			"type": "string",
-			"description": "The sound to occasionally play."
+			"description": "The sound event to trigger during the celebration."
 		},
 		"sound_interval": {
-			"description": "The range of time in seconds to randomly wait before playing the sound again.",
+			"description": "Minimum and maximum time between sound events (positive, in seconds).",
+			"type": "object",
 			"properties": {
 				"range_min": {
 					"type": "number"
@@ -21,7 +23,8 @@
 			}
 		},
 		"jump_interval": {
-			"description": "The range of time in seconds to randomly wait before jumping again.",
+			"description": "Minimum and maximum time between jumping (positive, in seconds).",
+			"type": "object",
 			"properties": {
 				"range_min": {
 					"type": "number"
@@ -32,7 +35,7 @@
 			}
 		},
 		"duration": {
-			"description": "The duration of the celebration (in seconds).",
+			"description": "The duration in seconds that the celebration lasts for.",
 			"type": "number"
 		},
 		"on_celebration_end_event": {

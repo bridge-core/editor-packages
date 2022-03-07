@@ -1,23 +1,42 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
-	"description": "Allows the villager to harvest nearby farms. Can only be used by Villagers.",
+	"description": "Allows the entity to search within an area for farmland with air above it. If found, the entity will replace the air block by planting a seed item from its inventory on the farmland block. This goal requires 'minecraft:inventory' and 'minecraft:navigation' to execute. This goal will not execute if the entity does not have an item in its inventory.",
 	"properties": {
 		"priority": {
 			"type": "number"
 		},
 		"speed_multiplier": {
-			"description": "Movement speed multiplier of the mob when using this AI Goal.",
+			"description": "Movement speed multiplier of the entity when using this Goal.",
 			"type": "number"
 		},
 		"max_seconds_before_search": {
+			"description": "The maximum amount of time in seconds that the goal can take before searching for the first harvest block. The time is chosen between 0 and this number.",
 			"type": "number"
 		},
 		"search_cooldown_max_seconds": {
+			"description": "The maximum amount of time in seconds that the goal can take before searching again, after failing to find a a harvest block already. The time is chosen between 0 and this number.",
 			"type": "number"
 		},
 		"seconds_until_new_task": {
+			"description": "The amount of time in seconds that the goal will cooldown after a successful reap/sow, before it can start again.",
 			"type": "number"
+		},
+		"goal_radius": {
+			"description": "Distance in blocks within the entity considers it has reached it's target position.",
+			"type": "number"
+		},
+		"search_count": {
+			"description": "The number of randomly selected blocks each tick that the entity will check within its search range and height for a valid block to move to. A value of 0 will have the mob check every block within range in one tick.",
+			"type": "integer"
+		},
+		"search_height": {
+			"description": "The Height in blocks the entity will search within to find a valid target position.",
+			"type": "integer"
+		},
+		"search_range": {
+			"description": "The distance in blocks the entity will search within to find a valid target position.",
+			"type": "integer"
 		}
 	}
 }

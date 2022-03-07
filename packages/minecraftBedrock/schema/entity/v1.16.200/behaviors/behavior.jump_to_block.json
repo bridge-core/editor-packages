@@ -1,29 +1,62 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
+	"type": "object",
+	"description": "Allows an entity to jump to another random block.",
 	"properties": {
 		"priority": {
 			"type": "number"
 		},
 		"search_width": {
-			"type": "number"
+			"description": "The width (in blocks, in range [2, 15]) of the search box, centered around the mob.",
+			"type": "integer"
 		},
 		"search_height": {
-			"type": "number"
+			"description": "The height (in blocks, in range [2, 15]) of the search box, centered around the mob.",
+			"type": "integer"
 		},
 		"minimum_path_length": {
+			"description": "The minimum length (in blocks) of the mobs path to a block, in order to consider jumping to it.",
 			"type": "number"
 		},
 		"scale_factor": {
+			"description": "The scale factor of the bounding box of the mob while it is jumping.",
 			"type": "number"
 		},
 		"cooldown_range": {
+			"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted jump.",
 			"type": "array",
 			"maxItems": 2,
 			"minItems": 2,
 			"items": {
 				"type": "number"
 			}
+		},
+		"forbidden_blocks": {
+			"description": "Blocks that the mob can't jump to.",
+			"type": "array",
+			"items": {
+				"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+			}
+		},
+		"max_velocity": {
+			"description": "The maximum velocity with which the mob can jump.",
+			"type": "number"
+		},
+		"minimum_distance": {
+			"description": "The minimum distance (in blocks) from the mob to a block, in order to consider jumping to it.",
+			"type": "integer"
+		},
+		"preferred_blocks": {
+			"description": "Blocks that the mob prefers jumping to.",
+			"type": "array",
+			"items": {
+				"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+			}
+		},
+		"preferred_blocks_chance": {
+			"description": "Chance (between 0.0 and 1.0) that the mob will jump to a preferred block, if in range. Only matters if preferred blocks are defined.",
+			"type": "number"
 		}
 	}
 }

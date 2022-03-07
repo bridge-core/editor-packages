@@ -7,7 +7,7 @@
 			"type": "number"
 		},
 		"items": {
-			"description": "The list of items that can be used to charge the held item.",
+			"description": "The list of items that can be used to charge the held item. This list is required and must have at least one item in it.",
 			"type": "array",
 			"items": {
 				"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"

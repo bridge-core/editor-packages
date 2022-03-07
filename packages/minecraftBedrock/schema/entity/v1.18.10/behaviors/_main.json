@@ -25,11 +25,11 @@
 		"minecraft:behavior.ram_attack": {
 			"$ref": "../../v1.16.200/behaviors/behavior.ram_attack.json"
 		},
-		"minecraft:behavior.move_towards_dwelling_restiction": {
-			"$ref": "../../v1.16.100/behaviors/behavior.move_towards_dwelling_restiction.json"
+		"minecraft:behavior.move_towards_dwelling_restriction": {
+			"$ref": "../../v1.16.100/behaviors/behavior.move_towards_dwelling_restriction.json"
 		},
-		"minecraft:behavior.move_towards_home_restiction": {
-			"$ref": "../../v1.16.100/behaviors/behavior.move_towards_home_restiction.json"
+		"minecraft:behavior.move_towards_home_restriction": {
+			"$ref": "../../v1.16.100/behaviors/behavior.move_towards_home_restriction.json"
 		},
 		"minecraft:behavior.send_event": {
 			"$ref": "../../v1.16.100/behaviors/behavior.send_event.json"
@@ -54,6 +54,9 @@
 		},
 		"minecraft:behavior.breed": {
 			"$ref": "../../v1.16.0/behaviors/behavior.breed.json"
+		},
+		"minecraft:behavior.celebrate_survive": {
+			"$ref": "../../v1.16.0/behaviors/behavior.celebrate_survive.json"
 		},
 		"minecraft:behavior.celebrate": {
 			"$ref": "../../v1.16.0/behaviors/behavior.celebrate.json"
@@ -106,6 +109,9 @@
 		"minecraft:behavior.dragondeath": {
 			"$ref": "../../v1.16.0/behaviors/behavior.dragondeath.json"
 		},
+		"minecraft:behavior.dragonflaming": {
+			"$ref": "../../v1.16.0/behaviors/behavior.dragonflaming.json"
+		},
 		"minecraft:behavior.drop_item_for": {
 			"$ref": "../../v1.16.0/behaviors/behavior.drop_item_for.json"
 		},
@@ -126,6 +132,9 @@
 		},
 		"minecraft:behavior.explore_outskirts": {
 			"$ref": "../../v1.16.0/behaviors/behavior.explore_outskirts.json"
+		},
+		"minecraft:behavior.fertilize_farm_block": {
+			"$ref": "../../v1.16.0/behaviors/behavior.fertilize_farm_block.json"
 		},
 		"minecraft:behavior.find_cover": {
 			"$ref": "../../v1.16.0/behaviors/behavior.find_cover.json"
@@ -211,11 +220,11 @@
 		"minecraft:behavior.move_indoors": {
 			"$ref": "../../v1.16.0/behaviors/behavior.move_indoors.json"
 		},
+		"minecraft:behavior.move_outdoors": {
+			"$ref": "../../v1.16.0/behaviors/behavior.move_outdoors.json"
+		},
 		"minecraft:behavior.move_through_village": {
 			"$ref": "../../v1.16.0/behaviors/behavior.move_through_village.json"
-		},
-		"minecraft:behavior.move_towards_restiction": {
-			"$ref": "../../v1.16.0/behaviors/behavior.move_towards_restiction.json"
 		},
 		"minecraft:behavior.move_towards_target": {
 			"$ref": "../../v1.16.0/behaviors/behavior.move_towards_target.json"

@@ -7,45 +7,56 @@
 			"type": "number"
 		},
 		"summon_choices": {
+			"description": "List of spells for the mob to use to summon entities.",
 			"type": "array",
 			"items": {
 				"type": "object",
 				"additionalProperties": false,
 				"properties": {
 					"do_casting": {
+						"description": "If true, the mob will do the casting animations and render spell particles.",
 						"type": "boolean"
 					},
 					"filters": {
 						"$ref": "../../general/filter.json"
 					},
 					"min_activation_range": {
+						"description": "Lower bound of the activation distance in blocks for this spell, must not be negative.",
 						"type": "number"
 					},
 					"max_activation_range": {
+						"description": "Upper bound of the activation distance in blocks for this spell, must not be negative.",
 						"type": "number"
 					},
 					"cooldown_time": {
+						"description": "Time in seconds the mob has to wait before using the spell again.",
 						"type": "number"
 					},
 					"weight": {
+						"description": "The weight of this spell. Controls how likely the mob is to choose this spell when casting one.",
 						"type": "number"
 					},
 					"cast_duration": {
+						"description": "Time in seconds the spell casting will take.",
 						"type": "number"
 					},
 					"particle_color": {
+						"description": "The color of the particles for this spell.",
 						"type": "string"
 					},
 					"start_sound_event": {
+						"description": "The sound event to play when using this spell.",
 						"type": "string"
 					},
-					"sequence": {
+					"sequence": { 
 						"type": "array",
+						"description": "List of steps for the spell.",
 						"items": {
 							"type": "object",
 							"additionalProperties": false,
 							"properties": {
 								"shape": {
+									"description": "The base shape of this step. Valid values are circle and line.",
 									"type": "string",
 									"enum": [
 										"circle",
@@ -53,30 +64,39 @@
 									]
 								},
 								"target": {
+									"description": "The target of the spell. This is where the spell will start (line will start here, circle will be centered here).",
 									"$ref": "../../../general/filter/subject.json"
 								},
 								"base_delay": {
+									"description": "Amount of time in seconds to wait before this step starts.",
 									"type": "number"
 								},
 								"delay_per_summon": {
+									"description": "Amount of time in seconds before each entity is summoned in this step.",
 									"type": "number"
 								},
 								"num_entities_spawned": {
+									"description": "Number of entities that will be spawned in this step.",
 									"type": "number"
 								},
 								"entity_type": {
+									"description": "The entity type of the entities we will spawn in this step.",
 									"$ref": "../../../general/reference/identifiers.json#/definitions/entity_identifiers"
 								},
 								"size": {
+									"description": "The base size of the entity.",
 									"type": "number"
 								},
 								"entity_lifespan": {
+									"description": "Amount of time in seconds that the spawned entity will be alive for. A value of -1.0 means it will remain alive for as long as it can.",
 									"type": "number"
 								},
 								"sound_event": {
+									"description": "The sound event to play for this step.",
 									"type": "string"
 								},
 								"summon_cap": {
+									"description": "Maximum number of summoned entities at any given time.",
 									"type": "number"
 								},
 								"summon_cap_radius": {

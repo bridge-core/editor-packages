@@ -14,6 +14,7 @@
 			"type": "boolean"
 		},
 		"attack_chance": {
+			"description": "The percentage chance that the entity has to attack aggressors of its village, where 1.0 = 100%.",
 			"type": "number"
 		}
 	}
