@@ -3,9 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to follow mobs that are in a caravan.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"speed_multiplier": {
 			"description": "Movement speed multiplier of the mob when using this AI Goal.",
 			"type": "number"

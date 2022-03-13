@@ -3,9 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to float around like the Ghast.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"float_duration": {
 			"description": "Range of time in seconds the mob will float around before landing and choosing to do something else.",
 			"type": "array",

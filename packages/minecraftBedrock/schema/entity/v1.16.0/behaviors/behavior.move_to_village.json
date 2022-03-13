@@ -3,9 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to move into a random location within a village.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"speed_multiplier": {
 			"type": "number"
 		},

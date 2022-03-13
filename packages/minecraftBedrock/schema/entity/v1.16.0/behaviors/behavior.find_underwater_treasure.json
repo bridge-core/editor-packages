@@ -3,9 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to move towards the nearest underwater ruin or shipwreck.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"search_range": {
 			"description": "The range that the mob will search for a treasure chest within a ruin or shipwreck to move towards.",
 			"type": "number"

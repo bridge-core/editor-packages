@@ -3,9 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to send an event to another mob.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"event_choices": {
 			"type": "array",
 			"items": {

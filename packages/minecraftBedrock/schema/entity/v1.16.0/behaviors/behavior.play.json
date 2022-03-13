@@ -3,9 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to play with other baby villagers. This can only be used by Villagers.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"speed_multiplier": {
 			"type": "number"
 		}

@@ -3,9 +3,7 @@
 	"additionalProperties": false,
 	"description": "Causes an entity to circle around an anchor point placed near a point or target.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"radius_range": {
 			"description": "Horizontal distance from the anchor point this entity must stay within upon a successful radius adjustment.",
 			"type": "array",

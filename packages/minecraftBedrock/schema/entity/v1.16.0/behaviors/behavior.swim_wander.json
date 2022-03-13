@@ -4,9 +4,7 @@
 	"type": "object",
 	"description": "Allows the entity to wander around while swimming, when not path-finding.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"speed_multiplier": {
 			"description": "This multiplier modifies the entity's speed when wandering.",
 			"type": "number"

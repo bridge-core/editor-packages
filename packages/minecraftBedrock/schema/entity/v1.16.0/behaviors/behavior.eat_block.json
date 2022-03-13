@@ -3,9 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the entity to consume a block, replace the eaten block with another block, and trigger an event as a result.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"success_chance": {
 			"description": "A molang expression defining the success chance the entity has to consume a block.",
 			"$ref": "../../../molang/embedded.json"

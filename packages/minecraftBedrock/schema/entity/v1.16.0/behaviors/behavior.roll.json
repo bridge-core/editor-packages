@@ -3,9 +3,7 @@
 	"additionalProperties": false,
 	"description": "This allows the mob to roll forward.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"probability": {
 			"description": "The probability that the mob will use the goal.",
 			"type": "number"

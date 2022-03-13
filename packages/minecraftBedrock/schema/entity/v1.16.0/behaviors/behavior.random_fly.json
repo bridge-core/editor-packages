@@ -3,9 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows a mob to randomly fly around.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"xz_dist": {
 			"description": "Distance in blocks on ground that the mob will look for a new spot to move to. Must be at least 1.",
 			"type": "number"

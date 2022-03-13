@@ -3,9 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows mob to move towards a random block.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"speed_multiplier": {
 			"type": "number"
 		},

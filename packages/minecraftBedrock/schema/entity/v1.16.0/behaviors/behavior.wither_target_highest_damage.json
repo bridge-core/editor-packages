@@ -3,9 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the wither to focus its attacks on whichever mob has dealt the most damage to it.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"entity_types": {
 			"description": "List of entity types the wither takes into account to find who dealt the most damage to it.",
 			"$ref": "../../general/entityType.json"

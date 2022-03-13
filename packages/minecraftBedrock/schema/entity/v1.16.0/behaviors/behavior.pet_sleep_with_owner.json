@@ -3,9 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the pet mob to move onto a bed with it's owner while sleeping.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"goal_radius": {
 			"description": "Distance in blocks within the mob considers it has reached the goal. This is the 'wiggle room' to stop the AI from bouncing back and forth trying to reach a specific spot.",
 			"type": "number"

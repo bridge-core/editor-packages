@@ -3,9 +3,7 @@
 	"additionalProperties": false,
 	"description": "Can only be used by Villagers. Allows the villagers to create paths around the village.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"speed_multiplier": {
 			"description": "Movement speed multiplier of the mob when using this AI Goal.",
 			"type": "number"

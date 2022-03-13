@@ -3,9 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the creeper to swell up when a player is nearby. It can only be used by Creepers.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"start_distance": {
 			"description": "This mob starts swelling when a target is at least this many blocks away.",
 			"type": "number"

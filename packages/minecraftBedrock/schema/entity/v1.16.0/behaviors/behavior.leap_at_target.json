@@ -3,9 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows monsters to jump at and attack their target. Can only be used by hostile mobs.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"set_persistent": {
 			"type": "boolean"
 		},

@@ -3,9 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to attack the player by summoning other entities.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"summon_choices": {
 			"description": "List of spells for the mob to use to summon entities.",
 			"type": "array",

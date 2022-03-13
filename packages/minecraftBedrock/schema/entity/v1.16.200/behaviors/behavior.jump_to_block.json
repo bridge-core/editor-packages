@@ -4,9 +4,7 @@
 	"type": "object",
 	"description": "Allows an entity to jump to another random block.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"search_width": {
 			"description": "The width (in blocks, in range [2, 15]) of the search box, centered around the mob.",
 			"type": "integer"

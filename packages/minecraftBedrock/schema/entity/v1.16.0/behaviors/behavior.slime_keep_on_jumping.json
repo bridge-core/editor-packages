@@ -4,9 +4,7 @@
 	"type": "object",
 	"description": "Allows the entity to continuously jump around like a slime.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"speed_multiplier": {
 			"description": "Determines the multiplier this entity's speed is modified by when jumping around.",
 			"type": "number"

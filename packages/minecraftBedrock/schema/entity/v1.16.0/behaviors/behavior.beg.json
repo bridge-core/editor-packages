@@ -3,9 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows this mob to look at and follow the player that holds food they like.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"look_distance": {
 			"description": "Distance in blocks the mob will beg from.",
 			"type": "number"

@@ -3,9 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to randomly break surface of the water.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"interval": {
 			"description": "A random value to determine when to randomly move somewhere. This has a 1/interval chance to choose this goal.",
 			"type": "number"

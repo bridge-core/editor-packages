@@ -3,9 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows this entity to move indoors.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"speed_multiplier": {
 			"description": "The movement speed modifier to apply to the entity while it is moving indoors.",
 			"type": "number"

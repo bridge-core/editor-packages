@@ -4,9 +4,7 @@
 	"type": "object",
 	"description": "Allows the entity go idle, if swimming. Entity must be in water.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"idle_time": {
 			"description": "Amount of time (in seconds) to stay idle.",
 			"type": "number"

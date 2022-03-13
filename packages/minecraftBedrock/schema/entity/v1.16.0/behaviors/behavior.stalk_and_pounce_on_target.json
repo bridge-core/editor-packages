@@ -3,9 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows a mob to stalk a target, then once within range pounce onto a target, on success the target will be attacked dealing damage defined by the attack component. On failure, the mob will risk getting stuck.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"set_persistent": {
 			"type": "boolean"
 		},

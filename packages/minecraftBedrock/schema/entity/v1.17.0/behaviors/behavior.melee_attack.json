@@ -3,9 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to use close combat melee attacks.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"attack_once": {
 			"description": "If true, this mob will attack only one time.",
 			"type": "boolean"

@@ -3,9 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to check for and pursue the nearest valid target.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"set_persistent": {
 			"type": "boolean"
 		},

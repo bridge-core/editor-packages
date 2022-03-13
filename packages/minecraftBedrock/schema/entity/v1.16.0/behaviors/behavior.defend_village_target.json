@@ -3,9 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to stay in the village and fight mobs hostile to the villagers.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"entity_types": {
 			"description": "List of entity types that this mob considers valid targets.",
 			"$ref": "../../general/entityType.json"

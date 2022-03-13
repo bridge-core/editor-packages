@@ -3,9 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows an entity to attack by using ranged shots. 'charge_shoot_trigger' must be greater than 0 to enable charged up burst-shot attacks.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"attack_interval": {
 			"description": "Alternative to 'attack_interval_min' & 'attack_interval_max'. Consistent reload-time (in seconds), when not using a charged shot. Does not scale with target-distance.",
 			"type": "number"

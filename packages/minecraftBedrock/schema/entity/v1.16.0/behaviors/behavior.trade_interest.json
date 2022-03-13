@@ -3,9 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to look at a player that is holding a tradable item.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"within_radius": {
 			"description": "Distance in blocks this mob can be interested by a player holding an item they like.",
 			"type": "number"

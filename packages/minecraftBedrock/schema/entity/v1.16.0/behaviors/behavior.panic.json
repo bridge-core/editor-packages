@@ -3,9 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to enter the panic state, which makes it run around and away from the damage source that made it enter this state.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"force": {
 			"description": "If true, this mob will not stop panicking until it can't move anymore or the goal is removed from it.",
 			"type": "boolean"

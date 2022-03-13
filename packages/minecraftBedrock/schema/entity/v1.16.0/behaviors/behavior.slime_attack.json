@@ -4,9 +4,7 @@
 	"type": "object",
 	"description": "Causes the entity to grow tired every once in a while, while attacking.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"set_persistent": {
 			"description": "Allows the actor to be set to persist upon targeting a player.",
 			"type": "boolean"

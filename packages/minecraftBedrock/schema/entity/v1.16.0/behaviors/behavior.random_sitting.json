@@ -3,9 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to randomly sit for a duration.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"start_chance": {
 			"description": "This is the chance that the mob will start this goal, from 0 to 1.",
 			"type": "number"

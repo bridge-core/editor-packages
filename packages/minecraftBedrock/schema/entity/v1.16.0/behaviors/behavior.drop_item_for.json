@@ -3,9 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to move near a target and drop an item.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"cooldown": {
 			"description": "Total time that the goal is on cooldown before it can be used again.",
 			"type": "number"

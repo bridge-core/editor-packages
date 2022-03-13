@@ -3,9 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows a mob with the hide component to attempt to move to - and hide at - an owned or nearby POI.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"speed_multiplier": {
 			"description": "Movement speed multiplier of the mob when using this AI Goal.",
 			"type": "number"

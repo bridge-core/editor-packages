@@ -3,9 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to look around for another mob to ride atop it.",
 	"properties": {
-		"priority": {
-			"type": "number"
-		},
+		"priority": { "type": "integer" },
 		"within_radius": {
 			"description": "Distance in blocks within which the mob will look for a mount.",
 			"type": "number"
