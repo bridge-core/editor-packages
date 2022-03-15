@@ -2,11 +2,89 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"title": "Client Animation",
 	"required": ["format_version"],
+	"definitions": {
+		"frame": {
+			"anyOf": [
+				{
+					"type": "array",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"anyOf": [
+							{
+								"$ref": "../general/degree.json"
+							},
+							{
+								"$ref": "../molang/embedded.json"
+							}
+						]
+					}
+				},
+				{
+					"type": "object",
+					"additionalProperties": false,
+					"patternProperties": {
+						"[0-9]+.?[0-9]*": {
+							"anyOf": [
+								{
+									"type": "array",
+									"minItems": 3,
+									"maxItems": 3,
+									"items": {
+										"anyOf": [
+											{
+												"$ref": "../general/degree.json"
+											},
+											{
+												"$ref": "../molang/embedded.json"
+											}
+										]
+									}
+								},
+								{
+									"type": "object",
+									"additionalProperties": false,
+									"properties": {
+										"pre": {
+											"type": "array",
+											"minItems": 3,
+											"maxItems": 3,
+											"items": {
+												"type": "number"
+											}
+										},
+										"post": {
+											"type": "array",
+											"minItems": 3,
+											"maxItems": 3,
+											"items": {
+												"type": "number"
+											}
+										},
+										"lerp_mode": {
+											"type": "string",
+											"enum": ["catmullrom", "linear"]
+										}
+									}
+								},
+								{
+									"$ref": "../molang/embedded.json"
+								}
+							]
+						}
+					}
+				}
+			]
+		}
+	},
 	"properties": {
 		"format_version": { "enum": ["1.8.0", "1.10.0"] },
 		"animations": {
+			"type": "object",
+			"additionalProperties": false,
 			"patternProperties": {
 				"^animation\\..+$": {
+					"type": "object",
 					"properties": {
 						"animation_length": { "type": "number" },
 						"start_delay": { "$ref": "../molang/embedded.json" },
@@ -24,144 +102,18 @@
 							"type": "boolean"
 						},
 						"bones": {
+							"type": "object",
 							"patternProperties": {
 								".*": {
 									"properties": {
 										"rotation": {
-											"anyOf": [
-												{
-													"type": "array",
-													"minItems": 3,
-													"maxItems": 3,
-													"items": {
-														"anyOf": [
-															{
-																"$ref": "../general/degree.json"
-															},
-															{
-																"$ref": "../molang/embedded.json"
-															}
-														]
-													}
-												},
-												{
-													"patternProperties": {
-														"[0-9]+.?[0-9]*": {
-															"type": "array",
-															"minItems": 3,
-															"maxItems": 3,
-															"items": {
-																"anyOf": [
-																	{
-																		"$ref": "../general/degree.json"
-																	},
-																	{
-																		"$ref": "../molang/embedded.json"
-																	}
-																]
-															}
-														}
-													}
-												}
-											]
+											"$ref": "#/definitions/frame"
 										},
 										"scale": {
-											"anyOf": [
-												{
-													"type": "array",
-													"minItems": 3,
-													"maxItems": 3,
-													"items": {
-														"anyOf": [
-															{
-																"$ref": "../general/degree.json"
-															},
-															{
-																"$ref": "../molang/embedded.json"
-															}
-														]
-													}
-												},
-												{
-													"patternProperties": {
-														"[0-9]+.?[0-9]*": {
-															"type": "array",
-															"minItems": 3,
-															"maxItems": 3,
-															"items": {
-																"anyOf": [
-																	{
-																		"$ref": "../general/degree.json"
-																	},
-																	{
-																		"$ref": "../molang/embedded.json"
-																	}
-																]
-															}
-														}
-													}
-												}
-											]
+											"$ref": "#/definitions/frame"
 										},
 										"position": {
-											"anyOf": [
-												{
-													"type": "array",
-													"minItems": 3,
-													"maxItems": 3,
-													"items": {
-														"anyOf": [
-															{
-																"$ref": "../general/degree.json"
-															},
-															{
-																"$ref": "../molang/embedded.json"
-															}
-														]
-													}
-												},
-												{
-													"patternProperties": {
-														"[0-9]+.?[0-9]*": {
-															"anyOf": [
-																{
-																	"type": "array",
-																	"minItems": 3,
-																	"maxItems": 3,
-																	"items": {
-																		"anyOf": [
-																			{
-																				"$ref": "../general/degree.json"
-																			},
-																			{
-																				"$ref": "../molang/embedded.json"
-																			}
-																		]
-																	}
-																},
-																{
-																	"type": "object",
-																	"additionalProperties": false,
-																	"properties": {
-																		"post": {
-																			"type": "array",
-																			"minItems": 3,
-																			"maxItems": 3,
-																			"items": {
-																				"type": "number"
-																			}
-																		},
-																		"lerp_mode": {
-																			"type": "string",
-																			"const": "catmullrom"
-																		}
-																	}
-																}
-															]
-														}
-													}
-												}
-											]
+											"$ref": "#/definitions/frame"
 										}
 									}
 								}
@@ -174,12 +126,19 @@
 							"patternProperties": {
 								"^\\d+(\\.\\d+)?$": {
 									"additionalProperties": false,
+									"required": ["effect"],
 									"properties": {
 										"effect": {
 											"$ref": "../clientEntity/dynamic/particleReferenceEnum.json"
 										},
 										"locator": {
 											"$ref": "../geometry/dynamic/locatorEnum.json"
+										},
+										"pre_effect_script": {
+											"$ref": "../molang/embedded.json"
+										},
+										"bind_to_actor": {
+											"type": "boolean"
 										}
 									}
 								}
