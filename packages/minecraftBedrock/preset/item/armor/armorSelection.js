@@ -1,12 +1,16 @@
-module.exports = async ({ createFile, createJSONFile, loadPresetFile, models }) => {
+module.exports = async ({ createFile, createJSONFile, loadPresetFile, models, expandFile }) => {
     const {
         HELMET,
         CHESTPLATE,
         LEGGINGS,
         BOOTS,
         PRESET_PATH,
-        IDENTIFIER
+        IDENTIFIER,
+        PROJECT_PREFIX
     } = models
+    const itemTexture = {
+        texture_data: {}
+    }
 
     async function createItem(itemType, shouldCreate) {
         if (shouldCreate) {
@@ -33,11 +37,20 @@ module.exports = async ({ createFile, createJSONFile, loadPresetFile, models }) 
                 JSON.parse(attachableData),
                 { inject: ['IDENTIFIER', 'PROJECT_PREFIX', 'PRESET_PATH'], packPath: 'resourcePack' }
             )
+            itemTexture.texture_data = Object.assign(itemTexture.texture_data, {
+                [`${PROJECT_PREFIX}_${IDENTIFIER}_${itemType.toLowerCase()}`]: {
+                    textures: `textures/items/${PRESET_PATH}${IDENTIFIER}_leggings`
+                }
+            })
         }
     }
 
+    // Create items
     await createItem('Helmet', HELMET)
     await createItem('Chestplate', CHESTPLATE)
     await createItem('Leggings', LEGGINGS)
     await createItem('Boots', BOOTS)
+
+    // Add to item textures file
+    await expandFile('textures/item_texture.json', itemTexture, { packPath: 'resourcePack' })
 }
