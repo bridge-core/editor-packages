@@ -50,7 +50,7 @@
             "$ref": "../../v1.16.220/features/growing_plant_feature.json"
         },
         "minecraft:snap_to_surface_feature": {
-            "$ref": "../../v1.16.220/features/snap_to_surface_feature.json"
+            "$ref": "./snap_to_surface_feature.json"
         },
         "minecraft:aggregate_feature": {
             "$ref": "../../v1.16.0/features/aggregate_feature.json"
