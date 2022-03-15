@@ -39,7 +39,7 @@ module.exports = async ({ createFile, createJSONFile, loadPresetFile, models, ex
             )
             itemTexture.texture_data = Object.assign(itemTexture.texture_data, {
                 [`${PROJECT_PREFIX}_${IDENTIFIER}_${itemType.toLowerCase()}`]: {
-                    textures: `textures/items/${PRESET_PATH}${IDENTIFIER}_leggings`
+                    textures: `textures/items/${PRESET_PATH}${IDENTIFIER}_${itemType.toLowerCase()}`
                 }
             })
         }
