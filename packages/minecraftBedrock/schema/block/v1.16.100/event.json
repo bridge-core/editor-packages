@@ -12,6 +12,7 @@
 		//"play_sound": { "$ref": "../../event/v1.16.100/playSound.json" },
 		"run_command": { "$ref": "../../event/v1.16.100/runCommand.json" },
 		"set_block": { "$ref": "../../event/v1.16.100/setBlock.json" },
+		"set_block_at_pos": { "$ref": "../../event/v1.16.100/setBlockAtPos.json" },
 		"set_block_property": { "$ref": "../../event/v1.16.100/setBlockProperty.json" },
 		"spawn_loot": { "$ref": "../../event/v1.16.100/spawnLoot.json" },
 		"swing": { "$ref": "../../event/v1.16.100/swing.json" },
