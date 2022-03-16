@@ -19,6 +19,9 @@
         "minecraft:underwater_cave_carver_feature": {
             "$ref": "./underwater_cave_carver_feature.json"
         },
+        "minecraft:snap_to_surface_feature": {
+            "$ref": "./snap_to_surface_feature.json"
+        },
         "minecraft:catalyst_feature": {
             "$ref": "../../v1.17.30/features/catalyst_feature.json"
         },
@@ -48,9 +51,6 @@
         },
         "minecraft:growing_plant_feature": {
             "$ref": "../../v1.16.220/features/growing_plant_feature.json"
-        },
-        "minecraft:snap_to_surface_feature": {
-            "$ref": "./snap_to_surface_feature.json"
         },
         "minecraft:aggregate_feature": {
             "$ref": "../../v1.16.0/features/aggregate_feature.json"
