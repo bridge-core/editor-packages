@@ -13,6 +13,7 @@
 			"const": 3
 		},
 		"crafting_tags": {
+			"maxItems": 64,
 			"type": "array",
 			"description": "Defines the name in the UI of this table. If not specified, the name of the block will be used.",
 			"items": {
