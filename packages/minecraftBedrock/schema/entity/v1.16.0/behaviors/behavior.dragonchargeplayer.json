@@ -4,7 +4,7 @@
 	"description": "Allows this entity to attack a player by charging at them. The player is chosen by the 'minecraft:behavior.dragonscanning'. Can only be used by the Ender Dragon.",
 	"type": "object",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"active_speed": {
 			"description": "The speed this entity moves when this behavior has started or while it's active.",
 			"type": "number"

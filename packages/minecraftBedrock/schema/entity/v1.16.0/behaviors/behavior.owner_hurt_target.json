@@ -3,7 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to target a mob that is hurt by their owner.",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"entity_types": {
 			"description": "List of entity types that this entity can target if the potential target is hurt by this mob's owner.",
 			"$ref": "../../general/entityType.json"

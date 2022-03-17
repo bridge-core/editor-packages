@@ -3,7 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows an entity to attack the closest target within a given subset of specific target types.",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"set_persistent": {
 			"type": "boolean"
 		},

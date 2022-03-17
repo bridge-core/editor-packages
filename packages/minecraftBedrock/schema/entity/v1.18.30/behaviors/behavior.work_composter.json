@@ -4,8 +4,7 @@
     "additionalProperties": false,
     "description": "Allows the NPC to use the composter POI to convert excess seeds into bone meal.",
     "properties": {
-        "priority": {
-            "type": "integer"
+        "priority": { "$ref": "../../general/behaviorPriority.json"
         },
         "active_time": {
             "description": "The amount of ticks the NPC will stay in their the work location.",

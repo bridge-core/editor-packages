@@ -3,7 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to pick up items on the ground.",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"max_dist": {
 			"description": "Maximum distance this mob will look for items to pick up.",
 			"type": "number"

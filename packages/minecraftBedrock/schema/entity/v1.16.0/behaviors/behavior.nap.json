@@ -3,7 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows mobs to occassionally stop and take a nap under certain conditions.",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"cooldown_min": {
 			"description": "Maximum time in seconds the mob has to wait before using the goal again.",
 			"type": "number"

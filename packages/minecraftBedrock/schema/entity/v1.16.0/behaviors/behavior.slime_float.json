@@ -4,7 +4,7 @@
 	"description": "Allow slimes to float in water / lava. Can only be used by Slime and Magma Cubes.",
 	"type": "object",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"jump_chance_percentage": {
 			"description": "Percent chance a slime or magma cube has to jump while in water / lava.",
 			"type": "number"

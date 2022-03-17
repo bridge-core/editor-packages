@@ -3,7 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to lay an egg block on certain types of blocks if the mob is pregnant.",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"speed_multiplier": {
 			"description": "Movement speed multiplier of the mob when using this AI Goal.",
 			"type": "number"

@@ -4,7 +4,7 @@
 	"type": "object",
 	"description": "Allows the entity follow another entity. Both entities must be swimming [ie, in water].",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"success_rate": {
 			"description": "Percent chance to start following another entity, if not already doing so. 1.0 = 100%.",
 			"type": "number"

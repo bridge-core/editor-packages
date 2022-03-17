@@ -3,7 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows mobs to lay down at times.",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"interval": {
 			"description": "A random value to determine at what intervals something can occur. This has a 1/interval chance to choose this goal.",
 			"type": "number"

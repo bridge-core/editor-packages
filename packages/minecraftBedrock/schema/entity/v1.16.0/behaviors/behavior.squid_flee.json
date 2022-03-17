@@ -3,8 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the squid to swim away. Can only be used by the Squid.",
 	"properties": {
-		"priority": {
-			"type": "number"
+		"priority": { "$ref": "../../general/behaviorPriority.json"
 		}
 	}
 }

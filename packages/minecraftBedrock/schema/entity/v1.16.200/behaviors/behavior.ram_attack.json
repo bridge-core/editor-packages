@@ -4,7 +4,7 @@
 	"description": "Allows this entity to damage a target by using a running attack.",
 	"type": "object",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"run_speed": {
 			"description": "Sets the entity's speed when running toward the target.",
 			"type": "number"

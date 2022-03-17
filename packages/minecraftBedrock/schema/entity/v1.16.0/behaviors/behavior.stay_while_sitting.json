@@ -3,8 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to stay put while it is in a sitting state instead of doing something else.",
 	"properties": {
-		"priority": {
-			"type": "number"
+		"priority": { "$ref": "../../general/behaviorPriority.json"
 		}
 	}
 }

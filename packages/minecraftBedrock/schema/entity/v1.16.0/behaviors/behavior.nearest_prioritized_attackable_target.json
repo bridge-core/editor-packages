@@ -3,7 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to check for and pursue the nearest valid target.",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"set_persistent": {
 			"type": "boolean"
 		},

@@ -4,8 +4,7 @@
 	"description": "Allows this entity to pretend to be dead to avoid being targeted by attackers.",
 	"type": "object",
 	"properties": {
-		"priority": {
-			"type": "integer"
+		"priority": { "$ref": "../../general/behaviorPriority.json"
 		},
 		"duration": {
 			"description": "The amount of time the mob will remain playing dead (in seconds).",

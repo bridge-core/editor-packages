@@ -3,7 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to eat/raid crops out of farms until they are full.",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"blocks": {
 			"description": "Blocks that the mob is looking for to eat/raid.",
 			"type": "array",

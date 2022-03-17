@@ -3,7 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows a mob to randomly stroll around.",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"interval": {
 			"description": "A random value to determine when to randomly move somewhere. This has a 1/interval chance to choose this goal.",
 			"type": "number"

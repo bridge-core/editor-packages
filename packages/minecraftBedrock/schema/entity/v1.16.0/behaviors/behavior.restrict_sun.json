@@ -3,8 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to automatically start avoiding the sun when its a clear day out.",
 	"properties": {
-		"priority": {
-			"type": "number"
+		"priority": { "$ref": "../../general/behaviorPriority.json"
 		}
 	}
 }

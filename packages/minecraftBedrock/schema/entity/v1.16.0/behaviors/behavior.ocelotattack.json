@@ -3,7 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows an entity to attack by sneaking and pouncing.",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"sneak_speed_multiplier": {
 			"description": "Modifies the attacking entity's movement speed while sneaking.",
 			"type": "number"

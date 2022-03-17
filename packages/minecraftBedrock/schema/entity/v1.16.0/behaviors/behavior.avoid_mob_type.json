@@ -3,7 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows this entity to avoid certain mob types.",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"entity_types": {
 			"description": "The list of conditions another entity must meet to be a valid target to avoid.",
 			"anyOf": [

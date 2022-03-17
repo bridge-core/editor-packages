@@ -1,0 +1,6 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"description": "The priority for this entity to do this behavior. Lower numbers are higher priority.",
+	"type": "integer",
+	"minimum": 0
+}

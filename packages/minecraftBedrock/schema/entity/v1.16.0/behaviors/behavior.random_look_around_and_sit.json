@@ -3,7 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to randomly sit and look around for a duration. Note: Must have a sitting animation set up to use this.",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"min_look_count": {
 			"description": "The min amount of unique looks a mob will have while looking around.",
 			"type": "number"

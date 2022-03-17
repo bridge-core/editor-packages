@@ -4,7 +4,7 @@
 	"type": "object",
 	"description": "Allows the entity to continuously jump around like a slime.",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"speed_multiplier": {
 			"description": "Determines the multiplier this entity's speed is modified by when jumping around.",
 			"type": "number"

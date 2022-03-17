@@ -4,22 +4,38 @@
 	"$ref": "../../project/experimentalGameplay/holidayCreatorFeatures.json",
 	"then": {
 		"properties": {
-			"add": { "$ref": "/data/packages/minecraftBedrock/schema/event/componentGroup/add.json" },
-			"remove": { "$ref": "/data/packages/minecraftBedrock/schema/event/componentGroup/remove.json" },
-			"trigger": { "$ref": "/data/packages/minecraftBedrock/schema/event/v1.16.100/triggerEntity.json" },
-			"damage": { "$ref": "/data/packages/minecraftBedrock/schema/event/v1.16.100/damage.json" },
+			"add": {
+				"$ref": "/data/packages/minecraftBedrock/schema/event/componentGroup/add.json"
+			},
+			"remove": {
+				"$ref": "/data/packages/minecraftBedrock/schema/event/componentGroup/remove.json"
+			},
+			"trigger": {
+				"$ref": "/data/packages/minecraftBedrock/schema/event/v1.16.100/triggerEntity.json"
+			},
+			"damage": {
+				"$ref": "/data/packages/minecraftBedrock/schema/event/v1.16.100/damage.json"
+			},
 			"decrement_stack": {
 				"$ref": "/data/packages/minecraftBedrock/schema/event/v1.16.200/decrementStack.json"
 			},
-			"die": { "$ref": "/data/packages/minecraftBedrock/schema/event/v1.16.100/die.json" },
-			"add_mob_effect": { "$ref": "/data/packages/minecraftBedrock/schema/event/v1.16.100/addMobEffect.json" },
+			"die": {
+				"$ref": "/data/packages/minecraftBedrock/schema/event/v1.16.100/die.json"
+			},
+			"add_mob_effect": {
+				"$ref": "/data/packages/minecraftBedrock/schema/event/v1.16.100/addMobEffect.json"
+			},
 			"remove_mob_effect": {
 				"$ref": "/data/packages/minecraftBedrock/schema/event/v1.16.100/removeMobEffect.json"
 			},
 			//"play_effect": { "$ref": "/data/packages/minecraftBedrock/schema/event/v1.16.100/playEffect.json" },
 			//"play_sound": { "$ref": "/data/packages/minecraftBedrock/schema/event/v1.16.100/playSound.json" },
-			"run_command": { "$ref": "/data/packages/minecraftBedrock/schema/event/v1.16.100/runCommand.json" },
-			"teleport": { "$ref": "/data/packages/minecraftBedrock/schema/event/v1.16.100/teleport.json" },
+			"run_command": {
+				"$ref": "/data/packages/minecraftBedrock/schema/event/v1.16.100/runCommand.json"
+			},
+			"teleport": {
+				"$ref": "/data/packages/minecraftBedrock/schema/event/v1.16.100/teleport.json"
+			},
 			"transform_item": {
 				"$ref": "/data/packages/minecraftBedrock/schema/event/v1.16.100/transformItem.json"
 			},

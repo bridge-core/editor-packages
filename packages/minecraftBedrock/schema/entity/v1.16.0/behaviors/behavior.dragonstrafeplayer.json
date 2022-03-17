@@ -3,7 +3,7 @@
 	"additionalProperties": false,
 	"description": "llows this entity to fly around looking for a player to shoot fireballs at. Can only be used by the Ender Dragon.",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"active_speed": {
 			"description": "The speed this entity moves when this behavior has started or while it's active.",
 			"type": "number"

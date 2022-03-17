@@ -3,8 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the dragon to leave perch mode and go back to flying around. Can only be used by the Ender Dragon.",
 	"properties": {
-		"priority": {
-			"type": "number"
+		"priority": { "$ref": "../../general/behaviorPriority.json"
 		}
 	}
 }

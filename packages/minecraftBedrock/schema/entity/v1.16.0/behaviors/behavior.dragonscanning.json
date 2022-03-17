@@ -3,8 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the dragon to look around for a player to attack while in perch mode. Can only be used by the Ender Dragon.",
 	"properties": {
-		"priority": {
-			"type": "number"
+		"priority": { "$ref": "../../general/behaviorPriority.json"
 		}
 	}
 }

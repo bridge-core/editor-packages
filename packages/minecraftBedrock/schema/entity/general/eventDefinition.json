@@ -60,7 +60,14 @@
 			"if": {
 				"properties": {
 					"target": {
-						"enum": ["other", "target", "baby", "parent", "holder", "player"]
+						"enum": [
+							"other",
+							"target",
+							"baby",
+							"parent",
+							"holder",
+							"player"
+						]
 					}
 				},
 				"required": ["target"]

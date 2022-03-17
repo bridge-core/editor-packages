@@ -3,7 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows an entity to deal damage through a melee attack.",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"attack_once": {
 			"description": "Allows the entity to use this attack behavior, only once EVER.",
 			"type": "boolean"

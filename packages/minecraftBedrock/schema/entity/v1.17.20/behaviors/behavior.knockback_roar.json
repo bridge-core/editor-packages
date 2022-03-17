@@ -3,7 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to perform a damaging knockback that affects all nearby entities.",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"attack_time": {
 			"description": "The delay after which the knockback occurs (in seconds).",
 			"type": "number"

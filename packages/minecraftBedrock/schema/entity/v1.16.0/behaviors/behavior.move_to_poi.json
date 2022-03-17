@@ -3,7 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to move to a POI if able to.",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"speed_multiplier": {
 			"type": "number"
 		},

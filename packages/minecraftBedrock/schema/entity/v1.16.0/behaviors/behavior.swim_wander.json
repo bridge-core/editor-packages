@@ -4,7 +4,7 @@
 	"type": "object",
 	"description": "Allows the entity to wander around while swimming, when not path-finding.",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"speed_multiplier": {
 			"description": "This multiplier modifies the entity's speed when wandering.",
 			"type": "number"

@@ -3,7 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to stop and sneeze possibly startling nearby mobs and dropping an item.",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"probability": {
 			"description": "The probability of sneezing. A value of 1.00 is 100%.",
 			"type": "number"

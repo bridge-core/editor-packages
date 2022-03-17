@@ -3,7 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to move back into water when on land.",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"goal_radius": {
 			"description": "Distance in blocks within the mob considers it has reached the goal. This is the 'wiggle room' to stop the AI from bouncing back and forth trying to reach a specific spot.",
 			"type": "number"

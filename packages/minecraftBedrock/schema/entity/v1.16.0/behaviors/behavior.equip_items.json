@@ -4,8 +4,7 @@
 	"description": "The entity puts on the desired equipment.",
 	"type": "object",
 	"properties": {
-		"priority": {
-			"type": "number"
+		"priority": { "$ref": "../../general/behaviorPriority.json"
 		}
 	}
 }

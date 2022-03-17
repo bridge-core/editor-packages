@@ -3,8 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the Dragon to stop flying and transition into perching mode. Can only be used by the Ender Dragon.",
 	"properties": {
-		"priority": {
-			"type": "number"
+		"priority": { "$ref": "../../general/behaviorPriority.json"
 		}
 	}
 }

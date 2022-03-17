@@ -3,8 +3,7 @@
 	"additionalProperties": false,
 	"description": "Can only be used by Villagers. Allows the mob to accept flowers from Iron Golems.",
 	"properties": {
-		"priority": {
-			"type": "number"
+		"priority": { "$ref": "../../general/behaviorPriority.json"
 		}
 	}
 }

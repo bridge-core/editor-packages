@@ -3,8 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to attack its target by running at it.",
 	"properties": {
-		"priority": {
-			"type": "number"
+		"priority": { "$ref": "../../general/behaviorPriority.json"
 		}
 	}
 }

@@ -3,8 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the villager to stop so another villager can breed with it. Can only be used by a Villager.",
 	"properties": {
-		"priority": {
-			"type": "number"
+		"priority": { "$ref": "../../general/behaviorPriority.json"
 		}
 	}
 }

@@ -4,7 +4,7 @@
 	"description": "Allows an entity to attack, while also delaying the damage-dealt until a specific time in the attack animation.",
 	"type": "object",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"speed_multiplier": {
 			"description": "This multiplier modifies the attacking entity's speed when moving toward the target.",
 			"type": "number"

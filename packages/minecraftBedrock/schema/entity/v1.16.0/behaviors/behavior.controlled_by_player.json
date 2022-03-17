@@ -3,7 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the entity to be controlled by the player using an item in the item_controllable property (required). Also requires the minecraft:movement property, and the minecraft:rideable property. On every tick, the entity will attempt to rotate towards where the player is facing with the control item whilst simultaneously moving forward.",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"mount_speed_multiplier": {
 			"description": "Speed multiplier for the mount when it is being controlled by a player.",
 			"type": "number"

@@ -3,7 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to target the same entity its owner is targeting.",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"entity_types": {
 			"description": "List of entities this mob can copy the owner from.",
 			"$ref": "../../general/entityType.json"

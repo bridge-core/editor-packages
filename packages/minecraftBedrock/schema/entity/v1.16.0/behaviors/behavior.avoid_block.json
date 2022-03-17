@@ -3,7 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows this entity to avoid certain blocks.",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"tick_interval": {
 			"description": "Should start tick interval.",
 			"type": "number"

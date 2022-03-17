@@ -3,7 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to be tempted by food they like.",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"can_get_scared": {
 			"description": "If true, the mob can stop being tempted if the player moves too fast while close to this mob.",
 			"type": "boolean"

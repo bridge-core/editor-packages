@@ -4,7 +4,7 @@
 	"type": "object",
 	"description": "Allows mobs with the dweller component to move toward their Village area that the mob should be restricted to.",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"speed_multiplier": {
 			"description": "This multiplier modifies the entity's speed when moving towards it's restriction.",
 			"type": "number"

@@ -3,8 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the wither to launch random attacks. Can only be used by the Wither Boss.",
 	"properties": {
-		"priority": {
-			"type": "number"
+		"priority": { "$ref": "../../general/behaviorPriority.json"
 		}
 	}
 }

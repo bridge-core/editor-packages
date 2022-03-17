@@ -3,8 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to stay afloat while swimming.",
 	"properties": {
-		"priority": {
-			"type": "number"
+		"priority": { "$ref": "../../general/behaviorPriority.json"
 		}
 	}
 }

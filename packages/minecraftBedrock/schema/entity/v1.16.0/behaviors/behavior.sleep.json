@@ -3,7 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows mobs that own a bed to in a village to move to and sleep in it.",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"goal_radius": {
 			"type": "number"
 		},

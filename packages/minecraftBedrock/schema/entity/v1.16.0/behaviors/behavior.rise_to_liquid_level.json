@@ -3,7 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to rise to the liquid surface.",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"liquid_y_offset": {
 			"description": "Target distance down from the liquid surface. i.e. Positive values move the target Y down.",
 			"type": "number"

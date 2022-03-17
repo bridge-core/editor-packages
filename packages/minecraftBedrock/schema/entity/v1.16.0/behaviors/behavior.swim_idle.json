@@ -4,7 +4,7 @@
 	"type": "object",
 	"description": "Allows the entity go idle, if swimming. Entity must be in water.",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"idle_time": {
 			"description": "Amount of time (in seconds) to stay idle.",
 			"type": "number"

@@ -3,8 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to move around randomly like the Vex.",
 	"properties": {
-		"priority": {
-			"type": "number"
+		"priority": { "$ref": "../../general/behaviorPriority.json"
 		}
 	}
 }

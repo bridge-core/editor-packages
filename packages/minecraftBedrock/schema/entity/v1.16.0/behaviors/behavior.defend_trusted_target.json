@@ -3,7 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to target another mob that hurts an entity it trusts.",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"attack_interval": {
 			"description": "Time in seconds between attacks.",
 			"type": "number"

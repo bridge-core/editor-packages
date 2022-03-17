@@ -3,7 +3,7 @@
 	"description": "Allows this entity to celebrate surviving a raid by making celebration sounds and jumping.",
 	"additionalProperties": false,
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"celebration_sound": {
 			"type": "string",
 			"description": "The sound event to trigger during the celebration."

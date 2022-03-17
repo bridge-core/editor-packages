@@ -3,8 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the Dragon to fly around in a circle around the center podium. Can only be used by the Ender Dragon.",
 	"properties": {
-		"priority": {
-			"type": "number"
+		"priority": { "$ref": "../../general/behaviorPriority.json"
 		}
 	}
 }

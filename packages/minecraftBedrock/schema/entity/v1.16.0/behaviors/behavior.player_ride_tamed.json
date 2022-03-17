@@ -3,8 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to be ridden by the player after being tamed.",
 	"properties": {
-		"priority": {
-			"type": "number"
+		"priority": { "$ref": "../../general/behaviorPriority.json"
 		}
 	}
 }

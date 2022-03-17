@@ -3,8 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to peek out. This is what the shulker uses to look out of its shell.",
 	"properties": {
-		"priority": {
-			"type": "number"
+		"priority": { "$ref": "../../general/behaviorPriority.json"
 		}
 	}
 }

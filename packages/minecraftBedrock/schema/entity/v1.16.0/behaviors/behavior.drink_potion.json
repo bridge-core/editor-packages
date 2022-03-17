@@ -3,7 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to drink potions based on specified environment conditions.",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"speed_modifier": {
 			"description": "The movement speed modifier to apply to the entity while it is drinking a potion. A value of 0 represents no change in speed.",
 			"type": "number"

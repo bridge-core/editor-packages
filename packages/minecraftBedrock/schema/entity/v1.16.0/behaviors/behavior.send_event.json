@@ -3,7 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to send an event to another mob.",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"event_choices": {
 			"type": "array",
 			"items": {

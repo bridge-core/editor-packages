@@ -3,7 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the NPC to use the POI.",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"speed_multiplier": {
 			"description": "Movement speed multiplier of the mob when using this AI Goal.",
 			"type": "number"

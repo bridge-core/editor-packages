@@ -3,7 +3,7 @@
 	"additionalProperties": false,
 	"description": "Allows the entity to first travel to a random point on the outskirts of the village, and then explore random points within a small distance. This goal requires 'minecraft:dweller' and 'minecraft:navigation' to execute.",
 	"properties": {
-		"priority": { "type": "integer" },
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"explore_dist": {
 			"description": "Total distance in blocks the the entity will explore beyond the village bounds when choosing its travel point.",
 			"type": "number"
