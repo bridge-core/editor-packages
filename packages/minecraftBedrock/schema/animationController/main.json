@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"title": "Server Animation Controller",
 	"required": ["format_version"],
+	"type": "object",
 	"properties": {
 		"format_version": { "enum": ["1.10.0"] },
 		"animation_controllers": {
@@ -10,6 +11,7 @@
 			},
 			"patternProperties": {
 				"^controller.animation\\..+$": {
+					"type": "object",
 					"properties": {
 						"initial_state": {
 							"$ref": "./dynamic/currentContext/stateEnum.json"
@@ -17,6 +19,7 @@
 						"states": {
 							"patternProperties": {
 								".+": {
+									"type": "object",
 									"properties": {
 										"animations": {
 											"type": "array",

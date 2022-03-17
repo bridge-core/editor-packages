@@ -8,6 +8,7 @@
 		{
 			"$ref": "../../project/experimentalGameplay/upcomingCreatorFeatures.json",
 			"then": {
+				"type": "object",
 				"properties": {
 					"aliases": {
 						"type": "object",

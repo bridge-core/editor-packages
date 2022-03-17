@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Sets the movement speed of the entity in lava.",
+	"type": "object",
 	"properties": {
 		"value": {
 			"type": "number"

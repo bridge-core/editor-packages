@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Allows an entity to attack by sneaking and pouncing.",
+	"type": "object",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"sneak_speed_multiplier": {

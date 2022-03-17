@@ -1,9 +1,11 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"description": "Places a vein of blocks to simulate ore deposits. Despite the name, any block can be placed by this feature. During placement, existing world blocks are checked to see if they can be replaced by the new ore block based on the list provided in the 'may_replace' field. If no 'may_replace' field is specified, the ore block can replace any existing block.",
+    "type": "object",
 	"properties": {
 		"description": {
 			"additionalProperties": false,
+            "type": "object",
 			"properties": {
 				"identifier": {
 					// Needs to strictly match file name - don't change reference to "general/reference..." schema

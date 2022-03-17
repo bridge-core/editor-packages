@@ -10,6 +10,7 @@
 	],
 	"properties": {
 		"description": {
+			"type": "object",
 			"additionalProperties": false,
 			"properties": {
 				"identifier": {
@@ -20,6 +21,7 @@
 		},
 		"base_cluster": {
 			"additionalProperties": false,
+			"type": "object",
 			"properties": {
 				"may_replace": {
 					"type": "array",
@@ -55,8 +57,10 @@
 		},
 		"acacia_trunk": {
 			"additionalProperties": false,
+			"type": "object",
 			"properties": {
 				"trunk_height": {
+					"type": "object",
 					"properties": {
 						"range_min": {
 							"type": "number"
@@ -71,6 +75,7 @@
 				},
 				"trunk_lean": {
 					"additionalProperties": false,
+					"type": "object",
 					"properties": {
 						"allow_diagonal_growth": {
 							"type": "boolean"
@@ -88,6 +93,7 @@
 				},
 				"trunk_decoration": {
 					"additionalProperties": false,
+					"type": "object",
 					"properties": {
 						"decoration_chance": {
 							"$ref": "../../general.json#/definitions/chance_information"
@@ -111,6 +117,7 @@
 		},
 		"fallen_trunk": {
 			"additionalProperties": false,
+			"type": "object",
 			"properties": {
 				"stump_height": {
 					"type": "integer"
@@ -129,6 +136,7 @@
 				},
 				"trunk_decoration": {
 					"additionalProperties": false,
+					"type": "object",
 					"properties": {
 						"decoration_chance": {
 							"$ref": "../../general.json#/definitions/chance_information"
@@ -149,9 +157,11 @@
 		},
 		"fancy_trunk": {
 			"additionalProperties": false,
+			"type": "object",
 			"properties": {
 				"trunk_height": {
 					"additionalProperties": false,
+					"type": "object",
 					"properties": {
 						"base": {
 							"type": "integer"
@@ -178,6 +188,7 @@
 				},
 				"branches": {
 					"additionalProperties": false,
+					"type": "object",
 					"properties": {
 						"slope": {
 							"type": "number"
@@ -194,9 +205,11 @@
 		},
 		"mega_trunk": {
 			"additionalProperties": false,
+			"type": "object",
 			"properties": {
 				"trunk_height": {
 					"additionalProperties": false,
+					"type": "object",
 					"properties": {
 						"base": {
 							"type": "number"
@@ -219,6 +232,7 @@
 				},
 				"trunk_decoration": {
 					"additionalProperties": false,
+					"type": "object",
 					"properties": {
 						"decoration_chance": {
 							"$ref": "../../general.json#/definitions/chance_information"
@@ -242,6 +256,7 @@
 		},
 		"trunk": {
 			"additionalProperties": false,
+			"type": "object",
 			"properties": {
 				"can_be_submerged": {
 					"anyOf": [
@@ -249,6 +264,7 @@
 							"type": "boolean"
 						},
 						{
+							"type": "object",
 							"properties": {
 								"max_depth": {
 									"type": "number"
@@ -259,6 +275,7 @@
 				},
 				"trunk_height": {
 					"additionalProperties": false,
+					"type": "object",
 					"properties": {
 						"range_min": {
 							"type": "number"
@@ -279,6 +296,7 @@
 				},
 				"trunk_decoration": {
 					"additionalProperties": false,
+					"type": "object",
 					"properties": {
 						"decoration_chance": {
 							"$ref": "../../general.json#/definitions/chance_information"

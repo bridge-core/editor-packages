@@ -2,9 +2,11 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"description": "Will build a 'beard' or 'shave' out space so as to provide a clear space for a feature to place.",
 	"additionalProperties": false,
+	"type": "object",
 	"properties": {
 		"description": {
 			"additionalProperties": false,
+			"type": "object",
 			"properties": {
 				"identifier": {
 					// Needs to strictly match file name - don't change reference to "general/reference..." schema

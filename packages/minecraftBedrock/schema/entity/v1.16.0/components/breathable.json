@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Defines what blocks this entity can breathe in and gives them the ability to suffocate.",
+	"type": "object",
 	"properties": {
 		"breathe_blocks": {
 			"description": "List of blocks this entity can breathe in, in addition to the above.",

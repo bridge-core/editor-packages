@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Defines the entity as a dweller in a village.",
+	"type": "object",
 	"properties": {
 		"dwelling_type": {
 			"const": "village",

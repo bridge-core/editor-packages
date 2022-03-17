@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Determines whether this entity can be ridden. Allows specifying the different seat positions and quantity.",
+	"type": "object",
 	"properties": {
 		"controlling_seat": {
 			"description": "The seat that designates the driver of the entity.",

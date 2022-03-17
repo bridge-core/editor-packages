@@ -1,5 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
 	"properties": {
 		"minecraft:ignore_automatic_features": {
 			"$ref": "./ignore_automatic_features.json"

@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Allows the mob to open doors. Requires the mob to be able to path through doors, otherwise the mob won't even want to try opening them.",
+	"type": "object",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"close_door_after": {

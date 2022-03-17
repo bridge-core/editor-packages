@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Despawns the Actor when the despawn rules or optional filters evaluate to true.",
+	"type": "object",
 	"properties": {
 		"remove_child_entities": {
 			"description": "If true, all entities linked to this entity in a child relationship (eg. leashed) will also be despawned.",
@@ -12,6 +13,7 @@
 			"$ref": "../../general/filter.json"
 		},
 		"despawn_from_distance": {
+			"type": "object",
 			"additionalProperties": false,
 			"properties": {
 				"max_distance": {

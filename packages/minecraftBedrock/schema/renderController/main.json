@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"title": "Render Controller",
 	"required": ["format_version", "render_controllers"],
+	"type": "object",
 	"allOf": [
 		{
 			"properties": {

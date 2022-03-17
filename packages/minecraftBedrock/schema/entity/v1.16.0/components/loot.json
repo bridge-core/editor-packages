@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Sets the loot table for what items this entity drops upon death.",
+	"type": "object",
 	"properties": {
 		"table": {
 			"description": "The path to the loot table, relative to the Behavior Pack's root.",

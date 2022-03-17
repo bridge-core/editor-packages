@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Causes the mob to ignore attackable targets for a given duration.",
+	"type": "object",
 	"properties": {
 		"duration": {
 			"description": "Duration, in seconds, that the mob is pacified.",

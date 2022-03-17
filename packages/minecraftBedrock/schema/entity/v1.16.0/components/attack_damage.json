@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Defines an entity's melee attack damage.",
+	"type": "object",
 	"properties": {
 		"value": {
 			"type": "number"

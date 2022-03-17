@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Defines this entity's ability to trade with players.",
+	"type": "object",
 	"properties": {
 		"display_name": {
 			"description": "Name to be displayed while trading with this entity.",

@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Specifies hunt celebration behaviour.",
+	"type": "object",
 	"properties": {
 		"celebration_targets": {
 			"description": "The list of conditions that target of hunt must satisfy to initiate celebration.",
@@ -26,6 +27,7 @@
 		"sound_interval": {
 			"additionalProperties": false,
 			"description": "The range of time in seconds to randomly wait before playing the sound again.",
+			"type": "object",
 			"properties": {
 				"range_min": {
 					"type": "number"

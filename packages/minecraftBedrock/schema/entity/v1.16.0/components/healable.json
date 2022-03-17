@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Defines the interactions with this entity for healing it.",
+	"type": "object",
 	"properties": {
 		"force_use": {
 			"description": "Determines if item can be used regardless of entity being at full health.",

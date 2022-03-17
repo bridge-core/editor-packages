@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Can only be used by Villagers. Allows the villagers to create paths around the village.",
+	"type": "object",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"speed_multiplier": {

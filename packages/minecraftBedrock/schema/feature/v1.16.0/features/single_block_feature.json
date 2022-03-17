@@ -2,8 +2,10 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"description": "Places a single block in the world. The 'may_place_on' and 'may_replace' fields are allowlists which specify where the block can be placed. If these fields are omitted, the block can be placed anywhere. The block's internal survivability and placement rules can optionally be enforced with the 'enforce_survivability_rules' and 'enforce_placement_rules' fields. These rules are specified per-block and are typically designed to produce high quality gameplay or natural behavior. However, enabling this enforcement may make it harder to debug placement failures.",
 	"additionalProperties": false,
+	"type": "object",
 	"properties": {
 		"description": {
+			"type": "object",
 			"properties": {
 				"identifier": {
 					// Needs to strictly match file name - don't change reference to "general/reference..." schema
@@ -24,6 +26,7 @@
 			"type": "boolean"
 		},
 		"may_attach_to": {
+			"type": "object",
 			"additionalProperties": false,
 			"properties": {
 				"min_sides_must_attach": {

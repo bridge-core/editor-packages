@@ -5,6 +5,7 @@
 	"description": "Sets rules for under what conditions the block can be placed/survive",
 	"anyOf": [
 		{
+			"type": "object",
 			"properties": {
 				"block_filter": {
 					"type": "array",
@@ -33,6 +34,7 @@
 			}
 		},
 		{
+			"type": "object",
 			"properties": {
 				"conditions": {
 					"type": "array",
@@ -70,6 +72,7 @@
 			}
 		},
 		{
+			"type": "object",
 			"properties": {
 				"conditions": {
 					"type": "object",

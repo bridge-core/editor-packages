@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Allows the mob to use close combat melee attacks.",
+	"type": "object",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"attack_once": {
@@ -39,6 +40,7 @@
 			"type": "number"
 		},
 		"target_tracking": {
+			"type": "object",
 			"properties": {
 				"refresh_period_min": {
 					"type": "number"

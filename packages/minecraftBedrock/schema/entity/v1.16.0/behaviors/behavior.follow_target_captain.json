@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Allows mob to move towards its current target captain.",
+	"type": "object",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"speed_multiplier": {

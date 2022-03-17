@@ -1,5 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
     "properties": {
         "minecraft:bounds": { "$ref": "./bounds.json" },
         "minecraft:on_actor_enter": { "$ref": "../../v1.17.30/components/on_actor_enter.json" },

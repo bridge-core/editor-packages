@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Allows the mob to be tempted by food they like.",
+	"type": "object",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"can_get_scared": {
@@ -33,6 +34,7 @@
 		},
 		"sound_interval": {
 			"description": "Range of random ticks to wait between tempt sounds.",
+			"type": "object",
 			"properties": {
 				"range_min": {
 					"type": "number"

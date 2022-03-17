@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Adds a timer after which an event will fire.",
+	"type": "object",
 	"properties": {
 		"looping": {
 			"description": "If true, the timer will restart every time after it fires.",

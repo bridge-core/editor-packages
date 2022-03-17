@@ -6,6 +6,7 @@
     "properties": {
         "description": {
 			"additionalProperties": false,
+            "type": "object",
 			"properties": {
 				"identifier": {
 					// Needs to strictly match file name - don't change reference to "general/reference..." schema

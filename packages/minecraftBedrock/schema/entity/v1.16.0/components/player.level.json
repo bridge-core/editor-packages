@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Defines the player's level.",
+	"type": "object",
 	"properties": {
 		"value": {
 			"type": "number"

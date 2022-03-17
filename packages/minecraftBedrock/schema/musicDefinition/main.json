@@ -18,6 +18,7 @@
 	},
 	"patternProperties": {
 		".*": {
+			"type": "object",
 			"properties": {
 				"min_delay": {
 					"type": "integer"

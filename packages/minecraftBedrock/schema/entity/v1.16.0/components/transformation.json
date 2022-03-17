@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Defines an entity's transformation from the current definition into another",
+	"type": "object",
 	"properties": {
 		"into": {
 			"description": "Entity Definition that this entity will transform into.",
@@ -9,6 +10,7 @@
 		},
 		"add": {
 			"description": "List of components to add to the entity after the transformation.",
+			"type": "object",
 			"properties": {
 				"component_groups": {
 					"type": "array",
@@ -48,6 +50,7 @@
 		},
 		"delay": {
 			"description": "Defines the properties of the delay for the transformation.",
+			"type": "object",
 			"properties": {
 				"value": {
 					"description": "Time in seconds before the entity transforms.",

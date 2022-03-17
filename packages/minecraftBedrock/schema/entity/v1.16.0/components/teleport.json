@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Defines an entity's teleporting behavior.",
+	"type": "object",
 	"properties": {
 		"random_teleports": {
 			"description": "If true, the entity will teleport randomly.",

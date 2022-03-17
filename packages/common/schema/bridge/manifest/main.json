@@ -3,6 +3,7 @@
 	"title": "Plugin Manifest",
 	"additionalProperties": false,
 	"required": ["name", "author", "id", "description"],
+	"type": "object",
 	"properties": {
 		"author": {
 			"description": "The name of the author of the plugin.",

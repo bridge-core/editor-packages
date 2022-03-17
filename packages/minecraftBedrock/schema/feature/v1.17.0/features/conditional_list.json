@@ -2,9 +2,11 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"description": "Places the first suitable feature within a collection. These conditional features will be evaluated in order.",
 	"additionalProperties": false,
+	"type": "object",
 	"properties": {
 		"description": {
 			"additionalProperties": false,
+			"type": "object",
 			"properties": {
 				"identifier": {
 					// Needs to strictly match file name - don't change reference to "general/reference..." schema

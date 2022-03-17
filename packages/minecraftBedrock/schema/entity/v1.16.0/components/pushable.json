@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Defines what can push an entity between other entities and pistons.",
+	"type": "object",
 	"properties": {
 		"is_pushable": {
 			"description": "Whether the entity can be pushed by other entities.",

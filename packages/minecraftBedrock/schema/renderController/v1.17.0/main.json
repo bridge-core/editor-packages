@@ -2,10 +2,12 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"title": "Render Controller",
 	"additionalProperties": false,
+	"type": "object",
 	"properties": {	
 		"render_controllers": {
 			"patternProperties": {
 				"^controller.render\\..+$": {
+					"type": "object",
 					"properties": {
 						"rebuild_animation_matrices": {
 							"type": "boolean"
@@ -32,6 +34,7 @@
 							"$ref": "../../general/rgbaColor.json"
 						},
 						"uv_anim": {
+							"type": "object",
 							"additionalProperties": false,
 							"properties": {
 								"offset": {
@@ -54,6 +57,7 @@
 						},
 						"arrays": {
 							"additionalProperties": false,
+							"type": "object",
 							"properties": {
 								"textures": {
 									"patternProperties": {

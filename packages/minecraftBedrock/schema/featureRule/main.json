@@ -3,12 +3,14 @@
 	"title": "Feature Rule",
 	"additionalProperties": false,
 	"required": ["format_version", "minecraft:feature_rules"],
+	"type": "object",
 	"properties": {
 		"format_version": {
 			"$ref": "../project/formatVersionEnum.json"
 		},
 		"minecraft:feature_rules": {
 			"additionalProperties": false,
+			"type": "object",
 			"properties": {
 				"description": {
 					"additionalProperties": false,
@@ -24,6 +26,7 @@
 				},
 				"conditions": {
 					"additionalProperties": false,
+					"type": "object",
 					"properties": {
 						"placement_pass": {
 							"type": "string",
@@ -52,6 +55,7 @@
 				},
 				"distribution": {
 					"additionalProperties": false,
+					"type": "object",
 					"properties": {
 						"iterations": {
 							"anyOf": [

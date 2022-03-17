@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Defines the entity's size interpolation based on the entity's age.",
+	"type": "object",
 	"properties": {
 		"start_scale": {
 			"description": "Initial scale of the newborn entity.",

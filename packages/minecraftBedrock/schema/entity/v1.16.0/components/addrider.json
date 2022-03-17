@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Adds a rider to the entity. Requires minecraft:rideable.",
+	"type": "object",
 	"properties": {
 		"entity_type": {
 			"description": "The entity type that will be riding this entity.",

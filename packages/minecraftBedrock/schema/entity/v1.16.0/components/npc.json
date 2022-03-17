@@ -2,10 +2,13 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Gives the entity the npc menu when interacted with.",
+	"type": "object",
 	"properties": {
 		"npc_data": {
+			"type": "object",
 			"properties": {
 				"portrait_offsets": {
+					"type": "object",
 					"properties": {
 						"translate": {
 							"type": "array",
@@ -26,6 +29,7 @@
 					}
 				},
 				"picker_offsets": {
+					"type": "object",
 					"properties": {
 						"translate": {
 							"type": "array",

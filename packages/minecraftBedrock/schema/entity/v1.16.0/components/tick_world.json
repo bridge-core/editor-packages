@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Defines if the entity ticks the world and the radius around it to tick.",
+	"type": "object",
 	"properties": {
 		"radius": {
 			"description": "The area around the entity to tick. Default: 2. Allowed range: 2-6.",

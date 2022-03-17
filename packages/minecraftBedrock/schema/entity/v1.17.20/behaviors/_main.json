@@ -1,5 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
 	"properties": {
 		"minecraft:behavior.knockback_roar": {
 			"$ref": "./behavior.knockback_roar.json"

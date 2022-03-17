@@ -2,9 +2,11 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"description": "Places a collection of features in an arbitary order. All features in the collection use the same input position. Features should not depend on each other, as there is no guarantee on the order the features will be placed.",
 	"additionalProperties": false,
+	"type": "object",
 	"properties": {
 		"description": {
 			"additionalProperties": false,
+			"type": "object",
 			"properties": {
 				"identifier": {
 					// Needs to strictly match file name - don't change reference to "general/reference..." schema

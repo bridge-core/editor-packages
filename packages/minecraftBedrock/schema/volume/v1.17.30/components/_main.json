@@ -1,5 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
     "properties": {
         "minecraft:on_actor_enter": { "$ref": "./on_actor_enter.json" },
         "minecraft:on_actor_leave": { "$ref": "./on_actor_leave.json" },

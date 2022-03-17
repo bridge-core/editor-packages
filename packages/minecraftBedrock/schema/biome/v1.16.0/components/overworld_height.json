@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"description": "Noise parameters used to drive terrain height in the Overworld.",
 	"additionalProperties": false,
+	"type": "object",
 	"properties": {
 		"noise_type": {
 			"$ref": "../../general.json#/definitions/noise_type"

@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Gives the entity the ability to jump.",
+	"type": "object",
 	"properties": {
 		"jump_power": {
 			"description": "The initial vertical velocity for the jump.",

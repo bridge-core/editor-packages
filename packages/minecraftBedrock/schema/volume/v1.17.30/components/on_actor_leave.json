@@ -3,6 +3,7 @@
 	"description": "Component that defines what happens when an actor leaves the volume.",
 	"required": ["on_leave"],
 	"additionalProperties": false,
+	"type": "object",
 	"properties": {
 		"on_leave": {
 			"type": "array",

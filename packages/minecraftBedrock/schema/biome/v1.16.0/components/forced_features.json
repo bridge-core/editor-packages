@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"description": "Force specific decorative features (trees, plants, etc.) to appear in this Biome, regardless of normal decoration rules.",
 	"additionalProperties": false,
+	"type": "object",
 	"properties": {
 		"first_pass": {
 			"type": "array",

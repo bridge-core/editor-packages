@@ -2,9 +2,11 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"description": "Carves a cave through the world in the current chunk, and in every chunk around the current chunk in an 8 radial pattern. This feature will also only work when placed specifically in the pass 'pregeneration_pass'.",
 	"additionalProperties": false,
+	"type": "object",
 	"properties": {
 		"description": {
 			"additionalProperties": false,
+			"type": "object",
 			"properties": {
 				"identifier": {
 					// Needs to strictly match file name - don't change reference to "general/reference..." schema

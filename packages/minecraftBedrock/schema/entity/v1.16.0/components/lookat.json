@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Defines the behavior when another entity looks at this entity.",
+	"type": "object",
 	"properties": {
 		"search_radius": {
 			"description": "Maximum distance this entity will look for another entity looking at it.",

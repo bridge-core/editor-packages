@@ -2,6 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema",
     "additionalProperties": false,
     "description": "Allows the mob to move into a liquid when on land.",
+    "type": "object",
     "properties": {
         "goal_radius": {
             "description": "Distance in blocks within the mob considers it has reached the goal. This is the 'wiggle room' to stop the AI from bouncing back and forth trying to reach a specific spot.",

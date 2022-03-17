@@ -77,6 +77,7 @@
 		},
 		"packDefinitions": {
 			"description": "Allows users to define additional data which is hard to find for tools (e.g. scoreboards setup inside of a world).",
+			"type": "object",
 			"properties": {
 				"families": {},
 				"tags": {},
@@ -124,6 +125,7 @@
 	"definitions": {
 		"packDefinition": {
 			"additionalProperties": false,
+			"type": "object",
 			"properties": {
 				"type": {
 					"description": "Optional: Define e.g. the type of a scoreboard objective.",

@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"description": "Generates surface on blocks with non-solid blocks above or below.",
 	"additionalProperties": false,
+	"type": "object",
 	"properties": {
 		"floor_materials": {
 			"description": "Materials used for the surface floor.",

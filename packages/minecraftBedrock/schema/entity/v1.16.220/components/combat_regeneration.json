@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Gives Regeneration I and removes Mining Fatigue from the mob that kills the Actor's attack target.",
+	"type": "object",
 	"properties": {
 		"regeneration_duration": {
 			"description": "The duration in seconds of Regeneration I added to the mob.",

@@ -3,6 +3,7 @@
 	"description": "Allows this entity to generate paths that include vertical walls like the vanilla Spiders do.",
 	"allOf": [
 		{
+			"type": "object",
 			"properties": {
 				"avoid_powder_snow": {
 					"type": "boolean"

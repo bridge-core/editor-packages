@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Defines this entity's inventory properties.",
+	"type": "object",
 	"properties": {
 		"additional_slots_per_strength": {
 			"description": "Number of slots that this entity can gain per extra strength.",

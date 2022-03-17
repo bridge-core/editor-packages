@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Sets the entity's delay between playing its ambient sound.",
+	"type": "object",
 	"properties": {
 		"range": {
 			"description": "Maximum time in seconds to randomly add to the ambient sound delay time.",

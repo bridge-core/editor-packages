@@ -9,9 +9,11 @@
 			"$ref": "../project/formatVersionEnum.json"
 		},
 		"minecraft:item": {
+			"type": "object",
 			"additionalProperties": false,
 			"properties": {
 				"description": {
+					"type": "object",
 					"additionalProperties": false,
 					"properties": {
 						"identifier": {
@@ -35,6 +37,7 @@
 				},
 				"components": {
 					"additionalProperties": false,
+					"type": "object",
 					"properties": {
 						"minecraft:icon": {
 							"description": "The icon item componenent determines the icon to represent the item in the UI and elsewhere.",

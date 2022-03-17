@@ -1,6 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
+	"type": "object",
 	"description": "Allows Guardians, Iron Golems and Villagers to move within their pre-defined area that the mob should be restricted to. Other mobs don't have a restriction defined.",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },

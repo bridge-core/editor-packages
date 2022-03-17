@@ -1,5 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
 	"properties": {
 		"minecraft:block_climber": {
 			"$ref": "../../v1.17.10/components/block_climber.json"

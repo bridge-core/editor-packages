@@ -3,6 +3,7 @@
 	"title": "Sound Definitions",
 	"additionalProperties": false,
 	"required": ["format_version"],
+	"type": "object",
 	"properties": {
 		"format_version": {
 			"$ref": "../project/formatVersionEnum.json"
@@ -10,6 +11,7 @@
 		"sound_definitions": {
 			"patternProperties": {
 				".*": {
+					"type": "object",
 					"additionalProperties": false,
 					"properties": {
 						"__use_legacy_max_distance": {

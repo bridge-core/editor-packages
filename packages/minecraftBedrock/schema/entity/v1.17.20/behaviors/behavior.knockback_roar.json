@@ -1,6 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
+	"type": "object",
 	"description": "Allows the mob to perform a damaging knockback that affects all nearby entities.",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },

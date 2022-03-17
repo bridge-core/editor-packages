@@ -1,11 +1,13 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"required": ["format_version", "minecraft:client_entity"],
+	"type": "object",
 	"properties": {
 		"minecraft:client_entity": {
 			"description": "The resource description of the entity.",
 			"additionalProperties": false,
 			"required": ["description"],
+			"type": "object",
 			"properties": {
 				"description": {
 					"required": [
@@ -16,6 +18,7 @@
 						"materials"
 					],
 					"additionalProperties": false,
+					"type": "object",
 					"properties": {
 						"identifier": {
 							"$ref": "../../general/reference/prefixedFileIdentifier.json"
@@ -34,6 +37,7 @@
 						"spawn_egg": {
 							"description": "Defines the spawn egg texture/color for the entity.",
 							"additionalProperties": false,
+							"type": "object",
 							"properties": {
 								"texture": {
 									"description": "Texture to use for the spawn egg.",
@@ -116,6 +120,7 @@
 						"scripts": {
 							"description": "Calculates variables to be used on the entity pre-animation and can run animations.",
 							"additionalProperties": false,
+							"type": "object",
 							"properties": {
 								"scale": {
 									"description": "Sets the scale of the mobs geometry.",

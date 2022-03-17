@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Triggers based on rail conditions",
+	"type": "object",
 	"properties": {
 		"check_block_types": {
 			"description": "If true, on tick this entity will trigger its on_deactivate behavior.",

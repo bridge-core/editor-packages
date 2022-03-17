@@ -3,6 +3,7 @@
 	"title": "Client Blocks",
 	"required": ["format_version"],
 	"additionalProperties": false,
+	"type": "object",
 	"properties": {
 		"format_version": {
 			"type": "array",
@@ -16,6 +17,7 @@
 	"patternProperties": {
 		".*": {
 			"additionalProperties": false,
+			"type": "object",
 			"properties": {
 				"sound": {
 					"$ref": "../general/vanilla/blockSound.json"
@@ -29,6 +31,7 @@
 							"type": "boolean"
 						},
 						{
+							"type": "object",
 							"additionalProperties": false,
 							"properties": {
 								"up": {
@@ -62,6 +65,7 @@
 							"$ref": "../general/reference/terrainTexture.json"
 						},
 						{
+							"type": "object",
 							"additionalProperties": false,
 							"properties": {
 								"up": {
@@ -95,6 +99,7 @@
 							"$ref": "../general/reference/terrainTexture.json"
 						},
 						{
+							"type": "object",
 							"additionalProperties": false,
 							"properties": {
 								"up": {

@@ -2,10 +2,5 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"doNotSuggest": true,
-	"deprecationMessage": "Deprecated - Sets the number of blocks the entity can step without jumping.",
-	"properties": {
-		"value": {
-			"type": "number"
-		}
-	}
+	"deprecationMessage": "Deprecated - Sets the number of blocks the entity can step without jumping."
 }

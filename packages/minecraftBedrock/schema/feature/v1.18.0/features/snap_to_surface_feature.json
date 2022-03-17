@@ -2,9 +2,11 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"description": "Snaps the y-value of a feature placement pos to the floor or the ceiling within the provided 'vertical_search_range'. The placement biome is preserved. If the snap position goes outside of the placement biome, placement will fail.",
 	"additionalProperties": false,
+	"type": "object",
 	"properties": {
 		"description": {
 			"additionalProperties": false,
+			"type": "object",
 			"properties": {
 				"identifier": {
 					// Needs to strictly match file name - don't change reference to "general/reference..." schema

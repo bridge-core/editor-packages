@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Enables the component to drop an item as a barter exchange.",
+	"type": "object",
 	"properties": {
 		"barter_table": {
 			"description": "Loot table that's used to drop a random item.",

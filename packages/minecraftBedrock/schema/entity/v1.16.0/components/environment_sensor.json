@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Creates a trigger based on environment conditions.",
+	"type": "object",
 	"properties": {
 		"triggers": {
 			"anyOf": [

@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Fires off a specified event when a block in the block list is broken within the sensor range.",
+	"type": "object",
 	"properties": {
 		"sensor_radius": {
 			"type": "number"

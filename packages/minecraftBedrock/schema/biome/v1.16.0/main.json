@@ -1,13 +1,16 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
 	"properties": {
 		"minecraft:biome": {
 			"required": ["description"],
 			"additionalProperties": false,
+			"type": "object",
 			"properties": {
 				"description": {
 					"required": ["identifier"],
 					"additionalProperties": false,
+					"type": "object",
 					"properties": {
 						"identifier": {
 							// Needs to strictly match file name - don't change reference to "general/reference..." schema

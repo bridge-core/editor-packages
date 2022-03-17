@@ -25,6 +25,7 @@
 				},
 				{
 					"additionalProperties": false,
+					"type": "object",
 					"properties": {
 						"sound": {
 							"$ref": "../general/reference/soundDefinition.json"
@@ -40,9 +41,11 @@
 			]
 		}
 	},
+	"type": "object",
 	"properties": {
 		"individual_event_sounds": {
 			"additionalProperties": false,
+			"type": "object",
 			"properties": {
 				"events": {
 					"patternProperties": {
@@ -58,6 +61,7 @@
 			"patternProperties": {
 				".*": {
 					"additionalProperties": false,
+					"type": "object",
 					"properties": {
 						"volume": {
 							"$ref": "#/definitions/number_range"
@@ -77,9 +81,11 @@
 			}
 		},
 		"entity_sounds": {
+			"type": "object",
 			"properties": {
 				"defaults": {
 					"additionalProperties": false,
+					"type": "object",
 					"properties": {
 						"volume": {
 							"$ref": "#/definitions/number_range"
@@ -110,11 +116,13 @@
 		},
 		"interactive_sounds": {
 			"additionalProperties": false,
+			"type": "object",
 			"properties": {
 				"block_sounds": {
 					"patternProperties": {
 						".*": {
 							"additionalProperties": false,
+							"type": "object",
 							"properties": {
 								"volume": {
 									"$ref": "#/definitions/number_range"
@@ -123,6 +131,7 @@
 									"$ref": "#/definitions/number_range"
 								},
 								"events": {
+									"type": "object",
 									"properties": {
 										"default": {
 											"$ref": "#/definitions/sound_object"
@@ -149,6 +158,7 @@
 					"patternProperties": {
 						".*": {
 							"additionalProperties": false,
+							"type": "object",
 							"properties": {
 								"volume": {
 									"$ref": "#/definitions/number_range"
@@ -166,6 +176,7 @@
 							}
 						}
 					},
+					"type": "object",
 					"properties": {
 						"entities": {
 							"propertyNames": {

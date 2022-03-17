@@ -3,6 +3,7 @@
 	"title": "Theme",
 	"definitions": {
 		"style_object": {
+			"type": "object",
 			"properties": {
 				"color": {
 					"type": "string"
@@ -18,6 +19,7 @@
 		}
 	},
 	"additionalProperties": false,
+	"type": "object",
 	"properties": {
 		"id": {
 			"description": "UUID for your theme.",
@@ -34,6 +36,7 @@
 		},
 		"colors": {
 			"description": "Colors of this theme.",
+			"type": "object",
 			"properties": {
 				"text": {
 					"description": "Text color."
@@ -84,6 +87,7 @@
 		},
 		"highlighter": {
 			"description": "Syntax highlighter colors of your bridge. theme.",
+			"type": "object",
 			"properties": {
 				"property": {
 					"description": "Custom style for syntax highlighter; affects format_version.",

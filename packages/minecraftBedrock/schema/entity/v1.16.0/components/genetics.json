@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Defines the way a mob's genes and alleles are passed on to it's offspring, and how those traits manifest in the child. Compatible parent genes are crossed together, the alleles are handed down from the parents to the child, and any matching genetic variants fire off JSON events to modify the child and express the traits.",
+	"type": "object",
 	"properties": {
 		"mutation_rate": {
 			"description": "Chance that an allele will be replaced with a random one instead of the parent's allele during birth.",
@@ -25,6 +26,7 @@
 								"type": "integer"
 							},
 							{
+								"type": "object",
 								"properties": {
 									"range_min": {
 										"description": "Lower bound of the allele values for this gene.",
@@ -52,6 +54,7 @@
 											"type": "number"
 										},
 										{
+											"type": "object",
 											"properties": {
 												"range_min": {
 													"type": "number"
@@ -70,6 +73,7 @@
 											"type": "number"
 										},
 										{
+											"type": "object",
 											"properties": {
 												"range_min": {
 													"type": "number"
@@ -88,6 +92,7 @@
 											"type": "number"
 										},
 										{
+											"type": "object",
 											"properties": {
 												"range_min": {
 													"type": "number"
@@ -106,6 +111,7 @@
 											"type": "number"
 										},
 										{
+											"type": "object",
 											"properties": {
 												"range_min": {
 													"type": "number"

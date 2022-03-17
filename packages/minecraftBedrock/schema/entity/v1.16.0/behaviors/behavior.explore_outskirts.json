@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Allows the entity to first travel to a random point on the outskirts of the village, and then explore random points within a small distance. This goal requires 'minecraft:dweller' and 'minecraft:navigation' to execute.",
+	"type": "object",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"explore_dist": {

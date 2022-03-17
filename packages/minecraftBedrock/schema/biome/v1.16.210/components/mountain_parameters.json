@@ -1,9 +1,11 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
+	"type": "object",
 	"properties": {
 		"top_slide": {
 			"description": "Controls the density tapering that happens at the top of the world to prevent terrain from reaching too high.",
+			"type": "object",
 			"properties": {
 				"enabled": {
 					"description": "If false, top slide will be disabled. If true, other parameters will be taken into account.",
@@ -13,6 +15,7 @@
 		},
 		"steep_material_adjustment": {
 			"description": "Defines surface material for steep slopes.",
+			"type": "object",
 			"properties": {
 				"material": {
 					"description": "Block type use as steep material.",

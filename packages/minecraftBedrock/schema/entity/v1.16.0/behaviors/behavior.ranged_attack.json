@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Allows an entity to attack by using ranged shots. 'charge_shoot_trigger' must be greater than 0 to enable charged up burst-shot attacks.",
+	"type": "object",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"attack_interval": {

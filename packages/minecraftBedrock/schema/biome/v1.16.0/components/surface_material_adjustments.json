@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"description": "Specify fine-detail changes to blocks used in terrain generation (based on a noise function).",
 	"additionalProperties": false,
+	"type": "object",
 	"properties": {
 		"adjustments": {
 			"description": "All adjustments that match the column's noise values will be applied in the order listed.",
@@ -11,6 +12,7 @@
 				"additionalProperties": false,
 				"properties": {
 					"materials": {
+						"type": "object",
 						"additionalProperties": false,
 						"properties": {
 							"floor_material": {

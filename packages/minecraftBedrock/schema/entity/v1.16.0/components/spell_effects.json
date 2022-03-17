@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Defines what mob effects to add and remove to the entity when adding this component.",
+	"type": "object",
 	"properties": {
 		"add_effects": {
 			"anyOf": [

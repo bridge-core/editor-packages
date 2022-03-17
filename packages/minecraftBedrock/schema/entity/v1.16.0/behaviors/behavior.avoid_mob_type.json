@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Allows this entity to avoid certain mob types.",
+	"type": "object",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"entity_types": {
@@ -59,6 +60,7 @@
 		},
 		"sound_interval": {
 			"description": "The range of time in seconds to randomly wait before playing the sound again.",
+			"type": "object",
 			"properties": {
 				"range_min": {
 					"type": "number"

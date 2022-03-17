@@ -3,6 +3,7 @@
 	"required": ["format_version", "minecraft:texture_set"],
 	"title": "Texture Map",
 	"additionalProperties": false,
+	"type": "object",
 	"properties": {
 		"format_version": {
 			"$ref": "../project/formatVersionEnum.json"
@@ -10,6 +11,7 @@
 		"minecraft:texture_set": {
 			"additionalProperties": false,
 			"required": ["color"],
+			"type": "object",
 			"properties": {
 				"color": {
 					"$ref": "./color.json"

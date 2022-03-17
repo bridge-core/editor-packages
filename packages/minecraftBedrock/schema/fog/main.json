@@ -3,6 +3,7 @@
 	"additionalProperties": false,
 	"title": "Fog",
 	"required": ["format_version", "minecraft:fog_settings"],
+	"type": "object",
 	"definitions": {
 		"hex_color": {
 			"$ref": "../general/hexColor.json"
@@ -48,6 +49,7 @@
 					"description": "The distance fog settings for different camera locations.",
 					"patternProperties": {
 						"^water|air|weather|lava|lava_resistance|powder_snow$": {
+							"type": "object",
 							"properties": {
 								"fog_start": {
 									"type": "number",
@@ -83,6 +85,7 @@
 							},
 							"patternProperties": {
 								"^air|water|cloud$": {
+									"type": "object",
 									"properties": {
 										"scattering": {
 											"description": "Proportion of light that is scattered per block.",

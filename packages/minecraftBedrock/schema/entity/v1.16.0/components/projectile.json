@@ -2,10 +2,12 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Allows the entity to be a thrown entity.",
+	"type": "object",
 	"properties": {
 		"on_hit": {
 			"allOf": [
 				{
+					"type": "object",
 					"properties": {
 						"definition_event": {
 							"properties": {
@@ -30,6 +32,7 @@
 							}
 						},
 						"grant_xp": {
+							"type": "object",
 							"properties": {
 								"minXP": {
 									"type": "number"
@@ -43,6 +46,7 @@
 							}
 						},
 						"spawn_aoe_cloud": {
+							"type": "object",
 							"properties": {
 								"radius": {
 									"type": "number"
@@ -76,6 +80,7 @@
 							}
 						},
 						"impact_damage": {
+							"type": "object",
 							"properties": {
 								"filter": {
 									"$ref": "../../../molang/embedded.json"
@@ -130,6 +135,7 @@
 							}
 						},
 						"spawn_chance": {
+							"type": "object",
 							"properties": {
 								"first_spawn_percent_chance": {
 									"type": "number"
@@ -161,6 +167,7 @@
 							}
 						},
 						"mob_effect": {
+							"type": "object",
 							"properties": {
 								"effect": {
 									"$ref": "../../../general/vanilla/effectName.json"
@@ -189,6 +196,7 @@
 							}
 						},
 						"stick_in_ground": {
+							"type": "object",
 							"properties": {
 								"shake_time": {
 									"type": "number"
@@ -211,6 +219,7 @@
 							"additionalProperties": false
 						},
 						"particle_on_hit": {
+							"type": "object",
 							"properties": {
 								"particle_type": {
 									"$ref": "../../../general/particleName.json"
@@ -227,6 +236,7 @@
 							}
 						},
 						"catch_fire": {
+							"type": "object",
 							"properties": {
 								"fire_affected_by_griefing": {
 									"description": "If true, whether the projectile causes fire is affected by the mob griefing game rule.",
@@ -243,10 +253,12 @@
 				{
 					"$ref": "../../../project/experimentalGameplay/educationEdition.json",
 					"then": {
+						"type": "object",
 						"properties": {
 							"freeze_on_hit": {
 								"description": "Freezes water on hit.",
 								"additionalProperties": false,
+								"type": "object",
 								"properties": {
 									"shape": {
 										"type": "string",

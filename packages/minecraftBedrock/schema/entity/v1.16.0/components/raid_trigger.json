@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Attempts to trigger a raid at the entity's location.",
+	"type": "object",
 	"properties": {
 		"triggered_event": {
 			"description": "Event to run we attempt to trigger a raid on the village.",

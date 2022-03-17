@@ -6,6 +6,7 @@
 			"$ref": "./surface_parameters.json"
 		},
 		{
+			"type": "object",
 			"properties": {
 				"clay_material": {
 					"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"

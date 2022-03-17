@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Keeps track of entity group size in the given radius.",
+	"type": "object",
 	"properties": {
 		"radius": {
 			"description": "Radius from center of entity.",

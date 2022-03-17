@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Defines the entity's range within which it can see or sense other entities to target them.",
+	"type": "object",
 	"properties": {
 		"inside_range": {
 			"description": "Maximum distance in blocks that another entity will be considered in the 'inside' range.",

@@ -2,8 +2,10 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"description": "Places a structure in the world. The structure must be stored as a .mcstructure file in the 'structures' subdirectory of a behavior pack. It is possible to reference structures that are part of other behavior packs, they do not need to come from the same behavior pack as this feature. Constraints can be defined to specify where the structure is allowed to be placed. During placement, the feature will search for a position within the 'adjustment_radius' that satisfies all constraints. If none are found, the structure will not be placed.",
 	"additionalProperties": false,
+	"type": "object",
 	"properties": {
 		"description": {
+			"type": "object",
 			"properties": {
 				"identifier": {
 					// Needs to strictly match file name - don't change reference to "general/reference..." schema
@@ -28,6 +30,7 @@
 		"constraints": {
 			"description": "Specific constraints that must be satisfied when placing this structure.",
 			"additionalProperties": false,
+			"type": "object",
 			"properties": {
 				"grounded": {
 					"description": "When specified, ensures the structure is on the ground."
@@ -37,6 +40,7 @@
 				},
 				"block_intersection": {
 					"description": " When specified, ensures the structure only intersects with allowlisted blocks.",
+					"type": "object",
 					"properties": {
 						"block_allowlist": {
 							"description": "List of blocks the owning structure is allowed to intersect with.",

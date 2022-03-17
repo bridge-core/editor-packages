@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Defines a list of items the mob wants to share or pick up.",
+	"type": "object",
 	"properties": {
 		"all_items": {
 			"description": "A bucket for all other items in the game. Note this category is always least priority items.",

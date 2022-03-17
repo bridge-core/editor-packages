@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Defines an entity's behavior for having items equipped to it.",
+	"type": "object",
 	"properties": {
 		"slots": {
 			"description": "List of slots and the item that can be equipped.",

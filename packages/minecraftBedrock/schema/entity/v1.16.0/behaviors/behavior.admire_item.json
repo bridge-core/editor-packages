@@ -1,6 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
+	"type": "object",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"admire_item_sound": {
@@ -9,6 +10,7 @@
 		},
 		"sound_interval": {
 			"description": "The range of time in seconds to randomly wait before playing the sound again.",
+			"type": "object",
 			"properties": {
 				"range_min": {
 					"type": "number"

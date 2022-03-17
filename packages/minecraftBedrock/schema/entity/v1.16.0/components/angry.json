@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Defines the entity's 'angry' state using a timer.",
+	"type": "object",
 	"properties": {
 		"broadcast_anger": {
 			"description": "f true, other entities of the same entity definition within the broadcastRange will also become angry.",
@@ -60,6 +61,7 @@
 		},
 		"sound_interval": {
 			"description": "The range of time in seconds to randomly wait before playing the sound again.",
+			"type": "object",
 			"additionalProperties": false,
 			"properties": {
 				"range_min": {

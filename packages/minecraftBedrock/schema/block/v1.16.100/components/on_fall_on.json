@@ -7,6 +7,7 @@
 			"$ref": "../../general/eventDefinition.json"
 		},
 		{
+			"type": "object",
 			"properties": {
 				"min_fall_distance": {
 					"type": "number"

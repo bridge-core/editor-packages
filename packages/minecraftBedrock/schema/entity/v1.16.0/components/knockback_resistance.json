@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Gives the entity resistance to knockback.",
+	"type": "object",
 	"properties": {
 		"value": {
 			"type": "number"

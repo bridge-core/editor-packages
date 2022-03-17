@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"description": "Control the blocks used for the default Minecraft Overworld terrain generation.",
 	"additionalProperties": false,
+	"type": "object",
 	"properties": {
 		"sea_floor_depth": {
 			"description": "Controls how deep below the world water level the floor should occur.",
