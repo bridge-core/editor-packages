@@ -4,7 +4,8 @@
 	"type": "array",
 	"items": {
 		"additionalProperties": false,
-		: {
+		"type": "object",
+		"properties": {
 			"flipbook_texture": {
 				"$ref": "../general/reference/paths.json#/definitions/block_texture_paths"
 			},
