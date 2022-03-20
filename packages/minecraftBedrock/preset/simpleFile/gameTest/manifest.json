@@ -38,7 +38,7 @@
 		[
 			"Main.js",
 			"scripts/main.js",
-			{ "inject": ["FILE_NAME", "LANGUAGE", "PRESET_PATH"], "packPath": "behaviorPack" }
+			{ "inject": ["FILE_NAME", "PRESET_PATH"], "packPath": "behaviorPack" }
 		]
 	]
 }

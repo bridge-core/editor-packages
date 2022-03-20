@@ -130,7 +130,26 @@
 										"options": {
 											"type": "array",
 											"items": {
-												"type": "string"
+												"anyOf": [
+													{
+														"description": "Option value.",
+														"type": "string"
+													},
+													{
+														"type": "object",
+														"additionalProperties": false,
+														"properties": {
+															"text": {
+																"type": "string",
+																"description": "Text to display to user."
+															},
+															"value": {
+																"type": "string",
+																"description": "Value to map this option to."
+															}
+														}
+													}
+												]
 											}
 										}
 									}
