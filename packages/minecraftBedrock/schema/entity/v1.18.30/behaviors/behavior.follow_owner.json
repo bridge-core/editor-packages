@@ -1,0 +1,33 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows the mob to follow the player that owns them.",
+	"type": "object",
+	"properties": {
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"speed_multiplier": {
+			"description": "Movement speed multiplier of the mob when using this AI Goal.",
+			"type": "number"
+		},
+		"start_distance": {
+			"description": "The distance in blocks that the owner can be away from this mob before it starts following it.",
+			"type": "number"
+		},
+		"stop_distance": {
+			"description": "The distance in blocks this mob will stop from its owner while following it.",
+			"type": "number"
+		},
+		"can_teleport": {
+			"description": "Specify if the mob can teleport to the player if it is too far away.",
+			"type": "boolean"
+		},
+        "ignore_vibration": {
+            "description": "Specify if the mob will follow the owner if it has heard a vibration lately.",
+            "type": "boolean"
+        },
+        "max_distance": {
+            "description": "The maximum distance in blocks this mob can be from its owner to start following, only used when canTeleport is false.",
+            "type": "number"
+        }
+	}
+}

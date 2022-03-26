@@ -7,6 +7,7 @@
 		"minecart_hopper",
 		"container",
 		"inventory",
-		"hopper"
+		"hopper",
+		"chest_boat"
 	]
 }

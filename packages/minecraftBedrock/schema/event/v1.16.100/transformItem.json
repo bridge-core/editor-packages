@@ -5,6 +5,7 @@
 	"additionalProperties": false,
 	"properties": {
 		"transform": {
+			"description": "Name of the item it should transform into.",
 			"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
 		}
 	}

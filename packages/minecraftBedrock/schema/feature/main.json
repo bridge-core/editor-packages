@@ -86,12 +86,24 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.18.10", "1.18.20", "1.18.30"]
+						"enum": ["1.18.10", "1.18.20"]
 					}
 				}
 			},
 			"then": {
 				"$ref": "./v1.18.10/features/_main.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.18.30"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.18.30/features/_main.json"
 			}
 		}
 	]

@@ -4,9 +4,16 @@
 	"description": "Teleport target randomly around destination point",
 	"additionalProperties": false,
 	"properties": {
-		"target": { "$ref": "../../general/filter/subject.json" },
-		"avoid_water": { "type": "boolean" },
+		"target": {
+			"description": "The target context to execute against.",
+			"$ref": "../../general/filter/subject.json"
+		},
+		"avoid_water": {
+			"description": "Determines if the teleport avoids putting the target in water.",
+			"type": "boolean"
+		},
 		"destination": {
+			"description": "Origin destination of the teleport.",
 			"type": "array",
 			"maxItems": 3,
 			"minItems": 3,
@@ -14,8 +21,12 @@
 				"type": "number"
 			}
 		},
-		"land_on_block": { "type": "boolean" },
+		"land_on_block": {
+			"description": "Determines if the teleport places the target on a block.",
+			"type": "boolean"
+		},
 		"max_range": {
+			"description": "Max range the target can teleport relative to the origin destination.",
 			"type": "array",
 			"maxItems": 3,
 			"minItems": 3,

@@ -5,9 +5,22 @@
 	"additionalProperties": false,
 	"properties": {
 		"command": {
-			"type": "array",
-			"items": { "$ref": "../../general/vanilla/command.json" }
+			"anyOf": [
+				{
+					"description": "List of slash commands to run.",
+					"type": "array",
+					"items": { "$ref": "../../general/vanilla/command.json" }
+				},
+				{
+					"description": "Slash command to run.",
+					"type": "string",
+					"$ref": "../../general/vanilla/command.json"
+				}
+			]	
 		},
-		"target": { "$ref": "../../general/filter/subject.json" }
+		"target": {
+			"description": "The target context to execute against.",
+			"$ref": "../../general/filter/subject.json"
+		}
 	}
 }

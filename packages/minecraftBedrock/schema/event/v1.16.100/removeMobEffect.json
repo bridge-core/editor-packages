@@ -4,7 +4,13 @@
 	"description": "Removes mob effect from target.",
 	"additionalProperties": false,
 	"properties": {
-		"effect": { "$ref": "../../general/vanilla/effectName.json" },
-		"target": { "$ref": "../../general/filter/subject.json" }
+		"effect": {
+			"description": "The mob effect to remove. Use 'all' to remove all mob effects from target.",
+			"$ref": "../../general/vanilla/effectName.json"
+		},
+		"target": {
+			"description": "The target context to execute against.",
+			"$ref": "../../general/filter/subject.json"
+		}
 	}
 }

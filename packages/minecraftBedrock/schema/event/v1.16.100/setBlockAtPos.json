@@ -5,6 +5,7 @@
 	"additionalProperties": false,
 	"properties": {
 		"block_offset": {
+			"description": "The offset from the block's center.",
 			"type": "array",
 			"maxItems": 3,
 			"minItems": 3,
@@ -13,6 +14,7 @@
 			}
 		},
 		"block_type": {
+			"description": "The type of block to set.",
 			"$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
 		}
 	}

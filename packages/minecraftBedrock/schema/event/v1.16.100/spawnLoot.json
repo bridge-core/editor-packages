@@ -5,6 +5,7 @@
 	"additionalProperties": false,
 	"properties": {
 		"table": {
+			"description": "File path, relative to the Behavior Pack's path, to the loot table file.",
 			"$ref": "../../general/reference/paths.json#/definitions/loot_table_paths"
 		}
 	}

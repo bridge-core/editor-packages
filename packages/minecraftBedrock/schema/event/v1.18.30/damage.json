@@ -22,6 +22,10 @@
 					"const": "item"
 				}
 			]
-		}
+		},
+        "mob_amount": {
+            "type": "integer",
+            "description": "The amount of damage to deal if held by a mob."
+        }
 	}
 }

@@ -4,9 +4,16 @@
 	"description": "Spawns a particle effect relative to target position.",
 	"additionalProperties": false,
 	"properties": {
-		"target": { "$ref": "../../general/filter/subject.json" },
-		"data": { "type": "integer" },
+		"target": {
+			"description": "The target context to execute against.",
+			"$ref": "../../general/filter/subject.json"
+		},
+		"data": {
+			"type": "integer",
+			"description": "Particle data value."
+		},
 		"effect": {
+			"description": "The name of the particle effect to create.",
 			"$ref": "../../general/reference/identifiers.json#/definitions/particle_identifiers"
 		}
 	}

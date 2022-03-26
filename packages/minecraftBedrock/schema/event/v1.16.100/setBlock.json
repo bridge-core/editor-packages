@@ -5,6 +5,7 @@
 	"additionalProperties": false,
 	"properties": {
 		"block_type": {
+			"description": "The type of block to set.",
 			"$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
 		}
 	}

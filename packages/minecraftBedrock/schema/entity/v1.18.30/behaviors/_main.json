@@ -19,6 +19,15 @@
 		// Non-experimental
 		{
 			"properties": {
+				"minecraft:behavior.follow_owner": {
+					"$ref": "../../../project/experimentalGameplay/theWildUpdate.json",
+					"then": {
+						"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.18.30/behaviors/behavior.follow_owner.json"
+					},
+					"else": {
+						"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.16.0/behaviors/behavior.follow_owner.json"
+					}
+				},
 				"minecraft:behavior.work_composter": {
 					"$ref": "./behavior.work_composter.json"
 				},
@@ -183,9 +192,6 @@
 				},
 				"minecraft:behavior.follow_mob": {
 					"$ref": "../../v1.16.0/behaviors/behavior.follow_mob.json"
-				},
-				"minecraft:behavior.follow_owner": {
-					"$ref": "../../v1.16.0/behaviors/behavior.follow_owner.json"
 				},
 				"minecraft:behavior.follow_parent": {
 					"$ref": "../../v1.16.0/behaviors/behavior.follow_parent.json"
