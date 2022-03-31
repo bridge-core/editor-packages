@@ -10,7 +10,9 @@
 		},
 		"base_buoyancy": {
 			"description": "Base buoyancy used to calculate how much will a mob float.",
-			"type": "number"
+			"type": "number",
+			"minimum": 0,
+			"maximum": 1
 		},
 		"big_wave_probability": {
 			"description": "Probability for a big wave hitting the entity. Only used if `simulate_waves` is true.",
