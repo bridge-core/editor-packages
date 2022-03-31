@@ -178,7 +178,7 @@
 								"variables": {
 									"description": "A list of variables that need certain settings applied to them.",
 									"patternProperties": {
-										".*": {
+										"^(variable|v)\\..*": {
 											"const": "public"
 										}
 									}
