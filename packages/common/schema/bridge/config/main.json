@@ -25,11 +25,11 @@
 			}
 		},
 		"targetVersion": {
-			"description": "The Minecraft version this project targets.",
+			"description": "The Minecraft version this project targets. Used to determine auto-completions and the files you can create.",
 			"type": "string"
 		},
 		"experimentalGameplay": {
-			"description": "Experimental gameplay the project intends to use.",
+			"description": "The experimental gameplay toggles that the project intends to use. Used to determine auto-completions and the files you can create.",
 			"type": "object",
 			"propertyNames": {
 				"enum": [
@@ -65,12 +65,14 @@
 			},
 			"patternProperties": {
 				".*": {
+					"description": "Path to the pack relative to the config.json.",
 					"type": "string"
 				}
 			}
 		},
 		"worlds": {
 			"type": "array",
+			"description": "The worlds that are part of this project.",
 			"items": {
 				"type": "string"
 			}
@@ -78,14 +80,17 @@
 		"packDefinitions": {
 			"description": "Allows users to define additional data which is hard to find for tools (e.g. scoreboards setup inside of a world).",
 			"type": "object",
-			"properties": {
-				"families": {},
-				"tags": {},
-				"scoreboardObjectives": {},
-				"names": {}
+			"propertyNames": {
+				"enum": [
+					"families",
+					"tags",
+					"scoreboardObjectives",
+					"names"
+				]
 			}
 		},
 		"bridge": {
+			"description": "Additional configuration options for bridge.",
 			"type": "object"
 		},
 		"compiler": {
@@ -93,13 +98,13 @@
 			"type": "object",
 			"properties": {
 				"plugins": {
-					"description": "Plugins for bridge.'s compiler.",
+					"description": "The compiler plugins to run by default, upon compilation, with the Dash compiler.",
 					"type": "array",
 					"items": {
 						"anyOf": [
 							{
 								"type": "string",
-								"description": "ID of a compiler plugin."
+								"description": "The ID of a compiler plugin."
 							},
 							{
 								"type": "array",
@@ -108,7 +113,7 @@
 								"items": [
 									{
 										"type": "string",
-										"description": "ID of a compiler plugin."
+										"description": "The ID of a compiler plugin."
 									},
 									{
 										"type": "object",
