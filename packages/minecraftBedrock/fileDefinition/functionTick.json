@@ -1,5 +1,6 @@
 {
 	"id": "functionTick",
+	"icon": "mdi-timer",
 	"detect": {
 		"packType": "behaviorPack",
 		"scope": "functions/tick.json",
