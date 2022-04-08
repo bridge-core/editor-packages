@@ -2,7 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"type": "object",
-	"description": "Allows the item to be put in a jukebox and play music.",
+	"description": "Record Item Component. Used by record items to play music.",
 	"properties": {
 		"sound_event": {
 			"type": "string",
@@ -31,7 +31,7 @@
 			"type": "integer",
 			"description": "An integer value that represents the strength of the analog signal, used by the Comparator Block.",
 			"min": 0,
-			"max": 15
+			"max": 13
 		}
 	}
 }

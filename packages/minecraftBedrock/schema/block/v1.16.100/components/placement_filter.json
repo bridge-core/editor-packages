@@ -38,20 +38,23 @@
 			"properties": {
 				"conditions": {
 					"type": "array",
+					"maxLength": 64,
 					"items": {
 						"type": "object",
 						"additionalProperties": false,
 						"properties": {
 							"block_filter": {
 								"type": "array",
-								"description": "List of blocks (can use tags to specify them) that this block can be placed against in the allowed_faces direction",
+								"description": "List of blocks (can use tags to specify them) that this block can be placed against in the allowed_faces direction.",
+								"maxItems": 64,
 								"items": {
-									"type": "string"
+									"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
 								}
 							},
 							"allowed_faces": {
 								"type": "array",
-								"description": "Defines the block faces this block can be placed on, e.g 'down' means you can only place this block on th bottom face of the block. If the block it is placed on is removed, this block will be destroyed",
+								"description": "Defines the block faces this block can be placed on, e.g 'down' means you can only place this block on th bottom face of the block. If the block it is placed on is removed, this block will be destroyed.",
+								"maxItems": 6,
 								"items": {
 									"type": "string",
 									"enum": [

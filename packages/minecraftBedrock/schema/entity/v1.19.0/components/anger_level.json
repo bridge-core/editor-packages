@@ -1,0 +1,75 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "description": "Allows this entity to track anger towards a set of nuisances.",
+    "properties": {
+        "anger_decrement_interval": {
+            "description": "Anger level will decay over time. Defines how often anger towards all nuisances will be decreased by one.",
+            "type": "number"
+        },
+        "angry_boost": {
+            "description": "Anger boost applied to angry threshold when mob gets angry.",
+            "type": "integer",
+            "minimum": 0
+        },
+        "angry_threshold": {
+            "description": "Threshold that define when the mob is considered angry at a nuisance.",
+            "type": "integer",
+            "minimum": 0
+        },
+        "default_annoyingness": {
+            "description": "The default amount of annoyingness for any given nuisance. Specifies how much to raise anger level on each provocation.",
+            "type": "integer"
+        },
+        "max_anger": {
+            "description": "The maximum anger level that can be reached. Applies to any nuisance.",
+            "type": "integer",
+            "minimum": 0
+        },
+        "nuisance_filter": {
+            "description": "Filter that is applied to determine if a mob can be a nuisance.",
+            "$ref": "../../general/filter.json"
+        },
+        "nuisances": {
+            "description": "A list of entities and their corresponding annoyingness, specifying exceptions from the default.",
+            "type": "array",
+            "items": {
+                "additionalProperties": false,
+                "type": "object",
+                "properties": {
+                    "annoyingness": {
+                        "description": "The annoyingness for this specific nuisance. Specifies how much to raise anger level on each provocation.",
+                        "type": "number"
+                    },
+                    "entity": {
+                        "description": "The identifier of the entity.",
+                        "$ref": "../../../general/reference/identifiers.json#/definitions/entity_identifiers"
+                    }
+                }
+            }
+        },
+        "on_increase_sounds": {
+            "description": "Sounds to play when the entity is getting provoked. Evaluated in order. First matching condition wins.",
+            "type": "array",
+            "items": {
+                "additionalProperties": false,
+                "type": "object",
+                "properties": {
+                    "condition": {
+                        "description": "A Molang expression describing under which conditions to play this sound, given that the entity was provoked.",
+                        "$ref": "../../../molang/embedded.json"
+                    },
+                    "sound": {
+                        "description": "The sound to play.",
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "remove_targets_below_angry_threshold": {
+            "description": "Defines if the mob should remove target if it falls below 'angry' threshold.",
+            "type": "boolean"
+        }
+    }
+}

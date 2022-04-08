@@ -2,8 +2,32 @@
     "$schema": "http://json-schema.org/draft-07/schema",
     "type": "object",
     "additionalProperties": false,
+    "description": "The entity will attempt to toss the items from its inventory to a nearby recently played noteblock.",
     "properties": {
-        "priority": { "$ref": "../../general/behaviorPriority.json"
+        "priority": { "$ref": "../../general/behaviorPriority.json" },
+        "horizontal_throw_force": {
+            "description": "Sets the horizontal throw force.",
+            "type": "number"
+        },
+        "listen_time": {
+            "description": "Sets the time an entity should continue delivering items to a noteblock after hearing it.",
+            "type": "integer"
+        },
+        "on_item_throw": {
+            "description": "Event(s) to run when this mob throws items.",
+            "$ref": "../../general/eventDefinition.json"
+        },
+        "reach_block_distance": {
+            "description": "Sets the desired distance to be reached before throwing the items towards the block.",
+            "type": "number"
+        },
+        "run_speed": {
+            "description": "Sets the entity's speed when running toward the block.",
+            "type": "number"
+        },
+        "vertical_throw_force": {
+            "description": "Sets the vertical throw force.",
+            "type": "number"
         }
     }
 }

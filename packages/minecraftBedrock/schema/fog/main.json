@@ -4,141 +4,57 @@
 	"title": "Fog",
 	"required": ["format_version", "minecraft:fog_settings"],
 	"type": "object",
-	"definitions": {
-		"hex_color": {
-			"$ref": "../general/hexColor.json"
-		}
-	},
 	"properties": {
 		"format_version": {
 			"$ref": "../project/formatVersionEnum.json"
-		},
-		"minecraft:fog_settings": {
-			"type": "object",
-			"additionalProperties": false,
-			"properties": {
-				"description": {
-					"type": "object",
-					"additionalProperties": false,
-					"properties": {
-						"identifier": {
-							"anyOf": [
-								{
-									"$ref": "../general/reference/prefixedFileIdentifier.json"
-								},
-								{
-									"$ref": "../general/vanilla/identifiers.json#/definitions/fog_identifiers"
-								}
-							]
-						}
-					}
-				},
-				"distance": {
-					"additionalProperties": false,
-					"type": "object",
-					"propertyNames": {
+		}
+	},
+	"allOf": [
+		{
+			"if": {
+				"properties": {
+					"format_version": {
 						"enum": [
-							"water",
-							"air",
-							"weather",
-							"lava",
-							"lava_resistance",
-							"powder_snow"
+							"",
+							"1.8.0",
+							"1.10.0",
+							"1.11.0",
+							"1.12.0",
+							"1.13.0",
+							"1.14.0",
+							"1.16.0",
+							"1.16.100",
+							"1.16.200",
+							"1.16.210",
+							"1.16.220",
+							"1.17.0",
+							"1.17.10",
+							"1.17.20",
+							"1.17.30",
+							"1.17.40",
+							"1.18.0",
+							"1.18.10",
+							"1.18.20",
+							"1.18.30"
 						]
-					},
-					"description": "The distance fog settings for different camera locations.",
-					"patternProperties": {
-						"^water|air|weather|lava|lava_resistance|powder_snow$": {
-							"type": "object",
-							"properties": {
-								"fog_start": {
-									"type": "number",
-									"description": "The distance from the player that the fog will begin to appear. 'fog_start' must be less than or equal to 'fog_end'."
-								},
-								"fog_end": {
-									"type": "number",
-									"description": "The distance from the player that the fog will become fully opaque. 'fog_end' must be greater than or equal to 'fog_start'."
-								},
-								"fog_color": {
-									"$ref": "#/definitions/hex_color",
-									"description": "The color that the fog will take on."
-								},
-								"render_distance_type": {
-									"type": "string",
-									"enum": ["fixed", "render"],
-									"description": "Determines how distance value is used. Fixed distance is measured in blocks. Dynamic distance is multiplied by the current render distance."
-								}
-							}
-						}
-					}
-				},
-				"volumetric": {
-					"type": "object",
-					"additionalProperties": false,
-					"description": "The volumetric fog settings. RTX is required for volumetric fogs.",
-					"properties": {
-						"media_coefficients": {
-							"type": "object",
-							"description": "The coefficient settings for the volumetric fog in different blocks.",
-							"propertyNames": {
-								"enum": ["air", "water", "cloud"]
-							},
-							"patternProperties": {
-								"^air|water|cloud$": {
-									"type": "object",
-									"properties": {
-										"scattering": {
-											"description": "Proportion of light that is scattered per block.",
-											"$ref": "#/definitions/hex_color"
-										},
-										"absorption": {
-											"description": "Proportion of light that is absorbed (lost) per block.",
-											"$ref": "#/definitions/hex_color"
-										}
-									}
-								}
-							}
-						},
-						"density": {
-							"type": "object",
-							"propertyNames": {
-								"enum": [
-									"water",
-									"air",
-									"weather",
-									"lava",
-									"lava_resistance"
-								]
-							},
-							"description": "The density settings for different camera locations.",
-							"patternProperties": {
-								"^water|air|weather|lava|lava_resistance$": {
-									"type": "object",
-									"additionalProperties": false,
-									"properties": {
-										"max_density": {
-											"description": "The maximum amount of opaqueness that the ground fog will take on. A value from [0.0, 1.0].",
-											"type": "number"
-										},
-										"max_density_height": {
-											"description": "The height in blocks that the ground fog will become it's maximum density.",
-											"type": "number"
-										},
-										"zero_density_height": {
-											"description": "The height in blocks that the ground fog will be completely transparent and begin to appear. This value needs to be at least 1 higher than 'max_density_height'.",
-											"type": "number"
-										},
-										"uniform": {
-											"description": "When set to true, the density will be uniform across all heights.",
-											"type": "boolean"
-										}
-									}
-								}
-							}
-						}
 					}
 				}
+			},
+			"then": {
+				"$ref": "./v1.18.0/main.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.19.0"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.19.0/main.json"
 			}
 		}
-	}
+	]
 }

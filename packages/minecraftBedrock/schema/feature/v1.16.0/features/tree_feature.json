@@ -1,11 +1,205 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
+	"definitions": {
+		"branches_reference": {
+			"type": "object",
+			"properties": {
+				"branch_length": {
+					"type": "number"
+				},
+				"branch_position": {
+					"type": "number"
+				},
+				"branch_chance": {
+					"type": "number"
+				},
+				"branch_canopy": {
+					"$ref": "#/definitions/canopy_reference"
+				}
+			}
+		},
+		"canopy_reference": {
+			"type": "object",
+			"properties": {
+				"acacia_canopy": {
+					"type": "object",
+					"properties": {
+						"canopy_size": {
+							"type": "number"
+						},
+						"simplify_canopy": {
+							"type": "boolean"
+						},
+						"leaf_block": {
+							"$ref": "../../general.json#/definitions/block_reference"
+						}
+					}
+				},
+				"canopy": {
+					"additionalProperties": false,
+					"type": "object",
+					"properties": {
+						"canopy_offset": {
+							"type": "object",
+							"properties": {
+								"min": {
+									"type": "number"
+								},
+								"max": {
+									"type": "number"
+								}
+							}
+						},
+						"min_width": {
+							"type": "number"
+						},
+						"canopy_slope": {
+							"additionalProperties": false,
+							"type": "object",
+							"properties": {
+								"rise": {
+									"type": "number"
+								},
+								"run": {
+									"type": "number"
+								}
+							}
+						},
+						"variation_chance": {
+							"type": "array",
+							"items": {
+								"$ref": "../../general.json#/definitions/chance_information"
+							}
+						},
+						"leaf_block": {
+							"$ref": "../../general.json#/definitions/block_reference"
+						},
+						"canopy_decoration": {
+							"additionalProperties": false,
+							"type": "object",
+							"properties": {
+								"decoration_chance": {
+									"$ref": "../../general.json#/definitions/chance_information"
+								},
+								"block_reference": {
+									"$ref": "../../general.json#/definitions/block_reference"
+								},
+								"num_steps": {
+									"type": "number"
+								},
+								"step_direction": {
+									"type": "string",
+									"enum": ["down", "up", "out", "away"]
+								}
+							}
+						}
+					}
+				},
+				"fancy_canopy": {
+					"additionalProperties": false,
+					"type": "object",
+					"properties": {
+						"height": {
+							"type": "number"
+						},
+						"radius": {
+							"type": "number"
+						},
+						"leaf_block": {
+							"$ref": "../../general.json#/definitions/block_reference"
+						}
+					}
+				},
+				"mega_canopy": {
+					"additionalProperties": false,
+					"type": "object",
+					"properties": {
+						"canopy_height": {
+							"type": "number"
+						},
+						"core_width": {
+							"type": "number"
+						},
+						"base_radius": {
+							"type": "number"
+						},
+						"simplify_canopy": {
+							"type": "boolean"
+						},
+						"leaf_block": {
+							"$ref": "../../general.json#/definitions/block_reference"
+						}
+					}
+				},
+				"mega_pine_canopy": {
+					"additionalProperties": false,
+					"type": "object",
+					"properties": {
+						"canopy_height": {
+							"type": "number"
+						},
+						"core_width": {
+							"type": "number"
+						},
+						"base_radius": {
+							"type": "number"
+						},
+						"radius_step_modifier": {
+							"type": "number"
+						},
+						"leaf_block": {
+							"$ref": "../../general.json#/definitions/block_reference"
+						}
+					}
+				},
+				"pine_canopy": {
+					"additionalProperties": false,
+					"type": "object",
+					"properties": {
+						"canopy_height": {
+							"type": "number"
+						},
+						"core_width": {
+							"type": "number"
+						},
+						"outer_radius": {
+							"type": "number"
+						},
+						"inner_radius": {
+							"type": "number"
+						},
+						"leaf_block": {
+							"$ref": "../../general.json#/definitions/block_reference"
+						}
+					}
+				},
+				"spruce_canopy": {
+					"additionalProperties": false,
+					"type": "object",
+					"properties": {
+						"lower_offset": {
+							"type": "number"
+						},
+						"upper_offset": {
+							"type": "number"
+						},
+						"max_radius": {
+							"type": "number"
+						},
+						"leaf_block": {
+							"$ref": "../../general.json#/definitions/block_reference"
+						}
+					}
+				}
+			}
+		}
+	},
 	"allOf": [
 		{
-			"$ref": "../../general.json#/definitions/branches_reference"
+			"$ref": "#/definitions/branches_reference"
 		},
 		{
-			"$ref": "../../general.json#/definitions/canopy_reference"
+			"$ref": "#/definitions/canopy_reference"
 		}
 	],
 	"properties": {
@@ -111,7 +305,7 @@
 					}
 				},
 				"branches": {
-					"$ref": "../../general.json#/definitions/branches_reference"
+					"$ref": "#/definitions/branches_reference"
 				}
 			}
 		},
@@ -250,7 +444,7 @@
 					}
 				},
 				"branches": {
-					"$ref": "../../general.json#/definitions/branches_reference"
+					"$ref": "#/definitions/branches_reference"
 				}
 			}
 		},

@@ -1,0 +1,40 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows mobs that own a bed to in a village to move to and sleep in it.",
+	"type": "object",
+	"properties": {
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"goal_radius": {
+			"type": "number"
+		},
+		"cooldown_time": {
+			"description": "Time in seconds the mob has to wait before using the goal again.",
+			"type": "number"
+		},
+		"timeout_cooldown": {
+			"description": "The cooldown time in seconds before the goal can be reused after a internal failure or timeout condition.",
+			"type": "number"
+		},
+		"speed_multiplier": {
+			"description": "Movement speed multiplier of the mob when using this AI Goal.",
+			"type": "number"
+		},
+		"sleep_collider_height": {
+			"description": "The height of the mob's collider while sleeping.",
+			"type": "number"
+		},
+		"sleep_collider_width": {
+			"description": "The width of the mob's collider while sleeping.",
+			"type": "number"
+		},
+		"sleep_y_offset": {
+			"description": "The y offset of the mob's collider while sleeping.",
+			"type": "number"
+		},
+        "can_sleep_while_riding": {
+            "description": "If true, the mob will be able to use the sleep goal if riding something.",
+            "type": "boolean"
+        }
+	}
+}

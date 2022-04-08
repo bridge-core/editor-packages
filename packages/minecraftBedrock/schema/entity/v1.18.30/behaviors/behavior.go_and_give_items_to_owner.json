@@ -2,8 +2,20 @@
     "$schema": "http://json-schema.org/draft-07/schema",
     "type": "object",
     "additionalProperties": false,
+    "description": "Sets the vertical throw force.",
     "properties": {
-        "priority": { "$ref": "../../general/behaviorPriority.json"
+        "priority": { "$ref": "../../general/behaviorPriority.json" },
+        "on_item_throw": {
+            "description": "Event(s) to run when this mob throws items.",
+            "$ref": "../../general/eventDefinition.json"
+        },
+        "reach_mob_distance": {
+            "description": "Sets the desired distance to be reached before giving items to owner.",
+            "type": "number"
+        },
+        "run_speed": {
+            "description": "Sets the entity's speed when running toward the owner.",
+            "type": "number"
         }
     }
 }

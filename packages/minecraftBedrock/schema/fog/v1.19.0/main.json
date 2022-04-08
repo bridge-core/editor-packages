@@ -1,0 +1,193 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"type": "object",
+	"definitions": {
+		"hex_color": {
+			"$ref": "../general/hexColor.json"
+		}
+	},
+	"properties": {
+		"minecraft:fog_settings": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"description": {
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"identifier": {
+                            "description": "The identifier for these fog settings. The identifier must include a namespace.",
+							"anyOf": [
+								{
+									"$ref": "../general/reference/prefixedFileIdentifier.json"
+								},
+								{
+									"$ref": "../general/vanilla/identifiers.json#/definitions/fog_identifiers"
+								}
+							]
+						}
+					}
+				},
+				"distance": {
+					"additionalProperties": false,
+					"type": "object",
+					"propertyNames": {
+						"enum": [
+							"water",
+							"air",
+							"weather",
+							"lava",
+							"lava_resistance",
+							"powder_snow"
+						]
+					},
+					"description": "The distance fog settings for different camera locations.",
+					"patternProperties": {
+						"^water|air|weather|lava|lava_resistance|powder_snow$": {
+							"type": "object",
+							"properties": {
+								"fog_start": {
+									"type": "number",
+									"description": "The distance from the player that the fog will begin to appear. 'fog_start' must be less than or equal to 'fog_end'."
+								},
+								"fog_end": {
+									"type": "number",
+									"description": "The distance from the player that the fog will become fully opaque. 'fog_end' must be greater than or equal to 'fog_start'."
+								},
+								"fog_color": {
+									"$ref": "#/definitions/hex_color",
+									"description": "The color that the fog will take on."
+								},
+								"render_distance_type": {
+									"type": "string",
+									"enum": ["fixed", "render"],
+									"description": "Determines how distance value is used. Fixed distance is measured in blocks. Dynamic distance is multiplied by the current render distance."
+								},
+                                "transition_fog": {
+                                    "description": "Additional fog data which will slowly transition to the distance fog of current biome.",
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "properties": {
+                                        "init_fog": {
+                                            "description": "Initial fog that will slowly transition into water distance fog of the biome when player goes into water.",
+                                            "type": "object",
+                                            "additionalProperties": false,
+                                            "properties": {
+                                                "fog_start": {
+                                                    "type": "number",
+                                                    "description": "The distance from the player that the fog will begin to appear. 'fog_start' must be less than or equal to 'fog_end'."
+                                                },
+                                                "fog_end": {
+                                                    "type": "number",
+                                                    "description": "The distance from the player that the fog will become fully opaque. 'fog_end' must be greater than or equal to 'fog_start'."
+                                                },
+                                                "fog_color": {
+                                                    "$ref": "#/definitions/hex_color",
+                                                    "description": "The color that the fog will take on."
+                                                },
+                                                "render_distance_type": {
+                                                    "type": "string",
+                                                    "enum": ["fixed", "render"],
+                                                    "description": "Determines how distance value is used. Fixed distance is measured in blocks. Dynamic distance is multiplied by the current render distance."
+                                                }
+                                            }
+                                        },
+                                        "min_percent": {
+                                            "description": "The minimum progress of fog transition.",
+                                            "type": "number",
+                                            "minimum": 0,
+                                            "maximum": 1
+                                        },
+                                        "mid_seconds": {
+                                            "description": "The time takes to reach certain progress ('mid_percent') of fog transition.",
+                                            "type": "number",
+                                            "minimum": 0
+                                        },
+                                        "mid_percent": {
+                                            "description": "The progress of fog transition after 'mid_seconds' seconds.",
+                                            "type": "number",
+                                            "minimum": 0,
+                                            "maximum": 1
+                                        },
+                                        "max_seconds": {
+                                            "description": "Total amount of time takes to complete fog transition.",
+                                            "type": "number",
+                                            "minimum": 0
+                                        }
+                                    }
+                                }
+							}
+						}
+					}
+				},
+				"volumetric": {
+					"type": "object",
+					"additionalProperties": false,
+					"description": "The volumetric fog settings. RTX is required for volumetric fogs.",
+					"properties": {
+						"media_coefficients": {
+							"type": "object",
+							"description": "The coefficient settings for the volumetric fog in different blocks.",
+							"propertyNames": {
+								"enum": ["air", "water", "cloud"]
+							},
+							"patternProperties": {
+								"^air|water|cloud$": {
+									"type": "object",
+									"properties": {
+										"scattering": {
+											"description": "Proportion of light that is scattered per block.",
+											"$ref": "#/definitions/hex_color"
+										},
+										"absorption": {
+											"description": "Proportion of light that is absorbed (lost) per block.",
+											"$ref": "#/definitions/hex_color"
+										}
+									}
+								}
+							}
+						},
+						"density": {
+							"type": "object",
+							"propertyNames": {
+								"enum": [
+									"water",
+									"air",
+									"weather",
+									"lava",
+									"lava_resistance"
+								]
+							},
+							"description": "The density settings for different camera locations.",
+							"patternProperties": {
+								"^water|air|weather|lava|lava_resistance$": {
+									"type": "object",
+									"additionalProperties": false,
+									"properties": {
+										"max_density": {
+											"description": "The maximum amount of opaqueness that the ground fog will take on. A value from [0.0, 1.0].",
+											"type": "number"
+										},
+										"max_density_height": {
+											"description": "The height in blocks that the ground fog will become it's maximum density.",
+											"type": "number"
+										},
+										"zero_density_height": {
+											"description": "The height in blocks that the ground fog will be completely transparent and begin to appear. This value needs to be at least 1 higher than 'max_density_height'.",
+											"type": "number"
+										},
+										"uniform": {
+											"description": "When set to true, the density will be uniform across all heights.",
+											"type": "boolean"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

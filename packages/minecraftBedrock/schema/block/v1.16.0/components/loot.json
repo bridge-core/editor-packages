@@ -2,5 +2,6 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"$ref": "../../../general/reference/paths.json#/definitions/loot_table_paths",
-	"description": "Sets the loot of this block"
+	"description": "The path to the loot table, relative to the behavior pack.",
+	"maxLength": 256
 }

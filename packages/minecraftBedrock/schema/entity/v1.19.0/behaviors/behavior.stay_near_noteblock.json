@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "description": "The entity will attempt to toss the items from its inventory to a nearby recently played noteblock.",
+    "properties": {
+        "priority": { "$ref": "../../general/behaviorPriority.json" },
+        "listen_time": {
+            "description": "Sets the time an entity should stay near a noteblock after hearing it.",
+            "type": "number"
+        },
+        "speed": {
+            "description": "Sets the entity's speed when moving toward the block.",
+            "type": "number"
+        },
+        "start_distance": {
+            "description": "Sets the distance the entity needs to be away from the block to attempt to start the goal.",
+            "type": "number"
+        },
+        "stop_distance": {
+            "description": "Sets the distance from the block the entity will attempt to reach.",
+            "type": "number"
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "description": "Activates the 'EMERGING' actor flag during the specified duration and triggers 'on_done' at the end.",
+    "properties": {
+        "priority": { "$ref": "../../general/behaviorPriority.json" },
+        "cooldown_time": {
+            "description": "Time in seconds the mob has to wait before using the goal again.",
+            "type": "number"
+        },
+        "duration": {
+            "description": "Goal duration in seconds.",
+            "type": "number"
+        },
+        "on_done": {
+            "description": "Trigger to be executed when the goal execution is about to end.",
+            "$ref": "../../general/eventDefinition.json"
+        }
+    }
+}

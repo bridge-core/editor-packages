@@ -4,11 +4,11 @@
         "description": {
             "identifier": "{{PROJECT_PREFIX}}:{{FILE_NAME}}"
         },
-        "count": {},
+        "count": 0,
         "replace_rules": [
             {
                 "places_block": {},
-                "may_replace": {}
+                "may_replace": []
             }
         ]
     }

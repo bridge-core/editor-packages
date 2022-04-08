@@ -8,6 +8,7 @@
 	"items": {
 		"type": "integer",
 		"minimum": -360,
-		"maximum": 360
+		"maximum": 360,
+		"multipleOf": 90
 	}
 }

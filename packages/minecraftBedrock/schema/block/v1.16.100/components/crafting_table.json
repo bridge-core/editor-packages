@@ -17,6 +17,7 @@
 			"type": "array",
 			"description": "Defines the name in the UI of this table. If not specified, the name of the block will be used.",
 			"items": {
+				"maxLength": 64,
 				"type": "string"
 			}
 		}

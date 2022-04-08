@@ -1,0 +1,13 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "description": "Allows an item to be used over a duration.",
+    "properties": {
+        // "on_complete" in docs, but actually "on_completed"
+        "on_completed": {
+            "description": "Event trigger for when the item has completed its use duration.",
+            "$ref": "../../general/eventDefinition.json"
+        }
+    }
+}
