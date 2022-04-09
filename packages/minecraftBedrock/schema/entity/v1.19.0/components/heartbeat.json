@@ -1,5 +1,11 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "type": "object",
-    "additionalProperties": false
+    "additionalProperties": false,
+    "properties": {
+        "interval": {
+            "description": "The interval in ticks between each heartbeat.",
+            "$ref": "../../../molang/embedded.json"
+        }
+    }
 }

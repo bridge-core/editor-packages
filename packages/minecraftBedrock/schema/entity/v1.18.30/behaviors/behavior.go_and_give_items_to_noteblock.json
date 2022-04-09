@@ -15,7 +15,19 @@
         },
         "on_item_throw": {
             "description": "Event(s) to run when this mob throws items.",
-            "$ref": "../../general/eventDefinition.json"
+            "anyOf": [
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "../../general/eventDefinition.json"
+                    }
+                },
+                {
+                    "type": "object",
+                    "$ref": "../../general/eventDefinition.json"
+                }
+            ]
         },
         "reach_block_distance": {
             "description": "Sets the desired distance to be reached before throwing the items towards the block.",

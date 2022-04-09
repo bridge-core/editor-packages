@@ -1,14 +1,21 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"additionalProperties": false,
 	"description": "The follow range for the entity.",
-	"type": "object",
-	"properties": {
-		"value": {
-			"type": "number"
+	"anyOf": [
+		{
+			"additionalProperties": false,
+			"type": "object",
+			"properties": {
+				"value": {
+					"type": "integer"
+				},
+				"max": {
+					"type": "integer"
+				}
+			}
 		},
-		"max": {
-			"type": "number"
+		{
+			"type": "integer"
 		}
-	}
+	]
 }
