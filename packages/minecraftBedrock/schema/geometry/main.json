@@ -3,14 +3,8 @@
 	"title": "Geometry",
 	"type": "object",
 	"additionalProperties": false,
-	"properties": {
-		"format_version": {
-			"$ref": "../project/formatVersionEnum.json"
-		},
-		"debug": {
-			"type": "boolean"
-		},
-		"minecraft:geometry": {
+	"definitions": {
+		"geometry_definition": {
 			"type": "object",
 			"properties": {
 				"description": {
@@ -120,6 +114,29 @@
 					}
 				}
 			}
+		}
+	},
+	"properties": {
+		"format_version": {
+			"$ref": "../project/formatVersionEnum.json"
+		},
+		"debug": {
+			"type": "boolean"
+		},
+		"minecraft:geometry": {
+			"anyOf": [
+				{
+					"type": "object",
+					"$ref": "#/definitions/geometry_definition"
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "object",
+						"$ref": "#/definitions/geometry_definition"
+					}
+				}
+			]
 		}
 	}
 }
