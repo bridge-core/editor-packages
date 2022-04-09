@@ -36,21 +36,45 @@
 		},
 		"breeds_with": {
 			"description": "The list of entity definitions that this entity can breed with.",
-			"type": "object",
-			"properties": {
-				"mate_type": {
-					"description": "The entity definition of this entity's mate.",
-					"$ref": "../../../general/reference/identifiers.json#/definitions/entity_identifiers"
+			"anyOf": [
+				{
+					"type": "object",
+					"properties": {
+						"mate_type": {
+							"description": "The entity definition of this entity's mate.",
+							"$ref": "../../../general/reference/identifiers.json#/definitions/entity_identifiers"
+						},
+						"baby_type": {
+							"description": "The entity definition of this entity's babies.",
+							"$ref": "../../../general/reference/identifiers.json#/definitions/entity_identifiers"
+						},
+						"breed_event": {
+							"description": "Event to run when this entity breeds.",
+							"$ref": "../../general/eventDefinition.json"
+						}
+					}
 				},
-				"baby_type": {
-					"description": "The entity definition of this entity's babies.",
-					"$ref": "../../../general/reference/identifiers.json#/definitions/entity_identifiers"
-				},
-				"breed_event": {
-					"description": "Event to run when this entity breeds.",
-					"$ref": "../../general/eventDefinition.json"
+				{
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"mate_type": {
+								"description": "The entity definition of this entity's mate.",
+								"$ref": "../../../general/reference/identifiers.json#/definitions/entity_identifiers"
+							},
+							"baby_type": {
+								"description": "The entity definition of this entity's babies.",
+								"$ref": "../../../general/reference/identifiers.json#/definitions/entity_identifiers"
+							},
+							"breed_event": {
+								"description": "Event to run when this entity breeds.",
+								"$ref": "../../general/eventDefinition.json"
+							}
+						}
+					}
 				}
-			}
+			]
 		},
 		"causes_pregnancy": {
 			"description": "If true, the entity will become pregnant instead of spawning a baby.",
