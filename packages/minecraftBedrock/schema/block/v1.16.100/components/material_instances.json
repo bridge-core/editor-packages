@@ -30,11 +30,24 @@
 			},
 			"render_method": {
 				"description": "The render method to use.",
-				"enum": [
-					"opaque",
-					"blend",
-					"alpha_test",
-					"double_sided"
+				"type": "string",
+				"oneOf": [
+					{
+						"const": "opaque",
+						"description": "Used for a regular block texture without an alpha layer. Does not allow for transparency or translucency. This material enables AO (ambient occlusion) for the block, creating shadows around and underneath it."
+					},
+					{
+						"const": "blend",
+						"description": "Used for a block like stained glass. Allows for transparency and translucency (slightly transparent textures). By default, this material disables AO for the block."
+					},
+					{
+						"const": "alpha_test",
+						"description": "Used for a block like the vanilla (unstained) glass. Does not allow for translucency, only fully opaque or fully transparent textures. By default, this material disables AO for the block, removing those ugly shadows if you're making a non-full or decorative block."
+					},
+					{
+						"const": "double_sided",
+						"description": "Used for completely disabling backface culling."
+					}
 				]
 			},
 			"ambient_occlusion": {
