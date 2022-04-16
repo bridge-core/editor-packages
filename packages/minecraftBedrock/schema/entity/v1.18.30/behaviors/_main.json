@@ -2,20 +2,6 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"type": "object",
 	"allOf": [
-		// Wild update experimental
-		{
-			"$ref": "../../../project/experimentalGameplay/theWildUpdate.json",
-			"then": {
-				"properties": {
-					"minecraft:behavior.go_and_give_items_to_noteblock": {
-						"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.18.30/behaviors/behavior.go_and_give_items_to_noteblock.json"
-					},
-					"minecraft:behavior.go_and_give_items_to_owner": {
-						"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.18.30/behaviors/behavior.go_and_give_items_to_owner.json"
-					}
-				}
-			}
-		},
 		// Non-experimental
 		{
 			"properties": {

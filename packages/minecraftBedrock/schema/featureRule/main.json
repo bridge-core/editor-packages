@@ -20,7 +20,7 @@
 							"$ref": "../project/prefixedFileIdentifierEnum.json"
 						},
 						"places_feature": {
-							"$ref": "../../../general/reference/identifiers.json#/definitions/feature_identifiers"
+							"$ref": "../general/reference/identifiers.json#/definitions/feature_identifiers"
 						}
 					}
 				},

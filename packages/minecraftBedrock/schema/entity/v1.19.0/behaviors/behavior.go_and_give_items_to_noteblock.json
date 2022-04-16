@@ -5,10 +5,6 @@
     "description": "The entity will attempt to toss the items from its inventory to a nearby recently played noteblock.",
     "properties": {
         "priority": { "$ref": "../../general/behaviorPriority.json" },
-        "horizontal_throw_force": {
-            "description": "Sets the horizontal throw force.",
-            "type": "number"
-        },
         "listen_time": {
             "description": "Sets the time an entity should continue delivering items to a noteblock after hearing it.",
             "type": "integer"
@@ -37,8 +33,12 @@
             "description": "Sets the entity's speed when running toward the block.",
             "type": "number"
         },
-        "vertical_throw_force": {
-            "description": "Sets the vertical throw force.",
+        "throw_force": {
+            "description": "Sets the throw force.",
+            "type": "number"
+        },
+        "vertical_throw_mul": {
+            "description": "Sets the vertical throw multiplier that is applied on top of the throw force in the vertical direction.",
             "type": "number"
         }
     }

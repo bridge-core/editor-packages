@@ -603,9 +603,6 @@
 						"branch_steps": {
 							"type": "integer"
 						},
-						"branch_position": {
-							"type": "integer"
-						},
 						"branch_chance": {
 							"$ref": "../../general.json#/definitions/chance_information"
 						},
@@ -689,6 +686,25 @@
 							"type": "string",
 							"enum": ["down", "up", "out", "away"]
 						}
+					}
+				},
+				"above_root": {
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"above_root_chance": {
+							"type": "string",
+							"$ref": "../../general.json#/definitions/chance_information"
+						},
+						"above_root_block": {
+							"$ref": "../../general.json#/definitions/block_reference"
+						}
+					}
+				},
+				"roots_may_grow_through": {
+					"type": "array",
+					"items": {
+						"$ref": "../../general.json#/definitions/block_reference"
 					}
 				}
 			}

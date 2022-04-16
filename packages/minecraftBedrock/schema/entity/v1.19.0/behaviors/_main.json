@@ -8,10 +8,10 @@
 			"then": {
 				"properties": {
 					"minecraft:behavior.go_and_give_items_to_noteblock": {
-						"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.18.30/behaviors/behavior.go_and_give_items_to_noteblock.json"
+						"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.0/behaviors/behavior.go_and_give_items_to_noteblock.json"
 					},
 					"minecraft:behavior.go_and_give_items_to_owner": {
-						"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.18.30/behaviors/behavior.go_and_give_items_to_owner.json"
+						"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.0/behaviors/behavior.go_and_give_items_to_owner.json"
 					},
 					"minecraft:behavior.croak": {
 						"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.0/behaviors/behavior.croak.json"

@@ -8,6 +8,12 @@
         "on_completed": {
             "description": "Event trigger for when the item has completed its use duration.",
             "$ref": "../../general/eventDefinition.json"
+        },
+        "movement_modifier": {
+            "description": "Modifier value to scale the players movement speed when item is in use.",
+            "type": "number",
+            "minimum": 0,
+            "maximum": 5
         }
     }
 }
