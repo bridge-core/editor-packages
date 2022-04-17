@@ -101,10 +101,18 @@
 		},
 		"places_feature": {
 			"description": "Named reference of feature to be placed.",
-			"type": "array",
-			"items": {
-				"$ref": "../../../general/reference/identifiers.json#/definitions/feature_identifiers"
-			}
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../../../general/reference/identifiers.json#/definitions/feature_identifiers"
+					}
+				},
+				{
+					"type": "string",
+					"$ref": "../../../general/reference/identifiers.json#/definitions/feature_identifiers"
+				}
+			]
 		}
 	}
 }
