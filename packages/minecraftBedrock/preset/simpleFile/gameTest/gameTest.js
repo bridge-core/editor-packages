@@ -1,3 +1,3 @@
-import { register } from 'GameTest'
+import { register } from 'mojang-gametest'
 
 register('', '', (test) => {})
