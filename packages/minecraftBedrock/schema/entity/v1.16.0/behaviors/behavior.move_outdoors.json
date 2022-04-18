@@ -4,6 +4,7 @@
     "additionalProperties": false,
     "description": "Allows this entity to move outdoors.",
     "properties": {
+        "priority": { "$ref": "../../general/behaviorPriority.json" },
         "goal_radius": {
             "description": "The radius away from the target block to count as reaching the goal.",
             "type": "number"

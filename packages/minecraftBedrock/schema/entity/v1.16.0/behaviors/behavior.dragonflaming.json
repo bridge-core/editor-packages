@@ -4,6 +4,7 @@
     "type": "object",
     "description": "Allows this entity to use a flame-breath attack. Can only be used by the Ender Dragon.",
     "properties": {
+        "priority": { "$ref": "../../general/behaviorPriority.json" },
         "cooldown_time": {
             "description": "Time (in seconds), after roar, to breath flame.",
             "type": "number"

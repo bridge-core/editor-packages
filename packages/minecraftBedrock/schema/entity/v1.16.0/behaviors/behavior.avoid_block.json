@@ -39,7 +39,19 @@
 		},
 		"on_escape": {
 			"description": "Escape trigger.",
-			"$ref": "../../general/eventDefinition.json"
+			"anyOf": [
+				{
+					"type": "object",
+					"$ref": "../../general/eventDefinition.json"
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "object",
+						"$ref": "../../general/eventDefinition.json"
+					}
+				}
+			]
 		},
 		"avoid_block_sound": {
 			"description": "The sound event to play when the mob is avoiding a block.",

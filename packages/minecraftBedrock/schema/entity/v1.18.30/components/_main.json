@@ -16,6 +16,9 @@
 		// Non-experimental
 		{
 			"properties": {
+				"minecraft:block_sensor": {
+					"$ref": "./block_sensor.json"
+				},
 				"minecraft:exhaustion_values": {
 					"$ref": "./exhaustion_values.json"
 				},
@@ -120,9 +123,6 @@
 				},
 				"minecraft:barter": {
 					"$ref": "../../v1.16.0/components/barter.json"
-				},
-				"minecraft:block_sensor": {
-					"$ref": "../../v1.16.0/components/block_sensor.json"
 				},
 				"minecraft:boostable": {
 					"$ref": "../../v1.16.0/components/boostable.json"

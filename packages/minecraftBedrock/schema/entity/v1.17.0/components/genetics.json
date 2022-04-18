@@ -129,13 +129,17 @@
 								}
 							}
 						}
+					},
+					"mutation_rate": {
+						"description": "If this value is non-negative, overrides the chance for this gene that an allele will be replaced with a random one instead of the parent's allele during birth. Non-negative values greater than 1 will be the same as the value 1.",
+						"type": "number"
+					},
+					"use_simplified_breeding": {
+						"description": "When this flag is set to true, the offspring never inherits hidden alleles of parents as main alleles and main as hidden. This allows to implement simple breeding logic easier.",
+						"type": "boolean"
 					}
 				}
 			}
-		},
-		"use_simplified_breeding": {
-			"description": "When this flag is set to true, the offspring never inherits hidden alleles of parents as main alleles and main as hidden. This allows to implement simple breeding logic easier.",
-			"type": "boolean"
 		}
 	}
 }

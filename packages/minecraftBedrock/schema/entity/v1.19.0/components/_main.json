@@ -40,6 +40,9 @@
 						"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.18.20/components/interact.json"
 					}
 				},
+				"minecraft:block_sensor": {
+					"$ref": "../../v1.18.30/components/block_sensor.json"
+				},
 				"minecraft:exhaustion_values": {
 					"$ref": "../../v1.18.30/components/exhaustion_values.json"
 				},
@@ -138,9 +141,6 @@
 				},
 				"minecraft:barter": {
 					"$ref": "../../v1.16.0/components/barter.json"
-				},
-				"minecraft:block_sensor": {
-					"$ref": "../../v1.16.0/components/block_sensor.json"
 				},
 				"minecraft:boostable": {
 					"$ref": "../../v1.16.0/components/boostable.json"

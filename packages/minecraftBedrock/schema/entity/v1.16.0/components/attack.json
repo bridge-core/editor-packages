@@ -8,17 +8,25 @@
 			"description": "Range of the random amount of damage the melee attack deals. A negative value can heal the entity instead of hurting it.",
 			"anyOf": [
 				{
-					"type": "number"
+					"type": "integer"
 				},
 				{
 					"type": "object",
 					"properties": {
 						"range_min": {
-							"type": "number"
+							"type": "integer"
 						},
 						"range_max": {
-							"type": "number"
+							"type": "integer"
 						}
+					}
+				},
+				{
+					"type": "array",
+					"minItems": 2,
+					"maxItems": 2,
+					"items": {
+						"type": "integer"
 					}
 				}
 			]

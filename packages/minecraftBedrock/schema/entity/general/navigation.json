@@ -77,8 +77,23 @@
 			"description": "Tells the pathfinder which blocks to avoid when creating a path.",
 			"type": "array",
 			"items": {
-				"type": "string",
-				"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
+				"anyOf": [
+					{
+						"type": "string",
+						"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
+					},
+					{
+						"type": "object",
+						"properties": {
+							"name": {
+								"$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
+							},
+							"states": {
+								"$ref": "../../general/vanilla/blockState.json"
+							}
+						}
+					}
+				]
 			}
 		},
 		"can_breach": {
@@ -100,6 +115,9 @@
 			"description": "Tells the pathfinder whether or not it can walk on the ground outside water.",
 			"type": "boolean",
 			"default": true
+		},
+		"can_float": {
+			"type": "boolean"
 		}
 	}
 }

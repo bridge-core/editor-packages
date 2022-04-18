@@ -22,10 +22,10 @@
 						}
 					},
 					"entered_block_event": {
-						"type": "string"
+						"$ref": "../../general/eventDefinition.json"
 					},
 					"exited_block_event": {
-						"type": "string"
+						"$ref": "../../general/eventDefinition.json"
 					}
 				}
 			}

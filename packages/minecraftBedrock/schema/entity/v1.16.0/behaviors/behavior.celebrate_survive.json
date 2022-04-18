@@ -4,6 +4,7 @@
     "type": "object",
     "description": "Allows this entity to celebrate surviving a raid by shooting fireworks.",
     "properties": {
+        "priority": { "$ref": "../../general/behaviorPriority.json" },
         "duration": {
             "description": "The duration in seconds that the celebration lasts for.",
             "type": "number"
@@ -13,10 +14,10 @@
             "type": "object",
             "properties": {
 				"range_min": {
-					"type": "integer"
+					"type": "number"
 				},
 				"range_max": {
-					"type": "integer"
+					"type": "number"
 				}
 			}
         },

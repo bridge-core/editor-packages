@@ -43,16 +43,7 @@
 		},
 		"entity_types": {
 			"description": "Filters which types of entities are valid to follow.",
-			"type": "array",
-			"items": {
-				"type": "object",
-				"additionalProperties": false,
-				"properties": {
-					"filters": {
-						"$ref": "../../general/entityType.json"
-					}
-				}
-			}
+			"$ref": "../../general/entityType.json"
 		}
 	}
 }

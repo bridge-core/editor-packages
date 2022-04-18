@@ -56,7 +56,8 @@
 			"description": "The threshold in which to start applying cohesion.",
 			"type": "number"
 		},
-		"inner_cohesion_threshold": {
+		// Don't know why 'inner' is spelt 'innner' here but that is how it is in the docs and vanilla files
+		"innner_cohesion_threshold": {
 			"description": "The distance in which the flocker will stop applying cohesion.",
 			"type": "number"
 		},

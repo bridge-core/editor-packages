@@ -50,39 +50,46 @@
 		},
 		"delay": {
 			"description": "Defines the properties of the delay for the transformation.",
-			"type": "object",
-			"properties": {
-				"value": {
-					"description": "Time in seconds before the entity transforms.",
-					"type": "number"
-				},
-				"block_assist_chance": {
-					"description": "Chance that the entity will look for nearby blocks that can speed up the transformation. Value must be between 0.0 and 1.0.",
-					"type": "number"
-				},
-				"block_chance": {
-					"description": "Chance that, once a block is found, will help speed up the transformation.",
-					"type": "number"
-				},
-				"block_max": {
-					"description": "Maximum number of blocks the entity will look for to aid in the transformation. If not defined or set to 0, it will be set to the block radius.",
-					"type": "number"
-				},
-				"block_radius": {
-					"description": "Distance in Blocks that the entity will search for blocks that can help the transformation.",
-					"type": "number"
-				},
-				"keep_owner": {
-					"type": "boolean"
-				},
-				"block_types": {
-					"description": "List of blocks that can help the transformation of this entity.",
-					"type": "array",
-					"items": {
-						"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+			"anyOf": [
+				{
+					"type": "object",
+					"properties": {
+						"value": {
+							"description": "Time in seconds before the entity transforms.",
+							"type": "number"
+						},
+						"block_assist_chance": {
+							"description": "Chance that the entity will look for nearby blocks that can speed up the transformation. Value must be between 0.0 and 1.0.",
+							"type": "number"
+						},
+						"block_chance": {
+							"description": "Chance that, once a block is found, will help speed up the transformation.",
+							"type": "number"
+						},
+						"block_max": {
+							"description": "Maximum number of blocks the entity will look for to aid in the transformation. If not defined or set to 0, it will be set to the block radius.",
+							"type": "number"
+						},
+						"block_radius": {
+							"description": "Distance in Blocks that the entity will search for blocks that can help the transformation.",
+							"type": "number"
+						},
+						"keep_owner": {
+							"type": "boolean"
+						},
+						"block_types": {
+							"description": "List of blocks that can help the transformation of this entity.",
+							"type": "array",
+							"items": {
+								"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+							}
+						}
 					}
+				},
+				{
+					"type": "number"
 				}
-			}
+			]
 		}
 	}
 }

@@ -40,7 +40,7 @@
 			"description": "The max distance away from the target when landing from the pounce that will still result in damaging the target.",
 			"type": "number"
 		},
-		"struck_blocks": {
+		"stuck_blocks": {
 			"$ref": "../../general/filter.json"
 		}
 	}

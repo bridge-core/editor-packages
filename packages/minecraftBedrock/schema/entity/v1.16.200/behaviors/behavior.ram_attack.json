@@ -19,7 +19,19 @@
 		},
 		"on_start": {
 			"description": "The event to trigger when attacking.",
-			"$ref": "../../general/eventDefinition.json"
+			"anyOf": [
+				{
+					"type": "object",
+					"$ref": "../../general/eventDefinition.json"
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "object",
+						"$ref": "../../general/eventDefinition.json"
+					}
+				}
+			]
 		},
 		"baby_knockback_modifier": {
 			"description": "The modifier to knockback that babies have.",
