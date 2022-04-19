@@ -8,10 +8,6 @@
 		"id": "creationOfCustomBiomes"
 	},
 	{
-		"icon": "mdi-plus-circle",
-		"id": "additionalModdingCapabilities"
-	},
-	{
 		"icon": "mdi-alarm",
 		"id": "upcomingCreatorFeatures"
 	},
@@ -35,6 +31,7 @@
 
 /**
  * Removed toggles:
- * { "icon": "mdi-image-filter-hdr", "id": "cavesAndCliffs" } < 1.18.0
+ * { "icon": "mdi-image-filter-hdr", "id": "cavesAndCliffs" } - 1.18.0
+ * { "icon": "mdi-plus-circle", "id": "additionalModdingCapabilities" } - 1.18.30
  *
 */
