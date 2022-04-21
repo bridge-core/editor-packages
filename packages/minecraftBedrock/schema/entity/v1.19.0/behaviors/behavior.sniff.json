@@ -26,11 +26,15 @@
             "type": "number"
         },
         "sniffing_radius": {
-            "description": "Player detection radius.",
+            "description": "Mob detection radius.",
             "type": "number"
         },
-        "suspicion_radius": {
-            "description": "Player suspicion radius. When a player is within this radius, the anger level towards that player is increased.",
+        "suspicion_radius_horizontal": {
+            "description": "Mob suspicion horizontal radius. When a player is within this radius horizontally, the anger level towards that player is increased.",
+            "type": "number"
+        },
+        "suspicion_radius_vertical": {
+            "description": "Mob suspicion vertical radius. When a player is within this radius vertically, the anger level towards that player is increased.",
             "type": "number"
         }
     }

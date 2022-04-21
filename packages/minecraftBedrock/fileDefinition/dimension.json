@@ -1,0 +1,21 @@
+{
+	"id": "dimension",
+	"icon": "mdi-island",
+	"detect": {
+		"packType": "behaviorPack",
+		"scope": "dimensions/",
+		"matcher": ["dimensions/**/*.json", "dimensions/*.json"],
+		"fileContent": ["minecraft:dimension"]
+	},
+
+	"schema": "file:///data/packages/minecraftBedrock/schema/dimension/main.json",
+
+	"documentation": {
+		"baseUrl": "https://docs.microsoft.com/en-us/minecraft/creator/documents/datadrivenoverworldheight",
+		"supportsQuerying": false
+	},
+	"highlighterConfiguration": {
+		"variables": ["description", "components"],
+		"typeIdentifiers": ["format_version"]
+	}
+}

@@ -8,6 +8,7 @@
         "query.surface_particle_color",
         "query.surface_particle_texture_coordinate",
         "query.surface_particle_texture_size",
-        "query.time_since_last_vibration_detection"
+        "query.time_since_last_vibration_detection",
+        "query.is_sonic_boom"
     ]
 }

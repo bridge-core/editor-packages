@@ -1,0 +1,28 @@
+{
+	"name": "Dimension",
+	"icon": "mdi-island",
+	"description": "Creates a blank dimension. Can only be used to modify vanilla dimension world height.",
+	"category": "fileType.simpleFile",
+	"requires": {
+		"packTypes": ["behaviorPack"],
+		"targetVersion": [">=", "1.19.0"]
+	},
+	"additionalModels": {
+		"PRESET_PATH": "dimensions/"
+	},
+	"fields": [
+		[
+			"File Name",
+			"FILE_NAME",
+			{ "validate": ["required", "alphanumeric", "lowercase"] }
+		]
+	],
+
+	"createFiles": [
+		[
+			"dimension.json",
+			"{{PRESET_PATH}}{{FILE_NAME}}.json",
+			{ "inject": ["FILE_NAME", "PRESET_PATH"], "openFile": true, "packPath": "behaviorPack" }
+		]
+	]
+}

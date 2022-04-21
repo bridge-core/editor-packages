@@ -2,11 +2,11 @@
     "$schema": "http://json-schema.org/draft-07/schema",
     "type": "object",
     "properties": {
+        "minecraft:sculk_patch_feature": {
+            "$ref": "./sculk_patch_feature.json"
+        },
         "minecraft:tree_feature": {
             "$ref": "./tree_feature.json"
-        },
-        "minecraft:sculk_patch_feature": {
-            "$ref": "../../v1.18.30/features/sculk_patch_feature.json"
         },
         "minecraft:fossil_feature": {
             "$ref": "../../v1.18.10/features/fossil_feature.json"

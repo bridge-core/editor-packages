@@ -1,0 +1,57 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "description": "Plays the provided sounds and activates the 'SONIC BOOM' actor flag during the specified duration.",
+    "additionalProperties": false,
+    "properties": {
+        "priority": { "$ref": "../../general/behaviorPriority.json" },
+        "attack_cooldown": {
+            "description": "Cooldown in seconds required after using this attack until the entity can use sonic boom again.",
+            "type": "number"
+        },
+        "attack_damage": {
+            "description": "Attack damage of the sonic boom.",
+            "type": "number"
+        },
+        "attack_range_horizontal": {
+            "description": "Horizontal range (in blocks) at which the sonic boom can damage the target.",
+            "type": "null"
+        },
+        "attack_range_vertical": {
+            "description": "Vertical range (in blocks) at which the sonic boom can damage the target.",
+            "type": "number"
+        },
+        "attack_sound": {
+            "description": "Sound event for the attack.",
+            "type": "string"
+        },
+        "charge_sound": {
+            "description": "Sound event for the charge up.",
+            "type": "string"
+        },
+        "duration": {
+            "description": "Goal duration in seconds.",
+            "type": "number"
+        },
+        "duration_until_attack_sound": {
+            "description": "Duration in seconds until the attack sound is played.",
+            "type": "number"
+        },
+        "knockback_height_cap": {
+            "description": "Height cap of the attack knockback's vertical delta.",
+            "type": "number"
+        },
+        "knockback_horizontal_strength": {
+            "description": "Horizontal strength of the attack's knockback applied to the attack target.",
+            "type": "number"
+        },
+        "knockback_vertical_strength": {
+            "description": "Vertical strength of the attack's knockback applied to the attack target.",
+            "type": "number"
+        },
+        "speed_multiplier": {
+            "description": "This multiplier modifies the attacking entity's speed when moving toward the target.",
+            "type": "number"
+        }
+    }
+}
