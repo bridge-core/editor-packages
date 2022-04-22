@@ -10,36 +10,6 @@
 
 declare module 'mojang-minecraft' {
 	/**
-	 * Contains information related to changes to a piston
-	 * expanding or retracting.
-	 * @example place_bottom_stone_slab.js
-	 * ```typescript
-	 * import { world, MinecraftBlockTypes, BlockProperties, BlockLocation } from "mojang-minecraft";
-	 *
-	 * // Create the permutation
-	 * let bottomStoneSlab = MinecraftBlockTypes.stoneSlab.createDefaultBlockPermutation();
-	 * bottomStoneSlab.getProperty(BlockProperties.stoneSlabType).value = "stone_brick";
-	 * bottomStoneSlab.getProperty(BlockProperties.topSlotBit).value = false;
-	 *
-	 * // Fetch the block
-	 * const block = world.getDimension("overworld").getBlock(new BlockLocation(1, 2, 3));
-	 *
-	 * // Set the permutation
-	 * block.setPermutation(bottomStoneSlab);
-	 *
-	 * ```
-	 *
-	 * Manifest Details
-	 * ```json
-	 * {
-	 *   // mojang-minecraft
-	 *   "uuid": "b26a4d4c-afdf-4690-88f8-931846312678",
-	 *   "version": [ 0, 1, 0 ]
-	 * }
-	 * ```
-	 *
-	 */
-	/**
 	 * Represents a direction for expressing relative position or
 	 * facing.
 	 */
@@ -131,7 +101,6 @@ declare module 'mojang-minecraft' {
 		 * List of players that will receive this message.
 		 */
 		'targets': Player[]
-		protected constructor()
 	}
 	/**
 	 * Manages callbacks that are connected to an event that fires
@@ -155,7 +124,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		unsubscribe(callback: (arg: BeforeChatEvent) => void): void
-		protected constructor()
 	}
 	/**
 	 * Contains information related to firing of a data driven
@@ -180,7 +148,6 @@ declare module 'mojang-minecraft' {
 		 * are the effect of this triggered event.
 		 */
 		'modifiers': DefinitionModifier[]
-		protected constructor()
 	}
 	/**
 	 * Contains information related to firing of a data driven
@@ -209,7 +176,6 @@ declare module 'mojang-minecraft' {
 		unsubscribe(
 			callback: (arg: BeforeDataDrivenEntityTriggerEvent) => void
 		): void
-		protected constructor()
 	}
 	/**
 	 * Contains information regarding an explosion that has
@@ -234,7 +200,6 @@ declare module 'mojang-minecraft' {
 		 * Optional source of the explosion.
 		 */
 		readonly 'source': Entity
-		protected constructor()
 	}
 	/**
 	 * Manages callbacks that are connected to before an explosion
@@ -259,7 +224,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		unsubscribe(callback: (arg: BeforeExplosionEvent) => void): void
-		protected constructor()
 	}
 	/**
 	 * Manages callbacks that are connected to an item's definition
@@ -285,7 +249,6 @@ declare module 'mojang-minecraft' {
 		unsubscribe(
 			callback: (arg: BeforeItemDefinitionTriggeredEvent) => void
 		): void
-		protected constructor()
 	}
 	/**
 	 * Contains information related to a triggering of a custom
@@ -310,7 +273,6 @@ declare module 'mojang-minecraft' {
 		 * Returns the source entity that triggered this item event.
 		 */
 		readonly 'source': Entity
-		protected constructor()
 	}
 	/**
 	 * Contains information related to an item being used.
@@ -328,7 +290,6 @@ declare module 'mojang-minecraft' {
 		 * Returns the source entity that triggered this item event.
 		 */
 		readonly 'source': Entity
-		protected constructor()
 	}
 	/**
 	 * Manages callbacks that fire before an item is used.
@@ -349,7 +310,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		unsubscribe(callback: (arg: BeforeItemUseEvent) => void): void
-		protected constructor()
 	}
 	/**
 	 * Contains information related to an item being used on a
@@ -386,7 +346,6 @@ declare module 'mojang-minecraft' {
 		 * Returns the source entity that triggered this item event.
 		 */
 		readonly 'source': Entity
-		protected constructor()
 	}
 	/**
 	 * Manages callbacks that fire before an item being used on a
@@ -410,7 +369,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		unsubscribe(callback: (arg: BeforeItemUseOnEvent) => void): void
-		protected constructor()
 	}
 	/**
 	 * Contains information related to changes before a piston
@@ -439,7 +397,6 @@ declare module 'mojang-minecraft' {
 		 * Contains additional properties and details of the piston.
 		 */
 		readonly 'piston': BlockPistonComponent
-		protected constructor()
 	}
 	/**
 	 * Manages callbacks that are connected to an event that fires
@@ -463,7 +420,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		unsubscribe(callback: (arg: BeforePistonActivateEvent) => void): void
-		protected constructor()
 	}
 	/**
 	 * Represents a block in a dimension. A block represents a
@@ -588,7 +544,6 @@ declare module 'mojang-minecraft' {
 		 * minecraft:powered_repeater.
 		 */
 		setType(blockType: BlockType): void
-		protected constructor()
 	}
 	/**
 	 * Holds information for expressing the net size of a volume of
@@ -650,7 +605,6 @@ declare module 'mojang-minecraft' {
 		 * Player that broke the block for this event.
 		 */
 		readonly 'player': Player
-		protected constructor()
 	}
 	/**
 	 * Manages callbacks that are connected to when a block is
@@ -674,15 +628,12 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		unsubscribe(callback: (arg: BlockBreakEvent) => void): void
-		protected constructor()
 	}
 	/**
 	 * Base type for components associated with blocks.
 	 */
 	// tslint:disable-next-line:no-unnecessary-class
-	export class BlockComponent {
-		protected constructor()
-	}
+	export class BlockComponent {}
 	/**
 	 * Contains information regarding an event that impacts a
 	 * specific block.
@@ -697,7 +648,6 @@ declare module 'mojang-minecraft' {
 		 * this event.
 		 */
 		readonly 'dimension': Dimension
-		protected constructor()
 	}
 	/**
 	 * Contains information regarding an explosion that has
@@ -709,6 +659,11 @@ declare module 'mojang-minecraft' {
 		 */
 		readonly 'block': Block
 		/**
+		 * Contains core information on the state of the block before
+		 * it was destroyed in an explosion.
+		 */
+		readonly 'destroyedBlockPermutation': BlockPermutation
+		/**
 		 * Dimension that contains the block that is the subject of
 		 * this explosion event.
 		 */
@@ -717,7 +672,6 @@ declare module 'mojang-minecraft' {
 		 * Optional source of the explosion.
 		 */
 		readonly 'source': Entity
-		protected constructor()
 	}
 	/**
 	 * Manages callbacks that are connected to when an explosion
@@ -741,29 +695,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		unsubscribe(callback: (arg: BlockExplodeEvent) => void): void
-		protected constructor()
-	}
-	/**
-	 * Contains more information for events where a block is hit.
-	 */
-	export class BlockHitInformation {
-		/**
-		 * Block that was hit.
-		 */
-		readonly 'block': Block
-		/**
-		 * Face of the block that was hit.
-		 */
-		readonly 'face': Direction
-		/**
-		 * X coordinate on the face that was hit.
-		 */
-		readonly 'faceLocationX': number
-		/**
-		 * Y coordinate on the face that was hit.
-		 */
-		readonly 'faceLocationY': number
-		protected constructor()
 	}
 	/**
 	 * Represents the inventory of a block in the world. Used with
@@ -779,7 +710,6 @@ declare module 'mojang-minecraft' {
 		 * Coordinates of the specified block.
 		 */
 		readonly 'location': BlockLocation
-		protected constructor()
 	}
 	/**
 	 * Represents the inventory of a {@link mojang-minecraft.Block} in the
@@ -878,7 +808,6 @@ declare module 'mojang-minecraft' {
 			toSlot: number,
 			toContainer: Container
 		): boolean
-		protected constructor()
 	}
 	/**
 	 * Represents a fluid container block that currently contains
@@ -895,7 +824,6 @@ declare module 'mojang-minecraft' {
 		 * Source location of the block.
 		 */
 		readonly 'location': BlockLocation
-		protected constructor()
 	}
 	/**
 	 * Contains the integer X, Y, Z coordinates for a block. For
@@ -1051,11 +979,10 @@ declare module 'mojang-minecraft' {
 		 * ```
 		 */
 		hasTag(tag: string): boolean
-		protected constructor()
 	}
 	/**
-	 * When present, this block has piston-like behavior. Contains
-	 * additional properties for discovering block piston state.
+	 * Represents the inventory of a block in the world. Used with
+	 * blocks like chests.
 	 */
 	export class BlockPistonComponent {
 		/**
@@ -1094,7 +1021,6 @@ declare module 'mojang-minecraft' {
 		 * Source location of the block.
 		 */
 		readonly 'location': BlockLocation
-		protected constructor()
 	}
 	/**
 	 * Contains information regarding an event where a player
@@ -1114,11 +1040,10 @@ declare module 'mojang-minecraft' {
 		 * Player that placed the block for this event.
 		 */
 		readonly 'player': Player
-		protected constructor()
 	}
 	/**
 	 * Manages callbacks that are connected to when a block is
-	 * placed.
+	 * broken.
 	 */
 	export class BlockPlaceEventSignal {
 		/**
@@ -1138,7 +1063,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		unsubscribe(callback: (arg: BlockPlaceEvent) => void): void
-		protected constructor()
 	}
 	/**
 	 * Represents a fluid container block that currently contains a
@@ -1164,7 +1088,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		setPotionType(item: ItemStack): void
-		protected constructor()
 	}
 	// tslint:disable-next-line:no-unnecessary-class
 	export class BlockProperties {
@@ -1762,7 +1685,6 @@ declare module 'mojang-minecraft' {
 		 * 'acacia', and 'dark_oak'.
 		 */
 		static readonly 'woodType' = 'wood_type'
-		protected constructor()
 	}
 	/**
 	 * Contains additional options for configuring a block raycast
@@ -1815,7 +1737,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		setRecord(recordItemType: ItemType): void
-		protected constructor()
 	}
 	/**
 	 * Represents a fluid container block that currently contains
@@ -1832,7 +1753,6 @@ declare module 'mojang-minecraft' {
 		 * Source location of the block.
 		 */
 		readonly 'location': BlockLocation
-		protected constructor()
 	}
 	/**
 	 * The type (or template) of a block. Does not contain
@@ -1874,7 +1794,6 @@ declare module 'mojang-minecraft' {
 		 * ```
 		 */
 		createDefaultBlockPermutation(): BlockPermutation
-		protected constructor()
 	}
 	/**
 	 * Represents a fluid container block that currently contains
@@ -1902,7 +1821,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		addDye(itemType: ItemType): void
-		protected constructor()
 	}
 	/**
 	 * Contains the state of a boolean-based property for a
@@ -1926,7 +1844,6 @@ declare module 'mojang-minecraft' {
 		 * allowed values.
 		 */
 		'value': boolean
-		protected constructor()
 	}
 	/**
 	 * An event that fires as players enter chat messages.
@@ -1951,7 +1868,6 @@ declare module 'mojang-minecraft' {
 		 * List of players that will receive this message.
 		 */
 		'targets': Player[]
-		protected constructor()
 	}
 	/**
 	 * Manages callbacks that are connected to chat messages being
@@ -1986,7 +1902,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		unsubscribe(callback: (arg: ChatEvent) => void): void
-		protected constructor()
 	}
 	/**
 	 * Represents a fully customizable color within Minecraft.
@@ -2125,7 +2040,6 @@ declare module 'mojang-minecraft' {
 			toSlot: number,
 			toContainer: Container
 		): boolean
-		protected constructor()
 	}
 	/**
 	 * Contains information related to firing of a data driven
@@ -2146,7 +2060,6 @@ declare module 'mojang-minecraft' {
 		 * effect of this triggered event.
 		 */
 		readonly 'modifiers': DefinitionModifier[]
-		protected constructor()
 	}
 	/**
 	 * Contains event registration related to firing of a data
@@ -2173,7 +2086,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		unsubscribe(callback: (arg: DataDrivenEntityTriggerEvent) => void): void
-		protected constructor()
 	}
 	/**
 	 * Contains a set of updates to the component definition state
@@ -2370,38 +2282,6 @@ declare module 'mojang-minecraft' {
 			location: Location,
 			molangVariables: MolangVariableMap
 		): void
-		protected constructor()
-	}
-	/**
-	 * Class used in conjunction with
-	 * {@link mojang-minecraft.PropertyRegistry} to define dynamic
-	 * properties that can be used on entities of a specified type
-	 * or at the global World- level.
-	 */
-	export class DynamicPropertiesDefinition {
-		constructor()
-		/**
-		 * @remarks
-		 * Defines a new boolean dynamic property.
-		 * @param identifier
-		 * @throws This function can throw errors.
-		 */
-		defineBoolean(identifier: string): void
-		/**
-		 * @remarks
-		 * Defines a new number dynamic property.
-		 * @param identifier
-		 * @throws This function can throw errors.
-		 */
-		defineNumber(identifier: string): void
-		/**
-		 * @remarks
-		 * Defines a new string dynamic property.
-		 * @param identifier
-		 * @param maxLength
-		 * @throws This function can throw errors.
-		 */
-		defineString(identifier: string, maxLength: number): void
 	}
 	/**
 	 * Represents an effect - like poison - that has been added to
@@ -2423,7 +2303,6 @@ declare module 'mojang-minecraft' {
 		 * effect.
 		 */
 		readonly 'duration': number
-		protected constructor()
 	}
 	/**
 	 * Contains information related to changes to an effect - like
@@ -2442,7 +2321,6 @@ declare module 'mojang-minecraft' {
 		 * Entity that the effect is being added to.
 		 */
 		'entity': Entity
-		protected constructor()
 	}
 	/**
 	 * Manages callbacks that are connected to when an effect is
@@ -2468,7 +2346,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		unsubscribe(callback: (arg: EffectAddEvent) => void): void
-		protected constructor()
 	}
 	/**
 	 * Represents a type of effect - like poison - that can be
@@ -2482,7 +2359,6 @@ declare module 'mojang-minecraft' {
 		 * Identifier of the effect type.
 		 */
 		getName(): string
-		protected constructor()
 	}
 	/**
 	 * This class represents a specific leveled enchantment that is
@@ -2577,7 +2453,6 @@ declare module 'mojang-minecraft' {
 		static readonly 'shovel' = 2048
 		static readonly 'spear' = 32768
 		static readonly 'sword' = 16
-		protected constructor()
 	}
 	/**
 	 * Contains information on a type of enchantment.
@@ -2591,7 +2466,6 @@ declare module 'mojang-minecraft' {
 		 * The maximum level this type of enchantment can have.
 		 */
 		readonly 'maxLevel': number
-		protected constructor()
 	}
 	/**
 	 * Represents the state of an entity (a mob, the player, or
@@ -2656,7 +2530,6 @@ declare module 'mojang-minecraft' {
 		 * Amount of time, in seconds, for the effect to apply.
 		 * @param amplifier
 		 * Optional amplification of the effect to apply.
-		 * @param showParticles
 		 * @throws This function can throw errors.
 		 * @example addEffect.js
 		 * ```typescript
@@ -2672,8 +2545,7 @@ declare module 'mojang-minecraft' {
 		addEffect(
 			effectType: EffectType,
 			duration: number,
-			amplifier?: number,
-			showParticles?: boolean
+			amplifier: number
 		): void
 		/**
 		 * @remarks
@@ -2709,16 +2581,6 @@ declare module 'mojang-minecraft' {
 		 * and supported by the API.
 		 */
 		getComponents(): IEntityComponent[]
-		/**
-		 * @remarks
-		 * Returns a property value.
-		 * @param identifier
-		 * @returns
-		 * Returns the value for the property, or undefined if the
-		 * property has not been set.
-		 * @throws This function can throw errors.
-		 */
-		getDynamicProperty(identifier: string): boolean | number | string
 		/**
 		 * @remarks
 		 * Returns the effect for the specified EffectType on the
@@ -2771,13 +2633,6 @@ declare module 'mojang-minecraft' {
 		kill(): void
 		/**
 		 * @remarks
-		 * Removes a specified property.
-		 * @param identifier
-		 * @throws This function can throw errors.
-		 */
-		removeDynamicProperty(identifier: string): boolean
-		/**
-		 * @remarks
 		 * Removes a specified tag from an entity.
 		 * @param tag
 		 * Content of the tag to remove.
@@ -2802,18 +2657,6 @@ declare module 'mojang-minecraft' {
 		 * ```
 		 */
 		runCommand(commandString: string): any
-		/**
-		 * @remarks
-		 * Sets a specified property to a value.
-		 * @param identifier
-		 * @param value
-		 * Data value of the property to set.
-		 * @throws This function can throw errors.
-		 */
-		setDynamicProperty(
-			identifier: string,
-			value: boolean | number | string
-		): void
 		/**
 		 * @remarks
 		 * Sets a velocity for the entity to move with.
@@ -2870,7 +2713,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		triggerEvent(eventName: string): void
-		protected constructor()
 	}
 	/**
 	 * When added, this component makes the entity spawn with a
@@ -2894,7 +2736,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This property can throw when used.
 		 */
 		readonly 'spawnEvent': string
-		protected constructor()
 	}
 	/**
 	 * Adds a timer for the entity to grow up. It can be
@@ -2930,7 +2771,6 @@ declare module 'mojang-minecraft' {
 		 * minecraft:ageable.
 		 */
 		readonly 'id': string
-		protected constructor()
 	}
 	/**
 	 * Defines what blocks this entity can breathe in and gives
@@ -3002,7 +2842,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		setAirSupply(value: number): void
-		protected constructor()
 	}
 	/**
 	 * When added, this component signifies that the entity can
@@ -3014,7 +2853,6 @@ declare module 'mojang-minecraft' {
 		 * minecraft:can_climb.
 		 */
 		readonly 'id': string
-		protected constructor()
 	}
 	/**
 	 * When added, this component signifies that the entity can
@@ -3027,7 +2865,6 @@ declare module 'mojang-minecraft' {
 		 * minecraft:can_fly.
 		 */
 		readonly 'id': string
-		protected constructor()
 	}
 	/**
 	 * When added, this component signifies that the entity can
@@ -3039,7 +2876,6 @@ declare module 'mojang-minecraft' {
 		 * minecraft:can_power_jump.
 		 */
 		readonly 'id': string
-		protected constructor()
 	}
 	/**
 	 * Defines the entity's color. Only works on certain entities
@@ -3055,7 +2891,6 @@ declare module 'mojang-minecraft' {
 		 * The palette color value of the entity.
 		 */
 		'value': number
-		protected constructor()
 	}
 	/**
 	 * Contains information related to the creation of a new
@@ -3066,7 +2901,6 @@ declare module 'mojang-minecraft' {
 		 * New entity that was created.
 		 */
 		'entity': Entity
-		protected constructor()
 	}
 	/**
 	 * Manages callbacks that are connected to when a new entity is
@@ -3090,7 +2924,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		unsubscribe(callback: (arg: EntityCreateEvent) => void): void
-		protected constructor()
 	}
 	/**
 	 * Specifies additional filters that are used in registering a
@@ -3132,7 +2965,6 @@ declare module 'mojang-minecraft' {
 		 * include 'wheat' or 'golden_apple'.
 		 */
 		readonly 'item': string
-		protected constructor()
 	}
 	/**
 	 * Contains optional parameters for registering an entity
@@ -3161,7 +2993,6 @@ declare module 'mojang-minecraft' {
 		 * minecraft:fire_immune.
 		 */
 		readonly 'id': string
-		protected constructor()
 	}
 	/**
 	 * When added, this component signifies that this entity can
@@ -3173,7 +3004,6 @@ declare module 'mojang-minecraft' {
 		 * minecraft:floats_in_liquid.
 		 */
 		readonly 'id': string
-		protected constructor()
 	}
 	/**
 	 * Represents the flying speed of an entity.
@@ -3188,7 +3018,6 @@ declare module 'mojang-minecraft' {
 		 * Speed while flying value of the entity.
 		 */
 		'value': number
-		protected constructor()
 	}
 	/**
 	 * Defines how much friction affects this entity.
@@ -3205,7 +3034,6 @@ declare module 'mojang-minecraft' {
 		 * means twice as much.
 		 */
 		'value': number
-		protected constructor()
 	}
 	/**
 	 * Sets the offset from the ground that the entity is actually
@@ -3222,7 +3050,6 @@ declare module 'mojang-minecraft' {
 		 * blocks.
 		 */
 		'value': number
-		protected constructor()
 	}
 	/**
 	 * Defines the interactions with this entity for healing it.
@@ -3249,7 +3076,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This property can throw when used.
 		 */
 		readonly 'items': FeedItem[]
-		protected constructor()
 	}
 	/**
 	 * Defines the health properties of an entity.
@@ -3298,7 +3124,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		setCurrent(value: number): void
-		protected constructor()
 	}
 	/**
 	 * Contains information related to an entity hitting (melee
@@ -3323,7 +3148,6 @@ declare module 'mojang-minecraft' {
 		 * air.
 		 */
 		readonly 'hitEntity': Entity
-		protected constructor()
 	}
 	/**
 	 * Manages callbacks that are connected to when an entity makes
@@ -3349,72 +3173,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		unsubscribe(callback: (arg: EntityHitEvent) => void): void
-		protected constructor()
-	}
-	/**
-	 * Contains additional information about an entity that was
-	 * hit.
-	 */
-	export class EntityHitInformation {
-		/**
-		 * Entity that was hit.
-		 */
-		readonly 'entity': Entity
-		protected constructor()
-	}
-	/**
-	 * Contains information related to an entity hitting (melee
-	 * attacking) another entity.
-	 */
-	export class EntityHurtEvent {
-		/**
-		 * A summary of the reason that damage was caused.
-		 */
-		readonly 'cause': string
-		/**
-		 * Describes the amount of damage caused.
-		 */
-		readonly 'damage': number
-		/**
-		 * Optional entity that caused the damaging attack, or
-		 * undefined if the hurt reason was not because of another
-		 * entity.
-		 */
-		readonly 'damagingEntity': Entity
-		/**
-		 * Entity that was hurt.
-		 */
-		readonly 'hurtEntity': Entity
-		/**
-		 * Optional entity for a projectile that potentially hurt an
-		 * entity.
-		 */
-		readonly 'projectile': Entity
-		protected constructor()
-	}
-	/**
-	 * Manages callbacks that are connected to when an entity is
-	 * hurt.
-	 */
-	export class EntityHurtEventSignal {
-		/**
-		 * @remarks
-		 * Adds a callback that will be called when an entity is hurt.
-		 * @param callback
-		 * @param options
-		 */
-		subscribe(
-			callback: (arg: EntityHurtEvent) => void,
-			options?: EntityEventOptions
-		): (arg: EntityHurtEvent) => void
-		/**
-		 * @remarks
-		 * Removes a callback from being called when an entity is hurt.
-		 * @param callback
-		 * @throws This function can throw errors.
-		 */
-		unsubscribe(callback: (arg: EntityHurtEvent) => void): void
-		protected constructor()
 	}
 	/**
 	 * Defines this entity's inventory properties.
@@ -3463,7 +3221,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This property can throw when used.
 		 */
 		readonly 'restrictToOwner': boolean
-		protected constructor()
 	}
 	/**
 	 * When added, this component signifies that this entity is a
@@ -3475,7 +3232,6 @@ declare module 'mojang-minecraft' {
 		 * minecraft:is_baby.
 		 */
 		readonly 'id': string
-		protected constructor()
 	}
 	/**
 	 * When added, this component signifies that this entity is
@@ -3487,7 +3243,6 @@ declare module 'mojang-minecraft' {
 		 * minecraft:is_charged.
 		 */
 		readonly 'id': string
-		protected constructor()
 	}
 	/**
 	 * When added, this component signifies that this entity is
@@ -3499,7 +3254,6 @@ declare module 'mojang-minecraft' {
 		 * minecraft:is_chested.
 		 */
 		readonly 'id': string
-		protected constructor()
 	}
 	/**
 	 * When added, this component signifies that dyes can be used
@@ -3511,7 +3265,6 @@ declare module 'mojang-minecraft' {
 		 * minecraft:is_dyeable.
 		 */
 		readonly 'id': string
-		protected constructor()
 	}
 	/**
 	 * When added, this component signifies that this entity can
@@ -3523,7 +3276,6 @@ declare module 'mojang-minecraft' {
 		 * minecraft:is_hidden_when_invisible.
 		 */
 		readonly 'id': string
-		protected constructor()
 	}
 	/**
 	 * When added, this component signifies that this entity this
@@ -3535,7 +3287,6 @@ declare module 'mojang-minecraft' {
 		 * minecraft:is_ignited.
 		 */
 		readonly 'id': string
-		protected constructor()
 	}
 	/**
 	 * When added, this component signifies that this entity is an
@@ -3547,7 +3298,6 @@ declare module 'mojang-minecraft' {
 		 * minecraft:is_illager_captain.
 		 */
 		readonly 'id': string
-		protected constructor()
 	}
 	/**
 	 * When added, this component signifies that this entity is
@@ -3559,7 +3309,6 @@ declare module 'mojang-minecraft' {
 		 * minecraft:is_saddled.
 		 */
 		readonly 'id': string
-		protected constructor()
 	}
 	/**
 	 * When added, this component signifies that this entity is
@@ -3571,7 +3320,6 @@ declare module 'mojang-minecraft' {
 		 * minecraft:is_shaking.
 		 */
 		readonly 'id': string
-		protected constructor()
 	}
 	/**
 	 * When added, this component signifies that this entity is
@@ -3583,7 +3331,6 @@ declare module 'mojang-minecraft' {
 		 * minecraft:is_sheared.
 		 */
 		readonly 'id': string
-		protected constructor()
 	}
 	/**
 	 * When added, this component signifies that this entity can be
@@ -3595,7 +3342,6 @@ declare module 'mojang-minecraft' {
 		 * minecraft:is_stackable.
 		 */
 		readonly 'id': string
-		protected constructor()
 	}
 	/**
 	 * When added, this component signifies that this entity is
@@ -3607,7 +3353,6 @@ declare module 'mojang-minecraft' {
 		 * minecraft:is_stunned.
 		 */
 		readonly 'id': string
-		protected constructor()
 	}
 	/**
 	 * When added, this component signifies that this entity is
@@ -3619,7 +3364,6 @@ declare module 'mojang-minecraft' {
 		 * minecraft:is_tamed.
 		 */
 		readonly 'id': string
-		protected constructor()
 	}
 	/**
 	 * If added onto the entity, this indicates that the entity
@@ -3633,7 +3377,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This property can throw when used.
 		 */
 		readonly 'itemStack': ItemStack
-		protected constructor()
 	}
 	/**
 	 * This type is usable for iterating over a set of entities.
@@ -3649,7 +3392,6 @@ declare module 'mojang-minecraft' {
 		 * can be used to see the next Entity in the iteration.
 		 */
 		next(): IteratorResult<Entity>
-		protected constructor()
 	}
 	/**
 	 * Defines the base movement speed in lava of this entity.
@@ -3701,7 +3443,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		setCurrent(value: number): void
-		protected constructor()
 	}
 	/**
 	 * Allows this entity to be leashed and defines the conditions
@@ -3734,7 +3475,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		unleash(): void
-		protected constructor()
 	}
 	/**
 	 * Additional variant value. Can be used to further
@@ -3751,7 +3491,6 @@ declare module 'mojang-minecraft' {
 		 * identifier of the base entity.
 		 */
 		'value': number
-		protected constructor()
 	}
 	/**
 	 * Contains options for taming a rideable entity based on the
@@ -3771,7 +3510,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		setTamed(showParticles: boolean): void
-		protected constructor()
 	}
 	/**
 	 * When added, this movement control allows the mob to swim in
@@ -3788,7 +3526,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This property can throw when used.
 		 */
 		readonly 'maxTurn': number
-		protected constructor()
 	}
 	/**
 	 * This component accents the movement of an entity.
@@ -3804,7 +3541,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This property can throw when used.
 		 */
 		readonly 'maxTurn': number
-		protected constructor()
 	}
 	/**
 	 * Defines the general movement speed of this entity.
@@ -3855,7 +3591,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		setCurrent(value: number): void
-		protected constructor()
 	}
 	/**
 	 * When added, this move control causes the mob to fly.
@@ -3871,7 +3606,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This property can throw when used.
 		 */
 		readonly 'maxTurn': number
-		protected constructor()
 	}
 	/**
 	 * When added, this move control allows a mob to fly, swim,
@@ -3888,7 +3622,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This property can throw when used.
 		 */
 		readonly 'maxTurn': number
-		protected constructor()
 	}
 	/**
 	 * When added, this movement control allows the mob to glide.
@@ -3914,7 +3647,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This property can throw when used.
 		 */
 		readonly 'startSpeed': number
-		protected constructor()
 	}
 	/**
 	 * When added, this move control causes the mob to hover.
@@ -3930,7 +3662,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This property can throw when used.
 		 */
 		readonly 'maxTurn': number
-		protected constructor()
 	}
 	/**
 	 * Move control that causes the mob to jump as it moves with a
@@ -3947,7 +3678,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This property can throw when used.
 		 */
 		readonly 'maxTurn': number
-		protected constructor()
 	}
 	/**
 	 * When added, this move control causes the mob to hop as it
@@ -3964,7 +3694,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This property can throw when used.
 		 */
 		readonly 'maxTurn': number
-		protected constructor()
 	}
 	/**
 	 * When added, this move control causes the mob to sway side to
@@ -3991,7 +3720,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This property can throw when used.
 		 */
 		readonly 'swayFrequency': number
-		protected constructor()
 	}
 	/**
 	 * Allows this entity to generate paths that include vertical
@@ -4113,7 +3841,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This property can throw when used.
 		 */
 		readonly 'isAmphibious': boolean
-		protected constructor()
 	}
 	/**
 	 * Allows this entity to generate paths by flying around the
@@ -4235,7 +3962,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This property can throw when used.
 		 */
 		readonly 'isAmphibious': boolean
-		protected constructor()
 	}
 	/**
 	 * Allows this entity to generate paths in the air (for
@@ -4357,7 +4083,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This property can throw when used.
 		 */
 		readonly 'isAmphibious': boolean
-		protected constructor()
 	}
 	/**
 	 * Allows this entity to generate paths by walking, swimming,
@@ -4480,7 +4205,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This property can throw when used.
 		 */
 		readonly 'isAmphibious': boolean
-		protected constructor()
 	}
 	/**
 	 * Allows this entity to generate paths in the air (for
@@ -4603,7 +4327,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This property can throw when used.
 		 */
 		readonly 'isAmphibious': boolean
-		protected constructor()
 	}
 	/**
 	 * Allows this entity to generate paths by walking around and
@@ -4725,7 +4448,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This property can throw when used.
 		 */
 		readonly 'isAmphibious': boolean
-		protected constructor()
 	}
 	/**
 	 * Sets the distance through which the entity can push through.
@@ -4740,7 +4462,6 @@ declare module 'mojang-minecraft' {
 		 * The value of the entity's push-through, in blocks.
 		 */
 		'value': number
-		protected constructor()
 	}
 	/**
 	 * Contains options for selecting entities within an area.
@@ -4998,7 +4719,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		ejectRiders(): void
-		protected constructor()
 	}
 	/**
 	 * Sets the entity's visual size.
@@ -5015,7 +4735,6 @@ declare module 'mojang-minecraft' {
 		 * make the entity bigger.
 		 */
 		'value': number
-		protected constructor()
 	}
 	/**
 	 * Skin Id value. Can be used to differentiate skins, such as
@@ -5024,7 +4743,7 @@ declare module 'mojang-minecraft' {
 	export class EntitySkinIdComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
-		 * minecraft:skin_id.
+		 * minecraft:variant.
 		 */
 		readonly 'id': string
 		/**
@@ -5032,7 +4751,6 @@ declare module 'mojang-minecraft' {
 		 * identifier of the base skin.
 		 */
 		'value': number
-		protected constructor()
 	}
 	/**
 	 * Defines the entity's strength to carry items.
@@ -5055,7 +4773,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This property can throw when used.
 		 */
 		readonly 'value': number
-		protected constructor()
 	}
 	/**
 	 * Defines the rules for a mob to be tamed by the player.
@@ -5090,42 +4807,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		tame(): boolean
-		protected constructor()
-	}
-	/**
-	 * Represents information about a type of entity.
-	 */
-	export class EntityType {
-		/**
-		 * Identifier of this entity type - for example,
-		 * 'minecraft:skeleton'.
-		 */
-		readonly 'id': string
-		protected constructor()
-	}
-	export class EntityTypeIterator implements Iterable<EntityType> {
-		[Symbol.iterator](): Iterator<EntityType>
-		next(): IteratorResult<EntityType>
-		protected constructor()
-	}
-	/**
-	 * Used for accessing all entity types currently available for
-	 * use within the world.
-	 */
-	// tslint:disable-next-line:no-unnecessary-class
-	export class EntityTypes {
-		/**
-		 * @remarks
-		 * Retrieves an entity type using a string-based identifier.
-		 * @param identifier
-		 */
-		static get(identifier: string): EntityType
-		/**
-		 * @remarks
-		 * Retrieves an iterator of all entity types within this world.
-		 */
-		static getAll(): EntityTypeIterator
-		protected constructor()
 	}
 	/**
 	 * Defines the general movement speed underwater of this
@@ -5180,7 +4861,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		setCurrent(value: number): void
-		protected constructor()
 	}
 	/**
 	 * Used to differentiate the component group of a variant of an
@@ -5195,10 +4875,8 @@ declare module 'mojang-minecraft' {
 		/**
 		 * The identifier of the variant. By convention, 0 is the
 		 * identifier of the base entity.
-		 * @throws This property can throw when used.
 		 */
-		readonly 'value': number
-		protected constructor()
+		'value': number
 	}
 	/**
 	 * When added, this component signifies that this entity wants
@@ -5210,7 +4888,6 @@ declare module 'mojang-minecraft' {
 		 * minecraft:wants_jockey.
 		 */
 		readonly 'id': string
-		protected constructor()
 	}
 	/**
 	 * Contains a set of events that are available across the scope
@@ -5295,17 +4972,9 @@ declare module 'mojang-minecraft' {
 		 */
 		readonly 'entityHit': EntityHitEventSignal
 		/**
-		 * This event fires when an entity is hurt (takes damage).
-		 */
-		readonly 'entityHurt': EntityHurtEventSignal
-		/**
 		 * This event is fired after an explosion occurs.
 		 */
 		readonly 'explosion': ExplosionEventSignal
-		/**
-		 * This event fires when a chargeable item completes charging.
-		 */
-		readonly 'itemCompleteCharge': ItemCompleteChargeEventSignal
 		/**
 		 * For custom items, this event is triggered when the
 		 * fundamental set of defined components for the item change.
@@ -5313,29 +4982,6 @@ declare module 'mojang-minecraft' {
 		 * items.
 		 */
 		readonly 'itemDefinitionEvent': ItemDefinitionEventSignal
-		/**
-		 * This event fires when a chargeable item is released from
-		 * charging.
-		 */
-		readonly 'itemReleaseCharge': ItemReleaseChargeEventSignal
-		/**
-		 * This event fires when a chargeable item starts charging.
-		 */
-		readonly 'itemStartCharge': ItemStartChargeEventSignal
-		/**
-		 * This event fires when any particular item is starting to be
-		 * used by an entity or player.
-		 */
-		readonly 'itemStartUseOn': ItemStartUseOnEventSignal
-		/**
-		 * This event fires when a chargeable item stops charging.
-		 */
-		readonly 'itemStopCharge': ItemStopChargeEventSignal
-		/**
-		 * This event fires when any particular item is ending being
-		 * used by an entity or player.
-		 */
-		readonly 'itemStopUseOn': ItemStopUseOnEventSignal
 		/**
 		 * This event fires when any particular item is used by an
 		 * entity or player.
@@ -5346,10 +4992,6 @@ declare module 'mojang-minecraft' {
 		 * by an entity or player.
 		 */
 		readonly 'itemUseOn': ItemUseOnEventSignal
-		/**
-		 * This event fires when a lever activates or is deactivated.
-		 */
-		readonly 'leverActivate': LeverActivateEventSignal
 		/**
 		 * This event fires when a piston expands or retracts.
 		 */
@@ -5363,10 +5005,6 @@ declare module 'mojang-minecraft' {
 		 */
 		readonly 'playerLeave': PlayerLeaveEventSignal
 		/**
-		 * This event fires when a projectile hits an entity or block.
-		 */
-		'projectileHit': ProjectileHitEventSignal
-		/**
 		 * This event fires every tick - which is 20 times per second.
 		 */
 		readonly 'tick': TickEventSignal
@@ -5375,13 +5013,6 @@ declare module 'mojang-minecraft' {
 		 * Minecraft.
 		 */
 		readonly 'weatherChange': WeatherChangeEventSignal
-		/**
-		 * This event fires when the script environment is initialized
-		 * on a World. In addition, you can register dynamic properties
-		 * within the scope of a world Initialize event.
-		 */
-		readonly 'worldInitialize': WorldInitializeEventSignal
-		protected constructor()
 	}
 	/**
 	 * Contains information regarding an explosion that has
@@ -5400,7 +5031,6 @@ declare module 'mojang-minecraft' {
 		 * Optional source of the explosion.
 		 */
 		readonly 'source': Entity
-		protected constructor()
 	}
 	/**
 	 * Manages callbacks that are connected to when an explosion
@@ -5424,7 +5054,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		unsubscribe(callback: (arg: ExplosionEvent) => void): void
-		protected constructor()
 	}
 	/**
 	 * Additional configuration options for the
@@ -5479,7 +5108,6 @@ declare module 'mojang-minecraft' {
 		 * include 'wheat' or 'golden_apple'.
 		 */
 		readonly 'item': string
-		protected constructor()
 	}
 	/**
 	 * Represents an effect that is applied as a result of a food
@@ -5506,15 +5134,12 @@ declare module 'mojang-minecraft' {
 		 * include 'fire_resistance' or 'regeneration'.
 		 */
 		readonly 'name': string
-		protected constructor()
 	}
 	/**
 	 * Represents a set of filters for when an event should occur.
 	 */
 	// tslint:disable-next-line:no-unnecessary-class
-	export class FilterGroup {
-		protected constructor()
-	}
+	export class FilterGroup {}
 	/**
 	 * Represents constants related to fluid containers.
 	 */
@@ -5530,7 +5155,6 @@ declare module 'mojang-minecraft' {
 		 * container.
 		 */
 		static readonly 'minFillLevel' = 0
-		protected constructor()
 	}
 	/**
 	 * Contains an interface for defining the state of a property
@@ -5541,7 +5165,6 @@ declare module 'mojang-minecraft' {
 		 * The name of this property.
 		 */
 		readonly 'name': string
-		protected constructor()
 	}
 	/**
 	 * Base interface that defines components associated with an
@@ -5552,7 +5175,6 @@ declare module 'mojang-minecraft' {
 		 * Identifier of this component.
 		 */
 		readonly 'id': string
-		protected constructor()
 	}
 	/**
 	 * Contains the state of an integer-based property for a
@@ -5576,7 +5198,6 @@ declare module 'mojang-minecraft' {
 		 * allowed values.
 		 */
 		'value': number
-		protected constructor()
 	}
 	/**
 	 * Represents a container that can hold stacks of items. Used
@@ -5677,51 +5298,6 @@ declare module 'mojang-minecraft' {
 			toSlot: number,
 			toContainer: Container
 		): boolean
-		protected constructor()
-	}
-	/**
-	 * Contains information related to a chargeable item completing
-	 * being charged.
-	 */
-	export class ItemCompleteChargeEvent {
-		/**
-		 * Returns the item stack that has completed charging.
-		 */
-		readonly 'itemStack': ItemStack
-		/**
-		 * Returns the source entity that triggered this item event.
-		 */
-		readonly 'source': Entity
-		/**
-		 * Returns the time, in ticks, for the remaining duration left
-		 * before the charge completes its cycle.
-		 */
-		readonly 'useDuration': number
-		protected constructor()
-	}
-	/**
-	 * Manages callbacks that are connected to the completion of
-	 * charging for a chargeable item.
-	 */
-	export class ItemCompleteChargeEventSignal {
-		/**
-		 * @remarks
-		 * Adds a callback that will be called when a chargeable item
-		 * completes charging.
-		 * @param callback
-		 */
-		subscribe(
-			callback: (arg: ItemCompleteChargeEvent) => void
-		): (arg: ItemCompleteChargeEvent) => void
-		/**
-		 * @remarks
-		 * Removes a callback from being called when a chargeable item
-		 * completes charging.
-		 * @param callback
-		 * @throws This function can throw errors.
-		 */
-		unsubscribe(callback: (arg: ItemCompleteChargeEvent) => void): void
-		protected constructor()
 	}
 	/**
 	 * When present on an item, this item has a cooldown effect
@@ -5752,7 +5328,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		startCooldown(player: Player): void
-		protected constructor()
 	}
 	/**
 	 * Manages callbacks that are connected to an item's definition
@@ -5776,7 +5351,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		unsubscribe(callback: (arg: ItemDefinitionTriggeredEvent) => void): void
-		protected constructor()
 	}
 	/**
 	 * Contains information related to a custom item having a data
@@ -5796,12 +5370,10 @@ declare module 'mojang-minecraft' {
 		 * Returns the source entity that triggered this item event.
 		 */
 		readonly 'source': Entity
-		protected constructor()
 	}
 	/**
 	 * When present on an item, this item can take damage in the
-	 * process of being used. Note that this component only applies
-	 * to data-driven items.
+	 * process of being used.
 	 */
 	export class ItemDurabilityComponent {
 		/**
@@ -5836,12 +5408,10 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		getDamageChance(unbreaking?: number): number
-		protected constructor()
 	}
 	/**
 	 * When present on an item, this item has applied enchantment
-	 * effects. Note that this component only applies to
-	 * data-driven items.
+	 * effects.
 	 */
 	export class ItemEnchantsComponent {
 		/**
@@ -5859,12 +5429,10 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		removeAllEnchantments(): void
-		protected constructor()
 	}
 	/**
 	 * When present on an item, this item is consumable by
-	 * entities. Note that this component only applies to
-	 * data-driven items.
+	 * entities.
 	 */
 	export class ItemFoodComponent {
 		/**
@@ -5897,52 +5465,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This property can throw when used.
 		 */
 		readonly 'usingConvertsTo': string
-		protected constructor()
-	}
-	/**
-	 * Contains information related to a chargeable item when the
-	 * player has finished using the item and released the build
-	 * action.
-	 */
-	export class ItemReleaseChargeEvent {
-		/**
-		 * Returns the item stack that triggered this item event.
-		 */
-		readonly 'itemStack': ItemStack
-		/**
-		 * Returns the source entity that triggered this item event.
-		 */
-		readonly 'source': Entity
-		/**
-		 * Returns the time, in ticks, for the remaining duration left
-		 * before the charge completes its cycle.
-		 */
-		readonly 'useDuration': number
-		protected constructor()
-	}
-	/**
-	 * Manages callbacks that are connected to the releasing of
-	 * charging for a chargeable item.
-	 */
-	export class ItemReleaseChargeEventSignal {
-		/**
-		 * @remarks
-		 * Adds a callback that will be called when a chargeable item
-		 * is released from charging.
-		 * @param callback
-		 */
-		subscribe(
-			callback: (arg: ItemReleaseChargeEvent) => void
-		): (arg: ItemReleaseChargeEvent) => void
-		/**
-		 * @remarks
-		 * Removes a callback from being called when a chargeable item
-		 * is released from charging.
-		 * @param callback
-		 * @throws This function can throw errors.
-		 */
-		unsubscribe(callback: (arg: ItemReleaseChargeEvent) => void): void
-		protected constructor()
 	}
 	/**
 	 * Represents a collection of all of the available item types
@@ -5957,7 +5479,6 @@ declare module 'mojang-minecraft' {
 		 * Type of the item to return.
 		 */
 		static get(itemId: string): ItemType
-		protected constructor()
 	}
 	/**
 	 * Defines a collection of items.
@@ -6050,187 +5571,6 @@ declare module 'mojang-minecraft' {
 		triggerEvent(eventName: string): void
 	}
 	/**
-	 * Contains information related to a chargeable item starting
-	 * to be charged.
-	 */
-	export class ItemStartChargeEvent {
-		/**
-		 * The impacted item stack that is starting to be charged.
-		 */
-		readonly 'itemStack': ItemStack
-		/**
-		 * Returns the source entity that triggered this item event.
-		 */
-		readonly 'source': Entity
-		/**
-		 * Returns the time, in ticks, for the remaining duration left
-		 * before the charge completes its cycle.
-		 */
-		readonly 'useDuration': number
-		protected constructor()
-	}
-	/**
-	 * Manages callbacks that are connected to the start of
-	 * charging for a chargeable item.
-	 */
-	export class ItemStartChargeEventSignal {
-		/**
-		 * @remarks
-		 * Adds a callback that will be called when a chargeable item
-		 * starts charging.
-		 * @param callback
-		 */
-		subscribe(
-			callback: (arg: ItemStartChargeEvent) => void
-		): (arg: ItemStartChargeEvent) => void
-		/**
-		 * @remarks
-		 * Removes a callback from being called when a chargeable item
-		 * starts charging.
-		 * @param callback
-		 * @throws This function can throw errors.
-		 */
-		unsubscribe(callback: (arg: ItemStartChargeEvent) => void): void
-		protected constructor()
-	}
-	/**
-	 * Contains information related to an item being used on a
-	 * block.
-	 */
-	export class ItemStartUseOnEvent {
-		/**
-		 * The face of the block that an item is being used on.
-		 */
-		readonly 'blockFace': Direction
-		/**
-		 * Location of the block being impacted.
-		 */
-		readonly 'blockLocation': BlockLocation
-		readonly 'buildBlockLocation': BlockLocation
-		/**
-		 * The impacted item stack that is starting to be used.
-		 */
-		'item': ItemStack
-		/**
-		 * Returns the source entity that triggered this item event.
-		 */
-		readonly 'source': Entity
-		protected constructor()
-	}
-	/**
-	 * Manages callbacks that are connected to an item starting
-	 * being used on a block event.
-	 */
-	export class ItemStartUseOnEventSignal {
-		/**
-		 * @remarks
-		 * Adds a callback that will be called when an item is used on
-		 * a block.
-		 * @param callback
-		 */
-		subscribe(
-			callback: (arg: ItemStartUseOnEvent) => void
-		): (arg: ItemStartUseOnEvent) => void
-		/**
-		 * @remarks
-		 * Removes a callback from being called when an item is used on
-		 * a block.
-		 * @param callback
-		 * @throws This function can throw errors.
-		 */
-		unsubscribe(callback: (arg: ItemStartUseOnEvent) => void): void
-		protected constructor()
-	}
-	/**
-	 * Contains information related to a chargeable item has
-	 * finished an items use cycle, or when the player has released
-	 * the use action with the item.
-	 */
-	export class ItemStopChargeEvent {
-		/**
-		 * The impacted item stack that is stopping being charged.
-		 */
-		readonly 'itemStack': ItemStack
-		/**
-		 * Returns the source entity that triggered this item event.
-		 */
-		readonly 'source': Entity
-		/**
-		 * Returns the time, in ticks, for the remaining duration left
-		 * before the charge completes its cycle.
-		 */
-		readonly 'useDuration': number
-		protected constructor()
-	}
-	/**
-	 * Manages callbacks that are connected to the stopping of
-	 * charging for an item that has a registered
-	 * minecraft:chargeable component.
-	 */
-	export class ItemStopChargeEventSignal {
-		/**
-		 * @remarks
-		 * Adds a callback that will be called when a chargeable item
-		 * stops charging.
-		 * @param callback
-		 */
-		subscribe(
-			callback: (arg: ItemStopChargeEvent) => void
-		): (arg: ItemStopChargeEvent) => void
-		/**
-		 * @remarks
-		 * Removes a callback from being called when a chargeable item
-		 * stops charging.
-		 * @param callback
-		 * @throws This function can throw errors.
-		 */
-		unsubscribe(callback: (arg: ItemStopChargeEvent) => void): void
-		protected constructor()
-	}
-	/**
-	 * Contains information related to an item being used on a
-	 * block.
-	 */
-	export class ItemStopUseOnEvent {
-		/**
-		 * Location of the block being impacted.
-		 */
-		readonly 'blockLocation': BlockLocation
-		/**
-		 * The impacted item stack that is being used on a block.
-		 */
-		'item': ItemStack
-		/**
-		 * Returns the source entity that triggered this item event.
-		 */
-		readonly 'source': Entity
-		protected constructor()
-	}
-	/**
-	 * Manages callbacks that are connected to an item stopping
-	 * being used on a block event.
-	 */
-	export class ItemStopUseOnEventSignal {
-		/**
-		 * @remarks
-		 * Adds a callback that will be called when an item is used on
-		 * a block.
-		 * @param callback
-		 */
-		subscribe(
-			callback: (arg: ItemStopUseOnEvent) => void
-		): (arg: ItemStopUseOnEvent) => void
-		/**
-		 * @remarks
-		 * Removes a callback from being called when an item is used on
-		 * a block.
-		 * @param callback
-		 * @throws This function can throw errors.
-		 */
-		unsubscribe(callback: (arg: ItemStopUseOnEvent) => void): void
-		protected constructor()
-	}
-	/**
 	 * Represents the type of an item - for example, Wool.
 	 */
 	export class ItemType {
@@ -6239,7 +5579,6 @@ declare module 'mojang-minecraft' {
 		 * 'minecraft:apple'.
 		 */
 		readonly 'id': string
-		protected constructor()
 	}
 	/**
 	 * Contains information related to an item being used.
@@ -6253,7 +5592,6 @@ declare module 'mojang-minecraft' {
 		 * Returns the source entity that triggered this item event.
 		 */
 		readonly 'source': Entity
-		protected constructor()
 	}
 	/**
 	 * Manages callbacks that are connected to an item use event.
@@ -6274,7 +5612,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		unsubscribe(callback: (arg: ItemUseEvent) => void): void
-		protected constructor()
 	}
 	/**
 	 * Contains information related to an item being used on a
@@ -6307,7 +5644,6 @@ declare module 'mojang-minecraft' {
 		 * Returns the source entity that triggered this item event.
 		 */
 		readonly 'source': Entity
-		protected constructor()
 	}
 	/**
 	 * Manages callbacks that are connected to an item being used
@@ -6331,56 +5667,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		unsubscribe(callback: (arg: ItemUseOnEvent) => void): void
-		protected constructor()
-	}
-	/**
-	 * Contains information related to changes to a lever
-	 * activating or deactivating.
-	 */
-	export class LeverActionEvent extends BlockEvent {
-		/**
-		 * Block impacted by this event.
-		 */
-		readonly 'block': Block
-		/**
-		 * Dimension that contains the block that is the subject of
-		 * this event.
-		 */
-		readonly 'dimension': Dimension
-		/**
-		 * True if the lever is activated (that is, transmitting
-		 * power).
-		 */
-		readonly 'isPowered': boolean
-		/**
-		 * Optional player that triggered the lever activation.
-		 */
-		readonly 'player': Player
-		protected constructor()
-	}
-	/**
-	 * Manages callbacks that are connected to lever moves
-	 * (activates or deactivates).
-	 */
-	export class LeverActivateEventSignal {
-		/**
-		 * @remarks
-		 * Adds a callback that will be called when a lever is moved
-		 * (activates or deactivates).
-		 * @param callback
-		 */
-		subscribe(
-			callback: (arg: LeverActionEvent) => void
-		): (arg: LeverActionEvent) => void
-		/**
-		 * @remarks
-		 * Removes a callback from being called when a lever is moved
-		 * (activates or deactivates).
-		 * @param callback
-		 * @throws This function can throw errors.
-		 */
-		unsubscribe(callback: (arg: LeverActionEvent) => void): void
-		protected constructor()
 	}
 	/**
 	 * Contains a location description that is useful for entities
@@ -6885,7 +6171,7 @@ declare module 'mojang-minecraft' {
 		/**
 		 * Represents a block of concrete powder within Minecraft.
 		 */
-		static readonly 'concretePowder': BlockType
+		static readonly 'concretepowder': BlockType
 		/**
 		 * Represents a conduit block within Minecraft.
 		 */
@@ -8127,7 +7413,7 @@ declare module 'mojang-minecraft' {
 		 * Represents an invisible boundary bedrock block within
 		 * Minecraft.
 		 */
-		static readonly 'invisibleBedrock': BlockType
+		static readonly 'invisiblebedrock': BlockType
 		/**
 		 * Represents iron bars within Minecraft.
 		 */
@@ -8345,24 +7631,6 @@ declare module 'mojang-minecraft' {
 		 * Represents magma within Minecraft.
 		 */
 		static readonly 'magma': BlockType
-		static readonly 'mangroveButton': BlockType
-		static readonly 'mangroveDoor': BlockType
-		static readonly 'mangroveDoubleSlab': BlockType
-		static readonly 'mangroveFence': BlockType
-		static readonly 'mangroveFenceGate': BlockType
-		static readonly 'mangroveLeaves': BlockType
-		static readonly 'mangroveLog': BlockType
-		static readonly 'mangrovePlanks': BlockType
-		static readonly 'mangrovePressurePlate': BlockType
-		static readonly 'mangrovePropagule': BlockType
-		static readonly 'mangrovePropaguleHanging': BlockType
-		static readonly 'mangroveRoots': BlockType
-		static readonly 'mangroveSlab': BlockType
-		static readonly 'mangroveStairs': BlockType
-		static readonly 'mangroveStandingSign': BlockType
-		static readonly 'mangroveTrapdoor': BlockType
-		static readonly 'mangroveWallSign': BlockType
-		static readonly 'mangroveWood': BlockType
 		/**
 		 * Represents a medium-sized bud of amethyst within Minecraft.
 		 */
@@ -8406,18 +7674,16 @@ declare module 'mojang-minecraft' {
 		 * Minecraft.
 		 */
 		static readonly 'mossyStoneBrickStairs': BlockType
-		static readonly 'movingBlock': BlockType
-		static readonly 'mud': BlockType
-		static readonly 'mudBrickDoubleSlab': BlockType
-		static readonly 'mudBricks': BlockType
-		static readonly 'mudBrickSlab': BlockType
-		static readonly 'mudBrickStairs': BlockType
-		static readonly 'mudBrickWall': BlockType
-		static readonly 'muddyMangroveRoots': BlockType
+		/**
+		 * Represents a moving block within Minecraft.
+		 */
+		static readonly 'movingblock': BlockType
 		/**
 		 * Represents a mycelium plant within Minecraft.
 		 */
 		static readonly 'mycelium': BlockType
+		static readonly 'mysteriousFrame': BlockType
+		static readonly 'mysteriousFrameSlot': BlockType
 		/**
 		 * Represents a nether brick block within Minecraft.
 		 */
@@ -8519,7 +7785,6 @@ declare module 'mojang-minecraft' {
 		 * Represents a block of packed ice within Minecraft.
 		 */
 		static readonly 'packedIce': BlockType
-		static readonly 'packedMud': BlockType
 		static readonly 'pearlescentFroglight': BlockType
 		/**
 		 * Represents a pink candle within Minecraft.
@@ -8538,7 +7803,10 @@ declare module 'mojang-minecraft' {
 		 * Represents a piston within Minecraft.
 		 */
 		static readonly 'piston': BlockType
-		static readonly 'pistonArmCollision': BlockType
+		/**
+		 * Represents a piston arm within Minecraft.
+		 */
+		static readonly 'pistonarmcollision': BlockType
 		/**
 		 * Represents a set of planks within Minecraft.
 		 */
@@ -8808,7 +8076,6 @@ declare module 'mojang-minecraft' {
 		 * Represents reeds within Minecraft.
 		 */
 		static readonly 'reeds': BlockType
-		static readonly 'reinforcedDeepslate': BlockType
 		/**
 		 * Represents a repeating command block within Minecraft.
 		 */
@@ -8856,7 +8123,7 @@ declare module 'mojang-minecraft' {
 		/**
 		 * Represents a sealantern within Minecraft.
 		 */
-		static readonly 'seaLantern': BlockType
+		static readonly 'sealantern': BlockType
 		/**
 		 * Represents a seapickle within Minecraft.
 		 */
@@ -9017,7 +8284,10 @@ declare module 'mojang-minecraft' {
 		 * Minecraft.
 		 */
 		static readonly 'stickyPiston': BlockType
-		static readonly 'stickyPistonArmCollision': BlockType
+		/**
+		 * Represents a sticky piston arm within Minecraft.
+		 */
+		static readonly 'stickypistonarmcollision': BlockType
 		/**
 		 * Represents a block of stone within Minecraft.
 		 */
@@ -9091,8 +8361,6 @@ declare module 'mojang-minecraft' {
 		 * Represents a stripped jungle log within Minecraft.
 		 */
 		static readonly 'strippedJungleLog': BlockType
-		static readonly 'strippedMangroveLog': BlockType
-		static readonly 'strippedMangroveWood': BlockType
 		/**
 		 * Represents a stripped oak log within Minecraft.
 		 */
@@ -9150,7 +8418,10 @@ declare module 'mojang-minecraft' {
 		 * Represents a trapped chest within Minecraft.
 		 */
 		static readonly 'trappedChest': BlockType
-		static readonly 'tripWire': BlockType
+		/**
+		 * Represents a tripwire within Minecraft.
+		 */
+		static readonly 'tripwire': BlockType
 		/**
 		 * Represents a tripwire hook within Minecraft.
 		 */
@@ -9478,7 +8749,6 @@ declare module 'mojang-minecraft' {
 		 * Returns an array of all block types within Minecraft.
 		 */
 		static getAllBlockTypes(): BlockType[]
-		protected constructor()
 	}
 	/**
 	 * A collection of default Minecraft dimension types.
@@ -9512,7 +8782,6 @@ declare module 'mojang-minecraft' {
 		 * the End.
 		 */
 		static readonly 'theEnd' = 'minecraft:the_end'
-		protected constructor()
 	}
 	// tslint:disable-next-line:no-unnecessary-class
 	export class MinecraftEffectTypes {
@@ -9520,7 +8789,6 @@ declare module 'mojang-minecraft' {
 		static readonly 'badOmen': EffectType
 		static readonly 'blindness': EffectType
 		static readonly 'conduitPower': EffectType
-		static readonly 'darkness': EffectType
 		static readonly 'empty': EffectType
 		static readonly 'fatalPoison': EffectType
 		static readonly 'fireResistance': EffectType
@@ -9547,7 +8815,6 @@ declare module 'mojang-minecraft' {
 		static readonly 'waterBreathing': EffectType
 		static readonly 'weakness': EffectType
 		static readonly 'wither': EffectType
-		protected constructor()
 	}
 	// tslint:disable-next-line:no-unnecessary-class
 	export class MinecraftEnchantmentTypes {
@@ -9588,122 +8855,6 @@ declare module 'mojang-minecraft' {
 		static readonly 'thorns': EnchantmentType
 		static readonly 'unbreaking': EnchantmentType
 		static readonly 'vanishing': EnchantmentType
-		protected constructor()
-	}
-	// tslint:disable-next-line:no-unnecessary-class
-	export class MinecraftEntityTypes {
-		static readonly 'agent': EntityType
-		static readonly 'allay': EntityType
-		static readonly 'areaEffectCloud': EntityType
-		static readonly 'armorStand': EntityType
-		static readonly 'arrow': EntityType
-		static readonly 'axolotl': EntityType
-		static readonly 'bat': EntityType
-		static readonly 'bee': EntityType
-		static readonly 'blaze': EntityType
-		static readonly 'boat': EntityType
-		static readonly 'cat': EntityType
-		static readonly 'caveSpider': EntityType
-		static readonly 'chestBoat': EntityType
-		static readonly 'chestMinecart': EntityType
-		static readonly 'chicken': EntityType
-		static readonly 'cod': EntityType
-		static readonly 'commandBlockMinecart': EntityType
-		static readonly 'cow': EntityType
-		static readonly 'creeper': EntityType
-		static readonly 'dolphin': EntityType
-		static readonly 'donkey': EntityType
-		static readonly 'dragonFireball': EntityType
-		static readonly 'drowned': EntityType
-		static readonly 'egg': EntityType
-		static readonly 'elderGuardian': EntityType
-		static readonly 'enderCrystal': EntityType
-		static readonly 'enderDragon': EntityType
-		static readonly 'enderman': EntityType
-		static readonly 'endermite': EntityType
-		static readonly 'enderPearl': EntityType
-		static readonly 'evocationIllager': EntityType
-		static readonly 'eyeOfEnderSignal': EntityType
-		static readonly 'fireball': EntityType
-		static readonly 'fireworksRocket': EntityType
-		static readonly 'fishingHook': EntityType
-		static readonly 'fox': EntityType
-		static readonly 'frog': EntityType
-		static readonly 'ghast': EntityType
-		static readonly 'glowSquid': EntityType
-		static readonly 'goat': EntityType
-		static readonly 'guardian': EntityType
-		static readonly 'hoglin': EntityType
-		static readonly 'hopperMinecart': EntityType
-		static readonly 'horse': EntityType
-		static readonly 'husk': EntityType
-		static readonly 'ironGolem': EntityType
-		static readonly 'lightningBolt': EntityType
-		static readonly 'lingeringPotion': EntityType
-		static readonly 'llama': EntityType
-		static readonly 'llamaSpit': EntityType
-		static readonly 'magmaCube': EntityType
-		static readonly 'minecart': EntityType
-		static readonly 'mooshroom': EntityType
-		static readonly 'mule': EntityType
-		static readonly 'npc': EntityType
-		static readonly 'ocelot': EntityType
-		static readonly 'panda': EntityType
-		static readonly 'parrot': EntityType
-		static readonly 'phantom': EntityType
-		static readonly 'pig': EntityType
-		static readonly 'piglin': EntityType
-		static readonly 'piglinBrute': EntityType
-		static readonly 'pillager': EntityType
-		static readonly 'player': EntityType
-		static readonly 'polarBear': EntityType
-		static readonly 'pufferfish': EntityType
-		static readonly 'rabbit': EntityType
-		static readonly 'ravager': EntityType
-		static readonly 'salmon': EntityType
-		static readonly 'sheep': EntityType
-		static readonly 'shulker': EntityType
-		static readonly 'shulkerBullet': EntityType
-		static readonly 'silverfish': EntityType
-		static readonly 'skeleton': EntityType
-		static readonly 'skeletonHorse': EntityType
-		static readonly 'slime': EntityType
-		static readonly 'smallFireball': EntityType
-		static readonly 'snowball': EntityType
-		static readonly 'snowGolem': EntityType
-		static readonly 'spider': EntityType
-		static readonly 'splashPotion': EntityType
-		static readonly 'squid': EntityType
-		static readonly 'stray': EntityType
-		static readonly 'strider': EntityType
-		static readonly 'tadpole': EntityType
-		static readonly 'thrownTrident': EntityType
-		static readonly 'tnt': EntityType
-		static readonly 'tntMinecart': EntityType
-		static readonly 'tripodCamera': EntityType
-		static readonly 'tropicalfish': EntityType
-		static readonly 'turtle': EntityType
-		static readonly 'vex': EntityType
-		static readonly 'villager': EntityType
-		static readonly 'villagerV2': EntityType
-		static readonly 'vindicator': EntityType
-		static readonly 'wanderingTrader': EntityType
-		static readonly 'warden': EntityType
-		static readonly 'witch': EntityType
-		static readonly 'wither': EntityType
-		static readonly 'witherSkeleton': EntityType
-		static readonly 'witherSkull': EntityType
-		static readonly 'witherSkullDangerous': EntityType
-		static readonly 'wolf': EntityType
-		static readonly 'xpBottle': EntityType
-		static readonly 'xpOrb': EntityType
-		static readonly 'zoglin': EntityType
-		static readonly 'zombie': EntityType
-		static readonly 'zombieHorse': EntityType
-		static readonly 'zombiePigman': EntityType
-		static readonly 'zombieVillager': EntityType
-		static readonly 'zombieVillagerV2': EntityType
-		protected constructor()
 	}
 	/**
 	 * Contains definitions of standard Minecraft and Minecraft
@@ -9717,7 +8868,6 @@ declare module 'mojang-minecraft' {
 		 * Minecraft.
 		 */
 		static readonly 'acaciaButton': ItemType
-		static readonly 'acaciaChestBoat': ItemType
 		/**
 		 * Represents an item that can place an acacia door within
 		 * Minecraft.
@@ -9895,7 +9045,6 @@ declare module 'mojang-minecraft' {
 		 * Minecraft.
 		 */
 		static readonly 'birchButton': ItemType
-		static readonly 'birchChestBoat': ItemType
 		/**
 		 * Represents an item that can place a birch door within
 		 * Minecraft.
@@ -10034,6 +9183,7 @@ declare module 'mojang-minecraft' {
 		 * Minecraft.
 		 */
 		static readonly 'brewingStand': ItemType
+		static readonly 'brewingstandblock': ItemType
 		static readonly 'brick': ItemType
 		/**
 		 * Represents an item that can place a block of brick within
@@ -10186,7 +9336,6 @@ declare module 'mojang-minecraft' {
 		 * Represents an item that can place a chest within Minecraft.
 		 */
 		static readonly 'chest': ItemType
-		static readonly 'chestBoat': ItemType
 		static readonly 'chestMinecart': ItemType
 		static readonly 'chicken': ItemType
 		static readonly 'chickenSpawnEgg': ItemType
@@ -10517,7 +9666,6 @@ declare module 'mojang-minecraft' {
 		 * Minecraft.
 		 */
 		static readonly 'darkOakButton': ItemType
-		static readonly 'darkOakChestBoat': ItemType
 		/**
 		 * Represents an item that can place a dark oak door within
 		 * Minecraft.
@@ -11589,6 +10737,7 @@ declare module 'mojang-minecraft' {
 		 */
 		static readonly 'glowstone': ItemType
 		static readonly 'glowstoneDust': ItemType
+		static readonly 'goatHorn': ItemType
 		static readonly 'goatSpawnEgg': ItemType
 		/**
 		 * Represents an item that can place a gold block within
@@ -11765,7 +10914,7 @@ declare module 'mojang-minecraft' {
 		 * Represents an item that can place an invisible boundary
 		 * bedrock block within Minecraft.
 		 */
-		static readonly 'invisibleBedrock': ItemType
+		static readonly 'invisiblebedrock': ItemType
 		static readonly 'ironAxe': ItemType
 		/**
 		 * Represents iron bars within Minecraft.
@@ -11806,7 +10955,6 @@ declare module 'mojang-minecraft' {
 		static readonly 'item.bed': ItemType
 		static readonly 'item.beetroot': ItemType
 		static readonly 'item.birchDoor': ItemType
-		static readonly 'item.brewingStand': ItemType
 		static readonly 'item.cake': ItemType
 		static readonly 'item.camera': ItemType
 		static readonly 'item.campfire': ItemType
@@ -11821,7 +10969,6 @@ declare module 'mojang-minecraft' {
 		static readonly 'item.ironDoor': ItemType
 		static readonly 'item.jungleDoor': ItemType
 		static readonly 'item.kelp': ItemType
-		static readonly 'item.mangroveDoor': ItemType
 		static readonly 'item.netherSprouts': ItemType
 		static readonly 'item.netherWart': ItemType
 		static readonly 'item.reeds': ItemType
@@ -11845,7 +10992,6 @@ declare module 'mojang-minecraft' {
 		 * Represents jungle wood button within Minecraft.
 		 */
 		static readonly 'jungleButton': ItemType
-		static readonly 'jungleChestBoat': ItemType
 		/**
 		 * Represents an item that can place a jungle wood door within
 		 * Minecraft.
@@ -12086,27 +11232,6 @@ declare module 'mojang-minecraft' {
 		static readonly 'magma': ItemType
 		static readonly 'magmaCream': ItemType
 		static readonly 'magmaCubeSpawnEgg': ItemType
-		static readonly 'mangroveBoat': ItemType
-		static readonly 'mangroveButton': ItemType
-		static readonly 'mangroveChestBoat': ItemType
-		static readonly 'mangroveDoor': ItemType
-		static readonly 'mangroveDoubleSlab': ItemType
-		static readonly 'mangroveFence': ItemType
-		static readonly 'mangroveFenceGate': ItemType
-		static readonly 'mangroveLeaves': ItemType
-		static readonly 'mangroveLog': ItemType
-		static readonly 'mangrovePlanks': ItemType
-		static readonly 'mangrovePressurePlate': ItemType
-		static readonly 'mangrovePropagule': ItemType
-		static readonly 'mangrovePropaguleHanging': ItemType
-		static readonly 'mangroveRoots': ItemType
-		static readonly 'mangroveSign': ItemType
-		static readonly 'mangroveSlab': ItemType
-		static readonly 'mangroveStairs': ItemType
-		static readonly 'mangroveStandingSign': ItemType
-		static readonly 'mangroveTrapdoor': ItemType
-		static readonly 'mangroveWallSign': ItemType
-		static readonly 'mangroveWood': ItemType
 		static readonly 'medicine': ItemType
 		/**
 		 * Represents an item that can place a medium-sized bud of
@@ -12164,14 +11289,11 @@ declare module 'mojang-minecraft' {
 		 * stairs within Minecraft.
 		 */
 		static readonly 'mossyStoneBrickStairs': ItemType
-		static readonly 'movingBlock': ItemType
-		static readonly 'mud': ItemType
-		static readonly 'mudBrickDoubleSlab': ItemType
-		static readonly 'mudBricks': ItemType
-		static readonly 'mudBrickSlab': ItemType
-		static readonly 'mudBrickStairs': ItemType
-		static readonly 'mudBrickWall': ItemType
-		static readonly 'muddyMangroveRoots': ItemType
+		/**
+		 * Represents an item that can place a moving block within
+		 * Minecraft.
+		 */
+		static readonly 'movingblock': ItemType
 		static readonly 'muleSpawnEgg': ItemType
 		static readonly 'mushroomStew': ItemType
 		static readonly 'musicDisc11': ItemType
@@ -12194,6 +11316,8 @@ declare module 'mojang-minecraft' {
 		 * Minecraft.
 		 */
 		static readonly 'mycelium': ItemType
+		static readonly 'mysteriousFrame': ItemType
+		static readonly 'mysteriousFrameSlot': ItemType
 		static readonly 'nameTag': ItemType
 		static readonly 'nautilusShell': ItemType
 		/**
@@ -12273,7 +11397,6 @@ declare module 'mojang-minecraft' {
 		static readonly 'noteblock': ItemType
 		static readonly 'npcSpawnEgg': ItemType
 		static readonly 'oakBoat': ItemType
-		static readonly 'oakChestBoat': ItemType
 		static readonly 'oakSign': ItemType
 		/**
 		 * Represents an item that can place a set of oak stairs within
@@ -12338,7 +11461,6 @@ declare module 'mojang-minecraft' {
 		 * within Minecraft.
 		 */
 		static readonly 'packedIce': ItemType
-		static readonly 'packedMud': ItemType
 		static readonly 'painting': ItemType
 		static readonly 'pandaSpawnEgg': ItemType
 		static readonly 'paper': ItemType
@@ -12371,7 +11493,11 @@ declare module 'mojang-minecraft' {
 		 * Represents an item that can place a piston within Minecraft.
 		 */
 		static readonly 'piston': ItemType
-		static readonly 'pistonArmCollision': ItemType
+		/**
+		 * Represents an item that can place a piston arm within
+		 * Minecraft.
+		 */
+		static readonly 'pistonarmcollision': ItemType
 		/**
 		 * Represents an item that can place a set of planks within
 		 * Minecraft.
@@ -12711,7 +11837,6 @@ declare module 'mojang-minecraft' {
 		 * Minecraft.
 		 */
 		static readonly 'redstoneWire': ItemType
-		static readonly 'reinforcedDeepslate': ItemType
 		static readonly 'repeater': ItemType
 		/**
 		 * Represents an item that can place a repeating command block
@@ -12772,7 +11897,11 @@ declare module 'mojang-minecraft' {
 		 * Represents seagrass within Minecraft.
 		 */
 		static readonly 'seagrass': ItemType
-		static readonly 'seaLantern': ItemType
+		/**
+		 * Represents an item that can place a sealantern within
+		 * Minecraft.
+		 */
+		static readonly 'sealantern': ItemType
 		/**
 		 * Represents an item that can place a seapickle within
 		 * Minecraft.
@@ -12914,7 +12043,6 @@ declare module 'mojang-minecraft' {
 		 * within Minecraft.
 		 */
 		static readonly 'spruceButton': ItemType
-		static readonly 'spruceChestBoat': ItemType
 		/**
 		 * Represents an item that can place a spruce wood door within
 		 * Minecraft.
@@ -12987,7 +12115,11 @@ declare module 'mojang-minecraft' {
 		 * sticky arm within Minecraft.
 		 */
 		static readonly 'stickyPiston': ItemType
-		static readonly 'stickyPistonArmCollision': ItemType
+		/**
+		 * Represents an item that can place a sticky piston arm within
+		 * Minecraft.
+		 */
+		static readonly 'stickypistonarmcollision': ItemType
 		/**
 		 * Represents an item that can place a block of stone within
 		 * Minecraft.
@@ -13065,8 +12197,6 @@ declare module 'mojang-minecraft' {
 		 * within Minecraft.
 		 */
 		static readonly 'strippedJungleLog': ItemType
-		static readonly 'strippedMangroveLog': ItemType
-		static readonly 'strippedMangroveWood': ItemType
 		/**
 		 * Represents an item that can place a stripped oak log within
 		 * Minecraft.
@@ -13141,7 +12271,11 @@ declare module 'mojang-minecraft' {
 		 */
 		static readonly 'trappedChest': ItemType
 		static readonly 'trident': ItemType
-		static readonly 'tripWire': ItemType
+		/**
+		 * Represents an item that can place a tripwire within
+		 * Minecraft.
+		 */
+		static readonly 'tripwire': ItemType
 		/**
 		 * Represents an item that can place a tripwire hook within
 		 * Minecraft.
@@ -13217,7 +12351,6 @@ declare module 'mojang-minecraft' {
 		 */
 		static readonly 'wallSign': ItemType
 		static readonly 'wanderingTraderSpawnEgg': ItemType
-		static readonly 'wardenSpawnEgg': ItemType
 		/**
 		 * Represents an item that can place a warped button within
 		 * Minecraft.
@@ -13541,7 +12674,6 @@ declare module 'mojang-minecraft' {
 		static readonly 'zombiePigmanSpawnEgg': ItemType
 		static readonly 'zombieSpawnEgg': ItemType
 		static readonly 'zombieVillagerSpawnEgg': ItemType
-		protected constructor()
 	}
 	/**
 	 * Contains a set of additional variable values for further
@@ -13588,30 +12720,6 @@ declare module 'mojang-minecraft' {
 		setVector3(variableName: string, vector: Vector): MolangVariableMap
 	}
 	/**
-	 * Additional configuration options for
-	 * {@link mojang-minecraft.World.playMusic}/{@link mojang-minecraft.World.queueMusic}
-	 * methods.
-	 */
-	export class MusicOptions {
-		/**
-		 * Specifies a fade overlap for music at the end of play.
-		 */
-		'fade': number
-		/**
-		 * If set to true, this music track will play repeatedly.
-		 */
-		'loop': boolean
-		/**
-		 * Relative volume level of the music.
-		 */
-		'volume': number
-		/**
-		 * @remarks
-		 * Creates a new instance of the SoundOptions object.
-		 */
-		constructor()
-	}
-	/**
 	 * Contains data resulting from a navigation operation,
 	 * including whether the navigation is possible and the path of
 	 * navigation.
@@ -13626,7 +12734,6 @@ declare module 'mojang-minecraft' {
 		 * A set of block locations that comprise the navigation route.
 		 */
 		readonly 'path': BlockLocation[]
-		protected constructor()
 	}
 	/**
 	 * Represents a min/max structure for expressing a potential
@@ -13647,7 +12754,6 @@ declare module 'mojang-minecraft' {
 		 * the range.
 		 */
 		next(): number
-		protected constructor()
 	}
 	/**
 	 * Contains information related to changes to a piston
@@ -13671,7 +12777,6 @@ declare module 'mojang-minecraft' {
 		 * Contains additional properties and details of the piston.
 		 */
 		readonly 'piston': BlockPistonComponent
-		protected constructor()
 	}
 	/**
 	 * Manages callbacks that are connected to piston activations.
@@ -13694,7 +12799,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		unsubscribe(callback: (arg: PistonActivateEvent) => void): void
-		protected constructor()
 	}
 	/**
 	 * Represents a rotation structure with pitch and yaw
@@ -13709,7 +12813,6 @@ declare module 'mojang-minecraft' {
 		 * Yaw component (left-to-right) of this position.
 		 */
 		'yaw': number
-		protected constructor()
 	}
 	/**
 	 * Represents a player within the world.
@@ -13754,11 +12857,6 @@ declare module 'mojang-minecraft' {
 		 */
 		'nameTag': string
 		/**
-		 * Contains methods for manipulating the on-screen display of a
-		 * Player.
-		 */
-		readonly 'onScreenDisplay': ScreenDisplay
-		/**
 		 * Manages the selected slot in the player's hotbar.
 		 */
 		'selectedSlot': number
@@ -13788,14 +12886,12 @@ declare module 'mojang-minecraft' {
 		 * Amount of time, in ticks, for the effect to apply.
 		 * @param amplifier
 		 * Optional amplification of the effect to apply.
-		 * @param showParticles
 		 * @throws This function can throw errors.
 		 */
 		addEffect(
 			effectType: EffectType,
 			duration: number,
-			amplifier?: number,
-			showParticles?: boolean
+			amplifier: number
 		): void
 		/**
 		 * @remarks
@@ -13831,16 +12927,6 @@ declare module 'mojang-minecraft' {
 		 * and supported by the API.
 		 */
 		getComponents(): IEntityComponent[]
-		/**
-		 * @remarks
-		 * Returns a property value.
-		 * @param identifier
-		 * @returns
-		 * Returns the value for the property, or undefined if the
-		 * property has not been set.
-		 * @throws This function can throw errors.
-		 */
-		getDynamicProperty(identifier: string): boolean | number | string
 		/**
 		 * @remarks
 		 * Returns the effect for the specified EffectType on the
@@ -13913,13 +12999,6 @@ declare module 'mojang-minecraft' {
 		playSound(soundID: string, soundOptions?: SoundOptions): void
 		/**
 		 * @remarks
-		 * Removes a specified property.
-		 * @param identifier
-		 * @throws This function can throw errors.
-		 */
-		removeDynamicProperty(identifier: string): boolean
-		/**
-		 * @remarks
 		 * Removes a specified tag from an entity.
 		 * @param tag
 		 * Content of the tag to remove.
@@ -13944,18 +13023,6 @@ declare module 'mojang-minecraft' {
 		 * ```
 		 */
 		runCommand(commandString: string): any
-		/**
-		 * @remarks
-		 * Sets a specified property to a value.
-		 * @param identifier
-		 * @param value
-		 * Data value of the property to set.
-		 * @throws This function can throw errors.
-		 */
-		setDynamicProperty(
-			identifier: string,
-			value: boolean | number | string
-		): void
 		/**
 		 * @remarks
 		 * Sets a velocity for the entity to move with.
@@ -14024,7 +13091,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		triggerEvent(eventName: string): void
-		protected constructor()
 	}
 	/**
 	 * Represents the inventory of a {@link mojang-minecraft.Player} in
@@ -14107,7 +13173,6 @@ declare module 'mojang-minecraft' {
 			toSlot: number,
 			toContainer: Container
 		): boolean
-		protected constructor()
 	}
 	/**
 	 * This type is usable for iterating over a set of players.
@@ -14123,7 +13188,6 @@ declare module 'mojang-minecraft' {
 		 * can be used to see the next Player in the iteration.
 		 */
 		next(): IteratorResult<Player>
-		protected constructor()
 	}
 	/**
 	 * Contains information regarding a player that has joined.
@@ -14133,7 +13197,6 @@ declare module 'mojang-minecraft' {
 		 * Player that has joined the world.
 		 */
 		'player': Player
-		protected constructor()
 	}
 	/**
 	 * Manages callbacks that are connected to a player joining the
@@ -14157,7 +13220,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		unsubscribe(callback: (arg: PlayerJoinEvent) => void): void
-		protected constructor()
 	}
 	/**
 	 * Contains information regarding a player that has left the
@@ -14168,7 +13230,6 @@ declare module 'mojang-minecraft' {
 		 * Player that has left the world.
 		 */
 		readonly 'playerName': string
-		protected constructor()
 	}
 	/**
 	 * Manages callbacks that are connected to a player leaving the
@@ -14192,177 +13253,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		unsubscribe(callback: (arg: PlayerLeaveEvent) => void): void
-		protected constructor()
-	}
-	/**
-	 * Contains information related to a projectile hitting an
-	 * entity or block.
-	 */
-	export class ProjectileHitEvent {
-		/**
-		 * Contains additional information about the block that was hit
-		 * by the projectile, or undefined if the projectile did not
-		 * hit a block.
-		 */
-		readonly 'blockHit': BlockHitInformation
-		/**
-		 * Dimension where this projectile hit took place.
-		 */
-		readonly 'dimension': Dimension
-		/**
-		 * Contains additional information about a block that was hit.
-		 */
-		readonly 'entityHit': EntityHitInformation
-		/**
-		 * Vector of the projectile as it hit a block/entity.
-		 */
-		readonly 'hitVector': Vector
-		/**
-		 * Location where the projectile hit occurred.
-		 */
-		readonly 'location': Location
-		/**
-		 * Entity for the projectile that hit a block/entity.
-		 */
-		readonly 'projectile': Entity
-		/**
-		 * Optional source entity that fired the projectile.
-		 */
-		readonly 'source': Entity
-		protected constructor()
-	}
-	/**
-	 * Manages callbacks that are connected to when a projectile
-	 * hits an entity or block.
-	 */
-	export class ProjectileHitEventSignal {
-		/**
-		 * @remarks
-		 * Adds a callback that will be called when a projectile hits
-		 * an entity or block.
-		 * @param callback
-		 */
-		subscribe(
-			callback: (arg: ProjectileHitEvent) => void
-		): (arg: ProjectileHitEvent) => void
-		/**
-		 * @remarks
-		 * Removes a callback from being called when a projectile hits
-		 * an entity or block.
-		 * @param callback
-		 * @throws This function can throw errors.
-		 */
-		unsubscribe(callback: (arg: ProjectileHitEvent) => void): void
-		protected constructor()
-	}
-	/**
-	 * Provides methods that should be used within the World
-	 * Initialize event to register dynamic properties that can be
-	 * used and stored within Minecraft.
-	 */
-	export class PropertyRegistry {
-		/**
-		 * @remarks
-		 * Registers a dynamic property for a particular entity type
-		 * (e.g., a minecraft:skeleton.).
-		 * @param propertiesDefinition
-		 * @param entityType
-		 * @throws This function can throw errors.
-		 */
-		registerEntityTypeDynamicProperties(
-			propertiesDefinition: DynamicPropertiesDefinition,
-			entityType: EntityType
-		): void
-		/**
-		 * @remarks
-		 * Registers a globally available dynamic property for a world.
-		 * @param propertiesDefinition
-		 * @throws This function can throw errors.
-		 */
-		registerWorldDynamicProperties(
-			propertiesDefinition: DynamicPropertiesDefinition
-		): void
-		protected constructor()
-	}
-	/**
-	 * Contains information about user interface elements that are
-	 * showing up on the screen.
-	 */
-	export class ScreenDisplay {
-		/**
-		 * @remarks
-		 * Clears the title and subtitle, if currently displayed.
-		 * @throws This function can throw errors.
-		 */
-		clearTitle(): void
-		/**
-		 * @remarks
-		 * Set the action bar text - a piece of text that displays
-		 * beneath the title and above the hot-bar.
-		 * @param text
-		 * @throws This function can throw errors.
-		 */
-		setActionBar(text: string): void
-		/**
-		 * @remarks
-		 * Will cause a title to show up on the player's on screen
-		 * display. You can optionally specify an additional subtitle
-		 * as well as fade in, stay and fade out times.
-		 * @param title
-		 * @param options
-		 * @throws This function can throw errors.
-		 */
-		setTitle(title: string, options?: TitleDisplayOptions): void
-		/**
-		 * @remarks
-		 * Updates the subtitle if the subtitle was previously
-		 * displayed via the setTitle method.
-		 * @param subtitle
-		 * @throws This function can throw errors.
-		 */
-		updateSubtitle(subtitle: string): void
-		protected constructor()
-	}
-	/**
-	 * Implements a class that can be used for testing sculk
-	 * spreading behaviors. This sculk spreader class can drive the
-	 * growth of sculk around a particular block.
-	 */
-	export class SculkSpreader {
-		/**
-		 * @remarks
-		 * Adds a cursor - which is a notional waypoint that the sculk
-		 * will spread in the direction of.
-		 * @param offset
-		 * @param charge
-		 */
-		addCursorsWithOffset(offset: BlockLocation, charge: number): void
-		/**
-		 * @remarks
-		 * Retrieves the current position of the specified cursor.
-		 * @param index
-		 * @throws This function can throw errors.
-		 */
-		getCursorPosition(index: number): BlockLocation
-		/**
-		 * @remarks
-		 * Gets the maximum charge of a sculk spreader.
-		 * @throws This function can throw errors.
-		 */
-		getMaxCharge(): number
-		/**
-		 * @remarks
-		 * Returns a number of overall cursors for this sculk spreader.
-		 * @throws This function can throw errors.
-		 */
-		getNumberOfCursors(): number
-		/**
-		 * @remarks
-		 * Gets the total current charge of the sculk spreader.
-		 * @throws This function can throw errors.
-		 */
-		getTotalCharge(): number
-		protected constructor()
 	}
 	/**
 	 * Describes a particular seating position on this rideable
@@ -14388,7 +13278,6 @@ declare module 'mojang-minecraft' {
 		 * location.
 		 */
 		'position': Location
-		protected constructor()
 	}
 	/**
 	 * Additional configuration options for the
@@ -14436,7 +13325,6 @@ declare module 'mojang-minecraft' {
 		 * allowed values.
 		 */
 		'value': string
-		protected constructor()
 	}
 	/**
 	 * An event for handling updates, that fires 20 times every
@@ -14451,7 +13339,6 @@ declare module 'mojang-minecraft' {
 		 * Time since the last tick was fired.
 		 */
 		readonly 'deltaTime': number
-		protected constructor()
 	}
 	/**
 	 * Manages callbacks that are connected to a tick event.
@@ -14470,30 +13357,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		unsubscribe(callback: (arg: TickEvent) => void): void
-		protected constructor()
-	}
-	/**
-	 * Contains additional options for displaying a title and
-	 * optional subtitle.
-	 */
-	export class TitleDisplayOptions {
-		/**
-		 * Fade-in time for the title and subtitle, in seconds.
-		 */
-		'fadeInSeconds': number
-		/**
-		 * Fade-out time for the title and subtitle, in seconds.
-		 */
-		'fadeOutSeconds': number
-		/**
-		 * Amount of time for the title and subtitle to stay in place.
-		 */
-		'staySeconds': number
-		/**
-		 * Optional sub-title text.
-		 */
-		'subtitle': string
-		constructor()
 	}
 	/**
 	 * Represents a trigger for firing an event.
@@ -14677,7 +13540,6 @@ declare module 'mojang-minecraft' {
 		 * Whether it is raining after the change in weather.
 		 */
 		readonly 'raining': boolean
-		protected constructor()
 	}
 	/**
 	 * Manages callbacks that are connected to weather changing.
@@ -14698,7 +13560,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		unsubscribe(callback: (arg: WeatherChangeEvent) => void): void
-		protected constructor()
 	}
 	/**
 	 * A class that wraps the state of a world - a set of
@@ -14720,16 +13581,6 @@ declare module 'mojang-minecraft' {
 		getDimension(dimensionId: string): Dimension
 		/**
 		 * @remarks
-		 * Returns a property value.
-		 * @param identifier
-		 * @returns
-		 * Returns the value for the property, or undefined if the
-		 * property has not been set.
-		 * @throws This function can throw errors.
-		 */
-		getDynamicProperty(identifier: string): boolean | number | string
-		/**
-		 * @remarks
 		 * Returns all players currently in the world.
 		 * @param options
 		 * @returns
@@ -14739,107 +13590,11 @@ declare module 'mojang-minecraft' {
 		getPlayers(options?: EntityQueryOptions): PlayerIterator
 		/**
 		 * @remarks
-		 * Plays a particular music track for all players.
-		 * @param trackID
-		 * @param musicOptions
-		 */
-		playMusic(trackID: string, musicOptions?: MusicOptions): void
-		/**
-		 * @remarks
-		 * Plays a sound for all players.
+		 * Plays a sound that all players can hear.
 		 * @param soundID
 		 * @param soundOptions
 		 */
 		playSound(soundID: string, soundOptions?: SoundOptions): void
-		/**
-		 * @remarks
-		 * Queues an additional music track for players. If a track is
-		 * not playing, a music track will play.
-		 * @param trackID
-		 * @param musicOptions
-		 */
-		queueMusic(trackID: string, musicOptions?: MusicOptions): void
-		/**
-		 * @remarks
-		 * Removes a specified property.
-		 * @param identifier
-		 * @throws This function can throw errors.
-		 */
-		removeDynamicProperty(identifier: string): boolean
-		/**
-		 * @remarks
-		 * Sets a specified property to a value.
-		 * @param identifier
-		 * @param value
-		 * Data value of the property to set.
-		 * @throws This function can throw errors.
-		 */
-		setDynamicProperty(
-			identifier: string,
-			value: boolean | number | string
-		): void
-		/**
-		 * @remarks
-		 * Stops any music tracks from playing.
-		 */
-		stopMusic(): void
-		protected constructor()
-	}
-	/**
-	 * Contains information and methods that can be used at the
-	 * initialization of the scripting environment for a World.
-	 * Also, use the supplied propertyRegistry object to register
-	 * any dynamic properties, within the scope of the World
-	 * Initialize execution.
-	 */
-	export class WorldInitializeEvent {
-		/**
-		 * Contains methods for scripts to initialize and register
-		 * dynamic properties they may wish to use within a world.
-		 * @example propertyRegistration.js
-		 * ```typescript
-		 *        import { DynamicPropertiesDefinition, MinecraftEntityTypes, world } from "mojang-minecraft";
-		 *
-		 *        world.events.worldInitialize.subscribe((e) => {
-		 *          let def = new DynamicPropertiesDefinition();
-		 *
-		 *          def.defineNumber("rpgStrength");
-		 *          def.defineString("rpgRole", 16);
-		 *          def.defineBoolean("rpgIsHero");
-		 *
-		 *          e.propertyRegistry.registerEntityTypeDynamicProperties(def, MinecraftEntityTypes.skeleton);
-		 *        });
-		 *
-		 * ```
-		 */
-		readonly 'propertyRegistry': PropertyRegistry
-		protected constructor()
-	}
-	/**
-	 * Manages callbacks that are run at the initialization of the
-	 * scripting environment for a World. Do note that this event
-	 * may run multiple times within a session in the case that the
-	 * /reload command is used.
-	 */
-	export class WorldInitializeEventSignal {
-		/**
-		 * @remarks
-		 * Adds a callback that will be called when the scripting
-		 * environment is initialized for a World.
-		 * @param callback
-		 */
-		subscribe(
-			callback: (arg: WorldInitializeEvent) => void
-		): (arg: WorldInitializeEvent) => void
-		/**
-		 * @remarks
-		 * Removes a callback from being called the scripting
-		 * environment is initialized for a World.
-		 * @param callback
-		 * @throws This function can throw errors.
-		 */
-		unsubscribe(callback: (arg: WorldInitializeEvent) => void): void
-		protected constructor()
 	}
 	/**
 	 * How many times the server ticks per second of real time.

@@ -67,8 +67,9 @@
 			"types/gameTest/v1.18.20.d.ts",
 			{ "targetVersion": ["=", "v1.18.20"] }
 		],
+		// 1.18.30
 		[
-			"types/gameTest/v1.18.20.d.ts",
+			"types/gameTest/v1.18.30.d.ts",
 			{ "targetVersion": ["=", "v1.18.30"] }
 		],
 		// 1.19.0
