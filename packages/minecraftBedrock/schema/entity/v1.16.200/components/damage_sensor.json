@@ -1,0 +1,76 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Defines what events to call when this entity is damaged by specific entities or items.",
+	"type": "object",
+	"properties": {
+		"triggers": {
+			"anyOf": [
+				{
+					"description": "List of triggers with the events to call when taking specific kinds of damage.",
+					"type": "array",
+					"items": {
+						"type": "object",
+						"additionalProperties": false,
+						"properties": {
+							"on_damage": {
+								"description": "Specifies filters for entity definitions and events.",
+								"$ref": "../../general/eventDefinition.json"
+							},
+							"cause": {
+								"description": "Type of damage that triggers the events.",
+								"$ref": "../../../general/vanilla/damageType.json"
+							},
+							"deals_damage": {
+								"description": "If true, the damage dealt to the entity will take away health from it, set to false to make the entity ignore that damage.",
+								"type": "boolean"
+							},
+							"damage_multiplier": {
+								"description": "A multiplier that modifies the base damage from the damage cause. If deals_damage is true the multiplier can only reduce the damage the entity will take to a minimum of 1.",
+								"type": "number"
+							},
+							"on_damage_sound_event": {
+								"description": "Defines what sound to play, if any, when the on_damage filters are met.",
+								"type": "string"
+							},
+                            "damage_modifier": {
+                                "type": "number",
+                                "description": "A modifier that adds to/removes from the base damage from the damage cause. It does not reduce damage to less than 0."
+                            }
+						}
+					}
+				},
+				{
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"on_damage": {
+							"description": "Specifies filters for entity definitions and events.",
+							"$ref": "../../general/eventDefinition.json"
+						},
+						"cause": {
+							"description": "Type of damage that triggers the events.",
+							"$ref": "../../../general/vanilla/damageType.json"
+						},
+						"deals_damage": {
+							"description": "If true, the damage dealt to the entity will take away health from it, set to false to make the entity ignore that damage.",
+							"type": "boolean"
+						},
+						"damage_multiplier": {
+							"description": "A multiplier that modifies the base damage from the damage cause. If deals_damage is true the multiplier can only reduce the damage the entity will take to a minimum of 1.",
+							"type": "number"
+						},
+						"on_damage_sound_event": {
+							"description": "Defines what sound to play, if any, when the on_damage filters are met.",
+							"type": "string"
+						},
+                        "damage_modifier": {
+                            "type": "number",
+                            "description": "A modifier that adds to/removes from the base damage from the damage cause. It does not reduce damage to less than 0."
+                        }
+					}
+				}
+			]
+		}
+	}
+}

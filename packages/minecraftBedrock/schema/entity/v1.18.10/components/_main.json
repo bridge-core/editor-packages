@@ -26,6 +26,9 @@
 		"minecraft:breedable": {
 			"$ref": "../../v1.16.220/components/breedable.json"
 		},
+		"minecraft:damage_sensor": {
+			"$ref": "../../v1.16.200/components/damage_sensor.json"
+		},
 		"minecraft:navigation.climb": {
 			"$ref": "../../v1.16.200/components/navigation.climb.json"
 		},
@@ -145,9 +148,6 @@
 		},
 		"minecraft:damage_over_time": {
 			"$ref": "../../v1.16.0/components/damage_over_time.json"
-		},
-		"minecraft:damage_sensor": {
-			"$ref": "../../v1.16.0/components/damage_sensor.json"
 		},
 		"minecraft:default_look_angle": {
 			"$ref": "../../v1.16.0/components/default_look_angle.json"

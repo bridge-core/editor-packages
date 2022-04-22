@@ -2,6 +2,9 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"type": "object",
 	"properties": {
+		"minecraft:damage_sensor": {
+			"$ref": "./damage_sensor.json"
+		},
 		"minecraft:navigation.climb": {
 			"$ref": "./navigation.climb.json"
 		},
@@ -127,9 +130,6 @@
 		},
 		"minecraft:damage_over_time": {
 			"$ref": "../../v1.16.0/components/damage_over_time.json"
-		},
-		"minecraft:damage_sensor": {
-			"$ref": "../../v1.16.0/components/damage_sensor.json"
 		},
 		"minecraft:default_look_angle": {
 			"$ref": "../../v1.16.0/components/default_look_angle.json"
