@@ -22,7 +22,13 @@
 		"minecraft:entity/components/minecraft:rideable/seats/*/rotate_rider_by",
 		"minecraft:entity/component_groups/*/minecraft:rideable/seats/*/rotate_rider_by",
 		"minecraft:entity/components/minecraft:rideable/seats/rotate_rider_by",
-		"minecraft:entity/component_groups/*/minecraft:rideable/seats/rotate_rider_by"
+		"minecraft:entity/component_groups/*/minecraft:rideable/seats/rotate_rider_by",
+		"minecraft:entity/components/minecraft:ambient_sound_interval/event_names/*/condition",
+		"minecraft:entity/component_groups/*/minecraft:ambient_sound_interval/event_names/*/condition",
+		"minecraft:entity/components/minecraft:anger_level/on_increase_sounds/*/condition",
+		"minecraft:entity/component_groups/*/minecraft:anger_level/on_increase_sounds/*/condition",
+		"minecraft:entity/components/minecraft:heartbeat/interval",
+		"minecraft:entity/component_groups/*/minecraft:heartbeat/interval"
 	],
 	"block": [
 		"minecraft:block/events/*/set_block_property/*",
