@@ -4,7 +4,7 @@
 	"type": "object",
 	"definitions": {
 		"hex_color": {
-			"$ref": "../general/hexColor.json"
+			"$ref": "../../general/hexColor.json"
 		}
 	},
 	"properties": {
@@ -19,10 +19,10 @@
 						"identifier": {
 							"anyOf": [
 								{
-									"$ref": "../general/reference/prefixedFileIdentifier.json"
+									"$ref": "../../general/reference/prefixedFileIdentifier.json"
 								},
 								{
-									"$ref": "../general/vanilla/identifiers.json#/definitions/fog_identifiers"
+									"$ref": "../../general/vanilla/identifiers.json#/definitions/fog_identifiers"
 								}
 							]
 						}
