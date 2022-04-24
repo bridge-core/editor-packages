@@ -13,6 +13,6 @@
 	"highlighterConfiguration": {
 		"keywords": ["pools"],
 		"typeIdentifiers": ["function"],
-		"definitions": ["conditions", "rools", "tiers", "entries", "functions"]
+		"definitions": ["conditions", "rolls", "tiers", "entries", "functions"]
 	}
 }

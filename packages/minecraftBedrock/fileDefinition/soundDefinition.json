@@ -7,5 +7,10 @@
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/soundDefinition/main.json",
-	"lightningCache": "soundDefinition.json"
+	"lightningCache": "soundDefinition.json",
+
+	"highlighterConfiguration": {
+		"typeIdentifiers": ["format_version"],
+		"definitions": ["sound_definitions"]
+	}
 }

@@ -16,5 +16,9 @@
 				"match": "identifier"
 			}
 		]
+	},
+
+	"highlighterConfiguration": {
+		"typeIdentifiers": ["format_version"]
 	}
 }

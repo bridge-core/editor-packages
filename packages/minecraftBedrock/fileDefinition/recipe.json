@@ -37,7 +37,9 @@
 			"ingredients",
 			"input",
 			"output",
-			"reagent"
+			"reagent",
+			"priority",
+			"group"
 		],
 		"typeIdentifiers": ["format_version"]
 	}
