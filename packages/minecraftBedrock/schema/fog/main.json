@@ -1,6 +1,5 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"additionalProperties": false,
 	"title": "Fog",
 	"required": ["format_version", "minecraft:fog_settings"],
 	"type": "object",
