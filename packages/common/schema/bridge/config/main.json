@@ -21,7 +21,20 @@
 			"description": "Creators of the project.",
 			"type": "array",
 			"items": {
-				"type": "string"
+				"anyOf": [
+					{
+						"type": "string"
+					},
+					{
+						"type": "object",
+						"properties": {
+							"name": { "type": "string" },
+							"logo": { "type": "string" }
+						},
+						"required": ["name"],
+						"additionalProperties": false
+					}
+				]
 			}
 		},
 		"targetVersion": {
@@ -81,12 +94,7 @@
 			"description": "Allows users to define additional data which is hard to find for tools (e.g. scoreboards setup inside of a world).",
 			"type": "object",
 			"propertyNames": {
-				"enum": [
-					"families",
-					"tags",
-					"scoreboardObjectives",
-					"names"
-				]
+				"enum": ["families", "tags", "scoreboardObjectives", "names"]
 			}
 		},
 		"bridge": {
