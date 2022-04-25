@@ -4,7 +4,12 @@
 	"detect": {
 		"packType": "resourcePack",
 		"scope": "animations/",
-		"matcher": ["animations/**/*.json", "animations/*.json"]
+		"matcher": ["animations/**/*.json", "animations/*.json"],
+		"fileContent": [
+			"animations/*/bones",
+			"animations/*/particle_effects",
+			"animations/*/sound_effects"
+		]
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/clientAnimation/main.json",

@@ -4,7 +4,7 @@
 		"packType": "behaviorPack",
 		"scope": "animations/",
 		"matcher": ["animations/**/*.json", "animations/*.json"],
-		"fileContent": ["animations"]
+		"fileContent": ["animations/*/timeline"]
 	},
 	"icon": "mdi-movie-open-outline",
 	"schema": "file:///data/packages/minecraftBedrock/schema/animation/main.json",
