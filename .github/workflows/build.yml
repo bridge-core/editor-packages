@@ -40,8 +40,8 @@ jobs:
             - name: Commit files ✅
               run: |
                   cd ./editor
-                  git config --local user.email "action@github.com"
-                  git config --local user.name "GitHub Action"
+                  git config --local user.email "${{ github.event.pusher.email }}"
+                  git config --local user.name "${{ github.event.pusher.name }}"
                   git add -A && git commit -m "${{ github.event.head_commit.message }}"
 
             - name: Push changes 🔼
