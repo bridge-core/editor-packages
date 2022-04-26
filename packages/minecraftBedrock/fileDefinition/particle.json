@@ -12,7 +12,7 @@
 	"packSpider": "particle.json",
 	"lightningCache": "particle.json",
 
-	"defintions": {
+	"definitions": {
 		"texturePath": {
 			"directReference": true
 		}
