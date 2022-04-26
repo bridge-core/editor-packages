@@ -1,0 +1,246 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"title": "A bridge. file type definition.",
+	"properties": {
+		"id": {
+			"type": "string",
+			"description": "The unique identifier of the file definition. (e.g. 'block' or 'entity')"
+		},
+		"icon": {
+			"type": "string",
+			"description": "A reference to the icon to use for this file definition. https://materialdesignicons.com/",
+			"pattern": "^mdi-[a-zA-Z-]*$"
+		},
+		"detect": {
+			"type": "object",
+			"additionalProperties": false,
+			"description": "A configuration object that describes how to detect that a file is this file type.",
+			"properties": {
+				"packType": {
+					"description": "The pack type(s) that this file type belongs to.",
+					"anyOf": [
+						{
+							"type": "string",
+							"enum": [
+								"behaviorPack",
+								"resourcePack",
+								"worldTemplate",
+								"skinPack"
+							]
+						},
+						{
+							"type": "array",
+							"items": {
+								"type": "string",
+								"enum": [
+									"behaviorPack",
+									"resourcePack",
+									"worldTemplate",
+									"skinPack"
+								]
+							}
+						}
+					]
+				},
+				"scope": {
+					"description": "The general folder scope(s) to expect this file type to be in.",
+					"anyOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					]
+				},
+				"matcher": {
+					"description": "Glob pattern(s) to match files that are this file type.",
+					"anyOf": [
+						{
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						},
+						{
+							"type": "string"
+						}
+					]
+				},
+				"fileContent": {
+					"description": "A list of glob patterns to detect specific json file content to identify this file type. (e.g. 'minecraft:block' or 'animations/*/timeline')",
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"fileExtensions": {
+                    "description": "A list of file extensions to associate with this file type.",
+					"type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+				}
+			}
+		},
+		"formatVersionMap": {
+			"description": "A map of format versions to modify during this file's compilation.",
+			"type": "object",
+			"additionalProperties": false,
+			"patternProperties": {
+				"^[0-9]\\.[0-9]{2}\\.[0-9]+$": {
+					"type": "string",
+					"pattern": "^[0-9]\\.[0-9]{2}\\.[0-9]+$"
+				}
+			}
+		},
+		"schema": {
+			"description": "A path to the root schema to validate and propose auto-completions for this file type.",
+			"type": "string",
+			"pattern": "^file:\\/\\/.+"
+		},
+		"lightningCache": {
+			"type": "string",
+			"description": "The name of the lightning cache file to use for caching data in this file type."
+		},
+		"packSpider": {
+			"type": "string",
+			"description": "The name of the pack spider to use for linking this file type to other files."
+		},
+		"definitions": {
+			"description": "Lightning cache keys to match up to definitions in other files.",
+			"type": "object",
+			"additionalProperties": {
+				"anyOf": [
+					{
+						"type": "array",
+						"items": {
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"from": {
+									"type": "string"
+								},
+								"match": {
+									"type": "string"
+								}
+							}
+						}
+					},
+					{
+						"type": "object",
+						"properties": {
+							"directReference": {
+								"type": "boolean"
+							}
+						}
+					}
+				]
+			}
+		},
+		"documentation": {
+			"type": "object",
+			"description": "Describes where to find documentation for this file type.",
+			"additionalProperties": false,
+			"properties": {
+				"baseUrl": {
+					"type": "string",
+					"description": "The base URL to use for documentation links."
+				},
+				"supportsQuerying": {
+					"type": "boolean",
+					"description": "Whether or not this file type supports querying specific properties in documentation."
+				}
+			}
+		},
+		"highlighterConfiguration": {
+			"description": "The configuration for the JSON syntax highlighter to use for this file type.",
+			"type": "object",
+			"propertyNames": {
+				"enum": [
+					"variables",
+					"typeIdentifiers",
+					"definitions",
+					"keywords"
+				]
+			},
+			"additionalProperties": {
+				"type": "array",
+				"items": {
+					"type": "string"
+				}
+			}
+		},
+		"meta": {
+			"description": "Metadata to apply to this file type.",
+			"additionalProperties": false,
+			"type": "object",
+			"properties": {
+				"commandsUseSlash": {
+					"type": "boolean",
+					"description": "Whether or not commands in this file use the slash at the beginning."
+				},
+                "language": {
+                    "type": "string",
+                    "description": "The language of this file type."
+                }
+			}
+		},
+		"type": {
+			"type": "string",
+			"description": "The type of file this is.",
+			"enum": ["text", "json", "nbt"]
+		},
+		"types": {
+			"description": "A list of type definitions to apply to this file type.",
+			"type": "array",
+			"items": {
+				"anyOf": [
+					{
+						"type": "array",
+						"minItems": 2,
+						"maxItems": 2,
+						"items": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "object",
+								"additionalProperties": false,
+								"properties": {
+									"targetVersion": {
+										"type": "array",
+										"minItems": 2,
+										"maxItems": 2,
+										"items": [
+											{
+												"type": "string",
+												"description": "The operator to compare the version with."
+											},
+											{
+												"type": "string",
+												"description": "The version to compare to the project target version."
+											}
+										]
+									}
+								}
+							}
+						]
+					},
+					{
+						"type": "string"
+					}
+				]
+			}
+		},
+		"formatOnSaveCapable": {
+			"description": "Whether or not this file type can be automatically formatted on save.",
+			"type": "boolean"
+		}
+	}
+}

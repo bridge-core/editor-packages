@@ -10,8 +10,12 @@
 			"url": "/packages/common/schema/bridge/preset/main.json"
 		},
 		{
-			"fileMatch": ["packages/*/themes/**/*.json", "packages/*/themes/*.json"],
+			"fileMatch": ["packages/*/themes/**/*.json"],
 			"url": "/packages/common/schema/bridge/theme/main.json"
+		},
+		{
+			"fileMatch": ["packages/*/fileDefinition/**/*.json"],
+			"url": "/packages/common/schema/bridge/fileDefinition/main.json"
 		}
 	]
 }
