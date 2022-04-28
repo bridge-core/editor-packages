@@ -18,6 +18,9 @@
 					},
 					"minecraft:suspect_tracking": {
 						"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.0/components/suspect_tracking.json"
+					},
+					"minecraft:vibration_damper": {
+						"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.0/components/vibration_damper.json"
 					}
 				}
 			}

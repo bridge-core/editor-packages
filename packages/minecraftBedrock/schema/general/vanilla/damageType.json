@@ -36,6 +36,7 @@
 		"all",
 		"stalactite",
 		"stalagmite",
-		"durability"
+		"durability",
+		"sonic_boom"
 	]
 }

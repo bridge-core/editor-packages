@@ -40,6 +40,10 @@
         "vertical_throw_mul": {
             "description": "Sets the vertical throw multiplier that is applied on top of the throw force in the vertical direction.",
             "type": "number"
+        },
+        "throw_sound": {
+            "description": "Sound to play when this mob throws an item.",
+            "type": "string"
         }
     }
 }

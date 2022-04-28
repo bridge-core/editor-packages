@@ -34,24 +34,6 @@
             "description": "Filter that is applied to determine if a mob can be a nuisance.",
             "$ref": "../../general/filter.json"
         },
-        "nuisances": {
-            "description": "A list of entities and their corresponding annoyingness, specifying exceptions from the default.",
-            "type": "array",
-            "items": {
-                "additionalProperties": false,
-                "type": "object",
-                "properties": {
-                    "annoyingness": {
-                        "description": "The annoyingness for this specific nuisance. Specifies how much to raise anger level on each provocation.",
-                        "type": "number"
-                    },
-                    "entity": {
-                        "description": "The identifier of the entity.",
-                        "$ref": "../../../general/reference/identifiers.json#/definitions/entity_identifiers"
-                    }
-                }
-            }
-        },
         "on_increase_sounds": {
             "description": "Sounds to play when the entity is getting provoked. Evaluated in order. First matching condition wins.",
             "type": "array",

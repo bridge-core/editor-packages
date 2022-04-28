@@ -7,7 +7,19 @@
         "priority": { "$ref": "../../general/behaviorPriority.json" },
         "on_item_throw": {
             "description": "Event(s) to run when this mob throws items.",
-            "$ref": "../../general/eventDefinition.json"
+            "anyOf": [
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "../../general/eventDefinition.json"
+                    }
+                },
+                {
+                    "type": "object",
+                    "$ref": "../../general/eventDefinition.json"
+                }
+            ]
         },
         "reach_mob_distance": {
             "description": "Sets the desired distance to be reached before giving items to owner.",
@@ -16,6 +28,22 @@
         "run_speed": {
             "description": "Sets the entity's speed when running toward the owner.",
             "type": "number"
+        },
+        "reach_block_distance": {
+            "description": "Sets the desired distance to be reached before throwing the items towards the block.",
+            "type": "number"
+        },
+        "throw_force": {
+            "description": "Sets the throw force.",
+            "type": "number"
+        },
+        "vertical_throw_mul": {
+            "description": "Sets the vertical throw multiplier that is applied on top of the throw force in the vertical direction.",
+            "type": "number"
+        },
+        "throw_sound": {
+            "description": "Sound to play when this mob throws an item.",
+            "type": "string"
         }
     }
 }
