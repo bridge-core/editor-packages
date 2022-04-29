@@ -48,7 +48,12 @@
 					"allOf": [
 						{
 							"properties": {
-								"weight": { "type": "number" }
+								"weight": {
+									"type": "number"
+								},
+								"filters": {
+									"$ref": "/data/packages/minecraftBedrock/schema/entity/general/filter.json"
+								}
 							}
 						},
 						{
