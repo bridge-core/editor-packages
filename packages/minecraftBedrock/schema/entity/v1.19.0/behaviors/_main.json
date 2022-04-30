@@ -59,7 +59,7 @@
 					"$ref": "../../v1.18.30/behaviors/behavior.work_composter.json"
 				},
 				"minecraft:behavior.knockback_roar": {
-					"$ref": "../../v1.18.20/behaviors/behavior.knockback_roar.json"
+					"$ref": "../../v1.18.30/behaviors/behavior.knockback_roar.json"
 				},
 				"minecraft:behavior.go_home": {
 					"$ref": "../../v1.18.20/behaviors/behavior.go_home.json"
