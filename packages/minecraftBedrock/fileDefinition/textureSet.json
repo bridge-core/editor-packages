@@ -19,7 +19,8 @@
 			"emissive",
 			"roughness",
 			"metalness_emissive_roughness",
-			"heightmap"
+			"heightmap",
+			"normal"
 		],
 		"typeIdentifiers": ["format_version"]
 	}
