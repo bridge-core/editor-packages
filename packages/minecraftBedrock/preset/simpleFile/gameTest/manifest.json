@@ -1,7 +1,7 @@
 {
-	"name": "Game Test",
+	"name": "GameTest",
 	"icon": "mdi-test-tube",
-	"description": "Creates a blank game test.",
+	"description": "Creates a blank GameTest.",
 	"category": "fileType.simpleFile",
 	"requires": {
 		"packTypes": ["behaviorPack"],
