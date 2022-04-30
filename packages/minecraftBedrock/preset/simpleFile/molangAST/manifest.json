@@ -1,7 +1,7 @@
 {
 	"name": "Molang AST Script",
 	"icon": "mdi-alpha-m",
-	"description": "Creates a blank molang AST script.",
+	"description": "Creates a blank Molang AST script.",
 	"category": "fileType.simpleFile",
 	"requires": {
 		"packTypes": ["behaviorPack"]

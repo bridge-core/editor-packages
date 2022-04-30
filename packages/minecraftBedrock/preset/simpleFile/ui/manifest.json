@@ -1,7 +1,7 @@
 {
 	"name": "UI",
 	"icon": "mdi-window-maximize",
-	"description": "Creates a blank ui file.",
+	"description": "Creates a blank UI file.",
 	"category": "fileType.simpleFile",
 	"requires": {
 		"packTypes": ["resourcePack"]

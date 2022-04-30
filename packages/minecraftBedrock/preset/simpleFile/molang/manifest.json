@@ -1,7 +1,7 @@
 {
 	"name": "Molang",
 	"icon": "mdi-alpha-m",
-	"description": "Creates a blank molang file.",
+	"description": "Creates a blank Molang file.",
 	"category": "fileType.simpleFile",
 	"requires": {
 		"packTypes": ["behaviorPack"]
