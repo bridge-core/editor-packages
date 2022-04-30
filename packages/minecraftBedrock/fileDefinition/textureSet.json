@@ -9,5 +9,18 @@
 
 	"documentation": {
 		"baseUrl": "https://bedrock.dev/docs/stable/Texture%20Sets"
+	},
+
+	"highlighterConfiguration": {
+		"variables": [
+			"color",
+			"color_unlit",
+			"metalness",
+			"emissive",
+			"roughness",
+			"metalness_emissive_roughness",
+			"heightmap"
+		],
+		"typeIdentifiers": ["format_version"]
 	}
 }

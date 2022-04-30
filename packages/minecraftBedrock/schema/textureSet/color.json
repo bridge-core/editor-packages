@@ -1,5 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
+	"description": "A color in hexidecimal format, RGBA format, or a reference to a terrain texture.",
 	"anyOf": [
 		{
 			"$ref": "../general/hexColor.json"
