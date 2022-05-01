@@ -1,8 +1,8 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
-	"description": "Allows the mob to perform a damaging knockback that affects all nearby entities.",
 	"type": "object",
+	"description": "Allows the mob to perform a damaging knockback that affects all nearby entities.",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"attack_time": {
@@ -21,9 +21,17 @@
 			"description": "The damage dealt by the knockback roar.",
 			"type": "number"
 		},
+		"knockback_horizontal_strength": {
+			"description": "The strength of the horizontal knockback.",
+			"type": "integer"
+		},
+		"knockback_vertical_strength": {
+			"description": "The strength of the vertical knockback.",
+			"type": "integer"
+		},
 		"knockback_strength": {
-			"description": "The strength of the knockback.",
-			"type": "number"
+			"doNotSuggest": true,
+			"deprecationMessage": "Deprecated in favor of 'knockback_vertical_strength' and 'knockback_horizontal_strength' (format_version: v1.17.20)."
 		},
 		"knockback_range": {
 			"description": "The radius (in blocks) of the knockback effect.",
@@ -41,7 +49,7 @@
 			"description": "Event that is triggered when the roar ends.",
 			"$ref": "../../general/eventDefinition.json"
 		},
-        "knockback_height_cap": {
+		"knockback_height_cap": {
             "description": "The maximum height for vertical knockback.",
             "type": "number"
         }
