@@ -3,6 +3,7 @@
 	"title": "Language Definitions",
 	"type": "array",
 	"items": {
+		"type": "string",
 		"$ref": "../lang/dynamic/langPathEnum.json"
 	}
 }

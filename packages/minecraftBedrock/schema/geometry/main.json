@@ -3,6 +3,7 @@
 	"title": "Geometry",
 	"type": "object",
 	"additionalProperties": false,
+	"required": ["format_version", "minecraft:geometry"],
 	"definitions": {
 		"geometry_definition": {
 			"type": "object",

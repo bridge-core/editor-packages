@@ -3,7 +3,6 @@
 	"title": "Entity",
 	"type": "object",
 	"required": ["format_version", "minecraft:entity"],
-
 	"allOf": [
 		{
 			"properties": {

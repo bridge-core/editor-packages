@@ -3,6 +3,7 @@
 	"title": "Item Textures",
 	"additionalProperties": false,
 	"type": "object",
+	"required": ["resource_pack_name", "texture_name", "texture_data"],
 	"properties": {
 		"resource_pack_name": {
 			"type": "string"

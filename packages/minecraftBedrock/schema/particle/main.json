@@ -3,6 +3,7 @@
 	"title": "Particle",
 	"type": "object",
 	"additionalProperties": false,
+	"required": ["particle_effect", "format_version"],
 	"properties": {
 		"format_version": {
 			"$ref": "../project/formatVersionEnum.json"

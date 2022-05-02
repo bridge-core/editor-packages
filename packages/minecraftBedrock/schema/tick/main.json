@@ -3,6 +3,7 @@
 	"title": "Ticking Functions",
 	"additionalProperties": false,
 	"type": "object",
+	"required": ["values"],
 	"properties": {
 		"values": {
 			"type": "array",

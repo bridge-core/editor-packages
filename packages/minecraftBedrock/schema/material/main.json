@@ -276,6 +276,7 @@
 			}
 		}
 	},
+	"required": ["version", "materials"],
 	"properties": {
 		"version": {
 			"type": "string"

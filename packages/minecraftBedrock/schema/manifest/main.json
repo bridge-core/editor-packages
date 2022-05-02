@@ -3,7 +3,7 @@
 	"title": "Manifest",
 	"description": "The manifest contains the basic information to register the pack into Minecraft.",
 	"type": "object",
-	"required": ["format_version", "header"],
+	"required": ["format_version", "header", "modules"],
 	"additionalProperties": false,
 	"definitions": {
 		"triple_integer": {

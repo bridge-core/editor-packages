@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"title": "Client Animation Controller",
-	"required": ["format_version"],
+	"required": ["format_version", "animation_controllers"],
 	"type": "object",
 	"properties": {
 		"format_version": { "enum": ["1.10.0"] },

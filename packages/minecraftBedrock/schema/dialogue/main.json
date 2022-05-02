@@ -3,6 +3,7 @@
 	"title": "Dialogue",
 	"additionalProperties": false,
 	"type": "object",
+	"required": ["format_version", "minecraft:npc_dialogue"],
 	"properties": {
 		"format_version": { "$ref": "../project/formatVersionEnum.json" },
 		"minecraft:npc_dialogue": {
