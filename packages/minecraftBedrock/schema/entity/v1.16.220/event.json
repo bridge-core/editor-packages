@@ -54,7 +54,7 @@
 							}
 						},
 						{
-							"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.16.220/event.json#"
+							"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.16.220/event.json"
 						}
 					]
 				}
@@ -71,7 +71,7 @@
 							}
 						},
 						{
-							"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.16.220/event.json#"
+							"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.16.220/event.json"
 						}
 					]
 				}
