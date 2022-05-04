@@ -28,6 +28,9 @@
 		// Non-experimental
 		{
 			"properties": {
+				"minecraft:mob_effect": {
+					"$ref": "./mob_effect.json"
+				},
 				"minecraft:movement_sound_distance_offset": {
 					"$ref": "./movement_sound_distance_offset.json"
 				},
@@ -348,9 +351,6 @@
 				},
 				"minecraft:mark_variant": {
 					"$ref": "../../v1.16.0/components/mark_variant.json"
-				},
-				"minecraft:mob_effect": {
-					"$ref": "../../v1.16.0/components/mob_effect.json"
 				},
 				"minecraft:movement": {
 					"$ref": "../../v1.16.0/components/movement.json"
