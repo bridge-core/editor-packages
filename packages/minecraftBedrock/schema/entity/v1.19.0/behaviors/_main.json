@@ -43,6 +43,9 @@
 		// Non-experimental
 		{
 			"properties": {
+				"minecraft:behavior.move_to_block": {
+					"$ref": "./behavior.move_to_block.json"
+				},
 				"minecraft:behavior.sleep": {
 					"$ref": "./behavior.sleep.json"
 				},
@@ -282,9 +285,6 @@
 				},
 				"minecraft:behavior.move_towards_target": {
 					"$ref": "../../v1.16.0/behaviors/behavior.move_towards_target.json"
-				},
-				"minecraft:behavior.move_to_block": {
-					"$ref": "../../v1.16.0/behaviors/behavior.move_to_block.json"
 				},
 				"minecraft:behavior.move_to_land": {
 					"$ref": "../../v1.16.0/behaviors/behavior.move_to_land.json"

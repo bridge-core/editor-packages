@@ -79,7 +79,7 @@
 						"enum": [
 							"resources",
 							"data",
-							"client_data",
+							"script",
 							"interface",
 							"skin_pack",
 							"world_template",
@@ -105,6 +105,10 @@
 					},
 					"entry": {
 						"type": "string"
+					},
+					"language": {
+						"type": "string",
+						"enum": ["javascript"]
 					}
 				}
 			}

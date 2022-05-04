@@ -19,6 +19,8 @@
 			"type": "number"
 		},
 		"feature_areas": {
+			"minItems": 1,
+			"maxItems": 4294967295,
 			"type": "array",
 			"items": {
 				"type": "object",

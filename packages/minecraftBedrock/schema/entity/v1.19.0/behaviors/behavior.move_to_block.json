@@ -1,0 +1,103 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows mob to move towards a certain block.",
+	"type": "object",
+	"properties": {
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"speed_multiplier": {
+			"description": "Movement speed multiplier of the mob when using this AI Goal.",
+			"type": "number"
+		},
+		"tick_interval": {
+			"description": "Average interval in ticks to try to run this behavior.",
+			"type": "number"
+		},
+		"start_chance": {
+			"description": "Chance to start the behavior (applied after each random tick_interval).",
+			"type": "number"
+		},
+		"search_range": {
+			"description": "The height in blocks that the mob will look for the block.",
+			"type": "number"
+		},
+		"search_height": {
+			"description": "The height in blocks that the mob will look for the block.",
+			"type": "number"
+		},
+		"goal_radius": {
+			"description": "Distance in blocks within the mob considers it has reached the goal. This is the 'wiggle room' to stop the AI from bouncing back and forth trying to reach a specific spot.",
+			"type": "number"
+		},
+		"stay_duration": {
+			"description": "Number of ticks needed to complete a stay at the block.",
+			"type": "number"
+		},
+		"target_selection_method": {
+			"description": "Kind of block to find fitting the specification.",
+			"type": "string",
+			"enum": [
+				"nearest",
+				"random"
+			]
+		},
+		"target_offset": {
+			"description": "Offset to add to the selected target position.",
+			"type": "array",
+			"minItems": 3,
+			"maxItems": 3,
+			"items": {
+				"type": "number"
+			}
+		},
+		"target_blocks": {
+			"description": "Block types to move to.",
+			"type": "array",
+			"items": {
+				"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+			}
+		},
+		"on_stay_completed": {
+			"description": "Event to run on block reached.",
+			"anyOf": [
+				{
+					"$ref": "../../general/eventDefinition.json"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../../general/eventDefinition.json"
+					}
+				}
+			]
+		},
+		"on_reach": {
+			"description": "Event to run on block reached.",
+			"anyOf": [
+				{
+					"$ref": "../../general/eventDefinition.json"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../../general/eventDefinition.json"
+					}
+				}
+			]
+		},
+        "target_block_filters": {
+            "description": "Filter which blocks can be targeted.",
+            "anyOf": [
+				{
+					"$ref": "../../general/filter.json"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../../general/filter.json"
+					}
+				}
+			]
+        }
+	}
+}

@@ -160,6 +160,7 @@
 						"is_underwater",
 						"is_variant",
 						"is_visible",
+						"is_waterlogged", // v1.19.0+
 						"is_weather",
 						"light_level",
 						"moon_intensity",
@@ -1084,6 +1085,23 @@
 				"properties": {
 					"value": {
 						"description": "Returns true if the subject entity is visible.",
+						"type": "boolean"
+					}
+				}
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"test": {
+						"const": "is_waterlogged"
+					}
+				}
+			},
+			"then": {
+				"properties": {
+					"value": {
+						"description": "Tests if the subject block is submerged in water.",
 						"type": "boolean"
 					}
 				}
