@@ -7,7 +7,8 @@
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"celebration_sound": {
 			"type": "string",
-			"description": "The sound event to trigger during the celebration."
+			"description": "The sound event to trigger during the celebration.",
+			"$ref": "../../../general/reference/soundEvent.json"
 		},
 		"sound_interval": {
 			"description": "Minimum and maximum time between sound events (positive, in seconds).",

@@ -23,11 +23,13 @@
         },
         "attack_sound": {
             "description": "Sound event for the attack.",
-            "type": "string"
+            "type": "string",
+            "$ref": "../../../general/reference/soundEvent.json"
         },
         "charge_sound": {
             "description": "Sound event for the charge up.",
-            "type": "string"
+            "type": "string",
+            "$ref": "../../../general/reference/soundEvent.json"
         },
         "duration": {
             "description": "Goal duration in seconds.",

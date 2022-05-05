@@ -47,7 +47,8 @@
                     },
                     "sound": {
                         "description": "The sound to play.",
-                        "type": "string"
+                        "type": "string",
+                        "$ref": "../../../general/reference/soundEvent.json"
                     }
                 }
             }

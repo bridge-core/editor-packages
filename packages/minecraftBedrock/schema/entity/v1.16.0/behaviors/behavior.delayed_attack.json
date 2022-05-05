@@ -38,7 +38,8 @@
 			"type": "boolean"
 		},
 		"sound_event": {
-			"type": "string"
+			"type": "string",
+			"$ref": "../../../general/reference/soundEvent.json"
 		},
 		"attack_types": {
 			"description": "Defines the entity types this entity will attack.",

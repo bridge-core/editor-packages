@@ -41,7 +41,8 @@
 						"$ref": "../../general/filter.json"
 					},
 					"start_sound_event": {
-						"type": "string"
+						"type": "string",
+						"$ref": "../../../general/reference/soundEvent.json"
 					},
 					"sequence": {
 						"type": "array",
@@ -59,7 +60,8 @@
 								},
 								"sound_event": {
 									"description": "The sound event to play when this step happens.",
-									"type": "string"
+									"type": "string",
+									"$ref": "../../../general/reference/soundEvent.json"
 								}
 							}
 						}

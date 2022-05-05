@@ -57,7 +57,8 @@
 		},
 		"angry_sound": {
 			"description": "The sound event to play when the mob is angry.",
-			"type": "string"
+			"type": "string",
+			"$ref": "../../../general/reference/soundEvent.json"
 		},
 		"sound_interval": {
 			"description": "The range of time in seconds to randomly wait before playing the sound again.",

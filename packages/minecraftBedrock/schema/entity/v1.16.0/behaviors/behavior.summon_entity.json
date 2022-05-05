@@ -45,7 +45,8 @@
 					},
 					"start_sound_event": {
 						"description": "The sound event to play when using this spell.",
-						"type": "string"
+						"type": "string",
+						"$ref": "../../../general/reference/soundEvent.json"
 					},
 					"sequence": { 
 						"type": "array",
@@ -92,7 +93,8 @@
 								},
 								"sound_event": {
 									"description": "The sound event to play for this step.",
-									"type": "string"
+									"type": "string",
+									"$ref": "../../../general/reference/soundEvent.json"
 								},
 								"summon_cap": {
 									"description": "Maximum number of summoned entities at any given time.",

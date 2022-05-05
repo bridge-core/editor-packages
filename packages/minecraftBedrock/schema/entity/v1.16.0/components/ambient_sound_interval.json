@@ -14,7 +14,8 @@
 		},
 		"event_name": {
 			"description": "Level sound event to be played as the ambient sound.",
-			"type": "string"
+			"type": "string",
+			"$ref": "../../../general/reference/soundEvent.json"
 		}
 	}
 }

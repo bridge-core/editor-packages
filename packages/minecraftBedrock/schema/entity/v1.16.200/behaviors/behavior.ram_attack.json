@@ -60,11 +60,13 @@
 		},
 		"pre_ram_sound": {
 			"description": "The sound to play when an entity is about to perform a ram attack.",
-			"type": "string"
+			"type": "string",
+			"$ref": "../../../general/reference/soundEvent.json"
 		},
 		"ram_impact_sound": {
 			"description": "The sound to play when an entity is impacting on a ram attack.",
-			"type": "string"
+			"type": "string",
+			"$ref": "../../../general/reference/soundEvent.json"
 		}
 	}
 }

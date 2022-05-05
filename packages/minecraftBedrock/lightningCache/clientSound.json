@@ -1,0 +1,13 @@
+[
+    {
+        "cacheKey": "soundEvent",
+        "path": [
+            "individual_event_sounds/*/events",
+            "block_sounds/*/events",
+            "entity_sounds/defaults/*/events",
+            "entity_sounds/entities/*/events",
+            "interactive_sounds/block_sounds/*/events",
+            "interactive_sounds/entity_sounds/*/events"
+        ]
+    }
+]

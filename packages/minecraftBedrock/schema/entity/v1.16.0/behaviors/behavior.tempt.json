@@ -30,7 +30,8 @@
 		},
 		"tempt_sound": {
 			"description": "Sound to play while the mob is being tempted.",
-			"type": "string"
+			"type": "string",
+			"$ref": "../../../general/reference/soundEvent.json"
 		},
 		"sound_interval": {
 			"description": "Range of random ticks to wait between tempt sounds.",

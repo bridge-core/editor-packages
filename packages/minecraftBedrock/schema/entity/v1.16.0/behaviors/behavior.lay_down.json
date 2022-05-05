@@ -10,7 +10,7 @@
 			"type": "number"
 		},
 		"random_stop_interval": {
-			"description": "a random value in which the goal can use to pull out of the behavior. This is a 1/interval chance to play the sound.",
+			"description": "A random value in which the goal can use to pull out of the behavior. This is a 1/interval chance to play the sound.",
 			"type": "number"
 		}
 	}

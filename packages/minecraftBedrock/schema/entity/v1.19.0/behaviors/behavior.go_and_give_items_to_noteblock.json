@@ -43,7 +43,8 @@
         },
         "throw_sound": {
             "description": "Sound to play when this mob throws an item.",
-            "type": "string"
+            "type": "string",
+            "$ref": "../../../general/reference/soundEvent.json"
         }
     }
 }

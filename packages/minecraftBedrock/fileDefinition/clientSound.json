@@ -6,7 +6,8 @@
 		"matcher": "sounds.json"
 	},
 
-	"schema": "file:///data/packages/minecraftBedrock/schema/sounds/main.json",
+	"schema": "file:///data/packages/minecraftBedrock/schema/clientSound/main.json",
+	"lightningCache": "clientSound.json",
 
 	"highlighterConfiguration": {
 		"keywords": [

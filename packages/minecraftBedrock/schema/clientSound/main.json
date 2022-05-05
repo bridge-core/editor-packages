@@ -71,7 +71,7 @@
 						},
 						"events": {
 							"patternProperties": {
-								"^default|item.use.on|break|hit|place|power.on|power.off$": {
+								".*": {
 									"$ref": "#/definitions/sound_object"
 								}
 							}
@@ -95,7 +95,7 @@
 						},
 						"events": {
 							"patternProperties": {
-								"^fall.big|fall.small|splash|swin|fizz|drink|eat|ambient|ambient.tame|flop|hurt|death|ambient.in.water|hurt.in.water|death.in.water|ambient.in.raid|takeoff|shoot|step|attack|breathe|jump|mad|stare|sniff|sleep|spit|warn|scream|charge$": {
+								".*": {
 									"$ref": "#/definitions/sound_object"
 								}
 							}

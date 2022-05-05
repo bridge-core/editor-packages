@@ -44,7 +44,19 @@
 				},
 				"play_sounds": {
 					"description": "List of sounds to play when the interaction occurs.",
-					"type": "string"
+					"anyOf": [
+						{
+							"type": "string",
+							"$ref": "../../../general/reference/soundEvent.json"
+						},
+						{
+							"type": "array",
+							"items": {
+								"type": "string",
+								"$ref": "../../../general/reference/soundEvent.json"
+							}
+						}
+					]
 				},
 				"spawn_entities": {
 					"description": "List of entities to spawn when the interaction occurs.",

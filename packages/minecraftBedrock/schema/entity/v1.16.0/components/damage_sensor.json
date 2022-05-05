@@ -31,7 +31,8 @@
 							},
 							"on_damage_sound_event": {
 								"description": "Defines what sound to play, if any, when the on_damage filters are met.",
-								"type": "string"
+								"type": "string",
+								"$ref": "../../../general/reference/soundEvent.json"
 							}
 						}
 					}
@@ -58,7 +59,8 @@
 						},
 						"on_damage_sound_event": {
 							"description": "Defines what sound to play, if any, when the on_damage filters are met.",
-							"type": "string"
+							"type": "string",
+							"$ref": "../../../general/reference/soundEvent.json"
 						}
 					}
 				}

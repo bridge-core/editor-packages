@@ -19,7 +19,8 @@
 		},
 		"aggro_sound": {
 			"description": "Sound to occasionally play while defending.",
-			"type": "string"
+			"type": "string",
+			"$ref": "../../../general/reference/soundEvent.json"
 		},
 		"sound_chance": {
 			"type": "number"

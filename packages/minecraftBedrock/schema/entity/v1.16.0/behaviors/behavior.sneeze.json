@@ -31,7 +31,8 @@
 		},
 		"prepare_sound": {
 			"description": "Sound to play when the sneeze is about to happen.",
-			"type": "string"
+			"type": "string",
+			"$ref": "../../../general/reference/soundEvent.json"
 		},
 		"prepare_time": {
 			"description": "The time in seconds that the mob takes to prepare to sneeze (while the prepare_sound is playing).",
@@ -39,7 +40,8 @@
 		},
 		"sound": {
 			"description": "Sound to play when the sneeze occurs.",
-			"type": "string"
+			"type": "string",
+			"$ref": "../../../general/reference/soundEvent.json"
 		}
 	}
 }

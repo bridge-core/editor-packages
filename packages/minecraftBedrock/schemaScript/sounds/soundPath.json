@@ -1,5 +1,5 @@
 {
 	"type": "enum",
-	"generateFile": "sounds/dynamic/soundPathEnum.json",
+	"generateFile": "clientSound/dynamic/soundPathEnum.json",
 	"script": "return readdir(resolvePackPath('resourcePack', 'sounds')).then(dirents => dirents.map(dirent => dirent.path.replace(`${resolvePackPath('resourcePack')}/`, '').replace(/\\.fsb|\\.wav|\\.mp3|\\.ogg/, '')).filter((path) => !path.endsWith('.json')))"
 }

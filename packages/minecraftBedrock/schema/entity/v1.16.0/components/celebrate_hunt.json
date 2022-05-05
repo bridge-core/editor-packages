@@ -22,7 +22,8 @@
 		},
 		"celebrate_sound": {
 			"description": "The sound event to play when the mob is celebrating.",
-			"type": "string"
+			"type": "string",
+			"$ref": "../../../general/reference/soundEvent.json"
 		},
 		"sound_interval": {
 			"additionalProperties": false,

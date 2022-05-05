@@ -29,7 +29,6 @@
 			"description": "Event to run when this mob lays the egg.",
 			"$ref": "../../general/eventDefinition.json"
 		},
-        // EXP
         "allow_laying_from_below": {
             "description": "Allows the mob to lay its eggs from below the target if it can't get there. This is useful if the target block is water with air above, since mobs may not be able to get to the air block above water.",
             "type": "boolean"
@@ -41,7 +40,8 @@
         },
         "lay_egg_sound": {
             "description": "Sound event name for laying egg. Defaulted to lay_egg which is used for Turtles.",
-            "type": "string" // TODO
+            "type": "string",
+			"$ref": "../../../general/reference/soundEvent.json"
         },
         "lay_seconds": {
             "description": "Duration of the laying egg process in seconds.",

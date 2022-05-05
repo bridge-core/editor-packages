@@ -14,7 +14,8 @@
 		},
 		"event_name": {
 			"description": "Level sound event to be played as the ambient sound.",
-			"type": "string"
+			"type": "string",
+			"$ref": "../../../general/reference/soundEvent.json"
 		},
         "event_names": {
             "description": "List of dynamic level sound events, with conditions for choosing between them. Evaluated in order, first one wins. If none evaluate to true, 'event_name' will take precedence.",
@@ -28,7 +29,8 @@
                     },
                     "event_name": {
                         "description": "Level sound event to be played as the ambient sound.",
-                        "type": "string"
+                        "type": "string",
+						"$ref": "../../../general/reference/soundEvent.json"
                     }
                 }
             }

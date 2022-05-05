@@ -48,7 +48,8 @@
 							},
 							"spawn_sound": {
 								"description": "Identifier of the sound effect to play when the entity is spawned.",
-								"type": "string"
+								"type": "string",
+								"$ref": "../../../general/reference/soundEvent.json"
 							},
 							"filters": {
 								"description": "If present, the specified entity will only spawn if the filter evaluates to true.",
@@ -112,7 +113,8 @@
 						},
 						"spawn_sound": {
 							"description": "Identifier of the sound effect to play when the entity is spawned.",
-							"type": "string"
+							"type": "string",
+							"$ref": "../../../general/reference/soundEvent.json"
 						},
 						"filters": {
 							"description": "If present, the specified entity will only spawn if the filter evaluates to true.",

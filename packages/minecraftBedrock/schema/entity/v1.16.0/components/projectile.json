@@ -281,14 +281,17 @@
 			]
 		},
 		"shoot_sound": {
-			"type": "string"
+			"type": "string",
+			"$ref": "../../../general/reference/soundEvent.json"
 		},
 		"hit_sound": {
 			"description": "The sound that plays when the projectile hits something.",
-			"type": "string"
+			"type": "string",
+			"$ref": "../../../general/reference/soundEvent.json"
 		},
 		"hit_ground_sound": {
-			"type": "string"
+			"type": "string",
+			"$ref": "../../../general/reference/soundEvent.json"
 		},
 		"is_dangerous": {
 			"description": "If true, the projectile will be treated as dangerous to the players.",

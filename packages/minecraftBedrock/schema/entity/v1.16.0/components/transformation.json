@@ -22,11 +22,13 @@
 		},
 		"begin_transform_sound": {
 			"description": "Sound to play when the transformation starts.",
-			"type": "string"
+			"type": "string",
+			"$ref": "../../../general/reference/soundEvent.json"
 		},
 		"transformation_sound": {
 			"description": "Sound to play when the entity is done transforming.",
-			"type": "string"
+			"type": "string",
+			"$ref": "../../../general/reference/soundEvent.json"
 		},
 		"drop_equipment": {
 			"description": "Cause the entity to drop all equipment upon transformation.",
