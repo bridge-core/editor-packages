@@ -238,6 +238,9 @@
 				"minecraft:behavior.hide": {
 					"$ref": "../../v1.16.0/behaviors/behavior.hide.json"
 				},
+				"minecraft:behavior.hold_ground": {
+					"$ref": "../../v1.16.0/behaviors/behavior.hold_ground.json"
+				},
 				"minecraft:behavior.hover": {
 					"$ref": "../../v1.16.0/behaviors/behavior.hover.json"
 				},
