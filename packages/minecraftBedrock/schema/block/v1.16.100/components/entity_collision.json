@@ -3,7 +3,62 @@
 	"anyOf": [
 		{
 			"type": "object",
-			"$ref": "../../general/collisionSize.json"
+			"properties": {
+                "size": {
+                    "title": "Size",
+                    "description": "Size of each side of the box of the component",
+                    "type": "array",
+                    "maxItems": 3,
+                    "minItems": 3,
+                    "items": [
+                        {
+                            "type": "number",
+                            "maximum": 16,
+                            "minimum": 0,
+                            "default": 16.0
+                        },
+                        {
+                            "type": "number",
+                            "maximum": 16,
+                            "minimum": 0,
+                            "default": 16.0
+                        },
+                        {
+                            "type": "number",
+                            "maximum": 16,
+                            "minimum": 0,
+                            "default": 16.0
+                        }
+                    ]
+                },
+                "origin": {
+                    "title": "Origin",
+                    "description": "Minimal position bounds of the collision box",
+                    "type": "array",
+                    "maxItems": 3,
+                    "minItems": 3,
+                    "items": [
+                        {
+                            "type": "number",
+                            "minimum": -8,
+                            "maximum": 8,
+                            "default": -8.0
+                        },
+                        {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 16,
+                            "default": 0.0
+                        },
+                        {
+                            "type": "number",
+                            "minimum": -8,
+                            "maximum": 8,
+                            "default": -8.0
+                        }
+                    ]
+                }
+            }
 		},
 		{
 			"type": "boolean"

@@ -41,6 +41,10 @@
 
 		{
 			"$ref": "./v1.19.0/query.json"
+		},
+
+		{
+			"$ref": "./v1.19.10/queryExperimental.json"
 		}
 	]
 }
