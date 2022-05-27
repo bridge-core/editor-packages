@@ -32,6 +32,7 @@
 			"jungle",
 			"forest",
 			"lukewarm",
+			"mangrove_swamp",
 			"mega",
 			"mesa",
 			"monster",
@@ -64,7 +65,8 @@
 			"spawn_endermen",
 			"spawn_ghast",
 			"spawn_magma_cubes",
-			"spawn_many_magma_cubes"
+			"spawn_many_magma_cubes",
+			"sunflower_plains"
 		]
 	}
 ]
