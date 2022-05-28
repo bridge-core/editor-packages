@@ -3,14 +3,18 @@
 	"additionalProperties": false,
 	"description": "Gives the entity the npc menu when interacted with.",
 	"type": "object",
+	"title": "NPC",
 	"properties": {
 		"npc_data": {
+			"title": "NPC Data",
 			"type": "object",
 			"properties": {
 				"portrait_offsets": {
+					"title": "Portrait Offsets",
 					"type": "object",
 					"properties": {
 						"translate": {
+							"title": "Translate",
 							"type": "array",
 							"minItems": 3,
 							"maxItems": 3,
@@ -19,6 +23,7 @@
 							}
 						},
 						"scale": {
+							"title": "Scale",
 							"type": "array",
 							"minItems": 3,
 							"maxItems": 3,
@@ -29,9 +34,11 @@
 					}
 				},
 				"picker_offsets": {
+					"title": "Picker Offsets",
 					"type": "object",
 					"properties": {
 						"translate": {
+							"title": "Translate",
 							"type": "array",
 							"minItems": 3,
 							"maxItems": 3,
@@ -40,6 +47,7 @@
 							}
 						},
 						"scale": {
+							"title": "Scale",
 							"type": "array",
 							"minItems": 3,
 							"maxItems": 3,
@@ -50,12 +58,14 @@
 					}
 				},
 				"skin_list": {
+					"title": "Skin List",
 					"type": "array",
 					"items": {
 						"type": "object",
 						"additionalProperties": false,
 						"properties": {
 							"variant": {
+								"title": "Variant",
 								"type": "number"
 							}
 						}

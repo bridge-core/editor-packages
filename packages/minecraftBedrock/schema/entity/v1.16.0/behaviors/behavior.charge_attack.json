@@ -3,8 +3,32 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to attack its target by running at it.",
 	"type": "object",
+	"title": "Charge Attack",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json"
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"max_distance": {
+			"title": "Max Distance",
+			"description": "A charge attack cannot start if the entity is farther than this distance to the target.",
+			"type": "number",
+			"default": 3
+		},
+		"min_distance": {
+			"title": "Min Distance",
+			"description": "A charge attack cannot start if the entity is closer than this distance to the target.",
+			"type": "number",
+			"default": 2
+		},
+		"speed_multiplier": {
+			"title": "Speed Multiplier",
+			"type": "number",
+			"default": 1.0,
+			"description": "Modifies the entity's speed when charging toward the target."
+		},
+		"success_rate": {
+			"title": "Success Rate",
+			"type": "number",
+			"default": 0.1428,
+			"description": "Percent chance this entity will start a charge attack, if not already attacking (1.0 = 100%)"
 		}
 	}
 }

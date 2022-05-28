@@ -3,10 +3,13 @@
 	"additionalProperties": false,
 	"description": "Sets the entity's movement speed in water.",
 	"type": "object",
+	"title": "Water Movement",
 	"properties": {
 		"drag_factor": {
+			"title": "Drag Factor",
 			"description": "Drag factor to determine movement speed when in water.",
-			"type": "number"
+			"type": "number",
+			"default": 0.8
 		}
 	}
 }

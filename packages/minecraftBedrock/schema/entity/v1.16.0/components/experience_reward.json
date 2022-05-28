@@ -3,14 +3,19 @@
 	"additionalProperties": false,
 	"description": "Defines the experience dropped by the entity.",
 	"type": "object",
+	"title": "Experience Reward",
 	"properties": {
 		"on_bred": {
+			"title": "Event: On Bred",
 			"description": "A molang expression defining the amount of experience rewarded when this entity is successfully bred. An array of expressions adds each expression's result together for a final total.",
-			"$ref": "../../../molang/embedded.json"
+			"$ref": "../../../molang/embedded.json",
+			"default": 0
 		},
 		"on_death": {
+			"title": "Event: On Death",
 			"description": "A molang expression defining the amount of experience rewarded when this entity dies. An array of expressions adds each expression's result together for a final total.",
-			"$ref": "../../../molang/embedded.json"
+			"$ref": "../../../molang/embedded.json",
+			"default": 0
 		}
 	}
 }

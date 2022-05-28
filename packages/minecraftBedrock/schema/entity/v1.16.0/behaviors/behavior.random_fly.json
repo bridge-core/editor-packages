@@ -3,28 +3,38 @@
 	"additionalProperties": false,
 	"description": "Allows a mob to randomly fly around.",
 	"type": "object",
+	"title": "Random Fly",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"xz_dist": {
+			"title": "XZ Distance",
 			"description": "Distance in blocks on ground that the mob will look for a new spot to move to. Must be at least 1.",
-			"type": "number"
+			"type": "integer",
+			"default": 10
 		},
 		"y_dist": {
+			"title": "Y Distance",
 			"description": "Distance in blocks that the mob will look up or down for a new spot to move to. Must be at least 1.",
-			"type": "number"
+			"type": "integer",
+			"default": 7
 		},
 		"y_offset": {
+			"title": "Y Offset",
 			"type": "number"
 		},
 		"speed_multiplier": {
+			"title": "Speed Multiplier",
 			"description": "Movement speed multiplier of the mob when using this AI Goal.",
 			"type": "number"
 		},
 		"can_land_on_trees": {
+			"title": "Can Land on Trees",
 			"description": "If true, the mob can stop flying and land on a tree instead of the ground.",
-			"type": "boolean"
+			"type": "boolean",
+			"default": true
 		},
 		"avoid_damage_blocks": {
+			"title": "Avoid Damage Blocks",
 			"type": "boolean"
 		}
 	}

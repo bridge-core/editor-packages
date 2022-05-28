@@ -3,29 +3,39 @@
 	"additionalProperties": false,
 	"description": "Specifies hunt celebration behaviour.",
 	"type": "object",
+	"title": "Celebrate Hunt",
 	"properties": {
 		"celebration_targets": {
+			"title": "Celebration Targets",
 			"description": "The list of conditions that target of hunt must satisfy to initiate celebration.",
 			"$ref": "../../general/filter.json"
 		},
 		"broadcast": {
+			"title": "Broadcast",
 			"description": "If true, celebration will be broadcasted to other entities in the radius.",
-			"type": "boolean"
+			"type": "boolean",
+			"default": true
 		},
 		"duration": {
+			"title": "Duration",
 			"description": "Duration, in seconds, of celebration.",
-			"type": "number"
+			"type": "integer",
+			"default": 4
 		},
 		"radius": {
+			"title": "Radius",
 			"description": "If broadcast is enabled, specifies the radius in which it will notify other entities for celebration.",
-			"type": "number"
+			"type": "number",
+			"default": 16.0
 		},
 		"celebrate_sound": {
+			"title": "Celebrate Sound Event",
 			"description": "The sound event to play when the mob is celebrating.",
 			"type": "string",
 			"$ref": "../../../general/reference/soundEvent.json"
 		},
 		"sound_interval": {
+			"title": "Sound Interval",
 			"additionalProperties": false,
 			"description": "The range of time in seconds to randomly wait before playing the sound again.",
 			"type": "object",

@@ -2,5 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"doNotSuggest": true,
-	"deprecationMessage": "Deprecated in favor of 'minecraft:block_climber' (format_version: v1.17.10)."
+	"deprecationMessage": "Deprecated in favor of 'minecraft:block_climber' (format_version: v1.17.10).",
+	"title": "Scaffolding Climber",
+	"type": "object"
 }

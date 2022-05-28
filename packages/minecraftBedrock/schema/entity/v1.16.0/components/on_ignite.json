@@ -1,5 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"description": "Adds a trigger to call when this entity is set on fire.",
-	"$ref": "../../general/eventDefinition.json"
+	"$ref": "../../general/eventDefinition.json",
+	"type": "object",
+	"title": "Event: On Ignite"
 }

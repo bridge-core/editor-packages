@@ -3,8 +3,10 @@
 	"additionalProperties": false,
 	"description": "Sets the health for the entity.",
 	"type": "object",
+	"title": "Health",
 	"properties": {
 		"value": {
+			"title": "Value",
 			"anyOf": [
 				{
 					"type": "number"
@@ -23,9 +25,11 @@
 			]
 		},
 		"max": {
+			"title": "Max",
 			"type": "number"
 		},
 		"min": {
+			"title": "Min",
 			"type": "number"
 		}
 	}

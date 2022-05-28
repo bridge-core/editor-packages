@@ -1,5 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
-	"description": "Sets that this entity can float in liquid blocks."
+	"description": "Sets that this entity can float in liquid blocks.",
+	"type": "object",
+	"title": "Floats in Liquid"
 }

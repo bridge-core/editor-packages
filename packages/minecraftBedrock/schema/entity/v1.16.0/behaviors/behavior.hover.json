@@ -3,10 +3,13 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to hover.",
 	"type": "object",
+	"title": "Hover",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"speed_multiplier": {
-			"type": "number"
+			"title": "Speed Multiplier",
+			"type": "number",
+			"default": 1.0
 		}
 	}
 }

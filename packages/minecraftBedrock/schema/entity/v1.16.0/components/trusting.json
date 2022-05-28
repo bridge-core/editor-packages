@@ -3,12 +3,16 @@
 	"additionalProperties": false,
 	"description": "Defines the rules for a mob to trust players.",
 	"type": "object",
+	"title": "Trusting",
 	"properties": {
 		"probability": {
+			"title": "Probability",
 			"description": "The chance of the entity trusting with each item use between 0.0 and 1.0, where 1.0 is 100%.",
-			"type": "number"
+			"type": "number",
+			"default": 1.0
 		},
 		"trust_items": {
+			"title": "Trust Items",
 			"description": "The list of items that can be used to get the entity to trust players.",
 			"type": "array",
 			"items": {
@@ -16,6 +20,7 @@
 			}
 		},
 		"trust_event": {
+			"title": "Event: On Trust",
 			"description": "Event to run when this entity becomes trusting.",
 			"$ref": "../../general/eventDefinition.json"
 		}

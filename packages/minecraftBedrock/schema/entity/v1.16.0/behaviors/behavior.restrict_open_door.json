@@ -3,8 +3,8 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to stay indoors during night time.",
 	"type": "object",
+	"title": "Restrict Open Door",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json"
-		}
+		"priority": { "$ref": "../../general/behaviorPriority.json" }
 	}
 }

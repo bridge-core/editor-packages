@@ -2,8 +2,10 @@
     "$schema": "http://json-schema.org/draft-07/schema",
     "type": "object",
     "additionalProperties": false,
+    "title": "Heartbeat",
     "properties": {
         "interval": {
+            "title": "Interval",
             "description": "The interval in ticks between each heartbeat.",
             "$ref": "../../../molang/embedded.json"
         }

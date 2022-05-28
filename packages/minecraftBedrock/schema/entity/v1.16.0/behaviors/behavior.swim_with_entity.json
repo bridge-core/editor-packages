@@ -3,45 +3,65 @@
 	"additionalProperties": false,
 	"type": "object",
 	"description": "Allows the entity follow another entity. Both entities must be swimming [ie, in water].",
+	"title": "Swim With Entity",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"success_rate": {
+			"title": "Success Rate",
 			"description": "Percent chance to start following another entity, if not already doing so. 1.0 = 100%.",
-			"type": "number"
+			"type": "number",
+			"default": 0.1
 		},
 		"chance_to_stop": {
+			"title": "Chance To Stop",
 			"description": "Percent chance to stop following the current entity, if they're riding another entity or they're not swimming. 1.0 = 100%.",
-			"type": "number"
+			"type": "number",
+			"default": 0.333
 		},
 		"state_check_interval": {
+			"title": "State Check Interval",
 			"description": "Time (in seconds) between checks to determine if this entity should catch up to the entity being followed or match the direction of the entity being followed.",
-			"type": "number"
+			"type": "number",
+			"default": 0.5
 		},
 		"catch_up_threshold": {
+			"title": "Catch Up Threshold",
 			"description": "Distance, from the entity being followed, at which this entity will speed up to reach that entity.",
-			"type": "number"
+			"type": "number",
+			"default": 12.0
 		},
 		"match_direction_threshold": {
+			"title": "Match Direction Threshold",
 			"description": "Distance, from the entity being followed, at which this entity will try to match that entity's direction.",
-			"type": "number"
+			"type": "number",
+			"default": 2.0
 		},
 		"catch_up_multiplier": {
+			"title": "Catch Up Multiplier",
 			"description": "The multiplier this entity's speed is modified by when matching another entity's direction.",
-			"type": "number"
+			"type": "number",
+			"default": 2.5
 		},
 		"speed_multiplier": {
+			"title": "Speed Multiplier",
 			"description": "The multiplier this entity's speed is modified by when trying to catch up to the entity being followed.",
-			"type": "number"
+			"type": "number",
+			"default": 1.5
 		},
 		"search_range": {
+			"title": "Search Range",
 			"description": "Radius around this entity to search for another entity to follow.",
-			"type": "number"
+			"type": "number",
+			"default": 20.0
 		},
 		"stop_distance": {
+			"title": "Stop Distance",
 			"description": "Distance, from the entity being followed, at which this entity will stop following that entity.",
-			"type": "number"
+			"type": "number",
+			"default": 5.0
 		},
 		"entity_types": {
+			"title": "Entity Types",
 			"description": "Filters which types of entities are valid to follow.",
 			"$ref": "../../general/entityType.json"
 		}

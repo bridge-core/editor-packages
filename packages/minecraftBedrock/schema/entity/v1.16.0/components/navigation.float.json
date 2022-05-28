@@ -2,5 +2,6 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Allows this entity to generate paths that include vertical walls like the vanilla Spiders do.",
-	"$ref": "../../general/navigation.json"
+	"$ref": "../../general/navigation.json",
+	"title": "Float Navigation"
 }

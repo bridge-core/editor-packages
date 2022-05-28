@@ -3,10 +3,13 @@
 	"additionalProperties": false,
 	"description": "Additional variant value. Can be used to further differentiate variants.",
 	"type": "object",
+	"title": "Mark Variant",
 	"properties": {
 		"value": {
+			"title": "Value",
 			"description": "The ID of the variant. By convention, 0 is the ID of the base entity.",
-			"type": "number"
+			"type": "integer",
+			"default": 0
 		}
 	}
 }

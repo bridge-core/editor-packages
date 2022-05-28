@@ -3,20 +3,25 @@
 	"additionalProperties": false,
 	"description": "Defines a set of conditions under which an entity should take damage.",
 	"type": "object",
+	"title": "Hurt On Condition",
 	"properties": {
 		"damage_conditions": {
+			"title": "Damage Conditions",
 			"type": "array",
 			"items": {
 				"additionalProperties": false,
 				"type": "object",
 				"properties": {
 					"filters": {
+						"title": "Filters",
 						"$ref": "../../general/filter.json"
 					},
 					"cause": {
+						"title": "Cause",
 						"$ref": "../../../general/vanilla/damageType.json"
 					},
 					"damage_per_tick": {
+						"title": "Damage Per Tick",
 						"description": "The amount of damage done each tick that the conditions are met.",
 						"type": "number"
 					}

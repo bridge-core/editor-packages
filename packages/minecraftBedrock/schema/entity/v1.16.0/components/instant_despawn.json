@@ -3,10 +3,13 @@
 	"additionalProperties": false,
 	"description": "Despawns the Actor immediately.",
 	"type": "object",
+	"title": "Instant Despawn",
 	"properties": {
 		"remove_child_entities": {
+			"title": "Remove Child Entities",
 			"description": "If true, all entities linked to this entity in a child relationship (eg. leashed) will also be despawned.",
-			"type": "boolean"
+			"type": "boolean",
+			"default": false
 		}
 	}
 }

@@ -3,22 +3,34 @@
 	"additionalProperties": false,
 	"description": "Allows this mob to look at and follow the player that holds food they like.",
 	"type": "object",
+	"title": "Beg",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"look_distance": {
+			"title": "Look Distance",
 			"description": "Distance in blocks the mob will beg from.",
-			"type": "number"
+			"type": "number",
+			"default": 8.0
 		},
 		"look_time": {
+			"title": "Look Time",
 			"description": "The range of time in seconds this mob will stare at the player holding a food they like, begging for it.",
 			"type": "array",
 			"minItems": 2,
 			"maxItems": 2,
-			"items": {
-				"type": "number"
-			}
+			"items": [
+				{
+					"type": "number",
+					"default": 2
+				},
+				{
+					"type": "number",
+					"default": 4
+				}
+			]
 		},
 		"items": {
+			"title": "Items",
 			"description": "List of items that this mob likes.",
 			"type": "array",
 			"items": {

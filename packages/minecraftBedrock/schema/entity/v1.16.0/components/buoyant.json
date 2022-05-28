@@ -3,30 +3,42 @@
 	"additionalProperties": false,
 	"description": "Enables an entity to float on the specified liquid blocks.",
 	"type": "object",
+	"title": "Buoyant",
 	"properties": {
 		"apply_gravity": {
+			"title": "Apply Gravity",
 			"description": "Applies gravity each tick. Causes more of a wave simulation, but will cause more gravity to be applied outside liquids.",
-			"type": "boolean"
+			"type": "boolean",
+			"default": true
 		},
 		"base_buoyancy": {
+			"title": "Base Buoyancy",
 			"description": "Base buoyancy used to calculate how much will a mob float.",
 			"type": "number",
 			"minimum": 0,
-			"maximum": 1
+			"maximum": 1,
+			"default": 1.0
 		},
 		"big_wave_probability": {
+			"title": "Big Wave Probability",
 			"description": "Probability for a big wave hitting the entity. Only used if `simulate_waves` is true.",
-			"type": "number"
+			"type": "number",
+			"default": 0.03
 		},
 		"big_wave_speed": {
+			"title": "Big Wave Speed",
 			"description": "Multiplier for the speed to make a big wave. Triggered depending on 'big_wave_probability'.",
-			"type": "number"
+			"type": "number",
+			"default": 10.0
 		},
 		"drag_down_on_buoyancy_removed": {
+			"title": "Drag Down On Buoyancy Removed",
 			"description": "How much an actor will be dragged down when the Buoyancy Component is removed.",
-			"type": "number"
+			"type": "number",
+			"default": 0.0
 		},
 		"liquid_blocks": {
+			"title": "Liquid Blocks",
 			"description": "List of blocks this entity can float on. Must be a liquid block.",
 			"type": "array",
 			"items": {
@@ -34,8 +46,10 @@
 			}
 		},
 		"simulate_waves": {
+			"title": "Simulate Waves",
 			"description": "Should the movement simulate waves going through.",
-			"type": "boolean"
+			"type": "boolean",
+			"default": true
 		}
 	}
 }

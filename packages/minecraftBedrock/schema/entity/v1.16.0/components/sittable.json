@@ -3,12 +3,15 @@
 	"additionalProperties": false,
 	"description": "Defines the entity's 'sit' state.",
 	"type": "object",
+	"title": "Sittable",
 	"properties": {
 		"sit_event": {
+			"title": "Event: On Sit",
 			"description": "Event to run when the entity enters the 'sit' state.",
 			"$ref": "../../general/eventDefinition.json"
 		},
 		"stand_event": {
+			"title": "Event: On Stand",
 			"description": "Event to run when the entity exits the 'sit' state.",
 			"$ref": "../../general/eventDefinition.json"
 		}

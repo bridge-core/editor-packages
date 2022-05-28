@@ -3,10 +3,13 @@
 	"additionalProperties": false,
 	"description": "Adds a timer since last rested to see if phantoms should spawn.",
 	"type": "object",
+	"title": "Insomnia",
 	"properties": {
 		"days_until_insomnia": {
+			"title": "Days Until Insomnia",
 			"description": "Number of days the mob has to stay up until the insomnia effect begins.",
-			"type": "number"
+			"type": "number",
+			"default": 3.0
 		}
 	}
 }

@@ -3,17 +3,23 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to be tempted by food they like.",
 	"type": "object",
+	"title": "Tempt",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"can_get_scared": {
+			"title": "Can Get Scared",
 			"description": "If true, the mob can stop being tempted if the player moves too fast while close to this mob.",
-			"type": "boolean"
+			"type": "boolean",
+			"default": false
 		},
 		"can_tempt_vertically": {
+			"title": "Can Tempt Vertically",
 			"description": "If true, vertical distance to the player will be considered when tempting.",
-			"type": "boolean"
+			"type": "boolean",
+			"default": false
 		},
 		"items": {
+			"title": "Items",
 			"description": "List of items this mob is tempted by.",
 			"type": "array",
 			"items": {
@@ -21,19 +27,25 @@
 			}
 		},
 		"speed_multiplier": {
+			"title": "Speed Multiplier",
 			"description": "Movement speed multiplier of the mob when using this AI Goal.",
-			"type": "number"
+			"type": "number",
+			"default": 1.0
 		},
 		"within_radius": {
+			"title": "Within Radius",
 			"description": "Distance in blocks this mob can get tempted by a player holding an item they like.",
-			"type": "number"
+			"type": "number",
+			"default": 0.0
 		},
 		"tempt_sound": {
+			"title": "Tempt Sound",
 			"description": "Sound to play while the mob is being tempted.",
 			"type": "string",
 			"$ref": "../../../general/reference/soundEvent.json"
 		},
 		"sound_interval": {
+			"title": "Sound Interval",
 			"description": "Range of random ticks to wait between tempt sounds.",
 			"type": "object",
 			"properties": {
@@ -46,8 +58,10 @@
 			}
 		},
 		"can_tempt_while_ridden": {
+			"title": "Can Tempt While Ridden",
 			"description": "If true, the mob can be tempted even if it has a passenger (i.e. if being ridden).",
-			"type": "boolean"
+			"type": "boolean",
+			"default": false
 		}
 	}
 }

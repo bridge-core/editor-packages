@@ -3,8 +3,10 @@
 	"additionalProperties": false,
 	"description": "Defines what events to call when this entity is damaged by specific entities or items.",
 	"type": "object",
+	"title": "Damage Sensor",
 	"properties": {
 		"triggers": {
+			"title": "Triggers",
 			"anyOf": [
 				{
 					"description": "List of triggers with the events to call when taking specific kinds of damage.",
@@ -14,30 +16,40 @@
 						"additionalProperties": false,
 						"properties": {
 							"on_damage": {
+								"title": "Event: On Damage",
 								"description": "Specifies filters for entity definitions and events.",
 								"$ref": "../../general/eventDefinition.json"
 							},
 							"cause": {
+								"title": "Cause",
 								"description": "Type of damage that triggers the events.",
-								"$ref": "../../../general/vanilla/damageType.json"
+								"$ref": "../../../general/vanilla/damageType.json",
+								"default": "none"
 							},
 							"deals_damage": {
+								"title": "Deals Damage",
 								"description": "If true, the damage dealt to the entity will take away health from it, set to false to make the entity ignore that damage.",
-								"type": "boolean"
+								"type": "boolean",
+								"default": true
 							},
 							"damage_multiplier": {
+								"title": "Damage Multiplier",
 								"description": "A multiplier that modifies the base damage from the damage cause. If deals_damage is true the multiplier can only reduce the damage the entity will take to a minimum of 1.",
-								"type": "number"
+								"type": "number",
+								"default": 1.0
 							},
 							"on_damage_sound_event": {
+								"title": "On Damage Sound Event",
 								"description": "Defines what sound to play, if any, when the on_damage filters are met.",
 								"type": "string",
 								"$ref": "../../../general/reference/soundEvent.json"
 							},
-                            "damage_modifier": {
-                                "type": "number",
-                                "description": "A modifier that adds to/removes from the base damage from the damage cause. It does not reduce damage to less than 0."
-                            }
+							"damage_modifier": {
+								"title": "Damage Modifier",
+								"type": "number",
+								"description": "A modifier that adds to/removes from the base damage from the damage cause. It does not reduce damage to less than 0.",
+								"default": 0.0
+							}
 						}
 					}
 				},
@@ -46,30 +58,40 @@
 					"additionalProperties": false,
 					"properties": {
 						"on_damage": {
+							"title": "Event: On Damage",
 							"description": "Specifies filters for entity definitions and events.",
 							"$ref": "../../general/eventDefinition.json"
 						},
 						"cause": {
+							"title": "Cause",
 							"description": "Type of damage that triggers the events.",
-							"$ref": "../../../general/vanilla/damageType.json"
+							"$ref": "../../../general/vanilla/damageType.json",
+							"default": "none"
 						},
 						"deals_damage": {
+							"title": "Deals Damage",
 							"description": "If true, the damage dealt to the entity will take away health from it, set to false to make the entity ignore that damage.",
-							"type": "boolean"
+							"type": "boolean",
+							"default": true
 						},
 						"damage_multiplier": {
+							"title": "Damage Multiplier",
 							"description": "A multiplier that modifies the base damage from the damage cause. If deals_damage is true the multiplier can only reduce the damage the entity will take to a minimum of 1.",
-							"type": "number"
+							"type": "number",
+							"default": 1.0
 						},
 						"on_damage_sound_event": {
+							"title": "On Damage Sound Event",
 							"description": "Defines what sound to play, if any, when the on_damage filters are met.",
 							"type": "string",
 							"$ref": "../../../general/reference/soundEvent.json"
 						},
-                        "damage_modifier": {
-                            "type": "number",
-                            "description": "A modifier that adds to/removes from the base damage from the damage cause. It does not reduce damage to less than 0."
-                        }
+						"damage_modifier": {
+							"title": "Damage Modifier",
+							"type": "number",
+							"description": "A modifier that adds to/removes from the base damage from the damage cause. It does not reduce damage to less than 0.",
+							"default": 0.0
+						}
 					}
 				}
 			]

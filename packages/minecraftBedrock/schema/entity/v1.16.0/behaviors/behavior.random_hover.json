@@ -3,29 +3,41 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to hover around randomly, close to the surface.",
 	"type": "object",
+	"title": "Random Hover",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"speed_multiplier": {
+			"title": "Speed Multiplier",
 			"description": "Movement speed multiplier of the mob when using this AI Goal.",
-			"type": "number"
+			"type": "number",
+			"default": 1.0
 		},
 		"xz_dist": {
+			"title": "XZ Distance",
 			"description": "Distance in blocks on ground that the mob will look for a new spot to move to. Must be at least 1.",
-			"type": "number"
+			"type": "integer",
+			"default": 10
 		},
 		"y_dist": {
+			"title": "Y Distance",
 			"description": "Distance in blocks that the mob will look up or down for a new spot to move to. Must be at least 1.",
-			"type": "number"
+			"type": "integer",
+			"default": 7
 		},
 		"y_offset": {
+			"title": "Y Offset",
 			"description": "Height in blocks to add to the selected target position.",
-			"type": "number"
+			"type": "number",
+			"default": 0.0
 		},
 		"interval": {
+			"title": "Interval",
 			"description": "A random value to determine when to randomly move somewhere. This has a 1/interval chance to choose this goal.",
-			"type": "number"
+			"type": "integer",
+			"default": 120
 		},
 		"hover_height": {
+			"title": "Hover Height",
 			"description": "The height above the surface which the mob will try to maintain.",
 			"type": "array",
 			"maxItems": 2,

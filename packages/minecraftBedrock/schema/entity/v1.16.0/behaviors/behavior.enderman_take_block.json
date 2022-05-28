@@ -3,8 +3,8 @@
 	"additionalProperties": false,
 	"description": "Allows the enderman to take a block and carry it around. Can only be used by Endermen.",
 	"type": "object",
+	"title": "Enderman Take Block",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json"
-		}
+		"priority": { "$ref": "../../general/behaviorPriority.json" }
 	}
 }

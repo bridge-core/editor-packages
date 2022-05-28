@@ -3,8 +3,8 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to offer the player a flower like the Iron Golem does.",
 	"type": "object",
+	"title": "Offer Flower",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json"
-		}
+		"priority": { "$ref": "../../general/behaviorPriority.json" }
 	}
 }

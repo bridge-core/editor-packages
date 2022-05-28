@@ -3,8 +3,10 @@
 	"additionalProperties": false,
 	"description": "Attempts to trigger a raid at the entity's location.",
 	"type": "object",
+	"title": "Raid Trigger",
 	"properties": {
 		"triggered_event": {
+			"title": "Event: On Raid Trigger",
 			"description": "Event to run we attempt to trigger a raid on the village.",
 			"$ref": "../../general/eventDefinition.json"
 		}

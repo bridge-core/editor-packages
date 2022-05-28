@@ -1,5 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
-	"description": "Sets that this entity wants to become a jockey."
+	"description": "Sets that this entity wants to become a jockey.",
+	"type": "object",
+	"title": "Wants Jockey"
 }

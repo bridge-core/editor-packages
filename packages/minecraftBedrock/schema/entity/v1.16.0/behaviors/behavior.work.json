@@ -3,37 +3,53 @@
 	"additionalProperties": false,
 	"description": "Allows the NPC to use the POI.",
 	"type": "object",
+	"title": "Work",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"speed_multiplier": {
+			"title": "Speed Multiplier",
 			"description": "Movement speed multiplier of the mob when using this AI Goal.",
-			"type": "number"
+			"type": "number",
+			"default": 0.5
 		},
 		"goal_cooldown": {
+			"title": "Goal Cooldown",
 			"description": "The amount of ticks the goal will be on cooldown before it can be used again.",
-			"type": "number"
+			"type": "integer",
+			"default": 0
 		},
 		"sound_delay_min": {
+			"title": "Sound Delay Minimum",
 			"description": "The min interval in which a sound will play.",
-			"type": "number"
+			"type": "integer",
+			"default": 0
 		},
 		"sound_delay_max": {
+			"title": "Sound Delay Maximum",
 			"description": "The max interval in which a sound will play.",
-			"type": "number"
+			"type": "integer",
+			"default": 0
 		},
 		"active_time": {
+			"title": "Active Time",
 			"description": "The amount of ticks the NPC will stay in their the work location.",
-			"type": "number"
+			"type": "integer",
+			"default": 0
 		},
 		"can_work_in_rain": {
+			"title": "Can Work In Rain",
 			"description": "If true, this entity can work when their jobsite POI is being rained on.",
-			"type": "boolean"
+			"type": "boolean",
+			"default": false
 		},
 		"work_in_rain_tolerance": {
+			"title": "Work In Rain Tolerance",
 			"description": "If 'can_work_in_rain' is false, this is the maximum number of ticks left in the goal where rain will not interrupt the goal.",
-			"type": "number"
+			"type": "integer",
+			"default": -1
 		},
 		"on_arrival": {
+			"title": "Event: On Arrival",
 			"description": "Event to run when the mob reaches their jobsite and finishes working.",
 			"$ref": "../../general/eventDefinition.json"
 		}

@@ -3,10 +3,13 @@
 	"additionalProperties": false,
 	"description": "Defines the entity's second texture color. Only works on vanilla entities that have a second predefined color values (tropical fish).",
 	"type": "object",
+	"title": "Color 2",
 	"properties": {
 		"value": {
+			"title": "Value",
 			"description": "The second Palette Color value of the entity.",
-			"type": "integer"
+			"type": "integer",
+			"default": 0
 		}
 	}
 }

@@ -3,12 +3,16 @@
 	"additionalProperties": false,
 	"description": "Adds a timer for the entity to grow up. It can be accelerated by giving the entity the items it likes as defined by feedItems.",
 	"type": "object",
+	"title": "Ageable",
 	"properties": {
 		"duration": {
+			"title": "Duration",
 			"description": "Amount of time before the entity grows up, -1 for always a baby.",
-			"type": "number"
+			"type": "number",
+			"default": 1200.0
 		},
 		"feed_items": {
+			"title": "Feed Items",
 			"description": "List of items that can be fed to the entity. Includes 'item' for the item name and 'growth' to define how much time it grows up by.",
 			"anyOf": [
 				{
@@ -20,6 +24,7 @@
 								"additionalProperties": false,
 								"properties": {
 									"item": {
+										"title": "Item",
 										"anyOf": [
 											{
 												"type": "string",
@@ -30,6 +35,7 @@
 												"additionalProperties": false,
 												"properties": {
 													"any_tag": {
+														"title": "Any Tag",
 														"type": "array",
 														"items": {
 															"type": "string",
@@ -41,22 +47,26 @@
 										]
 									},
 									"growth": {
+										"title": "Growth",
 										"type": "number"
 									}
 								}
 							},
 							{
+								"type": "string",
 								"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
 							}
 						]
 					}
 				},
 				{
+					"type": "string",
 					"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
 				}
 			]
 		},
 		"drop_items": {
+			"title": "Drop Items",
 			"description": "List of items that the entity drops when it grows up.",
 			"type": "array",
 			"items": {
@@ -64,6 +74,7 @@
 			}
 		},
 		"grow_up": {
+			"title": "Event: Grow Up",
 			"description": "Event to run when this entity grows up.",
 			"$ref": "../../general/eventDefinition.json"
 		}

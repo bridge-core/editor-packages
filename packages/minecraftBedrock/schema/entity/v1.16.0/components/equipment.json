@@ -3,12 +3,15 @@
 	"additionalProperties": false,
 	"description": "Sets the Equipment table to use for this Entity.",
 	"type": "object",
+	"title": "Equipment",
 	"properties": {
 		"table": {
+			"title": "Table",
 			"description": "The file path to the equipment table, relative to the behavior pack's root.",
 			"$ref": "../../../general/reference/paths.json#/definitions/loot_table_paths"
 		},
 		"slot_drop_chance": {
+			"title": "Slot Drop Chance",
 			"description": "A list of slots with the chance to drop an equipped item from that slot.",
 			"type": "array",
 			"items": {

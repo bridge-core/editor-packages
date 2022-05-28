@@ -3,17 +3,27 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to randomly look around.",
 	"type": "object",
+	"title": "Random Look Around",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"look_time": {
+			"title": "Look Time",
 			"type": "array",
 			"maxItems": 2,
 			"minItems": 2,
-			"items": {
-				"type": "number"
-			}
+			"items": [
+				{
+					"type": "integer",
+					"default": 2
+				},
+				{
+					"type": "integer",
+					"default": 4
+				}
+			]
 		},
 		"look_distance": {
+			"title": "Look Distance",
 			"type": "number"
 		}
 	}

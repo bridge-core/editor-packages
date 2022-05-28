@@ -3,21 +3,29 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to take a load off and snack on food that it found nearby.",
 	"type": "object",
+	"title": "Snacking",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"snacking_cooldown": {
+			"title": "Snacking Cooldown",
 			"description": "The cooldown time in seconds before the mob is able to snack again.",
-			"type": "number"
+			"type": "number",
+			"default": 7.5
 		},
 		"snacking_cooldown_min": {
+			"title": "Snacking Cooldown Minimum",
 			"description": "The minimum time in seconds before the mob is able to snack again.",
-			"type": "number"
+			"type": "number",
+			"default": 0.5
 		},
 		"snacking_stop_chance": {
+			"title": "Snacking Stop Chance",
 			"description": "This is the chance that the mob will stop snacking, from 0 to 1.",
-			"type": "number"
+			"type": "number",
+			"default": 0.0017
 		},
 		"items": {
+			"title": "Items",
 			"description": "Items that we are interested in snacking on.",
 			"type": "array",
 			"items": {

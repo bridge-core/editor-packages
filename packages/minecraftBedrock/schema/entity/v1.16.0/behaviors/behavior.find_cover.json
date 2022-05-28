@@ -3,15 +3,20 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to seek shade.",
 	"type": "object",
+	"title": "Find Cover",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"speed_multiplier": {
+			"title": "Speed Multiplier",
 			"description": "Movement speed multiplier of the mob when using this AI Goal.",
-			"type": "number"
+			"type": "number",
+			"default": 1.0
 		},
 		"cooldown_time": {
+			"title": "Cooldown Time",
 			"description": "Time in seconds the mob has to wait before using the goal again.",
-			"type": "number"
+			"type": "number",
+			"default": 0.0
 		}
 	}
 }

@@ -3,8 +3,10 @@
 	"additionalProperties": false,
 	"description": "Defines the movement speed for the entity.",
 	"type": "object",
+	"title": "Movement",
 	"properties": {
 		"value": {
+			"title": "Value",
 			"anyOf": [
 				{
 					"type": "number"
@@ -23,6 +25,7 @@
 			]
 		},
 		"max": {
+			"title": "Max",
 			"type": "number"
 		}
 	}

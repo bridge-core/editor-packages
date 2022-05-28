@@ -149,6 +149,9 @@
 		"minecraft:behavior.hide": {
 			"$ref": "./behavior.hide.json"
 		},
+		"minecraft:behavior.hold_ground": {
+			"$ref": "./behavior.hold_ground.json"
+		},
 		"minecraft:behavior.hover": {
 			"$ref": "./behavior.hover.json"
 		},
@@ -391,6 +394,9 @@
 		},
 		"minecraft:behavior.stomp_turtle_egg": {
 			"$ref": "./behavior.stomp_turtle_egg.json"
+		},
+		"minecraft:behavior.stroll_towards_village": {
+			"$ref": "./behavior.stroll_towards_village.json"
 		},
 		"minecraft:behavior.summon_entity": {
 			"$ref": "./behavior.summon_entity.json"

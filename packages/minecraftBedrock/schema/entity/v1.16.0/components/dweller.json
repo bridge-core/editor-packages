@@ -3,12 +3,15 @@
 	"additionalProperties": false,
 	"description": "Defines the entity as a dweller in a village.",
 	"type": "object",
+	"title": "Dweller",
 	"properties": {
 		"dwelling_type": {
+			"title": "Dwelling Type",
 			"const": "village",
 			"type": "string"
 		},
 		"dweller_role": {
+			"title": "Dweller Role",
 			"type": "string",
 			"enum": [
 				"hostile",
@@ -18,21 +21,27 @@
 			]
 		},
 		"update_interval_base": {
+			"title": "Update Interval Base",
 			"type": "number"
 		},
 		"update_interval_variant": {
+			"title": "Update Interval Variant",
 			"type": "number"
 		},
 		"can_find_poi": {
+			"title": "Can Find POI",
 			"type": "boolean"
 		},
 		"can_migrate": {
+			"title": "Can Migrate",
 			"type": "boolean"
 		},
 		"first_founding_reward": {
+			"title": "First Founding Reward",
 			"type": "number"
 		},
 		"preferred_profession": {
+			"title": "Preferred Profession",
 			"type": "string",
 			"enum": [
 				"farmer",

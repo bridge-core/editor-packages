@@ -3,10 +3,13 @@
 	"additionalProperties": false,
 	"description": "Allows this mob to breed with other mobs.",
 	"type": "object",
+	"title": "Breed",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"speed_multiplier": {
-			"type": "number"
+			"title": "Speed Multiplier",
+			"type": "number",
+			"default": 1.0
 		}
 	}
 }

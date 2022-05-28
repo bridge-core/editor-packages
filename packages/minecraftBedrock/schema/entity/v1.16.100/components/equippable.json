@@ -3,8 +3,10 @@
 	"additionalProperties": false,
 	"description": "Defines an entity's behavior for having items equipped to it.",
 	"type": "object",
+	"title": "Equippable",
 	"properties": {
 		"slots": {
+			"title": "Slots",
 			"description": "List of slots and the item that can be equipped.",
 			"type": "array",
 			"items": {
@@ -12,6 +14,7 @@
 				"additionalProperties": false,
 				"properties": {
 					"accepted_items": {
+						"title": "Accepted Items",
 						"description": "The list of items that can go in this slot.",
 						"type": "array",
 						"items": {
@@ -25,6 +28,7 @@
 									"additionalProperties": false,
 									"properties": {
 										"any_tag": {
+											"title": "Any Tag",
 											"type": "array",
 											"items": {
 												"type": "string",
@@ -37,24 +41,30 @@
 						}
 					},
 					"interact_text": {
+						"title": "Interact Text",
 						"description": "Text to be displayed when the entity can be equipped with this item when playing with Touch-screen controls.",
 						"$ref": "../../../general/reference/actionText.json"
 					},
 					"item": {
+						"title": "Item",
 						"description": "Identifier of the item that can be equipped for this slot.",
 						"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
 					},
 					"on_equip": {
+						"title": "Event: On Equip",
 						"description": "Event to trigger when this entity is equipped with this item.",
 						"$ref": "../../general/eventDefinition.json"
 					},
 					"on_unequip": {
+						"title": "Event: On Unequip",
 						"description": "Event to trigger when this item is removed from this entity.",
 						"$ref": "../../general/eventDefinition.json"
 					},
 					"slot": {
+						"title": "Slot",
 						"description": "The slot number of this slot.",
-						"type": "number"
+						"type": "integer",
+						"default": 0
 					}
 				}
 			}

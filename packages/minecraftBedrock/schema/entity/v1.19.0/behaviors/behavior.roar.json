@@ -2,12 +2,15 @@
     "$schema": "http://json-schema.org/draft-07/schema",
     "type": "object",
     "additionalProperties": false,
+    "title": "Roar",
     "description": "Plays the provided sound and activates the 'ROARING' actor flag during the specified duration.",
     "properties": {
         "priority": { "$ref": "../../general/behaviorPriority.json" },
         "duration": {
+            "title": "Duration",
             "description": "Goal duration in seconds.",
-            "type": "number"
+            "type": "number",
+            "default": 0.0
         }
     }
 }

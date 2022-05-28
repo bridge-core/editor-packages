@@ -3,14 +3,19 @@
 	"additionalProperties": false,
 	"description": "Defines the entity's size interpolation based on the entity's age.",
 	"type": "object",
+	"title": "Scale By Age",
 	"properties": {
 		"start_scale": {
+			"title": "Start Scale",
 			"description": "Initial scale of the newborn entity.",
-			"type": "number"
+			"type": "number",
+			"default": 1.0
 		},
 		"end_scale": {
+			"title": "End Scale",
 			"description": "Ending scale of the entity when it's fully grown.",
-			"type": "number"
+			"type": "number",
+			"default": 1.0
 		}
 	}
 }

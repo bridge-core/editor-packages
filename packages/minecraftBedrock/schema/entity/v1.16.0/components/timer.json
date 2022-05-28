@@ -3,20 +3,28 @@
 	"additionalProperties": false,
 	"description": "Adds a timer after which an event will fire.",
 	"type": "object",
+	"title": "Timer",
 	"properties": {
 		"looping": {
+			"title": "Looping",
 			"description": "If true, the timer will restart every time after it fires.",
-			"type": "boolean"
+			"type": "boolean",
+			"default": true
 		},
 		"randomInterval": {
+			"title": "Random Interval",
 			"description": "If true, the amount of time on the timer will be random between the min and max values specified in time.",
-			"type": "boolean"
+			"type": "boolean",
+			"default": true
 		},
 		"random_interval": {
+			"title": "Random Interval",
 			"description": "If true, the amount of time on the timer will be random between the min and max values specified in time.",
-			"type": "boolean"
+			"type": "boolean",
+			"default": true
 		},
 		"time": {
+			"title": "Time",
 			"description": "Amount of time in seconds for the timer. Can be specified as a number or a pair of numbers (min and max). Incompatible with random_time_choices.",
 			"anyOf": [
 				{
@@ -33,6 +41,7 @@
 			]
 		},
 		"random_time_choices": {
+			"title": "Random Time Choices",
 			"description": "This is a list of objects, representing one value in seconds that can be picked before firing the event and an optional weight. Incompatible with time.",
 			"type": "array",
 			"items": {
@@ -49,6 +58,7 @@
 			}
 		},
 		"time_down_event": {
+			"title": "Event: On Timer End",
 			"description": "Event to fire when the time on the timer runs out.",
 			"$ref": "../../general/eventDefinition.json"
 		}

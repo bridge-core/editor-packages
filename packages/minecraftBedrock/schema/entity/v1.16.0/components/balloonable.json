@@ -3,8 +3,10 @@
 	"additionalProperties": false,
 	"description": "Whether or not this entity can be attatched to a balloon.",
 	"type": "object",
+	"title": "Balloonable",
 	"properties": {
 		"mass": {
+			"title": "Mass",
 			"type": "number"
 		}
 	}

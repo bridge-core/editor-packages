@@ -3,12 +3,16 @@
 	"additionalProperties": false,
 	"description": "Defines the way a mob's genes and alleles are passed on to it's offspring, and how those traits manifest in the child. Compatible parent genes are crossed together, the alleles are handed down from the parents to the child, and any matching genetic variants fire off JSON events to modify the child and express the traits.",
 	"type": "object",
+	"title": "Genetics",
 	"properties": {
 		"mutation_rate": {
+			"title": "Mutation Rate",
 			"description": "Chance that an allele will be replaced with a random one instead of the parent's allele during birth.",
-			"type": "number"
+			"type": "number",
+			"default": 0.03125
 		},
 		"genes": {
+			"title": "Genes",
 			"description": "The list of genes that this entity has and will cross with a partner during breeding.",
 			"type": "array",
 			"items": {
@@ -16,10 +20,12 @@
 				"additionalProperties": false,
 				"properties": {
 					"name": {
+						"title": "Name",
 						"description": "The name of the gene.",
 						"type": "string"
 					},
 					"allele_range": {
+						"title": "Allele Range",
 						"description": "The range of positive integer allele values for this gene. Spawned mobs will have a random number in this range assigned to them.",
 						"anyOf": [
 							{
@@ -30,17 +36,20 @@
 								"properties": {
 									"range_min": {
 										"description": "Lower bound of the allele values for this gene.",
-										"type": "integer"
+										"type": "integer",
+										"default": 0
 									},
 									"range_max": {
 										"description": "Upper bound of the allele values for this gene.",
-										"type": "integer"
+										"type": "integer",
+										"default": 0
 									}
 								}
 							}
 						]
 					},
 					"genetic_variants": {
+						"title": "Genetic Variants",
 						"description": "The list of genetic variants for this gene. These check for particular allele combinations and fire events when all of them are satisfied.",
 						"type": "array",
 						"items": {
@@ -48,82 +57,91 @@
 							"additionalProperties": false,
 							"properties": {
 								"main_allele": {
+									"title": "Main Allele",
 									"description": "If this value is non-negative, compare the mob's main allele with this value for a match. Can also be a range of integers.",
+									"default": -1,
 									"anyOf": [
 										{
-											"type": "number"
+											"type": "integer"
 										},
 										{
 											"type": "object",
 											"properties": {
 												"range_min": {
-													"type": "number"
+													"type": "integer"
 												},
 												"range_max": {
-													"type": "number"
+													"type": "integer"
 												}
 											}
 										}
 									]
 								},
 								"both_allele": {
+									"title": "Both Allele",
+									"default": -1,
 									"description": "If this value is non-negative, compare both the mob's main and hidden alleles with this value for a match with both. Can also be a range of integers.",
 									"anyOf": [
 										{
-											"type": "number"
+											"type": "integer"
 										},
 										{
 											"type": "object",
 											"properties": {
 												"range_min": {
-													"type": "number"
+													"type": "integer"
 												},
 												"range_max": {
-													"type": "number"
+													"type": "integer"
 												}
 											}
 										}
 									]
 								},
 								"hidden_allele": {
+									"title": "Hidden Allele",
+									"default": -1,
 									"description": "If this value is non-negative, compare the mob's hidden allele with this value for a match. Can also be a range of integers.",
 									"anyOf": [
 										{
-											"type": "number"
+											"type": "integer"
 										},
 										{
 											"type": "object",
 											"properties": {
 												"range_min": {
-													"type": "number"
+													"type": "integer"
 												},
 												"range_max": {
-													"type": "number"
+													"type": "integer"
 												}
 											}
 										}
 									]
 								},
 								"either_allele": {
+									"title": "Either Allele",
+									"default": -1,
 									"description": "If this value is non-negative, compare both the mob's main and hidden alleles with this value for a match with either. Can also be a range of integers.",
 									"anyOf": [
 										{
-											"type": "number"
+											"type": "integer"
 										},
 										{
 											"type": "object",
 											"properties": {
 												"range_min": {
-													"type": "number"
+													"type": "integer"
 												},
 												"range_max": {
-													"type": "number"
+													"type": "integer"
 												}
 											}
 										}
 									]
 								},
 								"birth_event": {
+									"title": "Event: On Birth",
 									"description": "Event to run when this mob is created and matches the above allele conditions.",
 									"$ref": "../../general/eventDefinition.json"
 								}

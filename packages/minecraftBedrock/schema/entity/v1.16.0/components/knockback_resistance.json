@@ -3,11 +3,14 @@
 	"additionalProperties": false,
 	"description": "Gives the entity resistance to knockback.",
 	"type": "object",
+	"title": "Knockback Resistance",
 	"properties": {
 		"value": {
+			"title": "Value",
 			"type": "number"
 		},
 		"max": {
+			"title": "Max",
 			"type": "number"
 		}
 	}

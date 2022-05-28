@@ -3,8 +3,8 @@
 	"additionalProperties": false,
 	"description": "Allows the Dragon to fly around in a circle around the center podium. Can only be used by the Ender Dragon.",
 	"type": "object",
+	"title": "Dragon Holding Pattern",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json"
-		}
+		"priority": { "$ref": "../../general/behaviorPriority.json" }
 	}
 }

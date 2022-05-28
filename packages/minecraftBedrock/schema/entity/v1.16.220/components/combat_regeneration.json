@@ -3,10 +3,25 @@
 	"additionalProperties": false,
 	"description": "Gives Regeneration I and removes Mining Fatigue from the mob that kills the Actor's attack target.",
 	"type": "object",
+	"title": "Combat Regeneration",
 	"properties": {
 		"regeneration_duration": {
+			"title": "Regeneration Duration",
 			"description": "The duration in seconds of Regeneration I added to the mob.",
-			"type": "integer"
+			"type": "integer",
+			"default": 5
+		},
+		"apply_to_family": {
+			"title": "Apply to Family",
+			"description": "Determines if the mob will grant mobs of the same type combat buffs if they kill the target.",
+			"type": "boolean",
+			"default": false
+		},
+		"apply_to_self": {
+			"title": "Apply to Self",
+			"description": "Determines if the mob will grant itself the combat buffs if it kills the target.",
+			"type": "boolean",
+			"default": false
 		}
 	}
 }

@@ -3,10 +3,13 @@
 	"additionalProperties": false,
 	"description": "This component accents the movement of an entity.",
 	"type": "object",
+	"title": "Basic Movement",
 	"properties": {
 		"max_turn": {
+			"title": "Max Turn",
 			"description": "The maximum number in degrees the mob can turn per tick.",
-			"$ref": "../../../general/degree.json"
+			"$ref": "../../../general/degree.json",
+			"default": 30.0
 		}
 	}
 }

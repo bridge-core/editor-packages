@@ -3,27 +3,38 @@
 	"additionalProperties": false,
 	"description": "Allows an entity to randomly move through water.",
 	"type": "object",
+	"title": "Random Swim",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"interval": {
+			"title": "Interval",
 			"description": "A random value to determine when to randomly move somewhere. This has a 1/interval chance to choose this goal.",
-			"type": "number"
+			"type": "integer",
+			"default": 120
 		},
 		"speed_multiplier": {
+			"title": "Speed Multiplier",
 			"description": "Movement speed multiplier of the mob when using this AI Goal.",
-			"type": "number"
+			"type": "number",
+			"default": 1.0
 		},
 		"xz_dist": {
+			"title": "XZ Distance",
 			"description": "Distance in blocks on ground that the mob will look for a new spot to move to. Must be at least 1.",
-			"type": "number"
+			"type": "integer",
+			"default": 10
 		},
 		"y_dist": {
+			"title": "Y Distance",
 			"description": "Distance in blocks that the mob will look up or down for a new spot to move to. Must be at least 1.",
-			"type": "number"
+			"type": "integer",
+			"default": 7
 		},
 		"avoid_surface": {
+			"title": "Avoid Surface",
 			"description": "If true, the mob will avoid surface water blocks by swimming below them.",
-			"type": "boolean"
+			"type": "boolean",
+			"default": true
 		}
 	}
 }

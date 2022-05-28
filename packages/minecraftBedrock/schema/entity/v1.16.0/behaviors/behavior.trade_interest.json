@@ -3,27 +3,38 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to look at a player that is holding a tradable item.",
 	"type": "object",
+	"title": "Trade Interest",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"within_radius": {
+			"title": "Within Radius",
 			"description": "Distance in blocks this mob can be interested by a player holding an item they like.",
-			"type": "number"
+			"type": "number",
+			"default": 0.0
 		},
 		"interest_time": {
+			"title": "Interest Time",
 			"description": "The max time in seconds that the trader will be interested with showing it's trade items.",
-			"type": "number"
+			"type": "number",
+			"default": 45.0
 		},
 		"remove_item_time": {
+			"title": "Remove Item Time",
 			"description": "The max time in seconds that the trader will wait when you no longer have items to trade.",
-			"type": "number"
+			"type": "number",
+			"default": 1.0
 		},
 		"carried_item_switch_time": {
+			"title": "Carried Item Switch Time",
 			"description": "The max time in seconds that the trader will hold an item before attempting to switch for a different item that takes the same trade.",
-			"type": "number"
+			"type": "number",
+			"default": 2.0
 		},
 		"cooldown": {
+			"title": "Cooldown",
 			"description": "The time in seconds before the trader can use this goal again.",
-			"type": "number"
+			"type": "number",
+			"default": 2.0
 		}
 	}
 }

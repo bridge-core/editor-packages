@@ -3,11 +3,14 @@
 	"additionalProperties": false,
 	"description": "This allows the mob to roll forward.",
 	"type": "object",
+	"title": "Roll",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"probability": {
+			"title": "Probability",
 			"description": "The probability that the mob will use the goal.",
-			"type": "number"
+			"type": "number",
+			"default": 1.0
 		}
 	}
 }

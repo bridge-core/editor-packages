@@ -1,23 +1,31 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
-	"type": "object",
 	"description": "Allows the mob to move back to the position they were spawned.",
+	"type": "object",
+	"title": "Go Home",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"speed_multiplier": {
+			"title": "Speed Multiplier",
 			"description": "Movement speed multiplier of the mob when using this AI Goal.",
-			"type": "number"
+			"type": "number",
+			"default": 1.0
 		},
 		"interval": {
+			"title": "Interval",
 			"description": "A random value to determine when to randomly move somewhere. This has a 1/interval chance to choose this goal.",
-			"type": "number"
+			"type": "integer",
+			"default": 120
 		},
 		"goal_radius": {
+			"title": "Goal Radius",
 			"description": "Distance in blocks within the mob considers it has reached the goal. This is the 'wiggle room' to stop the AI from bouncing back and forth trying to reach a specific spot.",
-			"type": "number"
+			"type": "number",
+			"default": 0.5
 		},
 		"on_home": {
+			"title": "Event: On Home",
 			"description": "Event to run when this mob gets home.",
 			"anyOf": [
 				{
@@ -32,6 +40,7 @@
 			]
 		},
 		"on_failed": {
+			"title": "Event: On Failed",
 			"description": "Event to run if this entity fails to get home.",
 			"anyOf": [
 				{
@@ -46,8 +55,10 @@
 			]
 		},
         "calculate_new_path_radius": {
+			"title": "Calculate New Path Radius",
 			"description": "Specify a distance in blocks that the mob is considered close enough to the end of the current path. A new path will then be calculated to continue toward home.",
-            "type": "integer"
-        }
+            "type": "number",
+			"default": 2.0
+		}
 	}
 }

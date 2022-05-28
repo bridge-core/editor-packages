@@ -3,8 +3,8 @@
 	"additionalProperties": false,
 	"description": "Allows the squid to dive down in water. Can only be used by the Squid.",
 	"type": "object",
+	"title": "Squid Dive",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json"
-		}
+		"priority": { "$ref": "../../general/behaviorPriority.json" }
 	}
 }

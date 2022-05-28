@@ -3,21 +3,29 @@
 	"additionalProperties": false,
 	"description": "Allows monsters to jump at and attack their target. Can only be used by hostile mobs.",
 	"type": "object",
+	"title": "Leap At Target",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"set_persistent": {
-			"type": "boolean"
+			"title": "Set Persistent",
+			"type": "boolean",
+			"default": false
 		},
 		"target_dist": {
+			"title": "Target Distance",
 			"type": "number"
 		},
 		"must_be_on_ground": {
+			"title": "Must Be On Ground",
 			"description": "If true, the mob will only jump at its target if its on the ground. Setting it to false will allow it to jump even if its already in the air.",
-			"type": "boolean"
+			"type": "boolean",
+			"default": true
 		},
 		"yd": {
+			"title": "Y-Distance",
 			"description": "The height in blocks the mob jumps when leaping at its target.",
-			"type": "number"
+			"type": "number",
+			"default": 0.0
 		}
 	}
 }

@@ -3,10 +3,13 @@
 	"additionalProperties": false,
 	"description": "Sets the distance through which the entity can push through.",
 	"type": "object",
+	"title": "Push Through",
 	"properties": {
 		"value": {
+			"title": "Value",
 			"description": "The value of the entity's push-through, in blocks.",
-			"type": "number"
+			"type": "number",
+			"default": 0.0
 		}
 	}
 }

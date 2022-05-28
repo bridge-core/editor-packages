@@ -1,15 +1,21 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
+	"title": "Damage Over Time",
+	"type": "object",
 	"description": "Applies defined amount of damage to the entity at specified intervals.",
 	"properties": {
 		"damage_per_hurt": {
+			"title": "Damage Per Hurt",
 			"description": "Amount of damage caused each hurt.",
-			"type": "number"
+			"type": "integer",
+			"default": 1
 		},
 		"time_between_hurt": {
+			"title": "Time Between Hurt",
 			"description": "Time in seconds between damage.",
-			"type": "number"
+			"type": "number",
+			"default": 0.0
 		}
 	}
 }

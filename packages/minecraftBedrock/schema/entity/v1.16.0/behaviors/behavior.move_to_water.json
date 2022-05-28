@@ -3,27 +3,38 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to move back into water when on land.",
 	"type": "object",
+	"title": "Move to water",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"goal_radius": {
+			"title": "Goal radius",
 			"description": "Distance in blocks within the mob considers it has reached the goal. This is the 'wiggle room' to stop the AI from bouncing back and forth trying to reach a specific spot.",
-			"type": "number"
+			"type": "number",
+			"default": 0.5
 		},
 		"search_count": {
+			"title": "Search count",
 			"description": "The number of blocks each tick that the mob will check within its search range and height for a valid block to move to. A value of 0 will have the mob check every block within range in one tick.",
-			"type": "number"
+			"type": "integer",
+			"default": 10
 		},
 		"search_height": {
+			"title": "Search height",
 			"description": "Height in blocks the mob will look for land to move towards.",
-			"type": "number"
+			"type": "integer",
+			"default": 1
 		},
 		"search_range": {
+			"title": "Search range",
 			"description": "The distance in blocks it will look for land to move towards.",
-			"type": "number"
+			"type": "integer",
+			"default": 0
 		},
 		"speed_multiplier": {
+			"title": "Speed multiplier",
 			"description": "Movement speed multiplier of the mob when using this AI Goal.",
-			"type": "number"
+			"type": "number",
+			"default": 1.0
 		}
 	}
 }

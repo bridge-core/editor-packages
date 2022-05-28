@@ -3,15 +3,20 @@
 	"additionalProperties": false,
 	"description": "Allows this entity to move indoors.",
 	"type": "object",
+	"title": "Move Indoors",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"speed_multiplier": {
+			"title": "Speed Multiplier",
 			"description": "The movement speed modifier to apply to the entity while it is moving indoors.",
-			"type": "number"
+			"type": "number",
+			"default": 0.8
 		},
 		"timeout_cooldown": {
+			"title": "Timeout Cooldown",
 			"description": "The cooldown time in seconds before the goal can be reused after pathfinding fails.",
-			"type": "number"
+			"type": "number",
+			"default": 8.0
 		}
 	}
 }

@@ -1,5 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
-	"description": "When configured as a rideable entity, the entity will be controlled using WASD controls."
+	"description": "When configured as a rideable entity, the entity will be controlled using WASD controls.",
+	"title": "Input Ground Controlled",
+	"type": "object"
 }

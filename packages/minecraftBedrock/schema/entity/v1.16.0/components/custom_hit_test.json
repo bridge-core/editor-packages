@@ -3,20 +3,25 @@
 	"additionalProperties": false,
 	"description": "List of hitboxes for melee and ranged hits against the entity.",
 	"type": "object",
+	"title": "Custom Hit Test",
 	"properties": {
 		"hitboxes": {
+			"title": "Hitboxes",
 			"type": "array",
 			"items": {
 				"type": "object",
 				"additionalProperties": false,
 				"properties": {
 					"width": {
+						"title": "Width",
 						"type": "number"
 					},
 					"height": {
+						"title": "Height",
 						"type": "number"
 					},
 					"pivot": {
+						"title": "Pivot",
 						"type": "array",
 						"minItems": 3,
 						"maxItems": 3,

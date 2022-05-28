@@ -3,38 +3,53 @@
 	"additionalProperties": false,
 	"description": "Allows mobs that own a bed to in a village to move to and sleep in it.",
 	"type": "object",
+	"title": "Sleep",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"goal_radius": {
+			"title": "Goal Radius",
 			"type": "number"
 		},
 		"cooldown_time": {
+			"title": "Cooldown Time",
 			"description": "Time in seconds the mob has to wait before using the goal again.",
-			"type": "number"
+			"type": "number",
+			"default": 0.0
 		},
 		"timeout_cooldown": {
+			"title": "Timeout Cooldown",
 			"description": "The cooldown time in seconds before the goal can be reused after a internal failure or timeout condition.",
-			"type": "number"
+			"type": "number",
+			"default": 8.0
 		},
 		"speed_multiplier": {
+			"title": "Speed Multiplier",
 			"description": "Movement speed multiplier of the mob when using this AI Goal.",
-			"type": "number"
+			"type": "number",
+			"default": 1.0
 		},
 		"sleep_collider_height": {
+			"title": "Sleep Collider Height",
 			"description": "The height of the mob's collider while sleeping.",
-			"type": "number"
+			"type": "number",
+			"default": 1.0
 		},
 		"sleep_collider_width": {
+			"title": "Sleep Collider Width",
 			"description": "The width of the mob's collider while sleeping.",
-			"type": "number"
+			"type": "number",
+			"default": 1.0
 		},
 		"sleep_y_offset": {
+			"title": "Sleep Y Offset",
 			"description": "The y offset of the mob's collider while sleeping.",
 			"type": "number"
 		},
         "can_sleep_while_riding": {
+			"title": "Can Sleep While Riding",
             "description": "If true, the mob will be able to use the sleep goal if riding something.",
-            "type": "boolean"
-        }
+            "type": "boolean",
+			"default": false
+		}
 	}
 }

@@ -3,28 +3,35 @@
 	"additionalProperties": false,
 	"description": "Verifies whether the entity is inside any of the listed blocks.",
 	"type": "object",
+	"title": "Inside Block Notifier",
 	"properties": {
 		"block_list": {
+			"title": "Block List",
 			"type": "array",
 			"items": {
 				"type": "object",
 				"additionalProperties": false,
 				"properties": {
 					"block": {
+						"title": "Block",
 						"type": "object",
 						"properties": {
 							"name": {
+								"title": "Name",
 								"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
 							},
 							"states": {
+								"title": "States",
 								"$ref": "../../../general/vanilla/blockState.json"
 							}
 						}
 					},
 					"entered_block_event": {
+						"title": "Event: On Entered Block",
 						"$ref": "../../general/eventDefinition.json"
 					},
 					"exited_block_event": {
+						"title": "Event: On Exited Block",
 						"$ref": "../../general/eventDefinition.json"
 					}
 				}

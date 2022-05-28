@@ -3,34 +3,47 @@
 	"additionalProperties": false,
 	"description": "Triggers based on rail conditions",
 	"type": "object",
+	"title": "Rail Sensor",
 	"properties": {
 		"check_block_types": {
+			"title": "Check Block Types",
 			"description": "If true, on tick this entity will trigger its on_deactivate behavior.",
-			"type": "boolean"
+			"type": "boolean",
+			"default": false
 		},
 		"eject_on_activate": {
+			"title": "Eject On Activate",
 			"description": "If true, this entity will eject all of its riders when it passes over an activated rail.",
-			"type": "boolean"
+			"type": "boolean",
+			"default": true
 		},
 		"eject_on_deactivate": {
+			"title": "Eject On Deactivate",
 			"description": "If true, this entity will eject all of its riders when it passes over a deactivated rail.",
-			"type": "boolean"
+			"type": "boolean",
+			"default": false
 		},
 		"on_activate": {
+			"title": "Event: On Activate",
 			"description": "Event to call when the rail is activated.",
 			"$ref": "../../general/eventDefinition.json"
 		},
 		"on_deactivate": {
+			"title": "Event: On Deactivate",
 			"description": "Event to call when the rail is deactivated.",
 			"$ref": "../../general/eventDefinition.json"
 		},
 		"tick_command_block_on_activate": {
+			"title": "Tick Command Block On Activate",
 			"description": "If true, command blocks will start ticking when passing over an activated rail.",
-			"type": "boolean"
+			"type": "boolean",
+			"default": true
 		},
 		"tick_command_block_on_deactivate": {
+			"title": "Tick Command Block On Deactivate",
 			"description": "If true, command blocks will start ticking when passing over an activated rail.",
-			"type": "boolean"
+			"type": "boolean",
+			"default": false
 		}
 	}
 }

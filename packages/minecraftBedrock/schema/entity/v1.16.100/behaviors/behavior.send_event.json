@@ -3,28 +3,35 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to send an event to another mob.",
 	"type": "object",
+	"title": "Send Event",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"event_choices": {
+			"title": "Event Choices",
 			"type": "array",
 			"items": {
 				"type": "object",
 				"additionalProperties": false,
 				"properties": {
 					"min_activation_range": {
+						"title": "Minimum Activation Range",
 						"type": "number"
 					},
 					"max_activation_range": {
+						"title": "Maximum Activation Range",
 						"type": "number"
 					},
 					"cooldown_time": {
+						"title": "Cooldown Time",
 						"type": "number"
 					},
 					"cast_duration": {
+						"title": "Cast Duration",
 						"description": "Time in seconds for the entire event sending process.",
 						"type": "number"
 					},
 					"particle_color": {
+						"title": "Particle Color",
 						"anyOf": [
 							{
 								"type": "integer"
@@ -35,30 +42,38 @@
 						]
 					},
 					"weight": {
+						"title": "Weight",
 						"type": "number"
 					},
 					"filters": {
+						"title": "Filters",
 						"$ref": "../../general/filter.json"
 					},
 					"start_sound_event": {
+						"title": "Start Sound Event",
 						"type": "string",
 						"$ref": "../../../general/reference/soundEvent.json"
 					},
 					"sequence": {
+						"title": "Sequence",
 						"type": "array",
 						"items": {
 							"type": "object",
 							"additionalProperties": false,
 							"properties": {
 								"base_delay": {
+									"title": "Base Delay",
 									"description": "Amount of time in seconds before starting this step.",
-									"type": "number"
+									"type": "number",
+									"default": 0.0
 								},
 								"event": {
+									"title": "Event",
 									"description": "The event to send to the entity.",
 									"type": "string"
 								},
 								"sound_event": {
+									"title": "Sound Event",
 									"description": "The sound event to play when this step happens.",
 									"type": "string",
 									"$ref": "../../../general/reference/soundEvent.json"
@@ -67,8 +82,10 @@
 						}
 					},
 					"look_at_target": {
+						"title": "Look At Target",
 						"description": "If true, the mob will face the entity it sends an event to.",
-						"type": "boolean"
+						"type": "boolean",
+						"default": true
 					}
 				}
 			}

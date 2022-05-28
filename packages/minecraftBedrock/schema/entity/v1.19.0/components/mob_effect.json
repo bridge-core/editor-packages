@@ -3,26 +3,35 @@
 	"additionalProperties": false,
 	"description": "A component that applies a mob effect to entities that get within range.",
 	"type": "object",
+	"title": "Mob Effect",
 	"properties": {
 		"effect_range": {
+			"title": "Effect Range",
 			"description": "How close a hostile entity must be to have the mob effect applied.",
-			"type": "number"
+			"type": "number",
+			"default": 0.2
 		},
 		"mob_effect": {
+			"title": "Mob Effect",
 			"description": "The mob effect that is applied to entities that enter this entities effect range.",
 			"$ref": "../../../general/vanilla/effectName.json"
 		},
 		"effect_time": {
+			"title": "Effect Time",
 			"description": "How long the applied mob effect lasts in seconds.",
-			"type": "number"
+			"type": "integer",
+			"default": 10
 		},
 		"entity_filter": {
+			"title": "Entity Filter",
 			"description": "The set of entities that are valid to apply the mob effect to.",
 			"$ref": "../../general/filter.json"
 		},
         "cooldown_time": {
+			"title": "Cooldown Time",
             "description": "Time in seconds to wait between each application of the effect.",
-            "type": "integer"
-        }
+            "type": "integer",
+			"default": 0
+		}
 	}
 }

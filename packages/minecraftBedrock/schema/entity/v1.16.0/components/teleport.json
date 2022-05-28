@@ -3,43 +3,70 @@
 	"additionalProperties": false,
 	"description": "Defines an entity's teleporting behavior.",
 	"type": "object",
+	"title": "Teleport",
 	"properties": {
 		"random_teleports": {
+			"title": "Random Teleports",
 			"description": "If true, the entity will teleport randomly.",
-			"type": "boolean"
+			"type": "boolean",
+			"default": true
 		},
 		"max_random_teleport_time": {
+			"title": "Maximum Random Teleport Time",
 			"description": "Maximum amount of time in seconds between random teleports.",
-			"type": "number"
+			"type": "number",
+			"default": 20.0
 		},
 		"min_random_teleport_time": {
+			"title": "Minimum Random Teleport Time",
 			"description": "Minimum amount of time in seconds between random teleports.",
-			"type": "number"
+			"type": "number",
+			"default": 0.0
 		},
 		"random_teleport_cube": {
+			"title": "Random Teleport Cube",
 			"description": "Entity will teleport to a random position within the area defined by this cube.",
 			"type": "array",
 			"minItems": 3,
 			"maxItems": 3,
-			"items": {
-				"type": "number"
-			}
+			"items": [
+				{
+					"type": "integer",
+					"default": 32
+				},
+				{
+					"type": "integer",
+					"default": 16
+				},
+				{
+					"type": "integer",
+					"default": 32
+				}
+			]
 		},
 		"target_distance": {
+			"title": "Target Distance",
 			"description": "Maximum distance the entity will teleport when chasing a target.",
-			"type": "number"
+			"type": "number",
+			"default": 16.0
 		},
 		"target_teleport_chance": {
+			"title": "Target Teleport Chance",
 			"description": "The chance that the entity will teleport between 0.0 and 1.0. 1.0 means 100%.",
-			"type": "number"
+			"type": "number",
+			"default": 1.0
 		},
 		"light_teleport_chance": {
+			"title": "Light Teleport Chance",
 			"description": "Modifies the chance that the entity will teleport if the entity is in daylight.",
-			"type": "number"
+			"type": "number",
+			"default": 0.01
 		},
 		"dark_teleport_chance": {
+			"title": "Dark Teleport Chance",
 			"description": "Modifies the chance that the entity will teleport if the entity is in darkness.",
-			"type": "number"
+			"type": "number",
+			"default": 0.01
 		}
 	}
 }

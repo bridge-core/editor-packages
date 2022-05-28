@@ -2,14 +2,18 @@
     "$schema": "http://json-schema.org/draft-07/schema",
     "type": "object",
     "additionalProperties": false,
+    "title": "Go and Give Items to Noteblock",
     "description": "The entity will attempt to toss the items from its inventory to a nearby recently played noteblock.",
     "properties": {
         "priority": { "$ref": "../../general/behaviorPriority.json" },
         "listen_time": {
+            "title": "Listen Time",
             "description": "Sets the time an entity should continue delivering items to a noteblock after hearing it.",
-            "type": "integer"
+            "type": "integer",
+            "default": 0
         },
         "on_item_throw": {
+            "title": "Event: On Item Throw",
             "description": "Event(s) to run when this mob throws items.",
             "anyOf": [
                 {
@@ -26,22 +30,31 @@
             ]
         },
         "reach_block_distance": {
+            "title": "Reach Block Distance",
             "description": "Sets the desired distance to be reached before throwing the items towards the block.",
-            "type": "number"
+            "type": "number",
+            "default": 3
         },
         "run_speed": {
+            "title": "Run Speed",
             "description": "Sets the entity's speed when running toward the block.",
-            "type": "number"
+            "type": "number",
+            "default": 1
         },
         "throw_force": {
+            "title": "Throw Force",
             "description": "Sets the throw force.",
-            "type": "number"
+            "type": "number",
+            "default": 0.2
         },
         "vertical_throw_mul": {
+            "title": "Vertical Throw Multiplier",
             "description": "Sets the vertical throw multiplier that is applied on top of the throw force in the vertical direction.",
-            "type": "number"
+            "type": "number",
+            "default": 1.5
         },
         "throw_sound": {
+            "title": "Throw Sound Event",
             "description": "Sound to play when this mob throws an item.",
             "type": "string",
             "$ref": "../../../general/reference/soundEvent.json"

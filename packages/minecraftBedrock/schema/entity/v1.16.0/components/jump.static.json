@@ -3,10 +3,13 @@
 	"additionalProperties": false,
 	"description": "Gives the entity the ability to jump.",
 	"type": "object",
+	"title": "Static Jump",
 	"properties": {
 		"jump_power": {
+			"title": "Jump Power",
 			"description": "The initial vertical velocity for the jump.",
-			"type": "number"
+			"type": "number",
+			"default": 0.42
 		}
 	}
 }

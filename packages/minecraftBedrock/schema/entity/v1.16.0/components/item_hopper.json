@@ -1,5 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
-	"description": "Determines that this entity is an item hopper."
+	"description": "Determines that this entity is an item hopper.",
+	"type": "object",
+	"title": "Item Hopper"
 }

@@ -3,8 +3,8 @@
 	"additionalProperties": false,
 	"description": "Allows the squid to stick to the ground when outside water. Can only be used by the Squid.",
 	"type": "object",
+	"title": "Squid Stick To Ground",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json"
-		}
+		"priority": { "$ref": "../../general/behaviorPriority.json" }
 	}
 }

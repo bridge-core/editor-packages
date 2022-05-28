@@ -1,53 +1,73 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
-	"description": "Allows the mob to lay an egg block on certain types of blocks if the mob is pregnant.",
-    "type": "object",
+	"description": "Allows the mob to lay an egg block on a sand block if the mob is pregnant.",
+	"type": "object",
+	"title": "Lay Egg",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"speed_multiplier": {
+			"title": "Speed Multiplier",
 			"description": "Movement speed multiplier of the mob when using this AI Goal.",
-			"type": "number"
+			"type": "number",
+			"default": 1.0
 		},
 		"search_range": {
+			"title": "Search Range",
 			"description": "The distance in blocks it will look for a sand block to move towards.",
-			"type": "number"
+			"type": "integer",
+			"default": 0
 		},
 		"search_height": {
+			"title": "Search Height",
 			"description": "Height in blocks the mob will look for sand block to move towards.",
-			"type": "number"
+			"type": "integer",
+			"default": 1
 		},
 		"search_count": {
+			"title": "Search Count",
 			"description": "The number of blocks each tick that the mob will check within it's search range and height for a valid block to move to. A value of 0 will have the mob check every block within range in one tick.",
 			"type": "number"
 		},
 		"goal_radius": {
+			"title": "Goal Radius",
 			"description": "Distance in blocks within the mob considers it has reached the goal. This is the 'wiggle room' to stop the AI from bouncing back and forth trying to reach a specific spot.",
-			"type": "number"
+			"type": "number",
+			"default": 0.5
 		},
 		"on_lay": {
+			"title": "Event: On Lay",
 			"description": "Event to run when this mob lays the egg.",
 			"$ref": "../../general/eventDefinition.json"
 		},
         "allow_laying_from_below": {
+            "title": "Allow Laying From Below",
             "description": "Allows the mob to lay its eggs from below the target if it can't get there. This is useful if the target block is water with air above, since mobs may not be able to get to the air block above water.",
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
         },
         "egg_type": {
+            "title": "Egg Type",
             "description": "Block type for the egg to lay. If this is a turtle egg, the number of eggs in the block is randomly set.",
             "type": "string",
-			"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+			"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers",
+            "default": "minecraft:turtle_egg"
         },
         "lay_egg_sound": {
+            "title": "Lay Egg Sound Event",
             "description": "Sound event name for laying egg. Defaulted to lay_egg which is used for Turtles.",
             "type": "string",
-			"$ref": "../../../general/reference/soundEvent.json"
+			"$ref": "../../../general/reference/soundEvent.json",
+            "default": "lay_egg"
         },
         "lay_seconds": {
+            "title": "Lay Seconds",
             "description": "Duration of the laying egg process in seconds.",
-            "type": "number"
+            "type": "number",
+            "default": 10.0
         },
         "target_blocks": {
+            "title": "Target Blocks",
             "description": "Blocks that the mob can lay its eggs on top of.",
             "type": "array",
             "items": {
@@ -56,6 +76,7 @@
             }
         },
         "target_materials_above_block": {
+            "title": "Target Materials Above Block",
             "description": "Types of materials that can exist above the target block.",
             "type": "array",
             "items": {
@@ -64,8 +85,10 @@
             }
         },
         "use_default_animation": {
+            "title": "Use Default Animation",
             "description": "Specifies if the default lay-egg animation should be played when the egg is placed or not.",
-            "type": "boolean"
+            "type": "boolean",
+            "default": true
         }
 	}
 }

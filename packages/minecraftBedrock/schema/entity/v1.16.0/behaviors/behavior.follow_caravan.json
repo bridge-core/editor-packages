@@ -3,17 +3,23 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to follow mobs that are in a caravan.",
 	"type": "object",
+	"title": "Follow Caravan",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"speed_multiplier": {
+			"title": "Speed Multiplier",
 			"description": "Movement speed multiplier of the mob when using this AI Goal.",
-			"type": "number"
+			"type": "number",
+			"default": 1.0
 		},
 		"entity_count": {
+			"title": "Entity Count",
 			"description": "Number of entities that can be in the caravan.",
-			"type": "number"
+			"type": "integer",
+			"default": 1
 		},
 		"entity_types": {
+			"title": "Entity Types",
 			"description": "List of entity types that this mob can follow in a caravan.",
 			"$ref": "../../general/entityType.json"
 		}

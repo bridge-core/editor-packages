@@ -3,10 +3,13 @@
 	"additionalProperties": false,
 	"description": "This move control causes the mob to hover.",
 	"type": "object",
+	"title": "Hover Movement",
 	"properties": {
 		"max_turn": {
+			"title": "Max Turn",
 			"description": "The maximum number in degrees the mob can turn per tick.",
-			"$ref": "../../../general/degree.json"
+			"$ref": "../../../general/degree.json",
+			"default": 30.0
 		}
 	}
 }

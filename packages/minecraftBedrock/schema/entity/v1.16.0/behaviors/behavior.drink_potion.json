@@ -3,13 +3,17 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to drink potions based on specified environment conditions.",
 	"type": "object",
+	"title": "Drink Potion",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"speed_modifier": {
+			"title": "Speed Modifier",
 			"description": "The movement speed modifier to apply to the entity while it is drinking a potion. A value of 0 represents no change in speed.",
-			"type": "number"
+			"type": "number",
+			"default": 1.0
 		},
 		"potions": {
+			"title": "Potions",
 			"description": "A list of potions that this entity can drink.",
 			"type": "array",
 			"items": {
@@ -22,7 +26,8 @@
 					},
 					"chance": {
 						"description": "The percent chance (from 0.0 to 1.0) of this potion being selected when searching for a potion to use.",
-						"type": "number"
+						"type": "number",
+						"default": 1.0
 					},
 					"filters": {
 						"description": "The filters to use when determining if this potion can be selected.",

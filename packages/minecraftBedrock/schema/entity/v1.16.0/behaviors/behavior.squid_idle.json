@@ -3,8 +3,8 @@
 	"additionalProperties": false,
 	"description": "Allows the squid to swim in place idly. Can only be used by the Squid.",
 	"type": "object",
+	"title": "Squid Idle",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json"
-		}
+		"priority": { "$ref": "../../general/behaviorPriority.json" }
 	}
 }

@@ -3,8 +3,10 @@
 	"additionalProperties": false,
 	"description": "Creates a trigger based on environment conditions.",
 	"type": "object",
+	"title": "Environment Sensor",
 	"properties": {
 		"triggers": {
+			"title": "Triggers",
 			"anyOf": [
 				{
 					"description": "The list of triggers that fire when the environment conditions match the given filter criteria.",

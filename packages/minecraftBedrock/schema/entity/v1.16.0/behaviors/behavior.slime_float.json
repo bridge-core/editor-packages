@@ -3,15 +3,20 @@
 	"additionalProperties": false,
 	"description": "Allow slimes to float in water / lava. Can only be used by Slime and Magma Cubes.",
 	"type": "object",
+	"title": "Slime Float",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"jump_chance_percentage": {
+			"title": "Jump Chance Percentage",
 			"description": "Percent chance a slime or magma cube has to jump while in water / lava.",
-			"type": "number"
+			"type": "number",
+			"default": 0.8
 		},
 		"speed_multiplier": {
+			"title": "Speed Multiplier",
 			"description": "Determines the multiplier the entity's speed is modified by when moving through water / lava.",
-			"type": "number"
+			"type": "number",
+			"default": 1.2
 		}
 	}
 }

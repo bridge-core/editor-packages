@@ -3,12 +3,16 @@
 	"additionalProperties": false,
 	"description": "Defines the ravager's response to their melee attack being blocked.",
 	"type": "object",
+	"title": "Ravager Blocked",
 	"properties": {
 		"knockback_strength": {
+			"title": "Knockback Strength",
 			"description": "The strength with which blocking entities should be knocked back.",
-			"type": "number"
+			"type": "number",
+			"default": 3.0
 		},
 		"reaction_choices": {
+			"title": "Reaction Choices",
 			"description": "A list of weighted responses to the melee attack being blocked.",
 			"type": "array",
 			"items": {
@@ -16,9 +20,11 @@
 				"additionalProperties": false,
 				"properties": {
 					"weight": {
+						"title": "Weight",
 						"type": "number"
 					},
 					"value": {
+						"title": "Value",
 						"$ref": "../../general/eventDefinition.json"
 					}
 				}

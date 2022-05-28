@@ -3,18 +3,24 @@
 	"additionalProperties": false,
 	"description": "Allows mob to move towards a random block.",
 	"type": "object",
+	"title": "Move to random block",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"speed_multiplier": {
+			"title": "Speed multiplier",
 			"type": "number"
 		},
 		"within_radius": {
+			"title": "Within radius",
 			"description": "Defines the distance in blocks the mob has to be from the block for the movement to be finished.",
-			"type": "number"
+			"type": "number",
+			"default": 0.0
 		},
 		"block_distance": {
+			"title": "Block distance",
 			"description": "Defines the distance from the mob, in blocks, that the block to move to will be chosen.",
-			"type": "number"
+			"type": "number",
+			"default": 16.0
 		}
 	}
 }

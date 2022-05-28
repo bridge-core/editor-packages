@@ -3,8 +3,10 @@
 	"additionalProperties": false,
 	"description": "Defines the families this entity belongs to.",
 	"type": "object",
+	"title": "Type Family",
 	"properties": {
 		"family": {
+			"title": "Family",
 			"description": "List of family names.",
 			"type": "array",
 			"items": {

@@ -3,16 +3,20 @@
 	"additionalProperties": false,
 	"description": "Defines the entity's 'peek' behavior, defining the events that should be called during it.",
 	"type": "object",
+	"title": "Peek",
 	"properties": {
 		"on_open": {
+			"title": "Event: On Open",
 			"description": "Event to call when the entity starts peeking.",
 			"$ref": "../../general/eventDefinition.json"
 		},
 		"on_close": {
+			"title": "Event: On Close",
 			"description": "Event to call when the entity is done peeking.",
 			"$ref": "../../general/eventDefinition.json"
 		},
 		"on_target_open": {
+			"title": "Event: On Target Open",
 			"description": "Event to call when the entity's target entity starts peeking.",
 			"$ref": "../../general/eventDefinition.json"
 		}

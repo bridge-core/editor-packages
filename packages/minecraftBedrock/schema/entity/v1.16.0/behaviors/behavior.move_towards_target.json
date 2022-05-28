@@ -3,14 +3,18 @@
 	"additionalProperties": false,
 	"description": "Allows mob to move towards its current target.",
 	"type": "object",
+	"title": "Move towards target",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"speed_multiplier": {
+			"title": "Speed multiplier",
 			"type": "number"
 		},
 		"within_radius": {
+			"title": "Within radius",
 			"description": "Defines the radius in blocks that the mob tries to be from the target. A value of 0 means it tries to occupy the same block as the target.",
-			"type": "number"
+			"type": "number",
+			"default": 0.5
 		}
 	}
 }

@@ -2,10 +2,12 @@
     "$schema": "http://json-schema.org/draft-07/schema",
     "type": "object",
     "additionalProperties": false,
+    "title": "Croak",
     "description": "Allows the entity to croak at a random time interval with configurable conditions.",
     "properties": {
         "priority": { "$ref": "../../general/behaviorPriority.json" },
         "duration": {
+            "title": "Duration",
             "description": "Random range in seconds after which the croaking stops.",
             "anyOf": [
                 {
@@ -15,17 +17,26 @@
                     "type": "array",
                     "minItems": 2,
                     "maxItems": 2,
-                    "items": {
-                        "type": "number"
-                    }
+                    "items": [
+                        {
+                            "type": "number",
+                            "default": 4.5
+                        },
+                        {
+                            "type": "number",
+                            "default": 4.5
+                        }
+                    ]
                 }
             ]
         },
         "filters": {
+            "title": "Filters",
             "description": "Conditions for the behavior to start and keep running. The interval between runs only starts after passing the filters.",
             "$ref": "../../general/filter.json"
         },
         "interval": {
+            "title": "Interval",
             "description": "Random range in seconds between runs of this behavior.",
             "anyOf": [
                 {
@@ -35,9 +46,16 @@
                     "type": "array",
                     "minItems": 2,
                     "maxItems": 2,
-                    "items": {
-                        "type": "number"
-                    }
+                    "items": [
+                        {
+                            "type": "number",
+                            "default": 10.0
+                        },
+                        {
+                            "type": "number",
+                            "default": 20.0
+                        }
+                    ]
                 }
             ]
         }

@@ -3,8 +3,8 @@
 	"additionalProperties": false,
 	"description": "Allows the player to trade with this mob.",
 	"type": "object",
+	"title": "Trade With Player",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json"
-		}
+		"priority": { "$ref": "../../general/behaviorPriority.json" }
 	}
 }

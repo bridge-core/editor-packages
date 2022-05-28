@@ -3,71 +3,104 @@
 	"additionalProperties": false,
 	"description": "Allows an entity to attack by using ranged shots. 'charge_shoot_trigger' must be greater than 0 to enable charged up burst-shot attacks.",
 	"type": "object",
+	"title": "Ranged Attack",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"attack_interval": {
+			"title": "Attack Interval",
 			"description": "Alternative to 'attack_interval_min' & 'attack_interval_max'. Consistent reload-time (in seconds), when not using a charged shot. Does not scale with target-distance.",
-			"type": "number"
+			"type": "number",
+			"default": 0.0
 		},
 		"attack_interval_max": {
+			"title": "Attack Interval Maximum",
 			"description": "Maximum bound for reload-time range (in seconds), when not using a charged shot. Reload-time range scales with target-distance.",
-			"type": "number"
+			"type": "number",
+			"default": 0.0
 		},
 		"attack_interval_min": {
+			"title": "Attack Interval Minimum",
 			"description": "Minimum bound for reload-time range (in seconds), when not using a charged shot. Reload-time range scales with target-distance.",
-			"type": "number"
+			"type": "number",
+			"default": 0.0
 		},
 		"attack_radius": {
+			"title": "Attack Radius",
 			"description": "Minimum distance to target before this entity will attempt to shoot.",
-			"type": "number"
+			"type": "number",
+			"default": 0.0
 		},
 		"attack_radius_min": {
+			"title": "Attack Radius Minimum",
 			"description": "Minimum distance the target can be for this mob to fire. If the target is closer, this mob will move first before firing",
-			"type": "number"
+			"type": "number",
+			"default": 0.0
 		},
 		"burst_shots": {
+			"title": "Burst Shots",
 			"description": "Number of shots fired every time the attacking entity uses a charged up attack.",
-			"type": "number"
+			"type": "integer",
+			"default": 1
 		},
 		"burst_interval": {
+			"title": "Burst Interval",
 			"description": "Time (in seconds) between each individual shot when firing a burst of shots from a charged up attack.",
-			"type": "number"
+			"type": "number",
+			"default": 0.0
 		},
 		"charge_charged_trigger": {
+			"title": "Charge Charged Trigger",
 			"description": "Time (in seconds, then add 'charge_shoot_trigger'), before a charged up attack is done charging. Charge-time decays while target is not in sight.",
-			"type": "number"
+			"type": "number",
+			"default": 0.0
 		},
 		"charge_shoot_trigger": {
+			"title": "Charge Shoot Trigger",
 			"description": "Amount of time (in seconds, then doubled) a charged shot must be charging before reloading burst shots. Charge-time decays while target is not in sight.",
-			"type": "number"
+			"type": "number",
+			"default": 0.0
 		},
 		"ranged_fov": {
+			"title": "Ranged FOV",
 			"description": "Field of view (in degrees) when using sensing to detect a target for attack.",
-			"$ref": "../../../general/degree.json"
+			"$ref": "../../../general/degree.json",
+			"default": 90.0
 		},
 		"speed_multiplier": {
+			"title": "Speed Multiplier",
 			"description": "During attack behavior, this multiplier modifies the entity's speed when moving toward the target.",
-			"type": "number"
+			"type": "number",
+			"default": 1.0
 		},
 		"target_in_sight_time": {
+			"title": "Target In Sight Time",
 			"description": "Minimum amount of time (in seconds) the attacking entity needs to see the target before moving toward it.",
-			"type": "number"
+			"type": "number",
+			"default": 1.0
 		},
 		"swing": {
+			"title": "Swing",
 			"description": "If a swing animation (using variable.attack_time) exists, this causes the actor to swing their arm(s) upon firing the ranged attack.",
-			"type": "boolean"
+			"type": "boolean",
+			"default": false
 		},
 		"set_persistent": {
+			"title": "Set Persistent",
 			"description": "Allows the actor to be set to persist upon targeting a player.",
-			"type": "boolean"
+			"type": "boolean",
+			"default": false
 		},
 		"x_max_rotation": {
+			"title": "X Maximum Rotation",
 			"description": "Maximum rotation (in degrees), on the X-axis, this entity can rotate while trying to look at the target.",
-			"$ref": "../../../general/degree.json"
+			"$ref": "../../../general/degree.json",
+			"default": 30.0
 		},
 		"y_max_head_rotation": {
+			"title": "Y Maximum Head Rotation",
 			"description": "Maximum rotation (in degrees), on the Y-axis, this entity can rotate its head while trying to look at the target.",
-			"$ref": "../../../general/degree.json"
+			"$ref": "../../../general/degree.json",
+			"default": 30.0
 		}
 	}
 }

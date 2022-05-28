@@ -3,8 +3,8 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to open and close doors.",
 	"type": "object",
+	"title": "Door Interact",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json"
-		}
+		"priority": { "$ref": "../../general/behaviorPriority.json" }
 	}
 }

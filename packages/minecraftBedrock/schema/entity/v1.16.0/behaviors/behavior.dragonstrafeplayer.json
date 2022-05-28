@@ -1,49 +1,67 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
-	"description": "llows this entity to fly around looking for a player to shoot fireballs at. Can only be used by the Ender Dragon.",
+	"description": "Allows this entity to fly around looking for a player to shoot fireballs at. Can only be used by the Ender Dragon.",
 	"type": "object",
+	"title": "Dragon Looking",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"active_speed": {
+			"title": "Active Speed",
 			"description": "The speed this entity moves when this behavior has started or while it's active.",
-			"type": "number"
+			"type": "number",
+			"default": 1
 		},
 		"fireball_range": {
+			"title": "Fireball Range",
 			"description": "Maximum distance of this entity's fireball attack while strafing.",
-			"type": "number"
+			"type": "number",
+			"default": 64
 		},
 		"flight_speed": {
+			"title": "Flight Speed",
 			"description": "The speed this entity moves while this behavior is not active.",
-			"type": "number"
+			"type": "number",
+			"default": 0.6
 		},
 		"switch_direction_probability": {
+			"title": "Switch Direction Probability",
 			"description": "Percent chance to to switch this entity's strafe direction between clockwise and counterclockwise. Switch direction chance occurs each time a new target is chosen (1.0 = 100%).",
-			"type": "number"
+			"type": "number",
+			"default": 0.125
 		},
 		"target_in_range_and_in_view_time": {
+			"title": "Target In Range and In View Time",
 			"description": "Time (in seconds) the target must be in fireball range, and in view [ie, no solid terrain in-between the target and this entity], before a fireball can be shot.",
-			"type": "number"
+			"type": "number",
+			"default": 0.25
 		},
 		"target_zone": {
+			"title": "Target Zone",
 			"description": "Minimum and maximum distance, from the target, this entity can use this behavior.",
 			"type": "object",
 			"properties": {
 				"range_min": {
-					"type": "integer"
+					"type": "integer",
+					"default": 10
 				},
 				"range_max": {
-					"type": "integer"
+					"type": "integer",
+					"default": 150
 				}
 			}
 		},
 		"turn_speed": {
+			"title": "Turn Speed",
 			"description": "The speed at which this entity turns while using this behavior.",
-			"type": "number"
+			"type": "number",
+			"default": 0.7
 		},
 		"view_angle": {
+			"title": "View Angle",
 			"description": "The target must be within 'view_angle' degrees of the dragon's current rotation before a fireball can be shot.",
-			"type": "number"
+			"type": "number",
+			"default": 10
 		}
 	}
 }

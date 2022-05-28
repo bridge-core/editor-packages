@@ -3,12 +3,16 @@
 	"additionalProperties": false,
 	"description": "Defines the rules for a mob to be tamed by the player.",
 	"type": "object",
+	"title": "Tameable",
 	"properties": {
 		"probability": {
+			"title": "Probability",
 			"description": "The chance of taming the entity with each item use between 0.0 and 1.0, where 1.0 is 100%.",
-			"type": "number"
+			"type": "number",
+			"default": 1.0
 		},
 		"tame_items": {
+			"title": "Tame Items",
 			"description": "The list of items that can be used to tame this entity.",
 			"anyOf": [
 				{
@@ -23,6 +27,7 @@
 			]
 		},
 		"tame_event": {
+			"title": "Event: On Tame",
 			"description": "Event to run when this entity becomes tamed.",
 			"$ref": "../../general/eventDefinition.json"
 		}

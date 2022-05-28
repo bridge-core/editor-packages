@@ -3,12 +3,15 @@
 	"additionalProperties": false,
 	"description": "Adds a rider to the entity. Requires minecraft:rideable.",
 	"type": "object",
+	"title": "Add Rider",
 	"properties": {
 		"entity_type": {
+			"title": "Entity Type",
 			"description": "The entity type that will be riding this entity.",
 			"$ref": "../../../general/reference/identifiers.json#/definitions/entity_identifiers"
 		},
 		"spawn_event": {
+			"title": "Event: On Spawn",
 			"description": "The spawn event that will be used when the riding entity is created.",
 			"type": "string",
 			"$ref": "../../dynamic/currentContext/eventEnum.json"

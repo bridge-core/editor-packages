@@ -1,5 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
-	"description": "Defines whether an entity should be persistent in the game world."
+	"description": "Defines whether an entity should be persistent in the game world.",
+	"type": "object",
+	"title": "Persistent"
 }

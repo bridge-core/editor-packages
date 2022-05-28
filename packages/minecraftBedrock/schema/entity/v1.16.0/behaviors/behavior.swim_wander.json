@@ -2,24 +2,33 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"type": "object",
+	"title": "Swim Wander",
 	"description": "Allows the entity to wander around while swimming, when not path-finding.",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"speed_multiplier": {
+			"title": "Speed Multiplier",
 			"description": "This multiplier modifies the entity's speed when wandering.",
-			"type": "number"
+			"type": "number",
+			"default": 1.0
 		},
 		"interval": {
+			"title": "Interval",
 			"description": "Percent chance to start wandering, when not path-finding. 1 = 100%.",
-			"type": "number"
+			"type": "number",
+			"default": 0.00833
 		},
 		"look_ahead": {
+			"title": "Look Ahead",
 			"description": "Distance to look ahead for obstacle avoidance, while wandering.",
-			"type": "number"
+			"type": "number",
+			"default": 5.0
 		},
 		"wander_time": {
+			"title": "Wander Time",
 			"description": "Amount of time (in seconds) to wander after wandering behavior was successfully started.",
-			"type": "number"
+			"type": "number",
+			"default": 5.0
 		}
 	}
 }

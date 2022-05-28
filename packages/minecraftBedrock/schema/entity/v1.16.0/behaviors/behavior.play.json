@@ -3,10 +3,14 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to play with other baby villagers. This can only be used by Villagers.",
 	"type": "object",
+	"title": "Play",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"speed_multiplier": {
-			"type": "number"
+			"title": "Speed Multiplier",
+			"description": "Movement speed multiplier of the mob when using this AI Goal.",
+			"type": "number",
+			"default": 1.0
 		}
 	}
 }

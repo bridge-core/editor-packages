@@ -3,8 +3,8 @@
 	"additionalProperties": false,
 	"description": "Allows the villager to stop so another villager can breed with it. Can only be used by a Villager.",
 	"type": "object",
+	"title": "Recieve Love",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json"
-		}
+		"priority": { "$ref": "../../general/behaviorPriority.json" }
 	}
 }

@@ -3,23 +3,32 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to follow the player that owns them.",
 	"type": "object",
+	"title": "Follow Owner",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"speed_multiplier": {
+			"title": "Speed Multiplier",
 			"description": "Movement speed multiplier of the mob when using this AI Goal.",
-			"type": "number"
+			"type": "number",
+			"default": 1.0
 		},
 		"start_distance": {
+			"title": "Start Distance",
 			"description": "The distance in blocks that the owner can be away from this mob before it starts following it.",
-			"type": "number"
+			"type": "number",
+			"default": 10.0
 		},
 		"stop_distance": {
+			"title": "Stop Distance",
 			"description": "The distance in blocks this mob will stop from its owner while following it.",
-			"type": "number"
+			"type": "number",
+			"default": 2.0
 		},
 		"can_teleport": {
+			"title": "Can Teleport",
 			"description": "Specify if the mob can teleport to the player if it is too far away.",
-			"type": "boolean"
+			"type": "boolean",
+			"default": false
 		}
 	}
 }

@@ -2,14 +2,18 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"type": "object",
+	"title": "Move Towards Dwelling Restriction",
 	"description": "Allows mobs with the dweller component to move toward their Village area that the mob should be restricted to.",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"speed_multiplier": {
+			"title": "Speed Multiplier",
 			"description": "This multiplier modifies the entity's speed when moving towards it's restriction.",
-			"type": "number"
+			"type": "number",
+			"default": 1.0
 		},
 		"control_flags": {
+			"title": "Control Flags",
 			"type": "string",
 			"enum": [
 				"move",

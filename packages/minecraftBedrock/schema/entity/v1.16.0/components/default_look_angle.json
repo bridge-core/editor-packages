@@ -3,10 +3,13 @@
 	"additionalProperties": false,
 	"description": "Sets this entity's default head rotation angle.",
 	"type": "object",
+	"title": "Default Look Angle",
 	"properties": {
 		"value": {
+			"title": "Value",
 			"description": "Angle in degrees.",
-			"type": "number"
+			"type": "number",
+			"default": 0.0
 		}
 	}
 }

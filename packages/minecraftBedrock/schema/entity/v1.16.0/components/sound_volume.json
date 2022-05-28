@@ -3,9 +3,12 @@
 	"additionalProperties": false,
 	"description": "Sets the entity's base volume for sound effects.",
 	"type": "object",
+	"title": "Sound Volume",
 	"properties": {
 		"value": {
-			"type": "number"
+			"title": "Value",
+			"type": "number",
+			"description": "The value of the volume the entity uses for sound effects."
 		}
 	}
 }

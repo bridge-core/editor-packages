@@ -1,5 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
-	"description": "Allows this entity to climb up ladders."
+	"description": "Allows this entity to climb up ladders.",
+	"type": "object",
+	"title": "Can Climb"
 }

@@ -3,31 +3,44 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to follow the player that owns them.",
 	"type": "object",
+	"title": "Follow Owner",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"speed_multiplier": {
+			"title": "Speed Multiplier",
 			"description": "Movement speed multiplier of the mob when using this AI Goal.",
-			"type": "number"
+			"type": "number",
+			"default": 1.0
 		},
 		"start_distance": {
+			"title": "Start Distance",
 			"description": "The distance in blocks that the owner can be away from this mob before it starts following it.",
-			"type": "number"
+			"type": "number",
+			"default": 10.0
 		},
 		"stop_distance": {
+			"title": "Stop Distance",
 			"description": "The distance in blocks this mob will stop from its owner while following it.",
-			"type": "number"
+			"type": "number",
+			"default": 2.0
 		},
 		"can_teleport": {
+			"title": "Can Teleport",
 			"description": "Specify if the mob can teleport to the player if it is too far away.",
-			"type": "boolean"
+			"type": "boolean",
+			"default": false
 		},
-        "ignore_vibration": {
-            "description": "Specify if the mob will follow the owner if it has heard a vibration lately.",
-            "type": "boolean"
-        },
-        "max_distance": {
-            "description": "The maximum distance in blocks this mob can be from its owner to start following, only used when canTeleport is false.",
-            "type": "number"
-        }
+		"ignore_vibration": {
+			"title": "Ignore Vibration",
+			"description": "Specify if the mob will follow the owner if it has heard a vibration lately.",
+			"type": "boolean",
+			"default": true
+		},
+		"max_distance": {
+			"title": "Maximum Distance",
+			"description": "The maximum distance in blocks this mob can be from its owner to start following, only used when canTeleport is false.",
+			"type": "number",
+			"default": 60.0
+		}
 	}
 }

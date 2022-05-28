@@ -3,8 +3,8 @@
 	"additionalProperties": false,
 	"description": "Allows the enderman to drop a block they are carrying. Can only be used by Endermen.",
 	"type": "object",
+	"title": "Enderman Leave Block",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json"
-		}
+		"priority": { "$ref": "../../general/behaviorPriority.json" }
 	}
 }

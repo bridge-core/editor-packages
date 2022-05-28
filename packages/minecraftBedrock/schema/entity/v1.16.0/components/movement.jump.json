@@ -3,12 +3,16 @@
 	"additionalProperties": false,
 	"description": "Move control that causes the mob to jump as it moves with a specified delay between jumps.",
 	"type": "object",
+	"title": "Jump Movement",
 	"properties": {
 		"max_turn": {
+			"title": "Max Turn",
 			"description": "The maximum number in degrees the mob can turn per tick.",
-			"$ref": "../../../general/degree.json"
+			"$ref": "../../../general/degree.json",
+			"default": 30.0
 		},
 		"jump_delay": {
+			"title": "Jump Delay",
 			"description": "Delay after landing when using the slime move control.",
 			"type": "array",
 			"minItems": 2,

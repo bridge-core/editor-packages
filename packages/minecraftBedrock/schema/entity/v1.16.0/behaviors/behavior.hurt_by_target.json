@@ -3,19 +3,25 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to target another mob that hurts them.",
 	"type": "object",
+	"title": "Hurt By Target",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"alert_same_type": {
+			"title": "Alert Same Type",
 			"description": "If true, nearby mobs of the same type will be alerted about the damage.",
-			"type": "boolean"
+			"type": "boolean",
+			"default": false
 		},
 		"entity_types": {
+			"title": "Entity Types",
 			"description": "List of entity types that this mob can target when hurt by them.",
 			"$ref": "../../general/entityType.json"
 		},
 		"hurt_owner": {
+			"title": "Hurt Owner",
 			"description": "If true, the mob will hurt its owner and other mobs with the same owner as itself.",
-			"type": "boolean"
+			"type": "boolean",
+			"default": false
 		}
 	}
 }

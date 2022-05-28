@@ -3,12 +3,18 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to move to a POI if able to.",
 	"type": "object",
+	"title": "Move to POI",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"speed_multiplier": {
-			"type": "number"
+			"title": "Speed multiplier",
+			"type": "number",
+			"description": "Movement speed multiplier of the mob when using this AI Goal.",
+			"default": 1.0
 		},
 		"poi_type": {
+			"title": "POI type",
+			"description": "Tells the goal what POI type it should be looking for.",
 			"type": "string",
 			"const": "bed"
 		}

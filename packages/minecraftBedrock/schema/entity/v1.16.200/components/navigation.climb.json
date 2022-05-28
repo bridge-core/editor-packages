@@ -1,11 +1,13 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"description": "Allows this entity to generate paths that include vertical walls like the vanilla Spiders do.",
+	"title": "Climb Navigation",
 	"allOf": [
 		{
 			"type": "object",
 			"properties": {
 				"avoid_powder_snow": {
+					"title": "Avoid Powder Snow",
 					"type": "boolean"
 				}
 			}

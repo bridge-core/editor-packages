@@ -3,14 +3,18 @@
 	"additionalProperties": false,
 	"description": "Defines the player's saturation.",
 	"type": "object",
+	"title": "Player Saturation",
 	"properties": {
 		"value": {
+			"title": "Value",
 			"type": "number"
 		},
 		"min": {
+			"title": "Minimum",
 			"type": "number"
 		},
 		"max": {
+			"title": "Maximum",
 			"type": "number"
 		}
 	}

@@ -2,5 +2,6 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"type": "object",
 	"additionalProperties": false,
-	"description": "Defines a dynamic type jump control that will change jump properties based on the speed modifier of the mob."
+	"description": "Defines a dynamic type jump control that will change jump properties based on the speed modifier of the mob.",
+	"title": "Dynamic Jump"
 }

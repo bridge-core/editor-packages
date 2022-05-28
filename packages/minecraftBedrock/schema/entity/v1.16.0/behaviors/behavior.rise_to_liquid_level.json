@@ -3,19 +3,26 @@
 	"additionalProperties": false,
 	"description": "Allows the mob to rise to the liquid surface.",
 	"type": "object",
+	"title": "Rise to Liquid Level",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"liquid_y_offset": {
+			"title": "Liquid Y Offset",
 			"description": "Target distance down from the liquid surface. i.e. Positive values move the target Y down.",
-			"type": "number"
+			"type": "number",
+			"default": 0.0
 		},
 		"rise_delta": {
+			"title": "Rise Delta",
 			"description": "Movement up in Y per tick when below the liquid surface.",
-			"type": "number"
+			"type": "number",
+			"default": 0.0
 		},
 		"sink_delta": {
+			"title": "Sink Delta",
 			"description": "Movement down in Y per tick when above the liquid surface.",
-			"type": "number"
+			"type": "number",
+			"default": 0.0
 		}
 	}
 }

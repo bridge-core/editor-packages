@@ -3,10 +3,13 @@
 	"additionalProperties": false,
 	"description": "Sets the offset from the ground that the entity is actually at.",
 	"type": "object",
+	"title": "Ground Offset",
 	"properties": {
 		"value": {
+			"title": "Value",
 			"description": "The value of the entity's offset from the terrain, in blocks.",
-			"type": "number"
+			"type": "number",
+			"default": 0.0
 		}
 	}
 }

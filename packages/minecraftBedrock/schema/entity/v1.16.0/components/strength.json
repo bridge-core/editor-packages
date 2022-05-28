@@ -3,17 +3,23 @@
 	"additionalProperties": false,
 	"description": "Defines the entity's strength to carry items.",
 	"type": "object",
+	"title": "Strength",
 	"properties": {
 		"value": {
+			"title": "Value",
 			"description": "The initial value of the strength.",
-			"type": "number"
+			"type": "integer",
+			"default": 1
 		},
 		"max": {
+			"title": "Maximum",
 			"description": "The maximum strength of this entity.",
-			"type": "number"
+			"type": "integer",
+			"default": 5
 		},
 		"min": {
-			"type": "number"
+			"title": "Minimum",
+			"type": "integer"
 		}
 	}
 }

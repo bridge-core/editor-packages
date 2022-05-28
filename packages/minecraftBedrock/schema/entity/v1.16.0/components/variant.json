@@ -3,10 +3,13 @@
 	"additionalProperties": false,
 	"description": "Used to differentiate the component group of a variant of an entity from others. (e.g. ocelot, villager)",
 	"type": "object",
+	"title": "Variant",
 	"properties": {
 		"value": {
+			"title": "Value",
 			"description": "The ID of the variant. By convention, 0 is the ID of the base entity.",
-			"type": "integer"
+			"type": "integer",
+			"default": 0
 		}
 	}
 }

@@ -3,10 +3,13 @@
 	"additionalProperties": false,
 	"description": "Sets the entity's visual size.",
 	"type": "object",
+	"title": "Scale",
 	"properties": {
 		"value": {
+			"title": "Value",
 			"description": "The value of the scale. 1.0 means the entity will appear at the scale they are defined in their model. Higher numbers make the entity bigger.",
-			"type": "number"
+			"type": "number",
+			"default": 1.0
 		}
 	}
 }

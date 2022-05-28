@@ -463,6 +463,9 @@
 				"minecraft:behavior.stomp_turtle_egg": {
 					"$ref": "../../v1.16.0/behaviors/behavior.stomp_turtle_egg.json"
 				},
+				"minecraft:behavior.stroll_towards_village": {
+					"$ref": "../../v1.16.0/behaviors/behavior.stroll_towards_village.json"
+				},
 				"minecraft:behavior.summon_entity": {
 					"$ref": "../../v1.16.0/behaviors/behavior.summon_entity.json"
 				},

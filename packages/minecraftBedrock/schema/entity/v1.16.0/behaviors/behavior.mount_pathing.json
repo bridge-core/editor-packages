@@ -2,19 +2,27 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"description": "Allows the mob to move around on its own while mounted seeking a target to attack.",
+	"type": "object",
+	"title": "Mount Pathing",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"speed_multiplier": {
+			"title": "Speed Multiplier",
 			"description": "Movement speed multiplier of the mob when using this AI Goal.",
-			"type": "number"
+			"type": "number",
+			"default": 1.0
 		},
 		"target_dist": {
+			"title": "Target Distance",
 			"description": "The distance at which this mob wants to be away from its target.",
-			"type": "number"
+			"type": "number",
+			"default": 0.0
 		},
 		"track_target": {
+			"title": "Track Target",
 			"description": "If true, this mob will chase after the target as long as it's a valid target.",
-			"type": "boolean"
+			"type": "boolean",
+			"default": false
 		}
 	}
 }

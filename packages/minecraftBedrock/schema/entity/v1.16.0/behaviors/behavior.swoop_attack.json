@@ -2,25 +2,38 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"type": "object",
+	"title": "Swoop Attack",
 	"description": "Allows an entity to attack using swoop attack behavior; Ideal for use with flying mobs. The behavior ends if the entity has a horizontal collision or gets hit.",
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"damage_reach": {
+			"title": "Damage Reach",
 			"description": "Added to the base size of the entity, to determine the target's maximum allowable distance, when trying to deal attack damage.",
-			"type": "number"
+			"type": "number",
+			"default": 0.2
 		},
 		"speed_multiplier": {
+			"title": "Speed Multiplier",
 			"description": "During swoop attack behavior, this determines the multiplier the entity's speed is modified by when moving toward the target.",
-			"type": "number"
+			"type": "number",
+			"default": 1.0
 		},
 		"delay_range": {
+			"title": "Delay Range",
 			"description": "Minimum and maximum cooldown time-range (in seconds) between each attempted swoop attack.",
 			"type": "array",
 			"minItems": 2,
 			"maxItems": 2,
-			"items": {
-				"type": "number"
-			}
+			"items": [
+				{
+					"type": "number",
+					"default": 10.0
+				},
+				{
+					"type": "number",
+					"default": 20.0
+				}
+			]
 		}
 	}
 }

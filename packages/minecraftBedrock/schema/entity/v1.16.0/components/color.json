@@ -3,10 +3,13 @@
 	"additionalProperties": false,
 	"description": "Defines the entity's color. Only works on vanilla entities that have predefined color values (sheep, llama, shulker).",
 	"type": "object",
+	"title": "Color",
 	"properties": {
 		"value": {
+			"title": "Value",
 			"description": "The Palette Color value of the entity.",
-			"type": "integer"
+			"type": "integer",
+			"default": 0
 		}
 	}
 }

@@ -3,8 +3,10 @@
 	"additionalProperties": false,
 	"description": "Specifies the blocks that this entity can break as it moves around.",
 	"type": "object",
+	"title": "Break Blocks",
 	"properties": {
 		"breakable_blocks": {
+			"title": "Breakable Blocks",
 			"description": "A list of the blocks that can be broken as this entity moves around.",
 			"type": "array",
 			"items": {

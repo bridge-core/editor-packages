@@ -3,37 +3,47 @@
 	"additionalProperties": false,
 	"description": "Sets the entity's delay between playing its ambient sound.",
 	"type": "object",
+	"title": "Ambient Sound Interval",
 	"properties": {
 		"range": {
+			"title": "Range",
 			"description": "Maximum time in seconds to randomly add to the ambient sound delay time.",
-			"type": "number"
+			"type": "number",
+			"default": 16.0
 		},
 		"value": {
+			"title": "Value",
 			"description": "Minimum time in seconds before the entity plays its ambient sound again.",
-			"type": "number"
+			"type": "number",
+			"default": 8.0
 		},
 		"event_name": {
+			"title": "Sound Event Name",
 			"description": "Level sound event to be played as the ambient sound.",
 			"type": "string",
-			"$ref": "../../../general/reference/soundEvent.json"
+			"$ref": "../../../general/reference/soundEvent.json",
+			"default": "ambient"
 		},
-        "event_names": {
-            "description": "List of dynamic level sound events, with conditions for choosing between them. Evaluated in order, first one wins. If none evaluate to true, 'event_name' will take precedence.",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "condition": {
-                        "description": "The condition that must be satisfied to select the given ambient sound.",
-                        "$ref": "../../../molang/embedded.json"
-                    },
-                    "event_name": {
-                        "description": "Level sound event to be played as the ambient sound.",
-                        "type": "string",
+		"event_names": {
+			"title": "Sound Event Names",
+			"description": "List of dynamic level sound events, with conditions for choosing between them. Evaluated in order, first one wins. If none evaluate to true, 'event_name' will take precedence.",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"condition": {
+						"title": "Condition",
+						"description": "The condition that must be satisfied to select the given ambient sound.",
+						"$ref": "../../../molang/embedded.json"
+					},
+					"event_name": {
+						"title": "Sound Event Name",
+						"description": "Level sound event to be played as the ambient sound.",
+						"type": "string",
 						"$ref": "../../../general/reference/soundEvent.json"
-                    }
-                }
-            }
-        }
+					}
+				}
+			}
+		}
 	}
 }

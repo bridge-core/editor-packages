@@ -3,8 +3,10 @@
 	"additionalProperties": false,
 	"description": "Sets the movement speed of the entity in lava.",
 	"type": "object",
+	"title": "Lava Movement",
 	"properties": {
 		"value": {
+			"title": "Value",
 			"type": "number"
 		}
 	}

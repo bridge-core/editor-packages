@@ -3,8 +3,8 @@
 	"additionalProperties": false,
 	"description": "Enables the mob to barter for items that have been configured as barter currency. Must be used in combination with the barter component.",
 	"type": "object",
+	"title": "Barter",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json"
-		}
+		"priority": { "$ref": "../../general/behaviorPriority.json" }
 	}
 }
