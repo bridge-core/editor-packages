@@ -2,5 +2,5 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"type": "boolean",
-	"description": "This component makes it so actors can't jump when walking on this block"
+	"description": "This component makes it so actors can't jump when walking on this block."
 }

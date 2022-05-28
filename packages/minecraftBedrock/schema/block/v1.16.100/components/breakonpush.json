@@ -2,5 +2,5 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"type": "boolean",
-	"description": "When pushed by a piston the block breaks"
+	"description": "When pushed by a piston the block breaks."
 }

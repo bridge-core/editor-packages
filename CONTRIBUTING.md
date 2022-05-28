@@ -15,7 +15,7 @@ Titles of objects should be added to all objects and should be capitalised versi
 Descriptions should be copied exactly from the Add-On documentation, if no description exists, omit the field. All descriptions should:
 - End with `.`
 - Begin with a capital letter
-- Have all occurences of `"` replace with `'`
+- Have all occurences of `"` replaced with `'`
 
 ### Default
 
@@ -29,6 +29,10 @@ Across our schemas, we use a conditional schemas to propose auto-completions bas
 
 Format version filtering should be done at the root of the schema where possible, using an `if` schema containing an `enum` of the format versions to validate for. See [the entity versioning implementation](https://github.com/bridge-core/editor-packages/blob/main/packages/minecraftBedrock/schema/entity/main.json) for an example.
 All new features introduced should be versioned unless they are minor description changes, in which case the original schema can be modified.
+
+If something is removed, we use the `doNotSuggest` and `deprecationMessage` fields to show a deprecation message. For consistency, this message should be in the format:
+- `Deprecated as of v{VERSION} - {ORIGINAL DESCRIPTION}.`, **or**
+- `Deprecated in favor of {REPLACEMENT PROPERTY} (format_version: v{FORMAT VERSION OF NEW PROPERTY}).`
 
 To keep our versioning consistent, the structure should be as follows:
 - A `main.json` file in the root of the file type's schema folder. This is where the versioning takes place.

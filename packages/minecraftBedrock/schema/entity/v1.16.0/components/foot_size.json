@@ -3,5 +3,5 @@
 	"additionalProperties": false,
 	"title": "Foot Size",
 	"doNotSuggest": true,
-	"deprecationMessage": "Deprecated - Sets the number of blocks the entity can step without jumping."
+	"deprecationMessage": "Deprecated as of v1.16.0 - Sets the number of blocks the entity can step without jumping."
 }

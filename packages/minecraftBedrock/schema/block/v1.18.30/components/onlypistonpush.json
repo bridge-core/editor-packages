@@ -2,5 +2,5 @@
     "$schema": "http://json-schema.org/draft-07/schema",
     "additionalProperties": false,
     "doNotSuggest": true,
-    "deprecationMessage": "Deprecated as of 1.18.30.22."
+    "deprecationMessage": "Deprecated as of v1.18.30.22 - Blocks with those components won't stick to stickyPistons."
 }

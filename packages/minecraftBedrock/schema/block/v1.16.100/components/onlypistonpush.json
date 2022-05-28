@@ -2,5 +2,5 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"type": "boolean",
-	"description": "Blocks with those components won't stick to stickyPistons"
+	"description": "Blocks with those components won't stick to stickyPistons."
 }
