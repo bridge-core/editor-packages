@@ -30,7 +30,7 @@
 								"type": "array",
 								"items": {
 									"type": "string",
-									"$ref": "../../../item/dynamic/tagEnum.json"
+									"$ref": "../../../general/reference/tags.json#/definitions/item_tags"
 								}
 							}
 						}
