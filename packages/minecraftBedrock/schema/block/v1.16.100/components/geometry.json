@@ -2,5 +2,6 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"$ref": "../../../general/reference/geometry.json",
-	"description": "The geometry definition name to use"
+	"title": "Geometry",
+	"description": "The geometry description identifier to use, this identifier must match an existing geometry identifier in any of the currently loaded resource packs."
 }

@@ -2,5 +2,6 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"type": "object",
-	"description": "Specifies that a unit cube is to be used with tessellation"
+	"description": "Specifies that a unit cube is to be used with tessellation.",
+	"title": "Unit Cube"
 }

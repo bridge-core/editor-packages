@@ -1,12 +1,14 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"type": "object",
-	"description": "Sets rules for under what conditions the block can be placed/survive",
+	"title": "Placement Filter",
+	"description": "Sets rules for under what conditions the block can be placed/survive.",
 	"definitions": {
 		"placement_rule": {
 			"type": "object",
 			"properties": {
 				"block_filter": {
+					"title": "Block Filter",
 					"type": "array",
 					"maxItems": 64,
 					"description": "List of blocks (can use tags to specify them) that this block can be placed against in the allowed_faces direction",
@@ -22,6 +24,7 @@
 					}
 				},
 				"allowed_faces": {
+					"title": "Allowed Faces",
 					"type": "array",
 					"maxItems": 6,
 					"description": "Defines the block faces this block can be placed on, e.g 'down' means you can only place this block on th bottom face of the block. If the block it is placed on is removed, this block will be destroyed",
@@ -50,6 +53,7 @@
 			"type": "object",
 			"properties": {
 				"conditions": {
+					"title": "Conditions",
 					"description": "List of conditions where the block can be placed/survive.",
 					"type": "array",
 					"maxLength": 64,

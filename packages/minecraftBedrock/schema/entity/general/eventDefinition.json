@@ -3,6 +3,7 @@
 	"type": "object",
 	"properties": {
 		"filters": {
+			"title": "Filters",
 			"description": "A filter allows you to set a condition for the event to trigger.",
 			"anyOf": [
 				{
@@ -19,6 +20,7 @@
 			]
 		},
 		"target": {
+			"title": "Target",
 			"description": "Target to trigger the event on.",
 			"type": "string",
 			"$ref": "../../general/filter/subject.json"
@@ -50,6 +52,7 @@
 			"then": {
 				"properties": {
 					"event": {
+						"title": "Event",
 						"$ref": "../dynamic/currentContext/eventEnum.json",
 						"description": "Identifier of the event to trigger."
 					}
@@ -75,6 +78,7 @@
 			"then": {
 				"properties": {
 					"event": {
+						"title": "Event",
 						"$ref": "../dynamic/eventEnum.json",
 						"description": "Identifier of the event to trigger."
 					}
@@ -93,6 +97,7 @@
 			"then": {
 				"properties": {
 					"event": {
+						"title": "Event",
 						"$ref": "../../block/dynamic/eventEnum.json",
 						"description": "Identifier of the event to trigger."
 					}

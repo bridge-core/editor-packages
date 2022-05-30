@@ -1,6 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"type": "object",
+	"title": "Material Instances",
 	"description": "The material instances for a block. Maps face or material_instance names in a geometry file to an actual material instance. You can assign a material instance object to any of these faces: 'up', 'down', 'north', 'south', 'east', 'west', or '*'. You can also give an instance the name of your choosing such as 'my_instance', and then assign it to a face by doing 'north':'my_instance'.",
 	"propertyNames": {
 		"anyOf": [
@@ -25,12 +26,15 @@
 		"type": "object",
 		"properties": {
 			"texture": {
+				"title": "Texture",
 				"description": "Name of a texture from the terrain_texture.json file.",
 				"$ref": "../../../general/reference/terrainTexture.json"
 			},
 			"render_method": {
+				"title": "Render Method",
 				"description": "The render method to use.",
 				"type": "string",
+				"default": "opaque",
 				"oneOf": [
 					{
 						"const": "opaque",
@@ -51,12 +55,16 @@
 				]
 			},
 			"ambient_occlusion": {
+				"title": "Ambient Occlusion",
 				"description": "Should this material have ambient occlusion applied when lighting? If true, shadows will be created around and underneath the block.",
-				"type": "boolean"
+				"type": "boolean",
+				"default": true
 			},
 			"face_dimming": {
+				"title": "Face Dimming",
 				"description": "Should this material have ambient occlusion applied when lighting.",
-				"type": "boolean"
+				"type": "boolean",
+				"default": true
 			}
 		}
 	}

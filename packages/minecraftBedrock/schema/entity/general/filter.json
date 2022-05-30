@@ -3,27 +3,32 @@
 	"type": "object",
 	"properties": {
 		"all_of": {
+			"title": "All Of",
 			"type": "array",
 			"items": {
 				"$ref": "#"
 			}
 		},
 		"any_of": {
+			"title": "Any Of",
 			"type": "array",
 			"items": {
 				"$ref": "#"
 			}
 		},
 		"none_of": {
+			"title": "None Of",
 			"type": "array",
 			"items": {
 				"$ref": "#"
 			}
 		},
 		"subject": {
+			"title": "Subject",
 			"$ref": "../../general/filter/subject.json"
 		},
 		"operator": {
+			"title": "Operator",
 			"$ref": "../../general/filter/operator.json"
 		}
 	},

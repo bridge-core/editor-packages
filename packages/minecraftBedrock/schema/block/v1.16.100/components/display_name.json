@@ -3,5 +3,6 @@
 	"additionalProperties": false,
 	"type": "string",
 	"description": "Specifies the language file key that maps to what text will be displayed when you hover over the block.",
-	"maxLength": 256
+	"maxLength": 256,
+	"title": "Display Name"
 }

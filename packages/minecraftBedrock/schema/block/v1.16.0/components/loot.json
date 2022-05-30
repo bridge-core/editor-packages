@@ -3,5 +3,6 @@
 	"additionalProperties": false,
 	"$ref": "../../../general/reference/paths.json#/definitions/loot_table_paths",
 	"description": "The path to the loot table, relative to the behavior pack.",
-	"maxLength": 256
+	"maxLength": 256,
+	"title": "Loot"
 }

@@ -3,12 +3,15 @@
 	"type": "object",
 	"properties": {
 		"particle_type": {
+			"title": "Particle Type",
 			"$ref": "../../general/reference/identifiers.json#/definitions/particle_identifiers"
 		},
 		"particle_y_offset": {
+			"title": "Particle Y Offset",
 			"type": "number"
 		},
 		"particle_offset_towards_indicator": {
+			"title": "Particle Offset Towards Indicator",
 			"type": "boolean"
 		}
 	}

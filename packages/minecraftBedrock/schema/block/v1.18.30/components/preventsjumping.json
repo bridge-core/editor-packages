@@ -1,6 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "additionalProperties": false,
+    "title": "Prevents Jumping",
     "doNotSuggest": true,
     "deprecationMessage": "Deprecated as of v1.18.30.22 - This component makes it so actors can't jump when walking on this block."
 }

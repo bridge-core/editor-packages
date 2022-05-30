@@ -4,5 +4,7 @@
 	"type": "number",
 	"description": "The amount of light this block will emit.",
 	"minimum": 0,
-	"maximum": 1
+	"maximum": 1,
+	"title": "Block Light Emission",
+	"default": 0.0
 }

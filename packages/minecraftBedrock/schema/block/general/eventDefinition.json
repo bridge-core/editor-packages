@@ -3,11 +3,14 @@
 	"type": "object",
 	"properties": {
 		"condition": {
+			"title": "Condition",
 			"type": "string",
-			"description": "This MoLang expression has to evaluate to '1' (true) in order for the event to run"
+			"description": "This MoLang expression has to evaluate to '1' (true) in order for the event to run."
 		},
 		"target": {
+			"title": "Target",
 			"type": "string",
+			"default": "self",
 			"description": "Target to trigger the event on.",
 			"enum": ["self", "other", "target", "parent", "baby"]
 		}
@@ -38,6 +41,7 @@
 			"then": {
 				"properties": {
 					"event": {
+						"title": "Event",
 						"$ref": "../dynamic/currentContext/eventEnum.json",
 						"description": "Identifier of the event to trigger"
 					}
@@ -56,6 +60,7 @@
 			"then": {
 				"properties": {
 					"event": {
+						"title": "Event",
 						"$ref": "../../entity/dynamic/eventEnum.json",
 						"description": "Identifier of the event to trigger"
 					}
