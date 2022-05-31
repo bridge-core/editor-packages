@@ -160,16 +160,6 @@
 			"type": "boolean",
 			"default": true
 		},
-		"max_number_of_children": {
-			"title": "Maximum Number of Children",
-			"description": "The maximum number of children the mob will breed.",
-			"type": "integer"
-		},
-		"min_number_of_children": {
-			"title": "Minimum Number of Children",
-			"description": "The minimum number of children the mob will breed.",
-			"type": "integer"
-		},
 		"mutation_factor": {
 			"title": "Mutation Factor",
 			"type": "object",
