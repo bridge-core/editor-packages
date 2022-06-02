@@ -77,7 +77,7 @@
 				},
 				"events": {
 					"type": "object",
-					"anyOf": [
+					"allOf": [
 						{
 							"$ref": "../dynamic/currentContext/eventReferenceProperty.json"
 						},
