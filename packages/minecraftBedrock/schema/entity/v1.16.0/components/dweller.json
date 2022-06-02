@@ -13,12 +13,7 @@
 		"dweller_role": {
 			"title": "Dweller Role",
 			"type": "string",
-			"enum": [
-				"hostile",
-				"inhabitant",
-				"defender",
-				"passive"
-			]
+			"enum": ["hostile", "inhabitant", "defender", "passive"]
 		},
 		"update_interval_base": {
 			"title": "Update Interval Base",

@@ -96,10 +96,10 @@
 						"description": "Determines whether the mob will try to put the item in its inventory if it has the inventory component and if it can't be equipped.",
 						"type": "boolean"
 					},
-                    "pickup_only": {
+					"pickup_only": {
 						"title": "Pickup Only",
-                        "description": "Determines whether the mob can only pickup the item and not drop it.",
-                        "type": "boolean"
+						"description": "Determines whether the mob can only pickup the item and not drop it.",
+						"type": "boolean"
 					}
 				}
 			}

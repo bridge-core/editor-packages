@@ -1,55 +1,55 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "type": "object",
-    "additionalProperties": false,
-    "properties": {
-        "targetVersion": {
-            "anyOf": [
-                {
-                    "type": "array",
-            "minItems": 2,
-            "maxItems": 2,
-            "items": [
-                {
-                    "type": "string",
-                    "description": "Operator"
-                },
-                {
-                    "type": "string",
-                    "description": "Version"
-                }
-            ]
-                },
-                {
-                    "type": "object",
-                    "properties": {
-                        "min": {
-                            "type": "string"
-                        },
-                        "max": {
-                            "type": "string"
-                        }
-                    }
-                }
-            ]
-        },
-        "experimentalGameplay": {
-            "type": "array",
-            "items": {
-                "type": "string"
-            }
-        },
-        "packTypes": {
-            "type": "array",
-            "items": {
-                "type": "string",
-                "enum": [
-                    "worldTemplate",
-                    "behaviorPack",
-                    "resourcePack",
-                    "skinPack"
-                ]
-            }
-        }
-    }
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"targetVersion": {
+			"anyOf": [
+				{
+					"type": "array",
+					"minItems": 2,
+					"maxItems": 2,
+					"items": [
+						{
+							"type": "string",
+							"description": "Operator"
+						},
+						{
+							"type": "string",
+							"description": "Version"
+						}
+					]
+				},
+				{
+					"type": "object",
+					"properties": {
+						"min": {
+							"type": "string"
+						},
+						"max": {
+							"type": "string"
+						}
+					}
+				}
+			]
+		},
+		"experimentalGameplay": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"packTypes": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"worldTemplate",
+					"behaviorPack",
+					"resourcePack",
+					"skinPack"
+				]
+			}
+		}
+	}
 }

@@ -15,14 +15,7 @@
 		"saturation_modifier": {
 			"type": "string",
 			"description": "Saturation Modifier is used in this formula: (nutrition * saturation_modifier * 2) when appling the saturation buff. Which happens when you eat the item.",
-			"enum": [
-				"poor",
-				"low",
-				"normal",
-				"good",
-				"max",
-				"supernatural"
-			]
+			"enum": ["poor", "low", "normal", "good", "max", "supernatural"]
 		},
 		"using_converts_to": {
 			"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers",

@@ -54,10 +54,10 @@
 				}
 			]
 		},
-        "calculate_new_path_radius": {
+		"calculate_new_path_radius": {
 			"title": "Calculate New Path Radius",
 			"description": "Specify a distance in blocks that the mob is considered close enough to the end of the current path. A new path will then be calculated to continue toward home.",
-            "type": "number",
+			"type": "number",
 			"default": 2.0
 		}
 	}

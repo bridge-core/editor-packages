@@ -5,7 +5,7 @@
 		"minecraft:item_storage": {
 			"$ref": "./item_storage.json"
 		},
-        "minecraft:food": {
+		"minecraft:food": {
 			"$ref": "./food.json"
 		},
 		"minecraft:creative_category": {

@@ -15,10 +15,7 @@
 		"control_flags": {
 			"title": "Control Flags",
 			"type": "string",
-			"enum": [
-				"move",
-				"look"
-			]
+			"enum": ["move", "look"]
 		}
 	}
 }

@@ -52,10 +52,7 @@
 			"title": "Target Selection Method",
 			"description": "Kind of block to find fitting the specification.",
 			"type": "string",
-			"enum": [
-				"nearest",
-				"random"
-			],
+			"enum": ["nearest", "random"],
 			"default": "nearest"
 		},
 		"target_offset": {

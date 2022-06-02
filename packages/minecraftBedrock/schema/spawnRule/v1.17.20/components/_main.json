@@ -1,60 +1,60 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "type": "object",
-    "properties": {
-        "minecraft:spawns_above_block_filter": {
-            "$ref": "./spawns_above_block_filter.json"
-        },
-        "minecraft:spawns_on_surface": {
-            "$ref": "../../v1.17.0/components/spawns_on_surface.json"
-        },
-        "minecraft:spawns_underground": {
-            "$ref": "../../v1.17.0/components/spawns_underground.json"
-        },
-        "minecraft:spawns_underwater": {
-            "$ref": "../../v1.17.0/components/spawns_underwater.json"
-        },
-        "minecraft:spawns_on_block_filter": {
-            "$ref": "../../v1.17.0/components/spawns_on_block_filter.json"
-        },
-        "minecraft:spawns_on_block_prevented_filter": {
-            "$ref": "../../v1.17.0/components/spawns_on_block_prevented_filter.json"
-        },
-        "minecraft:brightness_filter": {
-            "$ref": "../../v1.17.0/components/brightness_filter.json"
-        },
-        "minecraft:difficulty_filter": {
-            "$ref": "../../v1.17.0/components/difficulty_filter.json"
-        },
-        "minecraft:weight": {
-            "$ref": "../../v1.17.0/components/weight.json"
-        },
-        "minecraft:herd": {
-            "$ref": "../../v1.17.0/components/herd.json"
-        },
-        "minecraft:density_limit": {
-            "$ref": "../../v1.17.0/components/density_limit.json"
-        },
-        "minecraft:biome_filter": {
-            "$ref": "../../v1.17.0/components/biome_filter.json"
-        },
-        "minecraft:player_in_village_filter": {
-            "$ref": "../../v1.17.0/components/player_in_village_filter.json"
-        },
-        "minecraft:delay_filter": {
-            "$ref": "../../v1.17.0/components/delay_filter.json"
-        },
-        "minecraft:distance_filter": {
-            "$ref": "../../v1.17.0/components/distance_filter.json"
-        },
-        "minecraft:height_filter": {
-            "$ref": "../../v1.17.0/components/height_filter.json"
-        },
-        "minecraft:permute_type": {
-            "$ref": "../../v1.17.0/components/permute_type.json"
-        },
-        "minecraft:world_age_filter": {
-            "$ref": "../../v1.17.0/components/world_age_filter.json"
-        }
-    }
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"minecraft:spawns_above_block_filter": {
+			"$ref": "./spawns_above_block_filter.json"
+		},
+		"minecraft:spawns_on_surface": {
+			"$ref": "../../v1.17.0/components/spawns_on_surface.json"
+		},
+		"minecraft:spawns_underground": {
+			"$ref": "../../v1.17.0/components/spawns_underground.json"
+		},
+		"minecraft:spawns_underwater": {
+			"$ref": "../../v1.17.0/components/spawns_underwater.json"
+		},
+		"minecraft:spawns_on_block_filter": {
+			"$ref": "../../v1.17.0/components/spawns_on_block_filter.json"
+		},
+		"minecraft:spawns_on_block_prevented_filter": {
+			"$ref": "../../v1.17.0/components/spawns_on_block_prevented_filter.json"
+		},
+		"minecraft:brightness_filter": {
+			"$ref": "../../v1.17.0/components/brightness_filter.json"
+		},
+		"minecraft:difficulty_filter": {
+			"$ref": "../../v1.17.0/components/difficulty_filter.json"
+		},
+		"minecraft:weight": {
+			"$ref": "../../v1.17.0/components/weight.json"
+		},
+		"minecraft:herd": {
+			"$ref": "../../v1.17.0/components/herd.json"
+		},
+		"minecraft:density_limit": {
+			"$ref": "../../v1.17.0/components/density_limit.json"
+		},
+		"minecraft:biome_filter": {
+			"$ref": "../../v1.17.0/components/biome_filter.json"
+		},
+		"minecraft:player_in_village_filter": {
+			"$ref": "../../v1.17.0/components/player_in_village_filter.json"
+		},
+		"minecraft:delay_filter": {
+			"$ref": "../../v1.17.0/components/delay_filter.json"
+		},
+		"minecraft:distance_filter": {
+			"$ref": "../../v1.17.0/components/distance_filter.json"
+		},
+		"minecraft:height_filter": {
+			"$ref": "../../v1.17.0/components/height_filter.json"
+		},
+		"minecraft:permute_type": {
+			"$ref": "../../v1.17.0/components/permute_type.json"
+		},
+		"minecraft:world_age_filter": {
+			"$ref": "../../v1.17.0/components/world_age_filter.json"
+		}
+	}
 }

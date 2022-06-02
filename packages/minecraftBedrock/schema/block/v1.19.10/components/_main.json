@@ -2,16 +2,16 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"type": "object",
 	"properties": {
-        "minecraft:part_visibility": {
+		"minecraft:part_visibility": {
 			"$ref": "./part_visibility.json"
 		},
-        "minecraft:light_dampening": {
-            "$ref": "./light_dampening.json"
-        },
-        "minecraft:collision_box": {
-            "$ref": "./collision_box.json"
-        },
-        "minecraft:crafting_table": {
+		"minecraft:light_dampening": {
+			"$ref": "./light_dampening.json"
+		},
+		"minecraft:collision_box": {
+			"$ref": "./collision_box.json"
+		},
+		"minecraft:crafting_table": {
 			"$ref": "./crafting_table.json"
 		},
 		"minecraft:onlypistonpush": {
@@ -26,9 +26,9 @@
 		"minecraft:preventsjumping": {
 			"$ref": "../../v1.18.30/components/preventsjumping.json"
 		},
-        "minecraft:aim_collision": {
-            "$ref": "../../v1.18.10/components/aim_collision.json"
-        },
+		"minecraft:aim_collision": {
+			"$ref": "../../v1.18.10/components/aim_collision.json"
+		},
 		"minecraft:creative_category": {
 			"$ref": "../../v1.16.100/components/creative_category.json"
 		},

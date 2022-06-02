@@ -1,45 +1,45 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "type": "object",
-    "additionalProperties": false,
-    "title": "Eat Mob",
-    "description": "Allows the entity to eat a specified Mob.",
-    "properties": {
-        "priority": { "$ref": "../../general/behaviorPriority.json" },
-        "eat_animation_time": {
-            "title": "Eat Animation Time",
-            "description": "Sets the time in seconds the eat animation should play for.",
-            "type": "number",
-            "default": 1.0
-        },
-        "eat_mob_sound": {
-            "title": "Eat Mob Sound Event",
-            "description": "Sets the sound that should play when eating a mob.",
-            "type": "string",
-            "$ref": "../../../general/reference/soundEvent.json"
-        },
-        "loot_table": {
-            "title": "Loot Table",
-            "description": "The loot table for loot to be dropped when eating a mob.",
-            "$ref": "../../../general/reference/paths.json#/definitions/loot_table_paths"
-        },
-        "pull_in_force": {
-            "title": "Pull In Force",
-            "description": "Sets the force which the mob-to-be-eaten is pulled towards the eating mob.",
-            "type": "number",
-            "default": 1.0
-        },
-        "reach_mob_distance": {
-            "title": "Reach Mob Distance",
-            "description": "Sets the desired distance to be reached before eating the mob.",
-            "type": "number",
-            "default": 1.0
-        },
-        "run_speed": {
-            "title": "Run Speed",
-            "description": "Sets the entity's speed when running toward the target.",
-            "type": "number",
-            "default": 1.0
-        }
-    }
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"title": "Eat Mob",
+	"description": "Allows the entity to eat a specified Mob.",
+	"properties": {
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"eat_animation_time": {
+			"title": "Eat Animation Time",
+			"description": "Sets the time in seconds the eat animation should play for.",
+			"type": "number",
+			"default": 1.0
+		},
+		"eat_mob_sound": {
+			"title": "Eat Mob Sound Event",
+			"description": "Sets the sound that should play when eating a mob.",
+			"type": "string",
+			"$ref": "../../../general/reference/soundEvent.json"
+		},
+		"loot_table": {
+			"title": "Loot Table",
+			"description": "The loot table for loot to be dropped when eating a mob.",
+			"$ref": "../../../general/reference/paths.json#/definitions/loot_table_paths"
+		},
+		"pull_in_force": {
+			"title": "Pull In Force",
+			"description": "Sets the force which the mob-to-be-eaten is pulled towards the eating mob.",
+			"type": "number",
+			"default": 1.0
+		},
+		"reach_mob_distance": {
+			"title": "Reach Mob Distance",
+			"description": "Sets the desired distance to be reached before eating the mob.",
+			"type": "number",
+			"default": 1.0
+		},
+		"run_speed": {
+			"title": "Run Speed",
+			"description": "Sets the entity's speed when running toward the target.",
+			"type": "number",
+			"default": 1.0
+		}
+	}
 }

@@ -70,8 +70,8 @@
 		},
 		"knockback_height_cap": {
 			"title": "Knockback Height Cap",
-            "description": "The maximum height for vertical knockback.",
-            "type": "number",
+			"description": "The maximum height for vertical knockback.",
+			"type": "number",
 			"default": 0.4
 		}
 	}

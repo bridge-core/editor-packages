@@ -40,55 +40,55 @@
 			"description": "Event to run when this mob lays the egg.",
 			"$ref": "../../general/eventDefinition.json"
 		},
-        "allow_laying_from_below": {
-            "title": "Allow Laying From Below",
-            "description": "Allows the mob to lay its eggs from below the target if it can't get there. This is useful if the target block is water with air above, since mobs may not be able to get to the air block above water.",
-            "type": "boolean",
-            "default": false
-        },
-        "egg_type": {
-            "title": "Egg Type",
-            "description": "Block type for the egg to lay. If this is a turtle egg, the number of eggs in the block is randomly set.",
-            "type": "string",
+		"allow_laying_from_below": {
+			"title": "Allow Laying From Below",
+			"description": "Allows the mob to lay its eggs from below the target if it can't get there. This is useful if the target block is water with air above, since mobs may not be able to get to the air block above water.",
+			"type": "boolean",
+			"default": false
+		},
+		"egg_type": {
+			"title": "Egg Type",
+			"description": "Block type for the egg to lay. If this is a turtle egg, the number of eggs in the block is randomly set.",
+			"type": "string",
 			"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers",
-            "default": "minecraft:turtle_egg"
-        },
-        "lay_egg_sound": {
-            "title": "Lay Egg Sound Event",
-            "description": "Sound event name for laying egg. Defaulted to lay_egg which is used for Turtles.",
-            "type": "string",
+			"default": "minecraft:turtle_egg"
+		},
+		"lay_egg_sound": {
+			"title": "Lay Egg Sound Event",
+			"description": "Sound event name for laying egg. Defaulted to lay_egg which is used for Turtles.",
+			"type": "string",
 			"$ref": "../../../general/reference/soundEvent.json",
-            "default": "lay_egg"
-        },
-        "lay_seconds": {
-            "title": "Lay Seconds",
-            "description": "Duration of the laying egg process in seconds.",
-            "type": "number",
-            "default": 10.0
-        },
-        "target_blocks": {
-            "title": "Target Blocks",
-            "description": "Blocks that the mob can lay its eggs on top of.",
-            "type": "array",
-            "items": {
-                "type": "string",
-			    "$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
-            }
-        },
-        "target_materials_above_block": {
-            "title": "Target Materials Above Block",
-            "description": "Types of materials that can exist above the target block.",
-            "type": "array",
-            "items": {
-                "type": "string",
-                "enum": ["Air", "Water", "Lava"]
-            }
-        },
-        "use_default_animation": {
-            "title": "Use Default Animation",
-            "description": "Specifies if the default lay-egg animation should be played when the egg is placed or not.",
-            "type": "boolean",
-            "default": true
-        }
+			"default": "lay_egg"
+		},
+		"lay_seconds": {
+			"title": "Lay Seconds",
+			"description": "Duration of the laying egg process in seconds.",
+			"type": "number",
+			"default": 10.0
+		},
+		"target_blocks": {
+			"title": "Target Blocks",
+			"description": "Blocks that the mob can lay its eggs on top of.",
+			"type": "array",
+			"items": {
+				"type": "string",
+				"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+			}
+		},
+		"target_materials_above_block": {
+			"title": "Target Materials Above Block",
+			"description": "Types of materials that can exist above the target block.",
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["Air", "Water", "Lava"]
+			}
+		},
+		"use_default_animation": {
+			"title": "Use Default Animation",
+			"description": "Specifies if the default lay-egg animation should be played when the egg is placed or not.",
+			"type": "boolean",
+			"default": true
+		}
 	}
 }

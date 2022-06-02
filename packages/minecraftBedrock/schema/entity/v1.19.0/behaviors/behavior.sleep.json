@@ -45,10 +45,10 @@
 			"description": "The y offset of the mob's collider while sleeping.",
 			"type": "number"
 		},
-        "can_sleep_while_riding": {
+		"can_sleep_while_riding": {
 			"title": "Can Sleep While Riding",
-            "description": "If true, the mob will be able to use the sleep goal if riding something.",
-            "type": "boolean",
+			"description": "If true, the mob will be able to use the sleep goal if riding something.",
+			"type": "boolean",
 			"default": false
 		}
 	}

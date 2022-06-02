@@ -4,7 +4,7 @@
 	"type": "integer",
 	"title": "Block Light Filter",
 	"description": "The amount of light this block will filter out. Higher value means more light will be filtered out.",
-    "minimum": 0,
-    "maximum": 15,
+	"minimum": 0,
+	"maximum": 15,
 	"default": 0
 }

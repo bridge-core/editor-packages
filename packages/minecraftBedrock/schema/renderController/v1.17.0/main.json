@@ -2,7 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"title": "Render Controller",
 	"type": "object",
-	"properties": {	
+	"properties": {
 		"render_controllers": {
 			"patternProperties": {
 				"^controller.render\\..+$": {

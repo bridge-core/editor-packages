@@ -4,7 +4,7 @@
 	"description": "Deals damage to the target",
 	"additionalProperties": false,
 	"properties": {
-		"type": { 
+		"type": {
 			"$ref": "../../general/vanilla/damageType.json",
 			"description": "The type of damage to deal."
 		},
@@ -23,9 +23,9 @@
 				}
 			]
 		},
-        "mob_amount": {
-            "type": "integer",
-            "description": "The amount of damage to deal if held by a mob."
-        }
+		"mob_amount": {
+			"type": "integer",
+			"description": "The amount of damage to deal if held by a mob."
+		}
 	}
 }

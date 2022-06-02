@@ -14,15 +14,15 @@
 		"minecraft:preventsjumping": {
 			"$ref": "./preventsjumping.json"
 		},
-        "minecraft:block_light_filter": {
-            "$ref": "../../v1.18.10/components/block_light_filter.json"
-        },
-        "minecraft:aim_collision": {
-            "$ref": "../../v1.18.10/components/aim_collision.json"
-        },
-        "minecraft:block_collision": {
-            "$ref": "../../v1.18.10/components/block_collision.json"
-        },
+		"minecraft:block_light_filter": {
+			"$ref": "../../v1.18.10/components/block_light_filter.json"
+		},
+		"minecraft:aim_collision": {
+			"$ref": "../../v1.18.10/components/aim_collision.json"
+		},
+		"minecraft:block_collision": {
+			"$ref": "../../v1.18.10/components/block_collision.json"
+		},
 		"minecraft:part_visibility": {
 			"$ref": "../../v1.16.100/components/part_visibility.json"
 		},

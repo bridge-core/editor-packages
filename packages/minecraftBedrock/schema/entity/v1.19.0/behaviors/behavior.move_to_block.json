@@ -52,10 +52,7 @@
 			"title": "Target Selection Method",
 			"description": "Kind of block to find fitting the specification.",
 			"type": "string",
-			"enum": [
-				"nearest",
-				"random"
-			],
+			"enum": ["nearest", "random"],
 			"default": "nearest"
 		},
 		"target_offset": {
@@ -107,10 +104,10 @@
 				}
 			]
 		},
-        "target_block_filters": {
+		"target_block_filters": {
 			"title": "Target Block Filters",
-            "description": "Filter which blocks can be targeted.",
-            "anyOf": [
+			"description": "Filter which blocks can be targeted.",
+			"anyOf": [
 				{
 					"$ref": "../../general/filter.json"
 				},

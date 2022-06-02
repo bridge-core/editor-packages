@@ -23,7 +23,7 @@
 			"type": "number"
 		},
 		"initial_event": {
-            "type": "string",
+			"type": "string",
 			"$ref": "../../../entity/dynamic/eventEnum.json"
 		}
 	}

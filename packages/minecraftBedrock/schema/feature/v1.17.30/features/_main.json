@@ -1,75 +1,75 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "type": "object",
-    "properties": {
-        "minecraft:catalyst_feature": {
-            "$ref": "./catalyst_feature.json"
-        },
-        "minecraft:sculk_patch_feature": {
-            "$ref": "./sculk_patch_feature.json"
-        },
-        "minecraft:geode_feature": {
-            "$ref": "../../v1.17.0/features/geode_feature.json"
-        },
-        "minecraft:vegetation_patch_feature": {
-            "$ref": "../../v1.17.0/features/vegetation_patch_feature.json"
-        },
-        "minecraft:multiface_feature": {
-            "$ref": "../../v1.17.0/features/multiface_feature.json"
-        },
-        "minecraft:beards_and_shavers": {
-            "$ref": "../../v1.17.0/features/beards_and_shavers.json"
-        },
-        "minecraft:rect_layout": {
-            "$ref": "../../v1.17.0/features/rect_layout.json"
-        },
-        "minecraft:conditional_list": {
-            "$ref": "../../v1.17.0/features/conditional_list.json"
-        },
-        "minecraft:scan_surface": {
-            "$ref": "../../v1.17.0/features/scan_surface.json"
-        },
-        "minecraft:cave_carver_feature": {
-            "$ref": "../../v1.16.220/features/cave_carver_feature.json"
-        },
-        "minecraft:hell_cave_carver_feature": {
-            "$ref": "../../v1.16.220/features/hell_cave_carver_feature.json"
-        },
-        "minecraft:underwater_cave_carver_feature": {
-            "$ref": "../../v1.16.220/features/underwater_cave_carver_feature.json"
-        },
-        "minecraft:growing_plant_feature": {
-            "$ref": "../../v1.16.220/features/growing_plant_feature.json"
-        },
-        "minecraft:snap_to_surface_feature": {
-            "$ref": "../../v1.16.220/features/snap_to_surface_feature.json"
-        },
-        "minecraft:ore_feature": {
-            "$ref": "../../v1.16.220/features/ore_feature.json"
-        },
-        "minecraft:aggregate_feature": {
-            "$ref": "../../v1.16.0/features/aggregate_feature.json"
-        },
-        "minecraft:sequence_feature": {
-            "$ref": "../../v1.16.0/features/sequence_feature.json"
-        },
-        "minecraft:scatter_feature": {
-            "$ref": "../../v1.16.0/features/scatter_feature.json"
-        },
-        "minecraft:search_feature": {
-            "$ref": "../../v1.16.0/features/search_feature.json"
-        },
-        "minecraft:single_block_feature": {
-            "$ref": "../../v1.16.0/features/single_block_feature.json"
-        },
-        "minecraft:structure_template_feature": {
-            "$ref": "../../v1.16.0/features/structure_template_feature.json"
-        },
-        "minecraft:tree_feature": {
-            "$ref": "../../v1.16.0/features/tree_feature.json"
-        },
-        "minecraft:weighted_random_feature": {
-            "$ref": "../../v1.16.0/features/weighted_random_feature.json"
-        }
-    }
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"minecraft:catalyst_feature": {
+			"$ref": "./catalyst_feature.json"
+		},
+		"minecraft:sculk_patch_feature": {
+			"$ref": "./sculk_patch_feature.json"
+		},
+		"minecraft:geode_feature": {
+			"$ref": "../../v1.17.0/features/geode_feature.json"
+		},
+		"minecraft:vegetation_patch_feature": {
+			"$ref": "../../v1.17.0/features/vegetation_patch_feature.json"
+		},
+		"minecraft:multiface_feature": {
+			"$ref": "../../v1.17.0/features/multiface_feature.json"
+		},
+		"minecraft:beards_and_shavers": {
+			"$ref": "../../v1.17.0/features/beards_and_shavers.json"
+		},
+		"minecraft:rect_layout": {
+			"$ref": "../../v1.17.0/features/rect_layout.json"
+		},
+		"minecraft:conditional_list": {
+			"$ref": "../../v1.17.0/features/conditional_list.json"
+		},
+		"minecraft:scan_surface": {
+			"$ref": "../../v1.17.0/features/scan_surface.json"
+		},
+		"minecraft:cave_carver_feature": {
+			"$ref": "../../v1.16.220/features/cave_carver_feature.json"
+		},
+		"minecraft:hell_cave_carver_feature": {
+			"$ref": "../../v1.16.220/features/hell_cave_carver_feature.json"
+		},
+		"minecraft:underwater_cave_carver_feature": {
+			"$ref": "../../v1.16.220/features/underwater_cave_carver_feature.json"
+		},
+		"minecraft:growing_plant_feature": {
+			"$ref": "../../v1.16.220/features/growing_plant_feature.json"
+		},
+		"minecraft:snap_to_surface_feature": {
+			"$ref": "../../v1.16.220/features/snap_to_surface_feature.json"
+		},
+		"minecraft:ore_feature": {
+			"$ref": "../../v1.16.220/features/ore_feature.json"
+		},
+		"minecraft:aggregate_feature": {
+			"$ref": "../../v1.16.0/features/aggregate_feature.json"
+		},
+		"minecraft:sequence_feature": {
+			"$ref": "../../v1.16.0/features/sequence_feature.json"
+		},
+		"minecraft:scatter_feature": {
+			"$ref": "../../v1.16.0/features/scatter_feature.json"
+		},
+		"minecraft:search_feature": {
+			"$ref": "../../v1.16.0/features/search_feature.json"
+		},
+		"minecraft:single_block_feature": {
+			"$ref": "../../v1.16.0/features/single_block_feature.json"
+		},
+		"minecraft:structure_template_feature": {
+			"$ref": "../../v1.16.0/features/structure_template_feature.json"
+		},
+		"minecraft:tree_feature": {
+			"$ref": "../../v1.16.0/features/tree_feature.json"
+		},
+		"minecraft:weighted_random_feature": {
+			"$ref": "../../v1.16.0/features/weighted_random_feature.json"
+		}
+	}
 }

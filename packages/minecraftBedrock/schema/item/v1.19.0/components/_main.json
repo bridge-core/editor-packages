@@ -11,7 +11,7 @@
 		"minecraft:item_storage": {
 			"$ref": "../../v1.18.10/components/item_storage.json"
 		},
-        "minecraft:food": {
+		"minecraft:food": {
 			"$ref": "../../v1.18.10/components/food.json"
 		},
 		"minecraft:creative_category": {

@@ -43,44 +43,44 @@
 		"horizontal_radius": {
 			"type": "integer"
 		},
-        "can_place_sculk_patch_on": {
-            "type": "array",
-            "items": {
-                "$ref": "../../general.json#/definitions/block_reference"
-            }
-        },
-        "central_block": {
-            "$ref": "../../general.json#/definitions/block_reference"
-        },
-        "central_block_placement_chance": {
-            "type": "number",
-            "minimum": 0,
-            "maximum": 1
-        },
-        "cursor_count": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 32
-        },
-        "charge_amount": {
-            "type": "integer",
-            "minimum": 1,
-            "maximum": 100
-        },
-        "spread_attempts": {
-            "type": "integer",
-            "minimum": 1,
-            "maximum": 64
-        },
-        "growth_rounds": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 8
-        },
-        "spread_rounds": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 8
-        }
+		"can_place_sculk_patch_on": {
+			"type": "array",
+			"items": {
+				"$ref": "../../general.json#/definitions/block_reference"
+			}
+		},
+		"central_block": {
+			"$ref": "../../general.json#/definitions/block_reference"
+		},
+		"central_block_placement_chance": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 1
+		},
+		"cursor_count": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 32
+		},
+		"charge_amount": {
+			"type": "integer",
+			"minimum": 1,
+			"maximum": 100
+		},
+		"spread_attempts": {
+			"type": "integer",
+			"minimum": 1,
+			"maximum": 64
+		},
+		"growth_rounds": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 8
+		},
+		"spread_rounds": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 8
+		}
 	}
 }

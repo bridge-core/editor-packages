@@ -27,7 +27,7 @@
 			"title": "Goal Radius",
 			"description": "Distance in blocks within the entity considers it has reached it's target position.",
 			"type": "number",
-			"default": 0.50
+			"default": 0.5
 		},
 		"loot_table": {
 			"title": "Loot Table",

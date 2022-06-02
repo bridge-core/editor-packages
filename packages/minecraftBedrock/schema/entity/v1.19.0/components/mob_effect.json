@@ -27,10 +27,10 @@
 			"description": "The set of entities that are valid to apply the mob effect to.",
 			"$ref": "../../general/filter.json"
 		},
-        "cooldown_time": {
+		"cooldown_time": {
 			"title": "Cooldown Time",
-            "description": "Time in seconds to wait between each application of the effect.",
-            "type": "integer",
+			"description": "Time in seconds to wait between each application of the effect.",
+			"type": "integer",
 			"default": 0
 		}
 	}

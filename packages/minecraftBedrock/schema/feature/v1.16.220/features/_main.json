@@ -1,48 +1,48 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "type": "object",
-    "properties": {
-        "minecraft:cave_carver_feature": {
-            "$ref": "./cave_carver_feature.json"
-        },
-        "minecraft:hell_cave_carver_feature": {
-            "$ref": "./hell_cave_carver_feature.json"
-        },
-        "minecraft:underwater_cave_carver_feature": {
-            "$ref": "./underwater_cave_carver_feature.json"
-        },
-        "minecraft:growing_plant_feature": {
-            "$ref": "./growing_plant_feature.json"
-        },
-        "minecraft:snap_to_surface_feature": {
-            "$ref": "./snap_to_surface_feature.json"
-        },
-        "minecraft:ore_feature": {
-            "$ref": "./ore_feature.json"
-        },
-        "minecraft:aggregate_feature": {
-            "$ref": "../../v1.16.0/features/aggregate_feature.json"
-        },
-        "minecraft:sequence_feature": {
-            "$ref": "../../v1.16.0/features/sequence_feature.json"
-        },
-        "minecraft:scatter_feature": {
-            "$ref": "../../v1.16.0/features/scatter_feature.json"
-        },
-        "minecraft:search_feature": {
-            "$ref": "../../v1.16.0/features/search_feature.json"
-        },
-        "minecraft:single_block_feature": {
-            "$ref": "../../v1.16.0/features/single_block_feature.json"
-        },
-        "minecraft:structure_template_feature": {
-            "$ref": "../../v1.16.0/features/structure_template_feature.json"
-        },
-        "minecraft:tree_feature": {
-            "$ref": "../../v1.16.0/features/tree_feature.json"
-        },
-        "minecraft:weighted_random_feature": {
-            "$ref": "../../v1.16.0/features/weighted_random_feature.json"
-        }
-    }
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"minecraft:cave_carver_feature": {
+			"$ref": "./cave_carver_feature.json"
+		},
+		"minecraft:hell_cave_carver_feature": {
+			"$ref": "./hell_cave_carver_feature.json"
+		},
+		"minecraft:underwater_cave_carver_feature": {
+			"$ref": "./underwater_cave_carver_feature.json"
+		},
+		"minecraft:growing_plant_feature": {
+			"$ref": "./growing_plant_feature.json"
+		},
+		"minecraft:snap_to_surface_feature": {
+			"$ref": "./snap_to_surface_feature.json"
+		},
+		"minecraft:ore_feature": {
+			"$ref": "./ore_feature.json"
+		},
+		"minecraft:aggregate_feature": {
+			"$ref": "../../v1.16.0/features/aggregate_feature.json"
+		},
+		"minecraft:sequence_feature": {
+			"$ref": "../../v1.16.0/features/sequence_feature.json"
+		},
+		"minecraft:scatter_feature": {
+			"$ref": "../../v1.16.0/features/scatter_feature.json"
+		},
+		"minecraft:search_feature": {
+			"$ref": "../../v1.16.0/features/search_feature.json"
+		},
+		"minecraft:single_block_feature": {
+			"$ref": "../../v1.16.0/features/single_block_feature.json"
+		},
+		"minecraft:structure_template_feature": {
+			"$ref": "../../v1.16.0/features/structure_template_feature.json"
+		},
+		"minecraft:tree_feature": {
+			"$ref": "../../v1.16.0/features/tree_feature.json"
+		},
+		"minecraft:weighted_random_feature": {
+			"$ref": "../../v1.16.0/features/weighted_random_feature.json"
+		}
+	}
 }

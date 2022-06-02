@@ -6,7 +6,7 @@
 	"properties": {
 		"target": {
 			"description": "The target context to execute against.",
-			"$ref": "../../general/filter/subject.json" 
+			"$ref": "../../general/filter/subject.json"
 		}
 	}
 }

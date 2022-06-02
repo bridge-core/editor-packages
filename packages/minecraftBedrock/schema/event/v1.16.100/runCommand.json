@@ -16,7 +16,7 @@
 					"type": "string",
 					"$ref": "../../general/vanilla/command.json"
 				}
-			]	
+			]
 		},
 		"target": {
 			"description": "The target context to execute against.",

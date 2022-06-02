@@ -14,7 +14,7 @@
 		},
 		"saturation_modifier": {
 			"description": "Saturation Modifier is used in this formula: (nutrition * saturation_modifier * 2) when applying the saturation buff.",
-            "type": "number"
+			"type": "number"
 		},
 		"using_converts_to": {
 			"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers",

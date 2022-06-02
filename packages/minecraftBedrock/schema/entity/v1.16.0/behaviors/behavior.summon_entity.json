@@ -64,7 +64,7 @@
 						"type": "string",
 						"$ref": "../../../general/reference/soundEvent.json"
 					},
-					"sequence": { 
+					"sequence": {
 						"title": "Sequence",
 						"type": "array",
 						"description": "List of steps for the spell.",
@@ -76,10 +76,7 @@
 									"title": "Shape",
 									"description": "The base shape of this step. Valid values are circle and line.",
 									"type": "string",
-									"enum": [
-										"circle",
-										"line"
-									],
+									"enum": ["circle", "line"],
 									"default": "line"
 								},
 								"target": {

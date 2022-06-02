@@ -1,7 +1,7 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "additionalProperties": false,
-    "title": "Immovable",
-    "doNotSuggest": true,
-    "deprecationMessage": "Deprecated as of v1.18.30.22 - An Immovable block cannot be pushed by pistons."
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"title": "Immovable",
+	"doNotSuggest": true,
+	"deprecationMessage": "Deprecated as of v1.18.30.22 - An Immovable block cannot be pushed by pistons."
 }

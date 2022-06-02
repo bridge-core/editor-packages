@@ -1,57 +1,57 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "type": "object",
-    "additionalProperties": false,
-    "description": "Sets the vertical throw force.",
-    "title": "Go And Give Items To Owner",
-    "properties": {
-        "priority": { "$ref": "../../general/behaviorPriority.json" },
-        "on_item_throw": {
-            "title": "Event: On Item Throw",
-            "description": "Event(s) to run when this mob throws items.",
-            "anyOf": [
-                {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "$ref": "../../general/eventDefinition.json"
-                    }
-                },
-                {
-                    "type": "object",
-                    "$ref": "../../general/eventDefinition.json"
-                }
-            ]
-        },
-        "reach_mob_distance": {
-            "title": "Reach Mob Distance",
-            "description": "Sets the desired distance to be reached before giving items to owner.",
-            "type": "number",
-            "default": 3.0
-        },
-        "run_speed": {
-            "title": "Run Speed",
-            "description": "Sets the entity's speed when running toward the owner.",
-            "type": "number",
-            "default": 1.0
-        },
-        "throw_force": {
-            "title": "Throw Force",
-            "description": "Sets the throw force.",
-            "type": "number",
-            "default": 0.2
-        },
-        "vertical_throw_mul": {
-            "title": "Vertical Throw Multiplier",
-            "description": "Sets the vertical throw multiplier that is applied on top of the throw force in the vertical direction.",
-            "type": "number",
-            "default": 1.5
-        },
-        "throw_sound": {
-            "title": "Throw Sound Event",
-            "description": "Sound to play when this mob throws an item.",
-            "type": "string",
-            "$ref": "../../../general/reference/soundEvent.json"
-        }
-    }
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"description": "Sets the vertical throw force.",
+	"title": "Go And Give Items To Owner",
+	"properties": {
+		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"on_item_throw": {
+			"title": "Event: On Item Throw",
+			"description": "Event(s) to run when this mob throws items.",
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"type": "object",
+						"$ref": "../../general/eventDefinition.json"
+					}
+				},
+				{
+					"type": "object",
+					"$ref": "../../general/eventDefinition.json"
+				}
+			]
+		},
+		"reach_mob_distance": {
+			"title": "Reach Mob Distance",
+			"description": "Sets the desired distance to be reached before giving items to owner.",
+			"type": "number",
+			"default": 3.0
+		},
+		"run_speed": {
+			"title": "Run Speed",
+			"description": "Sets the entity's speed when running toward the owner.",
+			"type": "number",
+			"default": 1.0
+		},
+		"throw_force": {
+			"title": "Throw Force",
+			"description": "Sets the throw force.",
+			"type": "number",
+			"default": 0.2
+		},
+		"vertical_throw_mul": {
+			"title": "Vertical Throw Multiplier",
+			"description": "Sets the vertical throw multiplier that is applied on top of the throw force in the vertical direction.",
+			"type": "number",
+			"default": 1.5
+		},
+		"throw_sound": {
+			"title": "Throw Sound Event",
+			"description": "Sound to play when this mob throws an item.",
+			"type": "string",
+			"$ref": "../../../general/reference/soundEvent.json"
+		}
+	}
 }

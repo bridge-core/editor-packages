@@ -1,23 +1,23 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "definitions": {
-        "item_tags": {
-            "type": "string",
-            "anyOf": [
-                // TODO - vanilla tags
-                {
-                    "$ref": "../../item/dynamic/tagEnum.json"
-                }
-            ]
-        },
-        "block_tags": {
-            "type": "string",
-            "anyOf": [
-                // TODO - vanilla tags
-                {
-                    "$ref": "../../block/dynamic/tagEnum.json"
-                }
-            ]
-        }
-    }
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"definitions": {
+		"item_tags": {
+			"type": "string",
+			"anyOf": [
+				// TODO - vanilla tags
+				{
+					"$ref": "../../item/dynamic/tagEnum.json"
+				}
+			]
+		},
+		"block_tags": {
+			"type": "string",
+			"anyOf": [
+				// TODO - vanilla tags
+				{
+					"$ref": "../../block/dynamic/tagEnum.json"
+				}
+			]
+		}
+	}
 }

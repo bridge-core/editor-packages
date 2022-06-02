@@ -4,18 +4,12 @@
 	"type": "object",
 	"description": "The offset of the item rendered in an entity's hand.",
 	"propertyNames": {
-		"enum": [
-			"main_hand",
-			"off_hand"
-		]
+		"enum": ["main_hand", "off_hand"]
 	},
 	"patternProperties": {
 		".*": {
 			"propertyNames": {
-				"enum": [
-					"first_person",
-					"third_person"
-				]
+				"enum": ["first_person", "third_person"]
 			},
 			"patternProperties": {
 				".*": {

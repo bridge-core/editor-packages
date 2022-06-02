@@ -246,7 +246,7 @@
 								},
 								"ambient": {
 									"title": "Ambient",
-									"type":"boolean"
+									"type": "boolean"
 								},
 								"visible": {
 									"title": "Visible",
@@ -345,10 +345,7 @@
 									"shape": {
 										"title": "Shape",
 										"type": "string",
-										"enum": [
-											"sphere",
-											"cube"
-										]
+										"enum": ["sphere", "cube"]
 									},
 									"snap_to_block": {
 										"title": "Snap To Block",

@@ -129,12 +129,12 @@
 					"title": "Take Item",
 					"description": "Whether it is possible to take items from an entity's main hand slot.",
 					"type": "boolean"
-                },
-                "vibration": {
+				},
+				"vibration": {
 					"title": "Vibration",
-                    "description": "Vibration to emit when the interaction occurs. Admitted values are entity_interact (used by default), shear, and none (no vibration emitted).",
-                    "type": "string",
-                    "enum": ["entity_interact", "shear", "none"],
+					"description": "Vibration to emit when the interaction occurs. Admitted values are entity_interact (used by default), shear, and none (no vibration emitted).",
+					"type": "string",
+					"enum": ["entity_interact", "shear", "none"],
 					"default": "entity_interact"
 				}
 			}

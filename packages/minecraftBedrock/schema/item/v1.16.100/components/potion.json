@@ -6,11 +6,7 @@
 	"properties": {
 		"type": {
 			"type": "string",
-			"enum": [
-				"lingering",
-				"regular",
-				"splash"
-			]
+			"enum": ["lingering", "regular", "splash"]
 		}
 	}
 }

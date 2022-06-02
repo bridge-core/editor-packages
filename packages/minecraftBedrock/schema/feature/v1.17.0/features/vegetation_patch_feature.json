@@ -1,86 +1,86 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "additionalProperties": false,
-    "type": "object",
-    "properties": {
-        "description": {
-            "additionalProperties": false,
-            "type": "object",
-            "properties": {
-                "identifier": {
-                    // Needs to strictly match file name - don't change reference to "general/reference..." schema
-                    "$ref": "../../../project/prefixedFileIdentifierEnum.json"
-                }
-            }
-        },
-        "replaceable_blocks": {
-            "type": "array",
-            "items": {
-                "$ref": "../../general.json#/definitions/block_reference"
-            }
-        },
-        "ground_block": {
-            "$ref": "../../general.json#/definitions/block_reference"
-        },
-        "vegetation_feature": {
-            "$ref": "../../../general/reference/identifiers.json#/definitions/feature_identifiers"
-        },
-        "surface": {
-            "type": "string",
-            "enum": ["floor", "ceiling"]
-        },
-        "depth": {
-            "anyOf": [
-                {
-                    "type": "number"
-                },
-                {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                        "range_min": {
-                            "type": "number"
-                        },
-                        "range_max": {
-                            "type": "number"
-                        }
-                    }
-                }
-            ]
-        },
-        "extra_deep_block_chance": {
-            "type": "number"
-        },
-        "vertical_range": {
-            "type": "integer"
-        },
-        "vegetation_chance": {
-            "type": "number"
-        },
-        "horizontal_radius": {
-            "anyOf": [
-                {
-                    "type": "number"
-                },
-                {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                        "range_min": {
-                            "type": "number"
-                        },
-                        "range_max": {
-                            "type": "number"
-                        }
-                    }
-                }
-            ]
-        },
-        "extra_edge_column_chance": {
-            "type": "number"
-        },
-        "waterlogged": {
-            "type": "boolean"
-        }
-    }
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"type": "object",
+	"properties": {
+		"description": {
+			"additionalProperties": false,
+			"type": "object",
+			"properties": {
+				"identifier": {
+					// Needs to strictly match file name - don't change reference to "general/reference..." schema
+					"$ref": "../../../project/prefixedFileIdentifierEnum.json"
+				}
+			}
+		},
+		"replaceable_blocks": {
+			"type": "array",
+			"items": {
+				"$ref": "../../general.json#/definitions/block_reference"
+			}
+		},
+		"ground_block": {
+			"$ref": "../../general.json#/definitions/block_reference"
+		},
+		"vegetation_feature": {
+			"$ref": "../../../general/reference/identifiers.json#/definitions/feature_identifiers"
+		},
+		"surface": {
+			"type": "string",
+			"enum": ["floor", "ceiling"]
+		},
+		"depth": {
+			"anyOf": [
+				{
+					"type": "number"
+				},
+				{
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"range_min": {
+							"type": "number"
+						},
+						"range_max": {
+							"type": "number"
+						}
+					}
+				}
+			]
+		},
+		"extra_deep_block_chance": {
+			"type": "number"
+		},
+		"vertical_range": {
+			"type": "integer"
+		},
+		"vegetation_chance": {
+			"type": "number"
+		},
+		"horizontal_radius": {
+			"anyOf": [
+				{
+					"type": "number"
+				},
+				{
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"range_min": {
+							"type": "number"
+						},
+						"range_max": {
+							"type": "number"
+						}
+					}
+				}
+			]
+		},
+		"extra_edge_column_chance": {
+			"type": "number"
+		},
+		"waterlogged": {
+			"type": "boolean"
+		}
+	}
 }
