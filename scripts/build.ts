@@ -1,19 +1,19 @@
 import { zipFolder } from './components/Zip/ZipFolder.ts'
 import { packageDirectory } from './components/Packager/Packager.ts'
 
-export async function build(outputPath: string) {
+export async function build(zipOutputPath: string, packageSizeOutputPath: string) {
 	try {
 		await Deno.remove('./dist')
 		await Deno.mkdir('./dist', { recursive: true })
 	} catch {}
 
 	await packageDirectory('./packages', './dist')
-	await zipFolder('./dist', outputPath)
+	await zipFolder('./dist', zipOutputPath)
 
 	// Get ZIP size
-	const stat = await Deno.stat(outputPath)
+	const stat = await Deno.stat(zipOutputPath)
 	await Deno.writeTextFile(
-		'./dataPackage.ts',
+		packageSizeOutputPath,
 		`export const zipSize = ${stat.size}`
 	)
 
@@ -27,5 +27,5 @@ export async function build(outputPath: string) {
 }
 
 if (import.meta.main) {
-	await build('./packages.zip')
+	await build('./packages.zip', './dataPackage.ts')
 }

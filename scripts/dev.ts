@@ -1,6 +1,6 @@
 import { config } from 'dotenv'
 import { debounce } from 'lodash'
-import { relative, basename, join } from 'path'
+import { basename, join } from 'path'
 import { build } from './build.ts'
 
 const { EDITOR_DIR } = config({ safe: true })
@@ -10,10 +10,10 @@ const ingoreFiles = new Set(['.DS_Store'])
 let events: Record<string, Deno.FsEvent['kind']> = {}
 
 const update = debounce(async () => {
-	await build(join(EDITOR_DIR, './public/packages.zip'))
+	await build(join(EDITOR_DIR, './public/packages.zip'), join(EDITOR_DIR, './src/utils/app/dataPackage.ts'))
 }, 1000)
 
-await build(join(EDITOR_DIR, './public/packages.zip'))
+await build(join(EDITOR_DIR, './public/packages.zip'), join(EDITOR_DIR, './src/utils/app/dataPackage.ts'))
 
 for await (const event of watcher) {
 	if (event.kind === 'access' || event.kind === 'any') continue
