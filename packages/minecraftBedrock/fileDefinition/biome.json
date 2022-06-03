@@ -1,6 +1,6 @@
 {
 	"id": "biome",
-	"icon": "mdi-earth-box",
+	"icon": "mdi-island",
 	"detect": {
 		"packType": "behaviorPack",
 		"scope": "biomes/",

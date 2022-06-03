@@ -1,6 +1,6 @@
 {
 	"id": "dimension",
-	"icon": "mdi-island",
+	"icon": "mdi-earth-box",
 	"detect": {
 		"packType": "behaviorPack",
 		"scope": "dimensions/",
