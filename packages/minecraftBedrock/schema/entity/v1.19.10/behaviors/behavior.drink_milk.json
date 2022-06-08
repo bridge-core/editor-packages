@@ -2,13 +2,20 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"title": "Drink Milk",
 	"type": "object",
-	"description": "Allows the mob to drink milk to remove potion effects based on specified environment conditions.",
+	"description": "Allows the mob to drink milk based on specified environment conditions.",
 	"additionalProperties": false,
 	"properties": {
 		"priority": { "$ref": "../../general/behaviorPriority.json" },
 		"filters": {
 			"title": "Filters",
+			"description": "Conditions that need to be met for the behavior to start.",
 			"$ref": "../../general/filter.json"
+		},
+		"cooldown_seconds": {
+			"title": "Cooldown",
+			"description": "Time (in seconds) that the goal is on cooldown before it can be used again.",
+			"type": "number",
+			"default": 5.0
 		}
 	}
 }

@@ -4,7 +4,7 @@
 	"additionalProperties": false,
 	"description": "The amount that light will be dampened when it passes through the block, in a range (0-15). Higher value means the light will be dampened more.",
 	"title": "Light Dampening",
-	"default": 0.0,
+	"default": 15,
 	"minimum": 0,
 	"maximum": 15
 }
