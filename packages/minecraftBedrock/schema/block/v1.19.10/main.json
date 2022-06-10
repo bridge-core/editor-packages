@@ -49,7 +49,7 @@
 						"properties": {
 							"condition": {
 								"description": "MoLang condition",
-								"type": "string"
+								"$ref": "../../molang/embedded.json"
 							},
 							"components": {
 								"description": "Components to add when the condition evaluates to 'true'",

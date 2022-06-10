@@ -3,8 +3,8 @@
 	"type": "object",
 	"properties": {
 		"condition": {
-			"type": "string",
-			"description": "This MoLang expression has to evaluate to 'true' in order for the event to run"
+			"description": "This MoLang expression has to evaluate to 'true' in order for the event to run.",
+			"$ref": "../../molang/embedded.json"
 		},
 		"target": {
 			"description": "Target to trigger the event on.",
