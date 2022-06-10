@@ -1,5 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"type": "boolean",
+	"type": "object",
+	"additionalProperties": false,
 	"description": "No features will be automatically attached to this Biome, only features specified in the minecraft:forced_features component will appear."
 }
