@@ -1,7 +1,10 @@
 import { zipFolder } from './components/Zip/ZipFolder.ts'
 import { packageDirectory } from './components/Packager/Packager.ts'
 
-export async function build(zipOutputPath: string, packageSizeOutputPath: string) {
+export async function build(
+	zipOutputPath: string,
+	packageSizeOutputPath: string
+) {
 	try {
 		await Deno.remove('./dist')
 		await Deno.mkdir('./dist', { recursive: true })

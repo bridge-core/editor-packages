@@ -45,7 +45,7 @@ export class GameScraper {
 			}
 			const filtered = target.filter
 				? // @ts-ignore
-				  output.filter((i) => i ? target.filter(i) : false)
+				  output.filter((i) => (i ? target.filter(i) : false))
 				: output
 
 			const mapped = target.map
@@ -106,7 +106,11 @@ export class GameScraper {
 		}
 	}
 
-	async scrapeFile(fullPath: string, contentPath: string | string[], fileName?: string) {
+	async scrapeFile(
+		fullPath: string,
+		contentPath: string | string[],
+		fileName?: string
+	) {
 		let output: string[] = []
 		const jsonData = json5.parse(
 			await Deno.readTextFile(join(fullPath, fileName ?? ''))
@@ -114,7 +118,8 @@ export class GameScraper {
 		if (!Array.isArray(contentPath)) contentPath = [contentPath]
 		for (const path of contentPath) {
 			const collectedData = this.walkJson(path, jsonData)
-			if (Array.isArray(collectedData)) output = output.concat(collectedData)
+			if (Array.isArray(collectedData))
+				output = output.concat(collectedData)
 			else output.push(collectedData)
 		}
 
@@ -130,11 +135,13 @@ export class GameScraper {
 		const parts = path.split('/')
 		const key = parts.shift() ?? ''
 		let arrData: any[] = []
-		
+
 		if (key === '*' && parts.length > 1) {
 			for (const obj in data) {
-				if (Array.isArray(data[obj]) || typeof data[obj] === 'object') 
-					arrData = arrData.concat(this._walkJson(parts.join('/'), data[obj]))
+				if (Array.isArray(data[obj]) || typeof data[obj] === 'object')
+					arrData = arrData.concat(
+						this._walkJson(parts.join('/'), data[obj])
+					)
 			}
 		} else if (data[key]) {
 			data = this._walkJson(parts.join('/'), data[key])

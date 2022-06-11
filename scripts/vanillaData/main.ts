@@ -40,13 +40,17 @@ if (Deno.args.includes('--export')) {
 			)
 			const schema = {
 				$schema: 'http://json-schema.org/draft-07/schema',
-				...(target.type === 'property' ? {
-                    type: 'object',
-                    properties: Object.fromEntries(JSON.parse(data).map((i: string) => [i, {}]))
-                } : {
-                    type: 'string',
-                    enum: JSON.parse(data)
-                }),
+				...(target.type === 'property'
+					? {
+							type: 'object',
+							properties: Object.fromEntries(
+								JSON.parse(data).map((i: string) => [i, {}])
+							),
+					  }
+					: {
+							type: 'string',
+							enum: JSON.parse(data),
+					  }),
 			}
 			await Deno.writeTextFile(
 				join('./packages/minecraftBedrock/schema', target.to),

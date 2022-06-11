@@ -15,7 +15,7 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 		{
 			id: 'prefixed_entity_identifiers',
 			target: 'Entities/Identifier',
-            map: (val: string) => `minecraft:${val}`,
+			map: (val: string) => `minecraft:${val}`,
 		},
 		{
 			id: 'unprefixed_entity_identifiers',
@@ -33,15 +33,15 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 			id: 'unprefixed_block_identifiers',
 			target: 'Blocks/Name',
 			map: (val: string) => val.replace('minecraft:', ''),
-            filter: (val: string) =>
-			!['format_version', 'elements', 'materials', 'parent'].includes(
-				val
-			),
+			filter: (val: string) =>
+				!['format_version', 'elements', 'materials', 'parent'].includes(
+					val
+				),
 		},
 		{
 			id: 'prefixed_item_identifiers',
 			target: 'Items/Name',
-            map: (val: string) => `minecraft:${val}`,
+			map: (val: string) => `minecraft:${val}`,
 		},
 		{
 			id: 'unprefixed_item_identifiers',
@@ -77,9 +77,9 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 			path: 'entities',
 			packType: 'behaviorPack',
 			content: [
-                'minecraft:entity/components/minecraft:type_family/family',
-                'minecraft:entity/component_groups/*/minecraft:type_family/family',
-            ],
+				'minecraft:entity/components/minecraft:type_family/family',
+				'minecraft:entity/component_groups/*/minecraft:type_family/family',
+			],
 		},
 		{
 			id: 'itemTexture',
@@ -157,30 +157,30 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 			packType: 'definitions',
 			content: 'minecraft:biome/description/identifier',
 		},
-        {
-            id: 'particle_identifiers',
-            path: 'particles',
-            packType: 'resourcePack',
-            content: 'particle_effect/description/identifier',
-        },
-        {
-            id: 'fog_identifiers',
-            path: 'fogs',
-            packType: 'resourcePack',
-            content: 'minecraft:fog_settings/description/identifier',
-        },
-        {
-            id: 'feature_identifiers',
-            path: 'features',
-            packType: 'definitions',
-            content: '*/description/identifier',
-        },
-        {
-            id: 'feature_rule_identifiers',
-            path: 'feature_rules',
-            packType: 'definitions',
-            content: 'minecraft:feature_rules/description/identifier',
-        }
+		{
+			id: 'particle_identifiers',
+			path: 'particles',
+			packType: 'resourcePack',
+			content: 'particle_effect/description/identifier',
+		},
+		{
+			id: 'fog_identifiers',
+			path: 'fogs',
+			packType: 'resourcePack',
+			content: 'minecraft:fog_settings/description/identifier',
+		},
+		{
+			id: 'feature_identifiers',
+			path: 'features',
+			packType: 'definitions',
+			content: '*/description/identifier',
+		},
+		{
+			id: 'feature_rule_identifiers',
+			path: 'feature_rules',
+			packType: 'definitions',
+			content: 'minecraft:feature_rules/description/identifier',
+		},
 	],
 }
 
@@ -193,12 +193,11 @@ export const exportRaw: ExportTarget[] = [
 			'unprefixed_item_identifiers.json',
 			'prefixed_entity_identifiers.json',
 			'unprefixed_entity_identifiers.json',
-            'particle_identifiers.json',
+			'particle_identifiers.json',
 			'biome_identifiers.json',
-            'fog_identifiers.json',
-            'feature_identifiers.json',
-            'feature_rule_identifiers.json',
-
+			'fog_identifiers.json',
+			'feature_identifiers.json',
+			'feature_rule_identifiers.json',
 		],
 		to: 'general/vanilla/identifiers.json',
 	},
@@ -254,10 +253,10 @@ export const exportRaw: ExportTarget[] = [
 		from: ['biomeTag.json'],
 		to: 'general/vanilla/biomeTagEnum.json',
 	},
-    {
+	{
 		from: ['biomeTag.json'],
 		to: 'general/vanilla/biomeTagProperty.json',
-        type: 'property',
+		type: 'property',
 	},
 ]
 
@@ -312,8 +311,8 @@ interface ExportTarget {
 	 * Schema to export raw data to.
 	 */
 	to: string
-    /**
-     * Whether to export as properties or enum. Default: 'enum'.
-     */
-    type?: 'enum' | 'property'
+	/**
+	 * Whether to export as properties or enum. Default: 'enum'.
+	 */
+	type?: 'enum' | 'property'
 }
