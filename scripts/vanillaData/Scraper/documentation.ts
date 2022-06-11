@@ -1,22 +1,24 @@
 import { DOMParser, HTMLDocument } from 'deno-dom'
+import { DocTarget } from '../data.ts'
+import { writeRaw } from '../writeRaw.ts'
 
-export class DocScraper {
-    private readonly baseUrl: string = 'https://bedrock.dev/docs/'
-    protected loadedPages: Record<string, HTMLDocument | null> = {}
+export class DocumentationScraper {
+    protected data: HTMLDocument | null
 
-    constructor() {}
+    constructor(page: string, protected targets: DocTarget[]) {
+        const parser = new DOMParser()
+        this.data = parser.parseFromString(page, 'text/html')
+    }
 
-    async loadPages(pages: string[]) {
-        for (const page of pages) {
-            try {
-                const res = await fetch(`${this.baseUrl}${page}`)
-                const text = await res.text()
-                const doc = new DOMParser().parseFromString(text, 'text/html')
-                this.loadedPages[page] = doc
-                console.log(`Loaded page ${page}`)
-            } catch {
-                console.error(`Error loading page ${this.baseUrl}${page}`)
-            }
+    async run() {
+        for (const target of this.targets) {
+            const [ tableId, columnId ] = target.target.split('/')
+            const data = this.getTableColumnData(tableId, columnId)
+            // @ts-ignore
+            const filtered = target.filter ? data.filter(i => target.filter(i) && i) : data
+            // @ts-ignore
+            const mapped = target.map ? filtered.map(i => target.map(i)) : filtered
+            await writeRaw(target.id, mapped)
         }
     }
     /**
@@ -26,11 +28,10 @@ export class DocScraper {
      * @param columnName The name of the column to search for
      * @returns An array of strings representing the values in the specified column
      */
-    getTableColumnData(page: string, tableId: string, columnName: string) {
-        const doc = this.loadedPages[page]
-        if (!doc) throw new Error(`Page ${page} not loaded`)
-    
-        const tables = doc.getElementsByTagName('table')
+     getTableColumnData(tableId: string, columnName: string) {
+        if (!this.data) throw new Error(`Page not loaded correctly`)
+
+        const tables = this.data.getElementsByTagName('table')
         const output = []
         for (const table of tables) {
             if (table.previousElementSibling?.children[0]?.id === tableId) {

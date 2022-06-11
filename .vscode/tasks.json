@@ -11,17 +11,18 @@
 			"args": [
 				"-A",
 				"--import-map=importMap.json",
-				"./scripts/dev.ts"
+				"./scripts/build/dev.ts"
 			]
 		},
 		{
 			"type": "deno",
 			"command": "run",
-			"label": "deno run: build-identifiers",
+			"label": "deno run: get-vanilla-data",
 			"args": [
 				"-A",
 				"--import-map=importMap.json",
-				"./scripts/schemaGeneration/main.ts"
+				"./scripts/vanillaData/main.ts",
+				"--export"
 			]
 		}
 	]

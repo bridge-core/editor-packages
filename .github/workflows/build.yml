@@ -33,7 +33,7 @@ jobs:
             - name: Build data 🔧
               run: |
                   cd ./editor-packages
-                  deno run -A --import-map=importMap.json ./scripts/build.ts
+                  deno run -A --import-map=importMap.json ./scripts/build/build.ts
                   mv packages.zip ../editor/public
                   mv dataPackage.ts ../editor/src/utils/app
 

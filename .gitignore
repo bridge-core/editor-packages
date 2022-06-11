@@ -3,3 +3,4 @@ dist/
 .env
 packages.zip
 dataPackage.ts
+scripts/vanillaData/raw
