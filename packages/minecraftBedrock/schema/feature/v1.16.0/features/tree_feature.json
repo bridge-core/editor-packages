@@ -292,7 +292,7 @@
 						"decoration_chance": {
 							"$ref": "../../general.json#/definitions/chance_information"
 						},
-						"block_reference": {
+						"decoration_block": {
 							"$ref": "../../general.json#/definitions/block_reference"
 						},
 						"num_steps": {
