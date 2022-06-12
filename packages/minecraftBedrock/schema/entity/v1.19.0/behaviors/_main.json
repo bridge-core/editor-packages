@@ -43,6 +43,9 @@
 		// Non-experimental
 		{
 			"properties": {
+				"minecraft:behavior.pickup_items": {
+					"$ref": "./behavior.pickup_items.json"
+				},
 				"minecraft:behavior.move_to_block": {
 					"$ref": "./behavior.move_to_block.json"
 				},
@@ -345,9 +348,6 @@
 				},
 				"minecraft:behavior.pet_sleep_with_owner": {
 					"$ref": "../../v1.16.0/behaviors/behavior.pet_sleep_with_owner.json"
-				},
-				"minecraft:behavior.pickup_items": {
-					"$ref": "../../v1.16.0/behaviors/behavior.pickup_items.json"
 				},
 				"minecraft:behavior.play": {
 					"$ref": "../../v1.16.0/behaviors/behavior.play.json"
