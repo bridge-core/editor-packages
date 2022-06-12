@@ -10,13 +10,25 @@ declare interface TemplateContext {
 	/**
 	 * Modify the entity that is using this component
 	 */
-	create: (template: any, location?: string, operation?: (deepMerge: (oldData: any, newData: any) => any, oldData: any, newData: any) => any) => void
+	create: (
+		template: any,
+		location?: string,
+		operation?: (
+			deepMerge: (oldData: any, newData: any) => any,
+			oldData: any,
+			newData: any
+		) => any
+	) => void
 	/**
 	 * Add an animation to the entity
+	 *
+	 * @returns Animation name
 	 */
 	animation: (animation: any, condition?: string | false) => string
 	/**
 	 * Add an animation to the entity
+	 *
+	 * @returns Animation controller name
 	 */
 	animationController: (
 		animationController: any,
@@ -26,6 +38,22 @@ declare interface TemplateContext {
 	 * Add a new dialogue scene to the entity
 	 */
 	dialogueScene: (scene: any, openDialogue?: boolean) => void
+	/**
+	 * Add a new loot table to the entity
+	 *
+	 * @returns Path to the loot table file
+	 */
+	lootTable: (lootTable: any) => string
+	/**
+	 * Add a new trade table to the entity
+	 *
+	 * @returns Path to the trade table file
+	 */
+	tradeTable: (tradeTable: any) => string
+	/**
+	 * Add a new spawn rule to the entity
+	 */
+	spawnRule: (spawnRule: any) => void
 	/**
 	 * React to the component being activated
 	 */
