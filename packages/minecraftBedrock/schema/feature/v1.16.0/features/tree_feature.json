@@ -81,7 +81,7 @@
 								"decoration_chance": {
 									"$ref": "../../general.json#/definitions/chance_information"
 								},
-								"block_reference": {
+								"decoration_block": {
 									"$ref": "../../general.json#/definitions/block_reference"
 								},
 								"num_steps": {
@@ -292,7 +292,7 @@
 						"decoration_chance": {
 							"$ref": "../../general.json#/definitions/chance_information"
 						},
-						"block_reference": {
+						"decoration_block": {
 							"$ref": "../../general.json#/definitions/block_reference"
 						},
 						"num_steps": {
@@ -335,7 +335,7 @@
 						"decoration_chance": {
 							"$ref": "../../general.json#/definitions/chance_information"
 						},
-						"block_reference": {
+						"decoration_block": {
 							"$ref": "../../general.json#/definitions/block_reference"
 						},
 						"num_steps": {
@@ -390,7 +390,7 @@
 						"density": {
 							"type": "number"
 						},
-						"min_alititude_factor": {
+						"min_altitude_factor": {
 							"type": "number"
 						}
 					}
@@ -431,7 +431,7 @@
 						"decoration_chance": {
 							"$ref": "../../general.json#/definitions/chance_information"
 						},
-						"block_reference": {
+						"decoration_block": {
 							"$ref": "../../general.json#/definitions/block_reference"
 						},
 						"num_steps": {
@@ -495,7 +495,7 @@
 						"decoration_chance": {
 							"$ref": "../../general.json#/definitions/chance_information"
 						},
-						"block_reference": {
+						"decoration_block": {
 							"$ref": "../../general.json#/definitions/block_reference"
 						},
 						"num_steps": {
