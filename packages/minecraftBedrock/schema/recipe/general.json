@@ -1,6 +1,17 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"definitions": {
+		"item_or_block": {
+			"type": "string",
+			"oneOf": [
+				{
+					"$ref": "../general/reference/identifiers.json#/definitions/item_identifiers"
+				},
+				{
+					"$ref": "../general/reference/identifiers.json#/definitions/block_identifiers"
+				}
+			]
+		},
 		"tags": {
 			"description": "Defines where this recipe can be made.",
 			"type": "array",
@@ -54,7 +65,7 @@
 						"properties": {
 							"item": {
 								"description": "Provides the identifier for the result item.",
-								"$ref": "../general/reference/identifiers.json#/definitions/item_identifiers"
+								"$ref": "#/definitions/item_or_block"
 							},
 							"data": {
 								"description": "Sets the result item's data value.",
@@ -73,7 +84,7 @@
 					"properties": {
 						"item": {
 							"description": "Provides the identifier for the result item.",
-							"$ref": "../general/reference/identifiers.json#/definitions/item_identifiers"
+							"$ref": "#/definitions/item_or_block"
 						},
 						"data": {
 							"description": "Sets the result item's data value.",
@@ -88,15 +99,15 @@
 			]
 		},
 		"input": {
-			"$ref": "../general/reference/identifiers.json#/definitions/item_identifiers",
-			"description": "Defines the input item for the recipe."
+			"description": "Defines the input item for the recipe.",
+			"$ref": "#/definitions/item_or_block"
 		},
 		"reagent": {
-			"$ref": "../general/reference/identifiers.json#/definitions/item_identifiers"
+			"$ref": "#/definitions/item_or_block"
 		},
 		"output": {
 			"description": "Defines the result item of this recipe.",
-			"$ref": "../general/reference/identifiers.json#/definitions/item_identifiers"
+			"$ref": "#/definitions/item_or_block"
 		}
 	}
 }
