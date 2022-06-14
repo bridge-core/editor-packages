@@ -21,14 +21,6 @@
 			"description": "Chance of discarding placement if neighboring block is air.",
 			"type": "number"
 		},
-		"may_replace": {
-			"doNotSuggest": true,
-			"deprecationMessage": "Deprecated in favor of 'replace_rules' (format_version: v1.16.220)."
-		},
-		"places_block": {
-			"doNotSuggest": true,
-			"deprecationMessage": "Deprecated in favor of 'replace_rules' (format_version: v1.16.220)."
-		},
 		"replace_rules": {
 			"description": "Collection of replace rules that will be checked in order of definition. If a rule is resolved, the rest will not be resolved for that block position.",
 			"type": "array",
