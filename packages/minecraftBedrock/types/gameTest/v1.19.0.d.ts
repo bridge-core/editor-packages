@@ -8,37 +8,21 @@
    Copyright (c) Microsoft Corporation.
    ***************************************************************************** */
 
+/**
+ * Contains many types related to manipulating a Minecraft
+ * world, including entities, blocks, dimensions, and more.
+ *
+ * Manifest Details
+ * ```json
+ * {
+ *   // mojang-minecraft
+ *   "uuid": "b26a4d4c-afdf-4690-88f8-931846312678",
+ *   "version": [ 0, 1, 0 ]
+ * }
+ * ```
+ *
+ */
 declare module 'mojang-minecraft' {
-	/**
-	 * Contains information related to changes to a piston
-	 * expanding or retracting.
-	 * @example place_bottom_stone_slab.js
-	 * ```typescript
-	 * import { world, MinecraftBlockTypes, BlockProperties, BlockLocation } from "mojang-minecraft";
-	 *
-	 * // Create the permutation
-	 * let bottomStoneSlab = MinecraftBlockTypes.stoneSlab.createDefaultBlockPermutation();
-	 * bottomStoneSlab.getProperty(BlockProperties.stoneSlabType).value = "stone_brick";
-	 * bottomStoneSlab.getProperty(BlockProperties.topSlotBit).value = false;
-	 *
-	 * // Fetch the block
-	 * const block = world.getDimension("overworld").getBlock(new BlockLocation(1, 2, 3));
-	 *
-	 * // Set the permutation
-	 * block.setPermutation(bottomStoneSlab);
-	 *
-	 * ```
-	 *
-	 * Manifest Details
-	 * ```json
-	 * {
-	 *   // mojang-minecraft
-	 *   "uuid": "b26a4d4c-afdf-4690-88f8-931846312678",
-	 *   "version": [ 0, 1, 0 ]
-	 * }
-	 * ```
-	 *
-	 */
 	/**
 	 * Represents a direction for expressing relative position or
 	 * facing.
@@ -102,6 +86,25 @@ declare module 'mojang-minecraft' {
 		 * not be manipulated.
 		 */
 		adventure = 2,
+	}
+	/**
+	 * Contains objectives and participants for the scoreboard.
+	 */
+	export enum ScoreboardIdentityType {
+		/**
+		 * This scoreboard participant is tied to a player.
+		 */
+		player = 1,
+		/**
+		 * This scoreboard participant is tied to an entity.
+		 */
+		entity = 2,
+		/**
+		 * This scoreboard participant is tied to a pseudo player
+		 * entity - typically this is used to store scores as data or
+		 * as abstract progress.
+		 */
+		fakePlayer = 3,
 	}
 	/**
 	 * An event that fires as players enter chat messages.
@@ -562,22 +565,6 @@ declare module 'mojang-minecraft' {
 		 * @param permutation
 		 * Permutation that contains a set of property states for the
 		 * Block.
-		 * @example place_bottom_stone_slab.js
-		 * ```typescript
-		 *        import { world, MinecraftBlockTypes, BlockProperties, BlockLocation } from "mojang-minecraft";
-		 *
-		 *        // Create the permutation
-		 *        let bottomStoneSlab = MinecraftBlockTypes.stoneSlab.createDefaultBlockPermutation();
-		 *        bottomStoneSlab.getProperty(BlockProperties.stoneSlabType).value = "stone_brick";
-		 *        bottomStoneSlab.getProperty(BlockProperties.topSlotBit).value = false;
-		 *
-		 *        // Fetch the block
-		 *        const block = world.getDimension("overworld").getBlock(new BlockLocation(1, 2, 3));
-		 *
-		 *        // Set the permutation
-		 *        block.setPermutation(bottomStoneSlab);
-		 *
-		 * ```
 		 */
 		setPermutation(permutation: BlockPermutation): void
 		/**
@@ -769,7 +756,7 @@ declare module 'mojang-minecraft' {
 	 * Represents the inventory of a block in the world. Used with
 	 * blocks like chests.
 	 */
-	export class BlockInventoryComponent {
+	export class BlockInventoryComponent extends BlockComponent {
 		/**
 		 * The container which holds an {@link mojang-minecraft.ItemStack}.
 		 * @throws This property can throw when used.
@@ -884,7 +871,7 @@ declare module 'mojang-minecraft' {
 	 * Represents a fluid container block that currently contains
 	 * lava.
 	 */
-	export class BlockLavaContainerComponent {
+	export class BlockLavaContainerComponent extends BlockComponent {
 		/**
 		 * Relative level of lava within this block. Valid values are
 		 * between FluidContainer.minFillLevel (0) and
@@ -1007,22 +994,6 @@ declare module 'mojang-minecraft' {
 		 * @returns
 		 * Returns the property if the permutation has it, else `null`.
 		 * @throws This function can throw errors.
-		 * @example place_bottom_stone_slab.js
-		 * ```typescript
-		 *        import { world, MinecraftBlockTypes, BlockProperties, BlockLocation } from "mojang-minecraft";
-		 *
-		 *        // Create the permutation
-		 *        let bottomStoneSlab = MinecraftBlockTypes.stoneSlab.createDefaultBlockPermutation();
-		 *        bottomStoneSlab.getProperty(BlockProperties.stoneSlabType).value = "stone_brick";
-		 *        bottomStoneSlab.getProperty(BlockProperties.topSlotBit).value = false;
-		 *
-		 *        // Fetch the block
-		 *        const block = world.getDimension("overworld").getBlock(new BlockLocation(1, 2, 3));
-		 *
-		 *        // Set the permutation
-		 *        block.setPermutation(bottomStoneSlab);
-		 *
-		 * ```
 		 */
 		getProperty(propertyName: string): IBlockProperty
 		/**
@@ -1057,7 +1028,7 @@ declare module 'mojang-minecraft' {
 	 * When present, this block has piston-like behavior. Contains
 	 * additional properties for discovering block piston state.
 	 */
-	export class BlockPistonComponent {
+	export class BlockPistonComponent extends BlockComponent {
 		/**
 		 * A set of locations for blocks that are impacted by the
 		 * activation of this piston.
@@ -1144,7 +1115,7 @@ declare module 'mojang-minecraft' {
 	 * Represents a fluid container block that currently contains a
 	 * potion.
 	 */
-	export class BlockPotionContainerComponent {
+	export class BlockPotionContainerComponent extends BlockComponent {
 		/**
 		 * Relative level of potion liquid within this block. Valid
 		 * values are between FluidContainer.minFillLevel (0) and
@@ -1245,6 +1216,7 @@ declare module 'mojang-minecraft' {
 		 * inclusive.
 		 */
 		static readonly 'candles' = 'candles'
+		static readonly 'canSummon' = 'can_summon'
 		/**
 		 * String property that represents the type of liquid in a
 		 * cauldron. Valid values are 'water', 'powder_snow', and
@@ -1532,6 +1504,7 @@ declare module 'mojang-minecraft' {
 		 */
 		static readonly 'poweredBit' = 'powered_bit'
 		static readonly 'prismarineBlockType' = 'prismarine_block_type'
+		static readonly 'propaguleStage' = 'propagule_stage'
 		/**
 		 * Boolean property that returns true if a rail has a redstone
 		 * signal.
@@ -1783,12 +1756,6 @@ declare module 'mojang-minecraft' {
 		 * Maximum distance, in blocks, to process the raycast.
 		 */
 		'maxDistance': number
-		/**
-		 * @remarks
-		 * Creates a new BlockRaycastOptions object, for use in a block
-		 * vector query.
-		 */
-		constructor()
 	}
 	/**
 	 * Represents a block that can play a record.
@@ -1821,7 +1788,7 @@ declare module 'mojang-minecraft' {
 	 * Represents a fluid container block that currently contains
 	 * snow.
 	 */
-	export class BlockSnowContainerComponent {
+	export class BlockSnowContainerComponent extends BlockComponent {
 		/**
 		 * Relative level of snow within this block. Valid values are
 		 * between FluidContainer.minFillLevel (0) and
@@ -1856,22 +1823,6 @@ declare module 'mojang-minecraft' {
 		 * @returns
 		 * Returns created permutation.
 		 * @throws This function can throw errors.
-		 * @example place_bottom_stone_slab.js
-		 * ```typescript
-		 *        import { world, MinecraftBlockTypes, BlockProperties, BlockLocation } from "mojang-minecraft";
-		 *
-		 *        // Create the permutation
-		 *        let bottomStoneSlab = MinecraftBlockTypes.stoneSlab.createDefaultBlockPermutation();
-		 *        bottomStoneSlab.getProperty(BlockProperties.stoneSlabType).value = "stone_brick";
-		 *        bottomStoneSlab.getProperty(BlockProperties.topSlotBit).value = false;
-		 *
-		 *        // Fetch the block
-		 *        const block = world.getDimension("overworld").getBlock(new BlockLocation(1, 2, 3));
-		 *
-		 *        // Set the permutation
-		 *        block.setPermutation(bottomStoneSlab);
-		 *
-		 * ```
 		 */
 		createDefaultBlockPermutation(): BlockPermutation
 		protected constructor()
@@ -1880,7 +1831,7 @@ declare module 'mojang-minecraft' {
 	 * Represents a fluid container block that currently contains
 	 * water.
 	 */
-	export class BlockWaterContainerComponent {
+	export class BlockWaterContainerComponent extends BlockComponent {
 		/**
 		 * Represents a color facet of the water.
 		 */
@@ -1926,6 +1877,48 @@ declare module 'mojang-minecraft' {
 		 * allowed values.
 		 */
 		'value': boolean
+		protected constructor()
+	}
+	/**
+	 * Contains information related to changes to a button push.
+	 */
+	export class ButtonPushEvent extends BlockEvent {
+		/**
+		 * Block impacted by this event.
+		 */
+		readonly 'block': Block
+		/**
+		 * Dimension that contains the block that is the subject of
+		 * this event.
+		 */
+		readonly 'dimension': Dimension
+		/**
+		 * Optional source that triggered the button push.
+		 */
+		readonly 'source': Entity
+		protected constructor()
+	}
+	/**
+	 * Manages callbacks that are connected to when a button is
+	 * pushed.
+	 */
+	export class ButtonPushEventSignal {
+		/**
+		 * @remarks
+		 * Adds a callback that will be called when a button is pushed.
+		 * @param callback
+		 */
+		subscribe(
+			callback: (arg: ButtonPushEvent) => void
+		): (arg: ButtonPushEvent) => void
+		/**
+		 * @remarks
+		 * Removes a callback from being called when a button is
+		 * pushed.
+		 * @param callback
+		 * @throws This function can throw errors.
+		 */
+		unsubscribe(callback: (arg: ButtonPushEvent) => void): void
 		protected constructor()
 	}
 	/**
@@ -2021,6 +2014,10 @@ declare module 'mojang-minecraft' {
 		 * @param alpha
 		 */
 		constructor(red: number, green: number, blue: number, alpha: number)
+	}
+	export class CommandResult {
+		readonly 'successCount': number
+		protected constructor()
 	}
 	/**
 	 * Represents a container that can hold sets of items. Used
@@ -2195,7 +2192,6 @@ declare module 'mojang-minecraft' {
 		 * this update.
 		 */
 		'triggers': Trigger[]
-		constructor()
 	}
 	/**
 	 * A class that represents a particular dimension (e.g., The
@@ -2217,6 +2213,44 @@ declare module 'mojang-minecraft' {
 		 * @param explosionOptions
 		 * Additional configurable options for the explosion.
 		 * @throws This function can throw errors.
+		 * @example createExplosion.ts
+		 * ```typescript
+		 *          overworld.createExplosion(targetLocation, 10, new mc.ExplosionOptions());
+		 * ```
+		 * @example createFireAndWaterExplosions.ts
+		 * ```typescript
+		 *          const explosionLoc = new mc.Location(targetLocation.x + 0.5, targetLocation.y + 0.5, targetLocation.z + 0.5);
+		 *
+		 *          const fireExplosionOptions = new mc.ExplosionOptions();
+		 *
+		 *          // Explode with fire
+		 *          fireExplosionOptions.causesFire = true;
+		 *
+		 *          overworld.createExplosion(explosionLoc, 15, fireExplosionOptions);
+		 *          const waterExplosionOptions = new mc.ExplosionOptions();
+		 *
+		 *          // Explode in water
+		 *          waterExplosionOptions.allowUnderwater = true;
+		 *
+		 *          const belowWaterLoc = new mc.Location(targetLocation.x + 3, targetLocation.y + 1, targetLocation.z + 3);
+		 *
+		 *          overworld.createExplosion(belowWaterLoc, 10, waterExplosionOptions);
+		 * ```
+		 * @example createNoBlockExplosion.ts
+		 * ```typescript
+		 *          const explosionOptions = new mc.ExplosionOptions();
+		 *
+		 *          // Start by exploding without breaking blocks
+		 *          explosionOptions.breaksBlocks = false;
+		 *
+		 *          const explodeNoBlocksLoc = new mc.Location(
+		 *            Math.floor(targetLocation.x + 1),
+		 *            Math.floor(targetLocation.y + 2),
+		 *            Math.floor(targetLocation.z + 1)
+		 *          );
+		 *
+		 *          overworld.createExplosion(explodeNoBlocksLoc, 15, explosionOptions);
+		 * ```
 		 */
 		createExplosion(
 			location: Location,
@@ -2257,6 +2291,23 @@ declare module 'mojang-minecraft' {
 		 * An entity iterator that can be used to loop over the
 		 * returned entities.
 		 * @throws This function can throw errors.
+		 * @example testThatEntityIsFeatherItem.ts
+		 * ```typescript
+		 *          const query = new mc.EntityQueryOptions();
+		 *          query.type = "item";
+		 *          query.location = targetLocation;
+		 *          const items = overworld.getEntities(query);
+		 *
+		 *          for (const item of items) {
+		 *            const itemComp = item.getComponent("item") as any;
+		 *
+		 *            if (itemComp) {
+		 *              if (itemComp.itemStack.id.endsWith("feather")) {
+		 *                console.log("Success! Found a feather", 1);
+		 *              }
+		 *            }
+		 *          }
+		 * ```
 		 */
 		getEntities(getEntities?: EntityQueryOptions): EntityIterator
 		/**
@@ -2306,7 +2357,8 @@ declare module 'mojang-minecraft' {
 		isEmpty(location: BlockLocation): boolean
 		/**
 		 * @remarks
-		 * Runs a particular command from the context of this entity.
+		 * Runs a particular command from the context of the broader
+		 * dimension.
 		 * @param commandString
 		 * Command to run. Note that command strings should not start
 		 * with slash.
@@ -2324,6 +2376,21 @@ declare module 'mojang-minecraft' {
 		runCommand(commandString: string): any
 		/**
 		 * @remarks
+		 * Runs a particular command asynchronously from the context of
+		 * the broader dimension. Where possible - and especially for
+		 * long-running operations - you should use runCommandAsync
+		 * over runCommand.
+		 * @param commandString
+		 * Command to run. Note that command strings should not start
+		 * with slash.
+		 * @returns
+		 * For commands that return data, returns a CommandResult with
+		 * an indicator of command results.
+		 * @throws This function can throw errors.
+		 */
+		runCommandAsync(commandString: string): Promise<CommandResult>
+		/**
+		 * @remarks
 		 * Creates a new entity (e.g., a mob) at the specified
 		 * location.
 		 * @param identifier
@@ -2334,6 +2401,41 @@ declare module 'mojang-minecraft' {
 		 * @returns
 		 * Newly created entity at the specified location.
 		 * @throws This function can throw errors.
+		 * @example createOldHorse.ts
+		 * ```typescript
+		 *          // create a horse and trigger the 'ageable_grow_up' event, ensuring the horse is created as an adult
+		 *          overworld.spawnEntity("minecraft:horse<minecraft:ageable_grow_up>", targetLocation);
+		 * ```
+		 * @example quickFoxLazyDog.ts
+		 * ```typescript
+		 *          const fox = overworld.spawnEntity(
+		 *            "minecraft:fox",
+		 *            new mc.BlockLocation(targetLocation.x + 1, targetLocation.y + 2, targetLocation.z + 3)
+		 *          );
+		 *          fox.addEffect(mc.MinecraftEffectTypes.speed, 10, 20);
+		 *          log("Created a fox.");
+		 *
+		 *          const wolf = overworld.spawnEntity(
+		 *            "minecraft:wolf",
+		 *            new mc.BlockLocation(targetLocation.x + 4, targetLocation.y + 2, targetLocation.z + 3)
+		 *          );
+		 *          wolf.addEffect(mc.MinecraftEffectTypes.slowness, 10, 20);
+		 *          wolf.isSneaking = true;
+		 *          log("Created a sneaking wolf.", 1);
+		 * ```
+		 * @example trapTick.ts
+		 * ```typescript
+		 *          let ticks = 0;
+		 *
+		 *          mc.world.events.tick.subscribe((event: mc.TickEvent) => {
+		 *            ticks++;
+		 *
+		 *            // Minecraft runs at 20 ticks per second
+		 *            if (ticks % 1200 === 0) {
+		 *              overworld.runCommand("say Another minute passes...");
+		 *            }
+		 *          });
+		 * ```
 		 */
 		spawnEntity(
 			identifier: string,
@@ -2349,6 +2451,27 @@ declare module 'mojang-minecraft' {
 		 * @returns
 		 * Newly created item stack entity at the specified location.
 		 * @throws This function can throw errors.
+		 * @example itemStacks.ts
+		 * ```typescript
+		 *          const oneItemLoc = new mc.BlockLocation(3, 2, 1);
+		 *          const fiveItemsLoc = new mc.BlockLocation(1, 2, 1);
+		 *          const diamondPickaxeLoc = new mc.BlockLocation(2, 2, 4);
+		 *
+		 *          const oneEmerald = new mc.ItemStack(mc.MinecraftItemTypes.emerald, 1, 0);
+		 *          const onePickaxe = new mc.ItemStack(mc.MinecraftItemTypes.diamondPickaxe, 1, 0);
+		 *          const fiveEmeralds = new mc.ItemStack(mc.MinecraftItemTypes.emerald, 5, 0);
+		 *
+		 *          overworld.spawnItem(oneEmerald, oneItemLoc);
+		 *          overworld.spawnItem(fiveEmeralds, fiveItemsLoc);
+		 *          overworld.spawnItem(onePickaxe, diamondPickaxeLoc);
+		 * ```
+		 * @example spawnItem.ts
+		 * ```typescript
+		 *          const featherItem = new mc.ItemStack(mc.MinecraftItemTypes.feather, 1, 0);
+		 *
+		 *          overworld.spawnItem(featherItem, targetLocation);
+		 *          log("New feather created!");
+		 * ```
 		 */
 		spawnItem(item: ItemStack, location: BlockLocation | Location): Entity
 		/**
@@ -2379,7 +2502,6 @@ declare module 'mojang-minecraft' {
 	 * or at the global World- level.
 	 */
 	export class DynamicPropertiesDefinition {
-		constructor()
 		/**
 		 * @remarks
 		 * Defines a new boolean dynamic property.
@@ -2599,11 +2721,6 @@ declare module 'mojang-minecraft' {
 	 */
 	export class Entity {
 		/**
-		 * Rotation of the body component of the entity.
-		 * @throws This property can throw when used.
-		 */
-		readonly 'bodyRotation': number
-		/**
 		 * Dimension that the entity is currently within.
 		 * @throws This property can throw when used.
 		 */
@@ -2632,6 +2749,16 @@ declare module 'mojang-minecraft' {
 		 * Given name of the entity.
 		 */
 		'nameTag': string
+		/**
+		 * Main rotation of the entity.
+		 * @throws This property can throw when used.
+		 */
+		readonly 'rotation': XYRotation
+		/**
+		 * Returns a scoreboard identity that represents this entity.
+		 * @throws This property can throw when used.
+		 */
+		readonly 'scoreboard': ScoreboardIdentity
 		/**
 		 * Retrieves or sets an entity that is used as the target of
 		 * AI-related behaviors, like attacking.
@@ -2667,6 +2794,23 @@ declare module 'mojang-minecraft' {
 		 *
 		 *        villager.addEffect(MinecraftEffectTypes.poison, duration, 1);
 		 *
+		 * ```
+		 * @example quickFoxLazyDog.ts
+		 * ```typescript
+		 *          const fox = overworld.spawnEntity(
+		 *            "minecraft:fox",
+		 *            new mc.BlockLocation(targetLocation.x + 1, targetLocation.y + 2, targetLocation.z + 3)
+		 *          );
+		 *          fox.addEffect(mc.MinecraftEffectTypes.speed, 10, 20);
+		 *          log("Created a fox.");
+		 *
+		 *          const wolf = overworld.spawnEntity(
+		 *            "minecraft:wolf",
+		 *            new mc.BlockLocation(targetLocation.x + 4, targetLocation.y + 2, targetLocation.z + 3)
+		 *          );
+		 *          wolf.addEffect(mc.MinecraftEffectTypes.slowness, 10, 20);
+		 *          wolf.isSneaking = true;
+		 *          log("Created a sneaking wolf.", 1);
 		 * ```
 		 */
 		addEffect(
@@ -2804,6 +2948,21 @@ declare module 'mojang-minecraft' {
 		runCommand(commandString: string): any
 		/**
 		 * @remarks
+		 * Runs a particular command asynchronously from the context of
+		 * this entity. Where possible, running a command
+		 * asynchronously is recommended, especially for long running
+		 * operations.
+		 * @param commandString
+		 * Command to run. Note that command strings should not start
+		 * with slash.
+		 * @returns
+		 * For commands that return data, returns a JSON structure with
+		 * command response values.
+		 * @throws This function can throw errors.
+		 */
+		runCommandAsync(commandString: string): Promise<CommandResult>
+		/**
+		 * @remarks
 		 * Sets a specified property to a value.
 		 * @param identifier
 		 * @param value
@@ -2814,6 +2973,14 @@ declare module 'mojang-minecraft' {
 			identifier: string,
 			value: boolean | number | string
 		): void
+		/**
+		 * @remarks
+		 * Sets the main rotation of the entity.
+		 * @param degreesX
+		 * @param degreesY
+		 * @throws This function can throw errors.
+		 */
+		setRotation(degreesX: number, degreesY: number): void
 		/**
 		 * @remarks
 		 * Sets a velocity for the entity to move with.
@@ -2833,13 +3000,15 @@ declare module 'mojang-minecraft' {
 		 * X rotation of the entity after teleportation.
 		 * @param yRotation
 		 * Y rotation of the entity after teleportation.
+		 * @param keepVelocity
 		 * @throws This function can throw errors.
 		 */
 		teleport(
 			location: Location,
 			dimension: Dimension,
 			xRotation: number,
-			yRotation: number
+			yRotation: number,
+			keepVelocity?: boolean
 		): void
 		/**
 		 * @remarks
@@ -2851,12 +3020,14 @@ declare module 'mojang-minecraft' {
 		 * Dimension to move the selected entity to.
 		 * @param facingLocation
 		 * Location that this entity will be facing.
+		 * @param keepVelocity
 		 * @throws This function can throw errors.
 		 */
 		teleportFacing(
 			location: Location,
 			dimension: Dimension,
-			facingLocation: Location
+			facingLocation: Location,
+			keepVelocity?: boolean
 		): void
 		/**
 		 * @remarks
@@ -3078,6 +3249,17 @@ declare module 'mojang-minecraft' {
 		 * Adds a callback that will be called when a new entity is
 		 * created.
 		 * @param callback
+		 * @example runEntityCreatedEvent.ts
+		 * ```typescript
+		 *          // register a new function that is called when a new entity is created.
+		 *          const entityCreatedCallback = mc.world.events.entityCreate.subscribe((entityEvent: mc.EntityCreateEvent) => {
+		 *            if (entityEvent && entityEvent.entity) {
+		 *              log("New entity of type '" + +entityEvent.entity + "' created!", 1);
+		 *            } else {
+		 *              log("The entity event didn't work as expected.", -1);
+		 *            }
+		 *          });
+		 * ```
 		 */
 		subscribe(
 			callback: (arg: EntityCreateEvent) => void
@@ -3088,6 +3270,16 @@ declare module 'mojang-minecraft' {
 		 * created.
 		 * @param callback
 		 * @throws This function can throw errors.
+		 * @example unsubscribeEntityCreatedEvent.ts
+		 * ```typescript
+		 *          if (entityCreatedCallbacks.length > 0) {
+		 *            let callback = entityCreatedCallbacks.pop();
+		 *
+		 *            if (callback) {
+		 *              mc.world.events.entityCreate.unsubscribe(callback);
+		 *            }
+		 *          }
+		 * ```
 		 */
 		unsubscribe(callback: (arg: EntityCreateEvent) => void): void
 		protected constructor()
@@ -3113,7 +3305,6 @@ declare module 'mojang-minecraft' {
 		 * this parameter.
 		 */
 		'eventTypes': string[]
-		constructor()
 	}
 	/**
 	 * As part of the Ageable component, represents a set of items
@@ -3149,7 +3340,6 @@ declare module 'mojang-minecraft' {
 		 * impacted entities' type matches this parameter.
 		 */
 		'entityTypes': string[]
-		constructor()
 	}
 	/**
 	 * When added, this component signifies that this entity
@@ -4863,12 +5053,6 @@ declare module 'mojang-minecraft' {
 		 * entities to include.
 		 */
 		'volume': BlockAreaSize
-		/**
-		 * @remarks
-		 * Creates a new EntityQueryOptions query object, for use in
-		 * getEntities/getPlayers methods.
-		 */
-		constructor()
 	}
 	/**
 	 * Contains additional options for filtering players based on
@@ -4894,12 +5078,6 @@ declare module 'mojang-minecraft' {
 		 * Identifier of the scoreboard objective to filter on.
 		 */
 		'objective': string
-		/**
-		 * @remarks
-		 * Creates a new EntityQueryScoreOptions query object, for use
-		 * in an entity query.
-		 */
-		constructor()
 	}
 	/**
 	 * Contains additional options for an entity raycast operation.
@@ -4909,12 +5087,6 @@ declare module 'mojang-minecraft' {
 		 * Maximum distance, in blocks, to process the raycast.
 		 */
 		'maxDistance': number
-		/**
-		 * @remarks
-		 * Creates a new EntityRaycastOptions object, for use in an
-		 * entity vector query.
-		 */
-		constructor()
 	}
 	/**
 	 * When added, this component adds the capability that an
@@ -5270,6 +5442,10 @@ declare module 'mojang-minecraft' {
 		 */
 		readonly 'blockPlace': BlockPlaceEventSignal
 		/**
+		 * This event fires when a button is pushed.
+		 */
+		readonly 'buttonPush': ButtonPushEventSignal
+		/**
 		 * This event is triggered after a chat message has been
 		 * broadcast or sent to players.
 		 */
@@ -5349,7 +5525,7 @@ declare module 'mojang-minecraft' {
 		/**
 		 * This event fires when a lever activates or is deactivated.
 		 */
-		readonly 'leverActivate': LeverActivateEventSignal
+		readonly 'leverActivate': LeverActionEventSignal
 		/**
 		 * This event fires when a piston expands or retracts.
 		 */
@@ -5449,13 +5625,6 @@ declare module 'mojang-minecraft' {
 		 * Optional source of the explosion.
 		 */
 		'source': Entity
-		/**
-		 * @remarks
-		 * Creates a new instance of the ExplosionOptions object, for
-		 * use in the {@link mojang-minecraft.Dimension.createExplosion}
-		 * method.
-		 */
-		constructor()
 	}
 	/**
 	 * As part of the Healable component, represents a specific
@@ -6106,6 +6275,10 @@ declare module 'mojang-minecraft' {
 		 * Location of the block being impacted.
 		 */
 		readonly 'blockLocation': BlockLocation
+		/**
+		 * Location of the resulting build block position. Useful for
+		 * determining where a block was placed.
+		 */
 		readonly 'buildBlockLocation': BlockLocation
 		/**
 		 * The impacted item stack that is starting to be used.
@@ -6188,8 +6361,8 @@ declare module 'mojang-minecraft' {
 		protected constructor()
 	}
 	/**
-	 * Contains information related to an item being used on a
-	 * block.
+	 * Contains information related to an item that has stopped
+	 * being used on a block.
 	 */
 	export class ItemStopUseOnEvent {
 		/**
@@ -6207,14 +6380,14 @@ declare module 'mojang-minecraft' {
 		protected constructor()
 	}
 	/**
-	 * Manages callbacks that are connected to an item stopping
-	 * being used on a block event.
+	 * Manages callbacks that are connected to an item stops used
+	 * on a block event.
 	 */
 	export class ItemStopUseOnEventSignal {
 		/**
 		 * @remarks
-		 * Adds a callback that will be called when an item is used on
-		 * a block.
+		 * Adds a callback that will be called when an item stops being
+		 * used on a block.
 		 * @param callback
 		 */
 		subscribe(
@@ -6362,7 +6535,7 @@ declare module 'mojang-minecraft' {
 	 * Manages callbacks that are connected to lever moves
 	 * (activates or deactivates).
 	 */
-	export class LeverActivateEventSignal {
+	export class LeverActionEventSignal {
 		/**
 		 * @remarks
 		 * Adds a callback that will be called when a lever is moved
@@ -7227,6 +7400,10 @@ declare module 'mojang-minecraft' {
 		 * Represents a double plant within Minecraft.
 		 */
 		static readonly 'doublePlant': BlockType
+		static readonly 'doubleStoneBlockSlab': BlockType
+		static readonly 'doubleStoneBlockSlab2': BlockType
+		static readonly 'doubleStoneBlockSlab3': BlockType
+		static readonly 'doubleStoneBlockSlab4': BlockType
 		/**
 		 * Represents a double slab of stone within Minecraft.
 		 */
@@ -8355,7 +8532,6 @@ declare module 'mojang-minecraft' {
 		static readonly 'mangrovePlanks': BlockType
 		static readonly 'mangrovePressurePlate': BlockType
 		static readonly 'mangrovePropagule': BlockType
-		static readonly 'mangrovePropaguleHanging': BlockType
 		static readonly 'mangroveRoots': BlockType
 		static readonly 'mangroveSlab': BlockType
 		static readonly 'mangroveStairs': BlockType
@@ -9022,6 +9198,10 @@ declare module 'mojang-minecraft' {
 		 * Represents a block of stone within Minecraft.
 		 */
 		static readonly 'stone': BlockType
+		static readonly 'stoneBlockSlab': BlockType
+		static readonly 'stoneBlockSlab2': BlockType
+		static readonly 'stoneBlockSlab3': BlockType
+		static readonly 'stoneBlockSlab4': BlockType
 		/**
 		 * Represents a block of stone brick within Minecraft.
 		 */
@@ -9585,6 +9765,7 @@ declare module 'mojang-minecraft' {
 		static readonly 'silkTouch': EnchantmentType
 		static readonly 'smite': EnchantmentType
 		static readonly 'soulSpeed': EnchantmentType
+		static readonly 'swiftSneak': EnchantmentType
 		static readonly 'thorns': EnchantmentType
 		static readonly 'unbreaking': EnchantmentType
 		static readonly 'vanishing': EnchantmentType
@@ -10720,6 +10901,7 @@ declare module 'mojang-minecraft' {
 		 * within Minecraft.
 		 */
 		static readonly 'dirtWithRoots': ItemType
+		static readonly 'discFragment5': ItemType
 		/**
 		 * Represents an item that can place a dispenser within
 		 * Minecraft.
@@ -10737,26 +10919,10 @@ declare module 'mojang-minecraft' {
 		 * Minecraft.
 		 */
 		static readonly 'doublePlant': ItemType
-		/**
-		 * Represents an item that can place a double slab of stone
-		 * within Minecraft.
-		 */
-		static readonly 'doubleStoneSlab': ItemType
-		/**
-		 * Represents an item that can place an alternate double slab
-		 * of stone (#2) within Minecraft.
-		 */
-		static readonly 'doubleStoneSlab2': ItemType
-		/**
-		 * Represents an item that can place an alternate double slab
-		 * of stone (#3) within Minecraft.
-		 */
-		static readonly 'doubleStoneSlab3': ItemType
-		/**
-		 * Represents an item that can place an alternate double slab
-		 * of stone (#4) within Minecraft.
-		 */
-		static readonly 'doubleStoneSlab4': ItemType
+		static readonly 'doubleStoneBlockSlab': ItemType
+		static readonly 'doubleStoneBlockSlab2': ItemType
+		static readonly 'doubleStoneBlockSlab3': ItemType
+		static readonly 'doubleStoneBlockSlab4': ItemType
 		/**
 		 * Represents an item that can place a double slab of wood
 		 * within Minecraft.
@@ -10786,6 +10952,7 @@ declare module 'mojang-minecraft' {
 		static readonly 'dropper': ItemType
 		static readonly 'drownedSpawnEgg': ItemType
 		static readonly 'dye': ItemType
+		static readonly 'echoShard': ItemType
 		static readonly 'egg': ItemType
 		static readonly 'elderGuardianSpawnEgg': ItemType
 		/**
@@ -11589,6 +11756,7 @@ declare module 'mojang-minecraft' {
 		 */
 		static readonly 'glowstone': ItemType
 		static readonly 'glowstoneDust': ItemType
+		static readonly 'goatHorn': ItemType
 		static readonly 'goatSpawnEgg': ItemType
 		/**
 		 * Represents an item that can place a gold block within
@@ -12098,7 +12266,6 @@ declare module 'mojang-minecraft' {
 		static readonly 'mangrovePlanks': ItemType
 		static readonly 'mangrovePressurePlate': ItemType
 		static readonly 'mangrovePropagule': ItemType
-		static readonly 'mangrovePropaguleHanging': ItemType
 		static readonly 'mangroveRoots': ItemType
 		static readonly 'mangroveSign': ItemType
 		static readonly 'mangroveSlab': ItemType
@@ -12176,6 +12343,7 @@ declare module 'mojang-minecraft' {
 		static readonly 'mushroomStew': ItemType
 		static readonly 'musicDisc11': ItemType
 		static readonly 'musicDisc13': ItemType
+		static readonly 'musicDisc5': ItemType
 		static readonly 'musicDiscBlocks': ItemType
 		static readonly 'musicDiscCat': ItemType
 		static readonly 'musicDiscChirp': ItemType
@@ -12630,10 +12798,7 @@ declare module 'mojang-minecraft' {
 		 * Minecraft.
 		 */
 		static readonly 'rawIronBlock': ItemType
-		static readonly 'realDoubleStoneSlab': ItemType
-		static readonly 'realDoubleStoneSlab2': ItemType
-		static readonly 'realDoubleStoneSlab3': ItemType
-		static readonly 'realDoubleStoneSlab4': ItemType
+		static readonly 'recoveryCompass': ItemType
 		/**
 		 * Represents an item that can place a red candle within
 		 * Minecraft.
@@ -12994,6 +13159,10 @@ declare module 'mojang-minecraft' {
 		 */
 		static readonly 'stone': ItemType
 		static readonly 'stoneAxe': ItemType
+		static readonly 'stoneBlockSlab': ItemType
+		static readonly 'stoneBlockSlab2': ItemType
+		static readonly 'stoneBlockSlab3': ItemType
+		static readonly 'stoneBlockSlab4': ItemType
 		/**
 		 * Represents an item that can place a block of stone brick
 		 * within Minecraft.
@@ -13548,7 +13717,6 @@ declare module 'mojang-minecraft' {
 	 * defining how rendering and animations function.
 	 */
 	export class MolangVariableMap {
-		constructor()
 		/**
 		 * @remarks
 		 * Sets a Molang rendering/animation variable with the value of
@@ -13605,11 +13773,6 @@ declare module 'mojang-minecraft' {
 		 * Relative volume level of the music.
 		 */
 		'volume': number
-		/**
-		 * @remarks
-		 * Creates a new instance of the SoundOptions object.
-		 */
-		constructor()
 	}
 	/**
 	 * Contains data resulting from a navigation operation,
@@ -13682,6 +13845,24 @@ declare module 'mojang-minecraft' {
 		 * Adds a callback that will be called when a piston expands or
 		 * retracts.
 		 * @param callback
+		 * @example pistonEvent.ts
+		 * ```typescript
+		 *          let canceled = false;
+		 *
+		 *          const pistonLoc = new mc.BlockLocation(
+		 *            Math.floor(targetLocation.x) + 1,
+		 *            Math.floor(targetLocation.y) + 2,
+		 *            Math.floor(targetLocation.z) + 1
+		 *          );
+		 *
+		 *          const pistonCallback = mc.world.events.beforePistonActivate.subscribe((pistonEvent: mc.BeforePistonActivateEvent) => {
+		 *            if (pistonEvent.piston.location.equals(pistonLoc)) {
+		 *              log("Cancelling piston event");
+		 *              pistonEvent.cancel = true;
+		 *              canceled = true;
+		 *            }
+		 *          });
+		 * ```
 		 */
 		subscribe(
 			callback: (arg: PistonActivateEvent) => void
@@ -13697,29 +13878,9 @@ declare module 'mojang-minecraft' {
 		protected constructor()
 	}
 	/**
-	 * Represents a rotation structure with pitch and yaw
-	 * components.
-	 */
-	export class PitchYawRotation {
-		/**
-		 * Pitch (up-and-down) element of this rotation.
-		 */
-		'pitch': number
-		/**
-		 * Yaw component (left-to-right) of this position.
-		 */
-		'yaw': number
-		protected constructor()
-	}
-	/**
 	 * Represents a player within the world.
 	 */
 	export class Player extends Entity {
-		/**
-		 * Rotation of the body component of the player.
-		 * @throws This property can throw when used.
-		 */
-		readonly 'bodyRotation': number
 		/**
 		 * Dimension that the entity is currently within.
 		 * @throws This property can throw when used.
@@ -13758,6 +13919,16 @@ declare module 'mojang-minecraft' {
 		 * Player.
 		 */
 		readonly 'onScreenDisplay': ScreenDisplay
+		/**
+		 * Main rotation of the entity.
+		 * @throws This property can throw when used.
+		 */
+		readonly 'rotation': XYRotation
+		/**
+		 * Returns a scoreboard identity that represents this entity.
+		 * @throws This property can throw when used.
+		 */
+		readonly 'scoreboard': ScoreboardIdentity
 		/**
 		 * Manages the selected slot in the player's hotbar.
 		 */
@@ -13946,6 +14117,21 @@ declare module 'mojang-minecraft' {
 		runCommand(commandString: string): any
 		/**
 		 * @remarks
+		 * Runs a particular command asynchronously from the context of
+		 * this entity. Where possible, running a command
+		 * asynchronously is recommended, especially for long running
+		 * operations.
+		 * @param commandString
+		 * Command to run. Note that command strings should not start
+		 * with slash.
+		 * @returns
+		 * For commands that return data, returns a JSON structure with
+		 * command response values.
+		 * @throws This function can throw errors.
+		 */
+		runCommandAsync(commandString: string): Promise<CommandResult>
+		/**
+		 * @remarks
 		 * Sets a specified property to a value.
 		 * @param identifier
 		 * @param value
@@ -13956,6 +14142,14 @@ declare module 'mojang-minecraft' {
 			identifier: string,
 			value: boolean | number | string
 		): void
+		/**
+		 * @remarks
+		 * Sets the main rotation of the entity.
+		 * @param degreesX
+		 * @param degreesY
+		 * @throws This function can throw errors.
+		 */
+		setRotation(degreesX: number, degreesY: number): void
 		/**
 		 * @remarks
 		 * Sets a velocity for the entity to move with.
@@ -13987,13 +14181,15 @@ declare module 'mojang-minecraft' {
 		 * X rotation of the player after teleportation.
 		 * @param yRotation
 		 * Y rotation of the player after teleportation.
+		 * @param keepVelocity
 		 * @throws This function can throw errors.
 		 */
 		teleport(
 			location: Location,
 			dimension: Dimension,
 			xRotation: number,
-			yRotation: number
+			yRotation: number,
+			keepVelocity?: boolean
 		): void
 		/**
 		 * @remarks
@@ -14005,12 +14201,14 @@ declare module 'mojang-minecraft' {
 		 * Dimension to move the selected player to.
 		 * @param facingLocation
 		 * Location that this player will be facing.
+		 * @param keepVelocity
 		 * @throws This function can throw errors.
 		 */
 		teleportFacing(
 			location: Location,
 			dimension: Dimension,
-			facingLocation: Location
+			facingLocation: Location,
+			keepVelocity?: boolean
 		): void
 		/**
 		 * @remarks
@@ -14214,7 +14412,7 @@ declare module 'mojang-minecraft' {
 		 */
 		readonly 'entityHit': EntityHitInformation
 		/**
-		 * Vector of the projectile as it hit a block/entity.
+		 * Direction vector of the projectile as it hit a block/entity.
 		 */
 		readonly 'hitVector': Vector
 		/**
@@ -14285,6 +14483,108 @@ declare module 'mojang-minecraft' {
 		protected constructor()
 	}
 	/**
+	 * Contains objectives and participants for the scoreboard.
+	 */
+	export class Scoreboard {
+		/**
+		 * @remarks
+		 * Returns a specific objective (by id).
+		 * @param objectiveId
+		 * @throws This function can throw errors.
+		 */
+		getObjective(objectiveId: string): ScoreboardObjective
+		/**
+		 * @remarks
+		 * Returns all defined objectives.
+		 * @throws This function can throw errors.
+		 */
+		getObjectives(): ScoreboardObjective[]
+		/**
+		 * @remarks
+		 * Returns all defined scoreboard identities.
+		 * @throws This function can throw errors.
+		 */
+		getParticipants(): ScoreboardIdentity[]
+		protected constructor()
+	}
+	/**
+	 * Contains an identity of the scoreboard item.
+	 */
+	export class ScoreboardIdentity {
+		/**
+		 * Returns the player-visible name of this identity.
+		 */
+		readonly 'displayName': string
+		/**
+		 * Identifier of the scoreboard identity.
+		 */
+		readonly 'id': number
+		/**
+		 * Type of the scoreboard identity.
+		 */
+		readonly 'type': ScoreboardIdentityType
+		/**
+		 * @remarks
+		 * If the scoreboard identity is an entity or player, returns
+		 * the entity that this scoreboard item corresponds to.
+		 * @throws This function can throw errors.
+		 */
+		getEntity(): Entity
+		protected constructor()
+	}
+	/**
+	 * Contains objectives and participants for the scoreboard.
+	 */
+	export class ScoreboardObjective {
+		/**
+		 * Returns the player-visible name of this scoreboard
+		 * objective.
+		 * @throws This property can throw when used.
+		 */
+		readonly 'displayName': string
+		/**
+		 * Identifier of the scoreboard objective.
+		 * @throws This property can throw when used.
+		 */
+		readonly 'id': string
+		/**
+		 * @remarks
+		 * Returns all objective participant identities.
+		 * @throws This function can throw errors.
+		 */
+		getParticipants(): ScoreboardIdentity[]
+		/**
+		 * @remarks
+		 * Returns a specific score for a participant.
+		 * @param participant
+		 * @throws This function can throw errors.
+		 */
+		getScore(participant: ScoreboardIdentity): number
+		/**
+		 * @remarks
+		 * Returns specific scores for this objective for all
+		 * participants.
+		 * @throws This function can throw errors.
+		 */
+		getScores(): ScoreboardScoreInfo[]
+		protected constructor()
+	}
+	/**
+	 * Contains a pair of a scoreboard participant and its
+	 * respective score.
+	 */
+	export class ScoreboardScoreInfo {
+		/**
+		 * This scoreboard participant for this score.
+		 */
+		readonly 'participant': ScoreboardIdentity
+		/**
+		 * Score value of the identity for this objective.
+		 */
+		readonly 'score': number
+		protected constructor()
+	}
+	/**
 	 * Contains information about user interface elements that are
 	 * showing up on the screen.
 	 */
@@ -14321,47 +14621,6 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 */
 		updateSubtitle(subtitle: string): void
-		protected constructor()
-	}
-	/**
-	 * Implements a class that can be used for testing sculk
-	 * spreading behaviors. This sculk spreader class can drive the
-	 * growth of sculk around a particular block.
-	 */
-	export class SculkSpreader {
-		/**
-		 * @remarks
-		 * Adds a cursor - which is a notional waypoint that the sculk
-		 * will spread in the direction of.
-		 * @param offset
-		 * @param charge
-		 */
-		addCursorsWithOffset(offset: BlockLocation, charge: number): void
-		/**
-		 * @remarks
-		 * Retrieves the current position of the specified cursor.
-		 * @param index
-		 * @throws This function can throw errors.
-		 */
-		getCursorPosition(index: number): BlockLocation
-		/**
-		 * @remarks
-		 * Gets the maximum charge of a sculk spreader.
-		 * @throws This function can throw errors.
-		 */
-		getMaxCharge(): number
-		/**
-		 * @remarks
-		 * Returns a number of overall cursors for this sculk spreader.
-		 * @throws This function can throw errors.
-		 */
-		getNumberOfCursors(): number
-		/**
-		 * @remarks
-		 * Gets the total current charge of the sculk spreader.
-		 * @throws This function can throw errors.
-		 */
-		getTotalCharge(): number
 		protected constructor()
 	}
 	/**
@@ -14408,11 +14667,6 @@ declare module 'mojang-minecraft' {
 		 * Relative volume level of the sound.
 		 */
 		'volume': number
-		/**
-		 * @remarks
-		 * Creates a new instance of the SoundOptions object.
-		 */
-		constructor()
 	}
 	/**
 	 * Contains the state of a string-based property for a
@@ -14490,10 +14744,9 @@ declare module 'mojang-minecraft' {
 		 */
 		'staySeconds': number
 		/**
-		 * Optional sub-title text.
+		 * Optional subtitle text.
 		 */
 		'subtitle': string
-		constructor()
 	}
 	/**
 	 * Represents a trigger for firing an event.
@@ -14711,6 +14964,11 @@ declare module 'mojang-minecraft' {
 		 */
 		readonly 'events': Events
 		/**
+		 * Returns the general global scoreboard that applies to the
+		 * world.
+		 */
+		readonly 'scoreboard': Scoreboard
+		/**
 		 * @param dimensionId
 		 * @returns
 		 * The requested dimension
@@ -14842,6 +15100,21 @@ declare module 'mojang-minecraft' {
 		protected constructor()
 	}
 	/**
+	 * Represents a rotation structure with pitch and yaw
+	 * components.
+	 */
+	export class XYRotation {
+		/**
+		 * Yaw component (left-to-right) of this position.
+		 */
+		'x': number
+		/**
+		 * Pitch (up-and-down) element of this rotation.
+		 */
+		'y': number
+		protected constructor()
+	}
+	/**
 	 * How many times the server ticks per second of real time.
 	 */
 	export const TicksPerSecond = 20
@@ -14852,11 +15125,21 @@ declare module 'mojang-minecraft' {
 	export const world: World
 }
 
+/**
+ * The mojang-gametest module provides scriptable APIs for
+ * scaffolding and testing content experiences in Minecraft.
+ *
+ * Manifest Details
+ * ```json
+ * {
+ *   // mojang-gametest
+ *   "uuid": "6f4b6893-1bb6-42fd-b458-7fa3d0c89616",
+ *   "version": [ 0, 1, 0 ]
+ * }
+ * ```
+ *
+ */
 declare module 'mojang-gametest' {
-	/**
-	 * GameTest provides scriptable APIs for scaffolding and
-	 * testing content experiences in Minecraft.
-	 */
 	import * as mojangminecraft from 'mojang-minecraft'
 	/**
 	 * Represents the type of fluid for use within a fluid
@@ -14905,6 +15188,7 @@ declare module 'mojang-gametest' {
 		 * fence to the west (x - 1).
 		 */
 		readonly 'west': boolean
+		protected constructor()
 	}
 	/**
 	 * Executes a set of steps defined via chained .thenXyz
@@ -15013,6 +15297,7 @@ declare module 'mojang-gametest' {
 			delayTicks: number,
 			callback: () => void
 		): GameTestSequence
+		protected constructor()
 	}
 	/**
 	 * A utility class to set GameTest parameters for a test.
@@ -15121,6 +15406,50 @@ declare module 'mojang-gametest' {
 		 * methods can be called.
 		 */
 		tag(tag: string): RegistrationBuilder
+		protected constructor()
+	}
+	/**
+	 * Implements a class that can be used for testing sculk
+	 * spreading behaviors. This sculk spreader class can drive the
+	 * growth of sculk around a particular block.
+	 */
+	export class SculkSpreader {
+		/**
+		 * Gets the maximum charge of a sculk spreader.
+		 * @throws This property can throw when used.
+		 */
+		readonly 'maxCharge': number
+		/**
+		 * @remarks
+		 * Adds a cursor - which is a notional waypoint that the sculk
+		 * will spread in the direction of.
+		 * @param offset
+		 * @param charge
+		 */
+		addCursorsWithOffset(
+			offset: mojangminecraft.BlockLocation,
+			charge: number
+		): void
+		/**
+		 * @remarks
+		 * Retrieves the current position of the specified cursor.
+		 * @param index
+		 * @throws This function can throw errors.
+		 */
+		getCursorPosition(index: number): mojangminecraft.BlockLocation
+		/**
+		 * @remarks
+		 * Returns a number of overall cursors for this sculk spreader.
+		 * @throws This function can throw errors.
+		 */
+		getNumberOfCursors(): number
+		/**
+		 * @remarks
+		 * Gets the total current charge of the sculk spreader.
+		 * @throws This function can throw errors.
+		 */
+		getTotalCharge(): number
+		protected constructor()
 	}
 	/**
 	 * A simulated player can be used within GameTests to represent
@@ -15130,12 +15459,6 @@ declare module 'mojang-gametest' {
 	 * from the {@link mojang-minecraft.Player} type.
 	 */
 	export class SimulatedPlayer extends mojangminecraft.Player {
-		/**
-		 * Rotation of the body in degrees. Range is between -180 and
-		 * 180 degrees.
-		 * @throws This property can throw when used.
-		 */
-		readonly 'bodyRotation': number
 		/**
 		 * Dimension that the simulated player is currently within.
 		 * @throws This property can throw when used.
@@ -15150,7 +15473,7 @@ declare module 'mojang-gametest' {
 		 * Rotation of the head across pitch and yaw angles.
 		 * @throws This property can throw when used.
 		 */
-		readonly 'headRotation': mojangminecraft.PitchYawRotation
+		readonly 'headRotation': mojangminecraft.XYRotation
 		/**
 		 * Identifier for the player.
 		 * @throws This property can throw when used.
@@ -15174,6 +15497,21 @@ declare module 'mojang-gametest' {
 		 * Optional name tag of the player.
 		 */
 		'nameTag': string
+		/**
+		 * Contains methods for manipulating the on-screen display of a
+		 * Player.
+		 */
+		readonly 'onScreenDisplay': mojangminecraft.ScreenDisplay
+		/**
+		 * Main rotation of the entity.
+		 * @throws This property can throw when used.
+		 */
+		readonly 'rotation': mojangminecraft.XYRotation
+		/**
+		 * Returns a scoreboard identity that represents this entity.
+		 * @throws This property can throw when used.
+		 */
+		readonly 'scoreboard': mojangminecraft.ScoreboardIdentity
 		/**
 		 * Manages the selected slot in the player's hotbar.
 		 */
@@ -15202,13 +15540,16 @@ declare module 'mojang-gametest' {
 		 * Amount of time, in seconds, for the effect to apply.
 		 * @param amplifier
 		 * Optional amplification of the effect to apply.
+		 * @param showParticles
 		 * @throws This function can throw errors.
 		 */
 		addEffect(
 			effectType: mojangminecraft.EffectType,
 			duration: number,
-			amplifier: number
+			amplifier?: number,
+			showParticles?: boolean
 		): void
+		addExperience(amount: number): boolean
 		/**
 		 * @remarks
 		 * Adds a specified tag to a simulated player.
@@ -15281,6 +15622,16 @@ declare module 'mojang-gametest' {
 		 * and supported by the API.
 		 */
 		getComponents(): mojangminecraft.IEntityComponent[]
+		/**
+		 * @remarks
+		 * Returns a property value.
+		 * @param identifier
+		 * @returns
+		 * Returns the value for the property, or undefined if the
+		 * property has not been set.
+		 * @throws This function can throw errors.
+		 */
+		getDynamicProperty(identifier: string): boolean | number | string
 		/**
 		 * @remarks
 		 * Returns the effect for the specified EffectType on the
@@ -15546,6 +15897,13 @@ declare module 'mojang-gametest' {
 		): void
 		/**
 		 * @remarks
+		 * Removes a specified property.
+		 * @param identifier
+		 * @throws This function can throw errors.
+		 */
+		removeDynamicProperty(identifier: string): boolean
+		/**
+		 * @remarks
 		 * Removes a specified tag from a simulated player.
 		 * @param tag
 		 * Content of the tag to remove.
@@ -15581,12 +15939,41 @@ declare module 'mojang-gametest' {
 		runCommand(commandString: string): any
 		/**
 		 * @remarks
+		 * Runs a particular command asynchronously from the context of
+		 * this entity. Where possible, running a command
+		 * asynchronously is recommended, especially for long running
+		 * operations.
+		 * @param commandString
+		 * Command to run. Note that command strings should not start
+		 * with slash.
+		 * @returns
+		 * For commands that return data, returns a JSON structure with
+		 * command response values.
+		 * @throws This function can throw errors.
+		 */
+		runCommandAsync(
+			commandString: string
+		): Promise<mojangminecraft.CommandResult>
+		/**
+		 * @remarks
 		 * Causes the simulated player to turn to face the provided
 		 * angle, relative to the GameTest.
 		 * @param angleInDegrees
 		 * @throws This function can throw errors.
 		 */
 		setBodyRotation(angleInDegrees: number): void
+		/**
+		 * @remarks
+		 * Sets a specified property to a value.
+		 * @param identifier
+		 * @param value
+		 * Data value of the property to set.
+		 * @throws This function can throw errors.
+		 */
+		setDynamicProperty(
+			identifier: string,
+			value: boolean | number | string
+		): void
 		/**
 		 * @remarks
 		 * Sets the game mode that the simulated player is operating
@@ -15612,6 +15999,14 @@ declare module 'mojang-gametest' {
 			slot: number,
 			selectSlot?: boolean
 		): boolean
+		/**
+		 * @remarks
+		 * Sets the main rotation of the entity.
+		 * @param degreesX
+		 * @param degreesY
+		 * @throws This function can throw errors.
+		 */
+		setRotation(degreesX: number, degreesY: number): void
 		/**
 		 * @remarks
 		 * Sets a velocity for the entity to move with.
@@ -15771,6 +16166,7 @@ declare module 'mojang-gametest' {
 			faceLocationX?: number,
 			faceLocationY?: number
 		): boolean
+		protected constructor()
 	}
 	/**
 	 * These well-known tags can be used to classify different
@@ -15798,6 +16194,7 @@ declare module 'mojang-gametest' {
 		 * of disabled tests.
 		 */
 		static readonly 'suiteDisabled' = 'suite:disabled'
+		protected constructor()
 	}
 	/**
 	 * Main class for GameTest functions, with helpers and data for
@@ -16027,6 +16424,24 @@ declare module 'mojang-gametest' {
 		 * specified type is present in the GameTest area. If false,
 		 * tests that an entity of the specified type is not present.
 		 * @throws This function can throw errors.
+		 * @example simpleMobTest.ts
+		 * ```typescript
+		 *          gt.register("StarterTests", "simpleMobTest", (test: gt.Test) => {
+		 *            const attackerId = "fox";
+		 *            const victimId = "chicken";
+		 *
+		 *            test.spawn(attackerId, new mc.BlockLocation(5, 2, 5));
+		 *            test.spawn(victimId, new mc.BlockLocation(2, 2, 2));
+		 *
+		 *            test.assertEntityPresentInArea(victimId, true);
+		 *
+		 *            test.succeedWhen(() => {
+		 *              test.assertEntityPresentInArea(victimId, false);
+		 *            });
+		 *          })
+		 *            .maxTicks(400)
+		 *            .structureName("gametests:mediumglass");
+		 * ```
 		 */
 		assertEntityPresentInArea(
 			entityTypeIdentifier: string,
@@ -16167,6 +16582,10 @@ declare module 'mojang-gametest' {
 			blockLocation: mojangminecraft.BlockLocation,
 			power: number
 		): void
+		destroyBlock(
+			blockLocation: mojangminecraft.BlockLocation,
+			dropResources?: boolean
+		): void
 		/**
 		 * @remarks
 		 * Marks the current test as a failure case.
@@ -16214,6 +16633,17 @@ declare module 'mojang-gametest' {
 		getFenceConnectivity(
 			blockLocation: mojangminecraft.BlockLocation
 		): FenceConnectivity
+		/**
+		 * @remarks
+		 * Retrieves a sculk spreader object that can be used to
+		 * control and manage how sculk grows from a block.
+		 * @param blockLocation
+		 * Location of the block to retrieve a sculk spreader from.
+		 * @throws This function can throw errors.
+		 */
+		getSculkSpreader(
+			blockLocation: mojangminecraft.BlockLocation
+		): SculkSpreader
 		/**
 		 * @remarks
 		 * Returns the direction of the current test - see the
@@ -16334,6 +16764,7 @@ declare module 'mojang-gametest' {
 		rotateDirection(
 			direction: mojangminecraft.Direction
 		): mojangminecraft.Direction
+		rotateVector(vector: mojangminecraft.Vector): mojangminecraft.Vector
 		/**
 		 * @remarks
 		 * Runs a specific callback after a specified delay of ticks
@@ -16424,6 +16855,24 @@ declare module 'mojang-gametest' {
 		 * The spawned entity. If the entity cannot be spawned, returns
 		 * undefined.
 		 * @throws This function can throw errors.
+		 * @example simpleMobTest.ts
+		 * ```typescript
+		 *          gt.register("StarterTests", "simpleMobTest", (test: gt.Test) => {
+		 *            const attackerId = "fox";
+		 *            const victimId = "chicken";
+		 *
+		 *            test.spawn(attackerId, new mc.BlockLocation(5, 2, 5));
+		 *            test.spawn(victimId, new mc.BlockLocation(2, 2, 2));
+		 *
+		 *            test.assertEntityPresentInArea(victimId, true);
+		 *
+		 *            test.succeedWhen(() => {
+		 *              test.assertEntityPresentInArea(victimId, false);
+		 *            });
+		 *          })
+		 *            .maxTicks(400)
+		 *            .structureName("gametests:mediumglass");
+		 * ```
 		 * @example spawnAdultPig.js
 		 * ```typescript
 		 *        test.spawn("minecraft:pig<minecraft:ageable_grow_up>", new BlockLocation(1, 2, 1));
@@ -16602,6 +17051,24 @@ declare module 'mojang-gametest' {
 		 * Testing callback function that runs. If the function runs
 		 * successfully, the test is marked as a success.
 		 * @throws This function can throw errors.
+		 * @example simpleMobTest.ts
+		 * ```typescript
+		 *          gt.register("StarterTests", "simpleMobTest", (test: gt.Test) => {
+		 *            const attackerId = "fox";
+		 *            const victimId = "chicken";
+		 *
+		 *            test.spawn(attackerId, new mc.BlockLocation(5, 2, 5));
+		 *            test.spawn(victimId, new mc.BlockLocation(2, 2, 2));
+		 *
+		 *            test.assertEntityPresentInArea(victimId, true);
+		 *
+		 *            test.succeedWhen(() => {
+		 *              test.assertEntityPresentInArea(victimId, false);
+		 *            });
+		 *          })
+		 *            .maxTicks(400)
+		 *            .structureName("gametests:mediumglass");
+		 * ```
 		 */
 		succeedWhen(callback: () => void): void
 		/**
@@ -16769,6 +17236,7 @@ declare module 'mojang-gametest' {
 		worldLocation(
 			relativeLocation: mojangminecraft.Location
 		): mojangminecraft.Location
+		protected constructor()
 	}
 	/**
 	 * @remarks
@@ -16791,6 +17259,24 @@ declare module 'mojang-gametest' {
 	 *          test.fail("This test, runnable via '/gametest run ExampleTests:alwaysFail', will always fail");
 	 *        });
 	 *
+	 * ```
+	 * @example simpleMobTest.ts
+	 * ```typescript
+	 *          gt.register("StarterTests", "simpleMobTest", (test: gt.Test) => {
+	 *            const attackerId = "fox";
+	 *            const victimId = "chicken";
+	 *
+	 *            test.spawn(attackerId, new mc.BlockLocation(5, 2, 5));
+	 *            test.spawn(victimId, new mc.BlockLocation(2, 2, 2));
+	 *
+	 *            test.assertEntityPresentInArea(victimId, true);
+	 *
+	 *            test.succeedWhen(() => {
+	 *              test.assertEntityPresentInArea(victimId, false);
+	 *            });
+	 *          })
+	 *            .maxTicks(400)
+	 *            .structureName("gametests:mediumglass");
 	 * ```
 	 */
 	export function register(
@@ -16821,6 +17307,48 @@ declare module 'mojang-gametest' {
 	): RegistrationBuilder
 }
 
+/**
+ * The `mojang-minecraft-ui` module contains types for
+ * expressing simple dialog-based user experiences.
+ *
+ *   * {@link mojang-minecraft-ui.ActionFormData} contain a list of
+ * buttons with captions and images that can be used for
+ * presenting a set of options to a player.
+ *   * {@link mojang-minecraft-ui.MessageFormData} are simple
+ * two-button message experiences that are functional for
+ * Yes/No or OK/Cancel questions.
+ *   * {@link mojang-minecraft-ui.ModalFormData} allow for a more
+ * flexible "questionnaire-style" list of controls that can be
+ * used to take input.
+ * @example createActionForm.js
+ * ```typescript
+ * const form = new ActionFormData()
+ *   .title("Months")
+ *   .body("Choose your favorite month!")
+ *   .button("January")
+ *   .button("February")
+ *   .button("March")
+ *   .button("April")
+ *   .button("May");
+ *
+ * form.show(players[0]).then((response) => {
+ *   if (response.selection === 3) {
+ *     dimension.runCommand("say I like April too!");
+ *   }
+ * });
+ *
+ * ```
+ *
+ * Manifest Details
+ * ```json
+ * {
+ *   // mojang-minecraft-ui
+ *   "uuid": "2bd50a27-ab5f-4f40-a596-3641627c635e",
+ *   "version": [ 0, 1, 0 ]
+ * }
+ * ```
+ *
+ */
 declare module 'mojang-minecraft-ui' {
 	import * as mojangminecraft from 'mojang-minecraft'
 	/**
@@ -16842,11 +17370,6 @@ declare module 'mojang-minecraft-ui' {
 		 * @param iconPath
 		 */
 		button(text: string, iconPath?: string): ActionFormData
-		/**
-		 * @remarks
-		 * Creates a new modal form builder.
-		 */
-		constructor()
 		/**
 		 * @remarks
 		 * Creates and shows this modal popup form. Returns
@@ -16917,11 +17440,6 @@ declare module 'mojang-minecraft-ui' {
 		button2(text: string): MessageFormData
 		/**
 		 * @remarks
-		 * Creates a new modal form builder.
-		 */
-		constructor()
-		/**
-		 * @remarks
 		 * Creates and shows this modal popup form. Returns
 		 * asynchronously when the player confirms or cancels the
 		 * dialog.
@@ -16958,11 +17476,6 @@ declare module 'mojang-minecraft-ui' {
 	 * player.
 	 */
 	export class ModalFormData {
-		/**
-		 * @remarks
-		 * Creates a new modal form builder.
-		 */
-		constructor()
 		/**
 		 * @remarks
 		 * Adds a dropdown with choices to the form.
