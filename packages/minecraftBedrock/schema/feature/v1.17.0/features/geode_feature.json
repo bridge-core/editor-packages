@@ -103,7 +103,7 @@
 			"description": "The likelihood that a special block will be placed on the inside of the geode.",
 			"type": "number"
 		},
-		"use_alternative_layer0_chance": {
+		"use_alternate_layer0_chance": {
 			"description": "The likelihood that a block in the innermost layer of the geode will be replaced with an alternate option.",
 			"type": "number"
 		},
