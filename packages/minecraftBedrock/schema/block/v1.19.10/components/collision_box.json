@@ -1,13 +1,12 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"description": "Defines the area of the block that collides with entities. If set to true, a unit cube is used. If set to false, the block's collision with entities is disabled. If you want to specify this component as an object, you can either provide both an 'origin' and 'size', just an 'origin', just a 'size', or just a 'shape', but no other combination of these fields. If this component is omitted, the collision box of a unit cube will be used.",
+	"description": "Defines the area of the block that collides with entities. If set to true, default values are used. If set to false, the block's collision with entities is disabled. If this component is omitted, default values are used.",
 	"type": "object",
 	"title": "Collision Box",
 	"anyOf": [
 		{
 			"type": "object",
 			"properties": {
-				// potential 'shape' field, but it didn't seem to do anything
 				"size": {
 					"title": "Size",
 					"description": "Size of each side of the box of the component",

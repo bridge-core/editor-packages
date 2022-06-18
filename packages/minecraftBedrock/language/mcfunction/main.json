@@ -1077,35 +1077,6 @@
 					]
 				},
 				{
-					"commandName": "locate",
-					"description": "Locates closest structure.",
-					"arguments": [
-						{
-							"argumentName": "feature",
-							"description": "Specifies the structure to locate.",
-							"type": "string",
-							"additionalData": {
-								"values": [
-									"bastionremnant",
-									"buriedtreasure",
-									"endcity",
-									"fortress",
-									"mansion",
-									"mineshaft",
-									"monument",
-									"pillageroutpost",
-									"ruinedportal",
-									"ruins",
-									"shipwreck",
-									"stronghold",
-									"temple",
-									"village"
-								]
-							}
-						}
-					]
-				},
-				{
 					"commandName": "mobevent",
 					"description": "Enables/disables a specified mob event.",
 					"arguments": [
@@ -4583,6 +4554,95 @@
 							"description": "Position to place the feature at.",
 							"type": "$coordinates",
 							"isOptional": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"requires": {
+				"targetVersion": ["<", "1.19.10"]
+			},
+			"commands": [
+				{
+					"commandName": "locate",
+					"description": "Locates closest structure.",
+					"arguments": [
+						{
+							"argumentName": "feature",
+							"description": "Specifies the structure to locate.",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/vanilla/structures.json"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"requires": {
+				"targetVersion": [">=", "1.19.10"]
+			},
+			"commands": [
+				{
+					"commandName": "locate",
+					"description": "Displays the coordinates of the closest structure of a given type.",
+					"arguments": [
+						{
+							"type": "string",
+							"argumentName": "feature",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/vanilla/structures.json"
+							}
+						},
+						{
+							"argumentName": "useNewChunksOnly",
+							"isOptional": true,
+							"type": "boolean"
+						}
+					]
+				},
+				{
+					"commandName": "locate",
+					"description": "Displays the coordinates for the closest structure of a given type.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["biome"]
+							}
+						},
+						{
+							"type": "string",
+							"argumentName": "biome",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/biome_identifiers"
+							}
+						}
+					]
+				},
+				{
+					"commandName": "locate",
+					"description": "Displays the coordinates for the closest structure of a given type.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["structure"]
+							}
+						},
+						{
+							"type": "string",
+							"argumentName": "structure",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/vanilla/structures.json"
+							}
+						},
+						{
+							"argumentName": "useNewChunksOnly",
+							"isOptional": true,
+							"type": "boolean"
 						}
 					]
 				}

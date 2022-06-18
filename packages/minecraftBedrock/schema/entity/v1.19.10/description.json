@@ -1,0 +1,52 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"allOf": [
+		{
+			"$ref": "../description.json"
+		},
+		{
+			"$ref": "../../project/experimentalGameplay/upcomingCreatorFeatures.json",
+			"then": {
+				"type": "object",
+				"properties": {
+					"aliases": {
+						"type": "object",
+						"patternProperties": {
+							".*": {
+								"$ref": "/data/packages/minecraftBedrock/schema/entity/dynamic/currentContext/propertyForAlias.json"
+							}
+						}
+					},
+					"properties": {
+						"type": "object",
+						"patternProperties": {
+							".*": {
+								"type": "object",
+								"required": ["type"],
+								"properties": {
+									"type": {
+										"type": "string",
+										"enum": ["int", "float", "bool", "enum"]
+									},
+									"range": {
+										"type": "array",
+										"items": {
+											"type": ["string", "number", "boolean", "integer"]
+										}
+									},
+									"default": {
+										"type": ["string", "number", "boolean", "integer"]
+									},
+									"client_sync": {
+										"type": "boolean"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,275 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"required": ["format_version", "minecraft:client_entity"],
+	"type": "object",
+	"properties": {
+		"minecraft:client_entity": {
+			"description": "The resource description of the entity.",
+			"additionalProperties": false,
+			"required": ["description"],
+			"type": "object",
+			"properties": {
+				"description": {
+					"required": [
+						"textures",
+						"geometry",
+						"render_controllers",
+						"identifier",
+						"materials"
+					],
+					"additionalProperties": false,
+					"type": "object",
+					"properties": {
+						"identifier": {
+							"$ref": "../../general/reference/prefixedFileIdentifier.json"
+						},
+						"min_engine_version": {
+							"description": "Engine version for which the top resource pack was built. If a definition's min_engine_version is newer than that pack's engine version then the definition is not parsed. Multiple definition files may use the same identifier, in which case only one of those definitions will be loaded. The definition with the same or closest and not greater min_engine_version, as compared to the top resource pack's engine version, will be parsed; all other definitions with the same identifier will not be parsed.",
+							"$ref": "../../project/formatVersionEnum.json"
+						},
+						"enable_attachables": {
+							"type": "boolean",
+							"description": "Whether to enable attachables on the entity."
+						},
+						"hide_armor": {
+							"type": "boolean"
+						},
+						"spawn_egg": {
+							"description": "Defines the spawn egg texture/color for the entity.",
+							"additionalProperties": false,
+							"type": "object",
+							"properties": {
+								"texture": {
+									"description": "Texture to use for the spawn egg.",
+									"$ref": "../../general/reference/itemTexture.json"
+								},
+								"texture_index": {
+									"description": "The texture index to use.",
+									"type": "integer"
+								},
+								"base_color": {
+									"description": "The base color of the spawn egg.",
+									"$ref": "../../general/hexColor.json"
+								},
+								"overlay_color": {
+									"description": "The overlay color of the spawn egg.",
+									"$ref": "../../general/hexColor.json"
+								}
+							}
+						},
+						"materials": {
+							"description": "Defines the materials used in the entity.",
+							"patternProperties": {
+								".*": {
+									"$ref": "../general.json#/definitions/materials"
+								}
+							}
+						},
+						"textures": {
+							"description": "Defines the textures used in the entity.",
+							"type": "object",
+							"allOf": [
+								{
+									"$ref": "../dynamic/textureNameProperty.json"
+								},
+								{
+									"properties": {
+										"default": {}
+									}
+								},
+								{
+									"patternProperties": {
+										".*": {
+											"$ref": "../../general/reference/paths.json#/definitions/entity_texture_paths"
+										}
+									}
+								}
+							]
+						},
+						"geometry": {
+							"description": "Defines the geometries used in the entity.",
+							"type": "object",
+							"patternProperties": {
+								".*": {
+									"$ref": "../../general/reference/geometry.json"
+								}
+							}
+						},
+						"queryable_geometry": {
+							"$ref": "../../general/reference/geometry.json"
+						},
+						"animations": {
+							"description": "Defines animations and animation controllers to be used in this entity.",
+							"type": "object",
+							"allOf": [
+								{
+									"$ref": "../../clientAnimation/dynamic/shortNameProperty.json"
+								},
+								{
+									"$ref": "../../clientAnimationController/dynamic/shortNameProperty.json"
+								},
+								{
+									"patternProperties": {
+										".*": {
+											"$ref": "../../general/reference/clientAnimation.json"
+										}
+									}
+								}
+							]
+						},
+						"scripts": {
+							"description": "Calculates variables to be used on the entity pre-animation and can run animations.",
+							"additionalProperties": false,
+							"type": "object",
+							"properties": {
+								"scale": {
+									"description": "Sets the scale of the mobs geometry.",
+									"anyOf": [
+										{
+											"type": "number"
+										},
+										{
+											"type": "string",
+											"$ref": "../../molang/embedded.json"
+										}
+									]
+								},
+								"initialize": {
+									"description": "Initializes variables.",
+									"type": "array",
+									"items": {
+										"$ref": "../../molang/embedded.json"
+									}
+								},
+								"pre_animation": {
+									"description": "Pre-computes any expensive and complex values you may want to reuse in your scripts, long-living index variable updates, or generally any one-off computation per render tick.",
+									"type": "array",
+									"items": {
+										"$ref": "../../molang/embedded.json"
+									}
+								},
+								"parent_setup": {
+									"$ref": "../../molang/embedded.json"
+								},
+								"animate": {
+									"description": "Runs animations and animation controllers that are defines under 'animations'",
+									"type": "array",
+									"minItems": 1,
+									"items": {
+										"anyOf": [
+											{
+												"type": "object",
+												"propertyNames": {
+													"$ref": "../dynamic/currentContext/animationReferenceEnum.json"
+												},
+												"patternProperties": {
+													".+": {
+														"$ref": "../../molang/embedded.json"
+													}
+												}
+											},
+											{
+												"type": "string",
+												"$ref": "../dynamic/currentContext/animationReferenceEnum.json"
+											}
+										]
+									}
+								},
+								"variables": {
+									"description": "A list of variables that need certain settings applied to them.",
+									"patternProperties": {
+										"^(variable|v)\\..*": {
+											"const": "public"
+										}
+									}
+								},
+								"should_update_bones_and_effects_offscreen": {
+									"description": "Bones and effects will still be updated if the entity is off screen if this expression returns anything other than 0.0.",
+									"$ref": "../../molang/embedded.json"
+								},
+								"should_update_effects_offscreen": {
+									"description": "Effects will still be updated if the entity is off screen if this expression or 'should_update_bones_and_effects_offscreen' returns anything other than 0.0.",
+									"$ref": "../../molang/embedded.json"
+								}
+							}
+						},
+						"sound_effects": {
+							"description": "Defines the sounds to be played on the entity.",
+							"type": "object",
+							"allOf": [
+								{
+									"$ref": "../../soundDefinition/dynamic/shortNameProperty.json"
+								},
+								{
+									"patternProperties": {
+										".*": {
+											"$ref": "../../soundDefinition/dynamic/identifierEnum.json"
+										}
+									}
+								}
+							]
+						},
+						"render_controllers": {
+							"description": "References all render controllers used to render the entity.",
+							"type": "array",
+							"items": {
+								"anyOf": [
+									{
+										"type": "object",
+										"propertyNames": {
+											"$ref": "../../general/reference/renderController.json"
+										},
+										"patternProperties": {
+											".+": {
+												"$ref": "../../molang/embedded.json"
+											}
+										}
+									},
+									{
+										"type": "string",
+										"$ref": "../../general/reference/renderController.json"
+									}
+								]
+							}
+						},
+						"particle_effects": {
+							"description": "Defines the particles to be played on the entity.",
+							"type": "object",
+							"allOf": [
+								{
+									"$ref": "../../particle/dynamic/shortNameProperty.json"
+								},
+								{
+									"patternProperties": {
+										".*": {
+											"$ref": "../../general/reference/identifiers.json#/definitions/particle_identifiers"
+										}
+									}
+								}
+							]
+						},
+						"particle_emitters": {
+							"description": "Defines the entity's particle emitters.",
+							"allOf": [
+								{
+									"$ref": "../../particle/dynamic/shortNameProperty.json"
+								},
+								{
+									"patternProperties": {
+										".*": {
+											"$ref": "../../general/reference/identifiers.json#/definitions/particle_identifiers"
+										}
+									}
+								}
+							]
+						},
+						"held_item_ignores_lighting": {
+							"description": "This determines if the item held by an entity should render fully lit up (if true), or depending on surrounding lighting.",
+							"type": "boolean"
+						}
+					}
+				}
+			}
+		}
+	}
+}

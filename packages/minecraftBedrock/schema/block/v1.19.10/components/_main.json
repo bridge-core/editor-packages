@@ -2,6 +2,12 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"type": "object",
 	"properties": {
+		"minecraft:queued_ticking": {
+			"$ref": "./queued_ticking.json"
+		},
+		"minecraft:flammable": {
+			"$ref": "./flammable.json"
+		},
 		"minecraft:part_visibility": {
 			"$ref": "./part_visibility.json"
 		},
@@ -65,9 +71,6 @@
 		"minecraft:on_interact": {
 			"$ref": "../../v1.16.100/components/on_interact.json"
 		},
-		"minecraft:ticking": {
-			"$ref": "../../v1.16.100/components/ticking.json"
-		},
 		"minecraft:random_ticking": {
 			"$ref": "../../v1.16.100/components/random_ticking.json"
 		},
@@ -91,9 +94,6 @@
 		},
 		"minecraft:map_color": {
 			"$ref": "../../v1.16.0/components/map_color.json"
-		},
-		"minecraft:flammable": {
-			"$ref": "../../v1.16.0/components/flammable.json"
 		},
 		"minecraft:friction": {
 			"$ref": "../../v1.16.0/components/friction.json"

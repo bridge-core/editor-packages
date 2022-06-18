@@ -1,5 +1,9 @@
 [
 	{
+		"cacheKey": "identifier",
+		"path": "minecraft:biome/description/identifier"
+	},
+	{
 		"cacheKey": "tags",
 		"path": "minecraft:biome/components",
 		"filter": [
