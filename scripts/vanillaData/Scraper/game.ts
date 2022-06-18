@@ -1,4 +1,4 @@
-import { GameTarget } from '../data.ts'
+import { GameTarget } from '../interfaces.ts'
 import { join, extname } from 'path'
 import json5 from 'json5'
 import { writeRaw } from '../writeRaw.ts'

@@ -1,5 +1,5 @@
 import { DOMParser, HTMLDocument } from 'deno-dom'
-import { DocTarget } from '../data.ts'
+import { DocTarget } from '../interfaces.ts'
 import { writeRaw } from '../writeRaw.ts'
 
 export class DocumentationScraper {
