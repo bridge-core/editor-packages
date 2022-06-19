@@ -2,19 +2,31 @@ import { join, globToRegExp } from 'path'
 import json5 from 'json5'
 import { packageIntoSingleFile } from './packageIntoSingleFile.ts'
 
-export const combineIntoSingleFile: RegExp[] = ['packages/*/schema'].map((p) =>
-	globToRegExp(p)
-)
+export const combineIntoSingleFile: [RegExp, { packageIntoArray?: boolean }][] =
+	(<const>[
+		'packages/*/schema',
+		['packages/*/fileDefinition', { packageIntoArray: true }],
+	]).map((pattern) =>
+		typeof pattern === 'string'
+			? [globToRegExp(pattern), {}]
+			: [globToRegExp(pattern[0]), pattern[1]]
+	)
 
 export async function packageDirectory(path: string, outputPath: string) {
 	for await (const entry of Deno.readDir(path)) {
 		const newPath = join(path, entry.name)
 		const newOutPath = join(outputPath, entry.name)
 
-		if (combineIntoSingleFile.some((p) => newPath.match(p))) {
+		const combineData = combineIntoSingleFile.find(([regExp]) =>
+			newPath.match(regExp)
+		)
+		if (combineData) {
+			const [_, { packageIntoArray }] = combineData
 			await Deno.writeTextFile(
 				`${newOutPath}s.json`,
-				JSON.stringify(await packageIntoSingleFile(newPath))
+				JSON.stringify(
+					await packageIntoSingleFile(newPath, packageIntoArray)
+				)
 			)
 			continue
 		}
