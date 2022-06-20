@@ -7,6 +7,7 @@ export const combineIntoSingleFile: [RegExp, { packageIntoArray?: boolean }][] =
 		'packages/*/schema',
 		['packages/*/fileDefinition', { packageIntoArray: true }],
 		'packages/*/schemaScript',
+		'packages/*/lightningCache',
 	]).map((pattern) =>
 		typeof pattern === 'string'
 			? [globToRegExp(pattern), {}]
