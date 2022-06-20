@@ -7,7 +7,6 @@ export const combineIntoSingleFile: [RegExp, { packageIntoArray?: boolean }][] =
 		'packages/*/schema',
 		['packages/*/fileDefinition', { packageIntoArray: true }],
 		'packages/*/schemaScript',
-		'packages/*/presets',
 	]).map((pattern) =>
 		typeof pattern === 'string'
 			? [globToRegExp(pattern), {}]
