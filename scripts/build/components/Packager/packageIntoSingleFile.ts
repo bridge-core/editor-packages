@@ -19,9 +19,13 @@ async function packageIntoSingleFileObj(
 
 		if (entry.isDirectory) {
 			await packageIntoSingleFileObj(newPath, current)
-		} else if (entry.isFile && entry.name.endsWith('.json')) {
+		} else if (entry.isFile) {
+			const fileContent = await Deno.readTextFile(newPath)
+
 			current[`file:///data/${newPath.replaceAll('\\', '/')}`] =
-				json5.parse(await Deno.readTextFile(newPath))
+				entry.name.endsWith('.json')
+					? json5.parse(fileContent)
+					: fileContent
 		}
 	}
 
@@ -33,8 +37,14 @@ async function packageIntoSingleFileArr(path: string, current: any[] = []) {
 
 		if (entry.isDirectory) {
 			await packageIntoSingleFileArr(newPath, current)
-		} else if (entry.isFile && entry.name.endsWith('.json')) {
-			current.push(json5.parse(await Deno.readTextFile(newPath)))
+		} else if (entry.isFile) {
+			const fileContent = await Deno.readTextFile(newPath)
+
+			current.push(
+				entry.name.endsWith('.json')
+					? json5.parse(fileContent)
+					: fileContent
+			)
 		}
 	}
 
