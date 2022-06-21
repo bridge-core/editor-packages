@@ -1,18 +1,6 @@
 import { DocTarget, ExportTarget, GameTarget } from './interfaces.ts'
 
 /**
- * Base vanilla data to be added to generated content in case it is missing from documentation or game files.
- * @example
- * ```js
- * {
- *     entityIdentifiers: ["pig", "cow"],
- *     entityFamilies: ["monster"],
- * }
- * ```
- */
-export const baseData: Record<string, string[]> = {}
-
-/**
  * Define the data that should be scraped from the game files and documentation.
  */
 export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
@@ -186,6 +174,12 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 			packType: 'definitions',
 			content: 'minecraft:feature_rules/description/identifier',
 		},
+		{
+			id: 'material',
+			path: 'entity',
+			packType: 'resourcePack',
+			content: 'minecraft:client_entity/description/materials/*',
+		},
 	],
 }
 
@@ -266,4 +260,106 @@ export const exportRaw: ExportTarget[] = [
 		to: 'general/vanilla/biomeTagProperty.json',
 		type: 'property',
 	},
+	{
+		from: ['material.json'],
+		to: 'general/vanilla/material.json',
+	},
 ]
+
+
+
+/**
+ * Base vanilla data to be added to generated content in case it is missing from documentation or game files.
+ * @example
+ * ```js
+ * {
+ *     entityIdentifiers: ["pig", "cow"],
+ *     entityFamilies: ["monster"],
+ * }
+ * ```
+ */
+ export const baseData: Record<string, string[]> = {
+	material: [
+		'alpha_block',
+		'alpha_block_color',
+		'armor',
+		'armor_enchanted',
+		'armor_leather',
+		'armor_leather_enchanted',
+		'banner',
+		'banner_pole',
+		'beacon_beam',
+		'beacon_beam_transparent',
+		'bed',
+		'bell',
+		'boat',
+		'chalkboard',
+		'chest',
+		'clownfish',
+		'conduit',
+		'conduit_wind',
+		'dragon_head',
+		'elytra',
+		'enchanting_table_book',
+		'entity',
+		'entity_alphablend',
+		'entity_alphablend_nocolor',
+		'entity_alphatest_change_color',
+		'entity_alphatest_change_color_glint',
+		'entity_alphatest_glint',
+		'entity_alphatest_glint_item',
+		'entity_alphatest_multicolor_tint',
+		'entity_change_color',
+		'entity_change_color_glint',
+		'entity_custom',
+		'entity_dissolve_layer0',
+		'entity_dissolve_layer1',
+		'entity_emissive',
+		'entity_emissive_alpha',
+		'entity_emissive_alpha_one_sided',
+		'entity_flat_color_line',
+		'entity_glint',
+		'entity_lead_base',
+		'entity_loyalty_rope',
+		'entity_multitexture',
+		'entity_multitexture_alpha_test',
+		'entity_multitexture_alpha_test_color_mask',
+		'entity_multitexture_color_mask',
+		'entity_multitexture_masked',
+		'entity_multitexture_multiplicative_blend',
+		'entity_nocull',
+		'entity_static',
+		'horse_saddle',
+		'item_in_hand',
+		'item_in_hand_entity_alphatest',
+		'item_in_hand_entity_alphatest_color',
+		'item_in_hand_glint',
+		'item_in_hand_multicolor_tint',
+		'map',
+		'map_decoration',
+		'map_marker',
+		'mob_head',
+		'mooshroom_mushrooms',
+		'moving_block',
+		'moving_block_alpha',
+		'moving_block_alpha_seasons',
+		'moving_block_alpha_single_side',
+		'moving_block_blend',
+		'moving_block_double_side',
+		'moving_block_seasons',
+		'npc',
+		'opaque_block',
+		'opaque_block_color',
+		'opaque_block_color_uv2',
+		'piston_arm',
+		'player',
+		'player_alphatest',
+		'player_animated',
+		'shield',
+		'shield_glint',
+		'shulker_box',
+		'trident',
+		'trident_glint',
+		'trident_riptide',
+	],
+}

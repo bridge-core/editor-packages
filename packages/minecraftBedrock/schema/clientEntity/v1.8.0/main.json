@@ -57,7 +57,7 @@
 							"type": "object",
 							"patternProperties": {
 								".*": {
-									"$ref": "../general.json#/definitions/materials"
+									"$ref": "../../general/vanilla/material.json"
 								}
 							}
 						},
