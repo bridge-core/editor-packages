@@ -136,12 +136,14 @@ export class GameScraper {
 		const key = parts.shift() ?? ''
 		let arrData: any[] = []
 
-		if (key === '*' && parts.length > 1) {
+		if (key === '*') {
 			for (const obj in data) {
 				if (Array.isArray(data[obj]) || typeof data[obj] === 'object')
 					arrData = arrData.concat(
 						this._walkJson(parts.join('/'), data[obj])
 					)
+				else if (parts.length === 0)
+					arrData.push(data[obj])
 			}
 		} else if (data[key]) {
 			data = this._walkJson(parts.join('/'), data[key])
