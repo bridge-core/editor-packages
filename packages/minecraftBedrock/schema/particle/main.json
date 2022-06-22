@@ -6,6 +6,7 @@
 	"required": ["particle_effect", "format_version"],
 	"properties": {
 		"format_version": {
+			"type": "string",
 			"$ref": "../project/formatVersionEnum.json"
 		},
 		"particle_effect": {

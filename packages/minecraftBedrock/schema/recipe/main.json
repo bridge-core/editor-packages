@@ -5,7 +5,15 @@
 	"type": "object",
 	"properties": {
 		"format_version": {
-			"const": "1.12"
+			"type": "string",
+			"anyOf": [
+				{
+					"$ref": "../project/formatVersionEnum.json"
+				},
+				{
+					"const": "1.12"
+				}
+			]
 		}
 	},
 	"allOf": [
