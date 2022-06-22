@@ -3,7 +3,7 @@
 	"definitions": {
 		"item_or_block": {
 			"type": "string",
-			"oneOf": [
+			"anyOf": [
 				{
 					"$ref": "../general/reference/identifiers.json#/definitions/item_identifiers"
 				},
