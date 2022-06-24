@@ -4,6 +4,9 @@ Thank you for considering to contribute to bridge.'s editor data
 
 ## Schema Style
 
+It should be noted that bridge.'s data uses draft 07 of the json schema standard. This should be specified at the top of every schema file with the line:
+`"$schema": "http://json-schema.org/draft-07/schema"`
+
 ### Title
 
 Titles of objects should be added to all objects and should be capitalised versions of the property key with the following exceptions:
