@@ -85,7 +85,15 @@
 												"type": "integer"
 											},
 											"name": {
-												"$ref": "../general/reference/identifiers.json#/definitions/item_identifiers"
+												"type": "string",
+												"anyOf": [
+													{
+														"$ref": "../general/reference/identifiers.json#/definitions/item_identifiers"
+													},
+													{
+														"$ref": "../general/reference/identifiers.json#/definitions/block_identifiers"
+													}
+												]
 											},
 											"pools": {
 												"$ref": "#/properties/pools"
