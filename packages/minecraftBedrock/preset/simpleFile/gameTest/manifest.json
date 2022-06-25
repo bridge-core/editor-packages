@@ -9,7 +9,7 @@
 		"experimentalGameplay": ["enableGameTestFramework"]
 	},
 	"additionalModels": {
-		"PRESET_PATH": "scripts/gametests/"
+		"PRESET_PATH": "scripts/"
 	},
 	"fields": [
 		[
