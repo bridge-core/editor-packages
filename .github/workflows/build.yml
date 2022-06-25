@@ -28,12 +28,12 @@ jobs:
             - name: Setup Deno 🚧
               uses: denolib/setup-deno@v2
               with:
-                  deno-version: v1.12.X
+                  deno-version: v1.23.X
 
             - name: Build data 🔧
               run: |
                   cd ./editor-packages
-                  deno run -A --import-map=importMap.json ./scripts/build/build.ts
+                  deno task build
                   mv packages.zip ../editor/public
                   mv dataPackage.ts ../editor/src/utils/app
 
