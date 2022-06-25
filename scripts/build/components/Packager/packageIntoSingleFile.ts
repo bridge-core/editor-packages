@@ -1,5 +1,8 @@
-import { join } from 'path'
+import { join, globToRegExp } from 'path'
 import json5 from 'json5'
+import { minifySchema } from './minifySchema.ts'
+
+const schemaFilePattern = globToRegExp('packages/*/schema/**/*.json')
 
 export async function packageIntoSingleFile(
 	path: string,
@@ -20,12 +23,8 @@ async function packageIntoSingleFileObj(
 		if (entry.isDirectory) {
 			await packageIntoSingleFileObj(newPath, current)
 		} else if (entry.isFile) {
-			const fileContent = await Deno.readTextFile(newPath)
-
 			current[`file:///data/${newPath.replaceAll('\\', '/')}`] =
-				entry.name.endsWith('.json')
-					? json5.parse(fileContent)
-					: fileContent
+				await loadFile(newPath)
 		}
 	}
 
@@ -38,15 +37,21 @@ async function packageIntoSingleFileArr(path: string, current: any[] = []) {
 		if (entry.isDirectory) {
 			await packageIntoSingleFileArr(newPath, current)
 		} else if (entry.isFile) {
-			const fileContent = await Deno.readTextFile(newPath)
-
-			current.push(
-				entry.name.endsWith('.json')
-					? json5.parse(fileContent)
-					: fileContent
-			)
+			current.push(await loadFile(newPath))
 		}
 	}
 
 	return current
+}
+
+async function loadFile(filePath: string) {
+	const fileContent = await Deno.readTextFile(filePath)
+
+	const loadedFile = filePath.endsWith('.json')
+		? json5.parse(fileContent)
+		: fileContent
+
+	if (filePath.match(schemaFilePattern)) minifySchema(loadedFile)
+
+	return loadedFile
 }
