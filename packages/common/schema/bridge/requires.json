@@ -50,6 +50,12 @@
 					"skinPack"
 				]
 			}
+		},
+		"dependencies": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
 		}
 	}
 }

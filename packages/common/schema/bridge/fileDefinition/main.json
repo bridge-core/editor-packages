@@ -202,35 +202,15 @@
 			"items": {
 				"anyOf": [
 					{
-						"type": "array",
-						"minItems": 2,
-						"maxItems": 2,
-						"items": [
-							{
+						"type": "object",
+						"properties": {
+							"definition": {
 								"type": "string"
 							},
-							{
-								"type": "object",
-								"additionalProperties": false,
-								"properties": {
-									"targetVersion": {
-										"type": "array",
-										"minItems": 2,
-										"maxItems": 2,
-										"items": [
-											{
-												"type": "string",
-												"description": "The operator to compare the version with."
-											},
-											{
-												"type": "string",
-												"description": "The version to compare to the project target version."
-											}
-										]
-									}
-								}
+							"requires": {
+								"$ref": "../requires.json"
 							}
-						]
+						}
 					},
 					{
 						"type": "string"

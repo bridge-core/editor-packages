@@ -6,9 +6,73 @@
 
 /* *****************************************************************************
    Copyright (c) Microsoft Corporation.
-***************************************************************************** */
+   ***************************************************************************** */
 
 declare module 'mojang-minecraft' {
+	/**
+	 * Represents a direction for expressing relative position or
+	 * facing.
+	 */
+	export enum Direction {
+		/**
+		 * Represents an object located or facing in the down (z - 1)
+		 * direction.
+		 */
+		down = 0,
+		/**
+		 * Represents an object located or facing in the up (z + 1)
+		 * direction.
+		 */
+		up = 1,
+		/**
+		 * Represents an object located or facing in the north (z - 1)
+		 * direction.
+		 */
+		north = 2,
+		/**
+		 * Represents an object located or facing in the south (z + 1)
+		 * direction.
+		 */
+		south = 3,
+		/**
+		 * Represents an object located or facing in the west (x - 1)
+		 * direction.
+		 */
+		west = 4,
+		/**
+		 * Represents an object located or facing in the east (x + 1)
+		 * direction.
+		 */
+		east = 5,
+	}
+	/**
+	 * Represents a game mode for the current world experience.
+	 */
+	export enum GameMode {
+		/**
+		 * World is in a survival mode, where players can take damage
+		 * and entities may not be peaceful. Survival mode is where the
+		 * player must collect resources, build structures while
+		 * surviving in their generated world. Activities can, over
+		 * time, chip away at player health and hunger bar.
+		 */
+		survival = 0,
+		/**
+		 * World is in a full creative mode. In creative mode, the
+		 * player has all the resources available in the item selection
+		 * tabs and the survival selection tab. They can also destroy
+		 * blocks instantly including those which would normally be
+		 * indestructible. Command and structure blocks can also be
+		 * used in creative mode. Items also do not lose durability or
+		 * disappear.
+		 */
+		creative = 1,
+		/**
+		 * World is in a more locked-down experience, where blocks may
+		 * not be manipulated.
+		 */
+		adventure = 2,
+	}
 	/**
 	 * An event that fires as players enter chat messages.
 	 */
@@ -62,6 +126,58 @@ declare module 'mojang-minecraft' {
 		unsubscribe(callback: (arg: BeforeChatEvent) => void): void
 	}
 	/**
+	 * Contains information related to firing of a data driven
+	 * entity event - for example, the minecraft:ageable_grow_up
+	 * event on a chicken.
+	 */
+	export class BeforeDataDrivenEntityTriggerEvent {
+		/**
+		 * If set to true, this entity event is not triggered.
+		 */
+		'cancel': boolean
+		/**
+		 * Entity that the event triggered on.
+		 */
+		readonly 'entity': Entity
+		/**
+		 * Name of the data driven event being triggered.
+		 */
+		readonly 'id': string
+		/**
+		 * An updateable list of modifications to component state that
+		 * are the effect of this triggered event.
+		 */
+		'modifiers': DefinitionModifier[]
+	}
+	/**
+	 * Contains information related to firing of a data driven
+	 * entity event - for example, the minecraft:ageable_grow_up
+	 * event on a chicken.
+	 */
+	export class BeforeDataDrivenEntityTriggerEventSignal {
+		/**
+		 * @remarks
+		 * Adds a callback that will be called before a data driven
+		 * entity event is triggered.
+		 * @param callback
+		 * @param options
+		 */
+		subscribe(
+			callback: (arg: BeforeDataDrivenEntityTriggerEvent) => void,
+			options?: EntityDataDrivenTriggerEventOptions
+		): (arg: BeforeDataDrivenEntityTriggerEvent) => void
+		/**
+		 * @remarks
+		 * Removes a callback that will be called before a data driven
+		 * entity event is triggered.
+		 * @param callback
+		 * @throws This function can throw errors.
+		 */
+		unsubscribe(
+			callback: (arg: BeforeDataDrivenEntityTriggerEvent) => void
+		): void
+	}
+	/**
 	 * Contains information regarding an explosion that has
 	 * happened.
 	 */
@@ -110,15 +226,169 @@ declare module 'mojang-minecraft' {
 		unsubscribe(callback: (arg: BeforeExplosionEvent) => void): void
 	}
 	/**
+	 * Manages callbacks that are connected to an item's definition
+	 * and components changing.
+	 */
+	export class BeforeItemDefinitionEventSignal {
+		/**
+		 * @remarks
+		 * Adds a callback that will be called when an item's
+		 * definition and components change.
+		 * @param callback
+		 */
+		subscribe(
+			callback: (arg: BeforeItemDefinitionTriggeredEvent) => void
+		): (arg: BeforeItemDefinitionTriggeredEvent) => void
+		/**
+		 * @remarks
+		 * Removes a callback from being called when an item's
+		 * definition and components change.
+		 * @param callback
+		 * @throws This function can throw errors.
+		 */
+		unsubscribe(
+			callback: (arg: BeforeItemDefinitionTriggeredEvent) => void
+		): void
+	}
+	/**
+	 * Contains information related to a triggering of a custom
+	 * item definition change.
+	 */
+	export class BeforeItemDefinitionTriggeredEvent {
+		/**
+		 * If set to true, will cancel the application of this item
+		 * definition change.
+		 */
+		'cancel': boolean
+		/**
+		 * Name of the data-driven item event that is triggering this
+		 * change.
+		 */
+		readonly 'eventName': string
+		/**
+		 * The impacted item stack that is being used.
+		 */
+		'item': ItemStack
+		/**
+		 * Returns the source entity that triggered this item event.
+		 */
+		readonly 'source': Entity
+	}
+	/**
+	 * Contains information related to an item being used.
+	 */
+	export class BeforeItemUseEvent {
+		/**
+		 * If set to true, this will cancel the item use behavior.
+		 */
+		'cancel': boolean
+		/**
+		 * The impacted item stack that is being used.
+		 */
+		'item': ItemStack
+		/**
+		 * Returns the source entity that triggered this item event.
+		 */
+		readonly 'source': Entity
+	}
+	/**
+	 * Manages callbacks that fire before an item is used.
+	 */
+	export class BeforeItemUseEventSignal {
+		/**
+		 * @remarks
+		 * Adds a callback that will be called before an item is used.
+		 * @param callback
+		 */
+		subscribe(
+			callback: (arg: BeforeItemUseEvent) => void
+		): (arg: BeforeItemUseEvent) => void
+		/**
+		 * @remarks
+		 * Removes a callback from being called before an item is used.
+		 * @param callback
+		 * @throws This function can throw errors.
+		 */
+		unsubscribe(callback: (arg: BeforeItemUseEvent) => void): void
+	}
+	/**
+	 * Contains information related to an item being used on a
+	 * block.
+	 */
+	export class BeforeItemUseOnEvent {
+		/**
+		 * The face of the block that an item is being used on.
+		 */
+		readonly 'blockFace': Direction
+		/**
+		 * Location of the block being impacted.
+		 */
+		readonly 'blockLocation': BlockLocation
+		/**
+		 * If set to true, this will cancel the item use behavior.
+		 */
+		'cancel': boolean
+		/**
+		 * X coordinate of the item-use impact location on the face of
+		 * the target block.
+		 */
+		readonly 'faceLocationX': number
+		/**
+		 * Y coordinate of the item-use impact location on the face of
+		 * the target block.
+		 */
+		readonly 'faceLocationY': number
+		/**
+		 * The impacted item stack that is being used on a block.
+		 */
+		'item': ItemStack
+		/**
+		 * Returns the source entity that triggered this item event.
+		 */
+		readonly 'source': Entity
+	}
+	/**
+	 * Manages callbacks that fire before an item being used on a
+	 * block event.
+	 */
+	export class BeforeItemUseOnEventSignal {
+		/**
+		 * @remarks
+		 * Adds a callback that will be called before an item is used
+		 * on a block.
+		 * @param callback
+		 */
+		subscribe(
+			callback: (arg: BeforeItemUseOnEvent) => void
+		): (arg: BeforeItemUseOnEvent) => void
+		/**
+		 * @remarks
+		 * Removes a callback from being called before an item is used
+		 * on a block.
+		 * @param callback
+		 * @throws This function can throw errors.
+		 */
+		unsubscribe(callback: (arg: BeforeItemUseOnEvent) => void): void
+	}
+	/**
 	 * Contains information related to changes before a piston
 	 * expands or retracts.
 	 */
-	export class BeforePistonActivateEvent {
+	export class BeforePistonActivateEvent extends BlockEvent {
+		/**
+		 * Block impacted by this event.
+		 */
+		readonly 'block': Block
 		/**
 		 * If this is set to true within an event handler, the piston
 		 * activation is canceled.
 		 */
 		'cancel': boolean
+		/**
+		 * Dimension that contains the block that is the subject of
+		 * this event.
+		 */
+		readonly 'dimension': Dimension
 		/**
 		 * True if the piston is the process of expanding.
 		 */
@@ -229,10 +499,10 @@ declare module 'mojang-minecraft' {
 		 * else `false`.
 		 * @example check_block_tags.js
 		 * ```typescript
-		 *        import { World, BlockLocation } from "mojang-minecraft";
+		 *        import { world, BlockLocation } from "mojang-minecraft";
 		 *
 		 *        // Fetch the block
-		 *        const block = World.getDimension("overworld").getBlock(new BlockLocation(1, 2, 3));
+		 *        const block = world.getDimension("overworld").getBlock(new BlockLocation(1, 2, 3));
 		 *
 		 *        console.log(`Block is dirt: ${block.hasTag("dirt")}`);
 		 *        console.log(`Block is wood: ${block.hasTag("wood")}`);
@@ -250,7 +520,7 @@ declare module 'mojang-minecraft' {
 		 * Block.
 		 * @example place_bottom_stone_slab.js
 		 * ```typescript
-		 *        import { World, MinecraftBlockTypes, BlockProperties, BlockLocation } from "mojang-minecraft";
+		 *        import { world, MinecraftBlockTypes, BlockProperties, BlockLocation } from "mojang-minecraft";
 		 *
 		 *        // Create the permutation
 		 *        let bottomStoneSlab = MinecraftBlockTypes.stoneSlab.createDefaultBlockPermutation();
@@ -258,7 +528,7 @@ declare module 'mojang-minecraft' {
 		 *        bottomStoneSlab.getProperty(BlockProperties.topSlotBit).value = false;
 		 *
 		 *        // Fetch the block
-		 *        const block = World.getDimension("overworld").getBlock(new BlockLocation(1, 2, 3));
+		 *        const block = world.getDimension("overworld").getBlock(new BlockLocation(1, 2, 3));
 		 *
 		 *        // Set the permutation
 		 *        block.setPermutation(bottomStoneSlab);
@@ -276,18 +546,128 @@ declare module 'mojang-minecraft' {
 		setType(blockType: BlockType): void
 	}
 	/**
+	 * Holds information for expressing the net size of a volume of
+	 * blocks.
+	 */
+	export class BlockAreaSize {
+		/**
+		 * X size (west to east) component of this block area.
+		 */
+		'x': number
+		/**
+		 * Y size (down to up) of this block area size.
+		 */
+		'y': number
+		/**
+		 * Z size (south to north) of this block area size.
+		 */
+		'z': number
+		/**
+		 * @remarks
+		 * Creates a new BlockAreaSize object.
+		 * @param x
+		 * @param y
+		 * @param z
+		 */
+		constructor(x: number, y: number, z: number)
+		/**
+		 * @remarks
+		 * Tests whether this block area size is equal to another
+		 * BlockAreaSize object.
+		 * @param other
+		 */
+		equals(other: BlockAreaSize): boolean
+	}
+	/**
+	 * Contains information regarding an event where a player
+	 * breaks a block.
+	 */
+	export class BlockBreakEvent extends BlockEvent {
+		/**
+		 * Block broken in this event. Note that because this event
+		 * fires right after a block is broken, the block you will
+		 * receive will likely be of type 'minecraft:air'. See the
+		 * .brokenBlockPermutation property for information on this
+		 * block before it was broken.
+		 */
+		readonly 'block': Block
+		/**
+		 * Returns permutation information about this block before it
+		 * was broken.
+		 */
+		readonly 'brokenBlockPermutation': BlockPermutation
+		/**
+		 * Dimension that contains the block that has been broken in
+		 * this event.
+		 */
+		readonly 'dimension': Dimension
+		/**
+		 * Player that broke the block for this event.
+		 */
+		readonly 'player': Player
+	}
+	/**
+	 * Manages callbacks that are connected to when a block is
+	 * broken.
+	 */
+	export class BlockBreakEventSignal {
+		/**
+		 * @remarks
+		 * Adds a callback that will be called when a block is broken
+		 * by a player.
+		 * @param callback
+		 */
+		subscribe(
+			callback: (arg: BlockBreakEvent) => void
+		): (arg: BlockBreakEvent) => void
+		/**
+		 * @remarks
+		 * Removes a callback from being called when an block is
+		 * broken.
+		 * @param callback
+		 * @throws This function can throw errors.
+		 */
+		unsubscribe(callback: (arg: BlockBreakEvent) => void): void
+	}
+	/**
 	 * Base type for components associated with blocks.
 	 */
+	// tslint:disable-next-line:no-unnecessary-class
 	export class BlockComponent {}
+	/**
+	 * Contains information regarding an event that impacts a
+	 * specific block.
+	 */
+	export class BlockEvent {
+		/**
+		 * Block impacted by this event.
+		 */
+		readonly 'block': Block
+		/**
+		 * Dimension that contains the block that is the subject of
+		 * this event.
+		 */
+		readonly 'dimension': Dimension
+	}
 	/**
 	 * Contains information regarding an explosion that has
 	 * occurred for a specific block.
 	 */
-	export class BlockExplodeEvent {
+	export class BlockExplodeEvent extends BlockEvent {
 		/**
 		 * Block impacted by this explosion event.
 		 */
-		readonly 'destroyedBlock': Block
+		readonly 'block': Block
+		/**
+		 * Contains core information on the state of the block before
+		 * it was destroyed in an explosion.
+		 */
+		readonly 'destroyedBlockPermutation': BlockPermutation
+		/**
+		 * Dimension that contains the block that is the subject of
+		 * this explosion event.
+		 */
+		readonly 'dimension': Dimension
 		/**
 		 * Optional source of the explosion.
 		 */
@@ -335,7 +715,7 @@ declare module 'mojang-minecraft' {
 	 * Represents the inventory of a {@link mojang-minecraft.Block} in the
 	 * world. Used with blocks like chests.
 	 */
-	export class BlockInventoryComponentContainer {
+	export class BlockInventoryComponentContainer extends Container {
 		/**
 		 * Contains a count of the slots in the container that are
 		 * empty.
@@ -466,7 +846,7 @@ declare module 'mojang-minecraft' {
 		/**
 		 * @remarks
 		 * Returns a BlockLocation for a block above this BlockLocation
-		 * (that is, y - 1).
+		 * (that is, y + 1).
 		 */
 		above(): BlockLocation
 		/**
@@ -547,7 +927,7 @@ declare module 'mojang-minecraft' {
 		 * Returns the list of all of the properties that the
 		 * permutation has.
 		 */
-		getAllProperties(): any[]
+		getAllProperties(): IBlockProperty[]
 		/**
 		 * @remarks
 		 * Gets a property for the permutation.
@@ -557,7 +937,7 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 * @example place_bottom_stone_slab.js
 		 * ```typescript
-		 *        import { World, MinecraftBlockTypes, BlockProperties, BlockLocation } from "mojang-minecraft";
+		 *        import { world, MinecraftBlockTypes, BlockProperties, BlockLocation } from "mojang-minecraft";
 		 *
 		 *        // Create the permutation
 		 *        let bottomStoneSlab = MinecraftBlockTypes.stoneSlab.createDefaultBlockPermutation();
@@ -565,14 +945,14 @@ declare module 'mojang-minecraft' {
 		 *        bottomStoneSlab.getProperty(BlockProperties.topSlotBit).value = false;
 		 *
 		 *        // Fetch the block
-		 *        const block = World.getDimension("overworld").getBlock(new BlockLocation(1, 2, 3));
+		 *        const block = world.getDimension("overworld").getBlock(new BlockLocation(1, 2, 3));
 		 *
 		 *        // Set the permutation
 		 *        block.setPermutation(bottomStoneSlab);
 		 *
 		 * ```
 		 */
-		getProperty(propertyName: string): any
+		getProperty(propertyName: string): IBlockProperty
 		/**
 		 * @remarks
 		 * Creates a copy of the permutation.
@@ -586,10 +966,10 @@ declare module 'mojang-minecraft' {
 		 * Returns `true` if the permutation has the tag, else `false`.
 		 * @example check_block_tags.js
 		 * ```typescript
-		 *        import { World, BlockLocation } from "mojang-minecraft";
+		 *        import { world, BlockLocation } from "mojang-minecraft";
 		 *
 		 *        // Fetch the block
-		 *        const block = World.getDimension("overworld").getBlock(new BlockLocation(1, 2, 3));
+		 *        const block = world.getDimension("overworld").getBlock(new BlockLocation(1, 2, 3));
 		 *        const blockPerm = block.getPermutation();
 		 *
 		 *        console.log(`Block is dirt: ${blockPerm.hasTag("dirt")}`);
@@ -641,6 +1021,48 @@ declare module 'mojang-minecraft' {
 		 * Source location of the block.
 		 */
 		readonly 'location': BlockLocation
+	}
+	/**
+	 * Contains information regarding an event where a player
+	 * places a block.
+	 */
+	export class BlockPlaceEvent extends BlockEvent {
+		/**
+		 * Block placed in this event.
+		 */
+		readonly 'block': Block
+		/**
+		 * Dimension that contains the block that has been placed in
+		 * this event.
+		 */
+		readonly 'dimension': Dimension
+		/**
+		 * Player that placed the block for this event.
+		 */
+		readonly 'player': Player
+	}
+	/**
+	 * Manages callbacks that are connected to when a block is
+	 * broken.
+	 */
+	export class BlockPlaceEventSignal {
+		/**
+		 * @remarks
+		 * Adds a callback that will be called when a block is placed
+		 * by a player.
+		 * @param callback
+		 */
+		subscribe(
+			callback: (arg: BlockPlaceEvent) => void
+		): (arg: BlockPlaceEvent) => void
+		/**
+		 * @remarks
+		 * Removes a callback from being called when an block is
+		 * placed.
+		 * @param callback
+		 * @throws This function can throw errors.
+		 */
+		unsubscribe(callback: (arg: BlockPlaceEvent) => void): void
 	}
 	/**
 	 * Represents a fluid container block that currently contains a
@@ -1265,6 +1687,58 @@ declare module 'mojang-minecraft' {
 		static readonly 'woodType' = 'wood_type'
 	}
 	/**
+	 * Contains additional options for configuring a block raycast
+	 * query.
+	 */
+	export class BlockRaycastOptions {
+		/**
+		 * If true, liquid blocks will be considered as blocks that
+		 * 'stop' the raycast.
+		 */
+		'includeLiquidBlocks': boolean
+		/**
+		 * If true, passable blocks like vines and flowers will be
+		 * considered as blocks that 'stop' the raycast.
+		 */
+		'includePassableBlocks': boolean
+		/**
+		 * Maximum distance, in blocks, to process the raycast.
+		 */
+		'maxDistance': number
+		/**
+		 * @remarks
+		 * Creates a new BlockRaycastOptions object, for use in a block
+		 * vector query.
+		 */
+		constructor()
+	}
+	/**
+	 * Represents a block that can play a record.
+	 */
+	export class BlockRecordPlayerComponent {
+		/**
+		 * @remarks
+		 * Clears the currently playing record of this record-playing
+		 * block.
+		 * @throws This function can throw errors.
+		 */
+		clearRecord(): void
+		/**
+		 * @remarks
+		 * Returns true if the record-playing block is currently
+		 * playing a record.
+		 * @throws This function can throw errors.
+		 */
+		isPlaying(): boolean
+		/**
+		 * @remarks
+		 * Sets and plays a record based on an item type.
+		 * @param recordItemType
+		 * @throws This function can throw errors.
+		 */
+		setRecord(recordItemType: ItemType): void
+	}
+	/**
 	 * Represents a fluid container block that currently contains
 	 * snow.
 	 */
@@ -1304,7 +1778,7 @@ declare module 'mojang-minecraft' {
 		 * @throws This function can throw errors.
 		 * @example place_bottom_stone_slab.js
 		 * ```typescript
-		 *        import { World, MinecraftBlockTypes, BlockProperties, BlockLocation } from "mojang-minecraft";
+		 *        import { world, MinecraftBlockTypes, BlockProperties, BlockLocation } from "mojang-minecraft";
 		 *
 		 *        // Create the permutation
 		 *        let bottomStoneSlab = MinecraftBlockTypes.stoneSlab.createDefaultBlockPermutation();
@@ -1312,7 +1786,7 @@ declare module 'mojang-minecraft' {
 		 *        bottomStoneSlab.getProperty(BlockProperties.topSlotBit).value = false;
 		 *
 		 *        // Fetch the block
-		 *        const block = World.getDimension("overworld").getBlock(new BlockLocation(1, 2, 3));
+		 *        const block = world.getDimension("overworld").getBlock(new BlockLocation(1, 2, 3));
 		 *
 		 *        // Set the permutation
 		 *        block.setPermutation(bottomStoneSlab);
@@ -1352,7 +1826,7 @@ declare module 'mojang-minecraft' {
 	 * Contains the state of a boolean-based property for a
 	 * {@link mojang-minecraft.BlockPermutation}.
 	 */
-	export class BoolBlockProperty {
+	export class BoolBlockProperty extends IBlockProperty {
 		/**
 		 * The name of this property.
 		 */
@@ -1408,13 +1882,13 @@ declare module 'mojang-minecraft' {
 		 * @example custom_command.js
 		 * ```typescript
 		 *        const chatCallback = World.events.beforeChat.subscribe((eventData) => {
-		 *        if (eventData.message.includes("cancel")) {
-		 *        // Cancel event if the message contains "cancel"
-		 *        eventData.canceled = true;
-		 *        } else {
-		 *        // Modify chat message being sent
-		 *        eventData.message = `Modified '${eventData.message}'`;
-		 *        }
+		 *          if (eventData.message.includes("cancel")) {
+		 *            // Cancel event if the message contains "cancel"
+		 *            eventData.canceled = true;
+		 *          } else {
+		 *            // Modify chat message being sent
+		 *            eventData.message = `Modified '${eventData.message}'`;
+		 *          }
 		 *        });
 		 *
 		 * ```
@@ -1462,33 +1936,6 @@ declare module 'mojang-minecraft' {
 		 * @param alpha
 		 */
 		constructor(red: number, green: number, blue: number, alpha: number)
-	}
-	/**
-	 * Contains a method that lets you run console commands within
-	 * Minecraft.
-	 */
-	// tslint:disable-next-line:no-unnecessary-class
-	export class Commands {
-		/**
-		 * @remarks
-		 * Runs a particular command from the context of the server.
-		 * @param commandString
-		 * Command to run. Note that command strings should not start
-		 * with slash.
-		 * @param dimension
-		 * Dimension to be used as context for the command to run
-		 * within.
-		 * @returns
-		 * For commands that return data, returns a JSON structure with
-		 * command response values.
-		 * @throws This function can throw errors.
-		 * @example commands.js
-		 * ```typescript
-		 *        Commands.run("say You got a new high score!", World.getDimension("overworld"));
-		 *        Commands.run("scoreboard players set @p score 10", World.getDimension("overworld"));
-		 * ```
-		 */
-		static run(commandString: string, dimension: Dimension): any
 	}
 	/**
 	 * Represents a container that can hold sets of items. Used
@@ -1595,10 +2042,83 @@ declare module 'mojang-minecraft' {
 		): boolean
 	}
 	/**
+	 * Contains information related to firing of a data driven
+	 * entity event - for example, the minecraft:ageable_grow_up
+	 * event on a chicken.
+	 */
+	export class DataDrivenEntityTriggerEvent {
+		/**
+		 * Entity that the event triggered on.
+		 */
+		readonly 'entity': Entity
+		/**
+		 * Name of the data driven event being triggered.
+		 */
+		readonly 'id': string
+		/**
+		 * A list of modifications to component state that are the
+		 * effect of this triggered event.
+		 */
+		readonly 'modifiers': DefinitionModifier[]
+	}
+	/**
+	 * Contains event registration related to firing of a data
+	 * driven entity event - for example, the
+	 * minecraft:ageable_grow_up event on a chicken.
+	 */
+	export class DataDrivenEntityTriggerEventSignal {
+		/**
+		 * @remarks
+		 * Adds a callback that will be called after a data driven
+		 * entity event is triggered.
+		 * @param callback
+		 * @param options
+		 */
+		subscribe(
+			callback: (arg: DataDrivenEntityTriggerEvent) => void,
+			options?: EntityDataDrivenTriggerEventOptions
+		): (arg: DataDrivenEntityTriggerEvent) => void
+		/**
+		 * @remarks
+		 * Removes a callback that will be called after a data driven
+		 * entity event is triggered.
+		 * @param callback
+		 * @throws This function can throw errors.
+		 */
+		unsubscribe(callback: (arg: DataDrivenEntityTriggerEvent) => void): void
+	}
+	/**
+	 * Contains a set of updates to the component definition state
+	 * of an entity.
+	 */
+	export class DefinitionModifier {
+		/**
+		 * A list of components that will be added via this definition
+		 * modification.
+		 */
+		readonly 'componentGroupsToAdd': string[]
+		/**
+		 * A list of components that will be removed via this
+		 * definition modification.
+		 */
+		readonly 'componentGroupsToRemove': string[]
+		/**
+		 * A list of entity definition events that will be fired via
+		 * this update.
+		 */
+		'triggers': Trigger[]
+		constructor()
+	}
+	/**
 	 * A class that represents a particular dimension (e.g., The
 	 * End) within a world.
 	 */
 	export class Dimension {
+		/**
+		 * Identifier of the dimension.
+		 * @throws This property can throw when used.
+		 */
+		readonly 'id': string
 		/**
 		 * @remarks
 		 * Creates an explosion at the specified location.
@@ -1627,6 +2147,32 @@ declare module 'mojang-minecraft' {
 		getBlock(location: BlockLocation): Block
 		/**
 		 * @remarks
+		 * Gets the first block that intersects with a vector emanating
+		 * from a location.
+		 * @param location
+		 * @param direction
+		 * @param options
+		 * Additional options for processing this raycast query.
+		 * @throws This function can throw errors.
+		 */
+		getBlockFromRay(
+			location: Location,
+			direction: Vector,
+			options?: BlockRaycastOptions
+		): Block
+		/**
+		 * @remarks
+		 * Returns a set of entities based on a set of conditions
+		 * defined via the EntityQueryOptions set of filter criteria.
+		 * @param getEntities
+		 * @returns
+		 * An entity iterator that can be used to loop over the
+		 * returned entities.
+		 * @throws This function can throw errors.
+		 */
+		getEntities(getEntities?: EntityQueryOptions): EntityIterator
+		/**
+		 * @remarks
 		 * Returns a set of entities at a particular location.
 		 * @param location
 		 * The location at which to return entities.
@@ -1634,6 +2180,32 @@ declare module 'mojang-minecraft' {
 		 * Zero or more entities at the specified location.
 		 */
 		getEntitiesAtBlockLocation(location: BlockLocation): Entity[]
+		/**
+		 * @remarks
+		 * Gets entities that intersect with a specified vector
+		 * emanating from a location.
+		 * @param location
+		 * @param direction
+		 * @param options
+		 * Additional options for processing this raycast query.
+		 * @throws This function can throw errors.
+		 */
+		getEntitiesFromRay(
+			location: Location,
+			direction: Vector,
+			options?: EntityRaycastOptions
+		): Entity[]
+		/**
+		 * @remarks
+		 * Returns a set of players based on a set of conditions
+		 * defined via the EntityQueryOptions set of filter criteria.
+		 * @param getPlayers
+		 * @returns
+		 * An entity iterator that can be used to loop over the
+		 * returned players.
+		 * @throws This function can throw errors.
+		 */
+		getPlayers(getPlayers?: EntityQueryOptions): PlayerIterator
 		/**
 		 * @remarks
 		 * Tests whether a particular location contains an Air (empty)
@@ -1646,9 +2218,26 @@ declare module 'mojang-minecraft' {
 		isEmpty(location: BlockLocation): boolean
 		/**
 		 * @remarks
+		 * Runs a particular command from the context of this entity.
+		 * @param commandString
+		 * Command to run. Note that command strings should not start
+		 * with slash.
+		 * @returns
+		 * For commands that return data, returns a JSON structure with
+		 * command response values.
+		 * @throws This function can throw errors.
+		 * @example commands.js
+		 * ```typescript
+		 *        world.getDimension("overworld").runCommand("say You got a new high score!");
+		 *        world.getDimension("overworld").runCommand("scoreboard players set @p score 10");
+		 *
+		 * ```
+		 */
+		runCommand(commandString: string): any
+		/**
+		 * @remarks
 		 * Creates a new entity (e.g., a mob) at the specified
-		 * location. This method was introduced as of version
-		 * 1.17.10.21.
+		 * location.
 		 * @param identifier
 		 * Identifier of the type of entity to spawn. If no namespace
 		 * is specified, 'minecraft:' is assumed.
@@ -1658,44 +2247,41 @@ declare module 'mojang-minecraft' {
 		 * Newly created entity at the specified location.
 		 * @throws This function can throw errors.
 		 */
-		spawnEntity(identifier: string, location: BlockLocation): Entity
-	}
-	/**
-	 * Represents a direction for expressing relative position or
-	 * facing.
-	 */
-	// tslint:disable-next-line:no-unnecessary-class
-	export class Direction {
+		spawnEntity(
+			identifier: string,
+			location: BlockLocation | Location
+		): Entity
 		/**
-		 * Represents an object located or facing in the down (z - 1)
-		 * direction.
+		 * @remarks
+		 * Creates a new item stack as an entity at the specified
+		 * location.
+		 * @param item
+		 * @param location
+		 * The location at which to create the item stack.
+		 * @returns
+		 * Newly created item stack entity at the specified location.
+		 * @throws This function can throw errors.
 		 */
-		static readonly 'down' = 0
+		spawnItem(item: ItemStack, location: BlockLocation | Location): Entity
 		/**
-		 * Represents an object located or facing in the east (x + 1)
-		 * direction.
+		 * @remarks
+		 * Creates a new particle emitter at a specified location in
+		 * the world.
+		 * @param effectName
+		 * Identifier of the particle to create.
+		 * @param location
+		 * The location at which to create the particle emitter.
+		 * @param molangVariables
+		 * A set of additional, customizable variables that can be
+		 * adjusted for this particle emitter.
+		 * @returns
+		 * Newly created entity at the specified location.
 		 */
-		static readonly 'east' = 5
-		/**
-		 * Represents an object located or facing in the north (z - 1)
-		 * direction.
-		 */
-		static readonly 'north' = 2
-		/**
-		 * Represents an object located or facing in the south (z + 1)
-		 * direction.
-		 */
-		static readonly 'south' = 3
-		/**
-		 * Represents an object located or facing in the up (z + 1)
-		 * direction.
-		 */
-		static readonly 'up' = 1
-		/**
-		 * Represents an object located or facing in the west (x - 1)
-		 * direction.
-		 */
-		static readonly 'west' = 4
+		spawnParticle(
+			effectName: string,
+			location: Location,
+			molangVariables: MolangVariableMap
+		): void
 	}
 	/**
 	 * Represents an effect - like poison - that has been added to
@@ -1713,7 +2299,7 @@ declare module 'mojang-minecraft' {
 		 */
 		readonly 'displayName': string
 		/**
-		 * Gets the entire specified duration, in seconds, of this
+		 * Gets the entire specified duration, in ticks, of this
 		 * effect.
 		 */
 		readonly 'duration': number
@@ -1746,9 +2332,11 @@ declare module 'mojang-minecraft' {
 		 * Adds a callback that will be called when an effect is added
 		 * to an entity.
 		 * @param callback
+		 * @param options
 		 */
 		subscribe(
-			callback: (arg: EffectAddEvent) => void
+			callback: (arg: EffectAddEvent) => void,
+			options?: EntityEventOptions
 		): (arg: EffectAddEvent) => void
 		/**
 		 * @remarks
@@ -1773,10 +2361,132 @@ declare module 'mojang-minecraft' {
 		getName(): string
 	}
 	/**
+	 * This class represents a specific leveled enchantment that is
+	 * applied to an item.
+	 */
+	export class Enchantment {
+		/**
+		 * The level of this enchantment instance.
+		 */
+		'level': number
+		/**
+		 * The enchantment type of this instance.
+		 */
+		readonly 'type': EnchantmentType
+		constructor(enchantmentType: EnchantmentType, level?: number)
+	}
+	/**
+	 * This class represents a collection of enchantments that can
+	 * be applied to an item.
+	 */
+	export class EnchantmentList implements Iterable<Enchantment> {
+		/**
+		 * The item slot/type that this collection is applied to.
+		 */
+		readonly 'slot': number;
+		[Symbol.iterator](): Iterator<Enchantment>
+		/**
+		 * @remarks
+		 * Attempts to add the enchantment to this collection. Returns
+		 * true if successful.
+		 * @param enchantment
+		 */
+		addEnchantment(enchantment: Enchantment): boolean
+		/**
+		 * @remarks
+		 * Returns whether or not the provided EnchantmentInstance can
+		 * be added to this collection.
+		 * @param enchantment
+		 */
+		canAddEnchantment(enchantment: Enchantment): boolean
+		constructor(enchantmentSlot: number)
+		/**
+		 * @remarks
+		 * Returns an enchantment associated with a type.
+		 * @param enchantmentType
+		 */
+		getEnchantment(enchantmentType: EnchantmentType): Enchantment
+		/**
+		 * @remarks
+		 * If this collection has an EnchantmentInstance with type,
+		 * returns the level of the enchantment. Returns 0 if not
+		 * present.
+		 * @param enchantmentType
+		 */
+		hasEnchantment(enchantmentType: EnchantmentType): number
+		next(): IteratorResult<Enchantment>
+		/**
+		 * @remarks
+		 * Removes an EnchantmentInstance with type from this
+		 * collection if present.
+		 * @param enchantmentType
+		 */
+		removeEnchantment(enchantmentType: EnchantmentType): void
+	}
+	/**
+	 * This enum represents the item slot or type that an
+	 * enchantment can be applied to.
+	 */
+	// tslint:disable-next-line:no-unnecessary-class
+	export class EnchantmentSlot {
+		static readonly 'all' = -1
+		static readonly 'armorFeet' = 4
+		static readonly 'armorHead' = 1
+		static readonly 'armorLegs' = 8
+		static readonly 'armorTorso' = 2
+		static readonly 'axe' = 512
+		static readonly 'bow' = 32
+		static readonly 'carrotStick' = 8192
+		static readonly 'cosmeticHead' = 262144
+		static readonly 'crossbow' = 65536
+		static readonly 'elytra' = 16384
+		static readonly 'fishingRod' = 4096
+		static readonly 'flintsteel' = 256
+		static readonly 'gArmor' = 15
+		static readonly 'gDigging' = 3648
+		static readonly 'gTool' = 131520
+		static readonly 'hoe' = 64
+		static readonly 'none' = 0
+		static readonly 'pickaxe' = 1024
+		static readonly 'shears' = 128
+		static readonly 'shield' = 131072
+		static readonly 'shovel' = 2048
+		static readonly 'spear' = 32768
+		static readonly 'sword' = 16
+	}
+	/**
+	 * Contains information on a type of enchantment.
+	 */
+	export class EnchantmentType {
+		/**
+		 * The name of the enchantment type.
+		 */
+		readonly 'id': string
+		/**
+		 * The maximum level this type of enchantment can have.
+		 */
+		readonly 'maxLevel': number
+	}
+	/**
 	 * Represents the state of an entity (a mob, the player, or
 	 * other moving objects like minecarts) in the world.
 	 */
 	export class Entity {
+		/**
+		 * Rotation of the body component of the entity.
+		 * @throws This property can throw when used.
+		 */
+		readonly 'bodyRotation': number
+		/**
+		 * Dimension that the entity is currently within.
+		 * @throws This property can throw when used.
+		 */
+		readonly 'dimension': Dimension
+		/**
+		 * Location of the center of the head component of the entity.
+		 * @throws This property can throw when used.
+		 */
+		readonly 'headLocation': Location
 		/**
 		 * Unique identifier of the entity.
 		 * @throws This property can throw when used.
@@ -1797,10 +2507,20 @@ declare module 'mojang-minecraft' {
 		 */
 		'nameTag': string
 		/**
+		 * Retrieves or sets an entity that is used as the target of
+		 * AI-related behaviors, like attacking.
+		 */
+		'target': Entity
+		/**
 		 * Velocity of the entity.
 		 * @throws This property can throw when used.
 		 */
-		readonly 'velocity': Location
+		readonly 'velocity': Vector
+		/**
+		 * Vector of the current view of the entity.
+		 * @throws This property can throw when used.
+		 */
+		readonly 'viewVector': Vector
 		/**
 		 * @remarks
 		 * Adds an effect, like poison, to the entity.
@@ -1829,6 +2549,23 @@ declare module 'mojang-minecraft' {
 		): void
 		/**
 		 * @remarks
+		 * Adds a specified tag to an entity.
+		 * @param tag
+		 * Content of the tag to add.
+		 * @throws This function can throw errors.
+		 */
+		addTag(tag: string): boolean
+		/**
+		 * @remarks
+		 * Gets the first block that intersects with the vector of the
+		 * view of this entity.
+		 * @param options
+		 * Additional options for processing this raycast query.
+		 * @throws This function can throw errors.
+		 */
+		getBlockFromViewVector(options?: BlockRaycastOptions): Block
+		/**
+		 * @remarks
 		 * Gets a component (that represents additional capabilities)
 		 * for an entity.
 		 * @param componentId
@@ -1837,13 +2574,13 @@ declare module 'mojang-minecraft' {
 		 * 'minecraft:' is assumed. If the component is not present on
 		 * the entity, undefined is returned.
 		 */
-		getComponent(componentId: string): any
+		getComponent(componentId: string): IEntityComponent
 		/**
 		 * @remarks
 		 * Returns all components that are both present on this entity
 		 * and supported by the API.
 		 */
-		getComponents(): any[]
+		getComponents(): IEntityComponent[]
 		/**
 		 * @remarks
 		 * Returns the effect for the specified EffectType on the
@@ -1857,6 +2594,21 @@ declare module 'mojang-minecraft' {
 		getEffect(effectType: EffectType): Effect
 		/**
 		 * @remarks
+		 * Gets the first entity that intersects with the vector of the
+		 * view of this entity.
+		 * @param options
+		 * Additional options for processing this raycast query.
+		 * @throws This function can throw errors.
+		 */
+		getEntitiesFromViewVector(options?: EntityRaycastOptions): Entity[]
+		/**
+		 * @remarks
+		 * Returns all tags associated with an entity.
+		 * @throws This function can throw errors.
+		 */
+		getTags(): string[]
+		/**
+		 * @remarks
 		 * Returns true if the specified component is present on this
 		 * entity.
 		 * @param componentId
@@ -1867,10 +2619,88 @@ declare module 'mojang-minecraft' {
 		hasComponent(componentId: string): boolean
 		/**
 		 * @remarks
+		 * Tests whether an entity has a particular tag.
+		 * @param tag
+		 * Identifier of the tag to test for.
+		 * @throws This function can throw errors.
+		 */
+		hasTag(tag: string): boolean
+		/**
+		 * @remarks
 		 * Kills this entity. The entity will drop loot as normal.
 		 * @throws This function can throw errors.
 		 */
 		kill(): void
+		/**
+		 * @remarks
+		 * Removes a specified tag from an entity.
+		 * @param tag
+		 * Content of the tag to remove.
+		 * @throws This function can throw errors.
+		 */
+		removeTag(tag: string): boolean
+		/**
+		 * @remarks
+		 * Runs a particular command from the context of this entity.
+		 * @param commandString
+		 * Command to run. Note that command strings should not start
+		 * with slash.
+		 * @returns
+		 * For commands that return data, returns a JSON structure with
+		 * command response values.
+		 * @throws This function can throw errors.
+		 * @example commands.js
+		 * ```typescript
+		 *        entity.runCommand("say You got a new high score!");
+		 *        entity.runCommand("scoreboard players set @p score 10");
+		 *
+		 * ```
+		 */
+		runCommand(commandString: string): any
+		/**
+		 * @remarks
+		 * Sets a velocity for the entity to move with.
+		 * @param velocity
+		 * X/Y/Z components of the velocity.
+		 * @throws This function can throw errors.
+		 */
+		setVelocity(velocity: Vector): void
+		/**
+		 * @remarks
+		 * Teleports the selected entity to a new location
+		 * @param location
+		 * New location for the entity.
+		 * @param dimension
+		 * Dimension to move the selected entity to.
+		 * @param xRotation
+		 * X rotation of the entity after teleportation.
+		 * @param yRotation
+		 * Y rotation of the entity after teleportation.
+		 * @throws This function can throw errors.
+		 */
+		teleport(
+			location: Location,
+			dimension: Dimension,
+			xRotation: number,
+			yRotation: number
+		): void
+		/**
+		 * @remarks
+		 * Teleports the selected entity to a new location, and will
+		 * have the entity facing a specified location.
+		 * @param location
+		 * New location for the entity.
+		 * @param dimension
+		 * Dimension to move the selected entity to.
+		 * @param facingLocation
+		 * Location that this entity will be facing.
+		 * @throws This function can throw errors.
+		 */
+		teleportFacing(
+			location: Location,
+			dimension: Dimension,
+			facingLocation: Location
+		): void
 		/**
 		 * @remarks
 		 * Triggers an entity type event. For every entity, a number of
@@ -1888,7 +2718,7 @@ declare module 'mojang-minecraft' {
 	 * When added, this component makes the entity spawn with a
 	 * rider of the specified entityType.
 	 */
-	export class EntityAddPassengerComponent {
+	export class EntityAddRiderComponent extends IEntityComponent {
 		/**
 		 * The type of entity that is added as a rider for this entity
 		 * when spawned under certain conditions.
@@ -1912,7 +2742,7 @@ declare module 'mojang-minecraft' {
 	 * accelerated by giving the entity the items it likes as
 	 * defined by feedItems.
 	 */
-	export class EntityAgeableComponent {
+	export class EntityAgeableComponent extends IEntityComponent {
 		/**
 		 * List of items that the entity drops when it grows up.
 		 * @throws This property can throw when used.
@@ -1946,7 +2776,7 @@ declare module 'mojang-minecraft' {
 	 * Defines what blocks this entity can breathe in and gives
 	 * them the ability to suffocate.
 	 */
-	export class EntityBreathableComponent {
+	export class EntityBreathableComponent extends IEntityComponent {
 		/**
 		 * List of blocks this entity can breathe in, in addition to
 		 * the separate properties for classes of blocks.
@@ -2014,10 +2844,44 @@ declare module 'mojang-minecraft' {
 		setAirSupply(value: number): void
 	}
 	/**
+	 * When added, this component signifies that the entity can
+	 * climb up ladders.
+	 */
+	export class EntityCanClimbComponent extends IEntityComponent {
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:can_climb.
+		 */
+		readonly 'id': string
+	}
+	/**
+	 * When added, this component signifies that the entity can
+	 * fly, and the pathfinder won't be restricted to paths where a
+	 * solid block is required underneath it.
+	 */
+	export class EntityCanFlyComponent extends IEntityComponent {
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:can_fly.
+		 */
+		readonly 'id': string
+	}
+	/**
+	 * When added, this component signifies that the entity can
+	 * power jump like the horse does within Minecraft.
+	 */
+	export class EntityCanPowerJumpComponent extends IEntityComponent {
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:can_power_jump.
+		 */
+		readonly 'id': string
+	}
+	/**
 	 * Defines the entity's color. Only works on certain entities
 	 * that have predefined color values (sheep, llama, shulker).
 	 */
-	export class EntityColorComponent {
+	export class EntityColorComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
 		 * minecraft:color.
@@ -2062,6 +2926,29 @@ declare module 'mojang-minecraft' {
 		unsubscribe(callback: (arg: EntityCreateEvent) => void): void
 	}
 	/**
+	 * Specifies additional filters that are used in registering a
+	 * data driven trigger event for entities.
+	 */
+	export class EntityDataDrivenTriggerEventOptions {
+		/**
+		 * If this value is set, this event will only fire for entities
+		 * that match the entities within this collection.
+		 */
+		'entities': Entity[]
+		/**
+		 * If this value is set, this event will only fire if the
+		 * impacted entities' type matches this parameter.
+		 */
+		'entityTypes': string[]
+		/**
+		 * If this value is set, this event will only fire if the
+		 * impacted triggered event matches one of the events listed in
+		 * this parameter.
+		 */
+		'eventTypes': string[]
+		constructor()
+	}
+	/**
 	 * As part of the Ageable component, represents a set of items
 	 * that can be fed to an entity and the rate at which that
 	 * causes them to grow.
@@ -2080,9 +2967,48 @@ declare module 'mojang-minecraft' {
 		readonly 'item': string
 	}
 	/**
+	 * Contains optional parameters for registering an entity
+	 * event.
+	 */
+	export class EntityEventOptions {
+		/**
+		 * If this value is set, this event will only fire for entities
+		 * that match the entities within this collection.
+		 */
+		'entities': Entity[]
+		/**
+		 * If this value is set, this event will only fire if the
+		 * impacted entities' type matches this parameter.
+		 */
+		'entityTypes': string[]
+		constructor()
+	}
+	/**
+	 * When added, this component signifies that this entity
+	 * doesn't take damage from fire.
+	 */
+	export class EntityFireImmuneComponent extends IEntityComponent {
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:fire_immune.
+		 */
+		readonly 'id': string
+	}
+	/**
+	 * When added, this component signifies that this entity can
+	 * float in liquid blocks.
+	 */
+	export class EntityFloatsInLiquidComponent extends IEntityComponent {
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:floats_in_liquid.
+		 */
+		readonly 'id': string
+	}
+	/**
 	 * Represents the flying speed of an entity.
 	 */
-	export class EntityFlyingSpeedComponent {
+	export class EntityFlyingSpeedComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
 		 * minecraft:flying_speed.
@@ -2094,9 +3020,41 @@ declare module 'mojang-minecraft' {
 		'value': number
 	}
 	/**
+	 * Defines how much friction affects this entity.
+	 */
+	export class EntityFrictionModifierComponent extends IEntityComponent {
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:friction_modifier.
+		 */
+		readonly 'id': string
+		/**
+		 * The higher the number, the more the friction affects this
+		 * entity. A value of 1.0 means regular friction, while 2.0
+		 * means twice as much.
+		 */
+		'value': number
+	}
+	/**
+	 * Sets the offset from the ground that the entity is actually
+	 * at.
+	 */
+	export class EntityGroundOffsetComponent extends IEntityComponent {
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:ground_offset.
+		 */
+		readonly 'id': string
+		/**
+		 * The value of the entity's offset from the terrain, in
+		 * blocks.
+		 */
+		'value': number
+	}
+	/**
 	 * Defines the interactions with this entity for healing it.
 	 */
-	export class EntityHealableComponent {
+	export class EntityHealableComponent extends IEntityComponent {
 		/**
 		 * A set of filters for when these Healable items would apply.
 		 * @throws This property can throw when used.
@@ -2122,7 +3080,7 @@ declare module 'mojang-minecraft' {
 	/**
 	 * Defines the health properties of an entity.
 	 */
-	export class EntityHealthComponent {
+	export class EntityHealthComponent extends IEntityComponent {
 		/**
 		 * Read-only. Returns the current value of health for the
 		 * entity.
@@ -2168,9 +3126,58 @@ declare module 'mojang-minecraft' {
 		setCurrent(value: number): void
 	}
 	/**
+	 * Contains information related to an entity hitting (melee
+	 * attacking) another entity.
+	 */
+	export class EntityHitEvent {
+		/**
+		 * Entity that made a hit/melee attack.
+		 */
+		readonly 'entity': Entity
+		/**
+		 * Block that was hit by the attack, or undefined if the hit
+		 * attack did not hit a block. If both hitEntity and hitBlock
+		 * are undefined, then the entity basically swiped into the
+		 * air.
+		 */
+		readonly 'hitBlock': Block
+		/**
+		 * Entity that was hit by the attack, or undefined if the hit
+		 * attack did not hit an entity. If both hitEntity and hitBlock
+		 * are undefined, then the entity basically swiped into the
+		 * air.
+		 */
+		readonly 'hitEntity': Entity
+	}
+	/**
+	 * Manages callbacks that are connected to when an entity makes
+	 * a melee attack on another entity.
+	 */
+	export class EntityHitEventSignal {
+		/**
+		 * @remarks
+		 * Adds a callback that will be called when an entity hits
+		 * another entity.
+		 * @param callback
+		 * @param options
+		 */
+		subscribe(
+			callback: (arg: EntityHitEvent) => void,
+			options?: EntityEventOptions
+		): (arg: EntityHitEvent) => void
+		/**
+		 * @remarks
+		 * Removes a callback from being called when an entity makes a
+		 * melee attack on another entity.
+		 * @param callback
+		 * @throws This function can throw errors.
+		 */
+		unsubscribe(callback: (arg: EntityHitEvent) => void): void
+	}
+	/**
 	 * Defines this entity's inventory properties.
 	 */
-	export class EntityInventoryComponent {
+	export class EntityInventoryComponent extends IEntityComponent {
 		/**
 		 * Number of slots that this entity can gain per extra
 		 * strength.
@@ -2216,9 +3223,180 @@ declare module 'mojang-minecraft' {
 		readonly 'restrictToOwner': boolean
 	}
 	/**
+	 * When added, this component signifies that this entity is a
+	 * baby.
+	 */
+	export class EntityIsBabyComponent extends IEntityComponent {
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:is_baby.
+		 */
+		readonly 'id': string
+	}
+	/**
+	 * When added, this component signifies that this entity is
+	 * charged.
+	 */
+	export class EntityIsChargedComponent extends IEntityComponent {
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:is_charged.
+		 */
+		readonly 'id': string
+	}
+	/**
+	 * When added, this component signifies that this entity is
+	 * currently carrying a chest.
+	 */
+	export class EntityIsChestedComponent extends IEntityComponent {
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:is_chested.
+		 */
+		readonly 'id': string
+	}
+	/**
+	 * When added, this component signifies that dyes can be used
+	 * on this entity to change its color.
+	 */
+	export class EntityIsDyableComponent extends IEntityComponent {
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:is_dyeable.
+		 */
+		readonly 'id': string
+	}
+	/**
+	 * When added, this component signifies that this entity can
+	 * hide from hostile mobs while invisible.
+	 */
+	export class EntityIsHiddenWhenInvisibleComponent extends IEntityComponent {
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:is_hidden_when_invisible.
+		 */
+		readonly 'id': string
+	}
+	/**
+	 * When added, this component signifies that this entity this
+	 * currently on fire.
+	 */
+	export class EntityIsIgnitedComponent extends IEntityComponent {
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:is_ignited.
+		 */
+		readonly 'id': string
+	}
+	/**
+	 * When added, this component signifies that this entity is an
+	 * illager captain.
+	 */
+	export class EntityIsIllagerCaptainComponent extends IEntityComponent {
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:is_illager_captain.
+		 */
+		readonly 'id': string
+	}
+	/**
+	 * When added, this component signifies that this entity is
+	 * currently saddled.
+	 */
+	export class EntityIsSaddledComponent extends IEntityComponent {
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:is_saddled.
+		 */
+		readonly 'id': string
+	}
+	/**
+	 * When added, this component signifies that this entity is
+	 * currently shaking.
+	 */
+	export class EntityIsShakingComponent extends IEntityComponent {
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:is_shaking.
+		 */
+		readonly 'id': string
+	}
+	/**
+	 * When added, this component signifies that this entity is
+	 * currently sheared.
+	 */
+	export class EntityIsShearedComponent extends IEntityComponent {
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:is_sheared.
+		 */
+		readonly 'id': string
+	}
+	/**
+	 * When added, this component signifies that this entity can be
+	 * stacked.
+	 */
+	export class EntityIsStackableComponent extends IEntityComponent {
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:is_stackable.
+		 */
+		readonly 'id': string
+	}
+	/**
+	 * When added, this component signifies that this entity is
+	 * currently stunned.
+	 */
+	export class EntityIsStunnedComponent extends IEntityComponent {
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:is_stunned.
+		 */
+		readonly 'id': string
+	}
+	/**
+	 * When added, this component signifies that this entity is
+	 * currently tamed.
+	 */
+	export class EntityIsTamedComponent extends IEntityComponent {
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:is_tamed.
+		 */
+		readonly 'id': string
+	}
+	/**
+	 * If added onto the entity, this indicates that the entity
+	 * represents a free-floating item in the world. Lets you
+	 * retrieve the actual item stack contents via the itemStack
+	 * property.
+	 */
+	export class EntityItemComponent {
+		/**
+		 * Item stack represented by this entity in the world.
+		 * @throws This property can throw when used.
+		 */
+		readonly 'itemStack': ItemStack
+	}
+	/**
+	 * This type is usable for iterating over a set of entities.
+	 * This means it can be used in statements like for...of
+	 * statements, Array.from(iterator), and more.
+	 */
+	export class EntityIterator implements Iterable<Entity> {
+		[Symbol.iterator](): Iterator<Entity>
+		/**
+		 * @remarks
+		 * Retrieves the next item in this iteration. The resulting
+		 * IteratorResult contains .done and .value properties which
+		 * can be used to see the next Entity in the iteration.
+		 */
+		next(): IteratorResult<Entity>
+	}
+	/**
 	 * Defines the base movement speed in lava of this entity.
 	 */
-	export class EntityLavaMovementComponent {
+	export class EntityLavaMovementComponent extends IEntityComponent {
 		/**
 		 * Read-only. Returns the current value of movement speed on
 		 * lava for the entity.
@@ -2270,7 +3448,7 @@ declare module 'mojang-minecraft' {
 	 * Allows this entity to be leashed and defines the conditions
 	 * and events for this entity when is leashed.
 	 */
-	export class EntityLeashableComponent {
+	export class EntityLeashableComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
 		 * minecraft:leashable.
@@ -2299,10 +3477,26 @@ declare module 'mojang-minecraft' {
 		unleash(): void
 	}
 	/**
+	 * Additional variant value. Can be used to further
+	 * differentiate variants.
+	 */
+	export class EntityMarkVariantComponent extends IEntityComponent {
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:mark_variant.
+		 */
+		readonly 'id': string
+		/**
+		 * The identifier of the variant. By convention, 0 is the
+		 * identifier of the base entity.
+		 */
+		'value': number
+	}
+	/**
 	 * Contains options for taming a rideable entity based on the
 	 * entity that mounts it.
 	 */
-	export class EntityMountTamingComponent {
+	export class EntityMountTamingComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
 		 * minecraft:mount_taming.
@@ -2321,7 +3515,7 @@ declare module 'mojang-minecraft' {
 	 * When added, this movement control allows the mob to swim in
 	 * water and walk on land.
 	 */
-	export class EntityMovementAmphibiousComponent {
+	export class EntityMovementAmphibiousComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
 		 * minecraft:movement.amphibious.
@@ -2336,7 +3530,7 @@ declare module 'mojang-minecraft' {
 	/**
 	 * This component accents the movement of an entity.
 	 */
-	export class EntityMovementBasicComponent {
+	export class EntityMovementBasicComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
 		 * minecraft:movement.basic.
@@ -2351,7 +3545,7 @@ declare module 'mojang-minecraft' {
 	/**
 	 * Defines the general movement speed of this entity.
 	 */
-	export class EntityMovementComponent {
+	export class EntityMovementComponent extends IEntityComponent {
 		/**
 		 * Read-only. Returns the current value of default movement
 		 * speed for the entity.
@@ -2401,7 +3595,7 @@ declare module 'mojang-minecraft' {
 	/**
 	 * When added, this move control causes the mob to fly.
 	 */
-	export class EntityMovementFlyComponent {
+	export class EntityMovementFlyComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
 		 * minecraft:movement.fly.
@@ -2417,7 +3611,7 @@ declare module 'mojang-minecraft' {
 	 * When added, this move control allows a mob to fly, swim,
 	 * climb, etc.
 	 */
-	export class EntityMovementGenericComponent {
+	export class EntityMovementGenericComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
 		 * minecraft:movement.generic.
@@ -2432,7 +3626,7 @@ declare module 'mojang-minecraft' {
 	/**
 	 * When added, this movement control allows the mob to glide.
 	 */
-	export class EntityMovementGlideComponent {
+	export class EntityMovementGlideComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
 		 * minecraft:movement.glide.
@@ -2457,7 +3651,7 @@ declare module 'mojang-minecraft' {
 	/**
 	 * When added, this move control causes the mob to hover.
 	 */
-	export class EntityMovementHoverComponent {
+	export class EntityMovementHoverComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
 		 * minecraft:movement.hover.
@@ -2473,7 +3667,7 @@ declare module 'mojang-minecraft' {
 	 * Move control that causes the mob to jump as it moves with a
 	 * specified delay between jumps.
 	 */
-	export class EntityMovementJumpComponent {
+	export class EntityMovementJumpComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
 		 * minecraft:movement.jump.
@@ -2489,7 +3683,7 @@ declare module 'mojang-minecraft' {
 	 * When added, this move control causes the mob to hop as it
 	 * moves.
 	 */
-	export class EntityMovementSkipComponent {
+	export class EntityMovementSkipComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
 		 * minecraft:movement.skip.
@@ -2505,7 +3699,7 @@ declare module 'mojang-minecraft' {
 	 * When added, this move control causes the mob to sway side to
 	 * side giving the impression it is swimming.
 	 */
-	export class EntityMovementSwayComponent {
+	export class EntityMovementSwayComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
 		 * minecraft:movement.sway.
@@ -2531,7 +3725,7 @@ declare module 'mojang-minecraft' {
 	 * Allows this entity to generate paths that include vertical
 	 * walls (for example, like Minecraft spiders do.)
 	 */
-	export class EntityNavigationClimbComponent {
+	export class EntityNavigationClimbComponent extends IEntityComponent {
 		/**
 		 * Tells the pathfinder to avoid blocks that cause damage when
 		 * finding a path.
@@ -2652,7 +3846,7 @@ declare module 'mojang-minecraft' {
 	 * Allows this entity to generate paths by flying around the
 	 * air like the regular Ghast.
 	 */
-	export class EntityNavigationFloatComponent {
+	export class EntityNavigationFloatComponent extends IEntityComponent {
 		/**
 		 * Tells the pathfinder to avoid blocks that cause damage when
 		 * finding a path.
@@ -2773,7 +3967,7 @@ declare module 'mojang-minecraft' {
 	 * Allows this entity to generate paths in the air (for
 	 * example, like Minecraft parrots do.)
 	 */
-	export class EntityNavigationFlyComponent {
+	export class EntityNavigationFlyComponent extends IEntityComponent {
 		/**
 		 * Tells the pathfinder to avoid blocks that cause damage when
 		 * finding a path.
@@ -2895,7 +4089,7 @@ declare module 'mojang-minecraft' {
 	 * flying and/or climbing around and jumping up and down a
 	 * block.
 	 */
-	export class EntityNavigationGenericComponent {
+	export class EntityNavigationGenericComponent extends IEntityComponent {
 		/**
 		 * Tells the pathfinder to avoid blocks that cause damage when
 		 * finding a path.
@@ -3017,7 +4211,7 @@ declare module 'mojang-minecraft' {
 	 * example, like the Minecraft Bees do.) Keeps them from
 	 * falling out of the skies and doing predictive movement.
 	 */
-	export class EntityNavigationHoverComponent {
+	export class EntityNavigationHoverComponent extends IEntityComponent {
 		/**
 		 * Tells the pathfinder to avoid blocks that cause damage when
 		 * finding a path.
@@ -3138,7 +4332,7 @@ declare module 'mojang-minecraft' {
 	 * Allows this entity to generate paths by walking around and
 	 * jumping up and down a block like regular mobs.
 	 */
-	export class EntityNavigationWalkComponent {
+	export class EntityNavigationWalkComponent extends IEntityComponent {
 		/**
 		 * Tells the pathfinder to avoid blocks that cause damage when
 		 * finding a path.
@@ -3256,10 +4450,198 @@ declare module 'mojang-minecraft' {
 		readonly 'isAmphibious': boolean
 	}
 	/**
+	 * Sets the distance through which the entity can push through.
+	 */
+	export class EntityPushThroughComponent extends IEntityComponent {
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:push_through.
+		 */
+		readonly 'id': string
+		/**
+		 * The value of the entity's push-through, in blocks.
+		 */
+		'value': number
+	}
+	/**
+	 * Contains options for selecting entities within an area.
+	 */
+	export class EntityQueryOptions {
+		/**
+		 * Limits the number of entities to return, opting for the
+		 * closest N entities as specified by this property. The
+		 * location value must also be specified on the query options
+		 * object.
+		 */
+		'closest': number
+		/**
+		 * Excludes entities that match one or more of the specified
+		 * families.
+		 */
+		'excludeFamilies': string[]
+		/**
+		 * Excludes entities if have a specific gamemode that matches
+		 * the specified gamemode.
+		 */
+		'excludeGameModes': GameMode[]
+		/**
+		 * Excludes entities that have a name that match one of the
+		 * specified values.
+		 */
+		'excludeNames': string[]
+		/**
+		 * Excludes entities with a tag that matches one of the
+		 * specified values.
+		 */
+		'excludeTags': string[]
+		/**
+		 * Excludes entities if they are one of the specified types.
+		 */
+		'excludeTypes': string[]
+		/**
+		 * If specified, includes entities that match all of the
+		 * specified families.
+		 */
+		'families': string[]
+		/**
+		 * Limits the number of entities to return, opting for the
+		 * farthest N entities as specified by this property. The
+		 * location value must also be specified on the query options
+		 * object.
+		 */
+		'farthest': number
+		/**
+		 * If specified, includes entities with a gamemode that matches
+		 * the specified gamemode.
+		 */
+		'gameMode': GameMode
+		/**
+		 * Adds a seed location to the query that is used in
+		 * conjunction with closest, farthest, limit, volume, and
+		 * distance properties.
+		 */
+		'location': Location
+		/**
+		 * If specified, includes entities that are less than this
+		 * distance away from the location specified in the location
+		 * property.
+		 */
+		'maxDistance': number
+		/**
+		 * If specified, will only include entities that have at most
+		 * this horizontal rotation.
+		 */
+		'maxHorizontalRotation': number
+		/**
+		 * If defined, only players that have at most this level are
+		 * returned.
+		 */
+		'maxLevel': number
+		/**
+		 * If specified, only entities that have at most this vertical
+		 * rotation are returned.
+		 */
+		'maxVerticalRotation': number
+		/**
+		 * If specified, includes entities that are least this distance
+		 * away from the location specified in the location property.
+		 */
+		'minDistance': number
+		/**
+		 * If specified, will only include entities that have at a
+		 * minimum this horizontal rotation.
+		 */
+		'minHorizontalRotation': number
+		/**
+		 * If defined, only players that have at least this level are
+		 * returned.
+		 */
+		'minLevel': number
+		/**
+		 * If specified, will only include entities that have at least
+		 * this vertical rotation.
+		 */
+		'minVerticalRotation': number
+		/**
+		 * Includes entities with the specified name.
+		 */
+		'name': string
+		/**
+		 * Gets/sets a collection of EntityQueryScoreOptions objects
+		 * with filters for specific scoreboard objectives.
+		 */
+		'scoreOptions': EntityQueryScoreOptions[]
+		/**
+		 * Includes entities that match all of the specified tags.
+		 */
+		'tags': string[]
+		/**
+		 * If defined, entities that match this type are included.
+		 */
+		'type': string
+		/**
+		 * In conjunction with location, specified a cuboid volume of
+		 * entities to include.
+		 */
+		'volume': BlockAreaSize
+		/**
+		 * @remarks
+		 * Creates a new EntityQueryOptions query object, for use in
+		 * getEntities/getPlayers methods.
+		 */
+		constructor()
+	}
+	/**
+	 * Contains additional options for filtering players based on
+	 * their score for an objective.
+	 */
+	export class EntityQueryScoreOptions {
+		/**
+		 * If set to true, entities and players within this score range
+		 * are excluded from query results.
+		 */
+		'exclude': boolean
+		/**
+		 * If defined, only players that have a score equal to or under
+		 * maxScore are included.
+		 */
+		'maxScore': number
+		/**
+		 * If defined, only players that have a score equal to or over
+		 * minScore are included.
+		 */
+		'minScore': number
+		/**
+		 * Identifier of the scoreboard objective to filter on.
+		 */
+		'objective': string
+		/**
+		 * @remarks
+		 * Creates a new EntityQueryScoreOptions query object, for use
+		 * in an entity query.
+		 */
+		constructor()
+	}
+	/**
+	 * Contains additional options for an entity raycast operation.
+	 */
+	export class EntityRaycastOptions {
+		/**
+		 * Maximum distance, in blocks, to process the raycast.
+		 */
+		'maxDistance': number
+		/**
+		 * @remarks
+		 * Creates a new EntityRaycastOptions object, for use in an
+		 * entity vector query.
+		 */
+		constructor()
+	}
+	/**
 	 * When added, this component adds the capability that an
 	 * entity can be ridden by another entity.
 	 */
-	export class EntityRideableComponent {
+	export class EntityRideableComponent extends IEntityComponent {
 		/**
 		 * Zero-based index of the seat that can used to control this
 		 * entity.
@@ -3339,9 +4721,41 @@ declare module 'mojang-minecraft' {
 		ejectRiders(): void
 	}
 	/**
+	 * Sets the entity's visual size.
+	 */
+	export class EntityScaleComponent extends IEntityComponent {
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:scale.
+		 */
+		readonly 'id': string
+		/**
+		 * The value of the scale. 1.0 means the entity will appear at
+		 * the scale they are defined in their model. Higher numbers
+		 * make the entity bigger.
+		 */
+		'value': number
+	}
+	/**
+	 * Skin Id value. Can be used to differentiate skins, such as
+	 * base skins for villagers.
+	 */
+	export class EntitySkinIdComponent extends IEntityComponent {
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:variant.
+		 */
+		readonly 'id': string
+		/**
+		 * The identifier of the skin. By convention, 0 is the
+		 * identifier of the base skin.
+		 */
+		'value': number
+	}
+	/**
 	 * Defines the entity's strength to carry items.
 	 */
-	export class EntityStrengthComponent {
+	export class EntityStrengthComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
 		 * minecraft:strength.
@@ -3363,7 +4777,7 @@ declare module 'mojang-minecraft' {
 	/**
 	 * Defines the rules for a mob to be tamed by the player.
 	 */
-	export class EntityTameableComponent {
+	export class EntityTameableComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
 		 * minecraft:tameable.
@@ -3398,7 +4812,7 @@ declare module 'mojang-minecraft' {
 	 * Defines the general movement speed underwater of this
 	 * entity.
 	 */
-	export class EntityUnderwaterMovementComponent {
+	export class EntityUnderwaterMovementComponent extends IEntityComponent {
 		/**
 		 * Read-only. Returns the current value of movement speed
 		 * underwater for the entity.
@@ -3449,6 +4863,33 @@ declare module 'mojang-minecraft' {
 		setCurrent(value: number): void
 	}
 	/**
+	 * Used to differentiate the component group of a variant of an
+	 * entity from others. (e.g. ocelot, villager).
+	 */
+	export class EntityVariantComponent extends IEntityComponent {
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:variant.
+		 */
+		readonly 'id': string
+		/**
+		 * The identifier of the variant. By convention, 0 is the
+		 * identifier of the base entity.
+		 */
+		'value': number
+	}
+	/**
+	 * When added, this component signifies that this entity wants
+	 * to become a jockey.
+	 */
+	export class EntityWantsJockeyComponent extends IEntityComponent {
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:wants_jockey.
+		 */
+		readonly 'id': string
+	}
+	/**
 	 * Contains a set of events that are available across the scope
 	 * of the World.
 	 */
@@ -3458,52 +4899,120 @@ declare module 'mojang-minecraft' {
 		 * delivered. The event can be canceled, and the message can
 		 * also be updated.
 		 */
-		'beforeChat': BeforeChatEventSignal
+		readonly 'beforeChat': BeforeChatEventSignal
+		/**
+		 * This event is fired before the triggering of an entity event
+		 * that updates the component definition state of an entity.
+		 * Within this event, you can cancel or shape the impacted
+		 * components and event triggers.
+		 */
+		readonly 'beforeDataDrivenEntityTriggerEvent': BeforeDataDrivenEntityTriggerEventSignal
 		/**
 		 * This event is fired before an explosion occurs.
 		 */
-		'beforeExplosion': BeforeExplosionEventSignal
+		readonly 'beforeExplosion': BeforeExplosionEventSignal
+		/**
+		 * For custom items, this event is triggered before the set of
+		 * defined components for the item change in response to a
+		 * triggered event. Note that this event is only fired for
+		 * custom data-driven items.
+		 */
+		readonly 'beforeItemDefinitionEvent': BeforeItemDefinitionEventSignal
+		/**
+		 * This event fires before an item is used by an entity or
+		 * player.
+		 */
+		readonly 'beforeItemUse': BeforeItemUseEventSignal
+		/**
+		 * This event fires before an item is used on a block by an
+		 * entity or player.
+		 */
+		readonly 'beforeItemUseOn': BeforeItemUseOnEventSignal
 		/**
 		 * Fires before a piston is activated.
 		 */
-		'beforePistonActivate': BeforePistonActivateEventSignal
+		readonly 'beforePistonActivate': BeforePistonActivateEventSignal
+		/**
+		 * This event fires for a block that is broken by a player.
+		 */
+		readonly 'blockBreak': BlockBreakEventSignal
 		/**
 		 * This event fires for each BlockLocation destroyed by an
 		 * explosion. It is fired after the blocks have already been
 		 * destroyed.
 		 */
-		'blockExplode': BlockExplodeEventSignal
+		readonly 'blockExplode': BlockExplodeEventSignal
+		/**
+		 * This event fires for a block that is placed by a player.
+		 */
+		readonly 'blockPlace': BlockPlaceEventSignal
 		/**
 		 * This event is triggered after a chat message has been
 		 * broadcast or sent to players.
 		 */
-		'chat': ChatEventSignal
+		readonly 'chat': ChatEventSignal
+		/**
+		 * This event is fired when an entity event has been triggered
+		 * that will update the component definition state of an
+		 * entity.
+		 */
+		readonly 'dataDrivenEntityTriggerEvent': DataDrivenEntityTriggerEventSignal
 		/**
 		 * This event fires when an effect, like poisoning, is added to
 		 * an entity.
 		 */
-		'effectAdd': EffectAddEventSignal
+		readonly 'effectAdd': EffectAddEventSignal
 		/**
 		 * This event fires when a new entity is created.
 		 */
-		'entityCreate': EntityCreateEventSignal
+		readonly 'entityCreate': EntityCreateEventSignal
+		/**
+		 * This event fires when an entity hits (makes a melee attack)
+		 * and potentially impacts another entity or block.
+		 */
+		readonly 'entityHit': EntityHitEventSignal
 		/**
 		 * This event is fired after an explosion occurs.
 		 */
-		'explosion': ExplosionEventSignal
+		readonly 'explosion': ExplosionEventSignal
+		/**
+		 * For custom items, this event is triggered when the
+		 * fundamental set of defined components for the item change.
+		 * Note that this event is only fired for custom data-driven
+		 * items.
+		 */
+		readonly 'itemDefinitionEvent': ItemDefinitionEventSignal
+		/**
+		 * This event fires when any particular item is used by an
+		 * entity or player.
+		 */
+		readonly 'itemUse': ItemUseEventSignal
+		/**
+		 * This event fires when any particular item is used on a block
+		 * by an entity or player.
+		 */
+		readonly 'itemUseOn': ItemUseOnEventSignal
 		/**
 		 * This event fires when a piston expands or retracts.
 		 */
-		'pistonActivate': PistonActivateEventSignal
+		readonly 'pistonActivate': PistonActivateEventSignal
+		/**
+		 * This event fires when a player joins a world.
+		 */
+		readonly 'playerJoin': PlayerJoinEventSignal
+		/**
+		 * This event fires when a player leaves a world.
+		 */
+		readonly 'playerLeave': PlayerLeaveEventSignal
 		/**
 		 * This event fires every tick - which is 20 times per second.
 		 */
-		'tick': TickEventSignal
+		readonly 'tick': TickEventSignal
 		/**
 		 * This event will be triggered when the weather changes within
 		 * Minecraft.
 		 */
-		'weatherChange': WeatherChangeEventSignal
+		readonly 'weatherChange': WeatherChangeEventSignal
 	}
 	/**
 	 * Contains information regarding an explosion that has
@@ -3617,7 +5126,7 @@ declare module 'mojang-minecraft' {
 		 */
 		readonly 'chance': number
 		/**
-		 * Gets the duration, in seconds, of this effect.
+		 * Gets the duration, in ticks, of this effect.
 		 */
 		readonly 'duration': number
 		/**
@@ -3629,6 +5138,7 @@ declare module 'mojang-minecraft' {
 	/**
 	 * Represents a set of filters for when an event should occur.
 	 */
+	// tslint:disable-next-line:no-unnecessary-class
 	export class FilterGroup {}
 	/**
 	 * Represents constants related to fluid containers.
@@ -3647,10 +5157,30 @@ declare module 'mojang-minecraft' {
 		static readonly 'minFillLevel' = 0
 	}
 	/**
+	 * Contains an interface for defining the state of a property
+	 * for a {@link mojang-minecraft.BlockPermutation}.
+	 */
+	export class IBlockProperty {
+		/**
+		 * The name of this property.
+		 */
+		readonly 'name': string
+	}
+	/**
+	 * Base interface that defines components associated with an
+	 * entity.
+	 */
+	export class IEntityComponent {
+		/**
+		 * Identifier of this component.
+		 */
+		readonly 'id': string
+	}
+	/**
 	 * Contains the state of an integer-based property for a
 	 * {@link mojang-minecraft.BlockPermutation}.
 	 */
-	export class IntBlockProperty {
+	export class IntBlockProperty extends IBlockProperty {
 		/**
 		 * The name of this property.
 		 */
@@ -3674,7 +5204,7 @@ declare module 'mojang-minecraft' {
 	 * for entities like players, chest minecarts, llamas, and
 	 * more.
 	 */
-	export class InventoryComponentContainer {
+	export class InventoryComponentContainer extends Container {
 		/**
 		 * The number of empty slots in the container.
 		 * @throws This property can throw when used.
@@ -3770,6 +5300,187 @@ declare module 'mojang-minecraft' {
 		): boolean
 	}
 	/**
+	 * When present on an item, this item has a cooldown effect
+	 * when used by entities.
+	 */
+	export class ItemCooldownComponent {
+		/**
+		 * Represents the cooldown category that this item is
+		 * associated with.
+		 * @throws This property can throw when used.
+		 */
+		readonly 'cooldownCategory': string
+		/**
+		 * Amount of time, in ticks, that remain for this item
+		 * cooldown.
+		 * @throws This property can throw when used.
+		 */
+		readonly 'cooldownTicks': number
+		/**
+		 * Identifier of this component. Should always be
+		 * 'minecraft:cooldown'.
+		 */
+		readonly 'id': string
+		/**
+		 * @remarks
+		 * Starts a new cooldown period for this item.
+		 * @param player
+		 * @throws This function can throw errors.
+		 */
+		startCooldown(player: Player): void
+	}
+	/**
+	 * Manages callbacks that are connected to an item's definition
+	 * and components changing.
+	 */
+	export class ItemDefinitionEventSignal {
+		/**
+		 * @remarks
+		 * Adds a callback that will be called when an item's
+		 * definition and components change.
+		 * @param callback
+		 */
+		subscribe(
+			callback: (arg: ItemDefinitionTriggeredEvent) => void
+		): (arg: ItemDefinitionTriggeredEvent) => void
+		/**
+		 * @remarks
+		 * Removes a callback from being called when an item's
+		 * definition and components change.
+		 * @param callback
+		 * @throws This function can throw errors.
+		 */
+		unsubscribe(callback: (arg: ItemDefinitionTriggeredEvent) => void): void
+	}
+	/**
+	 * Contains information related to a custom item having a data
+	 * definition change being triggered.
+	 */
+	export class ItemDefinitionTriggeredEvent {
+		/**
+		 * Name of the data-driven item event that is triggering this
+		 * change.
+		 */
+		readonly 'eventName': string
+		/**
+		 * The impacted item stack that is being used.
+		 */
+		'item': ItemStack
+		/**
+		 * Returns the source entity that triggered this item event.
+		 */
+		readonly 'source': Entity
+	}
+	/**
+	 * When present on an item, this item can take damage in the
+	 * process of being used.
+	 */
+	export class ItemDurabilityComponent {
+		/**
+		 * Returns the current damage level of this particular item.
+		 */
+		'damage': number
+		/**
+		 * A range of numbers that describes the chance of the item
+		 * losing durability.
+		 * @throws This property can throw when used.
+		 */
+		readonly 'damageRange': NumberRange
+		/**
+		 * Identifier of this component. Should always be
+		 * 'minecraft:durability'.
+		 */
+		readonly 'id': string
+		/**
+		 * Represents the amount of damage that this item can take
+		 * before breaking.
+		 * @throws This property can throw when used.
+		 */
+		readonly 'maxDurability': number
+		/**
+		 * @remarks
+		 * Returns the maximum chance that this item would be damaged
+		 * using the damageRange property, given an unbreaking level.
+		 * @param unbreaking
+		 * Unbreaking factor to consider in factoring the damage
+		 * chance. Incoming unbreaking parameter must be greater than
+		 * 0.
+		 * @throws This function can throw errors.
+		 */
+		getDamageChance(unbreaking?: number): number
+	}
+	/**
+	 * When present on an item, this item has applied enchantment
+	 * effects.
+	 */
+	export class ItemEnchantsComponent {
+		/**
+		 * Returns a collection of the enchantments applied to this
+		 * item stack.
+		 */
+		'enchantments': EnchantmentList
+		/**
+		 * Identifier of this component.
+		 */
+		readonly 'id': string
+		/**
+		 * @remarks
+		 * Removes all enchantments applied to this item stack.
+		 * @throws This function can throw errors.
+		 */
+		removeAllEnchantments(): void
+	}
+	/**
+	 * When present on an item, this item is consumable by
+	 * entities.
+	 */
+	export class ItemFoodComponent {
+		/**
+		 * If true, the player can always eat this item (even when not
+		 * hungry).
+		 * @throws This property can throw when used.
+		 */
+		readonly 'canAlwaysEat': boolean
+		/**
+		 * Identifier of this component. Should always be
+		 * 'minecraft:food'.
+		 */
+		readonly 'id': string
+		/**
+		 * Represents how much nutrition this food item will give an
+		 * entity when eaten.
+		 * @throws This property can throw when used.
+		 */
+		readonly 'nutrition': number
+		/**
+		 * When an item is eaten, this value is used according to this
+		 * formula (nutrition * saturation_modifier * 2) to apply a
+		 * saturation buff.
+		 * @throws This property can throw when used.
+		 */
+		readonly 'saturationModifier': number
+		/**
+		 * When specified, converts the active item to the one
+		 * specified by this property.
+		 * @throws This property can throw when used.
+		 */
+		readonly 'usingConvertsTo': string
+	}
+	/**
+	 * Represents a collection of all of the available item types
+	 * in Minecraft.
+	 */
+	// tslint:disable-next-line:no-unnecessary-class
+	export class Items {
+		/**
+		 * @remarks
+		 * Returns an item type given an item type identifier.
+		 * @param itemId
+		 * Type of the item to return.
+		 */
+		static get(itemId: string): ItemType
+	}
+	/**
 	 * Defines a collection of items.
 	 */
 	export class ItemStack {
@@ -3777,17 +5488,21 @@ declare module 'mojang-minecraft' {
 		 * Number of the items in the stack. Valid values range between
 		 * 0 and 64.
 		 */
-		readonly 'amount': number
+		'amount': number
 		/**
 		 * A data value used to configure alternate states of the item.
 		 */
-		readonly 'data': number
+		'data': number
 		/**
 		 * Identifier of the type of items for the stack. If a
 		 * namespace is not specified, 'minecraft:' is assumed.
 		 * Examples include 'wheat' or 'apple'.
 		 */
 		readonly 'id': string
+		/**
+		 * Given name of this stack of items.
+		 */
+		'nameTag': string
 		/**
 		 * @remarks
 		 * Creates a new instance of a stack of items for use in the
@@ -3803,20 +5518,155 @@ declare module 'mojang-minecraft' {
 		 * Optional data value used for creating the item, or 0 if no
 		 * data value is specified.
 		 */
-		constructor(itemType: ItemType, amount: number, data: number)
+		constructor(itemType: ItemType, amount?: number, data?: number)
+		/**
+		 * @remarks
+		 * Gets a component (that represents additional capabilities)
+		 * for an item stack.
+		 * @param componentId
+		 * The identifier of the component (e.g., 'minecraft:food') to
+		 * retrieve. If no namespace prefix is specified, 'minecraft:'
+		 * is assumed. If the component is not present on the item
+		 * stack, undefined is returned.
+		 */
+		getComponent(componentId: string): any
+		/**
+		 * @remarks
+		 * Returns all components that are both present on this item
+		 * stack and supported by the API.
+		 */
+		getComponents(): any[]
+		/**
+		 * @remarks
+		 * Returns the lore value - a secondary display string - for an
+		 * ItemStack.
+		 */
+		getLore(): string[]
+		/**
+		 * @remarks
+		 * Returns true if the specified component is present on this
+		 * item stack.
+		 * @param componentId
+		 * The identifier of the component (e.g., 'minecraft:food') to
+		 * retrieve. If no namespace prefix is specified, 'minecraft:'
+		 * is assumed.
+		 */
+		hasComponent(componentId: string): boolean
+		/**
+		 * @remarks
+		 * Sets the lore value - a secondary display string - for an
+		 * ItemStack.
+		 * @param loreList
+		 */
+		setLore(loreList: string[]): void
+		/**
+		 * @remarks
+		 * Triggers an item type event. For custom items, a number of
+		 * events are defined in an items' definition for key item
+		 * behaviors.
+		 * @param eventName
+		 * Name of the item type event to trigger. If a namespace is
+		 * not specified, minecraft: is assumed.
+		 */
+		triggerEvent(eventName: string): void
 	}
 	/**
 	 * Represents the type of an item - for example, Wool.
 	 */
 	export class ItemType {
 		/**
-		 * @remarks
 		 * Returns the identifier of the item type - for example,
-		 * 'apple'.
-		 * @returns
-		 * Identifier of the item type.
+		 * 'minecraft:apple'.
 		 */
-		getName(): string
+		readonly 'id': string
+	}
+	/**
+	 * Contains information related to an item being used.
+	 */
+	export class ItemUseEvent {
+		/**
+		 * The impacted item stack that is being used.
+		 */
+		'item': ItemStack
+		/**
+		 * Returns the source entity that triggered this item event.
+		 */
+		readonly 'source': Entity
+	}
+	/**
+	 * Manages callbacks that are connected to an item use event.
+	 */
+	export class ItemUseEventSignal {
+		/**
+		 * @remarks
+		 * Adds a callback that will be called when an item is used.
+		 * @param callback
+		 */
+		subscribe(
+			callback: (arg: ItemUseEvent) => void
+		): (arg: ItemUseEvent) => void
+		/**
+		 * @remarks
+		 * Removes a callback from being called when an item is used.
+		 * @param callback
+		 * @throws This function can throw errors.
+		 */
+		unsubscribe(callback: (arg: ItemUseEvent) => void): void
+	}
+	/**
+	 * Contains information related to an item being used on a
+	 * block.
+	 */
+	export class ItemUseOnEvent {
+		/**
+		 * The face of the block that an item is being used on.
+		 */
+		readonly 'blockFace': Direction
+		/**
+		 * Location of the block being impacted.
+		 */
+		readonly 'blockLocation': BlockLocation
+		/**
+		 * X coordinate of the item-use impact location on the face of
+		 * the target block.
+		 */
+		readonly 'faceLocationX': number
+		/**
+		 * Y coordinate of the item-use impact location on the face of
+		 * the target block.
+		 */
+		readonly 'faceLocationY': number
+		/**
+		 * The impacted item stack that is being used on a block.
+		 */
+		'item': ItemStack
+		/**
+		 * Returns the source entity that triggered this item event.
+		 */
+		readonly 'source': Entity
+	}
+	/**
+	 * Manages callbacks that are connected to an item being used
+	 * on a block event.
+	 */
+	export class ItemUseOnEventSignal {
+		/**
+		 * @remarks
+		 * Adds a callback that will be called when an item is used on
+		 * a block.
+		 * @param callback
+		 */
+		subscribe(
+			callback: (arg: ItemUseOnEvent) => void
+		): (arg: ItemUseOnEvent) => void
+		/**
+		 * @remarks
+		 * Removes a callback from being called when an item is used on
+		 * a block.
+		 * @param callback
+		 * @throws This function can throw errors.
+		 */
+		unsubscribe(callback: (arg: ItemUseOnEvent) => void): void
 	}
 	/**
 	 * Contains a location description that is useful for entities
@@ -4255,6 +6105,7 @@ declare module 'mojang-minecraft' {
 		 * Represents a block of clay within Minecraft.
 		 */
 		static readonly 'clay': BlockType
+		static readonly 'clientRequestPlaceholderBlock': BlockType
 		/**
 		 * Represents a block of solid coal within Minecraft.
 		 */
@@ -5402,6 +7253,7 @@ declare module 'mojang-minecraft' {
 		 * Represents a frame within Minecraft.
 		 */
 		static readonly 'frame': BlockType
+		static readonly 'frogSpawn': BlockType
 		/**
 		 * Represents a frosted ice block within Minecraft.
 		 */
@@ -5830,6 +7682,8 @@ declare module 'mojang-minecraft' {
 		 * Represents a mycelium plant within Minecraft.
 		 */
 		static readonly 'mycelium': BlockType
+		static readonly 'mysteriousFrame': BlockType
+		static readonly 'mysteriousFrameSlot': BlockType
 		/**
 		 * Represents a nether brick block within Minecraft.
 		 */
@@ -5891,6 +7745,7 @@ declare module 'mojang-minecraft' {
 		 * Represents an obsidian block within Minecraft.
 		 */
 		static readonly 'obsidian': BlockType
+		static readonly 'ochreFroglight': BlockType
 		/**
 		 * Represents an orange candle within Minecraft.
 		 */
@@ -5930,6 +7785,7 @@ declare module 'mojang-minecraft' {
 		 * Represents a block of packed ice within Minecraft.
 		 */
 		static readonly 'packedIce': BlockType
+		static readonly 'pearlescentFroglight': BlockType
 		/**
 		 * Represents a pink candle within Minecraft.
 		 */
@@ -6606,6 +8462,7 @@ declare module 'mojang-minecraft' {
 		 * Represents an unpowered repeater within Minecraft.
 		 */
 		static readonly 'unpoweredRepeater': BlockType
+		static readonly 'verdantFroglight': BlockType
 		/**
 		 * Represents a set of vines within Minecraft.
 		 */
@@ -6893,6 +8750,39 @@ declare module 'mojang-minecraft' {
 		 */
 		static getAllBlockTypes(): BlockType[]
 	}
+	/**
+	 * A collection of default Minecraft dimension types.
+	 */
+	// tslint:disable-next-line:no-unnecessary-class
+	export class MinecraftDimensionTypes {
+		/**
+		 * The Nether is a collection of biomes separate from the
+		 * Overworld, including Soul Sand Valleys and Crimson forests.
+		 * Nether fortresses contain exclusive resources. Mobs such as
+		 * Blaze, Hoglins, Piglins, and Ghasts congregate here.
+		 */
+		static readonly 'nether' = 'minecraft:nether'
+		/**
+		 * The overworld is a collection of biomes, including forests,
+		 * plains, jungles, mountains, deserts, taiga, and more. This
+		 * is the default starter dimension for Minecraft. Mobs such as
+		 * Axolotl, Cows, Creepers, and Zombies congregate here.
+		 */
+		static readonly 'overworld' = 'minecraft:overworld'
+		/**
+		 * The End is separate from the Overworld and the Nether and is
+		 * generated whenever you create an End portal. Here, a giant
+		 * center island is surrounded by several smaller areas and
+		 * islands. You can find Endermen here. End midlands are larger
+		 * areas that transition you from the center to the outer edges
+		 * of the End. They contain Shulkers, Endermen, End gateway
+		 * portals, and End cities. End gateway portals are commonly
+		 * found at the outermost edge of the void. You usually find
+		 * End barrens toward the edges of the main areas or land in
+		 * the End.
+		 */
+		static readonly 'theEnd' = 'minecraft:the_end'
+	}
 	// tslint:disable-next-line:no-unnecessary-class
 	export class MinecraftEffectTypes {
 		static readonly 'absorption': EffectType
@@ -6925,6 +8815,46 @@ declare module 'mojang-minecraft' {
 		static readonly 'waterBreathing': EffectType
 		static readonly 'weakness': EffectType
 		static readonly 'wither': EffectType
+	}
+	// tslint:disable-next-line:no-unnecessary-class
+	export class MinecraftEnchantmentTypes {
+		static readonly 'aquaAffinity': EnchantmentType
+		static readonly 'baneOfArthropods': EnchantmentType
+		static readonly 'binding': EnchantmentType
+		static readonly 'blastProtection': EnchantmentType
+		static readonly 'channeling': EnchantmentType
+		static readonly 'depthStrider': EnchantmentType
+		static readonly 'efficiency': EnchantmentType
+		static readonly 'featherFalling': EnchantmentType
+		static readonly 'fireAspect': EnchantmentType
+		static readonly 'fireProtection': EnchantmentType
+		static readonly 'flame': EnchantmentType
+		static readonly 'fortune': EnchantmentType
+		static readonly 'frostWalker': EnchantmentType
+		static readonly 'impaling': EnchantmentType
+		static readonly 'infinity': EnchantmentType
+		static readonly 'knockback': EnchantmentType
+		static readonly 'looting': EnchantmentType
+		static readonly 'loyalty': EnchantmentType
+		static readonly 'luckOfTheSea': EnchantmentType
+		static readonly 'lure': EnchantmentType
+		static readonly 'mending': EnchantmentType
+		static readonly 'multishot': EnchantmentType
+		static readonly 'piercing': EnchantmentType
+		static readonly 'power': EnchantmentType
+		static readonly 'projectileProtection': EnchantmentType
+		static readonly 'protection': EnchantmentType
+		static readonly 'punch': EnchantmentType
+		static readonly 'quickCharge': EnchantmentType
+		static readonly 'respiration': EnchantmentType
+		static readonly 'riptide': EnchantmentType
+		static readonly 'sharpness': EnchantmentType
+		static readonly 'silkTouch': EnchantmentType
+		static readonly 'smite': EnchantmentType
+		static readonly 'soulSpeed': EnchantmentType
+		static readonly 'thorns': EnchantmentType
+		static readonly 'unbreaking': EnchantmentType
+		static readonly 'vanishing': EnchantmentType
 	}
 	/**
 	 * Contains definitions of standard Minecraft and Minecraft
@@ -6989,6 +8919,7 @@ declare module 'mojang-minecraft' {
 		 * within Minecraft.
 		 */
 		static readonly 'air': ItemType
+		static readonly 'allaySpawnEgg': ItemType
 		/**
 		 * Represents an item that can place an allow block within
 		 * Minecraft.
@@ -7440,6 +9371,7 @@ declare module 'mojang-minecraft' {
 		 */
 		static readonly 'clay': ItemType
 		static readonly 'clayBall': ItemType
+		static readonly 'clientRequestPlaceholderBlock': ItemType
 		static readonly 'clock': ItemType
 		static readonly 'coal': ItemType
 		/**
@@ -8714,6 +10646,7 @@ declare module 'mojang-minecraft' {
 		 */
 		static readonly 'fire': ItemType
 		static readonly 'fireCharge': ItemType
+		static readonly 'fireflySpawnEgg': ItemType
 		static readonly 'fireworkRocket': ItemType
 		static readonly 'fireworkStar': ItemType
 		static readonly 'fishingRod': ItemType
@@ -8748,6 +10681,8 @@ declare module 'mojang-minecraft' {
 		 * Represents an item that can place a frame within Minecraft.
 		 */
 		static readonly 'frame': ItemType
+		static readonly 'frogSpawn': ItemType
+		static readonly 'frogSpawnEgg': ItemType
 		/**
 		 * Represents an item that can place a frosted ice block within
 		 * Minecraft.
@@ -8777,6 +10712,7 @@ declare module 'mojang-minecraft' {
 		 */
 		static readonly 'glassPane': ItemType
 		static readonly 'glisteringMelonSlice': ItemType
+		static readonly 'globeBannerPattern': ItemType
 		static readonly 'glowBerries': ItemType
 		/**
 		 * Represents an item that can place a glowing frame within
@@ -9368,6 +11304,7 @@ declare module 'mojang-minecraft' {
 		static readonly 'musicDiscFar': ItemType
 		static readonly 'musicDiscMall': ItemType
 		static readonly 'musicDiscMellohi': ItemType
+		static readonly 'musicDiscOtherside': ItemType
 		static readonly 'musicDiscPigstep': ItemType
 		static readonly 'musicDiscStal': ItemType
 		static readonly 'musicDiscStrad': ItemType
@@ -9379,6 +11316,8 @@ declare module 'mojang-minecraft' {
 		 * Minecraft.
 		 */
 		static readonly 'mycelium': ItemType
+		static readonly 'mysteriousFrame': ItemType
+		static readonly 'mysteriousFrameSlot': ItemType
 		static readonly 'nameTag': ItemType
 		static readonly 'nautilusShell': ItemType
 		/**
@@ -9475,6 +11414,7 @@ declare module 'mojang-minecraft' {
 		 */
 		static readonly 'obsidian': ItemType
 		static readonly 'ocelotSpawnEgg': ItemType
+		static readonly 'ochreFroglight': ItemType
 		/**
 		 * Represents an item that can place an orange candle within
 		 * Minecraft.
@@ -9525,6 +11465,7 @@ declare module 'mojang-minecraft' {
 		static readonly 'pandaSpawnEgg': ItemType
 		static readonly 'paper': ItemType
 		static readonly 'parrotSpawnEgg': ItemType
+		static readonly 'pearlescentFroglight': ItemType
 		static readonly 'phantomMembrane': ItemType
 		static readonly 'phantomSpawnEgg': ItemType
 		static readonly 'piglinBannerPattern': ItemType
@@ -10294,6 +12235,8 @@ declare module 'mojang-minecraft' {
 		 * Minecraft.
 		 */
 		static readonly 'sweetBerryBush': ItemType
+		static readonly 'tadpoleBucket': ItemType
+		static readonly 'tadpoleSpawnEgg': ItemType
 		/**
 		 * Represents tall grass within Minecraft.
 		 */
@@ -10388,6 +12331,7 @@ declare module 'mojang-minecraft' {
 		 * within Minecraft.
 		 */
 		static readonly 'unpoweredRepeater': ItemType
+		static readonly 'verdantFroglight': ItemType
 		static readonly 'vexSpawnEgg': ItemType
 		static readonly 'villagerSpawnEgg': ItemType
 		static readonly 'vindicatorSpawnEgg': ItemType
@@ -10732,10 +12676,99 @@ declare module 'mojang-minecraft' {
 		static readonly 'zombieVillagerSpawnEgg': ItemType
 	}
 	/**
+	 * Contains a set of additional variable values for further
+	 * defining how rendering and animations function.
+	 */
+	export class MolangVariableMap {
+		constructor()
+		/**
+		 * @remarks
+		 * Sets a Molang rendering/animation variable with the value of
+		 * a Red/Green/Blue color.
+		 * @param variableName
+		 * @param color
+		 */
+		setColorRGB(variableName: string, color: Color): MolangVariableMap
+		/**
+		 * @remarks
+		 * Sets a Molang rendering/animation variable with the value of
+		 * a Red/Green/Blue color + Alpha (transparency) value.
+		 * @param variableName
+		 * @param color
+		 */
+		setColorRGBA(variableName: string, color: Color): MolangVariableMap
+		/**
+		 * @remarks
+		 * Sets the speed and direction for a Molang (rendering and
+		 * animation) variable.
+		 * @param variableName
+		 * @param speed
+		 * @param direction
+		 */
+		setSpeedAndDirection(
+			variableName: string,
+			speed: number,
+			direction: Vector
+		): MolangVariableMap
+		/**
+		 * @remarks
+		 * Sets a vector value for a Molang (rendering and animation)
+		 * variable.
+		 * @param variableName
+		 * @param vector
+		 */
+		setVector3(variableName: string, vector: Vector): MolangVariableMap
+	}
+	/**
+	 * Contains data resulting from a navigation operation,
+	 * including whether the navigation is possible and the path of
+	 * navigation.
+	 */
+	export class NavigationResult {
+		/**
+		 * Whether the navigation result contains a full path,
+		 * including to the requested destination.
+		 */
+		readonly 'isFullPath': boolean
+		/**
+		 * A set of block locations that comprise the navigation route.
+		 */
+		readonly 'path': BlockLocation[]
+	}
+	/**
+	 * Represents a min/max structure for expressing a potential
+	 * range of numbers.
+	 */
+	export class NumberRange {
+		/**
+		 * Maximum value within a range.
+		 */
+		'max': number
+		/**
+		 * Minimum value within a range.
+		 */
+		'min': number
+		/**
+		 * @remarks
+		 * Returns a random number between the minimum and maximum of
+		 * the range.
+		 */
+		next(): number
+	}
+	/**
 	 * Contains information related to changes to a piston
 	 * expanding or retracting.
 	 */
-	export class PistonActivateEvent {
+	export class PistonActivateEvent extends BlockEvent {
+		/**
+		 * Block impacted by this event.
+		 */
+		readonly 'block': Block
+		/**
+		 * Dimension that contains the block that is the subject of
+		 * this event.
+		 */
+		readonly 'dimension': Dimension
 		/**
 		 * True if the piston is the process of expanding.
 		 */
@@ -10768,9 +12801,38 @@ declare module 'mojang-minecraft' {
 		unsubscribe(callback: (arg: PistonActivateEvent) => void): void
 	}
 	/**
+	 * Represents a rotation structure with pitch and yaw
+	 * components.
+	 */
+	export class PitchYawRotation {
+		/**
+		 * Pitch (up-and-down) element of this rotation.
+		 */
+		'pitch': number
+		/**
+		 * Yaw component (left-to-right) of this position.
+		 */
+		'yaw': number
+	}
+	/**
 	 * Represents a player within the world.
 	 */
-	export class Player {
+	export class Player extends Entity {
+		/**
+		 * Rotation of the body component of the player.
+		 * @throws This property can throw when used.
+		 */
+		readonly 'bodyRotation': number
+		/**
+		 * Dimension that the entity is currently within.
+		 * @throws This property can throw when used.
+		 */
+		readonly 'dimension': Dimension
+		/**
+		 * Location of the center of the head component of the player.
+		 * @throws This property can throw when used.
+		 */
+		readonly 'headLocation': Location
 		/**
 		 * Identifier for the player.
 		 * @throws This property can throw when used.
@@ -10795,17 +12857,33 @@ declare module 'mojang-minecraft' {
 		 */
 		'nameTag': string
 		/**
+		 * Manages the selected slot in the player's hotbar.
+		 */
+		'selectedSlot': number
+		/**
+		 * Retrieves or sets an entity that is used as the target of
+		 * AI-related behaviors, like attacking. For players, which
+		 * don't use any AI semantics, this property does not do
+		 * anything.
+		 */
+		'target': Entity
+		/**
 		 * Current speed of the player across X, Y, and Z dimensions.
 		 * @throws This property can throw when used.
 		 */
-		readonly 'velocity': Location
+		readonly 'velocity': Vector
+		/**
+		 * Vector of the current view of the player.
+		 * @throws This property can throw when used.
+		 */
+		readonly 'viewVector': Vector
 		/**
 		 * @remarks
 		 * Adds an effect, like poison, to the entity.
 		 * @param effectType
 		 * Type of effect to add to the entity.
 		 * @param duration
-		 * Amount of time, in seconds, for the effect to apply.
+		 * Amount of time, in ticks, for the effect to apply.
 		 * @param amplifier
 		 * Optional amplification of the effect to apply.
 		 * @throws This function can throw errors.
@@ -10817,6 +12895,23 @@ declare module 'mojang-minecraft' {
 		): void
 		/**
 		 * @remarks
+		 * Adds a specified tag to an entity.
+		 * @param tag
+		 * Content of the tag to add.
+		 * @throws This function can throw errors.
+		 */
+		addTag(tag: string): boolean
+		/**
+		 * @remarks
+		 * Gets the first block that intersects with the vector of the
+		 * view of this entity.
+		 * @param options
+		 * Additional options for processing this raycast query.
+		 * @throws This function can throw errors.
+		 */
+		getBlockFromViewVector(options?: BlockRaycastOptions): Block
+		/**
+		 * @remarks
 		 * Gets a component (that represents additional capabilities)
 		 * for an entity.
 		 * @param componentId
@@ -10825,13 +12920,13 @@ declare module 'mojang-minecraft' {
 		 * 'minecraft:' is assumed. If the component is not present on
 		 * the entity, undefined is returned.
 		 */
-		getComponent(componentId: string): any
+		getComponent(componentId: string): IEntityComponent
 		/**
 		 * @remarks
 		 * Returns all components that are both present on this entity
 		 * and supported by the API.
 		 */
-		getComponents(): any[]
+		getComponents(): IEntityComponent[]
 		/**
 		 * @remarks
 		 * Returns the effect for the specified EffectType on the
@@ -10845,6 +12940,31 @@ declare module 'mojang-minecraft' {
 		getEffect(effectType: EffectType): Effect
 		/**
 		 * @remarks
+		 * Gets the first entity that intersects with the vector of the
+		 * view of this entity.
+		 * @param options
+		 * Additional options for processing this raycast query.
+		 * @throws This function can throw errors.
+		 */
+		getEntitiesFromViewVector(options?: EntityRaycastOptions): Entity[]
+		/**
+		 * @remarks
+		 * Gets the current item cooldown time for a particular
+		 * cooldown category.
+		 * @param itemCategory
+		 * Specifies the cooldown category to retrieve the current
+		 * cooldown for.
+		 * @throws This function can throw errors.
+		 */
+		getItemCooldown(itemCategory: string): number
+		/**
+		 * @remarks
+		 * Returns all tags associated with an entity.
+		 * @throws This function can throw errors.
+		 */
+		getTags(): string[]
+		/**
+		 * @remarks
 		 * Returns true if the specified component is present on this
 		 * entity.
 		 * @param componentId
@@ -10855,10 +12975,110 @@ declare module 'mojang-minecraft' {
 		hasComponent(componentId: string): boolean
 		/**
 		 * @remarks
+		 * Tests whether an entity has a particular tag.
+		 * @param tag
+		 * Identifier of the tag to test for.
+		 * @throws This function can throw errors.
+		 */
+		hasTag(tag: string): boolean
+		/**
+		 * @remarks
 		 * Kills this entity. The entity will drop loot as normal.
 		 * @throws This function can throw errors.
 		 */
 		kill(): void
+		/**
+		 * @remarks
+		 * Plays a sound that only this particular player can hear.
+		 * @param soundID
+		 * Identifier of the sound to play.
+		 * @param soundOptions
+		 * Additional optional options for the sound.
+		 * @throws This function can throw errors.
+		 */
+		playSound(soundID: string, soundOptions?: SoundOptions): void
+		/**
+		 * @remarks
+		 * Removes a specified tag from an entity.
+		 * @param tag
+		 * Content of the tag to remove.
+		 * @throws This function can throw errors.
+		 */
+		removeTag(tag: string): boolean
+		/**
+		 * @remarks
+		 * Runs a particular command from the context of this player.
+		 * @param commandString
+		 * Command to run. Note that command strings should not start
+		 * with slash.
+		 * @returns
+		 * For commands that return data, returns a JSON structure with
+		 * command response values.
+		 * @throws This function can throw errors.
+		 * @example commands.js
+		 * ```typescript
+		 *        player.runCommand("say You got a new high score!");
+		 *        player.runCommand("scoreboard players set @s score 10");
+		 *
+		 * ```
+		 */
+		runCommand(commandString: string): any
+		/**
+		 * @remarks
+		 * Sets a velocity for the entity to move with.
+		 * @param velocity
+		 * X/Y/Z components of the velocity.
+		 * @throws This function can throw errors.
+		 */
+		setVelocity(velocity: Vector): void
+		/**
+		 * @remarks
+		 * Sets the item cooldown time for a particular cooldown
+		 * category.
+		 * @param itemCategory
+		 * Specifies the cooldown category to retrieve the current
+		 * cooldown for.
+		 * @param tickDuration
+		 * Duration in ticks of the item cooldown.
+		 * @throws This function can throw errors.
+		 */
+		startItemCooldown(itemCategory: string, tickDuration: number): void
+		/**
+		 * @remarks
+		 * Teleports the selected player to a new location
+		 * @param location
+		 * New location for the player.
+		 * @param dimension
+		 * Dimension to move the selected player to.
+		 * @param xRotation
+		 * X rotation of the player after teleportation.
+		 * @param yRotation
+		 * Y rotation of the player after teleportation.
+		 * @throws This function can throw errors.
+		 */
+		teleport(
+			location: Location,
+			dimension: Dimension,
+			xRotation: number,
+			yRotation: number
+		): void
+		/**
+		 * @remarks
+		 * Teleports the selected player to a new location, and will
+		 * have the player facing a specified location.
+		 * @param location
+		 * New location for the player.
+		 * @param dimension
+		 * Dimension to move the selected player to.
+		 * @param facingLocation
+		 * Location that this player will be facing.
+		 * @throws This function can throw errors.
+		 */
+		teleportFacing(
+			location: Location,
+			dimension: Dimension,
+			facingLocation: Location
+		): void
 		/**
 		 * @remarks
 		 * Triggers an entity type event. For every entity, a number of
@@ -10876,7 +13096,7 @@ declare module 'mojang-minecraft' {
 	 * Represents the inventory of a {@link mojang-minecraft.Player} in
 	 * the world.
 	 */
-	export class PlayerInventoryComponentContainer {
+	export class PlayerInventoryComponentContainer extends InventoryComponentContainer {
 		/**
 		 * Contains a count of the slots in the container that are
 		 * empty.
@@ -10955,64 +13175,84 @@ declare module 'mojang-minecraft' {
 		): boolean
 	}
 	/**
-	 * Represents a block that can play a record.
+	 * This type is usable for iterating over a set of players.
+	 * This means it can be used in statements like for...of
+	 * statements, Array.from(iterator), and more.
 	 */
-	export class RecordPlayer {
+	export class PlayerIterator implements Iterable<Player> {
+		[Symbol.iterator](): Iterator<Player>
 		/**
 		 * @remarks
-		 * Clears the currently playing record of this record-playing
-		 * block.
-		 * @throws This function can throw errors.
+		 * Retrieves the next item in this iteration. The resulting
+		 * IteratorResult contains .done and .value properties which
+		 * can be used to see the next Player in the iteration.
 		 */
-		clearRecord(): void
-		/**
-		 * @remarks
-		 * Returns true if the record-playing block is currently
-		 * playing a record.
-		 * @throws This function can throw errors.
-		 */
-		isPlaying(): boolean
-		/**
-		 * @remarks
-		 * Sets and plays a record based on an item type.
-		 * @param recordItemType
-		 * @throws This function can throw errors.
-		 */
-		setRecord(recordItemType: ItemType): void
+		next(): IteratorResult<Player>
 	}
 	/**
-	 * Contains data resulting from a navigation operation,
-	 * including whether the navigation is possible and the path of
-	 * navigation.
+	 * Contains information regarding a player that has joined.
 	 */
-	export class ScriptNavigationResult {
+	export class PlayerJoinEvent {
 		/**
-		 * Whether the navigation result contains a full path,
-		 * including to the requested destination.
+		 * Player that has joined the world.
 		 */
-		readonly 'isFullPath': boolean
-		/**
-		 * A set of block locations that comprise the navigation route.
-		 */
-		readonly 'path': BlockLocation[]
+		'player': Player
 	}
 	/**
-	 * Contains orientation information for items that can change
-	 * on pitch and yaw angles.
+	 * Manages callbacks that are connected to a player joining the
+	 * world.
 	 */
-	export class ScriptPlayerHeadRotation {
+	export class PlayerJoinEventSignal {
 		/**
-		 * Pitch value of this orientation. For example, for a head,
-		 * whether the head is looking up or down. The pitch of a head
-		 * facing straight up is -90.
+		 * @remarks
+		 * Adds a callback that will be called when a player joins the
+		 * world.
+		 * @param callback
 		 */
-		'pitch': number
+		subscribe(
+			callback: (arg: PlayerJoinEvent) => void
+		): (arg: PlayerJoinEvent) => void
 		/**
-		 * Yaw value of this orientation. For example, for a head,
-		 * whether the head is looking left or right. The yaw of a head
-		 * facing west is 90.
+		 * @remarks
+		 * Removes a callback from being called when a player joins the
+		 * world.
+		 * @param callback
+		 * @throws This function can throw errors.
 		 */
-		'yaw': number
+		unsubscribe(callback: (arg: PlayerJoinEvent) => void): void
+	}
+	/**
+	 * Contains information regarding a player that has left the
+	 * world.
+	 */
+	export class PlayerLeaveEvent {
+		/**
+		 * Player that has left the world.
+		 */
+		readonly 'playerName': string
+	}
+	/**
+	 * Manages callbacks that are connected to a player leaving the
+	 * world.
+	 */
+	export class PlayerLeaveEventSignal {
+		/**
+		 * @remarks
+		 * Adds a callback that will be called when a player leaves the
+		 * world.
+		 * @param callback
+		 */
+		subscribe(
+			callback: (arg: PlayerLeaveEvent) => void
+		): (arg: PlayerLeaveEvent) => void
+		/**
+		 * @remarks
+		 * Removes a callback from being called when a player leaves
+		 * the world.
+		 * @param callback
+		 * @throws This function can throw errors.
+		 */
+		unsubscribe(callback: (arg: PlayerLeaveEvent) => void): void
 	}
 	/**
 	 * Describes a particular seating position on this rideable
@@ -11040,10 +13280,34 @@ declare module 'mojang-minecraft' {
 		'position': Location
 	}
 	/**
+	 * Additional configuration options for the
+	 * {@link mojang-minecraft.Player.playSound}/{@link mojang-minecraft.World.playSound}
+	 * method.
+	 */
+	export class SoundOptions {
+		/**
+		 * Specifies a location of where to play a particular sound.
+		 */
+		'location': Location
+		/**
+		 * Pitch adjustment level for the sound.
+		 */
+		'pitch': number
+		/**
+		 * Relative volume level of the sound.
+		 */
+		'volume': number
+		/**
+		 * @remarks
+		 * Creates a new instance of the SoundOptions object.
+		 */
+		constructor()
+	}
+	/**
 	 * Contains the state of a string-based property for a
 	 * {@link mojang-minecraft.BlockPermutation}.
 	 */
-	export class StringBlockProperty {
+	export class StringBlockProperty extends IBlockProperty {
 		/**
 		 * Name of this property.
 		 */
@@ -11071,6 +13335,10 @@ declare module 'mojang-minecraft' {
 		 * Current tick at the time this event was fired.
 		 */
 		readonly 'currentTick': number
+		/**
+		 * Time since the last tick was fired.
+		 */
+		readonly 'deltaTime': number
 	}
 	/**
 	 * Manages callbacks that are connected to a tick event.
@@ -11093,7 +13361,168 @@ declare module 'mojang-minecraft' {
 	/**
 	 * Represents a trigger for firing an event.
 	 */
-	export class Trigger {}
+	export class Trigger {
+		/**
+		 * Event name of the trigger.
+		 */
+		'eventName': string
+		constructor(eventName: string)
+	}
+	/**
+	 * Contains a description of a vector.
+	 */
+	export class Vector {
+		/**
+		 * X component of this vector.
+		 */
+		'x': number
+		/**
+		 * Y component of this vector.
+		 */
+		'y': number
+		/**
+		 * Z component of this vector.
+		 */
+		'z': number
+		/**
+		 * A constant vector that represents (0, 0, -1).
+		 */
+		static readonly 'back': Vector
+		/**
+		 * A constant vector that represents (0, -1, 0).
+		 */
+		static readonly 'down': Vector
+		/**
+		 * A constant vector that represents (0, 0, 1).
+		 */
+		static readonly 'forward': Vector
+		/**
+		 * A constant vector that represents (-1, 0, 0).
+		 */
+		static readonly 'left': Vector
+		/**
+		 * A constant vector that represents (1, 1, 1).
+		 */
+		static readonly 'one': Vector
+		/**
+		 * A constant vector that represents (1, 0, 0).
+		 */
+		static readonly 'right': Vector
+		/**
+		 * A constant vector that represents (0, 1, 0).
+		 */
+		static readonly 'up': Vector
+		/**
+		 * A constant vector that represents (0, 0, 0).
+		 */
+		static readonly 'zero': Vector
+		/**
+		 * @remarks
+		 * Returns the addition of these vectors.
+		 * @param a
+		 * @param b
+		 */
+		static add(a: Vector, b: Vector): Vector
+		/**
+		 * @remarks
+		 * Creates a new instance of an abstract vector.
+		 * @param x
+		 * X component of the vector.
+		 * @param y
+		 * Y component of the vector.
+		 * @param z
+		 * Z component of the vector.
+		 */
+		constructor(x: number, y: number, z: number)
+		/**
+		 * @remarks
+		 * Returns the cross product of these two vectors.
+		 * @param a
+		 * @param b
+		 */
+		static cross(a: Vector, b: Vector): Vector
+		/**
+		 * @remarks
+		 * Returns the distance between two vectors.
+		 * @param a
+		 * @param b
+		 */
+		static distance(a: Vector, b: Vector): number
+		/**
+		 * @remarks
+		 * Returns the component-wise division of these vectors.
+		 * @param a
+		 * @param b
+		 */
+		static divide(a: Vector, b: number | Vector): Vector
+		/**
+		 * @remarks
+		 * Compares this vector and another vector to one another.
+		 * @param other
+		 * Other vector to compare this vector to.
+		 * @returns
+		 * True if the two vectors are equal.
+		 */
+		equals(other: Vector): boolean
+		/**
+		 * @remarks
+		 * Returns the length of this vector.
+		 */
+		length(): number
+		/**
+		 * @remarks
+		 * Returns the linear interpolation between a and b using t as
+		 * the control.
+		 * @param a
+		 * @param b
+		 * @param t
+		 */
+		static lerp(a: Vector, b: Vector, t: number): Vector
+		/**
+		 * @remarks
+		 * Returns a vector that is made from the largest components of
+		 * two vectors.
+		 * @param a
+		 * @param b
+		 */
+		static max(a: Vector, b: Vector): Vector
+		/**
+		 * @remarks
+		 * Returns a vector that is made from the smallest components
+		 * of two vectors.
+		 * @param a
+		 * @param b
+		 */
+		static min(a: Vector, b: Vector): Vector
+		/**
+		 * @remarks
+		 * Returns the component-wise product of these vectors.
+		 * @param a
+		 * @param b
+		 */
+		static multiply(a: Vector, b: number | Vector): Vector
+		/**
+		 * @remarks
+		 * Returns this vector as a normalized vector.
+		 */
+		normalized(): Vector
+		/**
+		 * @remarks
+		 * Returns the spherical linear interpolation between a and b
+		 * using s as the control.
+		 * @param a
+		 * @param b
+		 * @param s
+		 */
+		static slerp(a: Vector, b: Vector, s: number): Vector
+		/**
+		 * @remarks
+		 * Returns the subtraction of these vectors.
+		 * @param a
+		 * @param b
+		 */
+		static subtract(a: Vector, b: Vector): Vector
+	}
 	/**
 	 * Contains information related to changes in weather in the
 	 * environment.
@@ -11136,1716 +13565,44 @@ declare module 'mojang-minecraft' {
 	 * A class that wraps the state of a world - a set of
 	 * dimensions and the environment of Minecraft.
 	 */
-	// tslint:disable-next-line:no-unnecessary-class
 	export class World {
 		/**
 		 * Contains a set of events that are applicable to the entirety
 		 * of the world.
 		 */
-		static readonly 'events': Events
+		readonly 'events': Events
 		/**
-		 * @param dimensionName
-		 * The name of the Dimension
+		 * @param dimensionId
 		 * @returns
 		 * The requested dimension
 		 * @throws
 		 * Throws if the given dimension name is invalid
 		 */
-		static getDimension(
-			dimensionName: 'overworld' | 'nether' | 'the end'
-		): Dimension
+		getDimension(dimensionId: string): Dimension
 		/**
 		 * @remarks
 		 * Returns all players currently in the world.
+		 * @param options
 		 * @returns
 		 * All players currently in the world.
+		 * @throws This function can throw errors.
 		 */
-		static getPlayers(): Player[]
+		getPlayers(options?: EntityQueryOptions): PlayerIterator
+		/**
+		 * @remarks
+		 * Plays a sound that all players can hear.
+		 * @param soundID
+		 * @param soundOptions
+		 */
+		playSound(soundID: string, soundOptions?: SoundOptions): void
 	}
+	/**
+	 * How many times the server ticks per second of real time.
+	 */
 	export const TicksPerSecond = 20
-}
-
-declare module 'mojang-gametest' {
-    // Imports
-    import { 
-		ScriptPlayerHeadRotation, 
-		Location,
-		EffectType,
-		Entity,
-		BlockLocation,
-		Effect,
-		ScriptNavigationResult,
-		ItemStack,
-		BlockType,
-		Block,
-		ItemType,
-		BlockPermutation
-	} from 'mojang-minecraft'
 	/**
-	 * Returns information about whether this fence is connected to
-	 * other fences in several directions.
+	 * A class that wraps the state of a world - a set of
+	 * dimensions and the environment of Minecraft.
 	 */
-	export class FenceConnectivity {
-		/**
-		 * Represents whether this fence block is connected to another
-		 * fence to the east (x + 1).
-		 */
-		readonly 'east': boolean
-		/**
-		 * Represents whether this fence block is connected to another
-		 * fence to the north (z - 1).
-		 */
-		readonly 'north': boolean
-		/**
-		 * Represents whether this fence block is connected to another
-		 * fence to the south (z + 1).
-		 */
-		readonly 'south': boolean
-		/**
-		 * Represents whether this fence block is connected to another
-		 * fence to the west (x - 1).
-		 */
-		readonly 'west': boolean
-	}
-	/**
-	 * Executes a set of steps defined via chained .thenXyz
-	 * methods, sequentially. This facilitates a 'script' of
-	 * GameTest setup methods and assertions over time.
-	 */
-	export class GameTestSequence {
-		/**
-		 * @remarks
-		 * Runs the given callback as a step within a GameTest
-		 * sequence. Exceptions thrown within the callback will end
-		 * sequence execution.
-		 * @param callback
-		 * Callback function to execute.
-		 * @returns
-		 * Returns a GameTestSequence object where additional .thenXyz
-		 * method steps can be added.
-		 */
-		thenExecute(callback: () => void): GameTestSequence
-		/**
-		 * @remarks
-		 * After a delay, runs the given callback as a step within a
-		 * GameTest sequence. Exceptions thrown within the callback
-		 * will end sequence execution.
-		 * @param delayTicks
-		 * Number of ticks to wait before executing the callback.
-		 * @param callback
-		 * Callback function to execute.
-		 * @returns
-		 * Returns a GameTestSequence object where additional .thenXyz
-		 * method steps can be added.
-		 */
-		thenExecuteAfter(
-			delayTicks: number,
-			callback: () => void
-		): GameTestSequence
-		/**
-		 * @remarks
-		 * Runs the given callback every tick for the given number of
-		 * ticks.
-		 * @param tickCount
-		 * @param callback
-		 * Callback function to execute.
-		 * @returns
-		 * Returns a GameTestSequence object where additional .thenXyz
-		 * method steps can be added.
-		 */
-		thenExecuteFor(
-			tickCount: number,
-			callback: () => void
-		): GameTestSequence
-		/**
-		 * @remarks
-		 * Causes the test to fail if this step in the GameTest
-		 * sequence is reached.
-		 * @param errorMessage
-		 * Error message summarizing the failure condition.
-		 */
-		thenFail(errorMessage: string): void
-		/**
-		 * @remarks
-		 * Idles the GameTest sequence for the specified delayTicks.
-		 * @param delayTicks
-		 * Number of ticks to delay for this step in the GameTest
-		 * sequence.
-		 * @returns
-		 * Returns a GameTestSequence object where additional .thenXyz
-		 * method steps can be added.
-		 */
-		thenIdle(delayTicks: number): GameTestSequence
-		/**
-		 * @remarks
-		 * Marks the GameTest a success if this step is reached in the
-		 * GameTest sequence.
-		 */
-		thenSucceed(): void
-		/**
-		 * @remarks
-		 * Executes the given callback every tick until it succeeds.
-		 * Exceptions thrown within the callback will end sequence
-		 * execution.
-		 * @param callback
-		 * Testing callback function to execute. Typically, this
-		 * function will have .assertXyz functions within it.
-		 * @returns
-		 * Returns a GameTestSequence object where additional .thenXyz
-		 * method steps can be added.
-		 */
-		thenWait(callback: () => void): GameTestSequence
-		/**
-		 * @remarks
-		 * After a delay from the previous step, executes the given
-		 * callback every tick until it succeeds. Exceptions thrown
-		 * within the callback will end sequence execution.
-		 * @param delayTicks
-		 * Tick (after the previous step in the GameTest sequence) to
-		 * run the callback at.
-		 * @param callback
-		 * Testing callback function to execute. Typically, this
-		 * function will have .assertXyz functions within it.
-		 * @returns
-		 * Returns a GameTestSequence object where additional .thenXyz
-		 * method steps can be added.
-		 */
-		thenWaitAfter(
-			delayTicks: number,
-			callback: () => void
-		): GameTestSequence
-	}
-	/**
-	 * A utility class to set GameTest parameters for a test.
-	 * Methods can be chained together to set multiple properties.
-	 */
-	export class RegistrationBuilder {
-		/**
-		 * @remarks
-		 * Sets the batch for the test to run in.
-		 * @param batchName
-		 * Name of the batch for the test.
-		 * @returns
-		 * RegistrationBuilder object where additional configuration
-		 * methods can be called.
-		 */
-		batch(batchName: 'night' | 'day'): RegistrationBuilder
-		/**
-		 * @remarks
-		 * Sets the maximum number of times a test will try to rerun if
-		 * it fails.
-		 * @param attemptCount
-		 * @returns
-		 * RegistrationBuilder object where additional configuration
-		 * methods can be called.
-		 */
-		maxAttempts(attemptCount: number): RegistrationBuilder
-		/**
-		 * @remarks
-		 * Sets the maximum number of ticks a test will run for before
-		 * timing out and failing.
-		 * @param tickCount
-		 * @returns
-		 * RegistrationBuilder object where additional configuration
-		 * methods can be called.
-		 */
-		maxTicks(tickCount: number): RegistrationBuilder
-		/**
-		 * @remarks
-		 * Size around the GameTest, in blocks, that should be reserved
-		 * for the test when running multiple tests together.
-		 * @param paddingBlocks
-		 * Size, in blocks, around the GameTest where additional
-		 * GameTests should not be created.
-		 * @returns
-		 * RegistrationBuilder object where additional configuration
-		 * methods can be called.
-		 */
-		padding(paddingBlocks: number): RegistrationBuilder
-		/**
-		 * @remarks
-		 * Whether this test is required to pass as part of its broader
-		 * set of tests.
-		 * @param isRequired
-		 * If set to true, the test must pass in order for the entire
-		 * run of tests to pass.
-		 * @returns
-		 * RegistrationBuilder object where additional configuration
-		 * methods can be called.
-		 */
-		required(isRequired: boolean): RegistrationBuilder
-		/**
-		 * @remarks
-		 * Sets the number of successful test runs to be considered
-		 * successful.
-		 * @param attemptCount
-		 * @returns
-		 * RegistrationBuilder object where additional configuration
-		 * methods can be called.
-		 */
-		requiredSuccessfulAttempts(attemptCount: number): RegistrationBuilder
-		/**
-		 * @remarks
-		 * If true, runs the test in all four rotations when run via
-		 * /gametest runset.
-		 * @param rotate
-		 */
-		rotateTest(rotate: boolean): RegistrationBuilder
-		/**
-		 * @remarks
-		 * Sets the number of ticks for a test to wait before executing
-		 * when the structure is spawned.
-		 * @param tickCount
-		 * @returns
-		 * RegistrationBuilder object where additional configuration
-		 * methods can be called.
-		 */
-		setupTicks(tickCount: number): RegistrationBuilder
-		/**
-		 * @remarks
-		 * Sets the name of the structure for a test to use. "xyz:bar"
-		 * will load `/structures/xyz/bar.mcstructure` from the
-		 * behavior pack stack.
-		 * @param structureName
-		 * @returns
-		 * RegistrationBuilder object where additional configuration
-		 * methods can be called.
-		 */
-		structureName(structureName: string): RegistrationBuilder
-		/**
-		 * @remarks
-		 * Adds a tag to a test. You can run all tests with a given tag
-		 * with `/gametest runset <tag>`.
-		 * @param tag
-		 * @returns
-		 * RegistrationBuilder object where additional configuration
-		 * methods can be called.
-		 */
-		tag(tag: string): RegistrationBuilder
-	}
-	/**
-	 * A simulated player can be used within GameTests to represent
-	 * how a player moves throughout the world and to support
-	 * testing of how entities and the environment will react to a
-	 * player. This type derives much of its structure and methods
-	 * from the {@link mojang-minecraft.Player} type.
-	 */
-	export class SimulatedPlayer {
-		/**
-		 * Rotation of the body in degrees. Range is between -180 and
-		 * 180 degrees.
-		 * @throws This property can throw when used.
-		 */
-		readonly 'bodyRotation': number
-		/**
-		 * Rotation of the head across pitch and yaw angles.
-		 * @throws This property can throw when used.
-		 */
-		readonly 'headRotation': ScriptPlayerHeadRotation
-		/**
-		 * Identifier for the player.
-		 * @throws This property can throw when used.
-		 */
-		readonly 'id': string
-		/**
-		 * True if the player is currently using a sneaking movement.
-		 */
-		'isSneaking': boolean
-		/**
-		 * Current location of the player.
-		 * @throws This property can throw when used.
-		 */
-		readonly 'location': Location
-		/**
-		 * Name of the player.
-		 * @throws This property can throw when used.
-		 */
-		readonly 'name': string
-		/**
-		 * Optional name tag of the player.
-		 */
-		'nameTag': string
-		/**
-		 * Current speed of the player across X, Y, and Z dimensions.
-		 * @throws This property can throw when used.
-		 */
-		readonly 'velocity': Location
-		/**
-		 * @remarks
-		 * Adds an effect, like poison, to the entity.
-		 * @param effectType
-		 * Type of effect to add to the entity.
-		 * @param duration
-		 * Amount of time, in seconds, for the effect to apply.
-		 * @param amplifier
-		 * Optional amplification of the effect to apply.
-		 * @throws This function can throw errors.
-		 */
-		addEffect(
-			effectType: EffectType,
-			duration: number,
-			amplifier: number
-		): void
-		/**
-		 * @remarks
-		 * Causes the simulated player to make an attack 'swipe'.
-		 * Returns true if the attack was performed - for example, the
-		 * player was not on cooldown and had a valid target. Target
-		 * selection is performed by raycasting from the player's head.
-		 * @throws This function can throw errors.
-		 */
-		attack(): boolean
-		/**
-		 * @remarks
-		 * Causes the simulated player to attack the provided target.
-		 * Returns true if the attack was performed - for example, the
-		 * player was not on cooldown and had a valid target. The
-		 * attack can be performed at any distance and does not require
-		 * line of sight to the target entity.
-		 * @param entity
-		 * @throws This function can throw errors.
-		 */
-		attackEntity(entity: Entity): boolean
-		/**
-		 * @remarks
-		 * Destroys the block at blockLocation, respecting the rules of
-		 * the server player's game mode. The block will be hit until
-		 * broken, an item is used or stopDestroyBlock is called.
-		 * Returns true if the block at blockLocation is solid.
-		 * @param blockLocation
-		 * Location of the block to interact with.
-		 * @param direction
-		 * Direction to place the specified item within.
-		 * @throws This function can throw errors.
-		 */
-		destroyBlock(
-			blockLocation: BlockLocation,
-			direction: number
-		): boolean
-		/**
-		 * @remarks
-		 * Gets a component (that represents additional capabilities)
-		 * for an entity.
-		 * @param componentId
-		 * The identifier of the component (e.g., 'minecraft:rideable')
-		 * to retrieve. If no namespace prefix is specified,
-		 * 'minecraft:' is assumed. If the component is not present on
-		 * the entity, undefined is returned.
-		 */
-		getComponent(componentId: string): any
-		/**
-		 * @remarks
-		 * Returns all components that are both present on this entity
-		 * and supported by the API.
-		 */
-		getComponents(): any[]
-		/**
-		 * @remarks
-		 * Returns the effect for the specified EffectType on the
-		 * entity, or undefined if the effect is not present.
-		 * @param effectType
-		 * @returns
-		 * Effect object for the specified effect, or undefined if the
-		 * effect is not present.
-		 * @throws This function can throw errors.
-		 */
-		getEffect(
-			effectType: EffectType
-		): Effect
-		/**
-		 * @remarks
-		 * Returns true if the specified component is present on this
-		 * entity.
-		 * @param componentId
-		 * The identifier of the component (e.g., 'minecraft:rideable')
-		 * to retrieve. If no namespace prefix is specified,
-		 * 'minecraft:' is assumed.
-		 */
-		hasComponent(componentId: string): boolean
-		/**
-		 * @remarks
-		 * Performs a raycast from the player’s head and interacts with
-		 * the first intersected block or entity. Returns true if the
-		 * interaction was successful. Maximum range is 6 blocks.
-		 * @throws This function can throw errors.
-		 */
-		interact(): boolean
-		/**
-		 * @remarks
-		 * Causes the simulated player to interact with a block. The
-		 * block at the specified block location must be solid. Returns
-		 * true if the interaction was performed.
-		 * @param blockLocation
-		 * Location of the block to interact with.
-		 * @param direction
-		 * Direction to place the specified item within.
-		 * @throws This function can throw errors.
-		 */
-		interactWithBlock(
-			blockLocation: BlockLocation,
-			direction: number
-		): boolean
-		/**
-		 * @remarks
-		 * Causes the simulated player to interact with a mob. Returns
-		 * true if the interaction was performed.
-		 * @param entity
-		 * Entity to interact with.
-		 * @throws This function can throw errors.
-		 */
-		interactWithEntity(entity: Entity): boolean
-		/**
-		 * @remarks
-		 * Causes the simulated player to jump.
-		 * @returns
-		 * True if a jump was performed.
-		 * @throws This function can throw errors.
-		 */
-		jump(): boolean
-		/**
-		 * @remarks
-		 * Kills this entity. The entity will drop loot as normal.
-		 * @throws This function can throw errors.
-		 */
-		kill(): void
-		/**
-		 * @remarks
-		 * Rotates the simulated player's head/body to look at the
-		 * given block location.
-		 * @param blockLocation
-		 * @throws This function can throw errors.
-		 */
-		lookAtBlock(blockLocation: BlockLocation): void
-		/**
-		 * @remarks
-		 * Rotates the simulated player's head/body to look at the
-		 * given entity.
-		 * @param entity
-		 * @throws This function can throw errors.
-		 */
-		lookAtEntity(entity: Entity): void
-		/**
-		 * @remarks
-		 * Rotates the simulated player's head/body to look at the
-		 * given location.
-		 * @param location
-		 * @throws This function can throw errors.
-		 */
-		lookAtLocation(location: Location): void
-		/**
-		 * @remarks
-		 * Orders the simulated player to walk in the given direction
-		 * relative to the GameTest.
-		 * @param westEast
-		 * @param northSouth
-		 * @param speed
-		 * @throws This function can throw errors.
-		 */
-		move(westEast: number, northSouth: number, speed: number): void
-		/**
-		 * @remarks
-		 * Orders the simulated player to walk in the given direction
-		 * relative to the player's current rotation.
-		 * @param leftRight
-		 * @param backwardForward
-		 * @param speed
-		 * @throws This function can throw errors.
-		 */
-		moveRelative(
-			leftRight: number,
-			backwardForward: number,
-			speed: number
-		): void
-		/**
-		 * @remarks
-		 * Orders the simulated player to move to the given block
-		 * location in a straight line. If a move or navigation is
-		 * already playing, this will override the last
-		 * move/navigation.
-		 * @param blockLocation
-		 * @param speed
-		 * @throws This function can throw errors.
-		 */
-		moveToBlock(
-			blockLocation: BlockLocation,
-			speed: number
-		): void
-		/**
-		 * @remarks
-		 * Orders the simulated player to move to the given location in
-		 * a straight line. If a move or navigation is already playing,
-		 * this will override the last move/navigation.
-		 * @param location
-		 * @param speed
-		 * @throws This function can throw errors.
-		 */
-		moveToLocation(location: Location, speed: number): void
-		/**
-		 * @remarks
-		 * Orders the simulated player to move to a specific block
-		 * location using navigation. If a move or navigation is
-		 * already playing, this will override the last move/walk. Note
-		 * that if the simulated player gets stuck, that simulated
-		 * player will stop. The player must be touching the ground in
-		 * order to start navigation.
-		 * @param blockLocation
-		 * @param speed
-		 * @throws This function can throw errors.
-		 */
-		navigateToBlock(
-			blockLocation: BlockLocation,
-			speed: number
-		): ScriptNavigationResult
-		/**
-		 * @remarks
-		 * Will use navigation to follow the selected entity to within
-		 * a one block radius. If a move or navigation is already
-		 * playing, this will override the last move/navigation.
-		 * @param entity
-		 * @param speed
-		 * @throws This function can throw errors.
-		 */
-		navigateToEntity(
-			entity: Entity,
-			speed: number
-		): ScriptNavigationResult
-		/**
-		 * @remarks
-		 * Orders the simulated player to move to a specific location
-		 * using navigation. If a move or navigation is already
-		 * playing, this will override the last move/walk. Note that if
-		 * the simulated player gets stuck, that simulated player will
-		 * stop. The player must be touching the ground in order to
-		 * start navigation.
-		 * @param location
-		 * @param speed
-		 * @throws This function can throw errors.
-		 */
-		navigateToLocation(
-			location: Location,
-			speed: number
-		): ScriptNavigationResult
-		/**
-		 * @remarks
-		 * Use navigation to follow the route provided via the
-		 * locations parameter. If a move or navigation is already
-		 * playing, this will override the last move/navigation.
-		 * @param locations
-		 * A list of locations to use for routing.
-		 * @param speed
-		 * Net speed to use for doing the navigation.
-		 * @throws This function can throw errors.
-		 */
-		navigateToLocations(
-			locations: Location[],
-			speed: number
-		): void
-		/**
-		 * @remarks
-		 * Causes the simulated player to turn by the provided angle,
-		 * relative to the player's current rotation.
-		 * @param angleInDegrees
-		 * @throws This function can throw errors.
-		 */
-		rotateBody(angleInDegrees: number): void
-		/**
-		 * @remarks
-		 * Selects the provided slot in the player's hotbar.
-		 * @param slot
-		 * Index of the hotbar slot, ranging from 0 through 8.
-		 * @throws This function can throw errors.
-		 */
-		selectSlot(slot: number): void
-		/**
-		 * @remarks
-		 * Causes the simulated player to turn to face the provided
-		 * angle, relative to the GameTest.
-		 * @param angleInDegrees
-		 * @throws This function can throw errors.
-		 */
-		setBodyRotation(angleInDegrees: number): void
-		/**
-		 * @remarks
-		 * Stops destroying the block that is currently being hit.
-		 * @throws This function can throw errors.
-		 */
-		stopDestroyingBlock(): void
-		/**
-		 * @remarks
-		 * Stops interacting with entities or blocks.
-		 * @throws This function can throw errors.
-		 */
-		stopInteracting(): void
-		/**
-		 * @remarks
-		 * Stops moving/walking/following if the simulated player is
-		 * moving.
-		 * @throws This function can throw errors.
-		 */
-		stopMoving(): void
-		/**
-		 * @remarks
-		 * Stops using the currently active item.
-		 * @throws This function can throw errors.
-		 */
-		stopUsingItem(): void
-		/**
-		 * @remarks
-		 * Triggers an entity type event. For every entity, a number of
-		 * events are defined in an entities' definition for key entity
-		 * behaviors; for example, creepers have a
-		 * minecraft:start_exploding type event.
-		 * @param eventName
-		 * Name of the entity type event to trigger. If a namespace is
-		 * not specified, minecraft: is assumed.
-		 * @throws This function can throw errors.
-		 */
-		triggerEvent(eventName: string): void
-		/**
-		 * @remarks
-		 * Causes the simulated player to use an item. Does not consume
-		 * the item. Returns false if the item is on cooldown.
-		 * @param itemStack
-		 * Item to use.
-		 * @throws This function can throw errors.
-		 */
-		useItem(itemStack: ItemStack): boolean
-		/**
-		 * @remarks
-		 * Causes the simulated player to hold and use an item in their
-		 * inventory.
-		 * @param slot
-		 * Index of the inventory slot.
-		 * @throws This function can throw errors.
-		 */
-		useItemInSlot(slot: number): boolean
-		/**
-		 * @remarks
-		 * Causes the simulated player to use an item in their
-		 * inventory on a block. The block at the specified block
-		 * location must be solid. Returns true if the item was used.
-		 * @param slot
-		 * Index of the slot to use.
-		 * @param blockLocation
-		 * Location to use the item upon.
-		 * @param direction
-		 * Direction to place the specified item within.
-		 * @param faceLocationX
-		 * Block-face-relative X position where to place the item.
-		 * @param faceLocationY
-		 * Block-face-relative Y position where to place the item.
-		 * @throws This function can throw errors.
-		 */
-		useItemInSlotOnBlock(
-			slot: number,
-			blockLocation: BlockLocation,
-			direction: number,
-			faceLocationX: number,
-			faceLocationY: number
-		): boolean
-		/**
-		 * @remarks
-		 * Causes the simulated player to use an item on a block. The
-		 * block at the specified block location must be solid. Returns
-		 * true if the item was used.
-		 * @param itemStack
-		 * Item to use.
-		 * @param blockLocation
-		 * Location to use the item upon.
-		 * @param direction
-		 * Direction to place the specified item within.
-		 * @param faceLocationX
-		 * Block-face-relative X position where to place the item.
-		 * @param faceLocationY
-		 * Block-face-relative Y position where to place the item.
-		 * @throws This function can throw errors.
-		 */
-		useItemOnBlock(
-			itemStack: ItemStack,
-			blockLocation: BlockLocation,
-			direction: number,
-			faceLocationX: number,
-			faceLocationY: number
-		): boolean
-	}
-	/**
-	 * These well-known tags can be used to classify different
-	 * tests into suites to run.
-	 */
-	// tslint:disable-next-line:no-unnecessary-class
-	export class Tags {
-		/**
-		 * Indicates that the tagged test should be a part of all
-		 * suites.
-		 */
-		static readonly 'suiteAll' = 'suite:all'
-		/**
-		 * Indicates that the tagged test should be a part of an
-		 * internal (debug) test suite.
-		 */
-		static readonly 'suiteDebug' = 'suite:debug'
-		/**
-		 * Indicates that the tagged test should be a part of the
-		 * default test suite.
-		 */
-		static readonly 'suiteDefault' = 'suite:default'
-		/**
-		 * Indicates that the tagged test should be a part of a suite
-		 * of disabled tests.
-		 */
-		static readonly 'suiteDisabled' = 'suite:disabled'
-	}
-	/**
-	 * Main class for GameTest functions, with helpers and data for
-	 * manipulating the respective test. Note that all methods of
-	 * this class expect BlockLocations and Locations relative to
-	 * the GameTest structure block.
-	 */
-	export class Test {
-		/**
-		 * @remarks
-		 * Tests that the condition specified in _condition_ is true.
-		 * If not, an error with the specified _message_ is thrown.
-		 * @param condition
-		 * Expression of the condition to evaluate.
-		 * @param message
-		 * Message that is passed if the _condition_ does not evaluate
-		 * to true.
-		 * @throws This function can throw errors.
-		 */
-		assert(condition: boolean, message: string): void
-		/**
-		 * @remarks
-		 * Tests that a block of the specified type is present at the
-		 * specified location. If it is not, an exception is thrown.
-		 * @param blockType
-		 * Expected block type.
-		 * @param blockLocation
-		 * Location of the block to test at.
-		 * @param isPresent
-		 * If true, this function tests whether a block of the
-		 * specified type is at the location. If false, tests that a
-		 * block of the specified type is not present.
-		 * @throws This function can throw errors.
-		 */
-		assertBlockPresent(
-			blockType: BlockType,
-			blockLocation: BlockLocation,
-			isPresent: boolean
-		): void
-		/**
-		 * @remarks
-		 * Tests that a block has a particular state value at the
-		 * specified location. If it does not have that state value, an
-		 * exception is thrown.
-		 * @param blockLocation
-		 * Location of the block to test at.
-		 * @param callback
-		 * Callback function that contains additional tests based on
-		 * the block at the specified location.
-		 * @throws This function can throw errors.
-		 * @example testIfButtonNotPressed.js
-		 * ```typescript
-		 *        test.assertBlockState(buttonPos, (block) => {
-		 *        return block.getBlockData().getProperty("button_pressed_bit") == 0;
-		 *        });
-		 * ```
-		 */
-		assertBlockState(
-			blockLocation: BlockLocation,
-			callback: (arg: Block) => boolean
-		): void
-		/**
-		 * @remarks
-		 * Tests that an entity can reach a particular location.
-		 * Depending on the value of canReach, throws an exception if
-		 * the condition is not met.
-		 * @param mob
-		 * Entity that you wish to test the location against.
-		 * @param blockLocation
-		 * Structure-relative location to test whether the specified
-		 * mob can reach.
-		 * @param canReach
-		 * If true, tests whether the mob can reach the location. If
-		 * false, tests whether the mob is not able to reach the
-		 * location.
-		 * @throws This function can throw errors.
-		 */
-		assertCanReachLocation(
-			mob: Entity,
-			blockLocation: BlockLocation,
-			canReach: boolean
-		): void
-		/**
-		 * @remarks
-		 * Tests that a container (e.g., a chest) at the specified
-		 * location contains a specified of item stack. If not, an
-		 * error is thrown.
-		 * @param itemStack
-		 * Represents the type of item to check for. The specified
-		 * container must contain at least 1 item matching the item
-		 * type defined in _itemStack_.
-		 * @param blockLocation
-		 * Location of the block with a container (for example, a
-		 * chest) to test the contents of.
-		 * @throws This function can throw errors.
-		 */
-		assertContainerContains(
-			itemStack: ItemStack,
-			blockLocation: BlockLocation
-		): void
-		/**
-		 * @remarks
-		 * Tests that a container (e.g., a chest) at the specified
-		 * location is empty. If not, an error is thrown.
-		 * @param blockLocation
-		 * Location of the block with a container (for example, a
-		 * chest) to test is empty of contents.
-		 * @throws This function can throw errors.
-		 */
-		assertContainerEmpty(blockLocation: BlockLocation): void
-		/**
-		 * @remarks
-		 * Tests that an entity has a specific piece of armor equipped.
-		 * If not, an error is thrown.
-		 * @param entityTypeIdentifier
-		 * Identifier of the entity to match (e.g.,
-		 * 'minecraft:skeleton').
-		 * @param armorSlot
-		 * Container slot index to test.
-		 * @param armorName
-		 * Name of the armor to look for.
-		 * @param armorData
-		 * Data value integer to look for.
-		 * @param blockLocation
-		 * Location of the entity with armor to test for.
-		 * @param hasArmor
-		 * Whether or not the entity is expected to have the specified
-		 * armor equipped.
-		 * @throws This function can throw errors.
-		 * @example horseArmorTest.js
-		 * ```typescript
-		 *        test.assertEntityHasArmor("minecraft:horse", armorSlotTorso, "diamond_horse_armor", 0, horseLocation, true);
-		 *
-		 * ```
-		 */
-		assertEntityHasArmor(
-			entityTypeIdentifier: string,
-			armorSlot: number,
-			armorName: string,
-			armorData: number,
-			blockLocation: BlockLocation,
-			hasArmor: boolean
-		): void
-		/**
-		 * @remarks
-		 * Tests that an entity has a particular component. If not, an
-		 * exception is thrown.
-		 * @param entityTypeIdentifier
-		 * Identifier of the specified entity (e.g.,
-		 * 'minecraft:skeleton'). If the namespace is not specified,
-		 * 'minecraft:' is assumed.
-		 * @param componentIdentifier
-		 * Identifier of the component to check for. If the namespace
-		 * is not specified, 'minecraft:' is assumed.
-		 * @param blockLocation
-		 * Location of the block with a container (for example, a
-		 * chest.)
-		 * @param hasComponent
-		 * Determines whether to test that the component exists, or
-		 * does not.
-		 * @throws This function can throw errors.
-		 * @example sheepShearedTest.js
-		 * ```typescript
-		 *        test.assertEntityHasComponent("minecraft:sheep", "minecraft:is_sheared", entityLoc, false);
-		 *
-		 * ```
-		 */
-		assertEntityHasComponent(
-			entityTypeIdentifier: string,
-			componentIdentifier: string,
-			blockLocation: BlockLocation,
-			hasComponent: boolean
-		): void
-		/**
-		 * @remarks
-		 * Depending on the value for isPresent, tests that a
-		 * particular entity is present or not present at the specified
-		 * location. Depending on the value of isPresent, if the entity
-		 * is found or not found, an error is thrown.
-		 * @param entity
-		 * Specific entity to test for.
-		 * @param blockLocation
-		 * Location of the entity to test for.
-		 * @param isPresent
-		 * Whether to test that an entity is present or not present at
-		 * the specified location.
-		 * @throws This function can throw errors.
-		 */
-		assertEntityInstancePresent(
-			entity: Entity,
-			blockLocation: BlockLocation,
-			isPresent: boolean
-		): void
-		/**
-		 * @remarks
-		 * Depending on the value of isPresent, tests for the presence
-		 * or non-presence of entity of a specified type at a
-		 * particular location. If the condition is not met, an
-		 * exception is thrown.
-		 * @param entityTypeIdentifier
-		 * Type of entity to test for (e.g., 'minecraft:skeleton'). If
-		 * an entity namespace is not specified, 'minecraft:' is
-		 * assumed.
-		 * @param blockLocation
-		 * Location of the entity to test for.
-		 * @param isPresent
-		 * If true, this function tests whether an entity of the
-		 * specified type is present. If false, tests that an entity of
-		 * the specified type is not present.
-		 * @throws This function can throw errors.
-		 */
-		assertEntityPresent(
-			entityTypeIdentifier: string,
-			blockLocation: BlockLocation,
-			isPresent: boolean
-		): void
-		/**
-		 * @remarks
-		 * Tests that an entity of a specified type is present within
-		 * the GameTest area. If not, an exception is thrown.
-		 * @param entityTypeIdentifier
-		 * Type of entity to test for (e.g., 'minecraft:skeleton'). If
-		 * an entity namespace is not specified, 'minecraft:' is
-		 * assumed.
-		 * @param isPresent
-		 * If true, this function tests whether an entity of the
-		 * specified type is present in the GameTest area. If false,
-		 * tests that an entity of the specified type is not present.
-		 * @throws This function can throw errors.
-		 */
-		assertEntityPresentInArea(
-			entityTypeIdentifier: string,
-			isPresent: boolean
-		): void
-		/**
-		 * @remarks
-		 * Tests that an entity (e.g., a skeleton) at the specified
-		 * location has a particular piece of data. If not, an error is
-		 * thrown.
-		 * @param blockLocation
-		 * Location of the entity to look for.
-		 * @param entityTypeIdentifier
-		 * Identifier of the entity (e.g., 'minecraft:skeleton') to
-		 * look for. Note if no namespace is specified, 'minecraft:' is
-		 * assumed.
-		 * @param callback
-		 * Callback function where facets of the selected entity can be
-		 * tested for. If this callback function returns false or no
-		 * entity with the specified identifier is found, an exception
-		 * is thrown.
-		 * @throws This function can throw errors.
-		 * @example villagerEffectTest.js
-		 * ```typescript
-		 *        test.assertEntityState(
-		 *        villagerPos,
-		 *        "minecraft:villager_v2",
-		 *        (entity) => entity.getEffect(MinecraftEffectTypes.regeneration).duration > 120
-		 *        ); // At least 6 seconds remaining in the villagers' effect
-		 *
-		 * ```
-		 */
-		assertEntityState(
-			blockLocation: BlockLocation,
-			entityTypeIdentifier: string,
-			callback: (arg: Entity) => boolean
-		): void
-		/**
-		 * @remarks
-		 * Depending on the value of isTouching, tests that an entity
-		 * of a specified type is touching or connected to another
-		 * entity. If the condition is not met, an exception is thrown.
-		 * @param entityTypeIdentifier
-		 * Type of entity to test for (e.g., 'minecraft:skeleton'). If
-		 * an entity namespace is not specified, 'minecraft:' is
-		 * assumed.
-		 * @param location
-		 * Location of the entity to test for.
-		 * @param isTouching
-		 * If true, this function tests whether the entity is touching
-		 * the specified location. If false, tests that an entity is
-		 * not testing the specified location.
-		 * @throws This function can throw errors.
-		 */
-		assertEntityTouching(
-			entityTypeIdentifier: string,
-			location: Location,
-			isTouching: boolean
-		): void
-		/**
-		 * @remarks
-		 * Depending on the value of isWaterlogged, tests that a block
-		 * at a location contains water. If the condition is not met,
-		 * an error is thrown. Pure water blocks are not considered to
-		 * be waterlogged.
-		 * @param blockLocation
-		 * Location of the block to test for.
-		 * @param isWaterlogged
-		 * Whether to test that the block at _position_ is expected to
-		 * be waterlogged.
-		 * @throws This function can throw errors.
-		 */
-		assertIsWaterlogged(
-			blockLocation: BlockLocation,
-			isWaterlogged: boolean
-		): void
-		/**
-		 * @remarks
-		 * Tests that items of a particular type and count are present
-		 * within an area. If not, an error is thrown.
-		 * @param itemType
-		 * Type of item to look for.
-		 * @param blockLocation
-		 * Location to search around for the specified set of items.
-		 * @param searchDistance
-		 * Range, in blocks, to aggregate a count of items around. If
-		 * 0, will only search the particular block at _position_.
-		 * @param count
-		 * Number of items, at minimum, to look and test for.
-		 * @throws This function can throw errors.
-		 * @example findFeathers.js
-		 * ```typescript
-		 *        test.assertItemEntityCountIs(Items.feather, expectedFeatherLoc, 0, 1);
-		 *
-		 * ```
-		 */
-		assertItemEntityCountIs(
-			itemType: ItemType,
-			blockLocation: BlockLocation,
-			searchDistance: number,
-			count: number
-		): void
-		/**
-		 * @remarks
-		 * Depending on the value of isPresent, tests whether a
-		 * particular item entity is present or not at a particular
-		 * location. If the condition is not met, an exception is
-		 * thrown.
-		 * @param itemType
-		 * Type of item to test for.
-		 * @param blockLocation
-		 * Location of the item entity to test for.
-		 * @param searchDistance
-		 * Radius in blocks to look for the item entity.
-		 * @param isPresent
-		 * If true, this function tests whether an item entity of the
-		 * specified type is present. If false, tests that an item
-		 * entity of the specified type is not present.
-		 * @throws This function can throw errors.
-		 */
-		assertItemEntityPresent(
-			itemType: ItemType,
-			blockLocation: BlockLocation,
-			searchDistance: number,
-			isPresent: boolean
-		): void
-		/**
-		 * @remarks
-		 * Tests that Redstone power at a particular location matches a
-		 * particular value. If not, an exception is thrown.
-		 * @param blockLocation
-		 * Location to test.
-		 * @param power
-		 * Expected power level.
-		 * @throws This function can throw errors.
-		 */
-		assertRedstonePower(
-			blockLocation: BlockLocation,
-			power: number
-		): void
-		/**
-		 * @remarks
-		 * Marks the current test as a failure case.
-		 * @param errorMessage
-		 * Error message summarizing the failure condition.
-		 * @throws This function can throw errors.
-		 */
-		fail(errorMessage: string): void
-		/**
-		 * @remarks
-		 * Runs the given callback. If the callback does not throw an
-		 * exception, the test is marked as a failure.
-		 * @param callback
-		 * Callback function that runs. If the function runs
-		 * successfully, the test is marked as a failure. Typically,
-		 * this function will have .assertXyz method calls within it.
-		 * @throws This function can throw errors.
-		 */
-		failIf(callback: () => void): void
-		/**
-		 * @remarks
-		 * Gets a block at the specified block location.
-		 * @param blockLocation
-		 * Location of the block to retrieve.
-		 * @throws This function can throw errors.
-		 */
-		getBlock(
-			blockLocation: BlockLocation
-		): Block
-		/**
-		 * @remarks
-		 * If the block at the specified block location is a fence,
-		 * this returns a helper object with details on how a fence is
-		 * connected.
-		 * @param blockLocation
-		 * Location of the block to retrieve.
-		 * @throws This function can throw errors.
-		 */
-		getFenceConnectivity(
-			blockLocation: BlockLocation
-		): FenceConnectivity
-		/**
-		 * @remarks
-		 * Returns the direction of the current test - see the
-		 * {@link mojang-minecraft.Direction} enum for more information on
-		 * potential values (north, east, south, west - values 2-5).
-		 */
-		getTestDirection(): number
-		/**
-		 * @remarks
-		 * Kills all entities within the GameTest structure.
-		 * @throws This function can throw errors.
-		 */
-		killAllEntities(): void
-		/**
-		 * @remarks
-		 * Presses a button at a block location.
-		 * @param blockLocation
-		 * Location to push the button at.
-		 * @throws
-		 * Will throw an error if a button is not present at the
-		 * specified position.
-		 */
-		pressButton(blockLocation: BlockLocation): void
-		/**
-		 * @remarks
-		 * Displays the specified message to all players.
-		 * @param text
-		 * Message to display.
-		 * @throws This function can throw errors.
-		 */
-		print(text: string): void
-		/**
-		 * @remarks
-		 * Pulls a lever at a block location.
-		 * @param blockLocation
-		 * Location to pull the lever at.
-		 * @throws
-		 * Will throw an error if a lever is not present at the
-		 * specified position.
-		 */
-		pullLever(blockLocation: BlockLocation): void
-		/**
-		 * @remarks
-		 * Sends a Redstone pulse at a particular location by creating
-		 * a temporary Redstone block.
-		 * @param blockLocation
-		 * Location to pulse Redstone at.
-		 * @param duration
-		 * Number of ticks to pulse Redstone.
-		 * @throws This function can throw errors.
-		 */
-		pulseRedstone(
-			blockLocation: BlockLocation,
-			duration: number
-		): void
-		/**
-		 * @remarks
-		 * From a BlockLocation, returns a new BlockLocation with
-		 * coordinates relative to the current GameTest structure
-		 * block. For example, the relative coordinates for the block
-		 * above the structure block are (0, 1, 0). Rotation of the
-		 * GameTest structure is also taken into account.
-		 * @param worldBlockLocation
-		 * Absolute location in the world to convert to a relative
-		 * location.
-		 * @returns
-		 * A location relative to the GameTest command block.
-		 * @throws This function can throw errors.
-		 */
-		relativeBlockLocation(
-			worldBlockLocation: BlockLocation
-		): BlockLocation
-		/**
-		 * @remarks
-		 * From a location, returns a new location with coordinates
-		 * relative to the current GameTest structure block. For
-		 * example, the relative coordinates for the block above the
-		 * structure block are (0, 1, 0). Rotation of the GameTest
-		 * structure is also taken into account.
-		 * @param worldLocation
-		 * Absolute location in the world to convert to a relative
-		 * location.
-		 * @returns
-		 * A location relative to the GameTest command block.
-		 * @throws This function can throw errors.
-		 */
-		relativeLocation(
-			worldLocation: Location
-		): Location
-		/**
-		 * @remarks
-		 * Removes a simulated player from the world.
-		 * @param simulatedPlayer
-		 * Simulated player to remove.
-		 */
-		removeSimulatedPlayer(simulatedPlayer: SimulatedPlayer): void
-		/**
-		 * @remarks
-		 * Returns a relative direction given the current rotation of
-		 * the current test. Passing in Direction.south will return the
-		 * test direction; Passing in Direction.north will return the
-		 * opposite of the test direction, and so on.
-		 * @param direction
-		 * Direction to translate into a direction relative to the
-		 * GameTest facing. Passing in Direction.south will return the
-		 * test direction; Passing in Direction.north will return the
-		 * opposite of the test direction, and so on.
-		 * @throws This function can throw errors.
-		 */
-		rotateDirection(direction: number): number
-		/**
-		 * @remarks
-		 * Runs a specific callback after a specified delay of ticks
-		 * @param delayTicks
-		 * Number of ticks to delay before running the specified
-		 * callback.
-		 * @param callback
-		 * Callback function to execute.
-		 * @throws This function can throw errors.
-		 */
-		runAfterDelay(delayTicks: number, callback: () => void): void
-		/**
-		 * @remarks
-		 * Runs the given callback after a delay of _tick_ ticks from
-		 * the start of the GameTest.
-		 * @param tick
-		 * Tick (after the start of the GameTest) to run the callback
-		 * at.
-		 * @param callback
-		 * Callback function to execute.
-		 * @throws This function can throw errors.
-		 */
-		runAtTickTime(tick: number, callback: () => void): void
-		/**
-		 * @remarks
-		 * Sets a block to a particular configuration (a
-		 * BlockPermutation) at the specified block location.
-		 * @param blockData
-		 * Permutation that contains the configuration data for a
-		 * block.
-		 * @param blockLocation
-		 * Location of the block to set.
-		 * @throws This function can throw errors.
-		 */
-		setBlockPermutation(
-			blockData: BlockPermutation,
-			blockLocation: BlockLocation
-		): void
-		/**
-		 * @remarks
-		 * Sets a block to a particular type at the specified block
-		 * location.
-		 * @param blockType
-		 * Type of block to set.
-		 * @param blockLocation
-		 * Location of the block to set.
-		 * @throws This function can throw errors.
-		 */
-		setBlockType(
-			blockType: BlockType,
-			blockLocation: BlockLocation
-		): void
-		/**
-		 * @remarks
-		 * For blocks that are fluid containers - like a cauldron -
-		 * changes the type of fluid within that container.
-		 * @param location
-		 * Location of the fluid container block.
-		 * @param type
-		 * Type of fluid to set. See {@link mojang-gametest}.FluidType for a
-		 * list of values.
-		 * @throws This function can throw errors.
-		 */
-		setFluidContainer(
-			location: BlockLocation,
-			type: number
-		): void
-		/**
-		 * @remarks
-		 * Sets the fuse of an explodable entity.
-		 * @param entity
-		 * Entity that is explodable.
-		 * @param fuseLength
-		 * Length of time, in ticks, before the entity explodes.
-		 * @throws This function can throw errors.
-		 */
-		setTntFuse(entity: Entity, fuseLength: number): void
-		/**
-		 * @remarks
-		 * Spawns an entity at a location.
-		 * @param entityTypeIdentifier
-		 * Type of entity to create. If no namespace is provided,
-		 * 'minecraft:' is assumed. Note that an optional initial spawn
-		 * event can be specified between less than/greater than signs
-		 * (e.g., namespace:entityType<spawnEvent>).
-		 * @param blockLocation
-		 * @returns
-		 * The spawned entity. If the entity cannot be spawned, returns
-		 * undefined.
-		 * @throws This function can throw errors.
-		 * @example spawnAdultPig.js
-		 * ```typescript
-		 *        test.spawn("minecraft:pig<minecraft:ageable_grow_up>", new BlockLocation(1, 2, 1));
-		 *
-		 * ```
-		 */
-		spawn(
-			entityTypeIdentifier: string,
-			blockLocation: BlockLocation
-		): Entity
-		/**
-		 * @remarks
-		 * Spawns an entity at a location.
-		 * @param entityTypeIdentifier
-		 * Type of entity to create. If no namespace is provided,
-		 * 'minecraft:' is assumed. Note that an optional initial spawn
-		 * event can be specified between less than/greater than signs
-		 * (e.g., namespace:entityType<spawnEvent>).
-		 * @param location
-		 * @returns
-		 * The spawned entity. If the entity cannot be spawned, returns
-		 * undefined.
-		 * @throws This function can throw errors.
-		 * @example spawnAdultPig.js
-		 * ```typescript
-		 *        test.spawn("minecraft:pig<minecraft:ageable_grow_up>", new Location(1.5, 2, 1.5));
-		 * ```
-		 */
-		spawnAtLocation(
-			entityTypeIdentifier: string,
-			location: Location
-		): Entity
-		/**
-		 * @remarks
-		 * Spawns an item entity at a specified location.
-		 * @param itemStack
-		 * ItemStack that describes the item entity to create.
-		 * @param location
-		 * Location to create the item entity at.
-		 * @throws This function can throw errors.
-		 * @example spawnEmeralds.js
-		 * ```typescript
-		 *        const oneEmerald = new ItemStack(MinecraftItemTypes.emerald, 1, 0);
-		 *        const fiveEmeralds = new ItemStack(MinecraftItemTypes.emerald, 5, 0);
-		 *
-		 *        test.spawnItem(oneEmerald, new Location(3.5, 3, 1.5));
-		 *        test.spawnItem(fiveEmeralds, new Location(1.5, 3, 1.5));
-		 *
-		 * ```
-		 */
-		spawnItem(
-			itemStack: ItemStack,
-			location: Location
-		): Entity
-		/**
-		 * @remarks
-		 * Creates a new simulated player within the world.
-		 * @param blockLocation
-		 * Location where to spawn the simulated player.
-		 * @param name
-		 * Name to give the new simulated player.
-		 * @throws This function can throw errors.
-		 */
-		spawnSimulatedPlayer(
-			blockLocation: BlockLocation,
-			name: string
-		): SimulatedPlayer
-		/**
-		 * @remarks
-		 * Spawns an entity at a location without any AI behaviors.
-		 * This method is frequently used in conjunction with methods
-		 * like .walkTo to create predictable mob actions.
-		 * @param entityTypeIdentifier
-		 * @param blockLocation
-		 * Location where the entity should be spawned.
-		 * @throws This function can throw errors.
-		 */
-		spawnWithoutBehaviors(
-			entityTypeIdentifier: string,
-			blockLocation: BlockLocation
-		): Entity
-		/**
-		 * @remarks
-		 * Spawns an entity at a location without any AI behaviors.
-		 * This method is frequently used in conjunction with methods
-		 * like .walkTo to create predictable mob actions.
-		 * @param entityTypeIdentifier
-		 * @param location
-		 * Location where the entity should be spawned.
-		 * @throws This function can throw errors.
-		 */
-		spawnWithoutBehaviorsAtLocation(
-			entityTypeIdentifier: string,
-			location: Location
-		): Entity
-		/**
-		 * @remarks
-		 * Tests that a particular item entity is present at a
-		 * particular location. If not, an exception is thrown.
-		 * @param blockLocation
-		 * BlockLocation containing a multiface block.
-		 * @param fromFace
-		 * Face to spread from. This face must already be set.
-		 * @param direction
-		 * Direction to spread. Use the Minecraft.Direction enum to
-		 * specify a direction.
-		 * @throws This function can throw errors.
-		 * @example spreadFromFaceTowardDirection.js
-		 * ```typescript
-		 *        test.spreadFromFaceTowardDirection(new BlockLocation(1, 2, 1), Direction.south, Direction.down);
-		 * ```
-		 */
-		spreadFromFaceTowardDirection(
-			blockLocation: BlockLocation,
-			fromFace: number,
-			direction: number
-		): void
-		/**
-		 * @remarks
-		 * Creates a new GameTestSequence - A set of steps that play
-		 * out sequentially within a GameTest.
-		 * @returns
-		 * A new GameTestSequence with chaining methods that facilitate
-		 * creating a set of steps.
-		 */
-		startSequence(): GameTestSequence
-		/**
-		 * @remarks
-		 * Marks the current test as a success case.
-		 * @throws This function can throw errors.
-		 */
-		succeed(): void
-		/**
-		 * @remarks
-		 * Runs the given callback. If the callback does not throw an
-		 * exception, the test is marked as a success.
-		 * @param callback
-		 * Callback function that runs. If the function runs
-		 * successfully, the test is marked as a success. Typically,
-		 * this function will have .assertXyz method calls within it.
-		 * @throws This function can throw errors.
-		 */
-		succeedIf(callback: () => void): void
-		/**
-		 * @remarks
-		 * Marks the test as a success at the specified tick.
-		 * @param tick
-		 * Tick after the start of the GameTest to mark the test as
-		 * successful.
-		 * @throws This function can throw errors.
-		 */
-		succeedOnTick(tick: number): void
-		/**
-		 * @remarks
-		 * Runs the given callback at _tick_ ticks after the start of
-		 * the test. If the callback does not throw an exception, the
-		 * test is marked as a failure.
-		 * @param tick
-		 * Tick after the start of the GameTest to run the testing
-		 * callback at.
-		 * @param callback
-		 * Callback function that runs. If the function runs
-		 * successfully, the test is marked as a success.
-		 * @throws This function can throw errors.
-		 */
-		succeedOnTickWhen(tick: number, callback: () => void): void
-		/**
-		 * @remarks
-		 * Runs the given callback every tick. When the callback
-		 * successfully executes, the test is marked as a success.
-		 * Specifically, the test will succeed when the callback does
-		 * not throw an exception.
-		 * @param callback
-		 * Testing callback function that runs. If the function runs
-		 * successfully, the test is marked as a success.
-		 * @throws This function can throw errors.
-		 */
-		succeedWhen(callback: () => void): void
-		/**
-		 * @remarks
-		 * Depending on the condition of isPresent, tests for the
-		 * presence of a block of a particular type on every tick. When
-		 * the specified block of a type is found or not found
-		 * (depending on isPresent), the test is marked as a success.
-		 * @param blockType
-		 * Type of block to test for.
-		 * @param blockLocation
-		 * Location of the block to test at.
-		 * @param isPresent
-		 * If true, this function tests whether a block of the
-		 * specified type is present. If false, tests that a block of
-		 * the specified type is not present.
-		 * @throws This function can throw errors.
-		 */
-		succeedWhenBlockPresent(
-			blockType: BlockType,
-			blockLocation: BlockLocation,
-			isPresent: boolean
-		): void
-		/**
-		 * @remarks
-		 * Tests for the presence of a component on every tick.
-		 * Depending on the value of hasComponent, when the specified
-		 * component is found, the test is marked as a success.
-		 * @param entityTypeIdentifier
-		 * Type of entity to look for. If no namespace is specified,
-		 * 'minecraft:' is assumed.
-		 * @param componentIdentifier
-		 * Type of component to test for the presence of. If no
-		 * namespace is specified, 'minecraft:' is assumed.
-		 * @param blockLocation
-		 * Block location of the entity to test.
-		 * @param hasComponent
-		 * If true, this function tests for the presence of a
-		 * component. If false, this function tests for the lack of a
-		 * component.
-		 * @throws This function can throw errors.
-		 */
-		succeedWhenEntityHasComponent(
-			entityTypeIdentifier: string,
-			componentIdentifier: string,
-			blockLocation: BlockLocation,
-			hasComponent: boolean
-		): void
-		/**
-		 * @remarks
-		 * Depending on the value of isPresent, tests for the presence
-		 * of an entity on every tick. When an entity of the specified
-		 * type is found or not found (depending on isPresent), the
-		 * test is marked as a success.
-		 * @param entityTypeIdentifier
-		 * Type of entity to test for (e.g., 'minecraft:skeleton'). If
-		 * an entity namespace is not specified, 'minecraft:' is
-		 * assumed.
-		 * @param blockLocation
-		 * Location of the entity to test for.
-		 * @param isPresent
-		 * If true, this function tests whether an entity of the
-		 * specified type is present. If false, tests that an entity of
-		 * the specified type is not present.
-		 * @throws This function can throw errors.
-		 */
-		succeedWhenEntityPresent(
-			entityTypeIdentifier: string,
-			blockLocation: BlockLocation,
-			isPresent: boolean
-		): void
-		/**
-		 * @remarks
-		 * Forces a mob to walk to a particular location. Usually used
-		 * in conjunction with methods like .spawnWithoutBehaviors to
-		 * have more predictable mob behaviors. Mobs will stop
-		 * navigation as soon as they intersect the target location.
-		 * @param mob
-		 * Mob entity to give orders to.
-		 * @param blockLocation
-		 * Location where the entity should be walk to.
-		 * @param speedModifier
-		 * Adjustable modifier to the mob's walking speed.
-		 * @throws This function can throw errors.
-		 */
-		walkTo(
-			mob: Entity,
-			blockLocation: BlockLocation,
-			speedModifier: number
-		): void
-		/**
-		 * @remarks
-		 * Forces a mob to walk to a particular location. Usually used
-		 * in conjunction with methods like .spawnWithoutBehaviors to
-		 * have more predictable mob behaviors. Mobs will stop
-		 * navigation as soon as they intersect the target location.
-		 * @param mob
-		 * Mob entity to give orders to.
-		 * @param location
-		 * Location where the entity should be walk to.
-		 * @param speedModifier
-		 * Adjustable modifier to the mob's walking speed.
-		 * @throws This function can throw errors.
-		 */
-		walkToLocation(
-			mob: Entity,
-			location: Location,
-			speedModifier: number
-		): void
-		/**
-		 * @remarks
-		 * From a BlockLocation with coordinates relative to the
-		 * GameTest structure block, returns a new BlockLocation with
-		 * coordinates relative to world. Rotation of the GameTest
-		 * structure is also taken into account.
-		 * @param relativeBlockLocation
-		 * Location relative to the GameTest command block.
-		 * @returns
-		 * An absolute location relative to the GameTest command block.
-		 * @throws This function can throw errors.
-		 */
-		worldBlockLocation(
-			relativeBlockLocation: BlockLocation
-		): BlockLocation
-		/**
-		 * @remarks
-		 * From a location with coordinates relative to the GameTest
-		 * structure block, returns a new location with coordinates
-		 * relative to world. Rotation of the GameTest structure is
-		 * also taken into account.
-		 * @param relativeLocation
-		 * Location relative to the GameTest command block.
-		 * @returns
-		 * An absolute location relative to the GameTest command block.
-		 * @throws This function can throw errors.
-		 */
-		worldLocation(
-			relativeLocation: Location
-		): Location
-	}
-	/**
-	 * @remarks
-	 * Registers a new GameTest function. This GameTest will become
-	 * available in Minecraft via /gametest run
-	 * [testClassName]:[testName].
-	 * @param testClassName
-	 * Name of the class of tests this test should be a part of.
-	 * @param testName
-	 * Name of this specific test.
-	 * @param testFunction
-	 * Implementation of the test function.
-	 * @returns
-	 * Returns a {@link mojang-gametest.RegistrationBuilder} object where
-	 * additional options for this test can be specified via
-	 * builder methods.
-	 * @example example1.js
-	 * ```typescript
-	 *        GameTest.register("ExampleTests", "alwaysFail", (test) => {
-	 *        test.fail("This test, runnable via '/gametest run ExampleTests:alwaysFail', will always fail");
-	 *        });
-	 *
-	 * ```
-	 */
-	export function register(
-		testClassName: string,
-		testName: string,
-		testFunction: (arg: Test) => void
-	): RegistrationBuilder
+	export const world: World
 }
