@@ -8,16 +8,26 @@ export const combineIntoSingleFile: [RegExp, { packageIntoArray?: boolean }][] =
 		['packages/*/fileDefinition', { packageIntoArray: true }],
 		'packages/*/schemaScript',
 		'packages/*/lightningCache',
+		['packages/common/theme', { packageIntoArray: true }],
 	]).map((pattern) =>
 		typeof pattern === 'string'
 			? [globToRegExp(pattern), {}]
 			: [globToRegExp(pattern[0]), pattern[1]]
 	)
+export const omitFolders: RegExp[] = [
+	'packages/*/language/mcfunction/schema',
+	'packages/*/packSpider',
+].map((glob) => globToRegExp(glob))
 
 export async function packageDirectory(path: string, outputPath: string) {
 	for await (const entry of Deno.readDir(path)) {
 		const newPath = join(path, entry.name)
 		const newOutPath = join(outputPath, entry.name)
+
+		const shouldOmitFolder = omitFolders.some((regExp) =>
+			newPath.match(regExp)
+		)
+		if (shouldOmitFolder) continue
 
 		const combineData = combineIntoSingleFile.find(([regExp]) =>
 			newPath.match(regExp)
