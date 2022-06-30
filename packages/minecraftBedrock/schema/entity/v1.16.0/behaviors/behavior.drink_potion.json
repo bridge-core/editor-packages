@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Drink Potion",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"speed_modifier": {
 			"title": "Speed Modifier",
 			"description": "The movement speed modifier to apply to the entity while it is drinking a potion. A value of 0 represents no change in speed.",
@@ -31,7 +31,7 @@
 					},
 					"filters": {
 						"description": "The filters to use when determining if this potion can be selected.",
-						"$ref": "../../general/filter.json"
+						"$ref": "../../general/v1.16.0/filter.json"
 					}
 				}
 			}

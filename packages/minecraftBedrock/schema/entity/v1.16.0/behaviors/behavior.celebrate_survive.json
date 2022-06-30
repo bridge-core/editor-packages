@@ -5,7 +5,7 @@
 	"title": "Breed",
 	"description": "Allows this entity to celebrate surviving a raid by shooting fireworks.",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"duration": {
 			"title": "Duration",
 			"description": "The duration in seconds that the celebration lasts for.",
@@ -30,7 +30,7 @@
 		"on_celebration_end_event": {
 			"title": "Event: On Celebration End",
 			"description": "The event to trigger when the goal's duration expires.",
-			"$ref": "../../general/eventDefinition.json"
+			"$ref": "../../general/v1.16.0/eventDefinition.json"
 		}
 	}
 }

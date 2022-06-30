@@ -25,7 +25,7 @@
 					},
 					"on_block_broken": {
 						"title": "Event: On Block Broken",
-						"$ref": "../../general/eventDefinition.json"
+						"$ref": "../../general/v1.16.0/eventDefinition.json"
 					}
 				}
 			}
@@ -35,7 +35,7 @@
 			"type": "array",
 			"items": {
 				"type": "object",
-				"$ref": "../../general/filter.json"
+				"$ref": "../../general/v1.16.0/filter.json"
 			}
 		}
 	}

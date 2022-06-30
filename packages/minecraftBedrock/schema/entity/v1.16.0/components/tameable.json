@@ -29,7 +29,7 @@
 		"tame_event": {
 			"title": "Event: On Tame",
 			"description": "Event to run when this entity becomes tamed.",
-			"$ref": "../../general/eventDefinition.json"
+			"$ref": "../../general/v1.16.0/eventDefinition.json"
 		}
 	}
 }

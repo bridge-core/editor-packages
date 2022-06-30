@@ -46,12 +46,12 @@
 				"on_interact": {
 					"title": "Event: On Interact",
 					"description": "Event to fire when the interaction occurs.",
-					"$ref": "../../general/eventDefinition.json"
+					"$ref": "../../general/v1.16.0/eventDefinition.json"
 				},
 				"particle_on_start": {
 					"title": "Particle On Start",
 					"description": "Particle effect that will be triggered at the start of the interaction.",
-					"$ref": "../../general/particleDefinition.json"
+					"$ref": "../../general/v1.16.0/particleDefinition.json"
 				},
 				"play_sounds": {
 					"title": "Play Sound Events",

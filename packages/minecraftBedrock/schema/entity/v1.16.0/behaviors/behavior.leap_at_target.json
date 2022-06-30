@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Leap At Target",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"set_persistent": {
 			"title": "Set Persistent",
 			"type": "boolean",

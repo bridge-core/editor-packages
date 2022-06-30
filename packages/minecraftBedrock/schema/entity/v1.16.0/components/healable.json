@@ -14,7 +14,7 @@
 		"filters": {
 			"title": "Filters",
 			"description": "The filter group that defines the conditions for using this item to heal the entity.",
-			"$ref": "../../general/filter.json"
+			"$ref": "../../general/v1.16.0/filter.json"
 		},
 		"items": {
 			"title": "Items",
@@ -37,7 +37,7 @@
 					},
 					"filters": {
 						"title": "Filters",
-						"$ref": "../../general/filter.json"
+						"$ref": "../../general/v1.16.0/filter.json"
 					},
 					"effects": {
 						"title": "Effects",

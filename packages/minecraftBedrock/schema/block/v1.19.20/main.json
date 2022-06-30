@@ -1,0 +1,100 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"minecraft:block": {
+			"required": ["description"],
+			"type": "object",
+			"properties": {
+				"description": {
+					"allOf": [
+						{
+							"$ref": "../description.json"
+						},
+						{
+							"type": "object",
+							"properties": {
+								"properties": {
+									"description": "Define block properties and their possible values",
+									"anyOf": [
+										{
+											"$ref": "../../project/projectPrefix.json"
+										},
+										{
+											"patternProperties": {
+												".*": {
+													"type": "array",
+													"items": {
+														"type": [
+															"boolean",
+															"integer",
+															"string"
+														]
+													}
+												}
+											}
+										}
+									]
+								}
+							}
+						}
+					]
+				},
+				"permutations": {
+					"description": "List of block permutations based on MoLang queries",
+					"type": "array",
+					"items": {
+						"type": "object",
+						"additionalProperties": false,
+						"properties": {
+							"condition": {
+								"description": "MoLang condition",
+								"$ref": "../../molang/embedded.json"
+							},
+							"components": {
+								"description": "Components to add when the condition evaluates to 'true'",
+								"allOf": [
+									{
+										"$ref": "../dynamic/customComponents.json"
+									},
+									{
+										"$ref": "./components/_main.json"
+									}
+								]
+							}
+						}
+					}
+				},
+				"components": {
+					"allOf": [
+						{
+							"$ref": "../dynamic/customComponents.json"
+						},
+						{
+							"$ref": "./components/_main.json"
+						}
+					]
+				},
+				"events": {
+					"type": "object",
+					"allOf": [
+						{
+							"$ref": "../dynamic/currentContext/eventReferenceProperty.json"
+						},
+						{
+							"$ref": "../../project/projectPrefix.json"
+						},
+						{
+							"patternProperties": {
+								".*": {
+									"$ref": "./event.json"
+								}
+							}
+						}
+					]
+				}
+			},
+			"additionalProperties": false
+		}
+	}
+}

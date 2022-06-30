@@ -5,6 +5,6 @@
 	"type": "object",
 	"title": "Enderman Leave Block",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" }
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" }
 	}
 }

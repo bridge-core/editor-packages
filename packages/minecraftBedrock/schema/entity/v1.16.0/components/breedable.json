@@ -26,7 +26,7 @@
 		"love_filters": {
 			"title": "Love Filters",
 			"description": "The filters to run when attempting to fall in love.",
-			"$ref": "../../general/filter.json"
+			"$ref": "../../general/v1.16.0/filter.json"
 		},
 		"breed_items": {
 			"title": "Breed Items",
@@ -63,7 +63,7 @@
 						"breed_event": {
 							"title": "Event: On Breed",
 							"description": "Event to run when this entity breeds.",
-							"$ref": "../../general/eventDefinition.json"
+							"$ref": "../../general/v1.16.0/eventDefinition.json"
 						}
 					}
 				},
@@ -85,7 +85,7 @@
 							"breed_event": {
 								"title": "Event: On Breed",
 								"description": "Event to run when this entity breeds.",
-								"$ref": "../../general/eventDefinition.json"
+								"$ref": "../../general/v1.16.0/eventDefinition.json"
 							}
 						}
 					}

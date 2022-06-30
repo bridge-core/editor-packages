@@ -29,7 +29,7 @@
 					"title": "Conditional Values",
 					"type": "array",
 					"items": {
-						"$ref": "../../general/filter.json"
+						"$ref": "../../general/v1.16.0/filter.json"
 					}
 				}
 			}

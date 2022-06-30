@@ -5,7 +5,7 @@
 	"description": "Allows the entity follow another entity. Both entities must be swimming [ie, in water].",
 	"title": "Swim With Entity",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"success_rate": {
 			"title": "Success Rate",
 			"description": "Percent chance to start following another entity, if not already doing so. 1.0 = 100%.",
@@ -63,7 +63,7 @@
 		"entity_types": {
 			"title": "Entity Types",
 			"description": "Filters which types of entities are valid to follow.",
-			"$ref": "../../general/entityType.json"
+			"$ref": "../../general/v1.16.0/entityType.json"
 		}
 	}
 }

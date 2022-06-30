@@ -5,7 +5,7 @@
 	"description": "Allows this entity to use a laser beam attack. Can only be used by Guardians and Elder Guardians.",
 	"title": "Guardian Attack",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"elder_extra_magic_damage": {
 			"title": "Elder Guardian Extra Magic Damage",
 			"description": "Amount of additional damage dealt from an elder guardian's magic attack.",

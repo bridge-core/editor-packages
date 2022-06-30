@@ -26,12 +26,12 @@
 		"on_activate": {
 			"title": "Event: On Activate",
 			"description": "Event to call when the rail is activated.",
-			"$ref": "../../general/eventDefinition.json"
+			"$ref": "../../general/v1.16.0/eventDefinition.json"
 		},
 		"on_deactivate": {
 			"title": "Event: On Deactivate",
 			"description": "Event to call when the rail is deactivated.",
-			"$ref": "../../general/eventDefinition.json"
+			"$ref": "../../general/v1.16.0/eventDefinition.json"
 		},
 		"tick_command_block_on_activate": {
 			"title": "Tick Command Block On Activate",

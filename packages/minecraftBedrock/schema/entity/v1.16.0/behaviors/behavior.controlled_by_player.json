@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Controlled By Player",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"mount_speed_multiplier": {
 			"title": "Mount Speed Multiplier",
 			"description": "Speed multiplier for the mount when it is being controlled by a player.",

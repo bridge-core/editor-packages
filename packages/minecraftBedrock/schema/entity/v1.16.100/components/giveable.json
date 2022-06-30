@@ -50,7 +50,7 @@
 							"on_give": {
 								"title": "Event: On Give",
 								"description": "Event to fire when the correct item is given.",
-								"$ref": "../../general/eventDefinition.json"
+								"$ref": "../../general/v1.16.0/eventDefinition.json"
 							}
 						}
 					}
@@ -94,7 +94,7 @@
 						"on_give": {
 							"title": "Event: On Give",
 							"description": "Event to fire when the correct item is given.",
-							"$ref": "../../general/eventDefinition.json"
+							"$ref": "../../general/v1.16.0/eventDefinition.json"
 						}
 					}
 				}

@@ -12,11 +12,11 @@
 					"description": "The list of triggers that fire when the environment conditions match the given filter criteria.",
 					"type": "array",
 					"items": {
-						"$ref": "../../general/eventDefinition.json"
+						"$ref": "../../general/v1.16.0/eventDefinition.json"
 					}
 				},
 				{
-					"$ref": "../../general/eventDefinition.json"
+					"$ref": "../../general/v1.16.0/eventDefinition.json"
 				}
 			]
 		}

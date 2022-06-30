@@ -5,7 +5,7 @@
 	"description": "Sets the vertical throw force.",
 	"title": "Go And Give Items To Owner",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"on_item_throw": {
 			"title": "Event: On Item Throw",
 			"description": "Event(s) to run when this mob throws items.",
@@ -14,12 +14,12 @@
 					"type": "array",
 					"items": {
 						"type": "object",
-						"$ref": "../../general/eventDefinition.json"
+						"$ref": "../../general/v1.16.0/eventDefinition.json"
 					}
 				},
 				{
 					"type": "object",
-					"$ref": "../../general/eventDefinition.json"
+					"$ref": "../../general/v1.16.0/eventDefinition.json"
 				}
 			]
 		},

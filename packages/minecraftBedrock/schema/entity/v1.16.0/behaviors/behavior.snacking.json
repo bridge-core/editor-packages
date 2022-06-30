@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Snacking",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"snacking_cooldown": {
 			"title": "Snacking Cooldown",
 			"description": "The cooldown time in seconds before the mob is able to snack again.",

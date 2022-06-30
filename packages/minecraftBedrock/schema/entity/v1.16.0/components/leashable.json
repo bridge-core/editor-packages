@@ -26,12 +26,12 @@
 		"on_leash": {
 			"title": "Event: On Leash",
 			"description": "Event to call when this entity is leashed.",
-			"$ref": "../../general/eventDefinition.json"
+			"$ref": "../../general/v1.16.0/eventDefinition.json"
 		},
 		"on_unleash": {
 			"title": "Event: On Unleash",
 			"description": "Event to call when this entity is unleashed.",
-			"$ref": "../../general/eventDefinition.json"
+			"$ref": "../../general/v1.16.0/eventDefinition.json"
 		},
 		"can_be_stolen": {
 			"title": "Can Be Stolen",

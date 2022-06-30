@@ -22,7 +22,7 @@
 		"trust_event": {
 			"title": "Event: On Trust",
 			"description": "Event to run when this entity becomes trusting.",
-			"$ref": "../../general/eventDefinition.json"
+			"$ref": "../../general/v1.16.0/eventDefinition.json"
 		}
 	}
 }

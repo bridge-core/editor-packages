@@ -25,11 +25,11 @@
 		},
 		"subject": {
 			"title": "Subject",
-			"$ref": "../../general/filter/subject.json"
+			"$ref": "../../../general/filter/subject.json"
 		},
 		"operator": {
 			"title": "Operator",
-			"$ref": "../../general/filter/operator.json"
+			"$ref": "../../../general/filter/operator.json"
 		}
 	},
 	"allOf": [
@@ -228,7 +228,7 @@
 				"properties": {
 					"value": {
 						"description": "Returns true when the subject entity has the named ability.",
-						"$ref": "../../general/ability.json"
+						"$ref": "../../../general/ability.json"
 					}
 				}
 			}
@@ -245,7 +245,7 @@
 				"properties": {
 					"value": {
 						"description": "Tests whether the biome the subject is in has the specified tag.",
-						"$ref": "../../general/reference/biomeTag.json"
+						"$ref": "../../../general/reference/biomeTag.json"
 					}
 				}
 			}
@@ -296,7 +296,7 @@
 				"properties": {
 					"value": {
 						"description": "Returns true when the subject entity receives the named damage type.",
-						"$ref": "../../general/vanilla/damageType.json"
+						"$ref": "../../../general/vanilla/damageType.json"
 					}
 				}
 			}
@@ -315,10 +315,10 @@
 						"description": "Tests for the presence of a named item in the designated slot of the subject entity.",
 						"anyOf": [
 							{
-								"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
+								"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
 							},
 							{
-								"$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
+								"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
 							}
 						]
 					}
@@ -354,7 +354,7 @@
 				"properties": {
 					"value": {
 						"description": "Tests whether the Subject has the specified mob effect.",
-						"$ref": "../../general/vanilla/effectName.json"
+						"$ref": "../../../general/vanilla/effectName.json"
 					}
 				}
 			}
@@ -405,7 +405,7 @@
 				"properties": {
 					"value": {
 						"description": "Returns true if the subject entity has the tag provided.",
-						"$ref": "../../function/dynamic/entityTagEnum.json"
+						"$ref": "../../../function/dynamic/entityTagEnum.json"
 					}
 				}
 			}
@@ -456,7 +456,7 @@
 				"properties": {
 					"value": {
 						"description": "Compares the current 24 hour time with an int value in the range[0, 24000]",
-						"$ref": "../../general/hourlyClockTime.json"
+						"$ref": "../../../general/hourlyClockTime.json"
 					}
 				}
 			}
@@ -524,7 +524,7 @@
 				"properties": {
 					"value": {
 						"description": "Tests whether the Subject is currently in the named biome.",
-						"$ref": "../../general/vanilla/biomeName.json"
+						"$ref": "../../../general/vanilla/biomeName.json"
 					}
 				}
 			}
@@ -541,7 +541,7 @@
 				"properties": {
 					"value": {
 						"description": "Returns true when the block has the given name.",
-						"$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
+						"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
 					}
 				}
 			}
@@ -628,7 +628,7 @@
 				"properties": {
 					"value": {
 						"description": "Returns true if the subject entity is the named color.",
-						"$ref": "../../general/colorPalette.json"
+						"$ref": "../../../general/colorPalette.json"
 					}
 				}
 			}
@@ -662,7 +662,7 @@
 				"properties": {
 					"value": {
 						"description": "Tests the current difficulty level of the game.",
-						"$ref": "../../general/gameDifficulty.json"
+						"$ref": "../../../general/gameDifficulty.json"
 					}
 				}
 			}
@@ -679,7 +679,7 @@
 				"properties": {
 					"value": {
 						"description": "Returns true when the subject entity is a member of the named family.",
-						"$ref": "../../general/reference/family.json"
+						"$ref": "../../../general/reference/family.json"
 					}
 				}
 			}
@@ -1398,7 +1398,7 @@
 					"value": {
 						"description": "Returns true when the subject entity is inside a specified Block type.",
 						"type": "string",
-						"$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
+						"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
 					}
 				}
 			}

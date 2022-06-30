@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Dragon Looking",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"active_speed": {
 			"title": "Active Speed",
 			"description": "The speed this entity moves when this behavior has started or while it's active.",

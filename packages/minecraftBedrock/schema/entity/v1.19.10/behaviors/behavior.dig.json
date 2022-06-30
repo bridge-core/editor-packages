@@ -5,7 +5,7 @@
 	"title": "Dig",
 	"description": "Activates the 'DIGGING' actor flag during the specified duration. Currently only Warden can use the Dig goal.",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"allow_dig_when_named": {
 			"title": "Allow Dig When Named",
 			"type": "boolean",
@@ -44,7 +44,7 @@
 			"title": "Event: On Start",
 			"description": "Event(s) to run when the goal starts.",
 			"type": "object",
-			"$ref": "../../general/eventDefinition.json"
+			"$ref": "../../general/v1.16.0/eventDefinition.json"
 		}
 	}
 }

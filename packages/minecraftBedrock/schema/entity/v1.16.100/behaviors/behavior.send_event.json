@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Send Event",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"event_choices": {
 			"title": "Event Choices",
 			"type": "array",
@@ -47,7 +47,7 @@
 					},
 					"filters": {
 						"title": "Filters",
-						"$ref": "../../general/filter.json"
+						"$ref": "../../general/v1.16.0/filter.json"
 					},
 					"start_sound_event": {
 						"title": "Start Sound Event",

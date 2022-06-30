@@ -5,7 +5,7 @@
 	"additionalProperties": false,
 	"title": "Sonic Boom",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"attack_cooldown": {
 			"title": "Attack Cooldown",
 			"description": "Cooldown in seconds required after using this attack until the entity can use sonic boom again.",

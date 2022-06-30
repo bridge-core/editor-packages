@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Eat Carried Item",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"delay_before_eating": {
 			"title": "Delay Before Eating",
 			"description": "Time in seconds the mob should wait before eating the item.",

@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Swell",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"start_distance": {
 			"title": "Start Distance",
 			"description": "This mob starts swelling when a target is at least this many blocks away.",

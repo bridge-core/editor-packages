@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Raid Garden",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"blocks": {
 			"title": "Blocks",
 			"description": "Blocks that the mob is looking for to eat/raid.",

@@ -5,7 +5,7 @@
 	"title": "Work Composter",
 	"description": "Allows the NPC to use the composter POI to convert excess seeds into bone meal.",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"active_time": {
 			"title": "Active Time",
 			"description": "The amount of ticks the NPC will stay in their the work location.",
@@ -57,7 +57,7 @@
 		"on_arrival": {
 			"title": "Event: On Arrival",
 			"description": "Event to run when the mob reaches their jobsite.",
-			"$ref": "../../general/eventDefinition.json"
+			"$ref": "../../general/v1.16.0/eventDefinition.json"
 		},
 		"speed_multiplier": {
 			"title": "Speed Multiplier",

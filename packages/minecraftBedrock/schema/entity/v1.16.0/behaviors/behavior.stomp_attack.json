@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Stomp Attack",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"attack_once": {
 			"title": "Attack Once",
 			"description": "Allows the entity to use this attack behavior, only once EVER.",
@@ -92,7 +92,7 @@
 		"on_attack": {
 			"title": "Event: On Attack",
 			"description": "Defines the event to trigger when this entity successfully attacks.",
-			"$ref": "../../general/eventDefinition.json"
+			"$ref": "../../general/v1.16.0/eventDefinition.json"
 		},
 		"outer_boundary_time_increase": {
 			"title": "Outer Boundary Time Increase",

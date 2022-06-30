@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Circle Around Anchor",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"radius_range": {
 			"title": "Radius Range",
 			"description": "Horizontal distance from the anchor point this entity must stay within upon a successful radius adjustment.",

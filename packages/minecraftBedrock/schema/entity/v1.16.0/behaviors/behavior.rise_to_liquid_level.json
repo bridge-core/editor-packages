@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Rise to Liquid Level",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"liquid_y_offset": {
 			"title": "Liquid Y Offset",
 			"description": "Target distance down from the liquid surface. i.e. Positive values move the target Y down.",

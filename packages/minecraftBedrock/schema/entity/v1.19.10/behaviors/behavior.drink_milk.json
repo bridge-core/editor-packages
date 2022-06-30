@@ -5,11 +5,11 @@
 	"description": "Allows the mob to drink milk based on specified environment conditions.",
 	"additionalProperties": false,
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"filters": {
 			"title": "Filters",
 			"description": "Conditions that need to be met for the behavior to start.",
-			"$ref": "../../general/filter.json"
+			"$ref": "../../general/v1.16.0/filter.json"
 		},
 		"cooldown_seconds": {
 			"title": "Cooldown",

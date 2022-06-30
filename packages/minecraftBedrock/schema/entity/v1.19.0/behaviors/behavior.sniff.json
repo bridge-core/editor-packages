@@ -5,7 +5,7 @@
 	"title": "Sniff",
 	"description": "The entity detects the nearest player within 'sniffing_radius' and updates its 'minecraft:suspect_tracking' component state.",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"cooldown_range": {
 			"title": "Cooldown Range",
 			"description": "Cooldown range between sniffs in seconds.",

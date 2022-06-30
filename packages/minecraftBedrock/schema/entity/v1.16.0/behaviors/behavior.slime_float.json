@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Slime Float",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"jump_chance_percentage": {
 			"title": "Jump Chance Percentage",
 			"description": "Percent chance a slime or magma cube has to jump while in water / lava.",

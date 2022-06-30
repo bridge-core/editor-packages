@@ -5,7 +5,7 @@
 	"title": "Roar",
 	"description": "Plays the provided sound and activates the 'ROARING' actor flag during the specified duration.",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"duration": {
 			"title": "Duration",
 			"description": "Goal duration in seconds.",

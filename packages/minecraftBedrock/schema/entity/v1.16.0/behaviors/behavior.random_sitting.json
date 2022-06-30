@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Random Sitting",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"start_chance": {
 			"title": "Start Chance",
 			"description": "This is the chance that the mob will start this goal, from 0 to 1.",

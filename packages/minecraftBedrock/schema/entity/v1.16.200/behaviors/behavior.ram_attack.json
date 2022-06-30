@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Ram Attack",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"run_speed": {
 			"title": "Run Speed",
 			"description": "Sets the entity's speed when running toward the target.",
@@ -30,13 +30,13 @@
 			"anyOf": [
 				{
 					"type": "object",
-					"$ref": "../../general/eventDefinition.json"
+					"$ref": "../../general/v1.16.0/eventDefinition.json"
 				},
 				{
 					"type": "array",
 					"items": {
 						"type": "object",
-						"$ref": "../../general/eventDefinition.json"
+						"$ref": "../../general/v1.16.0/eventDefinition.json"
 					}
 				}
 			]

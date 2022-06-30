@@ -5,7 +5,7 @@
 	"title": "Stay Near Noteblock",
 	"description": "The entity will attempt to toss the items from its inventory to a nearby recently played noteblock.",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"listen_time": {
 			"title": "Listen Time",
 			"description": "Sets the time an entity should stay near a noteblock after hearing it.",

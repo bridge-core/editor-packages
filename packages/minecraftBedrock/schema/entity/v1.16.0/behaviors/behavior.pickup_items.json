@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Pickup Items",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"max_dist": {
 			"title": "Max Distance",
 			"description": "Maximum distance this mob will look for items to pick up.",

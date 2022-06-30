@@ -5,7 +5,7 @@
 	"description": "The mob freezes and looks at the mob they are targeting.",
 	"title": "Hold Ground",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"broadcast": {
 			"title": "Broadcast",
 			"type": "boolean",
@@ -27,7 +27,7 @@
 		"within_radius_event": {
 			"description": "Event to run when target is within the radius. This event is broadcasted if broadcast is true.",
 			"title": "Event: Within Radius",
-			"$ref": "../../general/eventDefinition.json"
+			"$ref": "../../general/v1.16.0/eventDefinition.json"
 		}
 	}
 }

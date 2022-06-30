@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"description": "Triggers an event upon the entity's death.",
-	"$ref": "../../general/eventDefinition.json",
+	"$ref": "../../general/v1.16.0/eventDefinition.json",
 	"type": "object",
 	"title": "Event: On Death"
 }

@@ -5,7 +5,7 @@
 	"title": "Go and Give Items to Noteblock",
 	"description": "The entity will attempt to toss the items from its inventory to a nearby recently played noteblock.",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"listen_time": {
 			"title": "Listen Time",
 			"description": "Sets the time an entity should continue delivering items to a noteblock after hearing it.",
@@ -20,12 +20,12 @@
 					"type": "array",
 					"items": {
 						"type": "object",
-						"$ref": "../../general/eventDefinition.json"
+						"$ref": "../../general/v1.16.0/eventDefinition.json"
 					}
 				},
 				{
 					"type": "object",
-					"$ref": "../../general/eventDefinition.json"
+					"$ref": "../../general/v1.16.0/eventDefinition.json"
 				}
 			]
 		},

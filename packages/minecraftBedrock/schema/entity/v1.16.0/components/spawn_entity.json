@@ -74,13 +74,13 @@
 								"anyOf": [
 									{
 										"type": "object",
-										"$ref": "../../general/filter.json"
+										"$ref": "../../general/v1.16.0/filter.json"
 									},
 									{
 										"type": "array",
 										"items": {
 											"type": "object",
-											"$ref": "../../general/filter.json"
+											"$ref": "../../general/v1.16.0/filter.json"
 										}
 									}
 								]
@@ -157,13 +157,13 @@
 							"anyOf": [
 								{
 									"type": "object",
-									"$ref": "../../general/filter.json"
+									"$ref": "../../general/v1.16.0/filter.json"
 								},
 								{
 									"type": "array",
 									"items": {
 										"type": "object",
-										"$ref": "../../general/filter.json"
+										"$ref": "../../general/v1.16.0/filter.json"
 									}
 								}
 							]

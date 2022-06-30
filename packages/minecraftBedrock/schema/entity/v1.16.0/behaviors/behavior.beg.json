@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Beg",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"look_distance": {
 			"title": "Look Distance",
 			"description": "Distance in blocks the mob will beg from.",

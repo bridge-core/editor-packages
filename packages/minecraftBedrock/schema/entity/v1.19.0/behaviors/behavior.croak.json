@@ -5,7 +5,7 @@
 	"title": "Croak",
 	"description": "Allows the entity to croak at a random time interval with configurable conditions.",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"duration": {
 			"title": "Duration",
 			"description": "Random range in seconds after which the croaking stops.",
@@ -33,7 +33,7 @@
 		"filters": {
 			"title": "Filters",
 			"description": "Conditions for the behavior to start and keep running. The interval between runs only starts after passing the filters.",
-			"$ref": "../../general/filter.json"
+			"$ref": "../../general/v1.16.0/filter.json"
 		},
 		"interval": {
 			"title": "Interval",

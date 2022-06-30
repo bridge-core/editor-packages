@@ -25,7 +25,7 @@
 					},
 					"value": {
 						"title": "Value",
-						"$ref": "../../general/eventDefinition.json"
+						"$ref": "../../general/v1.16.0/eventDefinition.json"
 					}
 				}
 			}

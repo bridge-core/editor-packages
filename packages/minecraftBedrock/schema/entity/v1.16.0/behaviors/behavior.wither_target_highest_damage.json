@@ -5,11 +5,11 @@
 	"type": "object",
 	"title": "Wither Target Highest Damage",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"entity_types": {
 			"title": "Entity Types",
 			"description": "List of entity types the wither takes into account to find who dealt the most damage to it.",
-			"$ref": "../../general/entityType.json"
+			"$ref": "../../general/v1.16.0/entityType.json"
 		}
 	}
 }

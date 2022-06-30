@@ -1,0 +1,25 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows the mob to stay in the village and fight mobs hostile to the villagers.",
+	"type": "object",
+	"title": "Defend Village Target",
+	"properties": {
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
+		"entity_types": {
+			"title": "Entity Types",
+			"description": "List of entity types that this mob considers valid targets.",
+			"$ref": "../../general/v1.19.20/entityType.json"
+		},
+		"must_reach": {
+			"title": "Must Reach",
+			"type": "boolean"
+		},
+		"attack_chance": {
+			"title": "Attack Chance",
+			"description": "The percentage chance that the entity has to attack aggressors of its village, where 1.0 = 100%.",
+			"type": "number",
+			"default": 0.05
+		}
+	}
+}

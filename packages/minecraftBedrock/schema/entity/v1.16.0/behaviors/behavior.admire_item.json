@@ -4,7 +4,7 @@
 	"type": "object",
 	"title": "Admire Item",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"admire_item_sound": {
 			"title": "Admire Item Sound",
 			"description": "The sound event to play when admiring the item.",
@@ -28,11 +28,11 @@
 		},
 		"on_admire_item_start": {
 			"title": "Event: On Admire Item Start",
-			"$ref": "../../general/eventDefinition.json"
+			"$ref": "../../general/v1.16.0/eventDefinition.json"
 		},
 		"on_admire_item_stop": {
 			"title": "Event: On Admire Item Stop",
-			"$ref": "../../general/eventDefinition.json"
+			"$ref": "../../general/v1.16.0/eventDefinition.json"
 		}
 	}
 }

@@ -5,7 +5,7 @@
 	"description": "Allows this entity to move outdoors.",
 	"title": "Move Outdoors",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"goal_radius": {
 			"title": "Goal Radius",
 			"description": "The radius away from the target block to count as reaching the goal.",

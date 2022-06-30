@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Defend Trusted Target",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"attack_interval": {
 			"title": "Attack Interval",
 			"description": "Time in seconds between attacks.",
@@ -36,7 +36,7 @@
 		},
 		"on_defend_start": {
 			"title": "Event: On Defend Start",
-			"$ref": "../../general/eventDefinition.json"
+			"$ref": "../../general/v1.16.0/eventDefinition.json"
 		},
 		"must_see_forget_duration": {
 			"title": "Must See Forget Duration",
@@ -47,7 +47,7 @@
 		"entity_types": {
 			"title": "Entity Types",
 			"description": "List of entity types that this mob considers valid targets.",
-			"$ref": "../../general/entityType.json"
+			"$ref": "../../general/v1.16.0/entityType.json"
 		}
 	}
 }

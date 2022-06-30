@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Find Underwater Treasure",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"search_range": {
 			"title": "Search Range",
 			"description": "The range that the mob will search for a treasure chest within a ruin or shipwreck to move towards.",

@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Follow Caravan",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"speed_multiplier": {
 			"title": "Speed Multiplier",
 			"description": "Movement speed multiplier of the mob when using this AI Goal.",
@@ -21,7 +21,7 @@
 		"entity_types": {
 			"title": "Entity Types",
 			"description": "List of entity types that this mob can follow in a caravan.",
-			"$ref": "../../general/entityType.json"
+			"$ref": "../../general/v1.16.0/entityType.json"
 		}
 	}
 }

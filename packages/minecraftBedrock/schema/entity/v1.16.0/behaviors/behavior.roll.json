@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Roll",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"probability": {
 			"title": "Probability",
 			"description": "The probability that the mob will use the goal.",

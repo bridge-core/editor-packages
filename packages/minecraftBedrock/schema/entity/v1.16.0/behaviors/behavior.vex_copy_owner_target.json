@@ -5,11 +5,11 @@
 	"type": "object",
 	"title": "Target Owner",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"entity_types": {
 			"title": "Entity Types",
 			"description": "List of entities this mob can copy the owner from.",
-			"$ref": "../../general/entityType.json"
+			"$ref": "../../general/v1.16.0/entityType.json"
 		}
 	}
 }

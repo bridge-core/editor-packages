@@ -23,7 +23,7 @@
 		},
 		"entity_filter": {
 			"title": "Entity Filter",
-			"$ref": "../../general/filter.json"
+			"$ref": "../../general/v1.16.0/filter.json"
 		}
 	}
 }

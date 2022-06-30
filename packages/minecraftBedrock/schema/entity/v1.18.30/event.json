@@ -52,7 +52,7 @@
 									"type": "number"
 								},
 								"filters": {
-									"$ref": "/data/packages/minecraftBedrock/schema/entity/general/filter.json"
+									"$ref": "/data/packages/minecraftBedrock/schema/entity/general/v1.16.0/filter.json"
 								}
 							}
 						},
@@ -69,7 +69,7 @@
 						{
 							"properties": {
 								"filters": {
-									"$ref": "/data/packages/minecraftBedrock/schema/entity/general/filter.json"
+									"$ref": "/data/packages/minecraftBedrock/schema/entity/general/v1.16.0/filter.json"
 								}
 							}
 						},

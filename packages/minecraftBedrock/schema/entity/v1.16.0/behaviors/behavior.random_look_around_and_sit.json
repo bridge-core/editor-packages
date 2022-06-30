@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Random Look Around And Sit",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"min_look_count": {
 			"title": "Minimum Look Count",
 			"description": "The min amount of unique looks a mob will have while looking around.",

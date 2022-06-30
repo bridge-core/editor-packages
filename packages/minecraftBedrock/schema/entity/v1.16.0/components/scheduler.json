@@ -18,7 +18,7 @@
 			"description": "The list of triggers that fire when the conditions match the given filter criteria. If any filter criteria overlap the first defined event will be picked.",
 			"type": "array",
 			"items": {
-				"$ref": "../../general/eventDefinition.json"
+				"$ref": "../../general/v1.16.0/eventDefinition.json"
 			}
 		}
 	}

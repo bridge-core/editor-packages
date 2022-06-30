@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Explore Outskirts",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"explore_dist": {
 			"title": "Explore Distance",
 			"description": "Total distance in blocks the the entity will explore beyond the village bounds when choosing its travel point.",

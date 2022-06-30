@@ -3,13 +3,14 @@
 	"description": "Defines the area of the block that collides with entities. If set to true, default values are used. If set to false, the block's collision with entities is disabled. If this component is omitted, default values are used.",
 	"type": "object",
 	"title": "Collision Box",
-	"anyOf": [
+	"oneOf": [
 		{
 			"type": "object",
+			"additionalProperties": false,
 			"properties": {
 				"size": {
 					"title": "Size",
-					"description": "Size of each side of the box of the component",
+					"description": "Size of each side of the box of the component.",
 					"type": "array",
 					"maxItems": 3,
 					"minItems": 3,
@@ -36,7 +37,7 @@
 				},
 				"origin": {
 					"title": "Origin",
-					"description": "Minimal position bounds of the collision box",
+					"description": "Minimal position bounds of the collision box.",
 					"type": "array",
 					"maxItems": 3,
 					"minItems": 3,
@@ -64,7 +65,7 @@
 			}
 		},
 		{
-			"enum": [false]
+			"type": "boolean"
 		}
 	]
 }

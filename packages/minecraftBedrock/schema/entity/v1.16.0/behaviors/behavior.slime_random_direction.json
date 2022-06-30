@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Slime Random Direction",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"add_random_time_range": {
 			"title": "Add Random Time Range",
 			"description": "Additional time (in whole seconds), chosen randomly in the range of [0, 'add_random_time_range'], to add to 'min_change_direction_time'.",

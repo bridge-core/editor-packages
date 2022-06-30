@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Sneeze",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"probability": {
 			"title": "Probability",
 			"description": "The probability of sneezing. A value of 1.00 is 100%.",
@@ -26,7 +26,7 @@
 		"entity_types": {
 			"title": "Entity Types",
 			"description": "List of entity types this mob will startle (cause to jump) when it sneezes.",
-			"$ref": "../../general/entityType.json"
+			"$ref": "../../general/v1.16.0/entityType.json"
 		},
 		"drop_item_chance": {
 			"title": "Drop Item Chance",

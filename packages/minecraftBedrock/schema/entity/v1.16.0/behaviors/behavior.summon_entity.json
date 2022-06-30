@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Summon Entity",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"summon_choices": {
 			"title": "Summon Choices",
 			"description": "List of spells for the mob to use to summon entities.",
@@ -22,7 +22,7 @@
 					},
 					"filters": {
 						"title": "Filters",
-						"$ref": "../../general/filter.json"
+						"$ref": "../../general/v1.16.0/filter.json"
 					},
 					"min_activation_range": {
 						"title": "Minimum Activation Range",

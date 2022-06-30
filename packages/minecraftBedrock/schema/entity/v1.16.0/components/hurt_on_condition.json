@@ -14,7 +14,7 @@
 				"properties": {
 					"filters": {
 						"title": "Filters",
-						"$ref": "../../general/filter.json"
+						"$ref": "../../general/v1.16.0/filter.json"
 					},
 					"cause": {
 						"title": "Cause",

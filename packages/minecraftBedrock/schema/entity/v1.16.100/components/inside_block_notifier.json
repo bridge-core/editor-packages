@@ -28,11 +28,11 @@
 					},
 					"entered_block_event": {
 						"title": "Event: On Entered Block",
-						"$ref": "../../general/eventDefinition.json"
+						"$ref": "../../general/v1.16.0/eventDefinition.json"
 					},
 					"exited_block_event": {
 						"title": "Event: On Exited Block",
-						"$ref": "../../general/eventDefinition.json"
+						"$ref": "../../general/v1.16.0/eventDefinition.json"
 					}
 				}
 			}

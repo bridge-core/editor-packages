@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Skeleton Horse Trap",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"within_radius": {
 			"title": "Within Radius",
 			"description": "Distance in blocks that the player has to be within to trigger the horse trap.",

@@ -5,7 +5,7 @@
 	"title": "Eat Mob",
 	"description": "Allows the entity to eat a specified Mob.",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"eat_animation_time": {
 			"title": "Eat Animation Time",
 			"description": "Sets the time in seconds the eat animation should play for.",

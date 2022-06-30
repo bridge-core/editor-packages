@@ -5,11 +5,11 @@
 	"type": "object",
 	"title": "Owner Hurt Target",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"entity_types": {
 			"title": "Entity Types",
 			"description": "List of entity types that this entity can target if the potential target is hurt by this mob's owner.",
-			"$ref": "../../general/entityType.json"
+			"$ref": "../../general/v1.16.0/entityType.json"
 		}
 	}
 }

@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Avoid Block",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"tick_interval": {
 			"title": "Tick Interval",
 			"description": "Should start tick interval.",
@@ -56,13 +56,13 @@
 			"anyOf": [
 				{
 					"type": "object",
-					"$ref": "../../general/eventDefinition.json"
+					"$ref": "../../general/v1.16.0/eventDefinition.json"
 				},
 				{
 					"type": "array",
 					"items": {
 						"type": "object",
-						"$ref": "../../general/eventDefinition.json"
+						"$ref": "../../general/v1.16.0/eventDefinition.json"
 					}
 				}
 			]

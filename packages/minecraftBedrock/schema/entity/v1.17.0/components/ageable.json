@@ -76,7 +76,7 @@
 		"grow_up": {
 			"title": "Event: Grow Up",
 			"description": "Event to run when this entity grows up.",
-			"$ref": "../../general/eventDefinition.json"
+			"$ref": "../../general/v1.16.0/eventDefinition.json"
 		},
 		"transform_to_item": {
 			"title": "Transform To Item",

@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Go Home",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"speed_multiplier": {
 			"title": "Speed Multiplier",
 			"description": "Movement speed multiplier of the mob when using this AI Goal.",
@@ -29,12 +29,12 @@
 			"description": "Event to run when this mob gets home.",
 			"anyOf": [
 				{
-					"$ref": "../../general/eventDefinition.json"
+					"$ref": "../../general/v1.16.0/eventDefinition.json"
 				},
 				{
 					"type": "array",
 					"items": {
-						"$ref": "../../general/eventDefinition.json"
+						"$ref": "../../general/v1.16.0/eventDefinition.json"
 					}
 				}
 			]
@@ -44,12 +44,12 @@
 			"description": "Event to run if this entity fails to get home.",
 			"anyOf": [
 				{
-					"$ref": "../../general/eventDefinition.json"
+					"$ref": "../../general/v1.16.0/eventDefinition.json"
 				},
 				{
 					"type": "array",
 					"items": {
-						"$ref": "../../general/eventDefinition.json"
+						"$ref": "../../general/v1.16.0/eventDefinition.json"
 					}
 				}
 			]

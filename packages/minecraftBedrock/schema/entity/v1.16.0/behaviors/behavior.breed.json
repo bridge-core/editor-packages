@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Breed",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"speed_multiplier": {
 			"title": "Speed Multiplier",
 			"type": "number",

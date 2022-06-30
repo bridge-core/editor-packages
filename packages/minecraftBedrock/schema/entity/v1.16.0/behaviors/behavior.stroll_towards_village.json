@@ -5,7 +5,7 @@
 	"description": "Allows the mob to move into a random location within a village within the search range.",
 	"additionalProperties": false,
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"cooldown_time": {
 			"title": "Cooldown Time",
 			"description": "Time in seconds the mob has to wait before using the goal again.",

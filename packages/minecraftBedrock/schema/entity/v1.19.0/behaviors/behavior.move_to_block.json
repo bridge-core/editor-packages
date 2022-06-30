@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Move To Block",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"speed_multiplier": {
 			"title": "Speed Multiplier",
 			"description": "Movement speed multiplier of the mob when using this AI Goal.",
@@ -79,12 +79,12 @@
 			"description": "Event to run on block reached.",
 			"anyOf": [
 				{
-					"$ref": "../../general/eventDefinition.json"
+					"$ref": "../../general/v1.16.0/eventDefinition.json"
 				},
 				{
 					"type": "array",
 					"items": {
-						"$ref": "../../general/eventDefinition.json"
+						"$ref": "../../general/v1.16.0/eventDefinition.json"
 					}
 				}
 			]
@@ -94,12 +94,12 @@
 			"description": "Event to run on block reached.",
 			"anyOf": [
 				{
-					"$ref": "../../general/eventDefinition.json"
+					"$ref": "../../general/v1.16.0/eventDefinition.json"
 				},
 				{
 					"type": "array",
 					"items": {
-						"$ref": "../../general/eventDefinition.json"
+						"$ref": "../../general/v1.16.0/eventDefinition.json"
 					}
 				}
 			]
@@ -109,12 +109,12 @@
 			"description": "Filter which blocks can be targeted.",
 			"anyOf": [
 				{
-					"$ref": "../../general/filter.json"
+					"$ref": "../../general/v1.16.0/filter.json"
 				},
 				{
 					"type": "array",
 					"items": {
-						"$ref": "../../general/filter.json"
+						"$ref": "../../general/v1.16.0/filter.json"
 					}
 				}
 			]

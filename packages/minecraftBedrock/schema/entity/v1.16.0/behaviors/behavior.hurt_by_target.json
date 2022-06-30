@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Hurt By Target",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"alert_same_type": {
 			"title": "Alert Same Type",
 			"description": "If true, nearby mobs of the same type will be alerted about the damage.",
@@ -15,7 +15,7 @@
 		"entity_types": {
 			"title": "Entity Types",
 			"description": "List of entity types that this mob can target when hurt by them.",
-			"$ref": "../../general/entityType.json"
+			"$ref": "../../general/v1.16.0/entityType.json"
 		},
 		"hurt_owner": {
 			"title": "Hurt Owner",

@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Nap",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"cooldown_min": {
 			"title": "Cooldown Minimum",
 			"description": "Maximum time in seconds the mob has to wait before using the goal again.",
@@ -32,11 +32,11 @@
 		},
 		"can_nap_filters": {
 			"title": "Can Nap Filters",
-			"$ref": "../../general/filter.json"
+			"$ref": "../../general/v1.16.0/filter.json"
 		},
 		"wake_mob_exceptions": {
 			"title": "Wake Mob Exceptions",
-			"$ref": "../../general/filter.json"
+			"$ref": "../../general/v1.16.0/filter.json"
 		}
 	}
 }

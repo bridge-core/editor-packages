@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Work",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"speed_multiplier": {
 			"title": "Speed Multiplier",
 			"description": "Movement speed multiplier of the mob when using this AI Goal.",
@@ -51,7 +51,7 @@
 		"on_arrival": {
 			"title": "Event: On Arrival",
 			"description": "Event to run when the mob reaches their jobsite and finishes working.",
-			"$ref": "../../general/eventDefinition.json"
+			"$ref": "../../general/v1.16.0/eventDefinition.json"
 		}
 	}
 }

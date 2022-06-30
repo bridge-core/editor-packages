@@ -21,7 +21,7 @@
 								"type": "number"
 							},
 							"filters": {
-								"$ref": "../general/filter.json"
+								"$ref": "../general/v1.16.0/filter.json"
 							}
 						}
 					},
@@ -38,7 +38,7 @@
 					{
 						"properties": {
 							"filters": {
-								"$ref": "../general/filter.json"
+								"$ref": "../general/v1.16.0/filter.json"
 							}
 						}
 					},

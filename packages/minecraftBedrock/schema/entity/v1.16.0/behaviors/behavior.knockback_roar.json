@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Knockback Roar",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"attack_time": {
 			"title": "Attack Time",
 			"description": "The delay after which the knockback occurs (in seconds).",
@@ -45,17 +45,17 @@
 		"knockback_filters": {
 			"title": "Knockback Filters",
 			"description": "The list of conditions another entity must meet to be a valid target to apply knockback to.",
-			"$ref": "../../general/filter.json"
+			"$ref": "../../general/v1.16.0/filter.json"
 		},
 		"damage_filters": {
 			"title": "Damage Filters",
 			"description": "The list of conditions another entity must meet to be a valid target to apply damage to.",
-			"$ref": "../../general/filter.json"
+			"$ref": "../../general/v1.16.0/filter.json"
 		},
 		"on_roar_end": {
 			"title": "Event: On Roar End",
 			"description": "Event that is triggered when the roar ends.",
-			"$ref": "../../general/eventDefinition.json"
+			"$ref": "../../general/v1.16.0/eventDefinition.json"
 		}
 	}
 }

@@ -5,7 +5,7 @@
 	"title": "Move Towards Dwelling Restriction",
 	"description": "Allows mobs with the dweller component to move toward their Village area that the mob should be restricted to.",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"speed_multiplier": {
 			"title": "Speed Multiplier",
 			"description": "This multiplier modifies the entity's speed when moving towards it's restriction.",

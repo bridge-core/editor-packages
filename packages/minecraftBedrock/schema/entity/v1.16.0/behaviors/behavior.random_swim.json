@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Random Swim",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"interval": {
 			"title": "Interval",
 			"description": "A random value to determine when to randomly move somewhere. This has a 1/interval chance to choose this goal.",

@@ -5,7 +5,7 @@
 	"description": "Allows this entity to use a flame-breath attack. Can only be used by the Ender Dragon.",
 	"title": "Dragon Flaming",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"cooldown_time": {
 			"title": "Cooldown Time",
 			"description": "Time (in seconds), after roar, to breath flame.",

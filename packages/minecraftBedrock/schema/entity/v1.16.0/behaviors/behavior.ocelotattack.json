@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Ocelot Attack",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"sneak_speed_multiplier": {
 			"title": "Sneak Speed Multiplier",
 			"description": "Modifies the attacking entity's movement speed while sneaking.",

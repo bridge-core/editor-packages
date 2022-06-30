@@ -8,7 +8,7 @@
 		"triggered_event": {
 			"title": "Event: On Raid Trigger",
 			"description": "Event to run we attempt to trigger a raid on the village.",
-			"$ref": "../../general/eventDefinition.json"
+			"$ref": "../../general/v1.16.0/eventDefinition.json"
 		}
 	}
 }

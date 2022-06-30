@@ -60,7 +60,7 @@
 		"time_down_event": {
 			"title": "Event: On Timer End",
 			"description": "Event to fire when the time on the timer runs out.",
-			"$ref": "../../general/eventDefinition.json"
+			"$ref": "../../general/v1.16.0/eventDefinition.json"
 		}
 	}
 }

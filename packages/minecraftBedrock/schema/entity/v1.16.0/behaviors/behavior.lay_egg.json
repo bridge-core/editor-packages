@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Lay Egg",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"speed_multiplier": {
 			"title": "Speed Multiplier",
 			"description": "Movement speed multiplier of the mob when using this AI Goal.",
@@ -38,7 +38,7 @@
 		"on_lay": {
 			"title": "Event: On Lay",
 			"description": "Event to run when this mob lays the egg.",
-			"$ref": "../../general/eventDefinition.json"
+			"$ref": "../../general/v1.16.0/eventDefinition.json"
 		}
 	}
 }

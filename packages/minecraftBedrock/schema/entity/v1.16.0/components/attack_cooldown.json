@@ -32,7 +32,7 @@
 		"attack_cooldown_complete_event": {
 			"title": "Event: On Attack Cooldown Complete",
 			"description": "Event to be runned when the cooldown is complete.",
-			"$ref": "../../general/eventDefinition.json"
+			"$ref": "../../general/v1.16.0/eventDefinition.json"
 		}
 	}
 }

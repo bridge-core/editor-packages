@@ -14,7 +14,7 @@
 		"filters": {
 			"title": "Filters",
 			"description": "The list of conditions that must be satisfied for other entities to be counted towards group size.",
-			"$ref": "../../general/filter.json"
+			"$ref": "../../general/v1.16.0/filter.json"
 		}
 	}
 }

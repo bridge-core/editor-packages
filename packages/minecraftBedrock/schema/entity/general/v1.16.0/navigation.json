@@ -95,7 +95,7 @@
 				"anyOf": [
 					{
 						"type": "string",
-						"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
+						"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
 					},
 					{
 						"type": "object",
@@ -103,11 +103,11 @@
 							"name": {
 								"title": "Name",
 								"type": "string",
-								"$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
+								"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
 							},
 							"states": {
 								"title": "States",
-								"$ref": "../../general/vanilla/blockState.json"
+								"$ref": "../../../general/vanilla/blockState.json"
 							}
 						}
 					}

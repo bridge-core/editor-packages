@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Sleep",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"goal_radius": {
 			"title": "Goal Radius",
 			"type": "number"

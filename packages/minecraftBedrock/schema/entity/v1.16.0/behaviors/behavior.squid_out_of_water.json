@@ -5,6 +5,6 @@
 	"type": "object",
 	"title": "Squid Stick To Ground",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" }
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" }
 	}
 }

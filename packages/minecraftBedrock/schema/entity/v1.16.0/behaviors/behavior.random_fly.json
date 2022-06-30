@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Random Fly",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"xz_dist": {
 			"title": "XZ Distance",
 			"description": "Distance in blocks on ground that the mob will look for a new spot to move to. Must be at least 1.",

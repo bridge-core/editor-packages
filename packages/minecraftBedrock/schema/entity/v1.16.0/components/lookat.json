@@ -25,12 +25,12 @@
 		"filters": {
 			"title": "Filters",
 			"description": "Defines the entities that can trigger this component.",
-			"$ref": "../../general/filter.json"
+			"$ref": "../../general/v1.16.0/filter.json"
 		},
 		"look_event": {
 			"title": "Event: On Look",
 			"description": "The event identifier to run when the entities specified in filters look at this entity.",
-			"$ref": "../../general/eventDefinition.json"
+			"$ref": "../../general/v1.16.0/eventDefinition.json"
 		},
 		"allow_invulnerable": {
 			"title": "Allow Invulnerable",

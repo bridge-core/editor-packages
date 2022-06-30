@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Play Dead",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"duration": {
 			"title": "Duration",
 			"description": "The amount of time the mob will remain playing dead (in seconds).",
@@ -55,13 +55,13 @@
 			"anyOf": [
 				{
 					"type": "object",
-					"$ref": "../../general/filter.json"
+					"$ref": "../../general/v1.16.0/filter.json"
 				},
 				{
 					"type": "array",
 					"items": {
 						"type": "object",
-						"$ref": "../../general/filter.json"
+						"$ref": "../../general/v1.16.0/filter.json"
 					}
 				}
 			]

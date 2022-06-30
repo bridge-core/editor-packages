@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Open Door",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"close_door_after": {
 			"title": "Close Door After",
 			"description": "If true, the mob will close the door after opening it and going through it.",

@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Panic",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"force": {
 			"title": "Force",
 			"description": "If true, this mob will not stop panicking until it can't move anymore or the goal is removed from it.",

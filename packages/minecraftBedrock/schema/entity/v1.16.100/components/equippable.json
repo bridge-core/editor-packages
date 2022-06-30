@@ -53,12 +53,12 @@
 					"on_equip": {
 						"title": "Event: On Equip",
 						"description": "Event to trigger when this entity is equipped with this item.",
-						"$ref": "../../general/eventDefinition.json"
+						"$ref": "../../general/v1.16.0/eventDefinition.json"
 					},
 					"on_unequip": {
 						"title": "Event: On Unequip",
 						"description": "Event to trigger when this item is removed from this entity.",
-						"$ref": "../../general/eventDefinition.json"
+						"$ref": "../../general/v1.16.0/eventDefinition.json"
 					},
 					"slot": {
 						"title": "Slot",

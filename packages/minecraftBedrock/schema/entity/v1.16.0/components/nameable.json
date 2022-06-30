@@ -20,7 +20,7 @@
 		"default_trigger": {
 			"title": "Event: On Named Default",
 			"description": "Trigger to run when the entity gets named.",
-			"$ref": "../../general/eventDefinition.json"
+			"$ref": "../../general/v1.16.0/eventDefinition.json"
 		},
 		"name_actions": {
 			"title": "Name Actions",
@@ -38,7 +38,7 @@
 					"on_named": {
 						"title": "Event: On Named",
 						"description": "Event to be called when this entity acquires the name specified in 'name_filter'.",
-						"$ref": "../../general/eventDefinition.json"
+						"$ref": "../../general/v1.16.0/eventDefinition.json"
 					}
 				}
 			}

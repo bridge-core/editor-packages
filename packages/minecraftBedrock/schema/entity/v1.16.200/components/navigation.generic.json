@@ -13,7 +13,7 @@
 			}
 		},
 		{
-			"$ref": "../../general/navigation.json"
+			"$ref": "../../general/v1.16.0/navigation.json"
 		}
 	]
 }

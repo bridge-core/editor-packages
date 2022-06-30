@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Tempt",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"can_get_scared": {
 			"title": "Can Get Scared",
 			"description": "If true, the mob can stop being tempted if the player moves too fast while close to this mob.",

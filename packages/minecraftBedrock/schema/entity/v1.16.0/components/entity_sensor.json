@@ -37,7 +37,7 @@
 		},
 		"event_filters": {
 			"title": "Event Filters",
-			"$ref": "../../general/filter.json"
+			"$ref": "../../general/v1.16.0/filter.json"
 		},
 		"event": {
 			"title": "Event",

@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Melee Attack",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"attack_once": {
 			"title": "Attack Once",
 			"description": "Allows the entity to use this attack behavior, only once EVER.",
@@ -91,11 +91,11 @@
 		},
 		"on_attack": {
 			"title": "Event: On Attack",
-			"$ref": "../../general/eventDefinition.json"
+			"$ref": "../../general/v1.16.0/eventDefinition.json"
 		},
 		"on_kill": {
 			"title": "Event: On Kill",
-			"$ref": "../../general/eventDefinition.json"
+			"$ref": "../../general/v1.16.0/eventDefinition.json"
 		},
 		"cooldown_time": {
 			"title": "Cooldown Time",

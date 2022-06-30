@@ -45,7 +45,7 @@
 		"nuisance_filter": {
 			"title": "Nuisance Filter",
 			"description": "Filter that is applied to determine if a mob can be a nuisance.",
-			"$ref": "../../general/filter.json"
+			"$ref": "../../general/v1.16.0/filter.json"
 		},
 		"on_increase_sounds": {
 			"title": "On Increase Sounds",

@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Float Wander",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"float_duration": {
 			"title": "Float Duration",
 			"description": "Range of time in seconds the mob will float around before landing and choosing to do something else.",

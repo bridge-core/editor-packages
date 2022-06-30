@@ -23,7 +23,7 @@
 			"title": "Target",
 			"description": "Target to trigger the event on.",
 			"type": "string",
-			"$ref": "../../general/filter/subject.json"
+			"$ref": "../../../general/filter/subject.json"
 		}
 	},
 	"allOf": [
@@ -53,7 +53,7 @@
 				"properties": {
 					"event": {
 						"title": "Event",
-						"$ref": "../dynamic/currentContext/eventEnum.json",
+						"$ref": "../../dynamic/currentContext/eventEnum.json",
 						"description": "Identifier of the event to trigger."
 					}
 				}
@@ -79,7 +79,7 @@
 				"properties": {
 					"event": {
 						"title": "Event",
-						"$ref": "../dynamic/eventEnum.json",
+						"$ref": "../../dynamic/eventEnum.json",
 						"description": "Identifier of the event to trigger."
 					}
 				}
@@ -98,7 +98,7 @@
 				"properties": {
 					"event": {
 						"title": "Event",
-						"$ref": "../../block/dynamic/eventEnum.json",
+						"$ref": "../../../block/dynamic/eventEnum.json",
 						"description": "Identifier of the event to trigger."
 					}
 				}

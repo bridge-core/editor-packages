@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Ranged Attack",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"attack_interval": {
 			"title": "Attack Interval",
 			"description": "Alternative to 'attack_interval_min' & 'attack_interval_max'. Consistent reload-time (in seconds), when not using a charged shot. Does not scale with target-distance.",

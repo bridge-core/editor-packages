@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Charge Attack",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"max_distance": {
 			"title": "Max Distance",
 			"description": "A charge attack cannot start if the entity is farther than this distance to the target.",

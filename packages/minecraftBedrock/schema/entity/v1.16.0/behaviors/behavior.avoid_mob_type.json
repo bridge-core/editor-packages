@@ -5,7 +5,7 @@
 	"type": "object",
 	"title": "Avoid Mob Type",
 	"properties": {
-		"priority": { "$ref": "../../general/behaviorPriority.json" },
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"entity_types": {
 			"title": "Entity Types",
 			"description": "The list of conditions another entity must meet to be a valid target to avoid.",
@@ -14,13 +14,7 @@
 					"$ref": "../../../general/reference/identifiers.json#/definitions/entity_identifiers"
 				},
 				{
-					"$ref": "../../general/entityType.json"
-				},
-				{
-					"type": "array",
-					"items": {
-						"$ref": "../../general/entityType.json"
-					}
+					"$ref": "../../general/v1.16.0/entityType.json"
 				}
 			]
 		},
@@ -69,7 +63,7 @@
 		"on_escape_event": {
 			"title": "Event: On Escape",
 			"description": "Event that is triggered when escaping from a mob.",
-			"$ref": "../../general/eventDefinition.json"
+			"$ref": "../../general/v1.16.0/eventDefinition.json"
 		},
 		"avoid_mob_sound": {
 			"title": "Avoid Mob Sound",
