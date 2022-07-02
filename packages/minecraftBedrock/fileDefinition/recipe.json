@@ -4,7 +4,15 @@
 	"detect": {
 		"packType": "behaviorPack",
 		"scope": "recipes/",
-		"matcher": ["recipes/**/*.json", "recipes/*.json"]
+		"matcher": ["recipes/**/*.json", "recipes/*.json"],
+		"fileContent": [
+			"minecraft:recipe_furnace",
+			"minecraft:recipe_shaped",
+			"minecraft:recipe_shapeless",
+			"minecraft:recipe_brewing_mix",
+			"minecraft:recipe_brewing_container",
+			"minecraft:recipe_material_reduction"
+		]
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/recipe/main.json",
