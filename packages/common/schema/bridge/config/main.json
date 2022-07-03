@@ -133,6 +133,10 @@
 					}
 				}
 			}
+		},
+		"bdsProject": {
+			"description": "Set whether this project is for Bedrock Dedicated Server software.",
+			"type": "boolean"
 		}
 	},
 	"definitions": {
