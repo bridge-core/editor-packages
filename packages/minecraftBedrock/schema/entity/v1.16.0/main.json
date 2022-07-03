@@ -59,7 +59,7 @@
 							"$ref": "../dynamic/currentContext/eventReferenceProperty.json"
 						},
 						{
-							"$ref": "../general/v1.16.0/behaviorPriority.json"
+							"$ref": "../general/v1.16.0/builtInEvent.json"
 						},
 						{
 							"$ref": "../../project/projectPrefix.json"
