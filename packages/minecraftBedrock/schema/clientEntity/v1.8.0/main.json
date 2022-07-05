@@ -99,9 +99,6 @@
 									"$ref": "../../clientAnimation/dynamic/shortNameProperty.json"
 								},
 								{
-									"$ref": "../../clientAnimationController/dynamic/shortNameProperty.json"
-								},
-								{
 									"patternProperties": {
 										".*": {
 											"$ref": "../../general/reference/clientAnimation.json"
@@ -213,11 +210,18 @@
 							"type": "array",
 							"items": {
 								"type": "object",
-								"patternProperties": {
-									".*": {
-										"type": "string"
+								"allOf": [
+									{
+										"$ref": "../../clientAnimationController/dynamic/shortNameProperty.json"
+									},
+									{
+										"patternProperties": {
+											".*": {
+												"$ref": "../../general/reference/clientAnimationController.json"
+											}
+										}
 									}
-								}
+								]
 							}
 						}
 					}

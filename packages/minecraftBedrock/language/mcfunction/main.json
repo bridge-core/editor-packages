@@ -1222,7 +1222,7 @@
 							"description": "Should be an animation name.",
 							"type": "string",
 							"additionalData": {
-								"schemaReference": "/data/packages/minecraftBedrock/schema/animationController/identifierEnum.json"
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/clientAnimation.json"
 							}
 						},
 						{
@@ -1230,7 +1230,7 @@
 							"description": "Should be an animation name.",
 							"type": "string",
 							"additionalData": {
-								"schemaReference": "/data/packages/minecraftBedrock/schema/animationController/identifierEnum.json"
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/clientAnimation.json"
 							},
 							"isOptional": true
 						},
@@ -1254,7 +1254,7 @@
 							"description": "Should be an animation controller name.",
 							"type": "string",
 							"additionalData": {
-								"schemaReference": "/data/packages/minecraftBedrock/schema/animationController/identifierEnum.json"
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/clientAnimationController.json"
 							},
 							"isOptional": true
 						}
@@ -1269,7 +1269,7 @@
 							"description": "Specifies the sound to play.",
 							"type": "string",
 							"additionalData": {
-								"schemaReference": "/data/packages/minecraftBedrock/schema/soundDefinition/identifierEnum.json"
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/soundDefinition.json"
 							}
 						},
 						{
@@ -2365,7 +2365,7 @@
 							"description": "Specifies the sound to stop.",
 							"type": "string",
 							"additionalData": {
-								"schemaReference": "/data/packages/minecraftBedrock/schema/soundDefinition/identifierEnum.json"
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/soundDefinition.json"
 							},
 							"isOptional": true
 						}

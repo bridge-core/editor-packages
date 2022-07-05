@@ -9,10 +9,10 @@
 			"$ref": "../../clientAnimationController/dynamic/identifierEnum.json"
 		},
 		{
-			"$ref": "../vanilla/animation.json"
+			"$ref": "../vanilla/clientAnimation.json"
 		},
 		{
-			"$ref": "../vanilla/animationController.json"
+			"$ref": "../vanilla/clientAnimationController.json"
 		}
 	]
 }

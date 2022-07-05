@@ -209,11 +209,11 @@ export const exportRaw: ExportTarget[] = [
 	},
 	{
 		from: ['animation.json'],
-		to: 'general/vanilla/animation.json',
+		to: 'general/vanilla/clientAnimation.json',
 	},
 	{
 		from: ['animationController.json'],
-		to: 'general/vanilla/animationController.json',
+		to: 'general/vanilla/clientAnimationController.json',
 	},
 	{
 		from: ['family.json'],
