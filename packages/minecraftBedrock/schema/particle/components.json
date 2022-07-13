@@ -550,7 +550,8 @@
 						"direction_z",
 						"emitter_transform_xy",
 						"emitter_transform_xz",
-						"emitter_transform_yz"
+						"emitter_transform_yz",
+						"lookat_direction" // v1.19.20
 					]
 				},
 				"direction": {

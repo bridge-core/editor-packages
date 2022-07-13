@@ -28,6 +28,9 @@
 		// Non-experimental
 		{
 			"properties": {
+				"minecraft:game_event_movement_tracking": {
+					"$ref": "./game_event_movement_tracking.json"
+				},
 				"minecraft:mob_effect": {
 					"$ref": "../../v1.19.0/components/mob_effect.json"
 				},

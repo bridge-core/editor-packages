@@ -39,8 +39,8 @@
 			"transform_item": {
 				"$ref": "/data/packages/minecraftBedrock/schema/event/v1.16.100/transformItem.json"
 			},
-			"set_actor_property": {
-				"$ref": "/data/packages/minecraftBedrock/schema/event/v1.17.0/setActorProperty.json"
+			"set_property": {
+				"$ref": "/data/packages/minecraftBedrock/schema/event/v1.19.20/setProperty.json"
 			},
 			"randomize": {
 				"type": "array",
