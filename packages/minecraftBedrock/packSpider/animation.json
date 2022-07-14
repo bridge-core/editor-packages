@@ -1,3 +1,15 @@
 {
-	"includeFiles": ["functionPath"]
+	"includeFiles": ["functionPath"],
+	"provideDiagnostics": [
+		{
+			"if": {
+				"not": true,
+				"find": "entity",
+				"where": "animationIdentifier",
+				"matches": "identifier"
+			},
+			"icon": "mdi-alert-circle-outline",
+			"text": "packExplorer.fileDiagnostics.fileUnused"
+		}
+	]
 }
