@@ -9,7 +9,7 @@
 		},
 		"category": {
 			"type": "string",
-			"$ref": "../general/vanilla/creativeCategory.json"
+			"$ref": "../general/creativeCategory.json"
 		},
 		"is_experimental": {
 			"type": "boolean",

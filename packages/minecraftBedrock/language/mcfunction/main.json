@@ -471,7 +471,7 @@
 							"description": "Specifies the effect to be added or removed.",
 							"type": "string",
 							"additionalData": {
-								"schemaReference": "/data/packages/minecraftBedrock/schema/general/vanilla/effectName.json"
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/effectName.json"
 							}
 						},
 						{
@@ -530,7 +530,7 @@
 							"description": "Specifies the enchantment to be added to the item held in main hand by the target.",
 							"type": "string",
 							"additionalData": {
-								"schemaReference": "/data/packages/minecraftBedrock/schema/general/vanilla/enchantName.json"
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/enchantName.json"
 							}
 						},
 						{
@@ -4573,7 +4573,7 @@
 							"description": "Specifies the structure to locate.",
 							"type": "string",
 							"additionalData": {
-								"schemaReference": "/data/packages/minecraftBedrock/schema/general/vanilla/structures.json"
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/structure.json"
 							}
 						}
 					]
@@ -4593,7 +4593,7 @@
 							"type": "string",
 							"argumentName": "feature",
 							"additionalData": {
-								"schemaReference": "/data/packages/minecraftBedrock/schema/general/vanilla/structures.json"
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/structure.json"
 							}
 						},
 						{
@@ -4636,7 +4636,7 @@
 							"type": "string",
 							"argumentName": "structure",
 							"additionalData": {
-								"schemaReference": "/data/packages/minecraftBedrock/schema/general/vanilla/structures.json"
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/structure.json"
 							}
 						},
 						{

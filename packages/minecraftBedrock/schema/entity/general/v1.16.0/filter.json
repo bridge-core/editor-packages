@@ -354,7 +354,7 @@
 				"properties": {
 					"value": {
 						"description": "Tests whether the Subject has the specified mob effect.",
-						"$ref": "../../../general/vanilla/effectName.json"
+						"$ref": "../../../general/effectName.json"
 					}
 				}
 			}

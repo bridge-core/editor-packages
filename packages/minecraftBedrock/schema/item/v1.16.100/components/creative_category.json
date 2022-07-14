@@ -7,10 +7,10 @@
 		"parent": {
 			"anyOf": [
 				{
-					"$ref": "../../../general/vanilla/itemGroup.json"
+					"$ref": "../../../general/reference/itemGroup.json"
 				},
 				{
-					"$ref": "../../../general/vanilla/creativeCategory.json"
+					"$ref": "../../../general/creativeCategory.json"
 				}
 			]
 		}

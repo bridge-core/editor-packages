@@ -13,7 +13,7 @@
 		"aux_val": {
 			"title": "Aux Value",
 			"description": "ID of the Potion effect to be applied on hit.",
-			"$ref": "../../../general/vanilla/potionIds.json"
+			"$ref": "../../../general/potionIds.json"
 		}
 	}
 }

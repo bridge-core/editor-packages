@@ -53,7 +53,7 @@
 										},
 										"states": {
 											"title": "States",
-											"$ref": "../../../general/vanilla/blockState.json"
+											"$ref": "../../../general/blockState.json"
 										}
 									}
 								}

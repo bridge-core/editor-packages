@@ -180,6 +180,18 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 			packType: 'resourcePack',
 			content: 'minecraft:client_entity/description/materials/*',
 		},
+		{
+			id: 'itemGroup',
+			packType: 'resourcePack',
+			path: 'texts/en_US.lang',
+			content: '^itemGroup\\.name\\.'
+		},
+		{
+			id: 'actionText',
+			packType: 'resourcePack',
+			path: 'texts/en_US.lang',
+			content: '^action\\.interact\\.'
+		},
 	],
 }
 
@@ -263,6 +275,14 @@ export const exportRaw: ExportTarget[] = [
 	{
 		from: ['material.json'],
 		to: 'general/vanilla/material.json',
+	},
+	{
+		from: ['actionText.json'],
+		to: 'general/vanilla/actionText.json'
+	},
+	{
+		from: ['itemGroup.json'],
+		to: 'general/vanilla/itemGroup.json'
 	},
 ]
 

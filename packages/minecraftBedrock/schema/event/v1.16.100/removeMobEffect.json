@@ -6,7 +6,7 @@
 	"properties": {
 		"effect": {
 			"description": "The mob effect to remove. Use 'all' to remove all mob effects from target.",
-			"$ref": "../../general/vanilla/effectName.json"
+			"$ref": "../../general/effectName.json"
 		},
 		"target": {
 			"description": "The target context to execute against.",

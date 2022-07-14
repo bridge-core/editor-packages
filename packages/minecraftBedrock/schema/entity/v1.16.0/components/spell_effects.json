@@ -27,11 +27,11 @@
 				{
 					"type": "array",
 					"items": {
-						"$ref": "../../../general/vanilla/effectName.json"
+						"$ref": "../../../general/effectName.json"
 					}
 				},
 				{
-					"$ref": "../../../general/vanilla/effectName.json"
+					"$ref": "../../../general/effectName.json"
 				}
 			]
 		}

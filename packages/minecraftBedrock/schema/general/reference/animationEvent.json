@@ -6,7 +6,7 @@
 			"$ref": "../../entity/dynamic/prefixedEntityEventEnum.json"
 		},
 		{
-			"$ref": "../vanilla/command.json"
+			"$ref": "../command.json"
 		},
 		{
 			"type": "string"

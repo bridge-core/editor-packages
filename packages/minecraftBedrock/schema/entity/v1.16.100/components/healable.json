@@ -66,7 +66,7 @@
 							"properties": {
 								"name": {
 									"title": "Name",
-									"$ref": "../../../general/vanilla/effectName.json"
+									"$ref": "../../../general/effectName.json"
 								},
 								"chance": {
 									"title": "Chance",

@@ -36,7 +36,7 @@
 		"effect_name": {
 			"title": "Effect Name",
 			"description": "Identifier of the status ailment to apply to an entity attacked by this entity's melee attack.",
-			"$ref": "../../../general/vanilla/effectName.json"
+			"$ref": "../../../general/effectName.json"
 		},
 		"effect_duration": {
 			"title": "Effect Duration",

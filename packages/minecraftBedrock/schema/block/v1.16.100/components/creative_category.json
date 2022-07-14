@@ -10,17 +10,17 @@
 			"description": "Specifies the language file key that maps to which expandable/collapsible group this block will be a part of within a category. If the string given can not be resolved as a loc string, then we will check if there is an existing group whose name matches the raw string. If this field is omitted, or there is no group whose name matches the loc string or the raw string, this block will be placed standalone in the given category.",
 			"anyOf": [
 				{
-					"$ref": "../../../general/vanilla/creativeCategory.json"
+					"$ref": "../../../general/creativeCategory.json"
 				},
 				{
-					"$ref": "../../../general/vanilla/itemGroup.json"
+					"$ref": "../../../general/reference/itemGroup.json"
 				}
 			]
 		},
 		"category": {
 			"title": "Category",
 			"description": "Determines which category this block will be placed under in the inventory and crafting table container screens. Options are 'construction', 'nature', 'equipment', 'items', and 'none'. If omitted or 'none' is specified, the block will not appear in the inventory or crafting table container screens.",
-			"$ref": "../../../general/vanilla/creativeCategory.json"
+			"$ref": "../../../general/creativeCategory.json"
 		}
 	}
 }

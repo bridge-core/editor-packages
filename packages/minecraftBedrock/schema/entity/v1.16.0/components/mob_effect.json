@@ -14,7 +14,7 @@
 		"mob_effect": {
 			"title": "Mob Effect",
 			"description": "The mob effect that is applied to entities that enter this entities effect range.",
-			"$ref": "../../../general/vanilla/effectName.json"
+			"$ref": "../../../general/effectName.json"
 		},
 		"effect_time": {
 			"title": "Effect Time",

@@ -66,7 +66,11 @@ export class GameScraper {
 			let output: string[] = []
 			// File
 			if (extname(fullPath) && contentPath) {
-				return await this.scrapeFile(fullPath, contentPath)
+				const scraped =
+					extname(fullPath) === '.json'
+						? await this.scrapeJsonFile(fullPath, contentPath)
+						: await this.scrapeTextFile(fullPath, contentPath)
+				return scraped
 			} else {
 				// Directory
 				for await (const file of Deno.readDir(fullPath)) {
@@ -89,13 +93,19 @@ export class GameScraper {
 								p = p.replace(extname(file.name), '')
 							output.push(p)
 						} else {
-							output = output.concat(
-								await this.scrapeFile(
-									fullPath,
-									contentPath,
-									file.name
-								)
-							)
+							const scraped =
+								extname(join(fullPath, file.name)) === '.json'
+									? await this.scrapeJsonFile(
+											fullPath,
+											contentPath,
+											file.name
+									  )
+									: await this.scrapeTextFile(
+											fullPath,
+											contentPath,
+											file.name
+									  )
+							output = output.concat(scraped)
 						}
 					}
 				}
@@ -106,7 +116,22 @@ export class GameScraper {
 		}
 	}
 
-	async scrapeFile(
+	async scrapeTextFile(
+		fullPath: string,
+		contentPath: string | string[],
+		fileName?: string
+	) {
+		let output: string[] = []
+		const fileData = await Deno.readTextFile(join(fullPath, fileName ?? ''))
+		const lines = fileData.split('\n')
+		for (const line of lines) {
+			for (const path of typeof contentPath === 'string' ? [contentPath] : contentPath) {
+				if (line.match(path)) output.push(line.split('=')[0])
+			}
+		}
+		return output
+	}
+	async scrapeJsonFile(
 		fullPath: string,
 		contentPath: string | string[],
 		fileName?: string
@@ -142,8 +167,7 @@ export class GameScraper {
 					arrData = arrData.concat(
 						this._walkJson(parts.join('/'), data[obj])
 					)
-				else if (parts.length === 0)
-					arrData.push(data[obj])
+				else if (parts.length === 0) arrData.push(data[obj])
 			}
 		} else if (data[key]) {
 			data = this._walkJson(parts.join('/'), data[key])

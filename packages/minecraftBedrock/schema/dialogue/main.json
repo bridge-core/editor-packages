@@ -53,7 +53,7 @@
 											"description": "Allows you to add commands which will be run in-game when the button is pressed.",
 											"type": "array",
 											"items": {
-												"$ref": "../general/vanilla/command.json"
+												"$ref": "../general/command.json"
 											}
 										},
 										"url": {
@@ -66,14 +66,14 @@
 								"description": "This is where you can define which commands will fire when the NPC dialogue box opens.",
 								"type": "array",
 								"items": {
-									"$ref": "../general/vanilla/command.json"
+									"$ref": "../general/command.json"
 								}
 							},
 							"on_close_commands": {
 								"description": "This is where you can define which commands will fire when the NPC dialogue box closes.",
 								"type": "array",
 								"items": {
-									"$ref": "../general/vanilla/command.json"
+									"$ref": "../general/command.json"
 								}
 							}
 						}

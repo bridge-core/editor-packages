@@ -33,7 +33,7 @@
 			"type": "array",
 			"description": "Effects to remove on eat.",
 			"items": {
-				"$ref": "../../../general/vanilla/effectName.json"
+				"$ref": "../../../general/effectName.json"
 			}
 		},
 		"on_use_action": {

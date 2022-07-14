@@ -118,7 +118,7 @@
 				"then": {
 					"properties": {
 						"destination": {
-							"$ref": "../general/vanilla/structures.json"
+							"$ref": "../general/structure.json"
 						}
 					}
 				}
@@ -426,7 +426,7 @@
 								"additionalProperties": false,
 								"properties": {
 									"id": {
-										"$ref": "../general/vanilla/enchantName.json"
+										"$ref": "../general/enchantName.json"
 									},
 									"level": {
 										"anyOf": [

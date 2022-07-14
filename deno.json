@@ -2,6 +2,7 @@
 	"importMap": "importMap.json",
 	"tasks": {
 		"build": "deno run -A ./scripts/build/build.ts",
-		"dev": "deno run -A ./scripts/build/dev.ts"
+		"dev": "deno run -A ./scripts/build/dev.ts",
+		"get-vanilla-data": "deno run -A ./scripts/vanillaData/main.ts"
 	}
 }

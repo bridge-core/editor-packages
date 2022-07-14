@@ -31,50 +31,48 @@ if (!base || !preview) {
 }
 
 // Generate schemas
-if (Deno.args.includes('--export')) {
-	for (const target of exportRaw) {
-		if (target.from.length === 1) {
-			const raw = target.from[0]
-			const data = await Deno.readTextFile(
-				join('scripts/vanillaData/raw', raw)
-			)
-			const schema = {
-				$schema: 'http://json-schema.org/draft-07/schema',
-				...(target.type === 'property'
-					? {
-							type: 'object',
-							properties: Object.fromEntries(
-								JSON.parse(data).map((i: string) => [i, {}])
-							),
-					  }
-					: {
-							type: 'string',
-							enum: JSON.parse(data),
-					  }),
-			}
-			await Deno.writeTextFile(
-				join('./packages/minecraftBedrock/schema', target.to),
-				JSON.stringify(schema, null, '\t')
-			)
-		} else {
-			let defs: any = {}
-			for (const raw of target.from) {
-				const data = await Deno.readTextFile(
-					join('./scripts/vanillaData/raw', raw)
-				)
-				defs[basename(raw, '.json')] = {
-					type: 'string',
-					enum: JSON.parse(data),
-				}
-			}
-			const schema = {
-				$schema: 'http://json-schema.org/draft-07/schema',
-				definitions: defs,
-			}
-			await Deno.writeTextFile(
-				join('./packages/minecraftBedrock/schema', target.to),
-				JSON.stringify(schema, null, '\t')
-			)
+for (const target of exportRaw) {
+	if (target.from.length === 1) {
+		const raw = target.from[0]
+		const data = await Deno.readTextFile(
+			join('scripts/vanillaData/raw', raw)
+		)
+		const schema = {
+			$schema: 'http://json-schema.org/draft-07/schema',
+			...(target.type === 'property'
+				? {
+						type: 'object',
+						properties: Object.fromEntries(
+							JSON.parse(data).map((i: string) => [i, {}])
+						),
+				  }
+				: {
+						type: 'string',
+						enum: JSON.parse(data),
+				  }),
 		}
+		await Deno.writeTextFile(
+			join('./packages/minecraftBedrock/schema', target.to),
+			JSON.stringify(schema, null, '\t')
+		)
+	} else {
+		let defs: any = {}
+		for (const raw of target.from) {
+			const data = await Deno.readTextFile(
+				join('./scripts/vanillaData/raw', raw)
+			)
+			defs[basename(raw, '.json')] = {
+				type: 'string',
+				enum: JSON.parse(data),
+			}
+		}
+		const schema = {
+			$schema: 'http://json-schema.org/draft-07/schema',
+			definitions: defs,
+		}
+		await Deno.writeTextFile(
+			join('./packages/minecraftBedrock/schema', target.to),
+			JSON.stringify(schema, null, '\t')
+		)
 	}
 }

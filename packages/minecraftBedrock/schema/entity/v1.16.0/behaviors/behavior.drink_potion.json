@@ -22,7 +22,7 @@
 				"properties": {
 					"id": {
 						"description": "The registry ID of the potion to use.",
-						"$ref": "../../../general/vanilla/potionIds.json"
+						"$ref": "../../../general/potionIds.json"
 					},
 					"chance": {
 						"description": "The percent chance (from 0.0 to 1.0) of this potion being selected when searching for a potion to use.",

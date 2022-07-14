@@ -73,7 +73,7 @@
 								},
 								"potion": {
 									"title": "Potion",
-									"$ref": "../../../general/vanilla/potionIds.json"
+									"$ref": "../../../general/potionIds.json"
 								},
 								"particle": {
 									"title": "Particle",
@@ -222,7 +222,7 @@
 							"properties": {
 								"effect": {
 									"title": "Effect",
-									"$ref": "../../../general/vanilla/effectName.json"
+									"$ref": "../../../general/effectName.json"
 								},
 								"duration": {
 									"title": "Duration",

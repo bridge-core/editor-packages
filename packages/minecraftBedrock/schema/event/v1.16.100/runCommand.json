@@ -9,12 +9,12 @@
 				{
 					"description": "List of slash commands to run.",
 					"type": "array",
-					"items": { "$ref": "../../general/vanilla/command.json" }
+					"items": { "$ref": "../../general/command.json" }
 				},
 				{
 					"description": "Slash command to run.",
 					"type": "string",
-					"$ref": "../../general/vanilla/command.json"
+					"$ref": "../../general/command.json"
 				}
 			]
 		},

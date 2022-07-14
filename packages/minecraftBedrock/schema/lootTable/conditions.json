@@ -82,7 +82,7 @@
 								"properties": {
 									"enchantment": {
 										"description": "The enchantment to test for",
-										"$ref": "../general/vanilla/enchantName.json"
+										"$ref": "../general/enchantName.json"
 									},
 									"min": {
 										"type": "integer",

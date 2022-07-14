@@ -5,10 +5,10 @@
 	"description": "The category and item group for the item.",
 	"properties": {
 		"group": {
-			"$ref": "../../../general/vanilla/itemGroup.json"
+			"$ref": "../../../general/reference/itemGroup.json"
 		},
 		"category": {
-			"$ref": "../../../general/vanilla/creativeCategory.json"
+			"$ref": "../../../general/creativeCategory.json"
 		},
 		"parent": {
 			"doNotSuggest": true,
