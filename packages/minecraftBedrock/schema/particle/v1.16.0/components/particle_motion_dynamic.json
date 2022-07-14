@@ -1,0 +1,33 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+    "title": "Particle Motion Dynamic",
+	"additionalProperties": false,
+	"type": "object",
+	"properties": {
+		"linear_acceleration": {
+            "title": "Linear Acceleration",
+			"description": "The linear acceleration applied to the particle, defaults to [0, 0, 0]. Units are blocks/sec/sec. An example would be gravity which is [0, -9.8, 0]. Evaluated every frame",
+			"type": "array",
+			"minItems": 3,
+			"maxItems": 3,
+			"items": {
+				"$ref": "../../../molang/embedded.json"
+			}
+		},
+		"linear_drag_coefficient": {
+            "title": "Linear Drag Coefficient",
+			"description": "Using the equation: acceleration = -linear_drag_coefficient*velocity where velocity is the current direction times speed. Think of this as air-drag. The higher the value, the more drag. Evaluated every frame",
+			"$ref": "../../../molang/embedded.json"
+		},
+		"rotating_acceleration": {
+            "title": "Rotating Acceleration",
+			"description": "Acceleration applies to the rotation speed of the particle, think of a disc spinning up or a smoke puff that starts rotating but slows down over time. Evaluated every frame. Acceleration is in degrees/sec/sec",
+			"$ref": "../../../molang/embedded.json"
+		},
+		"rotation_drag_coefficient": {
+            "title": "Rotation Drag Coefficient",
+			"description": "Drag applied to retard rotation equation is rotation_acceleration += -rotation_rate*rotation_drag_coefficient. Useful to slow a rotation, or to limit the rotation acceleration. Think of a disc that speeds up (acceleration) but reaches a terminal speed (drag). Another use is if you have a particle growing in size, having the rotation slow down due to drag can add 'weight' to the particle's motion",
+			"$ref": "../../../molang/embedded.json"
+		}
+	}
+}

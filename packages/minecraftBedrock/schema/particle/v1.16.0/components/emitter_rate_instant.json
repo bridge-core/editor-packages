@@ -1,0 +1,13 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Emitter Rate Instant",
+	"description": "This many particles are emitted at once. Evaluated once per particle emitter loop",
+	"additionalProperties": false,
+	"type": "object",
+	"properties": {
+		"num_particles": {
+            "title": "Number Of Particles",
+			"$ref": "../../../molang/embedded.json"
+		}
+	}
+}

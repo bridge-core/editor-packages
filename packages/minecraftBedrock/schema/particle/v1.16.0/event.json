@@ -4,12 +4,14 @@
 	"type": "object",
 	"properties": {
 		"sequence": {
+			"title": "Sequence",
 			"type": "array",
 			"items": {
 				"$ref": "#"
 			}
 		},
 		"randomize": {
+			"title": "Randomize",
 			"type": "array",
 			"items": {
 				"allOf": [
@@ -17,6 +19,7 @@
 						"type": "object",
 						"properties": {
 							"weight": {
+								"title": "Weight",
 								"type": "integer"
 							}
 						}
@@ -28,12 +31,16 @@
 			}
 		},
 		"particle_effect": {
+			"title": "Particle Effect",
+			"type": "object",
 			"additionalProperties": false,
 			"properties": {
 				"effect": {
-					"type": "string"
+					"title": "Effect",
+					"$ref": "../../general/reference/identifiers.json#/definitions/particle_identifiers"
 				},
 				"type": {
+					"title": "Type",
 					"type": "string",
 					"enum": [
 						"emitter",
@@ -43,12 +50,25 @@
 					]
 				},
 				"pre_effect_expression": {
-					"$ref": "../molang/embedded.json"
+					"title": "Pre Effect Expression",
+					"$ref": "../../molang/embedded.json"
+				}
+			}
+		},
+		"sound_effect": {
+			"title": "Sound Effect",
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"event_name": {
+					"title": "Event Name",
+					"$ref": "../../general/reference/soundEvent.json"
 				}
 			}
 		},
 		"components": {
-			"$ref": "./components.json"
+			"title": "Components",
+			"$ref": "./components/_main.json"
 		}
 	}
 }

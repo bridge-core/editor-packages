@@ -1,0 +1,57 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Particle Motion Collision",
+	"additionalProperties": false,
+	"type": "object",
+	"properties": {
+		"enabled": {
+			"title": "Enabled",
+			"description": "Enables motion collision on the particle. Evaluates every frame",
+			"$ref": "../../../molang/embedded.json"
+		},
+		"expire_on_contact": {
+			"title": "Expire On Contact",
+			"description": "Triggers expiration on contact if true",
+			"type": "boolean"
+		},
+		"collision_drag": {
+			"title": "Collision Drag",
+			"description": "Alters the speed of the particle when it has collided useful for emulating friction/drag when colliding, e.g a particle that hits the ground would slow to a stop. This drag slows down the particle by this amount in blocks/sec when in contact",
+			"type": "number"
+		},
+		"coefficient_of_restitution": {
+			"title": "Coefficient Of Restitution",
+			"type": "number",
+			"description": "Used for bouncing/not-bouncing. Set to 0.0 to not bounce, 1.0 to bounce back up to original hight and in-between to lose speed after bouncing.  Set to >1.0 to gain energy on each bounce"
+		},
+		"collision_radius": {
+			"title": "Collision Radius",
+			"description": "Used to minimize interpenetration of particles with the environment, note that this must be less than or equal to 1/2 block",
+			"type": "number"
+		},
+		"events": {
+			"title": "Events",
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"type": "object",
+						"additionalProperties": false,
+						"properties": {
+							"event": {
+								"title": "Event",
+								"description": "Triggers the specified event if the conditions are met",
+								"$ref": "../../dynamic/currentContext/eventEnum.json"
+							},
+							"min_speed": {
+								"title": "Minimum Speed",
+								"description": "Optional minimum speed for event triggering",
+								"type": "number"
+							}
+						}
+					}
+				}
+			]
+		}
+	}
+}

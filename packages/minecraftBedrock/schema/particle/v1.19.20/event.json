@@ -1,0 +1,74 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"type": "object",
+	"properties": {
+		"sequence": {
+			"title": "Sequence",
+			"type": "array",
+			"items": {
+				"$ref": "#"
+			}
+		},
+		"randomize": {
+			"title": "Randomize",
+			"type": "array",
+			"items": {
+				"allOf": [
+					{
+						"type": "object",
+						"properties": {
+							"weight": {
+								"title": "Weight",
+								"type": "integer"
+							}
+						}
+					},
+					{
+						"$ref": "#"
+					}
+				]
+			}
+		},
+		"particle_effect": {
+			"title": "Particle Effect",
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"effect": {
+					"title": "Effect",
+					"$ref": "../../general/reference/identifiers.json#/definitions/particle_identifiers"
+				},
+				"type": {
+					"title": "Type",
+					"type": "string",
+					"enum": [
+						"emitter",
+						"emitter_bound",
+						"particle",
+						"particle_with_velocity"
+					]
+				},
+				"pre_effect_expression": {
+					"title": "Pre Effect Expression",
+					"$ref": "../../molang/embedded.json"
+				}
+			}
+		},
+		"sound_effect": {
+			"title": "Sound Effect",
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"event_name": {
+					"title": "Event Name",
+					"$ref": "../../general/reference/soundEvent.json"
+				}
+			}
+		},
+		"components": {
+			"title": "Components",
+			"$ref": "./components/_main.json"
+		}
+	}
+}

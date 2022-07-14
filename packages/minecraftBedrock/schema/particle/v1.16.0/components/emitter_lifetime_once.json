@@ -1,0 +1,13 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Emitter Lifetime Once",
+	"additionalProperties": false,
+	"type": "object",
+	"properties": {
+		"active_time": {
+			"title": "Active Time",
+			"description": "How long the particles emit for evaluated once",
+			"$ref": "../../../molang/embedded.json"
+		}
+	}
+}

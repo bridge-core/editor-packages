@@ -1,0 +1,18 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Particle Lifetime Expression",
+	"additionalProperties": false,
+	"type": "object",
+	"properties": {
+		"expiration_expression": {
+			"title": "Expiration Expression",
+			"description": "This expression makes the particle expire when true (non-zero). The float/expr is evaluated once per particle. Evaluated every frame",
+			"$ref": "../../../molang/embedded.json"
+		},
+		"max_lifetime": {
+			"title": "Maximum Lifetime",
+			"description": "Alternate way to express lifetime particle will expire after this much time. Evaluated once",
+			"$ref": "../../../molang/embedded.json"
+		}
+	}
+}

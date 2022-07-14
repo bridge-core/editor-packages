@@ -1,8 +1,12 @@
 [
-	{ "cacheKey": "identifier", "path": "*/description/identifier" },
+	{ "cacheKey": "identifier", "path": "particle_effect/description/identifier" },
 	{
 		"cacheKey": "texturePath",
-		"path": "*/description/basic_render_parameters/texture",
+		"path": "particle_effect/description/basic_render_parameters/texture",
 		"script": "return await Bridge.withExtension(Bridge.resolvePackPath('resourcePack', Bridge.value), ['.tga', '.png', '.jpg', '.jpeg'])"
+	},
+	{
+		"cacheKey": "event",
+		"path": "particle_effect/events"
 	}
 ]

@@ -1,82 +1,63 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"title": "Particle",
 	"type": "object",
-	"additionalProperties": false,
 	"required": ["particle_effect", "format_version"],
-	"properties": {
-		"format_version": {
-			"type": "string",
-			"$ref": "../project/formatVersionEnum.json"
-		},
-		"particle_effect": {
-			"type": "object",
-			"additionalProperties": false,
+	"title": "Particle",
+	"allOf": [
+		{
 			"properties": {
-				"description": {
-					"additionalProperties": false,
-					"type": "object",
-					"properties": {
-						"identifier": {
-							"$ref": "../general/reference/prefixedFileIdentifier.json"
-						},
-						"basic_render_parameters": {
-							"additionalProperties": false,
-							"type": "object",
-							"properties": {
-								"texture": {
-									"$ref": "../general/reference/paths.json#/definitions/particle_texture_paths"
-								},
-								"material": {
-									"$ref": "./general.json#/definitions/materials"
-								}
-							}
-						}
-					}
-				},
-				"curves": {
-					"patternProperties": {
-						".*": {
-							"type": "object",
-							"properties": {
-								"type": {
-									"type": "string",
-									"enum": ["linear", "bezier", "catmull_rom"]
-								},
-								"nodes": {
-									"type": "array",
-									"items": {
-										"anyOf": [
-											{
-												"type": "number"
-											},
-											{
-												"$ref": "./general.json#/definitions/variables"
-											}
-										]
-									}
-								},
-								"input": {
-									"$ref": "../molang/embedded.json"
-								},
-								"horizontal_range": {
-									"$ref": "../molang/embedded.json"
-								}
-							}
-						}
-					}
-				},
-				"events": {
-					"patternProperties": {
-						".*": {
-							"$ref": "./event.json"
-						}
-					}
-				},
-				"components": {
-					"$ref": "./components.json"
+				"format_version": {
+					"type": "string",
+					"$ref": "../project/formatVersionEnum.json"
 				}
 			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": [
+							"1.8.0",
+							"1.10.0",
+							"1.11.0",
+							"1.12.0",
+							"1.13.0",
+							"1.14.0",
+							"1.16.0",
+							"1.16.100",
+							"1.16.200",
+							"1.16.210",
+							"1.16.220",
+							"1.17.0",
+							"1.17.10",
+							"1.17.20",
+							"1.17.30",
+							"1.17.40",
+							"1.18.0",
+							"1.18.10",
+							"1.18.20",
+							"1.18.30",
+							"1.19.0",
+							"1.19.10"
+						]
+					}
+				}
+			},
+            "then": {
+                "$ref": "./v1.16.0/main.json"
+            }
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.19.20"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.19.20/main.json"
+			}
 		}
-	}
+	]
 }

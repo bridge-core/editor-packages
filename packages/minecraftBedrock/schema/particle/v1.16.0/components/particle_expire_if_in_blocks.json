@@ -1,0 +1,9 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+    "title": "Particle Expire If In Blocks",
+	"description": "Expiration triggers if the particle enters these blocks",
+	"type": "array",
+	"items": {
+		"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+	}
+}

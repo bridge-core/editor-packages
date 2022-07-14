@@ -1,0 +1,13 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Emitter Rate Manual",
+	"additionalProperties": false,
+	"type": "object",
+	"properties": {
+		"max_particles": {
+			"title": "Maximum Particles",
+			"description": "Evaluated once per particle emitted",
+			"$ref": "../../../molang/embedded.json"
+		}
+	}
+}

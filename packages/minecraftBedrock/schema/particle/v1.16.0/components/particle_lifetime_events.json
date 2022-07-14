@@ -1,0 +1,58 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Particle Lifetime Events",
+	"additionalProperties": false,
+	"type": "object",
+	"properties": {
+		"creation_event": {
+			"title": "Event: On Create",
+			"description": "Fires when the particle is created",
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../../dynamic/currentContext/eventEnum.json"
+					}
+				},
+				{
+					"$ref": "../../dynamic/currentContext/eventEnum.json"
+				}
+			]
+		},
+		"expiration_event": {
+			"title": "Event: On Expire",
+			"description": "Fires when the particle expires (does not wait for particles to expire too)",
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../../dynamic/currentContext/eventEnum.json"
+					}
+				},
+				{
+					"$ref": "../../dynamic/currentContext/eventEnum.json"
+				}
+			]
+		},
+		"timeline": {
+			"title": "Timeline",
+			"type": "object",
+			"additionalProperties": false,
+			"patternProperties": {
+				"^\\d+(\\.\\d+)?$": {
+					"anyOf": [
+						{
+							"type": "array",
+							"items": {
+								"$ref": "../../dynamic/currentContext/eventEnum.json"
+							}
+						},
+						{
+							"$ref": "../../dynamic/currentContext/eventEnum.json"
+						}
+					]
+				}
+			}
+		}
+	}
+}
