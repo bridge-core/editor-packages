@@ -43,6 +43,7 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 		{
 			id: 'damageType',
 			target: 'Entity Damage Source/Damage Source',
+			include: ['fatal', 'attack'],
 		},
 	],
 	game: [
@@ -184,13 +185,13 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 			id: 'itemGroup',
 			packType: 'resourcePack',
 			path: 'texts/en_US.lang',
-			content: '^itemGroup\\.name\\.'
+			content: '^itemGroup\\.name\\.',
 		},
 		{
 			id: 'actionText',
 			packType: 'resourcePack',
 			path: 'texts/en_US.lang',
-			content: '^action\\.interact\\.'
+			content: '^action\\.interact\\.',
 		},
 	],
 }
@@ -278,15 +279,13 @@ export const exportRaw: ExportTarget[] = [
 	},
 	{
 		from: ['actionText.json'],
-		to: 'general/vanilla/actionText.json'
+		to: 'general/vanilla/actionText.json',
 	},
 	{
 		from: ['itemGroup.json'],
-		to: 'general/vanilla/itemGroup.json'
+		to: 'general/vanilla/itemGroup.json',
 	},
 ]
-
-
 
 /**
  * Base vanilla data to be added to generated content in case it is missing from documentation or game files.
@@ -298,7 +297,7 @@ export const exportRaw: ExportTarget[] = [
  * }
  * ```
  */
- export const baseData: Record<string, string[]> = {
+export const baseData: Record<string, string[]> = {
 	material: [
 		'alpha_block',
 		'alpha_block_color',
