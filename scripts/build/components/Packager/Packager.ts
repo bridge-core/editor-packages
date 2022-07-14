@@ -54,7 +54,7 @@ export async function packageDirectory(path: string, outputPath: string) {
 					newPath.startsWith('packages/minecraftBedrock/preset') &&
 						entry.name !== 'manifest.json'
 				)
-			else if (entry.name !== '.DS_Store')
+			else if (entry.name !== '.DS_Store' && !entry.name.endsWith('.md'))
 				await Deno.copyFile(newPath, newOutPath)
 		}
 	}

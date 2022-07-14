@@ -22,7 +22,7 @@ async function packageIntoSingleFileObj(
 
 		if (entry.isDirectory) {
 			await packageIntoSingleFileObj(newPath, current)
-		} else if (entry.isFile) {
+		} else if (entry.isFile && !entry.name.endsWith('.md')) {
 			current[`file:///data/${newPath.replaceAll('\\', '/')}`] =
 				await loadFile(newPath)
 		}
