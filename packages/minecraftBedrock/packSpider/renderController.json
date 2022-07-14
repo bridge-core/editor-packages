@@ -1,0 +1,14 @@
+{
+	"provideDiagnostics": [
+		{
+			"if": {
+				"not": true,
+				"find": "clientEntity",
+				"where": "renderControllerIdentifier",
+				"matches": "identifier"
+			},
+			"icon": "mdi-alert-circle-outline",
+			"text": "packExplorer.fileDiagnostics.fileUnused"
+		}
+	]
+}

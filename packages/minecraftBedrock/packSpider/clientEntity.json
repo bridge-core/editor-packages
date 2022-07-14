@@ -26,5 +26,17 @@
 			"matches": "particleIdentifier"
 		}
 	],
-	"includeFiles": ["texturePath"]
+	"includeFiles": ["texturePath"],
+	"provideDiagnostics": [
+		{
+			"if": {
+				"not": true,
+				"find": "entity",
+				"where": "identifier",
+				"matches": "identifier"
+			},
+			"icon": "mdi-alert-circle-outline",
+			"text": "packExplorer.fileDiagnostics.fileUnused"
+		}
+	]
 }
