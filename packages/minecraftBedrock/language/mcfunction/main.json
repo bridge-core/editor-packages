@@ -95,7 +95,7 @@
 					"additionalData": {
 						"multipleInstancesAllowed": "always",
 						"supportsNegation": true,
-						"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/entityTagEnum.json"
+						"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/entityTag.json"
 					}
 				},
 				{
@@ -1929,7 +1929,7 @@
 							"argumentName": "objective",
 							"type": "string",
 							"additionalData": {
-								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/scoreboardObjectiveEnum.json"
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/scoreboardObjective.json"
 							}
 						}
 					]
@@ -1960,7 +1960,7 @@
 							"argumentName": "objective",
 							"type": "string",
 							"additionalData": {
-								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/scoreboardObjectiveEnum.json"
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/scoreboardObjective.json"
 							},
 							"isOptional": true
 						}
@@ -1992,7 +1992,7 @@
 							"argumentName": "objective",
 							"type": "string",
 							"additionalData": {
-								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/scoreboardObjectiveEnum.json"
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/scoreboardObjective.json"
 							},
 							"isOptional": true
 						},
@@ -2052,7 +2052,7 @@
 							"argumentName": "objective",
 							"type": "string",
 							"additionalData": {
-								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/scoreboardObjectiveEnum.json"
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/scoreboardObjective.json"
 							},
 							"isOptional": true
 						}
@@ -2082,7 +2082,7 @@
 							"argumentName": "objective",
 							"type": "string",
 							"additionalData": {
-								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/scoreboardObjectiveEnum.json"
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/scoreboardObjective.json"
 							}
 						},
 						{
@@ -2120,7 +2120,7 @@
 							"argumentName": "objective",
 							"type": "string",
 							"additionalData": {
-								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/scoreboardObjectiveEnum.json"
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/scoreboardObjective.json"
 							}
 						},
 						{
@@ -2157,7 +2157,7 @@
 							"argumentName": "objective",
 							"type": "string",
 							"additionalData": {
-								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/scoreboardObjectiveEnum.json"
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/scoreboardObjective.json"
 							}
 						},
 						{
@@ -2190,7 +2190,7 @@
 							"argumentName": "targetObjective",
 							"type": "string",
 							"additionalData": {
-								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/scoreboardObjectiveEnum.json"
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/scoreboardObjective.json"
 							}
 						},
 						{
@@ -2218,7 +2218,7 @@
 							"argumentName": "objective",
 							"type": "string",
 							"additionalData": {
-								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/scoreboardObjectiveEnum.json"
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/scoreboardObjective.json"
 							}
 						}
 					]
@@ -2715,7 +2715,7 @@
 							"description": "Specifies the name of the tag to be added into or removed from the targets.",
 							"type": "string",
 							"additionalData": {
-								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/entityTagEnum.json"
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/entityTag.json"
 							}
 						}
 					]
@@ -2740,7 +2740,7 @@
 							"description": "Specifies the name of the tag to be added into or removed from the targets.",
 							"type": "string",
 							"additionalData": {
-								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/entityTagEnum.json"
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/entityTag.json"
 							}
 						}
 					]

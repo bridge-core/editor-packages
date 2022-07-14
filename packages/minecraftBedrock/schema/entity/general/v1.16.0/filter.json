@@ -405,7 +405,7 @@
 				"properties": {
 					"value": {
 						"description": "Returns true if the subject entity has the tag provided.",
-						"$ref": "../../../function/dynamic/entityTagEnum.json"
+						"$ref": "../../../general/reference/entityTag.json"
 					}
 				}
 			}

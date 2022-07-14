@@ -130,8 +130,8 @@
 	},
 	{
 		"cacheKey": "functionPath",
-		"path": "minecraft:entity/events/*/run_command",
-		"script": "const func = /\\/function\\s+([aA-zZ0-9\\/]+)/g.exec(Bridge.value); if(func) return Bridge.resolvePackPath('behaviorPack', `functions/${func[1]}.mcfunction`)"
+		"path": ["minecraft:entity/events/*/run_command/command", "minecraft:entity/events/**/run_command/command", "minecraft:entity/events/*/run_command/command/*", "minecraft:entity/events/**/run_command/command/*"],
+		"script": "const func = /\\/function\\s+([aA-zZ0-9\\/]+)/g.exec(Bridge.value); if (func) return Bridge.resolvePackPath('behaviorPack', `functions/${func[1]}.mcfunction`)"
 	},
 	{
 		"cacheKey": "animationIdentifier",
@@ -144,5 +144,15 @@
 	{
 		"cacheKey": "alias",
 		"path": "minecraft:entity/description/aliases"
+	},
+	{
+		"cacheKey": "entityTag",
+		"path": ["minecraft:entity/events/*/run_command/command", "minecraft:entity/events/**/run_command/command", "minecraft:entity/events/*/run_command/command/*", "minecraft:entity/events/**/run_command/command/*"],
+		"script": "const entityTags = Bridge.value.match(/(tag\\s@[a-z][\\[.+\\]]?)\\s(add|remove)\\s([a-zA-z_]+)/); if (entityTags) return entityTags[3]"
+	},
+	{
+		"cacheKey": "scoreboardObjective",
+		"path": ["minecraft:entity/events/*/run_command/command", "minecraft:entity/events/**/run_command/command", "minecraft:entity/events/*/run_command/command/*", "minecraft:entity/events/**/run_command/command/*"],
+		"script": "const scoreboardObjective = Bridge.value.match(/(scoreboard\\s+objectives\\s+add\\s+)(.+)(\\s+dummy)/); if (scoreboardObjective) return scoreboardObjective[2]"
 	}
 ]
