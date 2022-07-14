@@ -382,6 +382,7 @@ export const baseData: Record<string, string[]> = {
 	],
 	damageType: [
 		'fatal',
-		'attack'
+		'attack',
+		'any'
 	]
 }
