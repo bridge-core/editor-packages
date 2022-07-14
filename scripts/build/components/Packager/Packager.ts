@@ -9,6 +9,7 @@ export const combineIntoSingleFile: [RegExp, { packageIntoArray?: boolean }][] =
 		'packages/*/schemaScript',
 		'packages/*/lightningCache',
 		['packages/common/theme', { packageIntoArray: true }],
+		'packages/*/packSpider',
 	]).map((pattern) =>
 		typeof pattern === 'string'
 			? [globToRegExp(pattern), {}]
@@ -16,7 +17,6 @@ export const combineIntoSingleFile: [RegExp, { packageIntoArray?: boolean }][] =
 	)
 export const omitFolders: RegExp[] = [
 	'packages/*/language/mcfunction/schema',
-	'packages/*/packSpider',
 ].map((glob) => globToRegExp(glob))
 
 export async function packageDirectory(path: string, outputPath: string) {
