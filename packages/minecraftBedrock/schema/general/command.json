@@ -65,7 +65,7 @@
 			]
 		},
 		{
-			"$ref": "../../function/dynamic/commandEnum.json"
+			"$ref": "../function/dynamic/commandEnum.json"
 		},
 		{
 			"type": "string"
