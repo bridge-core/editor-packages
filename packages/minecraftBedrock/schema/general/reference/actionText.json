@@ -3,6 +3,9 @@
 	"type": "string",
 	"anyOf": [
 		{
+			"type": "string"
+		},
+		{
 			"$ref": "../vanilla/actionText.json"
 		},
 		{
