@@ -27,7 +27,7 @@
 		},
 		"interact_text": {
 			"title": "Interact Text",
-			"description": "The text to display when the player can interact with the entity when playing with Touch-screen controlsThe text to display when the player can interact with the entity when playing with Touch-screen controls.",
+			"description": "The text to display when the player can interact with the entity when playing with Touch-screen controls.",
 			"$ref": "../../../general/reference/actionText.json"
 		},
 		"pull_in_entities": {
