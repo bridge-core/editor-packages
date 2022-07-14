@@ -40,7 +40,8 @@
 		"path": [
 			"minecraft:block/components/minecraft:loot",
 			"minecraft:block/permutations/*/components/minecraft:loot",
-			"minecraft:block/events/*/spawn_loot/table"
+			"minecraft:block/events/*/spawn_loot/table",
+			"minecraft:block/events/**/spawn_loot/table"
 		],
 		"script": "return Bridge.resolvePackPath('behaviorPack', Bridge.value)"
 	},
@@ -57,5 +58,20 @@
 			"minecraft:block/components/minecraft:material_instances/*/texture",
 			"minecraft:block/permutations/*/components/minecraft:material_instances/*/texture"
 		]
+	},
+	{
+		"cacheKey": "entityTag",
+		"path": ["minecraft:block/events/**/run_command/command", "minecraft:block/events/**/run_command/command/*"],
+		"script": "const entityTags = Bridge.value.match(/(tag\\s@[a-z][\\[.+\\]]?)\\s(add|remove)\\s([a-zA-z_0-9]+)/); if (entityTags) return entityTags[3]"
+	},
+	{
+		"cacheKey": "scoreboardObjective",
+		"path": ["minecraft:block/events/**/run_command/command", "minecraft:block/events/**/run_command/command/*"],
+		"script": "const scoreboardObjective = Bridge.value.match(/(scoreboard\\s+objectives\\s+add\\s+)(.+)(\\s+dummy)/); if (scoreboardObjective) return scoreboardObjective[2]"
+	},
+	{
+		"cacheKey": "functionPath",
+		"path": ["minecraft:block/events/**/run_command/command", "minecraft:block/events/**/run_command/command/*"],
+		"script": "const func = /\\/function\\s+([aA-zZ0-9\\/]+)/g.exec(Bridge.value); if (func) return Bridge.resolvePackPath('behaviorPack', `functions/${func[1]}.mcfunction`)"
 	}
 ]

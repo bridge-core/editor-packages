@@ -4,7 +4,7 @@ module.exports = (text, { resolvePackPath }) => {
 	const entityTag = lines
 		.map((line) => {
 			const result = line.match(
-				/(tag\s@[a-z][\[.+\]]?)\s(add|remove)\s([a-zA-z_]+)/
+				/(tag\s@[a-z][\[.+\]]?)\s(add|remove)\s([a-zA-z_0-9]+)/
 			)
 			if (!result) return null
 

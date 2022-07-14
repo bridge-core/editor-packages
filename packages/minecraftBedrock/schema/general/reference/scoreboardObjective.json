@@ -7,6 +7,12 @@
         },
         {
             "$ref": "../../entity/dynamic/scoreboardObjectiveEnum.json"
+        },
+        {
+            "$ref": "../../block/dynamic/scoreboardObjectiveEnum.json"
+        },
+        {
+            "$ref": "../../item/dynamic/scoreboardObjectiveEnum.json"
         }
     ]
 }

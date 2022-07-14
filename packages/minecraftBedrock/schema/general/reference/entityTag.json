@@ -7,6 +7,12 @@
         },
         {
             "$ref": "../../entity/dynamic/entityTagEnum.json"
+        },
+        {
+            "$ref": "../../block/dynamic/entityTagEnum.json"
+        },
+        {
+            "$ref": "../../item/dynamic/entityTagEnum.json"
         }
     ]
 }
