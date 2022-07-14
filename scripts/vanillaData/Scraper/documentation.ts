@@ -23,11 +23,7 @@ export class DocumentationScraper {
 				  filtered.map((i) => target.map(i))
 				: filtered
 
-			// Remove duplicates by converting to a Set and back to an array
-			const duplicatesRemoved = [
-				...new Set(mapped.concat(target.include ?? [])),
-			]
-			await writeRaw(target.id, duplicatesRemoved)
+			await writeRaw(target.id, mapped)
 		}
 	}
 	/**

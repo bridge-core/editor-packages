@@ -9,31 +9,33 @@ const text = await res.text()
 const docScraper = new DocumentationScraper(text, toScrape.documentation)
 await docScraper.run()
 
-const appDataFolder = Deno.env.get('LOCALAPPDATA')
-export const comMojangFolder = appDataFolder
-	? join(
-			appDataFolder,
-			'Packages/Microsoft.MinecraftUWP_8wekyb3d8bbwe/LocalState/games/com.mojang'
-	  )
+const programFiles = Deno.env.get('PROGRAMFILES')
+const windowsAppsFolder = programFiles
+	? join(programFiles, 'WindowsApps')
 	: null
-export const previewComMojangFolder = appDataFolder
-	? join(
-			appDataFolder,
-			'Packages/Microsoft.MinecraftWindowsBeta_8wekyb3d8bbwe/LocalState/games/com.mojang'
-	  )
-	: null
+if (windowsAppsFolder) {
+	let retailDataFolder
+	let previewDataFolder
+	for await (const app of Deno.readDir(windowsAppsFolder)) {
+		if (
+			app.isDirectory &&
+			app.name.startsWith('Microsoft.MinecraftWindowsBeta')
+		)
+			previewDataFolder = join(windowsAppsFolder, app.name, 'data')
+		if (app.isDirectory && app.name.startsWith('Microsoft.MinecraftUWP'))
+			previewDataFolder = join(windowsAppsFolder, app.name, 'data')
+	}
 
-if (!comMojangFolder && !previewComMojangFolder) {
-	console.warn(
-		'Game data scraper requires a Minecraft installation on Windows.'
-	)
-} else {
-	const gameScraper = new GameScraper(
-		(comMojangFolder ?? previewComMojangFolder)!,
-		toScrape.game
-	)
-	await gameScraper.run()
-}
+	if (!retailDataFolder && !previewDataFolder) {
+		console.warn('Game data scraper requires a Minecraft installation.')
+	} else {
+		const gameScraper = new GameScraper(
+			(previewDataFolder ?? retailDataFolder)!,
+			toScrape.game
+		)
+		await gameScraper.run()
+	}
+} else console.warn('Game data scraper requires you to be on Windows.')
 
 // Generate schemas
 for (const target of exportRaw) {

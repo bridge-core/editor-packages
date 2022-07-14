@@ -43,7 +43,6 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 		{
 			id: 'damageType',
 			target: 'Entity Damage Source/Damage Source',
-			include: ['fatal', 'attack'],
 		},
 	],
 	game: [
@@ -381,4 +380,8 @@ export const baseData: Record<string, string[]> = {
 		'trident_glint',
 		'trident_riptide',
 	],
+	damageType: [
+		'fatal',
+		'attack'
+	]
 }
