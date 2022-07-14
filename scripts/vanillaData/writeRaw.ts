@@ -7,6 +7,7 @@ export async function writeRaw(id: string, data: string[]) {
 	if (base) writeData = base
 	writeData = [...new Set(writeData.concat(data).sort())].filter((i) => i)
 
+	await Deno.mkdir('./scripts/vanillaData/raw', { recursive: true })
 	await Deno.writeTextFile(
 		`./scripts/vanillaData/raw/${id}.json`,
 		JSON.stringify(writeData)
