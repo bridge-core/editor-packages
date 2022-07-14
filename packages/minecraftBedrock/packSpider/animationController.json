@@ -9,7 +9,8 @@
 				"matches": "identifier"
 			},
 			"icon": "mdi-alert-circle-outline",
-			"text": "packExplorer.fileDiagnostics.fileUnused"
+			"text": "packExplorer.fileDiagnostics.fileUnused",
+			"opacity": 0.6
 		}
 	]
 }
