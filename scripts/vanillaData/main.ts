@@ -9,24 +9,29 @@ const text = await res.text()
 const docScraper = new DocumentationScraper(text, toScrape.documentation)
 await docScraper.run()
 
-let base
-let preview
-for await (const path of Deno.readDir('C:/Program Files/WindowsApps')) {
-	if (
-		path.isDirectory &&
-		path.name.startsWith('Microsoft.MinecraftWindowsBeta')
-	)
-		preview = `C:/Program Files/WindowsApps/${path.name}/data/`
-	else if (path.isDirectory && path.name.startsWith('Microsoft.MinecraftUWP'))
-		base = `C:/Program Files/WindowsApps/${path.name}/data/`
-}
+const appDataFolder = Deno.env.get('LOCALAPPDATA')
+export const comMojangFolder = appDataFolder
+	? join(
+			appDataFolder,
+			'Packages/Microsoft.MinecraftUWP_8wekyb3d8bbwe/LocalState/games/com.mojang'
+	  )
+	: null
+export const previewComMojangFolder = appDataFolder
+	? join(
+			appDataFolder,
+			'Packages/Microsoft.MinecraftWindowsBeta_8wekyb3d8bbwe/LocalState/games/com.mojang'
+	  )
+	: null
 
-if (!base || !preview) {
+if (!comMojangFolder && !previewComMojangFolder) {
 	console.warn(
 		'Game data scraper requires a Minecraft installation on Windows.'
 	)
 } else {
-	const gameScraper = new GameScraper(preview || base, toScrape.game)
+	const gameScraper = new GameScraper(
+		(comMojangFolder ?? previewComMojangFolder)!,
+		toScrape.game
+	)
 	await gameScraper.run()
 }
 
@@ -35,8 +40,18 @@ for (const target of exportRaw) {
 	if (target.from.length === 1) {
 		const raw = target.from[0]
 		const data = await Deno.readTextFile(
-			join('scripts/vanillaData/raw', raw)
-		)
+			join('./scripts/vanillaData/raw', raw)
+		).catch(() => {
+			console.warn(
+				`Could not find raw data for ${join(
+					'./scripts/vanillaData/raw',
+					raw
+				)}`
+			)
+			return null
+		})
+		if (data === null) continue
+
 		const schema = {
 			$schema: 'http://json-schema.org/draft-07/schema',
 			...(target.type === 'property'
@@ -60,7 +75,17 @@ for (const target of exportRaw) {
 		for (const raw of target.from) {
 			const data = await Deno.readTextFile(
 				join('./scripts/vanillaData/raw', raw)
-			)
+			).catch(() => {
+				console.warn(
+					`Could not find raw data for ${join(
+						'./scripts/vanillaData/raw',
+						raw
+					)}`
+				)
+				return null
+			})
+			if (data === null) continue
+
 			defs[basename(raw, '.json')] = {
 				type: 'string',
 				enum: JSON.parse(data),

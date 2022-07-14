@@ -15,14 +15,14 @@ export class DocumentationScraper {
 			const [tableId, columnId] = target.target.split('/')
 			const data = this.getTableColumnData(tableId, columnId)
 			const filtered = target.filter
-            // @ts-ignore
-				? data.filter((i) => target.filter(i) && i)
+				? // @ts-ignore
+				  data.filter((i) => target.filter(i) && i)
 				: data
 			const mapped = target.map
-            // @ts-ignore
-				? filtered.map((i) => target.map(i))
+				? // @ts-ignore
+				  filtered.map((i) => target.map(i))
 				: filtered
-			await writeRaw(target.id, mapped)
+			await writeRaw(target.id, mapped.concat(target.include ?? []))
 		}
 	}
 	/**

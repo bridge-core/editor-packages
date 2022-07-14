@@ -1,4 +1,3 @@
-
 /**
  * Defines a target to scrape vanilla data from.
  */
@@ -15,6 +14,11 @@ export interface ScrapeTarget {
 	 * Function to map the data to a new format.
 	 */
 	map?: (val: string) => string
+
+	/**
+	 * Strings to include within the output
+	 */
+	include?: string[]
 }
 export interface DocTarget extends ScrapeTarget {
 	/**
