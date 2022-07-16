@@ -1,0 +1,7 @@
+{
+	"id": "extensionManifest",
+	"detect": {
+		"matcher": ".bridge/extensions/*/manifest.json"
+	},
+	"schema": "file:///data/packages/common/schema/bridge/manifest/main.json"
+}

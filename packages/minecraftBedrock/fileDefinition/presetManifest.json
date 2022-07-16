@@ -3,5 +3,5 @@
 	"detect": {
 		"matcher": ".bridge/extensions/*/presets/*/manifest.json"
 	},
-	"schema": "file:///data/packages/minecraftBedrock/schema/bridge/preset/manifest.json"
+	"schema": "file:///data/packages/common/schema/bridge/preset/manifest.json"
 }
