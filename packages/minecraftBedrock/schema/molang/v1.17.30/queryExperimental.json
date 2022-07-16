@@ -3,7 +3,7 @@
 	"type": "string",
 	"enum": [
 		"query.block_neighbor_has_all_tags",
-		"query.block_neighbor_has_any_tags",
+		"query.block_neighbor_has_any_tag",
 		"query.is_cooldown_type",
 		"query.cooldown_time",
 		"query.cooldown_time_remaining"
