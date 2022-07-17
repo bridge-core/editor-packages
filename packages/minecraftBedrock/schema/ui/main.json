@@ -31,7 +31,19 @@
 								]
 							},
 							"operation": {
-								"enum": ["insert_front", "remove"]
+								"enum": [
+									"insert_back",
+									"insert_front",
+									"insert_after",
+									"insert_before",
+									"move_back",
+									"move_front",
+									"move_after",
+									"move_before",
+									"swap",
+									"replace",
+									"remove"
+								]
 							},
 							"value": {
 								"type": "array"
