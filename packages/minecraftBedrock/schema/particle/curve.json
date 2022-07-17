@@ -5,11 +5,13 @@
 		"type": {
 			"title": "Type",
 			"type": "string",
-			"enum": ["linear", "bezier", "catmull_rom"]
+			"enum": ["linear", "bezier", "catmull_rom", "bezier_chain"]
 		},
 		"nodes": {
 			"title": "Nodes",
-			"type": "array",
+			"anyOf": [
+				{
+					"type": "array",
 			"items": {
 				"anyOf": [
 					{
@@ -41,6 +43,25 @@
 					}
 				]
 			}
+				},
+				{
+					"type": "object",
+					"patternProperties": {
+						"^\\d+(\\.\\d+)?$": {
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"value": {
+									"type": "number"
+								},
+								"slope": {
+									"type": "number"
+								}
+							}
+						}
+					}
+				}
+			]
 		},
 		"input": {
 			"title": "Input",
