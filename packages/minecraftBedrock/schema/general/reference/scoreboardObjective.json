@@ -13,6 +13,12 @@
         },
         {
             "$ref": "../../item/dynamic/scoreboardObjectiveEnum.json"
+        },
+        {
+            "$ref": "../../animation/dynamic/scoreboardObjectiveEnum.json"
+        },
+        {
+            "$ref": "../../animationController/dynamic/scoreboardObjectiveEnum.json"
         }
     ]
 }

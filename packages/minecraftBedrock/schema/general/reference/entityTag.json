@@ -13,6 +13,12 @@
         },
         {
             "$ref": "../../item/dynamic/entityTagEnum.json"
+        },
+        {
+            "$ref": "../../animation/dynamic/entityTagEnum.json"
+        },
+        {
+            "$ref": "../../animationController/dynamic/entityTagEnum.json"
         }
     ]
 }
