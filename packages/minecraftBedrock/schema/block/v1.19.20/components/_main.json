@@ -2,6 +2,9 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"type": "object",
 	"properties": {
+		"minecraft:destructible_by_explosion": {
+			"$ref": "./destructible_by_explosion.json"
+		},
         "minecraft:selection_box": {
 			"$ref": "./selection_box.json"
 		},
@@ -93,17 +96,18 @@
 		"minecraft:rotation": {
 			"$ref": "../../v1.16.100/components/rotation.json"
 		},
-		"minecraft:unwalkable": {
-			"$ref": "../../v1.16.100/components/unwalkable.json"
-		},
 		"minecraft:map_color": {
 			"$ref": "../../v1.16.0/components/map_color.json"
 		},
-		"minecraft:explosion_resistance": {
-			"$ref": "../../v1.16.0/components/explosion_resistance.json"
-		},
 		"minecraft:loot": {
 			"$ref": "../../v1.16.0/components/loot.json"
+		},
+		// Deprecated
+		"minecraft:explosion_resistance": {
+			"$ref": "./explosion_resistance.json"
+		},
+		"minecraft:unwalkable": {
+			"$ref": "./unwalkable.json"
 		}
 	}
 }
