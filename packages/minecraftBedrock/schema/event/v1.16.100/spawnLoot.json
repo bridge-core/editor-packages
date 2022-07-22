@@ -1,12 +1,27 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"type": "object",
-	"description": "Spawn loot from block.",
-	"additionalProperties": false,
-	"properties": {
-		"table": {
-			"description": "File path, relative to the Behavior Pack's path, to the loot table file.",
-			"$ref": "../../general/reference/paths.json#/definitions/loot_table_paths"
+	"$ref": "../../project/experimentalGameplay/holidayCreatorFeatures.json",
+	"then": {
+		"properties": {
+			"spawn_loot": {
+				"type": "object",
+				"description": "Spawn loot from block.",
+				"additionalProperties": false,
+				"properties": {
+					"table": {
+						"description": "File path, relative to the Behavior Pack's path, to the loot table file.",
+						"$ref": "../../general/reference/paths.json#/definitions/loot_table_paths"
+					}
+				}
+			}
+		}
+	},
+	"else": {
+		"properties": {
+			"spawn_loot": {
+				"doNotSuggest": true,
+				"deprecationMessage": "This property requires the following experimental toggle(s) enabled in your project config: 'holidayCreatorFeatures'."
+			}
 		}
 	}
 }

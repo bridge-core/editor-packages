@@ -1,13 +1,18 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"description": "Trigger an event.",
-	"anyOf": [
-		{
-			"$ref": "../../entity/general/v1.16.0/eventDefinition.json"
-		},
-		{
-			"$ref": "../../entity/dynamic/currentContext/eventEnum.json",
-			"type": "string"
+	"type": "object",
+	"properties": {
+		"trigger": {
+			"description": "Trigger an event.",
+			"anyOf": [
+				{
+					"$ref": "../../entity/general/v1.16.0/eventDefinition.json"
+				},
+				{
+					"$ref": "../../entity/dynamic/currentContext/eventEnum.json",
+					"type": "string"
+				}
+			]
 		}
-	]
+	}
 }

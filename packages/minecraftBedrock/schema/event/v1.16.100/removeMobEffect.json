@@ -1,16 +1,31 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"type": "object",
-	"description": "Removes mob effect from target.",
-	"additionalProperties": false,
-	"properties": {
-		"effect": {
-			"description": "The mob effect to remove. Use 'all' to remove all mob effects from target.",
-			"$ref": "../../general/effectName.json"
-		},
-		"target": {
-			"description": "The target context to execute against.",
-			"$ref": "../../general/filter/subject.json"
+	"$ref": "../../project/experimentalGameplay/holidayCreatorFeatures.json",
+	"then": {
+		"properties": {
+			"remove_mob_effect": {
+				"type": "object",
+				"description": "Removes mob effect from target.",
+				"additionalProperties": false,
+				"properties": {
+					"effect": {
+						"description": "The mob effect to remove. Use 'all' to remove all mob effects from target.",
+						"$ref": "../../general/effectName.json"
+					},
+					"target": {
+						"description": "The target context to execute against.",
+						"$ref": "../../general/filter/subject.json"
+					}
+				}
+			}
+		}
+	},
+	"else": {
+		"properties": {
+			"remove_mob_effect": {
+				"doNotSuggest": true,
+				"deprecationMessage": "This property requires the following experimental toggle(s) enabled in your project config: 'holidayCreatorFeatures'."
+			}
 		}
 	}
 }

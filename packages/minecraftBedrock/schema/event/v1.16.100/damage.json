@@ -1,27 +1,42 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"type": "object",
-	"description": "Deals damage to the target",
-	"additionalProperties": false,
-	"properties": {
-		"type": {
-			"$ref": "../../general/vanilla/damageType.json",
-			"description": "The type of damage to deal."
-		},
-		"amount": {
-			"type": "integer",
-			"description": "The amount of damage to deal."
-		},
-		"target": {
-			"description": "The target context to execute against.",
-			"anyOf": [
-				{
-					"$ref": "../../general/filter/subject.json"
-				},
-				{
-					"const": "item"
+	"$ref": "../../project/experimentalGameplay/holidayCreatorFeatures.json",
+	"then": {
+		"properties": {
+			"damage": {
+				"type": "object",
+				"description": "Deals damage to the target.",
+				"additionalProperties": false,
+				"properties": {
+					"type": {
+						"$ref": "../../general/vanilla/damageType.json",
+						"description": "The type of damage to deal."
+					},
+					"amount": {
+						"type": "integer",
+						"description": "The amount of damage to deal."
+					},
+					"target": {
+						"description": "The target context to execute against.",
+						"anyOf": [
+							{
+								"$ref": "../../general/filter/subject.json"
+							},
+							{
+								"const": "item"
+							}
+						]
+					}
 				}
-			]
+			}
+		}
+	},
+	"else": {
+		"properties": {
+			"damage": {
+				"doNotSuggest": true,
+				"deprecationMessage": "This property requires the following experimental toggle(s) enabled in your project config: 'holidayCreatorFeatures'."
+			}
 		}
 	}
 }

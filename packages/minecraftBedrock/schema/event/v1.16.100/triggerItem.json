@@ -1,13 +1,28 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"description": "Trigger an event.",
-	"anyOf": [
-		{
-			"$ref": "../../item/dynamic/currentContext/eventEnum.json",
-			"type": "string"
-		},
-		{
-			"$ref": "../../item/general/eventDefinition.json"
+	"$ref": "../../project/experimentalGameplay/holidayCreatorFeatures.json",
+	"then": {
+		"properties": {
+			"trigger": {
+				"description": "Trigger an event.",
+				"anyOf": [
+					{
+						"$ref": "../../item/dynamic/currentContext/eventEnum.json",
+						"type": "string"
+					},
+					{
+						"$ref": "../../item/general/eventDefinition.json"
+					}
+				]
+			}
 		}
-	]
+	},
+	"else": {
+		"properties": {
+			"trigger": {
+				"doNotSuggest": true,
+				"deprecationMessage": "This property requires the following experimental toggle(s) enabled in your project config: 'holidayCreatorFeatures'."
+			}
+		}
+	}
 }

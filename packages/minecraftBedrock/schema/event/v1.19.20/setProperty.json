@@ -1,17 +1,32 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"type": "object",
-	"description": "Set a property on the entity.",
-	"anyOf": [
-		{
-			"$ref": "../../entity/dynamic/currentContext/propertyProperty.json"
-		},
-		{
-			"patternProperties": {
-				".*": {
-					"$ref": "../../molang/embedded.json"
-				}
+	"$ref": "../../project/experimentalGameplay/holidayCreatorFeatures.json",
+	"then": {
+		"properties": {
+			"set_property": {
+				"description": "Set a property on the entity.",
+				"type": "object",
+				"anyOf": [
+					{
+						"$ref": "/data/packages/minecraftBedrock/schema/entity/dynamic/currentContext/propertyProperty.json"
+					},
+					{
+						"patternProperties": {
+							".*": {
+								"$ref": "/data/packages/minecraftBedrock/schema/molang/embedded.json"
+							}
+						}
+					}
+				]
 			}
 		}
-	]
+	},
+	"else": {
+		"properties": {
+			"set_property": {
+				"doNotSuggest": true,
+				"deprecationMessage": "This property requires the following experimental toggle(s) enabled in your project config: 'holidayCreatorFeatures'."
+			}
+		}
+	}
 }

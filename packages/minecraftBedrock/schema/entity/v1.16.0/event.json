@@ -1,52 +1,56 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"type": "object",
-	"properties": {
-		"add": {
+	"allOf": [
+		{
 			"$ref": "../../event/componentGroup/add.json"
 		},
-		"remove": {
+		{
 			"$ref": "../../event/componentGroup/remove.json"
 		},
-		"trigger": {
+		{
 			"$ref": "../../event/v1.16.100/triggerEntity.json"
 		},
-		"randomize": {
-			"type": "array",
-			"items": {
-				"allOf": [
-					{
-						"properties": {
-							"weight": {
-								"type": "number"
+		{
+			"properties": {
+				"randomize": {
+					"type": "array",
+					"items": {
+						"allOf": [
+							{
+								"properties": {
+									"weight": {
+										"type": "number"
+									},
+									"filters": {
+										"$ref": "../general/v1.16.0/filter.json"
+									}
+								}
 							},
-							"filters": {
-								"$ref": "../general/v1.16.0/filter.json"
+							{
+								"$ref": "#"
 							}
-						}
-					},
-					{
-						"$ref": "#"
+						]
 					}
-				]
-			}
-		},
-		"sequence": {
-			"type": "array",
-			"items": {
-				"allOf": [
-					{
-						"properties": {
-							"filters": {
-								"$ref": "../general/v1.16.0/filter.json"
+				},
+				"sequence": {
+					"type": "array",
+					"items": {
+						"allOf": [
+							{
+								"properties": {
+									"filters": {
+										"$ref": "../general/v1.16.0/filter.json"
+									}
+								}
+							},
+							{
+								"$ref": "#"
 							}
-						}
-					},
-					{
-						"$ref": "#"
+						]
 					}
-				]
+				}
 			}
 		}
-	}
+	]
 }

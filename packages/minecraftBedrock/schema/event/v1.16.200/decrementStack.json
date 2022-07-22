@@ -1,12 +1,27 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"type": "object",
-	"description": "Decrement item stack.",
-	"additionalProperties": false,
-	"properties": {
-		"ignore_game_mode": {
-			"description": "Whether the item stack can be decremented in creative mode.",
-			"type": "boolean"
+	"$ref": "../../project/experimentalGameplay/holidayCreatorFeatures.json",
+	"then": {
+		"properties": {
+			"decrement_stack": {
+				"type": "object",
+				"description": "Decrement item stack.",
+				"additionalProperties": false,
+				"properties": {
+					"ignore_game_mode": {
+						"description": "Whether the item stack can be decremented in creative mode.",
+						"type": "boolean"
+					}
+				}
+			}
+		}
+	},
+	"else": {
+		"properties": {
+			"decrement_stack": {
+				"doNotSuggest": true,
+				"deprecationMessage": "This property requires the following experimental toggle(s) enabled in your project config: 'holidayCreatorFeatures'."
+			}
 		}
 	}
 }

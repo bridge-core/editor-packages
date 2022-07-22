@@ -1,12 +1,27 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"type": "object",
-	"description": "Sets this block to another block type.",
-	"additionalProperties": false,
-	"properties": {
-		"block_type": {
-			"description": "The type of block to set.",
-			"$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
+	"$ref": "../../project/experimentalGameplay/holidayCreatorFeatures.json",
+	"then": {
+		"properties": {
+			"set_block": {
+				"type": "object",
+				"description": "Sets this block to another block type.",
+				"additionalProperties": false,
+				"properties": {
+					"block_type": {
+						"description": "The type of block to set.",
+						"$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
+					}
+				}
+			}
+		}
+	},
+	"else": {
+		"properties": {
+			"set_block": {
+				"doNotSuggest": true,
+				"deprecationMessage": "This property requires the following experimental toggle(s) enabled in your project config: 'holidayCreatorFeatures'."
+			}
 		}
 	}
 }

@@ -1,87 +1,89 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"type": "object",
-	"$ref": "../../project/experimentalGameplay/holidayCreatorFeatures.json",
-	"then": {
-		"properties": {
-			"add": {
-				"$ref": "/data/packages/minecraftBedrock/schema/event/componentGroup/add.json"
-			},
-			"remove": {
-				"$ref": "/data/packages/minecraftBedrock/schema/event/componentGroup/remove.json"
-			},
-			"trigger": {
-				"$ref": "/data/packages/minecraftBedrock/schema/event/v1.16.100/triggerEntity.json"
-			},
-			"damage": {
-				"$ref": "/data/packages/minecraftBedrock/schema/event/v1.16.100/damage.json"
-			},
-			"decrement_stack": {
-				"$ref": "/data/packages/minecraftBedrock/schema/event/v1.16.200/decrementStack.json"
-			},
-			"die": {
-				"$ref": "/data/packages/minecraftBedrock/schema/event/v1.16.100/die.json"
-			},
-			"add_mob_effect": {
-				"$ref": "/data/packages/minecraftBedrock/schema/event/v1.16.100/addMobEffect.json"
-			},
-			"remove_mob_effect": {
-				"$ref": "/data/packages/minecraftBedrock/schema/event/v1.16.100/removeMobEffect.json"
-			},
-			//"play_effect": { "$ref": "/data/packages/minecraftBedrock/schema/event/v1.16.100/playEffect.json" },
-			//"play_sound": { "$ref": "/data/packages/minecraftBedrock/schema/event/v1.16.100/playSound.json" },
-			"run_command": {
-				"$ref": "/data/packages/minecraftBedrock/schema/event/v1.16.100/runCommand.json"
-			},
-			"teleport": {
-				"$ref": "/data/packages/minecraftBedrock/schema/event/v1.16.100/teleport.json"
-			},
-			"transform_item": {
-				"$ref": "/data/packages/minecraftBedrock/schema/event/v1.16.100/transformItem.json"
-			},
-			"set_actor_property": {
-				"$ref": "/data/packages/minecraftBedrock/schema/event/v1.17.0/setActorProperty.json"
-			},
-			"randomize": {
-				"type": "array",
-				"items": {
-					"allOf": [
-						{
-							"properties": {
-								"weight": {
-									"type": "number"
-								},
-								"filters": {
-									"$ref": "/data/packages/minecraftBedrock/schema/entity/general/v1.16.0/filter.json"
+	"allOf": [
+		{
+			"$ref": "../../event/componentGroup/add.json"
+		},
+		{
+			"$ref": "../../event/componentGroup/remove.json"
+		},
+		{
+			"$ref": "../../event/v1.16.100/triggerEntity.json"
+		},
+		{
+			"properties": {
+				"randomize": {
+					"type": "array",
+					"items": {
+						"allOf": [
+							{
+								"properties": {
+									"weight": {
+										"type": "number"
+									},
+									"filters": {
+										"$ref": "../general/v1.16.0/filter.json"
+									}
 								}
+							},
+							{
+								"$ref": "#"
 							}
-						},
-						{
-							"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.18.10/event.json"
-						}
-					]
-				}
-			},
-			"sequence": {
-				"type": "array",
-				"items": {
-					"allOf": [
-						{
-							"properties": {
-								"filters": {
-									"$ref": "/data/packages/minecraftBedrock/schema/entity/general/v1.16.0/filter.json"
+						]
+					}
+				},
+				"sequence": {
+					"type": "array",
+					"items": {
+						"allOf": [
+							{
+								"properties": {
+									"filters": {
+										"$ref": "../general/v1.16.0/filter.json"
+									}
 								}
+							},
+							{
+								"$ref": "#"
 							}
-						},
-						{
-							"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.18.10/event.json"
-						}
-					]
+						]
+					}
 				}
 			}
+		},
+		{
+			"$ref": "../../event/v1.18.30/damage.json"
+		},
+		{
+			"$ref": "../../event/v1.16.200/decrementStack.json"
+		},
+		{
+			"$ref": "../../event/v1.16.100/die.json"
+		},
+		{
+			"$ref": "../../event/v1.16.100/addMobEffect.json"
+		},
+		{
+			"$ref": "../../event/v1.16.100/removeMobEffect.json"
+		},
+		// {
+		// 	"$ref": "../../event/v1.16.100/playEffect.json"
+		// },
+		// {
+		// 	"$ref": "../../event/v1.16.100/playSound.json"
+		// },
+		{
+			"$ref": "../../event/v1.16.100/runCommand.json"
+		},
+		{
+			"$ref": "../../event/v1.16.100/teleport.json"
+		},
+		{
+			"$ref": "../../event/v1.16.100/transformItem.json"
+		},
+		{
+			"$ref": "../../event/v1.17.0/setActorProperty.json"
 		}
-	},
-	"else": {
-		"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.16.0/event.json"
-	}
+	]
 }

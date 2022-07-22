@@ -66,8 +66,10 @@
 									"$ref": "../../project/projectPrefix.json"
 								},
 								{
-									"additionalProperties": {
-										"$ref": "./event.json"
+									"patternProperties": {
+										".*": {
+											"$ref": "./event.json"
+										}
 									}
 								}
 							]

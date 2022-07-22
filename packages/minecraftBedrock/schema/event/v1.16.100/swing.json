@@ -1,6 +1,21 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"type": "object",
-	"description": "Event causes the actor to swing.",
-	"additionalProperties": false
+	"$ref": "../../project/experimentalGameplay/holidayCreatorFeatures.json",
+	"then": {
+		"properties": {
+			"swing": {
+				"type": "object",
+				"description": "Event causes the actor to swing.",
+				"additionalProperties": false
+			}
+		}
+	},
+	"else": {
+		"properties": {
+			"swing": {
+				"doNotSuggest": true,
+				"deprecationMessage": "This property requires the following experimental toggle(s) enabled in your project config: 'holidayCreatorFeatures'."
+			}
+		}
+	}
 }

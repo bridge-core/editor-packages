@@ -1,21 +1,36 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"description": "Sets a block relative to this block to another block type.",
-	"type": "object",
-	"additionalProperties": false,
-	"properties": {
-		"block_offset": {
-			"description": "The offset from the block's center.",
-			"type": "array",
-			"maxItems": 3,
-			"minItems": 3,
-			"items": {
-				"type": "number"
+	"$ref": "../../project/experimentalGameplay/holidayCreatorFeatures.json",
+	"then": {
+		"properties": {
+			"set_block_at_pos": {
+				"description": "Sets a block relative to this block to another block type.",
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"block_offset": {
+						"description": "The offset from the block's center.",
+						"type": "array",
+						"maxItems": 3,
+						"minItems": 3,
+						"items": {
+							"type": "number"
+						}
+					},
+					"block_type": {
+						"description": "The type of block to set.",
+						"$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
+					}
+				}
 			}
-		},
-		"block_type": {
-			"description": "The type of block to set.",
-			"$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
+		}
+	},
+	"else": {
+		"properties": {
+			"set_block_at_pos": {
+				"doNotSuggest": true,
+				"deprecationMessage": "This property requires the following experimental toggle(s) enabled in your project config: 'holidayCreatorFeatures'."
+			}
 		}
 	}
 }

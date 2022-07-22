@@ -1,12 +1,27 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"type": "object",
-	"description": "Transforms item into another item.",
-	"additionalProperties": false,
-	"properties": {
-		"transform": {
-			"description": "Name of the item it should transform into.",
-			"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
+	"$ref": "../../project/experimentalGameplay/holidayCreatorFeatures.json",
+	"then": {
+		"properties": {
+			"transform_item": {
+				"type": "object",
+				"description": "Transforms item into another item.",
+				"additionalProperties": false,
+				"properties": {
+					"transform": {
+						"description": "Name of the item it should transform into.",
+						"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
+					}
+				}
+			}
+		}
+	},
+	"else": {
+		"properties": {
+			"transform_item": {
+				"doNotSuggest": true,
+				"deprecationMessage": "This property requires the following experimental toggle(s) enabled in your project config: 'holidayCreatorFeatures'."
+			}
 		}
 	}
 }

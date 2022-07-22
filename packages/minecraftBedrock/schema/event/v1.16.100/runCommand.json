@@ -1,26 +1,41 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"type": "object",
-	"description": "Triggers a slash command or a list of slash commands.",
-	"additionalProperties": false,
-	"properties": {
-		"command": {
-			"anyOf": [
-				{
-					"description": "List of slash commands to run.",
-					"type": "array",
-					"items": { "$ref": "../../general/command.json" }
-				},
-				{
-					"description": "Slash command to run.",
-					"type": "string",
-					"$ref": "../../general/command.json"
+	"$ref": "../../project/experimentalGameplay/holidayCreatorFeatures.json",
+	"then": {
+		"properties": {
+			"run_command": {
+				"type": "object",
+				"description": "Triggers a slash command or a list of slash commands.",
+				"additionalProperties": false,
+				"properties": {
+					"command": {
+						"anyOf": [
+							{
+								"description": "List of slash commands to run.",
+								"type": "array",
+								"items": { "$ref": "../../general/command.json" }
+							},
+							{
+								"description": "Slash command to run.",
+								"type": "string",
+								"$ref": "../../general/command.json"
+							}
+						]
+					},
+					"target": {
+						"description": "The target context to execute against.",
+						"$ref": "../../general/filter/subject.json"
+					}
 				}
-			]
-		},
-		"target": {
-			"description": "The target context to execute against.",
-			"$ref": "../../general/filter/subject.json"
+			}
+		}
+	},
+	"else": {
+		"properties": {
+			"run_command": {
+				"doNotSuggest": true,
+				"deprecationMessage": "This property requires the following experimental toggle(s) enabled in your project config: 'holidayCreatorFeatures'."
+			}
 		}
 	}
 }
