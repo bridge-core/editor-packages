@@ -4,19 +4,23 @@
 	"then": {
 		"properties": {
 			"play_effect": {
+				"title": "Play Effect",
 				"type": "object",
 				"description": "Spawns a particle effect relative to target position.",
 				"additionalProperties": false,
 				"properties": {
 					"target": {
+						"title": "Target",
 						"description": "The target context to execute against.",
 						"$ref": "../../general/filter/subject.json"
 					},
 					"data": {
+						"title": "Data",
 						"type": "integer",
 						"description": "Particle data value."
 					},
 					"effect": {
+						"title": "Effect",
 						"description": "The name of the particle effect to create.",
 						"$ref": "../../general/reference/identifiers.json#/definitions/particle_identifiers"
 					}

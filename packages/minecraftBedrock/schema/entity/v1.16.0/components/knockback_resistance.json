@@ -10,7 +10,7 @@
 			"type": "number"
 		},
 		"max": {
-			"title": "Max",
+			"title": "Maximum",
 			"type": "number"
 		}
 	}

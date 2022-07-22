@@ -1,10 +1,12 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Capped Surface",
 	"description": "Generates surface on blocks with non-solid blocks above or below.",
 	"additionalProperties": false,
 	"type": "object",
 	"properties": {
 		"floor_materials": {
+			"title": "Floor Materials",
 			"description": "Materials used for the surface floor.",
 			"type": "array",
 			"items": {
@@ -12,6 +14,7 @@
 			}
 		},
 		"ceiling_materials": {
+			"title": "Ceiling Materials",
 			"description": "Materials used for the surface ceiling.",
 			"type": "array",
 			"items": {
@@ -19,14 +22,17 @@
 			}
 		},
 		"sea_material": {
+			"title": "Sea Material",
 			"description": "Material used to replace air blocks below sea level.",
 			"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
 		},
 		"foundation_material": {
+			"title": "Foundation Material",
 			"description": "Material used to repalce solid blocks that are not surface blocks.",
 			"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
 		},
 		"beach_material": {
+			"title": "Beach Material",
 			"description": "Material used to decorate surface near sea level.",
 			"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
 		}

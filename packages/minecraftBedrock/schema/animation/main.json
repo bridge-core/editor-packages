@@ -4,8 +4,12 @@
 	"required": ["format_version", "animations"],
 	"type": "object",
 	"properties": {
-		"format_version": { "enum": ["1.10.0"] },
+		"format_version": {
+			"title": "Format Version",
+			"$ref": "../project/formatVersionEnum.json"
+		},
 		"animations": {
+			"title": "Animations",
 			"propertyNames": {
 				"pattern": "^animation\\..+$"
 			},
@@ -13,13 +17,24 @@
 				"^animation\\..+$": {
 					"type": "object",
 					"properties": {
-						"animation_length": { "type": "number" },
-						"start_delay": { "$ref": "../molang/embedded.json" },
+						"animation_length": {
+							"title": "Animation Length",
+							"type": "number"
+						},
+						"start_delay": {
+							"title": "Start Delay",
+							"$ref": "../molang/embedded.json"
+						},
 						"loop": {
+							"title": "Loop",
 							"enum": [true, false, "hold_on_last_frame"]
 						},
-						"loop_delay": { "$ref": "../molang/embedded.json" },
+						"loop_delay": {
+							"title": "Loop Delay",
+							"$ref": "../molang/embedded.json"
+						},
 						"timeline": {
+							"title": "Timeline",
 							"propertyNames": {
 								"pattern": "^\\d+(\\.\\d+)?$"
 							},

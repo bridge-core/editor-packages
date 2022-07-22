@@ -7,10 +7,12 @@
 	"properties": {
 		"format_version": { "$ref": "../project/formatVersionEnum.json" },
 		"minecraft:npc_dialogue": {
+			"title": "NPC Dialogue Definition",
 			"additionalProperties": false,
 			"type": "object",
 			"properties": {
 				"scenes": {
+					"title": "Scenes",
 					"type": "array",
 					"items": {
 						"type": "object",
@@ -18,18 +20,22 @@
 						"required": ["scene_tag"],
 						"properties": {
 							"scene_tag": {
+								"title": "Scene Tag",
 								"description": "This is the name you will use to call this scene in-game. This is a required property.",
 								"type": "string"
 							},
 							"npc_name": {
+								"title": "NPC Name",
 								"description": "This is where you can add or change a name for your NPC dialogue box. This is an optional property that is useful for dynamically changing NPC names.",
 								"$ref": "./text.json"
 							},
 							"text": {
+								"title": "Text",
 								"description": "This is where you enter the dialogue you want your NPC to display in-game for this scene. You can type the dialogue text directly here or use raw text if you are using a language file. This is an optional property, but without it your NPC dialogue box will be empty.",
 								"$ref": "./text.json"
 							},
 							"buttons": {
+								"title": "Buttons",
 								"description": " This is where you can create buttons for your NPC.",
 								"type": "array",
 								"minItems": 0,
@@ -46,10 +52,12 @@
 									],
 									"properties": {
 										"name": {
+											"title": "Name",
 											"description": "Allows you to set the text that is going to be displayed on your NPC’s button.",
 											"$ref": "./text.json"
 										},
 										"commands": {
+											"title": "Commands",
 											"description": "Allows you to add commands which will be run in-game when the button is pressed.",
 											"type": "array",
 											"items": {
@@ -57,12 +65,14 @@
 											}
 										},
 										"url": {
+											"title": "URL",
 											"$ref": "./text.json"
 										}
 									}
 								}
 							},
 							"on_open_commands": {
+								"title": "Event: On Open",
 								"description": "This is where you can define which commands will fire when the NPC dialogue box opens.",
 								"type": "array",
 								"items": {
@@ -70,6 +80,7 @@
 								}
 							},
 							"on_close_commands": {
+								"title": "Event: On Close",
 								"description": "This is where you can define which commands will fire when the NPC dialogue box closes.",
 								"type": "array",
 								"items": {

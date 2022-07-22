@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"description": "Specify the generation settings for a dimension.",
 	"type": "object",
+	"title": "Generation",
 	"additionalProperties": false,
 	"properties": {
 		"generator_type": {

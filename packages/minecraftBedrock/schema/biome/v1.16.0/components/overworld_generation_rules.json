@@ -1,10 +1,12 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Overworld Generation Rules",
 	"description": "Control how this biome is instantiated (and then potentially modified) during world generation of the overworld.",
 	"additionalProperties": false,
 	"type": "object",
 	"properties": {
 		"hills_transformation": {
+			"title": "Hills Tranformation",
 			"anyOf": [
 				{
 					"type": "array",
@@ -19,6 +21,7 @@
 			]
 		},
 		"mutate_transformation": {
+			"title": "Mutate Transformation",
 			"anyOf": [
 				{
 					"type": "array",
@@ -33,6 +36,7 @@
 			]
 		},
 		"shore_transformation": {
+			"title": "Shore Transformation",
 			"anyOf": [
 				{
 					"type": "array",
@@ -47,6 +51,7 @@
 			]
 		},
 		"river_transformation": {
+			"title": "River Transformation",
 			"anyOf": [
 				{
 					"type": "array",
@@ -61,6 +66,7 @@
 			]
 		},
 		"generate_for_climates": {
+			"title": "Generate For Climates",
 			"description": "Controls the world generation climate categories that this biome can spawn for.  A single biome can be associated with multiple categories with different weightings.",
 			"type": "array",
 			"items": {

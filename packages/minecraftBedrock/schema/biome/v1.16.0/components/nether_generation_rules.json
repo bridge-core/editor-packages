@@ -1,26 +1,32 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Nether Generation Rules",
 	"description": "Controls how this biome is instantiated (and then potentially modified) during world generation of the nether.",
 	"additionalProperties": false,
 	"type": "object",
 	"properties": {
 		"target_temperature": {
+			"title": "Target Temperature",
 			"description": "Temperature with which this biome should selected, relative to other biomes.",
 			"type": "number"
 		},
 		"target_humidity": {
+			"title": "Target Humidity",
 			"description": "Humidity with which this biome should selected, relative to other biomes.",
 			"type": "number"
 		},
 		"target_altitude": {
+			"title": "Target Altitude",
 			"description": "Altitude with which this biome should selected, relative to other biomes.",
 			"type": "number"
 		},
 		"target_weirdness": {
+			"title": "Target Weirdness",
 			"description": "Weirdness with which this biome should selected, relative to other biomes.",
 			"type": "number"
 		},
 		"weight": {
+			"title": "Weight",
 			"description": "Weight with which this biome should selected, relative to other biomes.",
 			"type": "number"
 		}

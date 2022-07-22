@@ -14,15 +14,18 @@
 		{
 			"properties": {
 				"randomize": {
+					"title": "Randomize",
 					"type": "array",
 					"items": {
 						"allOf": [
 							{
 								"properties": {
 									"weight": {
+										"title": "Weight",
 										"type": "number"
 									},
 									"filters": {
+										"title": "Filters",
 										"$ref": "../general/v1.16.0/filter.json"
 									}
 								}
@@ -34,12 +37,14 @@
 					}
 				},
 				"sequence": {
+					"title": "Sequence",
 					"type": "array",
 					"items": {
 						"allOf": [
 							{
 								"properties": {
 									"filters": {
+										"title": "Filters",
 										"$ref": "../general/v1.16.0/filter.json"
 									}
 								}

@@ -4,21 +4,29 @@
 	"required": ["format_version", "animation_controllers"],
 	"type": "object",
 	"properties": {
-		"format_version": { "enum": ["1.10.0"] },
+		"format_version": {
+			"title": "Format Version",
+			"$ref": "../project/formatVersionEnum.json"
+		},
 		"animation_controllers": {
+			"title": "Animation Controllers",
 			"patternProperties": {
 				"^controller.animation\\..+$": {
 					"type": "object",
 					"properties": {
 						"initial_state": {
+							"title": "Initial State",
 							"$ref": "./dynamic/currentContext/stateEnum.json"
 						},
 						"states": {
+							"title": "States",
+							"type": "object",
 							"patternProperties": {
 								".+": {
 									"type": "object",
 									"properties": {
 										"animations": {
+											"title": "Animations",
 											"type": "array",
 											"items": {
 												"anyOf": [
@@ -40,6 +48,7 @@
 											}
 										},
 										"transitions": {
+											"title": "Transitions",
 											"type": "array",
 											"items": {
 												"type": "object",
@@ -54,6 +63,7 @@
 											}
 										},
 										"on_entry": {
+											"title": "Event: On Entry",
 											"description": "Molang scripts to execute when entering this state.",
 											"type": "array",
 											"items": {
@@ -61,6 +71,7 @@
 											}
 										},
 										"on_exit": {
+											"title": "Event: On Exit",
 											"description": "Molang scripts to execute when exiting this state.",
 											"type": "array",
 											"items": {
@@ -68,6 +79,7 @@
 											}
 										},
 										"blend_transition": {
+											"title": "Blend Transition",
 											"description": "Specifies the cross-fade time in seconds when transitioning to another state.",
 											"anyOf": [
 												{
@@ -79,25 +91,30 @@
 											]
 										},
 										"blend_via_shortest_path": {
+											"title": "Blend Via Shortest Path",
 											"description": "When blending a transition to another state, animate each euler axis through the shortest rotation, instead of by value.",
 											"type": "boolean"
 										},
 										"parameters": {
+											"title": "Parameters",
 											"type": "array",
 											"items": {
 												"$ref": "../molang/embedded.json"
 											}
 										},
 										"variables": {
+											"title": "Variables",
 											"patternProperties": {
 												".+": {
 													"type": "object",
 													"additionalProperties": false,
 													"properties": {
 														"input": {
+															"title": "Input",
 															"$ref": "../molang/embedded.json"
 														},
 														"remap_curve": {
+															"title": "Remap Curve",
 															"type": "object",
 															"patternProperties": {
 																"^[0-9]*$": {
@@ -110,24 +127,29 @@
 											}
 										},
 										"particle_effects": {
+											"title": "Particle Effects",
 											"type": "array",
 											"items": {
 												"type": "object",
 												"additionalProperties": false,
 												"properties": {
 													"effect": {
+														"title": "Effect",
 														"description": "The name of a particle effect that should be played.",
 														"$ref": "../clientEntity/dynamic/particleReferenceEnum.json"
 													},
 													"locator": {
+														"title": "Locator",
 														"description": "The name of a locator on the actor where the effect should be located.",
 														"$ref": "../geometry/dynamic/locatorEnum.json"
 													},
 													"pre_effect_script": {
+														"title": "Pre Effect Script",
 														"description": "A Molang script that will be run when the particle emitter is initialized.",
 														"$ref": "../molang/embedded.json"
 													},
 													"bind_to_actor": {
+														"title": "Bind To Actor",
 														"description": "Set to false to have the effect spawned in the world without being bound to an actor (by default an effect is bound to the actor).",
 														"type": "boolean"
 													}
@@ -135,11 +157,13 @@
 											}
 										},
 										"sound_effects": {
+											"title": "Sound Effects",
 											"type": "array",
 											"items": {
 												"type": "object",
 												"patternProperties": {
 													"effect": {
+														"title": "Effect",
 														"description": "Valid sound effect names should be listed in the entity's resource definition json file.",
 														"$ref": "../clientEntity/dynamic/soundEffectReferenceEnum.json"
 													}

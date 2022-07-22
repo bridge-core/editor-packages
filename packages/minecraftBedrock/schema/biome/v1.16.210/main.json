@@ -3,22 +3,26 @@
 	"type": "object",
 	"properties": {
 		"minecraft:biome": {
+			"title": "Biome Definition",
 			"required": ["description"],
 			"additionalProperties": false,
 			"type": "object",
 			"properties": {
 				"description": {
+					"title": "Description",
 					"required": ["identifier"],
 					"type": "object",
 					"additionalProperties": false,
 					"properties": {
 						"identifier": {
+							"title": "Identifier",
 							// Needs to strictly match file name - don't change reference to "general/reference..." schema
 							"$ref": "../../project/unprefixedFileIdentifierEnum.json"
 						}
 					}
 				},
 				"components": {
+					"title": "Components",
 					"allOf": [
 						{
 							"$ref": "../tag.json"

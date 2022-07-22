@@ -4,19 +4,23 @@
 	"then": {
 		"properties": {
 			"teleport": {
+				"title": "Teleport",
 				"type": "object",
 				"description": "Teleport target randomly around destination point",
 				"additionalProperties": false,
 				"properties": {
 					"target": {
+						"title": "Target",
 						"description": "The target context to execute against.",
 						"$ref": "../../general/filter/subject.json"
 					},
 					"avoid_water": {
+						"title": "Avoid Water",
 						"description": "Determines if the teleport avoids putting the target in water.",
 						"type": "boolean"
 					},
 					"destination": {
+						"title": "Destination",
 						"description": "Origin destination of the teleport.",
 						"type": "array",
 						"maxItems": 3,
@@ -26,10 +30,12 @@
 						}
 					},
 					"land_on_block": {
+						"title": "Land On Block",
 						"description": "Determines if the teleport places the target on a block.",
 						"type": "boolean"
 					},
 					"max_range": {
+						"title": "Maximum Range",
 						"description": "Max range the target can teleport relative to the origin destination.",
 						"type": "array",
 						"maxItems": 3,

@@ -7,6 +7,7 @@
 		{
 			"properties": {
 				"format_version": {
+					"title": "Format Version",
 					"$ref": "../project/formatVersionEnum.json"
 				}
 			}

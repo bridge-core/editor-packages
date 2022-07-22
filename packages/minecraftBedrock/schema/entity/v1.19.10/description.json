@@ -11,6 +11,7 @@
 				"type": "object",
 				"properties": {
 					"aliases": {
+						"title": "Aliases",
 						"type": "object",
 						"patternProperties": {
 							".*": {
@@ -19,6 +20,7 @@
 						}
 					},
 					"properties": {
+						"title": "Properties",
 						"type": "object",
 						"patternProperties": {
 							".*": {
@@ -26,19 +28,23 @@
 								"required": ["type"],
 								"properties": {
 									"type": {
+										"title": "Type",
 										"type": "string",
 										"enum": ["int", "float", "bool", "enum"]
 									},
 									"range": {
+										"title": "Range",
 										"type": "array",
 										"items": {
 											"type": ["string", "number", "boolean", "integer"]
 										}
 									},
 									"default": {
+										"title": "Default",
 										"type": ["string", "number", "boolean", "integer"]
 									},
 									"client_sync": {
+										"title": "Client Sync",
 										"type": "boolean"
 									}
 								}

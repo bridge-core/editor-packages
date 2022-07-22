@@ -1,5 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Mesa Surface",
 	"description": "Similar to overworld_surface. Adds colored strata and optional pillars.",
 	"allOf": [
 		{
@@ -9,15 +10,19 @@
 			"type": "object",
 			"properties": {
 				"clay_material": {
+					"title": "Clay Material",
 					"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
 				},
 				"hard_clay_material": {
+					"title": "Hard Clay Material",
 					"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
 				},
 				"bryce_pillars": {
+					"title": "Bryce Pillars",
 					"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
 				},
 				"has_forest": {
+					"title": "Has Forest",
 					"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
 				}
 			}

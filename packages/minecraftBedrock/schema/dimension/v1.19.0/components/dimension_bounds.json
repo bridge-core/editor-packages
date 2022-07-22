@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"type": "object",
 	"additionalProperties": false,
+	"title": "Dimension Bounds",
 	"description": "Specifies the buildable height range of the dimension.",
 	"properties": {
 		"min": {

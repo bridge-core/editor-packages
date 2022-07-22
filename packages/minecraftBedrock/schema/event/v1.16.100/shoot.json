@@ -4,16 +4,27 @@
 	"then": {
 		"properties": {
 			"shoot": {
+				"title": "Shoot",
 				"type": "object",
 				"description": "Shoot a projectile.",
 				"additionalProperties": false,
 				"properties": {
-					"target": { "$ref": "../../general/filter/subject.json" },
+					"target": {
+						"title": "Target",
+						"$ref": "../../general/filter/subject.json"
+					},
 					"projectile": {
+						"title": "Projectile",
 						"$ref": "../../general/reference/identifiers.json#/definitions/entity_identifiers"
 					},
-					"launch_power": { "type": "number" },
-					"angle_offset": { "type": ["string", "number"] }
+					"launch_power": {
+						"title": "Launch Power",
+						"type": "number"
+					},
+					"angle_offset": {
+						"title": "Angle Offset",
+						"type": ["string", "number"]
+					}
 				}
 			}
 		}

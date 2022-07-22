@@ -4,6 +4,7 @@
 	"then": {
 		"properties": {
 			"trigger": {
+				"title": "Trigger",
 				"description": "Trigger an event.",
 				"anyOf": [
 					{

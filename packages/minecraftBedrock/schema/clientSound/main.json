@@ -44,10 +44,12 @@
 	"type": "object",
 	"properties": {
 		"individual_event_sounds": {
+			"title": "Individual Event Sounds",
 			"additionalProperties": false,
 			"type": "object",
 			"properties": {
 				"events": {
+					"title": "Events",
 					"patternProperties": {
 						".*": {
 							"type": "string"
@@ -57,6 +59,7 @@
 			}
 		},
 		"block_sounds": {
+			"title": "Block Sounds",
 			"additionalProperties": false,
 			"patternProperties": {
 				".*": {
@@ -64,12 +67,15 @@
 					"type": "object",
 					"properties": {
 						"volume": {
+							"title": "Volume",
 							"$ref": "#/definitions/number_range"
 						},
 						"pitch": {
+							"title": "Pitch",
 							"$ref": "#/definitions/number_range"
 						},
 						"events": {
+							"title": "Events",
 							"patternProperties": {
 								".*": {
 									"$ref": "#/definitions/sound_object"
@@ -81,19 +87,24 @@
 			}
 		},
 		"entity_sounds": {
+			"title": "Entity Sounds",
 			"type": "object",
 			"properties": {
 				"defaults": {
+					"title": "Defaults",
 					"additionalProperties": false,
 					"type": "object",
 					"properties": {
 						"volume": {
+							"title": "Volume",
 							"$ref": "#/definitions/number_range"
 						},
 						"pitch": {
+							"title": "Pitch",
 							"$ref": "#/definitions/number_range"
 						},
 						"events": {
+							"title": "Events",
 							"patternProperties": {
 								".*": {
 									"$ref": "#/definitions/sound_object"
@@ -103,6 +114,8 @@
 					}
 				},
 				"entities": {
+					"title": "Entities",
+					"type": "object",
 					"propertyNames": {
 						"$ref": "../general/reference/identifiers.json#/definitions/entity_identifiers"
 					},
@@ -115,37 +128,47 @@
 			}
 		},
 		"interactive_sounds": {
+			"title": "Interactive Sounds",
 			"additionalProperties": false,
 			"type": "object",
 			"properties": {
 				"block_sounds": {
+					"title": "Block Sounds",
 					"patternProperties": {
 						".*": {
 							"additionalProperties": false,
 							"type": "object",
 							"properties": {
 								"volume": {
+									"title": "Volume",
 									"$ref": "#/definitions/number_range"
 								},
 								"pitch": {
+									"title": "Pitch",
 									"$ref": "#/definitions/number_range"
 								},
 								"events": {
+									"title": "Events",
 									"type": "object",
 									"properties": {
 										"default": {
+											"title": "Default",
 											"$ref": "#/definitions/sound_object"
 										},
 										"fall": {
+											"title": "Fall",
 											"$ref": "#/definitions/sound_object"
 										},
 										"step": {
+											"title": "Step",
 											"$ref": "#/definitions/sound_object"
 										},
 										"jump": {
+											"title": "Jump",
 											"$ref": "#/definitions/sound_object"
 										},
 										"land": {
+											"title": "Land",
 											"$ref": "#/definitions/sound_object"
 										}
 									}
@@ -155,18 +178,22 @@
 					}
 				},
 				"entity_sounds": {
+					"title": "Entity Sounds",
 					"patternProperties": {
 						".*": {
 							"additionalProperties": false,
 							"type": "object",
 							"properties": {
 								"volume": {
+									"title": "Volume",
 									"$ref": "#/definitions/number_range"
 								},
 								"pitch": {
+									"title": "Pitch",
 									"$ref": "#/definitions/number_range"
 								},
 								"events": {
+									"title": "Events",
 									"patternProperties": {
 										".*": {
 											"$ref": "#/definitions/sound_object"
@@ -179,6 +206,8 @@
 					"type": "object",
 					"properties": {
 						"entities": {
+							"title": "Entities",
+							"type": "object",
 							"propertyNames": {
 								"$ref": "../general/reference/identifiers.json#/definitions/entity_identifiers"
 							},

@@ -3,13 +3,16 @@
 	"type": "object",
 	"properties": {
 		"minecraft:block": {
+			"title": "Block Definition",
 			"required": ["description"],
 			"type": "object",
 			"properties": {
 				"description": {
+					"title": "Description",
 					"$ref": "../description.json"
 				},
 				"components": {
+					"title": "Components",
 					"allOf": [
 						{
 							"$ref": "../dynamic/customComponents.json"

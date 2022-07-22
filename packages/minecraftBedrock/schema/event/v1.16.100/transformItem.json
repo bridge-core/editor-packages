@@ -4,11 +4,13 @@
 	"then": {
 		"properties": {
 			"transform_item": {
+				"title": "Transform Item",
 				"type": "object",
 				"description": "Transforms item into another item.",
 				"additionalProperties": false,
 				"properties": {
 					"transform": {
+						"title": "Transform",
 						"description": "Name of the item it should transform into.",
 						"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
 					}

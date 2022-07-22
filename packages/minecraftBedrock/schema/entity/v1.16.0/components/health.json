@@ -25,11 +25,11 @@
 			]
 		},
 		"max": {
-			"title": "Max",
+			"title": "Maximum",
 			"type": "number"
 		},
 		"min": {
-			"title": "Min",
+			"title": "Minimum",
 			"type": "number"
 		}
 	}

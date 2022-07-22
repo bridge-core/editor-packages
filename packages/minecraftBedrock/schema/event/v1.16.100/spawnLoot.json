@@ -4,11 +4,13 @@
 	"then": {
 		"properties": {
 			"spawn_loot": {
+				"title": "Spawn Loot",
 				"type": "object",
 				"description": "Spawn loot from block.",
 				"additionalProperties": false,
 				"properties": {
 					"table": {
+						"title": "Table",
 						"description": "File path, relative to the Behavior Pack's path, to the loot table file.",
 						"$ref": "../../general/reference/paths.json#/definitions/loot_table_paths"
 					}

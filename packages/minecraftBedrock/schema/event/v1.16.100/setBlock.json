@@ -4,11 +4,13 @@
 	"then": {
 		"properties": {
 			"set_block": {
+				"title": "Set Block",
 				"type": "object",
 				"description": "Sets this block to another block type.",
 				"additionalProperties": false,
 				"properties": {
 					"block_type": {
+						"title": "Block Type",
 						"description": "The type of block to set.",
 						"$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
 					}

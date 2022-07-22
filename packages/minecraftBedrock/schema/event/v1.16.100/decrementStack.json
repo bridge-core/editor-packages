@@ -4,6 +4,7 @@
 	"then": {
 		"properties": {
 			"decrement_stack": {
+				"title": "Decrement Stack",
 				"type": "object",
 				"description": "Decrement the item stack.",
 				"additionalProperties": false

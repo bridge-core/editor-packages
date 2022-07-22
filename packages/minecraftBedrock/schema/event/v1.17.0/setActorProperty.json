@@ -4,6 +4,7 @@
 	"then": {
 		"properties": {
 			"set_actor_property": {
+				"title": "Set Actor Property",
 				"type": "object",
 				"description": "Set a property on the entity.",
 				"anyOf": [

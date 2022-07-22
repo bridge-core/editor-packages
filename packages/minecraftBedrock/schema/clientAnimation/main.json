@@ -46,6 +46,7 @@
 									"additionalProperties": false,
 									"properties": {
 										"pre": {
+											"title": "Pre Animation",
 											"type": "array",
 											"minItems": 3,
 											"maxItems": 3,
@@ -54,6 +55,7 @@
 											}
 										},
 										"post": {
+											"title": "Post Animation",
 											"type": "array",
 											"minItems": 3,
 											"maxItems": 3,
@@ -62,6 +64,7 @@
 											}
 										},
 										"lerp_mode": {
+											"title": "Linear Interpolation Mode",
 											"type": "string",
 											"enum": ["catmullrom", "linear"]
 										}
@@ -79,42 +82,63 @@
 	},
 	"type": "object",
 	"properties": {
-		"format_version": { "enum": ["1.8.0", "1.10.0"] },
+		"format_version": {
+			"title": "Format Version",
+			"$ref": "../project/formatVersionEnum.json"
+		},
 		"animations": {
+			"title": "Animations",
 			"type": "object",
 			"additionalProperties": false,
 			"patternProperties": {
 				"^animation\\..+$": {
 					"type": "object",
 					"properties": {
-						"animation_length": { "type": "number" },
-						"start_delay": { "$ref": "../molang/embedded.json" },
+						"animation_length": {
+							"title": "Animation Length",
+							"type": "number"
+						},
+						"start_delay": {
+							"title": "Start Delay",
+							"$ref": "../molang/embedded.json"
+						},
 						"loop": {
+							"title": "Loop",
 							"enum": [true, false, "hold_on_last_frame"]
 						},
-						"loop_delay": { "$ref": "../molang/embedded.json" },
+						"loop_delay": {
+							"title": "Loop Delay",
+							"$ref": "../molang/embedded.json"
+						},
 						"anim_time_update": {
+							"title": "Animation Time Update",
 							"$ref": "../molang/embedded.json"
 						},
 						"blend_weight": {
+							"title": "Blend Weight",
 							"type": "number"
 						},
 						"override_previous_animation": {
+							"title": "Override Previous Animation",
 							"type": "boolean"
 						},
 						"bones": {
+							"title": "Bones",
 							"type": "object",
 							"patternProperties": {
 								".*": {
 									"type": "object",
 									"properties": {
 										"rotation": {
+											"title": "Rotation",
 											"$ref": "#/definitions/frame"
 										},
 										"scale": {
+											"title": "Scale",
 											"$ref": "#/definitions/frame"
 										},
 										"position": {
+											"title": "Position",
 											"$ref": "#/definitions/frame"
 										}
 									}
@@ -122,6 +146,7 @@
 							}
 						},
 						"particle_effects": {
+							"title": "Particle Effects",
 							"propertyNames": {
 								"pattern": "^\\d+(\\.\\d+)?$"
 							},
@@ -132,15 +157,19 @@
 									"type": "object",
 									"properties": {
 										"effect": {
+											"title": "Effect",
 											"$ref": "../clientEntity/dynamic/particleReferenceEnum.json"
 										},
 										"locator": {
+											"title": "Locator",
 											"$ref": "../geometry/dynamic/locatorEnum.json"
 										},
 										"pre_effect_script": {
+											"title": "Pre Effect Script",
 											"$ref": "../molang/embedded.json"
 										},
 										"bind_to_actor": {
+											"title": "Bind To Actor",
 											"type": "boolean"
 										}
 									}
@@ -148,6 +177,7 @@
 							}
 						},
 						"sound_effects": {
+							"title": "Sound Effects",
 							"propertyNames": {
 								"pattern": "^\\d+(\\.\\d+)?$"
 							},
@@ -156,6 +186,7 @@
 									"type": "object",
 									"properties": {
 										"effect": {
+											"title": "Effect",
 											"$ref": "../clientEntity/dynamic/soundEffectReferenceEnum.json"
 										}
 									}
@@ -163,6 +194,7 @@
 							}
 						},
 						"timeline": {
+							"title": "Timeline",
 							"propertyNames": {
 								"pattern": "^\\d+(\\.\\d+)?$"
 							},

@@ -4,11 +4,13 @@
 	"then": {
 		"properties": {
 			"set_block_at_pos": {
+				"title": "Set Block At Position",
 				"description": "Sets a block relative to this block to another block type.",
 				"type": "object",
 				"additionalProperties": false,
 				"properties": {
 					"block_offset": {
+						"title": "Block Offset",
 						"description": "The offset from the block's center.",
 						"type": "array",
 						"maxItems": 3,
@@ -18,6 +20,7 @@
 						}
 					},
 					"block_type": {
+						"title": "Block Type",
 						"description": "The type of block to set.",
 						"$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
 					}

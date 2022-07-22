@@ -4,11 +4,13 @@
 	"then": {
 		"properties": {
 			"decrement_stack": {
+				"title": "Decrement Stack",
 				"type": "object",
 				"description": "Decrement item stack.",
 				"additionalProperties": false,
 				"properties": {
 					"ignore_game_mode": {
+						"title": "Ignore Game Mode",
 						"description": "Whether the item stack can be decremented in creative mode.",
 						"type": "boolean"
 					}

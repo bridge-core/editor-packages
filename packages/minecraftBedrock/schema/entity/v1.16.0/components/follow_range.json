@@ -12,7 +12,7 @@
 					"type": "integer"
 				},
 				"max": {
-					"title": "Max",
+					"title": "Maximum",
 					"type": "integer"
 				}
 			}

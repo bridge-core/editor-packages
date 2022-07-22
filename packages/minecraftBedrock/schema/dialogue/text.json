@@ -10,21 +10,25 @@
 			"type": "object",
 			"properties": {
 				"rawtext": {
+					"title": "Raw Text",
 					"type": "array",
 					"items": {
 						"type": "object",
 						"additionalProperties": false,
 						"properties": {
 							"translate": {
+								"title": "Translate",
 								"type": "string"
 							},
 							"with": {
+								"title": "With",
 								"type": "array",
 								"items": {
 									"type": "string"
 								}
 							},
 							"text": {
+								"title": "Text",
 								"type": "string"
 							}
 						}

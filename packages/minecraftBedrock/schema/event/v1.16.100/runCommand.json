@@ -4,11 +4,13 @@
 	"then": {
 		"properties": {
 			"run_command": {
+				"title": "Run Command",
 				"type": "object",
 				"description": "Triggers a slash command or a list of slash commands.",
 				"additionalProperties": false,
 				"properties": {
 					"command": {
+						"title": "Command",
 						"anyOf": [
 							{
 								"description": "List of slash commands to run.",
@@ -23,6 +25,7 @@
 						]
 					},
 					"target": {
+						"title": "Target",
 						"description": "The target context to execute against.",
 						"$ref": "../../general/filter/subject.json"
 					}

@@ -3,10 +3,12 @@
 	"type": "object",
 	"properties": {
 		"add": {
+			"title": "Add",
 			"type": "object",
 			"additionalProperties": false,
 			"properties": {
 				"component_groups": {
+					"title": "Component Groups",
 					"type": "array",
 					"items": {
 						"$ref": "../../entity/dynamic/currentContext/componentGroupEnum.json"

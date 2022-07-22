@@ -3,13 +3,16 @@
 	"type": "object",
 	"properties": {
 		"minecraft:entity": {
+			"title": "Entity Definition",
 			"required": ["description"],
 			"type": "object",
 			"properties": {
 				"description": {
+					"title": "Description",
 					"$ref": "../description.json"
 				},
 				"components": {
+					"title": "Components",
 					"allOf": [
 						{
 							"$ref": "./annotations/_main.json"
@@ -26,6 +29,7 @@
 					]
 				},
 				"component_groups": {
+					"title": "Component Groups",
 					"allOf": [
 						{
 							"$ref": "../../project/projectPrefix.json"
@@ -51,6 +55,7 @@
 					]
 				},
 				"events": {
+					"title": "Events",
 					"type": "object",
 					"allOf": [
 						{
@@ -70,6 +75,7 @@
 					]
 				},
 				"do_not_upgrade": {
+					"title": "Do Not Upgrade",
 					"additionalProperties": false
 				}
 			}

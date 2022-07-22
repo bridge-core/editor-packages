@@ -1,10 +1,12 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Surface Material Adjustments",
 	"description": "Specify fine-detail changes to blocks used in terrain generation (based on a noise function).",
 	"additionalProperties": false,
 	"type": "object",
 	"properties": {
 		"adjustments": {
+			"title": "Adjustments",
 			"description": "All adjustments that match the column's noise values will be applied in the order listed.",
 			"type": "array",
 			"items": {
@@ -12,35 +14,43 @@
 				"additionalProperties": false,
 				"properties": {
 					"materials": {
+						"title": "Materials",
 						"type": "object",
 						"additionalProperties": false,
 						"properties": {
 							"floor_material": {
+								"title": "Floor Material",
 								"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
 							},
 							"foundation_material": {
+								"title": "Foundation Material",
 								"description": "Controls the block type used deep underground in this biome when this adjustment is active.",
 								"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
 							},
 							"mid_material": {
+								"title": "Middle Material",
 								"description": "Controls the block type used in a layer below the surface of this biome when this adjustment is active.",
 								"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
 							},
 							"top_material": {
+								"title": "Top Material",
 								"description": "Controls the block type used for the surface of this biome when this adjustment is active.",
 								"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
 							},
 							"sea_floor_material": {
+								"title": "Sea Floor Material",
 								"description": "Controls the block type used as a floor for bodies of water in this biome when this adjustment is active.",
 								"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
 							},
 							"sea_material": {
+								"title": "Sea Material",
 								"description": "Controls the block type used in the bodies of water in this biome when this adjustment is active.",
 								"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
 							}
 						}
 					},
 					"noise_range": {
+						"title": "Noise Range",
 						"description": "Defines a range of noise values [min, max) for which this adjustment should be applied.",
 						"type": "array",
 						"minItems": 2,
@@ -50,6 +60,7 @@
 						}
 					},
 					"height_range": {
+						"title": "Height Range",
 						"description": "Defines a range of noise values [min, max] for which this adjustment should be applied.",
 						"type": "array",
 						"minItems": 2,
@@ -59,6 +70,7 @@
 						}
 					},
 					"noise_frequency_scale": {
+						"title": "Noise Frequency Scale",
 						"description": "The scale to multiply by the position when accessing the noise value for the material adjustments.",
 						"type": "number"
 					}

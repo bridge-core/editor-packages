@@ -4,6 +4,7 @@
 	"then": {
 		"properties": {
 			"set_block_property": {
+				"title": "Set Block Property",
 				"type": "object",
 				"description": "Sets a block property on this block.",
 				"propertyNames": {

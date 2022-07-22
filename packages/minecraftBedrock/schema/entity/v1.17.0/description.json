@@ -11,6 +11,7 @@
 				"type": "object",
 				"properties": {
 					"aliases": {
+						"title": "Aliases",
 						"type": "object",
 						"patternProperties": {
 							".*": {
@@ -19,23 +20,27 @@
 						}
 					},
 					"properties": {
+						"title": "Properties",
 						"type": "object",
 						"patternProperties": {
 							".*": {
 								"type": "object",
 								"properties": {
 									"values": {
+										"title": "Values",
 										"anyOf": [
 											{
 												"type": "object",
 												"properties": {
 													"min": {
+														"title": "Minimum",
 														"type": [
 															"number",
 															"integer"
 														]
 													},
 													"max": {
+														"title": "Maximum",
 														"type": [
 															"number",
 															"integer"
@@ -62,6 +67,7 @@
 										]
 									},
 									"default": {
+										"title": "Default",
 										"anyOf": [
 											{
 												"type": "string"
@@ -75,6 +81,7 @@
 										]
 									},
 									"client_sync": {
+										"title": "Client Sync",
 										"type": "boolean"
 									}
 								}

@@ -1,45 +1,55 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
+	"title": "Mountain Parameters",
 	"type": "object",
 	"properties": {
 		"top_slide": {
+			"title": "Top Slide",
 			"description": "Controls the density tapering that happens at the top of the world to prevent terrain from reaching too high.",
 			"type": "object",
 			"properties": {
 				"enabled": {
+					"title": "Enabled",
 					"description": "If false, top slide will be disabled. If true, other parameters will be taken into account.",
 					"type": "boolean"
 				}
 			}
 		},
 		"steep_material_adjustment": {
+			"title": "Steep Material Adjustment",
 			"description": "Defines surface material for steep slopes.",
 			"type": "object",
 			"properties": {
 				"material": {
+					"title": "Material",
 					"description": "Block type use as steep material.",
 					"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
 				},
 				"north_slopes": {
+					"title": "North Slopes",
 					"description": "Enable for north facing slopes.",
 					"type": "boolean"
 				},
 				"east_slopes": {
+					"title": "East Slopes",
 					"description": "Enable for east facing slopes.",
 					"type": "boolean"
 				},
 				"south_slopes": {
+					"title": "South Slopes",
 					"description": "Enable for south facing slopes.",
 					"type": "boolean"
 				},
 				"west_slopes": {
+					"title": "West Slopes",
 					"description": "Enable for west facing slopes.",
 					"type": "boolean"
 				}
 			}
 		},
 		"peaks_factor": {
+			"title": "Peaks Factor",
 			"type": "number"
 		}
 	}

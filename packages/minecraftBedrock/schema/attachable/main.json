@@ -6,14 +6,17 @@
 	"type": "object",
 	"properties": {
 		"format_version": {
+			"title": "Format Version",
 			"$ref": "../project/formatVersionEnum.json"
 		},
 		"minecraft:attachable": {
+			"title": "Attachable Definition",
 			"additionalProperties": false,
 			"required": ["description"],
 			"type": "object",
 			"properties": {
 				"description": {
+					"title": "Description",
 					"required": [
 						"textures",
 						"geometry",
@@ -25,9 +28,11 @@
 					"type": "object",
 					"properties": {
 						"identifier": {
+							"title": "Identifier",
 							"$ref": "../general/reference/prefixedFileIdentifier.json"
 						},
 						"item": {
+							"title": "Item",
 							"description": "Sets an item identifier with a Molang script to decide when to render the attachable.",
 							"anyOf": [
 								{
@@ -48,6 +53,7 @@
 							]
 						},
 						"materials": {
+							"title": "Materials",
 							"description": "Defines the materials used in the attachable.",
 							"patternProperties": {
 								".*": {
@@ -56,6 +62,7 @@
 							}
 						},
 						"textures": {
+							"title": "Textures",
 							"description": "Defines the textures used in the attachable.",
 							"patternProperties": {
 								".*": {
@@ -64,6 +71,7 @@
 							}
 						},
 						"geometry": {
+							"title": "Geometry",
 							"description": "Defines the geometries used in the attachable.",
 							"patternProperties": {
 								".*": {
@@ -72,17 +80,21 @@
 							}
 						},
 						"queryable_geometry": {
+							"title": "Queryable Geometry",
 							"$ref": "../general/reference/geometry.json"
 						},
 						"scripts": {
+							"title": "Scripts",
 							"additionalProperties": false,
 							"type": "object",
 							"properties": {
 								"parent_setup": {
+									"title": "Parent Setup",
 									"description": "Sets up the parent bone for the attachable.",
 									"type": "string"
 								},
 								"pre_animation": {
+									"title": "Pre Animation",
 									"description": "Pre-computes any expensive and complex values you may want to reuse in your scripts, long-living index variable updates, or generally any one-off computation per render tick.",
 									"type": "array",
 									"items": {
@@ -90,6 +102,7 @@
 									}
 								},
 								"animate": {
+									"title": "Animate",
 									"type": "array",
 									"items": {
 										"anyOf": [
@@ -112,16 +125,19 @@
 									}
 								},
 								"should_update_bones_and_effects_offscreen": {
+									"title": "Should Update Bones And Effects Offscreen",
 									"description": "Bones and effects will still be updated if the entity is off screen if this expression returns anything other than 0.0.",
 									"$ref": "../molang/embedded.json"
 								},
 								"should_update_effects_offscreen": {
+									"title": "Should Update Effects Offscreen",
 									"description": "Effects will still be updated if the entity is off screen if this expression or 'should_update_bones_and_effects_offscreen' returns anything other than 0.0.",
 									"$ref": "../molang/embedded.json"
 								}
 							}
 						},
 						"animations": {
+							"title": "Animations",
 							"type": "object",
 							"patternProperties": {
 								".*": {
@@ -130,6 +146,7 @@
 							}
 						},
 						"render_controllers": {
+							"title": "Render Controllers",
 							"description": "References all render controllers used to render the attachable.",
 							"type": "array",
 							"items": {

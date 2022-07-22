@@ -6,6 +6,7 @@
 	"type": "object",
 	"properties": {
 		"format_version": {
+			"title": "Format Version",
 			"type": "array",
 			"minItems": 3,
 			"maxItems": 3,
@@ -20,12 +21,15 @@
 			"type": "object",
 			"properties": {
 				"sound": {
+					"title": "Sound",
 					"$ref": "../general/vanilla/blockSound.json"
 				},
 				"brightness_gamma": {
+					"title": "Brightness Gamma",
 					"type": "number"
 				},
 				"isotropic": {
+					"title": "Isotropic",
 					"anyOf": [
 						{
 							"type": "boolean"
@@ -35,24 +39,31 @@
 							"additionalProperties": false,
 							"properties": {
 								"up": {
+									"title": "Up",
 									"type": "boolean"
 								},
 								"down": {
+									"title": "Down",
 									"type": "boolean"
 								},
 								"side": {
+									"title": "Side",
 									"type": "boolean"
 								},
 								"north": {
+									"title": "North",
 									"type": "boolean"
 								},
 								"south": {
+									"title": "South",
 									"type": "boolean"
 								},
 								"east": {
+									"title": "East",
 									"type": "boolean"
 								},
 								"west": {
+									"title": "West",
 									"type": "boolean"
 								}
 							}
@@ -60,6 +71,7 @@
 					]
 				},
 				"textures": {
+					"title": "Textures",
 					"anyOf": [
 						{
 							"$ref": "../general/reference/terrainTexture.json"
@@ -69,24 +81,31 @@
 							"additionalProperties": false,
 							"properties": {
 								"up": {
+									"title": "Up",
 									"$ref": "../general/reference/terrainTexture.json"
 								},
 								"down": {
+									"title": "Down",
 									"$ref": "../general/reference/terrainTexture.json"
 								},
 								"side": {
+									"title": "Side",
 									"$ref": "../general/reference/terrainTexture.json"
 								},
 								"north": {
+									"title": "North",
 									"$ref": "../general/reference/terrainTexture.json"
 								},
 								"south": {
+									"title": "South",
 									"$ref": "../general/reference/terrainTexture.json"
 								},
 								"east": {
+									"title": "East",
 									"$ref": "../general/reference/terrainTexture.json"
 								},
 								"west": {
+									"title": "West",
 									"$ref": "../general/reference/terrainTexture.json"
 								}
 							}
@@ -94,6 +113,7 @@
 					]
 				},
 				"carried_textures": {
+					"title": "Carries Textures",
 					"anyOf": [
 						{
 							"$ref": "../general/reference/terrainTexture.json"
@@ -103,24 +123,31 @@
 							"additionalProperties": false,
 							"properties": {
 								"up": {
+									"title": "Up",
 									"$ref": "../general/reference/terrainTexture.json"
 								},
 								"down": {
+									"title": "Down",
 									"$ref": "../general/reference/terrainTexture.json"
 								},
 								"side": {
+									"title": "Side",
 									"$ref": "../general/reference/terrainTexture.json"
 								},
 								"north": {
+									"title": "North",
 									"$ref": "../general/reference/terrainTexture.json"
 								},
 								"south": {
+									"title": "South",
 									"$ref": "../general/reference/terrainTexture.json"
 								},
 								"east": {
+									"title": "East",
 									"$ref": "../general/reference/terrainTexture.json"
 								},
 								"west": {
+									"title": "West",
 									"$ref": "../general/reference/terrainTexture.json"
 								}
 							}

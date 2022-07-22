@@ -4,19 +4,23 @@
 	"then": {
 		"properties": {
 			"damage": {
+				"title": "Damage",
 				"type": "object",
 				"description": "Deals damage to the target.",
 				"additionalProperties": false,
 				"properties": {
 					"type": {
+						"title": "Type",
 						"$ref": "../../general/vanilla/damageType.json",
 						"description": "The type of damage to deal."
 					},
 					"amount": {
+						"title": "Amount",
 						"type": "integer",
 						"description": "The amount of damage to deal."
 					},
 					"target": {
+						"title": "Target",
 						"description": "The target context to execute against.",
 						"anyOf": [
 							{
@@ -28,6 +32,7 @@
 						]
 					},
 					"mob_amount": {
+						"title": "Mob Amount",
 						"type": "integer",
 						"description": "The amount of damage to deal if held by a mob."
 					}

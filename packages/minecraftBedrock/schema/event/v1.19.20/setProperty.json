@@ -4,6 +4,7 @@
 	"then": {
 		"properties": {
 			"set_property": {
+				"title": "Set Property",
 				"description": "Set a property on the entity.",
 				"type": "object",
 				"anyOf": [

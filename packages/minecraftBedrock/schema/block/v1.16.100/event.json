@@ -53,6 +53,7 @@
 		{
 			"properties": {
 				"randomize": {
+					"title": "Randomize",
 					"type": "array",
 					"items": {
 						"allOf": [
@@ -60,9 +61,11 @@
 								"type": "object",
 								"properties": {
 									"weight": {
+										"title": "Weight",
 										"type": "number"
 									},
 									"condition": {
+										"title": "Condition",
 										"type": "string",
 										"$ref": "../../molang/embedded.json"
 									}
@@ -75,6 +78,7 @@
 					}
 				},
 				"sequence": {
+					"title": "Sequence",
 					"type": "array",
 					"items": {
 						"allOf": [
@@ -82,6 +86,7 @@
 								"type": "object",
 								"properties": {
 									"condition": {
+										"title": "Condition",
 										"type": "string",
 										"$ref": "../../molang/embedded.json"
 									}

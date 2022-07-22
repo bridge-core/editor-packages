@@ -4,15 +4,18 @@
 	"then": {
 		"properties": {
 			"remove_mob_effect": {
+				"title": "Remove Mob Effect",
 				"type": "object",
 				"description": "Removes mob effect from target.",
 				"additionalProperties": false,
 				"properties": {
 					"effect": {
+						"title": "Effect",
 						"description": "The mob effect to remove. Use 'all' to remove all mob effects from target.",
 						"$ref": "../../general/effectName.json"
 					},
 					"target": {
+						"title": "Target",
 						"description": "The target context to execute against.",
 						"$ref": "../../general/filter/subject.json"
 					}

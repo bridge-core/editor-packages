@@ -4,6 +4,9 @@
 	"deno.unstable": false,
 	"deno.importMap": "importMap.json",
 
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+
 	"json.schemas": [
 		{
 			"fileMatch": ["packages/*/preset/**/manifest.json"],

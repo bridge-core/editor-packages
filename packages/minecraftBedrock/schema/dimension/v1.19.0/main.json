@@ -3,21 +3,25 @@
 	"type": "object",
 	"properties": {
 		"minecraft:dimension": {
+			"title": "Dimension Definition",
 			"additionalProperties": false,
 			"type": "object",
 			"properties": {
 				"description": {
+					"title": "Description",
 					"type": "object",
 					"additionalProperties": false,
 					"properties": {
 						// Only vanilla dimensions can be overwritten
 						"identifier": {
+							"title": "Identifier",
 							"type": "string",
-							"enum": ["minecraft:overworld"]
+							"const": "minecraft:overworld"
 						}
 					}
 				},
 				"components": {
+					"title": "Components",
 					"$ref": "./components/_main.json"
 				}
 			}

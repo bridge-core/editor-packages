@@ -4,12 +4,14 @@
 	"type": "object",
 	"properties": {
 		"minecraft:client_entity": {
+			"title": "Client Entity Definition",
 			"description": "The resource description of the entity.",
 			"additionalProperties": false,
 			"required": ["description"],
 			"type": "object",
 			"properties": {
 				"description": {
+					"title": "Description",
 					"required": [
 						"textures",
 						"geometry",
@@ -21,9 +23,11 @@
 					"type": "object",
 					"properties": {
 						"identifier": {
+							"title": "Identifier",
 							"$ref": "../../general/reference/prefixedFileIdentifier.json"
 						},
 						"min_engine_version": {
+							"title": "Minimum Engine Version",
 							"description": "Engine version for which the top resource pack was built. If a definition's min_engine_version is newer than that pack's engine version then the definition is not parsed. Multiple definition files may use the same identifier, in which case only one of those definitions will be loaded. The definition with the same or closest and not greater min_engine_version, as compared to the top resource pack's engine version, will be parsed; all other definitions with the same identifier will not be parsed.",
 							"$ref": "../../project/formatVersionEnum.json"
 						},
@@ -32,33 +36,41 @@
 							"description": "Whether to enable attachables on the entity."
 						},
 						"hide_armor": {
+							"title": "Hide Armor",
 							"type": "boolean"
 						},
 						"spawn_egg": {
+							"title": "Spawn Egg",
 							"description": "Defines the spawn egg texture/color for the entity.",
 							"additionalProperties": false,
 							"type": "object",
 							"properties": {
 								"texture": {
+									"title": "Texture",
 									"description": "Texture to use for the spawn egg.",
 									"$ref": "../../general/reference/itemTexture.json"
 								},
 								"texture_index": {
+									"title": "Texture Index",
 									"description": "The texture index to use.",
 									"type": "integer"
 								},
 								"base_color": {
+									"title": "Base Color",
 									"description": "The base color of the spawn egg.",
 									"$ref": "../../general/hexColor.json"
 								},
 								"overlay_color": {
+									"title": "Overlay Color",
 									"description": "The overlay color of the spawn egg.",
 									"$ref": "../../general/hexColor.json"
 								}
 							}
 						},
 						"materials": {
+							"title": "Materials",
 							"description": "Defines the materials used in the entity.",
+							"type": "object",
 							"patternProperties": {
 								".*": {
 									"$ref": "../../general/vanilla/material.json"
@@ -66,6 +78,7 @@
 							}
 						},
 						"textures": {
+							"title": "Textures",
 							"description": "Defines the textures used in the entity.",
 							"type": "object",
 							"allOf": [
@@ -87,6 +100,7 @@
 							]
 						},
 						"geometry": {
+							"title": "Geometry",
 							"description": "Defines the geometries used in the entity.",
 							"type": "object",
 							"patternProperties": {
@@ -99,6 +113,7 @@
 							"$ref": "../../general/reference/geometry.json"
 						},
 						"animations": {
+							"title": "Animations",
 							"description": "Defines animations and animation controllers to be used in this entity.",
 							"type": "object",
 							"allOf": [
@@ -118,11 +133,13 @@
 							]
 						},
 						"scripts": {
+							"title": "Scripts",
 							"description": "Calculates variables to be used on the entity pre-animation and can run animations.",
 							"additionalProperties": false,
 							"type": "object",
 							"properties": {
 								"scale": {
+									"title": "Scale",
 									"description": "Sets the scale of the mobs geometry.",
 									"anyOf": [
 										{
@@ -135,6 +152,7 @@
 									]
 								},
 								"initialize": {
+									"title": "Initialize",
 									"description": "Initializes variables.",
 									"type": "array",
 									"items": {
@@ -142,6 +160,7 @@
 									}
 								},
 								"pre_animation": {
+									"title": "Pre Animation",
 									"description": "Pre-computes any expensive and complex values you may want to reuse in your scripts, long-living index variable updates, or generally any one-off computation per render tick.",
 									"type": "array",
 									"items": {
@@ -149,9 +168,11 @@
 									}
 								},
 								"parent_setup": {
+									"title": "Parent Setup",
 									"$ref": "../../molang/embedded.json"
 								},
 								"animate": {
+									"title": "Animate",
 									"description": "Runs animations and animation controllers that are defines under 'animations'",
 									"type": "array",
 									"minItems": 1,
@@ -176,6 +197,7 @@
 									}
 								},
 								"variables": {
+									"title": "Variables",
 									"description": "A list of variables that need certain settings applied to them.",
 									"patternProperties": {
 										"^(variable|v)\\..*": {
@@ -184,16 +206,19 @@
 									}
 								},
 								"should_update_bones_and_effects_offscreen": {
+									"title": "Should Update Bones And Effects Offscreen",
 									"description": "Bones and effects will still be updated if the entity is off screen if this expression returns anything other than 0.0.",
 									"$ref": "../../molang/embedded.json"
 								},
 								"should_update_effects_offscreen": {
+									"title": "Should Update Effects Offscreen",
 									"description": "Effects will still be updated if the entity is off screen if this expression or 'should_update_bones_and_effects_offscreen' returns anything other than 0.0.",
 									"$ref": "../../molang/embedded.json"
 								}
 							}
 						},
 						"sound_effects": {
+							"title": "Sound Effects",
 							"description": "Defines the sounds to be played on the entity.",
 							"type": "object",
 							"allOf": [
@@ -210,6 +235,7 @@
 							]
 						},
 						"render_controllers": {
+							"title": "Render Controllers",
 							"description": "References all render controllers used to render the entity.",
 							"type": "array",
 							"items": {
@@ -233,6 +259,7 @@
 							}
 						},
 						"particle_effects": {
+							"title": "Particle Effects",
 							"description": "Defines the particles to be played on the entity.",
 							"type": "object",
 							"allOf": [
@@ -249,6 +276,7 @@
 							]
 						},
 						"particle_emitters": {
+							"title": "Particle Emitters",
 							"description": "Defines the entity's particle emitters.",
 							"allOf": [
 								{
@@ -264,6 +292,7 @@
 							]
 						},
 						"held_item_ignores_lighting": {
+							"title": "Held Item Ignores Lighting",
 							"description": "This determines if the item held by an entity should render fully lit up (if true), or depending on surrounding lighting.",
 							"type": "boolean"
 						}

@@ -4,6 +4,7 @@
 	"then": {
 		"properties": {
 			"swing": {
+				"title": "Swing",
 				"type": "object",
 				"description": "Event causes the actor to swing.",
 				"additionalProperties": false
