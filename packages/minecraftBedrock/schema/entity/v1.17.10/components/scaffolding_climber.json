@@ -3,6 +3,5 @@
 	"additionalProperties": false,
 	"doNotSuggest": true,
 	"deprecationMessage": "Deprecated in favor of 'minecraft:block_climber' (format_version: v1.17.10).",
-	"title": "Scaffolding Climber",
-	"type": "object"
+	"title": "Scaffolding Climber"
 }

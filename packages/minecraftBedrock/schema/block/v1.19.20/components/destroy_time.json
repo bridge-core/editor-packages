@@ -1,0 +1,7 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"title": "Destroy Time",
+	"doNotSuggest": true,
+	"deprecationMessage": "Deprecated in favor of 'minecraft:destructible_by_mining' (format_version: v1.19.20)."
+}

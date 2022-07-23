@@ -103,6 +103,16 @@
 		},
 		"minecraft:loot": {
 			"$ref": "../../v1.16.0/components/loot.json"
+		},
+		// Deprecated
+		"minecraft:entity_collision": {
+			"$ref": "./entity_collision.json"
+		},
+		"minecraft:pick_collision": {
+			"$ref": "./pick_collision.json"
+		},
+		"minecraft:block_light_absorption": {
+			"$ref": "./block_light_absorption.json"
 		}
 	}
 }

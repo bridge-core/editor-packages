@@ -102,11 +102,29 @@
 			"$ref": "../../v1.16.0/components/loot.json"
 		},
 		// Deprecated
+		"minecraft:destroy_time": {
+			"$ref": "./destroy_time.json"
+		},
 		"minecraft:explosion_resistance": {
 			"$ref": "./explosion_resistance.json"
 		},
 		"minecraft:unwalkable": {
 			"$ref": "./unwalkable.json"
+		},
+		"minecraft:block_collision": {
+			"$ref": "../../v1.19.10/components/block_collision.json"
+		},
+		"minecraft:ticking": {
+			"$ref": "../../v1.19.10/components/ticking.json"
+		},
+		"minecraft:entity_collision": {
+			"$ref": "../../v1.18.10/components/entity_collision.json"
+		},
+		"minecraft:pick_collision": {
+			"$ref": "../../v1.18.10/components/pick_collision.json"
+		},
+		"minecraft:block_light_absorption": {
+			"$ref": "../../v1.18.10/components/block_light_absorption.json"
 		}
 	}
 }

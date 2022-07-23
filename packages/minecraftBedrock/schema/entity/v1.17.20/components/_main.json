@@ -5,9 +5,6 @@
 		"minecraft:block_climber": {
 			"$ref": "../../v1.17.10/components/block_climber.json"
 		},
-		"minecraft:scaffolding_climber": {
-			"$ref": "../../v1.17.10/components/scaffolding_climber.json"
-		},
 		"minecraft:drying_out_timer": {
 			"$ref": "../../v1.17.0/components/drying_out_timer.json"
 		},
@@ -190,9 +187,6 @@
 		},
 		"minecraft:follow_range": {
 			"$ref": "../../v1.16.0/components/follow_range.json"
-		},
-		"minecraft:foot_size": {
-			"$ref": "../../v1.16.0/components/foot_size.json"
 		},
 		"minecraft:friction_modifier": {
 			"$ref": "../../v1.16.0/components/friction_modifier.json"
@@ -508,6 +502,13 @@
 		},
 		"minecraft:water_movement": {
 			"$ref": "../../v1.16.0/components/water_movement.json"
+		},
+		// Deprecated
+		"minecraft:scaffolding_climber": {
+			"$ref": "../../v1.17.10/components/scaffolding_climber.json"
+		},
+		"minecraft:foot_size": {
+			"$ref": "../../v1.16.0/components/foot_size.json"
 		}
 	}
 }

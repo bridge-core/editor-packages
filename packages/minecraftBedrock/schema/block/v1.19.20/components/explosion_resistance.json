@@ -3,5 +3,5 @@
 	"additionalProperties": false,
 	"title": "Explosion Resistance",
 	"doNotSuggest": true,
-	"deprecationMessage": "Deprecated as of v1.19.20.23 - How much power it can resist from explosion. Bigger the value is, more explosion power it blocks from explosion. If the value is less than remaining power from explosion, the block would destroy."
+	"deprecationMessage": "Deprecated in favor of 'minecraft:destructible_by_explosion' (format_version: v1.19.20)."
 }

@@ -176,9 +176,6 @@
 		"minecraft:follow_range": {
 			"$ref": "../../v1.16.0/components/follow_range.json"
 		},
-		"minecraft:foot_size": {
-			"$ref": "../../v1.16.0/components/foot_size.json"
-		},
 		"minecraft:friction_modifier": {
 			"$ref": "../../v1.16.0/components/friction_modifier.json"
 		},
@@ -499,6 +496,10 @@
 		},
 		"minecraft:water_movement": {
 			"$ref": "../../v1.16.0/components/water_movement.json"
+		},
+		// Deprecated
+		"minecraft:foot_size": {
+			"$ref": "../../v1.16.0/components/foot_size.json"
 		}
 	}
 }

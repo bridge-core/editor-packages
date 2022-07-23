@@ -9,16 +9,16 @@
 			"title": "Value",
 			"anyOf": [
 				{
-					"type": "number"
+					"type": "integer"
 				},
 				{
 					"type": "object",
 					"properties": {
 						"range_min": {
-							"type": "number"
+							"type": "integer"
 						},
 						"range_max": {
-							"type": "number"
+							"type": "integer"
 						}
 					}
 				}
@@ -26,11 +26,11 @@
 		},
 		"max": {
 			"title": "Maximum",
-			"type": "number"
+			"type": "integer"
 		},
 		"min": {
 			"title": "Minimum",
-			"type": "number"
+			"type": "integer"
 		}
 	}
 }
