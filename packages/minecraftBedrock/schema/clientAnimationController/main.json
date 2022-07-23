@@ -161,7 +161,8 @@
 											"type": "array",
 											"items": {
 												"type": "object",
-												"patternProperties": {
+												"additionalProperties": false,
+												"properties": {
 													"effect": {
 														"title": "Effect",
 														"description": "Valid sound effect names should be listed in the entity's resource definition json file.",
