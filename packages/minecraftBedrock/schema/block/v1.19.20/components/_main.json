@@ -5,18 +5,21 @@
 		"minecraft:destructible_by_explosion": {
 			"$ref": "./destructible_by_explosion.json"
 		},
-        "minecraft:selection_box": {
+		"minecraft:selection_box": {
 			"$ref": "./selection_box.json"
 		},
-        "minecraft:light_emission": {
+		"minecraft:light_emission": {
 			"$ref": "./light_emission.json"
 		},
-        "minecraft:friction": {
+		"minecraft:light_dampening": {
+			"$ref": "./light_dampening.json"
+		},
+		"minecraft:friction": {
 			"$ref": "./friction.json"
 		},
-        "minecraft:destructible_by_mining": {
-            "$ref": "./destructible_by_mining.json"
-        },
+		"minecraft:destructible_by_mining": {
+			"$ref": "./destructible_by_mining.json"
+		},
 		"minecraft:queued_ticking": {
 			"$ref": "../../v1.19.10/components/queued_ticking.json"
 		},
@@ -25,9 +28,6 @@
 		},
 		"minecraft:part_visibility": {
 			"$ref": "../../v1.19.10/components/part_visibility.json"
-		},
-		"minecraft:light_dampening": {
-			"$ref": "../../v1.19.10/components/light_dampening.json"
 		},
 		"minecraft:collision_box": {
 			"$ref": "../../v1.19.10/components/collision_box.json"
@@ -47,7 +47,6 @@
 		"minecraft:preventsjumping": {
 			"$ref": "../../v1.18.30/components/preventsjumping.json"
 		},
-		
 		"minecraft:creative_category": {
 			"$ref": "../../v1.16.100/components/creative_category.json"
 		},

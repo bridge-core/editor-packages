@@ -11,9 +11,6 @@
 		"minecraft:part_visibility": {
 			"$ref": "./part_visibility.json"
 		},
-		"minecraft:light_dampening": {
-			"$ref": "./light_dampening.json"
-		},
 		"minecraft:collision_box": {
 			"$ref": "./collision_box.json"
 		},
@@ -31,6 +28,9 @@
 		},
 		"minecraft:preventsjumping": {
 			"$ref": "../../v1.18.30/components/preventsjumping.json"
+		},
+		"minecraft:block_light_filter": {
+			"$ref": "../../v1.18.10/components/block_light_filter.json"
 		},
 		"minecraft:aim_collision": {
 			"$ref": "../../v1.18.10/components/aim_collision.json"
