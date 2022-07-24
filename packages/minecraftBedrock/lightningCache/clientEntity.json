@@ -28,7 +28,7 @@
 	},
 	{
 		"cacheKey": "soundEffectReference",
-		"path": "minecraft:client_entity/description/sound_effect"
+		"path": "minecraft:client_entity/description/sound_effects"
 	},
 	{
 		"cacheKey": "particleIdentifier",
@@ -59,7 +59,7 @@
 	},
 	{
 		"cacheKey": "soundEffectIdentifier",
-		"path": "minecraft:client_entity/description/sound_effect/*"
+		"path": "minecraft:client_entity/description/sound_effects/*"
 	},
 	{
 		"cacheKey": "renderControllerIdentifier",
