@@ -4,7 +4,8 @@
 		"packType": "skinPack",
 		"scope": "skins.json",
 		"matcher": "skins.json",
-		"fileContent": ["skins"]
+		"fileContent": ["skins"],
+		"fileExtensions": [".json"]
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/skins/main.json"

@@ -5,7 +5,8 @@
 	"detect": {
 		"packType": ["behaviorPack", "skinPack"],
 		"scope": "texts/",
-		"matcher": "texts/**/*.lang"
+		"matcher": "texts/**/*",
+		"fileExtensions": [".lang"]
 	},
 
 	"formatOnSaveCapable": false

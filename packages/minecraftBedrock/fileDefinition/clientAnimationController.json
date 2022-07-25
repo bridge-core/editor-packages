@@ -4,10 +4,8 @@
 	"detect": {
 		"packType": "resourcePack",
 		"scope": "animation_controllers/",
-		"matcher": [
-			"animation_controllers/**/*.json",
-			"animation_controllers/*.json"
-		]
+		"matcher": ["animation_controllers/**/*", "animation_controllers/*"],
+		"fileExtensions": [".json"]
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/clientAnimationController/main.json",

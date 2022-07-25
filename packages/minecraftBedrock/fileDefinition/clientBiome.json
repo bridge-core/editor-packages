@@ -3,7 +3,8 @@
 	"detect": {
 		"packType": "resourcePack",
 		"scope": "biomes_client.json",
-		"matcher": "biomes_client.json"
+		"matcher": "biomes_client.json",
+		"fileExtensions": [".json"]
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/clientBiome/main.json",

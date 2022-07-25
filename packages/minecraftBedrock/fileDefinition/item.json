@@ -4,8 +4,9 @@
 	"detect": {
 		"packType": "behaviorPack",
 		"scope": "items/",
-		"matcher": ["items/**/*.json", "items/*.json"],
-		"fileContent": ["minecraft:item"]
+		"matcher": ["items/**/*", "items/*"],
+		"fileContent": ["minecraft:item"],
+		"fileExtensions": [".json"]
 	},
 
 	"formatVersionMap": {

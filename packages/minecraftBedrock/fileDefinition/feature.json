@@ -4,7 +4,8 @@
 	"detect": {
 		"packType": "behaviorPack",
 		"scope": "features/",
-		"matcher": "features/*.json"
+		"matcher": "features/*",
+		"fileExtensions": [".json"]
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/feature/main.json",

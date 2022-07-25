@@ -4,8 +4,9 @@
 	"detect": {
 		"packType": "worldTemplate",
 		"scope": "volumes/",
-		"matcher": ["volumes/**/*.json", "volumes/*.json"],
-		"fileContent": ["minecraft:volume"]
+		"matcher": ["volumes/**/*", "volumes/*"],
+		"fileContent": ["minecraft:volume"],
+		"fileExtensions": [".json"]
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/volume/main.json",

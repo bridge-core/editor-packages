@@ -4,8 +4,9 @@
 	"detect": {
 		"packType": "resourcePack",
 		"scope": "particles/",
-		"matcher": ["particles/**/*.json", "particles/*.json"],
-		"fileContent": ["particle_effect"]
+		"matcher": ["particles/**/*", "particles/*"],
+		"fileContent": ["particle_effect"],
+		"fileExtensions": [".json"]
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/particle/main.json",

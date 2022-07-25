@@ -3,7 +3,8 @@
 	"detect": {
 		"packType": ["behaviorPack", "resourcePack", "skinPack"],
 		"scope": "texts/languages.json",
-		"matcher": "texts/languages.json"
+		"matcher": "texts/languages.json",
+		"fileExtensions": [".json"]
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/langDef/main.json"

@@ -4,8 +4,9 @@
 	"detect": {
 		"packType": "behaviorPack",
 		"scope": "spawn_rules/",
-		"matcher": ["spawn_rules/**/*.json", "spawn_rules/*.json"],
-		"fileContent": ["minecraft:spawn_rules"]
+		"matcher": ["spawn_rules/**/*", "spawn_rules/*"],
+		"fileContent": ["minecraft:spawn_rules"],
+		"fileExtensions": [".json"]
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/spawnRule/main.json",

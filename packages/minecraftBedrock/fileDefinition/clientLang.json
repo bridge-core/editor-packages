@@ -5,7 +5,8 @@
 	"detect": {
 		"packType": "resourcePack",
 		"scope": ["texts/"],
-		"matcher": "texts/**/*.lang"
+		"matcher": "texts/**/*",
+		"fileExtensions": [".lang"]
 	},
 
 	"formatOnSaveCapable": false,

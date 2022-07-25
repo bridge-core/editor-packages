@@ -5,7 +5,7 @@
 	"detect": {
 		"packType": "behaviorPack",
 		"scope": "structures/",
-		"matcher": ["structures/**/*.mcstructure", "structures/*.mcstructure"],
+		"matcher": ["structures/**/*", "structures/*"],
 		"fileExtensions": [".mcstructure"]
 	}
 }

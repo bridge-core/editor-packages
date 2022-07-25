@@ -4,8 +4,9 @@
 	"detect": {
 		"packType": "behaviorPack",
 		"scope": "biomes/",
-		"matcher": ["biomes/**/*.json", "biomes/*.json"],
-		"fileContent": ["minecraft:biome"]
+		"matcher": ["biomes/**/*", "biomes/*"],
+		"fileContent": ["minecraft:biome"],
+		"fileExtensions": [".json"]
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/biome/main.json",

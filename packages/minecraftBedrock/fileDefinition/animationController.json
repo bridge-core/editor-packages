@@ -4,11 +4,9 @@
 	"detect": {
 		"packType": "behaviorPack",
 		"scope": "animation_controllers/",
-		"matcher": [
-			"animation_controllers/**/*.json",
-			"animation_controllers/*.json"
-		],
-		"fileContent": ["animation_controllers"]
+		"matcher": ["animation_controllers/**/*", "animation_controllers/*"],
+		"fileContent": ["animation_controllers"],
+		"fileExtensions": [".json"]
 	},
 	"schema": "file:///data/packages/minecraftBedrock/schema/animationController/main.json",
 	"lightningCache": "animationController.json",

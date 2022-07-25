@@ -4,8 +4,9 @@
 	"detect": {
 		"packType": "behaviorPack",
 		"scope": "loot_tables/",
-		"matcher": ["loot_tables/**/*.json", "loot_tables/*.json"],
-		"fileContent": ["pools"]
+		"matcher": ["loot_tables/**/*", "loot_tables/*"],
+		"fileContent": ["pools"],
+		"fileExtensions": [".json"]
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/lootTable/main.json",

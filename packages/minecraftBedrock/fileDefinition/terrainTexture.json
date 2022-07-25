@@ -3,7 +3,8 @@
 	"detect": {
 		"packType": "resourcePack",
 		"scope": "textures/terrain_texture.json",
-		"matcher": "textures/terrain_texture.json"
+		"matcher": "textures/terrain_texture.json",
+		"fileExtensions": [".json"]
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/terrainTexture/main.json",

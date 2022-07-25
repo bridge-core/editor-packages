@@ -3,7 +3,8 @@
 	"detect": {
 		"packType": "resourcePack",
 		"scope": "sounds/music_definitions.json",
-		"matcher": "sounds/music_definitions.json"
+		"matcher": "sounds/music_definitions.json",
+		"fileExtensions": [".json"]
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/musicDefinition/main.json"

@@ -4,8 +4,9 @@
 	"detect": {
 		"packType": "behaviorPack",
 		"scope": "entities/",
-		"matcher": ["entities/**/*.json", "entities/*.json"],
-		"fileContent": ["minecraft:entity"]
+		"matcher": ["entities/**/*", "entities/*"],
+		"fileContent": ["minecraft:entity"],
+		"fileExtensions": [".json"]
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/entity/main.json",

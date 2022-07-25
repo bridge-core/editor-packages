@@ -4,11 +4,9 @@
 	"detect": {
 		"packType": "resourcePack",
 		"scope": "render_controllers/",
-		"matcher": [
-			"render_controllers/**/*.json",
-			"render_controllers/*.json"
-		],
-		"fileContent": ["render_controllers"]
+		"matcher": ["render_controllers/**/*", "render_controllers/*"],
+		"fileContent": ["render_controllers"],
+		"fileExtensions": [".json"]
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/renderController/main.json",

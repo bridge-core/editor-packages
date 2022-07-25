@@ -5,7 +5,8 @@
 	"detect": {
 		"packType": ["behaviorPack", "resourcePack"],
 		"scope": "molang/",
-		"matcher": ["molang/**/*.molang", "molang/*.molang"]
+		"matcher": ["molang/**/*", "molang/*"],
+		"fileExtensions": [".molang"]
 	},
 
 	"formatOnSaveCapable": false,

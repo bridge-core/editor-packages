@@ -1,0 +1,21 @@
+{
+	"id": "generatorScript",
+	"type": "text",
+	"icon": "mdi-cogs",
+	"detect": {
+		"packType": [
+			"behaviorPack",
+			"resourcePack",
+			"skinPack",
+			"worldTemplate"
+		],
+		"matcher": [
+			"**/*",
+			"!scripts/**/*",
+			"!components/**/*",
+			"!commands/**/*"
+		],
+		"fileExtensions": [".js", ".ts"]
+	},
+	"types": ["types/generatorScript/main.d.ts"]
+}

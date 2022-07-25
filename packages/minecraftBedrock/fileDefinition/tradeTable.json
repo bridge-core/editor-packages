@@ -4,8 +4,9 @@
 	"detect": {
 		"packType": "behaviorPack",
 		"scope": "trading/",
-		"matcher": ["trading/**/*.json", "trading/*.json"],
-		"fileContent": ["tiers"]
+		"matcher": ["trading/**/*", "trading/*"],
+		"fileContent": ["tiers"],
+		"fileExtensions": [".json"]
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/tradeTable/main.json",

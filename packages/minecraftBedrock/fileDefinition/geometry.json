@@ -4,14 +4,15 @@
 	"detect": {
 		"packType": "resourcePack",
 		"matcher": [
-			"models/entity/**/*.json",
-			"models/block/**/*.json",
-			"models/entity/*.json",
-			"models/block/*.json",
+			"models/entity/**/*",
+			"models/block/**/*",
+			"models/entity/*",
+			"models/block/*",
 			"models/mobs.json"
 		],
 		"scope": "models/",
-		"fileContent": ["minecraft:geometry"]
+		"fileContent": ["minecraft:geometry"],
+		"fileExtensions": [".json"]
 	},
 
 	"lightningCache": "geometry.json",

@@ -4,8 +4,9 @@
 	"detect": {
 		"packType": "resourcePack",
 		"scope": "fogs/",
-		"matcher": ["fogs/**/*.json", "fogs/*.json"],
-		"fileContent": ["minecraft:fog"]
+		"matcher": ["fogs/**/*", "fogs/*"],
+		"fileContent": ["minecraft:fog"],
+		"fileExtensions": [".json"]
 	},
 
 	"formatVersionMap": {

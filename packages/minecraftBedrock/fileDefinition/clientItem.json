@@ -4,7 +4,8 @@
 	"detect": {
 		"packType": "resourcePack",
 		"scope": "items/",
-		"matcher": ["items/**/*.json", "items/*.json"]
+		"matcher": ["items/**/*", "items/*"],
+		"fileExtensions": [".json"]
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/clientItem/main.json",

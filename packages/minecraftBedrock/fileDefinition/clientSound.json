@@ -3,7 +3,8 @@
 	"detect": {
 		"packType": "resourcePack",
 		"scope": "sounds.json",
-		"matcher": "sounds.json"
+		"matcher": "sounds.json",
+		"fileExtensions": [".json"]
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/clientSound/main.json",

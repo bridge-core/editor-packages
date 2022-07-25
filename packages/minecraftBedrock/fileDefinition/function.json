@@ -5,7 +5,7 @@
 	"detect": {
 		"packType": "behaviorPack",
 		"scope": "functions/",
-		"matcher": ["functions/**/*.mcfunction", "functions/*.mcfunction"],
+		"matcher": ["functions/**/*", "functions/*"],
 		"fileExtensions": [".mcfunction"]
 	},
 

@@ -4,8 +4,9 @@
 	"detect": {
 		"packType": "behaviorPack",
 		"scope": "dimensions/",
-		"matcher": ["dimensions/**/*.json", "dimensions/*.json"],
-		"fileContent": ["minecraft:dimension"]
+		"matcher": ["dimensions/**/*", "dimensions/*"],
+		"fileContent": ["minecraft:dimension"],
+		"fileExtensions": [".json"]
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/dimension/main.json",

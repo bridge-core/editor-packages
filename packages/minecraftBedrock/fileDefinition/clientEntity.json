@@ -4,8 +4,9 @@
 	"detect": {
 		"packType": "resourcePack",
 		"scope": "entity/",
-		"matcher": ["entity/**/*.json", "entity/*.json"],
-		"fileContent": ["minecraft:client_entity"]
+		"matcher": ["entity/**/*", "entity/*"],
+		"fileContent": ["minecraft:client_entity"],
+		"fileExtensions": [".json"]
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/clientEntity/main.json",

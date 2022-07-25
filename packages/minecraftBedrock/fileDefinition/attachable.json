@@ -4,8 +4,9 @@
 	"detect": {
 		"packType": "resourcePack",
 		"scope": "attachables/",
-		"matcher": ["attachables/**/*.json", "attachables/*.json"],
-		"fileContent": ["minecraft:attachable"]
+		"matcher": ["attachables/**/*", "attachables/*"],
+		"fileContent": ["minecraft:attachable"],
+		"fileExtensions": [".json"]
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/attachable/main.json",

@@ -5,7 +5,8 @@
 		"packType": "behaviorPack",
 		"scope": "functions/tick.json",
 		"matcher": "functions/tick.json",
-		"fileContent": ["values"]
+		"fileContent": ["values"],
+		"fileExtensions": [".json"]
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/tick/main.json"

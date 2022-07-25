@@ -4,8 +4,9 @@
 	"detect": {
 		"packType": "behaviorPack",
 		"scope": "blocks/",
-		"matcher": ["blocks/**/*.json", "blocks/*.json"],
-		"fileContent": ["minecraft:block"]
+		"matcher": ["blocks/**/*", "blocks/*"],
+		"fileContent": ["minecraft:block"],
+		"fileExtensions": [".json"]
 	},
 
 	"formatVersionMap": {

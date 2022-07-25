@@ -3,7 +3,8 @@
 	"icon": "mdi-format-list-bulleted",
 	"detect": {
 		"packType": "resourcePack",
-		"matcher": ["textures/blocks/**/*.json", "textures/blocks/*.json"]
+		"matcher": ["textures/blocks/**/*", "textures/blocks/*"],
+		"fileExtensions": [".json"]
 	},
 	"schema": "file:///data/packages/minecraftBedrock/schema/textureSet/main.json",
 

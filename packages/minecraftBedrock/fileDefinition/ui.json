@@ -4,7 +4,8 @@
 	"detect": {
 		"packType": "resourcePack",
 		"scope": "ui/",
-		"matcher": ["ui/**/*.json", "ui/*.json"]
+		"matcher": ["ui/**/*", "ui/*"],
+		"fileExtensions": [".json"]
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/ui/main.json",

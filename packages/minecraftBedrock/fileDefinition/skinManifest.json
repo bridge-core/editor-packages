@@ -4,7 +4,8 @@
 	"detect": {
 		"packType": "skinPack",
 		"scope": "manifest.json",
-		"matcher": "manifest.json"
+		"matcher": "manifest.json",
+		"fileExtensions": [".json"]
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/manifest/main.json",

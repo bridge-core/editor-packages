@@ -4,8 +4,9 @@
 	"detect": {
 		"packType": "behaviorPack",
 		"scope": "dialogue/",
-		"matcher": ["dialogue/**/*.json", "dialogue/*.json"],
-		"fileContent": ["minecraft:npc_dialogue"]
+		"matcher": ["dialogue/**/*", "dialogue/*"],
+		"fileContent": ["minecraft:npc_dialogue"],
+		"fileExtensions": [".json"]
 	},
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/dialogue/main.json",
