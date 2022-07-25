@@ -5,8 +5,8 @@
 	"description": "Allow this item to place entities",
 	"properties": {
 		"entity": {
-			"type": "string",
-			"description": "The entity to be placed in the world."
+			"description": "The entity to be placed in the world.",
+			"$ref": "../../../general/reference/identifiers.json#/definitions/entity_identifiers"
 		},
 		"use_on": {
 			"type": "array",
