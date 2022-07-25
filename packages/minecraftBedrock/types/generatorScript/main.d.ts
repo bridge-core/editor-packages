@@ -1,4 +1,4 @@
-declare module '@bridge/generator' {
+declare module '@bridge/generate' {
 	interface IUseTemplateOptions {
 		/**
 		 * Whether to omit the template file from the build output

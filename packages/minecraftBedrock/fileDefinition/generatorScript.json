@@ -12,8 +12,11 @@
 		"matcher": [
 			"**/*",
 			"!scripts/**/*",
+			"!scripts/*",
 			"!components/**/*",
-			"!commands/**/*"
+			"!components/*",
+			"!commands/**/*",
+			"!commands/*"
 		],
 		"fileExtensions": [".js", ".ts"]
 	},
