@@ -7,6 +7,10 @@
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"editor.formatOnSave": true,
 
+	"files.associations": {
+		"*.json": "jsonc"
+	},
+
 	"json.schemas": [
 		{
 			"fileMatch": ["packages/*/preset/**/manifest.json"],
