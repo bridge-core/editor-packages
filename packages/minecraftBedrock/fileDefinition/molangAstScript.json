@@ -1,5 +1,5 @@
 {
-	"id": "molang",
+	"id": "molangAstScript",
 	"type": "text",
 	"icon": "mdi-alpha-m",
 	"detect": {
