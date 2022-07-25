@@ -5,11 +5,7 @@
 	"detect": {
 		"packType": "behaviorPack",
 		"scope": "scripts/molang/",
-		"matcher": [
-			"scripts/molang/**/*.js",
-			"scripts/molang/*.js",
-			"scripts/molang/**/*.ts",
-			"scripts/molang/*.ts"
-		]
+		"matcher": ["scripts/molang/**/*", "scripts/molang/*"],
+		"fileExtensions": [".js", ".ts"]
 	}
 }

@@ -5,7 +5,8 @@
 	"detect": {
 		"packType": "behaviorPack",
 		"scope": "components/block/",
-		"matcher": ["components/block/**/*.js", "components/block/**/*.ts"]
+		"matcher": ["components/block/**/*", "components/block/**/*"],
+		"fileExtensions": [".js", ".ts"]
 	},
 
 	"types": [

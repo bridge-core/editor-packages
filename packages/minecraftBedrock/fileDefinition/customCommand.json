@@ -5,7 +5,8 @@
 	"detect": {
 		"packType": "behaviorPack",
 		"scope": "commands/",
-		"matcher": ["commands/**/*.js", "commands/**/*.ts"]
+		"matcher": ["commands/*", "commands/**/*"],
+		"fileExtensions": [".js", ".ts"]
 	},
 
 	"types": ["types/customCommand/main.d.ts"],

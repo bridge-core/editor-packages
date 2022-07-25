@@ -5,12 +5,7 @@
 	"detect": {
 		"packType": "behaviorPack",
 		"scope": "scripts/",
-		"matcher": [
-			"scripts/*.js",
-			"scripts/**/*.js",
-			"scripts/*.ts",
-			"scripts/**/*.ts"
-		],
+		"matcher": ["scripts/*", "scripts/**/*"],
 		"fileExtensions": [".js", ".ts"]
 	},
 
