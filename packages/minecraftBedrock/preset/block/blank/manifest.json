@@ -1,7 +1,7 @@
 {
-	"name": "Ore",
+	"name": "Blank Block",
 	"icon": "mdi-cube-outline",
-	"description": "Creates a new ore block with natural generation.",
+	"description": "Creates a new, basic block.",
 	"category": "fileType.block",
 	"showIfDisabled": false,
 	"requires": {
@@ -32,24 +32,29 @@
 		[
 			"block.json",
 			"blocks/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "openFile": true, "packPath": "behaviorPack" }
-		],
-		[
-			"feature.json",
-			"features/{{IDENTIFIER}}_feature.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX"], "openFile": true, "packPath": "behaviorPack" }
-		],
-		[
-			"featureRule.json",
-			"feature_rules/overworld_underground_{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX"], "openFile": true, "packPath": "behaviorPack" }
+			{
+				"inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"],
+				"openFile": true,
+				"packPath": "behaviorPack"
+			}
 		]
 	],
 	"expandFiles": [
 		[
+			"clientBlock.json",
+			"blocks.json",
+			{
+				"inject": ["IDENTIFIER", "PROJECT_PREFIX"],
+				"packPath": "resourcePack"
+			}
+		],
+		[
 			"en_US.lang",
 			"texts/en_US.lang",
-			{ "inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"],
+				"packPath": "resourcePack"
+			}
 		]
 	]
 }
