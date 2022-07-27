@@ -3,6 +3,7 @@
 	"minecraft:block": {
 		"description": {
 			"identifier": "{{PROJECT_PREFIX}}:{{IDENTIFIER}}"
-		}
+		},
+		"components": {}
 	}
 }
