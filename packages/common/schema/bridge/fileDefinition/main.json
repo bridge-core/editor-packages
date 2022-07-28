@@ -13,6 +13,11 @@
 			"description": "A reference to the icon to use for this file definition. https://materialdesignicons.com/",
 			"pattern": "^mdi-[a-zA-Z-]*$"
 		},
+		"add": {
+			"type": "string",
+			"description": "Where to insert the file definition in relation to the other file definitions",
+			"enum": ["pre", "post"]
+		},
 		"detect": {
 			"type": "object",
 			"additionalProperties": false,
@@ -80,11 +85,11 @@
 					}
 				},
 				"fileExtensions": {
-                    "description": "A list of file extensions to associate with this file type.",
+					"description": "A list of file extensions to associate with this file type.",
 					"type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+					"items": {
+						"type": "string"
+					}
 				}
 			}
 		},
@@ -185,10 +190,10 @@
 					"type": "boolean",
 					"description": "Whether or not commands in this file use the slash at the beginning."
 				},
-                "language": {
-                    "type": "string",
-                    "description": "The language of this file type."
-                }
+				"language": {
+					"type": "string",
+					"description": "The language of this file type."
+				}
 			}
 		},
 		"type": {

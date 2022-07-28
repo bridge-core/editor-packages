@@ -2,6 +2,7 @@
 	"id": "generatorScript",
 	"type": "text",
 	"icon": "mdi-cogs",
+	"add": "post",
 	"detect": {
 		"packType": [
 			"behaviorPack",
