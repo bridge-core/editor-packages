@@ -14,7 +14,7 @@ declare module '@bridge/generate' {
 	 */
 	export function useTemplate<T = any>(
 		templatePath: string,
-		options: IUseTemplateOptions
+		options?: IUseTemplateOptions
 	): Promise<T>
 
 	class FileCollection {
