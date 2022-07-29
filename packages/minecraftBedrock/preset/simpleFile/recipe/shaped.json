@@ -1,9 +1,12 @@
 {
-	"format_version": "",
+	"format_version": "1.12",
 	"minecraft:recipe_shaped": {
 		"description": {
 			"identifier": "{{PROJECT_PREFIX}}:{{FILE_NAME}}"
 		},
-		"tags": {}
+		"tags": [],
+		"key": {},
+		"pattern": [],
+		"result": {}
 	}
 }

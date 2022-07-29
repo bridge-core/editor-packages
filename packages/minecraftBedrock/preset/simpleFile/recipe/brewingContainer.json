@@ -1,13 +1,13 @@
 {
-    "format_version": "",
-    "minecraft:recipe_brewing_container": {
-        "description": {
-            "identifier": "{{PROJECT_PREFIX}}:{{FILE_NAME}}"
-        },
-        "tags": {},
+	"format_version": "1.12",
+	"minecraft:recipe_brewing_container": {
+		"description": {
+			"identifier": "{{PROJECT_PREFIX}}:{{FILE_NAME}}"
+		},
+		"tags": [],
 
-        "input": {},
-        "reagent": {},
-        "output": {}
-    }
+		"input": {},
+		"reagent": {},
+		"output": {}
+	}
 }
