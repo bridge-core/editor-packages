@@ -1,12 +1,12 @@
 {
-    "format_version": "",
-    "minecraft:recipe_brewing_mix": {
-        "description": {
-            "identifier": "{{PROJECT_PREFIX}}:{{FILE_NAME}}"
-        },
-        "tags": {},
-        "input": {},
-        "reagent": {},
-        "output": {}
-    }
+	"format_version": "1.12",
+	"minecraft:recipe_brewing_mix": {
+		"description": {
+			"identifier": "{{PROJECT_PREFIX}}:{{FILE_NAME}}"
+		},
+		"tags": [],
+		"input": {},
+		"reagent": {},
+		"output": {}
+	}
 }
