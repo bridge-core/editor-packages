@@ -567,72 +567,6 @@
 					]
 				},
 				{
-					"commandName": "execute",
-					"description": "Executes another command.",
-					"arguments": [
-						{
-							"argumentName": "origin",
-							"description": "Specifies the target to be the command's executor. Must be a player name or target selector. If more than one entity is selected, the command is run once as each of them.",
-							"type": "selector"
-						},
-						{
-							"argumentName": "position",
-							"description": "Specifies the position from which to run the command. coordinates specified with tilde and caret notation are relative to the target, not to the position of the command's execution.",
-							"type": "$coordinates"
-						},
-						{
-							"argumentName": "command",
-							"type": "command",
-							"description": "Specifies the command to be run. Must be a valid command."
-						}
-					]
-				},
-				{
-					"commandName": "execute",
-					"description": "Executes another command.",
-					"arguments": [
-						{
-							"argumentName": "origin",
-							"description": "Specifies the target to be the command's executor. Must be a player name or target selector. If more than one entity is selected, the command is run once as each of them.",
-							"type": "selector"
-						},
-						{
-							"argumentName": "position",
-							"description": "Specifies the position from which to run the command. coordinates specified with tilde and caret notation are relative to the target, not to the position of the command's execution.",
-							"type": "$coordinates"
-						},
-						{
-							"type": "string",
-							"additionalData": {
-								"values": ["detect"]
-							}
-						},
-						{
-							"argumentName": "detectPos",
-							"description": "Specifies the position of the block to check.",
-							"type": "$coordinates"
-						},
-						{
-							"argumentName": "block",
-							"description": "Specifies the block ID that the block at detectPos, must match for the command to run.",
-							"type": "string",
-							"additionalData": {
-								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/block_identifiers"
-							}
-						},
-						{
-							"argumentName": "data",
-							"description": "Must be a valid block data for that type of block or -1 to match any block data.",
-							"type": "number"
-						},
-						{
-							"argumentName": "command",
-							"type": "command",
-							"description": "Specifies the command to be run. Must be a valid command."
-						}
-					]
-				},
-				{
 					"commandName": "fill",
 					"description": "Fills a region with a specific block.",
 					"arguments": [
@@ -4577,6 +4511,72 @@
 							}
 						}
 					]
+				},
+				{
+					"commandName": "execute",
+					"description": "Executes another command.",
+					"arguments": [
+						{
+							"argumentName": "origin",
+							"description": "Specifies the target to be the command's executor. Must be a player name or target selector. If more than one entity is selected, the command is run once as each of them.",
+							"type": "selector"
+						},
+						{
+							"argumentName": "position",
+							"description": "Specifies the position from which to run the command. coordinates specified with tilde and caret notation are relative to the target, not to the position of the command's execution.",
+							"type": "$coordinates"
+						},
+						{
+							"argumentName": "command",
+							"type": "command",
+							"description": "Specifies the command to be run. Must be a valid command."
+						}
+					]
+				},
+				{
+					"commandName": "execute",
+					"description": "Executes another command.",
+					"arguments": [
+						{
+							"argumentName": "origin",
+							"description": "Specifies the target to be the command's executor. Must be a player name or target selector. If more than one entity is selected, the command is run once as each of them.",
+							"type": "selector"
+						},
+						{
+							"argumentName": "position",
+							"description": "Specifies the position from which to run the command. coordinates specified with tilde and caret notation are relative to the target, not to the position of the command's execution.",
+							"type": "$coordinates"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["detect"]
+							}
+						},
+						{
+							"argumentName": "detectPos",
+							"description": "Specifies the position of the block to check.",
+							"type": "$coordinates"
+						},
+						{
+							"argumentName": "block",
+							"description": "Specifies the block ID that the block at detectPos, must match for the command to run.",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/block_identifiers"
+							}
+						},
+						{
+							"argumentName": "data",
+							"description": "Must be a valid block data for that type of block or -1 to match any block data.",
+							"type": "number"
+						},
+						{
+							"argumentName": "command",
+							"type": "command",
+							"description": "Specifies the command to be run. Must be a valid command."
+						}
+					]
 				}
 			]
 		},
@@ -4643,6 +4643,51 @@
 							"argumentName": "useNewChunksOnly",
 							"isOptional": true,
 							"type": "boolean"
+						}
+					]
+				},
+				{
+					"commandName": "execute",
+					"description": "Executes another command.",
+					"arguments": [
+						{
+							"type": "subcommand",
+							"allowMultiple": true
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["run"]
+							}
+						},
+						{
+							"argumentName": "command",
+							"type": "command"
+						}
+					]
+				}
+			],
+			"subcommands": [
+				{
+					"commandName": "execute",
+					"commands": [
+						{
+							"commandName": "as",
+							"description": "Execute a command as the specified entity.",
+							"arguments": [
+								{
+									"type": "selector"
+								}
+							]
+						},
+						{
+							"commandName": "at",
+							"description": "Execute a command at the specified location.",
+							"arguments": [
+								{
+									"type": "$coordinates"
+								}
+							]
 						}
 					]
 				}
