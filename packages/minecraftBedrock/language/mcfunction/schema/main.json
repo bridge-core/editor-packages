@@ -40,7 +40,9 @@
 															"blockState",
 															"jsonData",
 															"scoreData",
-															"coordinate"
+															"coordinate",
+															"subcommand",
+															"integerRange"
 														]
 													},
 													{
@@ -115,6 +117,20 @@
 											}
 										}
 									}
+								}
+							}
+						}
+					},
+					"subcommands": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"commandName": {
+									"type": "string"
+								},
+								"commands": {
+									"$ref": "#/properties/vanilla/items/properties/commands"
 								}
 							}
 						}

@@ -4511,7 +4511,16 @@
 							}
 						}
 					]
-				},
+				}
+			]
+		},
+		{
+			"requires": {
+				"matchAll": false,
+				"experimentalGameplay": ["!upcomingCreatorFeatures"],
+				"targetVersion": ["<", "1.19.10"]
+			},
+			"commands": [
 				{
 					"commandName": "execute",
 					"description": "Executes another command.",
@@ -4645,7 +4654,15 @@
 							"type": "boolean"
 						}
 					]
-				},
+				}
+			]
+		},
+		{
+			"requires": {
+				"targetVersion": [">=", "1.19.10"],
+				"experimentalGameplay": ["upcomingCreatorFeatures"]
+			},
+			"commands": [
 				{
 					"commandName": "execute",
 					"description": "Executes another command.",
@@ -4671,21 +4688,427 @@
 				{
 					"commandName": "execute",
 					"commands": [
+						// as
 						{
 							"commandName": "as",
-							"description": "Execute a command as the specified entity.",
+							"description": "Sets the executor of the command.",
 							"arguments": [
 								{
+									"argumentName": "origin",
 									"type": "selector"
 								}
 							]
 						},
+						// at
 						{
 							"commandName": "at",
-							"description": "Execute a command at the specified location.",
+							"description": "Sets the execution position, rotation and dimension to match an entity, without changing the executor.",
 							"arguments": [
 								{
+									"argumentName": "origin",
+									"type": "selector"
+								}
+							]
+						},
+						// positioned > position
+						{
+							"commandName": "positioned",
+							"description": "Sets the execution position without changing the rotation or dimension.",
+							"arguments": [
+								{
+									"argumentName": "position",
 									"type": "$coordinates"
+								}
+							]
+						},
+						// positioned > as
+						{
+							"commandName": "positioned",
+							"description": "Sets the execution position without changing the rotation or dimension.",
+							"arguments": [
+								{
+									"type": "string",
+									"additionalData": {
+										"values": ["as"]
+									}
+								},
+								{
+									"type": "selector",
+									"argumentName": "origin"
+								}
+							]
+						},
+						// if > block > block state
+						{
+							"commandName": "if",
+							"description": "Specify a condition which must be met to execute the next subcommand.",
+							"arguments": [
+								{
+									"type": "string",
+									"description": "Compares the block at a given position to a given block ID and state.",
+									"additionalData": {
+										"values": ["block"]
+									}
+								},
+								{
+									"argumentName": "position",
+									"type": "$coordinates"
+								},
+								{
+									"argumentName": "block",
+									"type": "string",
+									"additionalData": {
+										"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/block_identifiers"
+									}
+								},
+								{
+									"argumentName": "blockStates",
+									"type": "blockState"
+								}
+							]
+						},
+						// if > block > block data
+						{
+							"commandName": "if",
+							"description": "Specify a condition which must be met to execute the next subcommand.",
+							"arguments": [
+								{
+									"type": "string",
+									"description": "Compares the block at a given position to a given block ID and data value.",
+									"additionalData": {
+										"values": ["block"]
+									}
+								},
+								{
+									"argumentName": "position",
+									"type": "$coordinates"
+								},
+								{
+									"argumentName": "block",
+									"type": "string",
+									"additionalData": {
+										"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/block_identifiers"
+									}
+								},
+								{
+									"argumentName": "data",
+									"type": "number"
+								}
+							]
+						},
+						// if > blocks
+						{
+							"commandName": "if",
+							"description": "Specify a condition which must be met to execute the next subcommand.",
+							"arguments": [
+								{
+									"type": "string",
+									"description": "Compares the blocks in two equally sized volumes.",
+									"additionalData": {
+										"values": ["blocks"]
+									}
+								},
+								{
+									"argumentName": "begin",
+									"type": "$coordinates"
+								},
+								{
+									"argumentName": "end",
+									"type": "$coordinates"
+								},
+								{
+									"argumentName": "destination",
+									"type": "$coordinates"
+								},
+								{
+									"argumentName": "scanMode",
+									"type": "string",
+									"additionalData": {
+										"values": ["all", "masked"]
+									}
+								}
+							]
+						},
+						// if > entity
+						{
+							"commandName": "if",
+							"description": "Specify a condition which must be met to execute the next subcommand.",
+							"arguments": [
+								{
+									"type": "string",
+									"description": "Checks whether one or more entities exist.",
+									"additionalData": {
+										"values": ["entity"]
+									}
+								},
+								{
+									"argumentName": "target",
+									"type": "selector"
+								}
+							]
+						},
+						// if > score > comparison
+						{
+							"commandName": "if",
+							"description": "Specify a condition which must be met to execute the next subcommand.",
+							"arguments": [
+								{
+									"type": "string",
+									"description": "Check whether a score has a specific relation to another score.",
+									"additionalData": {
+										"values": ["score"]
+									}
+								},
+								{
+									"argumentName": "target",
+									"type": "selector"
+								},
+								{
+									"argumentName": "objective",
+									"type": "string",
+									"additionalData": {
+										"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/scoreboardObjective.json"
+									}
+								},
+								{
+									"argumentName": "operation",
+									"type": "string",
+									"additionalData": {
+										"values": ["<", "<=", "=", ">", ">="]
+									}
+								},
+								{
+									"argumentName": "source",
+									"type": "selector"
+								},
+								{
+									"argumentName": "objective",
+									"type": "string",
+									"additionalData": {
+										"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/scoreboardObjective.json"
+									}
+								}
+							]
+						},
+						// if > score > matches
+						{
+							"commandName": "if",
+							"description": "Specify a condition which must be met to execute the next subcommand.",
+							"arguments": [
+								{
+									"type": "string",
+									"description": "Check whether a score is in a given range.",
+									"additionalData": {
+										"values": ["score"]
+									}
+								},
+								{
+									"argumentName": "target",
+									"type": "selector"
+								},
+								{
+									"argumentName": "objective",
+									"type": "string",
+									"additionalData": {
+										"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/scoreboardObjective.json"
+									}
+								},
+								{
+									"type": "string",
+									"additionalData": {
+										"values": ["matches"]
+									}
+								},
+								{
+									"argumentName": "range",
+									"type": "integerRange"
+								}
+							]
+						},
+						// unless > block > block state
+						{
+							"commandName": "unless",
+							"description": "Specify a condition which must not be met to execute the next subcommand.",
+							"arguments": [
+								{
+									"type": "string",
+									"description": "Compares the block at a given position to a given block ID and state.",
+									"additionalData": {
+										"values": ["block"]
+									}
+								},
+								{
+									"argumentName": "position",
+									"type": "$coordinates"
+								},
+								{
+									"argumentName": "block",
+									"type": "string",
+									"additionalData": {
+										"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/block_identifiers"
+									}
+								},
+								{
+									"argumentName": "blockStates",
+									"type": "blockState"
+								}
+							]
+						},
+						// unless > block > block data
+						{
+							"commandName": "unless",
+							"description": "Specify a condition which must not be met to execute the next subcommand.",
+							"arguments": [
+								{
+									"type": "string",
+									"description": "Compares the block at a given position to a given block ID and data value.",
+									"additionalData": {
+										"values": ["block"]
+									}
+								},
+								{
+									"argumentName": "position",
+									"type": "$coordinates"
+								},
+								{
+									"argumentName": "block",
+									"type": "string",
+									"additionalData": {
+										"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/block_identifiers"
+									}
+								},
+								{
+									"argumentName": "data",
+									"type": "number"
+								}
+							]
+						},
+						// unless > blocks
+						{
+							"commandName": "unless",
+							"description": "Specify a condition which must not be met to execute the next subcommand.",
+							"arguments": [
+								{
+									"type": "string",
+									"description": "Compares the blocks in two equally sized volumes.",
+									"additionalData": {
+										"values": ["blocks"]
+									}
+								},
+								{
+									"argumentName": "begin",
+									"type": "$coordinates"
+								},
+								{
+									"argumentName": "end",
+									"type": "$coordinates"
+								},
+								{
+									"argumentName": "destination",
+									"type": "$coordinates"
+								},
+								{
+									"argumentName": "scanMode",
+									"type": "string",
+									"additionalData": {
+										"values": ["all", "masked"]
+									}
+								}
+							]
+						},
+						// unless > entity
+						{
+							"commandName": "unless",
+							"description": "Specify a condition which must not be met to execute the next subcommand.",
+							"arguments": [
+								{
+									"type": "string",
+									"description": "Checks whether one or more entities exist.",
+									"additionalData": {
+										"values": ["entity"]
+									}
+								},
+								{
+									"argumentName": "target",
+									"type": "selector"
+								}
+							]
+						},
+						// if > score > comparison
+						{
+							"commandName": "unless",
+							"description": "Specify a condition which must not be met to execute the next subcommand.",
+							"arguments": [
+								{
+									"type": "string",
+									"description": "Check whether a score has a specific relation to another score.",
+									"additionalData": {
+										"values": ["score"]
+									}
+								},
+								{
+									"argumentName": "target",
+									"type": "selector"
+								},
+								{
+									"argumentName": "objective",
+									"type": "string",
+									"additionalData": {
+										"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/scoreboardObjective.json"
+									}
+								},
+								{
+									"argumentName": "operation",
+									"type": "string",
+									"additionalData": {
+										"values": ["<", "<=", "=", ">", ">="]
+									}
+								},
+								{
+									"argumentName": "source",
+									"type": "selector"
+								},
+								{
+									"argumentName": "objective",
+									"type": "string",
+									"additionalData": {
+										"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/scoreboardObjective.json"
+									}
+								}
+							]
+						},
+						// unless > score > matches
+						{
+							"commandName": "unless",
+							"description": "Specify a condition which must not be met to execute the next subcommand.",
+							"arguments": [
+								{
+									"type": "string",
+									"description": "Check whether a score is in a given range.",
+									"additionalData": {
+										"values": ["score"]
+									}
+								},
+								{
+									"argumentName": "target",
+									"type": "selector"
+								},
+								{
+									"argumentName": "objective",
+									"type": "string",
+									"additionalData": {
+										"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/scoreboardObjective.json"
+									}
+								},
+								{
+									"type": "string",
+									"additionalData": {
+										"values": ["matches"]
+									}
+								},
+								{
+									"argumentName": "range",
+									"type": "integerRange"
 								}
 							]
 						}
