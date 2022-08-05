@@ -1,0 +1,130 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"minecraft:destructible_by_explosion": {
+			"$ref": "./destructible_by_explosion.json"
+		},
+		"minecraft:selection_box": {
+			"$ref": "./selection_box.json"
+		},
+		"minecraft:light_emission": {
+			"$ref": "./light_emission.json"
+		},
+		"minecraft:light_dampening": {
+			"$ref": "./light_dampening.json"
+		},
+		"minecraft:friction": {
+			"$ref": "./friction.json"
+		},
+		"minecraft:destructible_by_mining": {
+			"$ref": "./destructible_by_mining.json"
+		},
+		"minecraft:queued_ticking": {
+			"$ref": "../../v1.19.10/components/queued_ticking.json"
+		},
+		"minecraft:flammable": {
+			"$ref": "../../v1.19.10/components/flammable.json"
+		},
+		"minecraft:part_visibility": {
+			"$ref": "../../v1.19.10/components/part_visibility.json"
+		},
+		"minecraft:collision_box": {
+			"$ref": "../../v1.19.10/components/collision_box.json"
+		},
+		"minecraft:crafting_table": {
+			"$ref": "../../v1.19.10/components/crafting_table.json"
+		},
+		"minecraft:onlypistonpush": {
+			"$ref": "../../v1.18.30/components/onlypistonpush.json"
+		},
+		"minecraft:breakonpush": {
+			"$ref": "../../v1.18.30/components/breakonpush.json"
+		},
+		"minecraft:immovable": {
+			"$ref": "../../v1.18.30/components/immovable.json"
+		},
+		"minecraft:preventsjumping": {
+			"$ref": "../../v1.18.30/components/preventsjumping.json"
+		},
+		"minecraft:display_name": {
+			"$ref": "../../v1.16.100/components/display_name.json"
+		},
+		"minecraft:unit_cube": {
+			"$ref": "../../v1.16.100/components/unit_cube.json"
+		},
+		"minecraft:material_instances": {
+			"$ref": "../../v1.16.100/components/material_instances.json"
+		},
+		"minecraft:geometry": {
+			"$ref": "../../v1.16.100/components/geometry.json"
+		},
+		"minecraft:on_step_on": {
+			"$ref": "../../v1.16.100/components/on_step_on.json"
+		},
+		"minecraft:on_step_off": {
+			"$ref": "../../v1.16.100/components/on_step_off.json"
+		},
+		"minecraft:on_player_destroyed": {
+			"$ref": "../../v1.16.100/components/on_player_destroyed.json"
+		},
+		"minecraft:on_fall_on": {
+			"$ref": "../../v1.16.100/components/on_fall_on.json"
+		},
+		"minecraft:on_placed": {
+			"$ref": "../../v1.16.100/components/on_placed.json"
+		},
+		"minecraft:on_player_placing": {
+			"$ref": "../../v1.16.100/components/on_player_placing.json"
+		},
+		"minecraft:on_interact": {
+			"$ref": "../../v1.16.100/components/on_interact.json"
+		},
+		"minecraft:random_ticking": {
+			"$ref": "../../v1.16.100/components/random_ticking.json"
+		},
+		"minecraft:breathability": {
+			"$ref": "../../v1.16.100/components/breathability.json"
+		},
+		"minecraft:placement_filter": {
+			"$ref": "../../v1.16.100/components/placement_filter.json"
+		},
+		"minecraft:rotation": {
+			"$ref": "../../v1.16.100/components/rotation.json"
+		},
+		"minecraft:map_color": {
+			"$ref": "../../v1.16.0/components/map_color.json"
+		},
+		"minecraft:loot": {
+			"$ref": "../../v1.16.0/components/loot.json"
+		},
+		// Deprecated
+		"minecraft:creative_category": {
+			"$ref": "./creative_category.json"
+		},
+		"minecraft:destroy_time": {
+			"$ref": "./destroy_time.json"
+		},
+		"minecraft:explosion_resistance": {
+			"$ref": "./explosion_resistance.json"
+		},
+		"minecraft:unwalkable": {
+			"$ref": "./unwalkable.json"
+		},
+		"minecraft:block_collision": {
+			"$ref": "../../v1.19.10/components/block_collision.json"
+		},
+		"minecraft:ticking": {
+			"$ref": "../../v1.19.10/components/ticking.json"
+		},
+		"minecraft:entity_collision": {
+			"$ref": "../../v1.18.10/components/entity_collision.json"
+		},
+		"minecraft:pick_collision": {
+			"$ref": "../../v1.18.10/components/pick_collision.json"
+		},
+		"minecraft:block_light_absorption": {
+			"$ref": "../../v1.18.10/components/block_light_absorption.json"
+		}
+	}
+}

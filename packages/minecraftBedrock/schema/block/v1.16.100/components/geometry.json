@@ -3,5 +3,5 @@
 	"additionalProperties": false,
 	"$ref": "../../../general/reference/geometry.json",
 	"title": "Geometry",
-	"description": "The geometry description identifier to use, this identifier must match an existing geometry identifier in any of the currently loaded resource packs."
+	"description": "The description identifier of the geometry file to use to render this block. This identifier must match an existing geometry identifier in any of the currently loaded resource packs."
 }

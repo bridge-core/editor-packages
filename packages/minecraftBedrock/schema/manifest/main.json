@@ -119,9 +119,17 @@
 			"items": {
 				"type": "object",
 				"additionalProperties": false,
-				"required": ["uuid", "version"],
+				"oneOf": [
+					{
+						"required": ["uuid", "version"]
+					},
+					{
+						"required": ["module_name", "version"]
+					}
+				],
 				"properties": {
 					"uuid": {
+						"type": "string",
 						"anyOf": [
 							{
 								"$ref": "../clientManifest/dynamic/uuidEnum.json"
@@ -130,22 +138,56 @@
 								"type": "string"
 							},
 							{
-								"description": "Minecraft native module - needed to use the 'mojang-minecraft' module.",
+								"description": "Minecraft native module - allows usage of the 'mojang-minecraft' module.",
 								"const": "b26a4d4c-afdf-4690-88f8-931846312678"
 							},
 							{
-								"description": "GameTest native module - needed to use the 'mojang-gametest' module.",
+								"description": "GameTest native module - allows usage of the 'mojang-gametest' module.",
 								"const": "6f4b6893-1bb6-42fd-b458-7fa3d0c89616"
 							},
 							{
-								"description": "Minecraft UI native module - needed to use the 'mojang-minecraft-ui' module.",
+								"description": "Minecraft UI native module - allows usage of the 'mojang-minecraft-ui' module.",
 								"const": "2bd50a27-ab5f-4f40-a596-3641627c635e"
+							},
+							{
+								"description": "Minecraft Server Admin native module - allows usage of the 'mojang-minecraft-server-admin' module.",
+								"const": "53d7f2bf-bf9c-49c4-ad1f-7c803d947920"
+							},
+							{
+								"description": "Net native module - allows usage of the 'mojang-net' module.",
+								"const": "777b1798-13a6-401c-9cba-0cf17e31a81b"
 							}
 						],
 						"description": "This is the unique identifier of the pack that this pack depends on. It needs to be the exact same UUID that the pack has defined in the header section of it's manifest file."
 					},
+					"module_name": {
+						"type": "string",
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "string",
+								"enum": [
+									"mojang-minecraft",
+									"mojang-gametest",
+									"mojang-minecraft-ui",
+									"mojang-minecraft-server-admin",
+									"mojang-net"
+								]
+							}
+						]
+					},
 					"version": {
-						"$ref": "#/definitions/triple_integer",
+						"anyOf": [
+							{
+								"$ref": "#/definitions/triple_integer"
+							},
+							{
+								"type": "string",
+								"pattern": "^\\d\\.\\d\\.\\d(-beta)?$"
+							}
+						],
 						"description": "This is the specific version of the pack that your pack depends on. Should match the version the other pack has in its manifest file."
 					}
 				}

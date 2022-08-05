@@ -1,15 +1,15 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "title": "Selection Box",
-    "description": "Defines the area of the block that is selected by the player's cursor. If set to true, default values are used. If set to false, this block is not selectable by the player's cursor. If this component is omitted, default values are used.",
-    "oneOf": [
-        {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "size": {
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Selection Box",
+	"description": "Defines the area of the block that is selected by the player's cursor. If set to true, default values are used. If set to false, this block is not selectable by the player's cursor. If this component is omitted, default values are used.",
+	"oneOf": [
+		{
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"size": {
 					"title": "Size",
-					"description": "Size of each side of the selection box. Size is specified as [x, y, z]. Origin + size must be in the range (-8, 0, -8) to (8, 16, 8), inclusive.",
+					"description": "Size of each side of the selection box. Size is specified as [x, y, z]. 'origin' + 'size' must be in the range (-8, 0, -8) to (8, 16, 8), inclusive.",
 					"type": "array",
 					"maxItems": 3,
 					"minItems": 3,
@@ -36,7 +36,7 @@
 				},
 				"origin": {
 					"title": "Origin",
-					"description": "Minimal position Bounds of the selection box. Origin is specified as [x, y, z] and must be in the range (-8, 0, -8) to (8, 16, 8), inclusive.",
+					"description": "Minimal position of the bounds of the selection box. 'origin' is specified as [x, y, z] and must be in the range (-8, 0, -8) to (8, 16, 8), inclusive.",
 					"type": "array",
 					"maxItems": 3,
 					"minItems": 3,
@@ -61,10 +61,10 @@
 						}
 					]
 				}
-            }
-        },
-        {
-            "type": "boolean"
-        }
-    ]
+			}
+		},
+		{
+			"type": "boolean"
+		}
+	]
 }

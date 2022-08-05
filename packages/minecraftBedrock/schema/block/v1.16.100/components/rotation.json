@@ -3,7 +3,7 @@
 	"additionalProperties": false,
 	"type": "array",
 	"title": "Rotation",
-	"description": "This is the block's rotation around the center of the cube in degrees. The rotation order is x-y-z",
+	"description": "The block's rotation around the center of the cube in degrees. The rotation is specified as [x, y, z]. Angles need to be in factors of 90.",
 	"maxItems": 3,
 	"minItems": 3,
 	"items": {

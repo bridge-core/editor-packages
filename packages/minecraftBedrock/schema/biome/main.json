@@ -62,9 +62,7 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [
-							"1.19.20"
-						]
+						"enum": ["1.19.20", "1.19.30"]
 					}
 				}
 			},

@@ -10,7 +10,7 @@
 			"properties": {
 				"size": {
 					"title": "Size",
-					"description": "Size of each side of the box of the component.",
+					"description": "Size of each side of the collision box. Size is specified as [x, y, z]. 'origin' + 'size' must be in the range (-8, 0, -8) to (8, 16, 8), inclusive.",
 					"type": "array",
 					"maxItems": 3,
 					"minItems": 3,
@@ -37,7 +37,7 @@
 				},
 				"origin": {
 					"title": "Origin",
-					"description": "Minimal position bounds of the collision box.",
+					"description": "Minimal position of the bounds of the collision box. 'origin' is specified as [x, y, z] and must be in the range (-8, 0, -8) to (8, 16, 8), inclusive.",
 					"type": "array",
 					"maxItems": 3,
 					"minItems": 3,

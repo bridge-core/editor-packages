@@ -43,15 +43,15 @@
 					}
 				}
 			},
-            "then": {
-                "$ref": "./v1.16.0/main.json"
-            }
+			"then": {
+				"$ref": "./v1.16.0/main.json"
+			}
 		},
 		{
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.19.20"]
+						"enum": ["1.19.20", "1.19.30"]
 					}
 				}
 			},

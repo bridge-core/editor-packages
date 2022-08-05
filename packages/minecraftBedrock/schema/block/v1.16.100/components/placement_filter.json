@@ -11,14 +11,33 @@
 					"title": "Block Filter",
 					"type": "array",
 					"maxItems": 64,
-					"description": "List of blocks (can use tags to specify them) that this block can be placed against in the allowed_faces direction",
+					"description": "List of blocks that this block can be placed against in the 'allowed_faces' direction. Limited to 64 blocks. Each block in this list can either be specified as a String (block name) or as a BlockDescriptor. A BlockDescriptor is an object that allows you to reference a block (or multiple blocks) based on its tags, or based on its name and states.",
 					"items": {
 						"anyOf": [
 							{
+								"type": "string",
 								"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
 							},
 							{
-								"$ref": "../../../general/reference/tags.json#/definitions/block_tags"
+								"type": "object",
+								"additionalProperties": false,
+								"properties": {
+									"name": {
+										"title": "Name",
+										"description": "The name of a block.",
+										"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+									},
+									"states": {
+										"title": "States",
+										"description": "The list of Vanilla block states and their values that the block can have, expressed in key/value pairs.",
+										"$ref": "../../../general/blockState.json"
+									},
+									"tags": {
+										"title": "Tags",
+										"description": "A condition using Molang queries that results to true/false that can be used to query for blocks with certain tags.",
+										"$ref": "../../../molang/embedded.json"
+									}
+								}
 							}
 						]
 					}
