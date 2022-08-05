@@ -115,13 +115,23 @@
 								"description": "The ID of a compiler plugin."
 							},
 							{
+								"$ref": "./builtInPluginIds.json"
+							},
+							{
 								"type": "array",
 								"minItems": 2,
 								"maxItems": 2,
 								"items": [
 									{
-										"type": "string",
-										"description": "The ID of a compiler plugin."
+										"anyOf": [
+											{
+												"type": "string",
+												"description": "The ID of a compiler plugin."
+											},
+											{
+												"$ref": "./builtInPluginIds.json"
+											}
+										]
 									},
 									{
 										"type": "object",
