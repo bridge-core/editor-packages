@@ -95,6 +95,32 @@
 			"type": "object",
 			"propertyNames": {
 				"enum": ["families", "tags", "scoreboardObjectives", "names"]
+			},
+			"patternProperties": {
+				".*": {
+					"additionalProperties": false,
+					"type": "object",
+					"properties": {
+						"type": {
+							"description": "Optional: Define e.g. the type of a scoreboard objective.",
+							"type": "string"
+						},
+						"exclude": {
+							"description": "Strings to exclude from a tool's collected data.",
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						},
+						"include": {
+							"description": "String to add to a tool's collected data.",
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					}
+				}
 			}
 		},
 		"bridge": {
@@ -147,32 +173,6 @@
 		"bdsProject": {
 			"description": "Set whether this project is for Bedrock Dedicated Server software.",
 			"type": "boolean"
-		}
-	},
-	"definitions": {
-		"packDefinition": {
-			"additionalProperties": false,
-			"type": "object",
-			"properties": {
-				"type": {
-					"description": "Optional: Define e.g. the type of a scoreboard objective.",
-					"type": "string"
-				},
-				"exclude": {
-					"description": "Strings to exclude from a tool's collected data.",
-					"type": "array",
-					"items": {
-						"type": "string"
-					}
-				},
-				"include": {
-					"description": "String to add to a tool's collected data.",
-					"type": "array",
-					"items": {
-						"type": "string"
-					}
-				}
-			}
 		}
 	}
 }
