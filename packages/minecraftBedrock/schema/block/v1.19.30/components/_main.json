@@ -3,22 +3,22 @@
 	"type": "object",
 	"properties": {
 		"minecraft:destructible_by_explosion": {
-			"$ref": "./destructible_by_explosion.json"
+			"$ref": "../../v1.19.20/components/destructible_by_explosion.json"
 		},
 		"minecraft:selection_box": {
-			"$ref": "./selection_box.json"
+			"$ref": "../../v1.19.20/components/selection_box.json"
 		},
 		"minecraft:light_emission": {
-			"$ref": "./light_emission.json"
+			"$ref": "../../v1.19.20/components/light_emission.json"
 		},
 		"minecraft:light_dampening": {
-			"$ref": "./light_dampening.json"
+			"$ref": "../../v1.19.20/components/light_dampening.json"
 		},
 		"minecraft:friction": {
-			"$ref": "./friction.json"
+			"$ref": "../../v1.19.20/components/friction.json"
 		},
 		"minecraft:destructible_by_mining": {
-			"$ref": "./destructible_by_mining.json"
+			"$ref": "../../v1.19.20/components/destructible_by_mining.json"
 		},
 		"minecraft:queued_ticking": {
 			"$ref": "../../v1.19.10/components/queued_ticking.json"
