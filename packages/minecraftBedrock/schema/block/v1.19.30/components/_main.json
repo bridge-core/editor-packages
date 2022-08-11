@@ -103,13 +103,13 @@
 			"$ref": "./creative_category.json"
 		},
 		"minecraft:destroy_time": {
-			"$ref": "./destroy_time.json"
+			"$ref": "../../v1.19.20/components/destroy_time.json"
 		},
 		"minecraft:explosion_resistance": {
-			"$ref": "./explosion_resistance.json"
+			"$ref": "../../v1.19.20/components/explosion_resistance.json"
 		},
 		"minecraft:unwalkable": {
-			"$ref": "./unwalkable.json"
+			"$ref": "../../v1.19.20/components/unwalkable.json"
 		},
 		"minecraft:block_collision": {
 			"$ref": "../../v1.19.10/components/block_collision.json"
