@@ -4,17 +4,9 @@
 	"description": "Creates a new armor set.",
 	"category": "fileType.item",
 	"requires": {
-		"targetVersion": [
-			">=",
-			"1.16.100"
-		],
-		"packTypes": [
-			"behaviorPack",
-			"resourcePack"
-		],
-		"experimentalGameplay": [
-			"holidayCreatorFeatures"
-		]
+		"targetVersion": [">=", "1.16.100"],
+		"packTypes": ["behaviorPack", "resourcePack"],
+		"experimentalGameplay": ["holidayCreatorFeatures"]
 	},
 	"additionalModels": {
 		"PRESET_PATH": ""
@@ -24,20 +16,14 @@
 			"Identifier (e.g. \"iron\")",
 			"IDENTIFIER",
 			{
-				"validate": [
-					"required",
-					"alphanumeric",
-					"lowercase"
-				]
+				"validate": ["required", "alphanumeric", "lowercase"]
 			}
 		],
 		[
 			"Display Name (e.g. \"Iron\")",
 			"IDENTIFIER_NAME",
 			{
-				"validate": [
-					"required"
-				]
+				"validate": ["required"]
 			}
 		],
 		[
@@ -45,8 +31,7 @@
 			"HELMET",
 			{
 				"type": "switch",
-				"default": true,
-				"optional": true
+				"default": true
 			}
 		],
 		[
@@ -54,8 +39,7 @@
 			"CHESTPLATE",
 			{
 				"type": "switch",
-				"default": true,
-				"optional": true
+				"default": true
 			}
 		],
 		[
@@ -63,8 +47,7 @@
 			"LEGGINGS",
 			{
 				"type": "switch",
-				"default": true,
-				"optional": true
+				"default": true
 			}
 		],
 		[
@@ -72,8 +55,7 @@
 			"BOOTS",
 			{
 				"type": "switch",
-				"default": true,
-				"optional": true
+				"default": true
 			}
 		]
 	],
@@ -83,10 +65,7 @@
 			"armor1.png",
 			"textures/models/armor/{{PRESET_PATH}}{{IDENTIFIER}}_1.png",
 			{
-				"inject": [
-					"IDENTIFIER",
-					"PRESET_PATH"
-				],
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
 				"packPath": "resourcePack"
 			}
 		],
@@ -94,10 +73,7 @@
 			"armor2.png",
 			"textures/models/armor/{{PRESET_PATH}}{{IDENTIFIER}}_2.png",
 			{
-				"inject": [
-					"IDENTIFIER",
-					"PRESET_PATH"
-				],
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
 				"packPath": "resourcePack"
 			}
 		]
@@ -107,11 +83,7 @@
 			"en_US.lang",
 			"texts/en_US.lang",
 			{
-				"inject": [
-					"IDENTIFIER",
-					"IDENTIFIER_NAME",
-					"PROJECT_PREFIX"
-				],
+				"inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"],
 				"packPath": "resourcePack"
 			}
 		]
