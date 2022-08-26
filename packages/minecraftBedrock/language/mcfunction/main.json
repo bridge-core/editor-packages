@@ -1316,20 +1316,7 @@
 							"description": "Specifies the inventory slot to be modified. Valid values depend on whether a block or an entity is being modified.",
 							"type": "string",
 							"additionalData": {
-								"values": [
-									"slot.armor",
-									"slot.armor.chest",
-									"slot.armor.feet",
-									"slot.armor.head",
-									"slot.armor.legs",
-									"slot.chest",
-									"slot.enderchest",
-									"slot.hotbar",
-									"slot.inventory",
-									"slot.saddle",
-									"slot.weapon.mainhand",
-									"slot.weapon.offhand"
-								]
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/slotType.json"
 							}
 						},
 						{
@@ -1446,20 +1433,7 @@
 							"description": "Specifies the inventory slot to be modified. Valid values depend on whether a block or an entity is being modified.",
 							"type": "string",
 							"additionalData": {
-								"values": [
-									"slot.armor",
-									"slot.armor.chest",
-									"slot.armor.feet",
-									"slot.armor.head",
-									"slot.armor.legs",
-									"slot.chest",
-									"slot.enderchest",
-									"slot.hotbar",
-									"slot.inventory",
-									"slot.saddle",
-									"slot.weapon.mainhand",
-									"slot.weapon.offhand"
-								]
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/slotType.json"
 							}
 						},
 						{
@@ -4201,9 +4175,8 @@
 							}
 						},
 						{
-							"type": "$coordinates",
-							"argumentName": "position",
-							"description": "Specifies the position to spawn the loot table."
+							"type": "selector",
+							"argumentName": "player"
 						},
 						{
 							"type": "string",
@@ -4236,9 +4209,8 @@
 							}
 						},
 						{
-							"type": "$coordinates",
-							"argumentName": "position",
-							"description": "Specifies the position to spawn the loot table."
+							"type": "selector",
+							"argumentName": "player"
 						},
 						{
 							"type": "string",
@@ -4271,9 +4243,8 @@
 							}
 						},
 						{
-							"type": "$coordinates",
-							"argumentName": "position",
-							"description": "Specifies the position to spawn the loot table."
+							"type": "selector",
+							"argumentName": "player"
 						},
 						{
 							"type": "string",
@@ -4309,9 +4280,8 @@
 							}
 						},
 						{
-							"type": "$coordinates",
-							"argumentName": "position",
-							"description": "Specifies the position to spawn the loot table."
+							"type": "selector",
+							"argumentName": "player"
 						},
 						{
 							"type": "string",
@@ -4487,6 +4457,605 @@
 							"argumentName": "position",
 							"description": "Position to place the feature at.",
 							"type": "$coordinates",
+							"isOptional": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"requires": {
+				"targetVersion": [">=", "1.18.30"]
+			},
+			"commands": [
+				{
+					"commandName": "loot",
+					"description": "Drops the given loot table into the specified inventory or into the world.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["insert"]
+							}
+						},
+						{
+							"type": "$coordinates",
+							"argumentName": "position",
+							"description": "Specifies the position to spawn the loot table."
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["kill"]
+							}
+						},
+						{
+							"type": "selector",
+							"argumentName": "entity"
+						},
+						{
+							"argumentName": "tool",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/item_identifiers"
+							},
+							"isOptional": true
+						}
+					]
+				},
+				{
+					"commandName": "loot",
+					"description": "Drops the given loot table into the world.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["insert"]
+							}
+						},
+						{
+							"type": "$coordinates",
+							"argumentName": "position",
+							"description": "Specifies the position to spawn the loot table."
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["kill"]
+							}
+						},
+						{
+							"type": "selector",
+							"argumentName": "entity"
+						},
+						{
+							"argumentName": "slot",
+							"type": "string",
+							"additionalData": {
+								"values": ["mainhand", "offhand"]
+							},
+							"isOptional": true
+						}
+					]
+				},
+				{
+					"commandName": "loot",
+					"description": "Drops the given loot table into the world.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["insert"]
+							}
+						},
+						{
+							"type": "$coordinates",
+							"argumentName": "position",
+							"description": "Specifies the position to spawn the loot table."
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["loot"]
+							}
+						},
+						{
+							"type": "string",
+							"argumentName": "lootTable",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/lootTable/dynamic/shortLootTablePathEnum.json"
+							}
+						},
+						{
+							"argumentName": "tool",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/item_identifiers"
+							},
+							"isOptional": true
+						}
+					]
+				},
+				{
+					"commandName": "loot",
+					"description": "Drops the given loot table into the world.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["insert"]
+							}
+						},
+						{
+							"type": "$coordinates",
+							"argumentName": "position",
+							"description": "Specifies the position to spawn the loot table."
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["loot"]
+							}
+						},
+						{
+							"type": "string",
+							"argumentName": "lootTable",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/lootTable/dynamic/shortLootTablePathEnum.json"
+							}
+						},
+						{
+							"argumentName": "slot",
+							"type": "string",
+							"additionalData": {
+								"values": ["mainhand", "offhand"]
+							},
+							"isOptional": true
+						}
+					]
+				}
+			]
+		},
+
+		{
+			"requires": {
+				"targetVersion": [">=", "1.19.0"]
+			},
+			"commands": [
+				{
+					"commandName": "loot",
+					"description": "Drops the given loot table into the specified inventory or into the world.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["replace"]
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["entity"]
+							}
+						},
+						{
+							"type": "selector",
+							"argumentName": "entity"
+						},
+						{
+							"argumentName": "slotType",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/slotType.json"
+							}
+						},
+						{
+							"argumentName": "slotId",
+							"type": "number"
+						},
+						{
+							"argumentName": "count",
+							"type": "number"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["kill"]
+							}
+						},
+						{
+							"type": "selector",
+							"argumentName": "entity"
+						},
+						{
+							"argumentName": "tool",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/item_identifiers"
+							},
+							"isOptional": true
+						}
+					]
+				},
+				{
+					"commandName": "loot",
+					"description": "Drops the given loot table into the world.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["replace"]
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["entity"]
+							}
+						},
+						{
+							"type": "selector",
+							"argumentName": "entity"
+						},
+						{
+							"argumentName": "slotType",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/slotType.json"
+							}
+						},
+						{
+							"argumentName": "slotId",
+							"type": "number"
+						},
+						{
+							"argumentName": "count",
+							"type": "number"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["kill"]
+							}
+						},
+						{
+							"type": "selector",
+							"argumentName": "entity"
+						},
+						{
+							"argumentName": "slot",
+							"type": "string",
+							"additionalData": {
+								"values": ["mainhand", "offhand"]
+							},
+							"isOptional": true
+						}
+					]
+				},
+
+				{
+					"commandName": "loot",
+					"description": "Drops the given loot table into the specified inventory or into the world.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["replace"]
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["entity"]
+							}
+						},
+						{
+							"type": "selector",
+							"argumentName": "entity"
+						},
+						{
+							"argumentName": "slotType",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/slotType.json"
+							}
+						},
+						{
+							"argumentName": "slotId",
+							"type": "number"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["kill"]
+							}
+						},
+						{
+							"type": "selector",
+							"argumentName": "entity"
+						},
+						{
+							"argumentName": "tool",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/item_identifiers"
+							},
+							"isOptional": true
+						}
+					]
+				},
+				{
+					"commandName": "loot",
+					"description": "Drops the given loot table into the world.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["replace"]
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["entity"]
+							}
+						},
+						{
+							"type": "selector",
+							"argumentName": "entity"
+						},
+						{
+							"argumentName": "slotType",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/slotType.json"
+							}
+						},
+						{
+							"argumentName": "slotId",
+							"type": "number"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["kill"]
+							}
+						},
+						{
+							"type": "selector",
+							"argumentName": "entity"
+						},
+						{
+							"argumentName": "slot",
+							"type": "string",
+							"additionalData": {
+								"values": ["mainhand", "offhand"]
+							},
+							"isOptional": true
+						}
+					]
+				},
+
+				{
+					"commandName": "loot",
+					"description": "Drops the given loot table into the world.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["replace"]
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["entity"]
+							}
+						},
+						{
+							"type": "selector",
+							"argumentName": "entity"
+						},
+						{
+							"argumentName": "slotType",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/slotType.json"
+							}
+						},
+						{
+							"argumentName": "slotId",
+							"type": "number"
+						},
+						{
+							"argumentName": "count",
+							"type": "number"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["loot"]
+							}
+						},
+						{
+							"type": "string",
+							"argumentName": "lootTable",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/lootTable/dynamic/shortLootTablePathEnum.json"
+							}
+						},
+						{
+							"argumentName": "tool",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/item_identifiers"
+							},
+							"isOptional": true
+						}
+					]
+				},
+				{
+					"commandName": "loot",
+					"description": "Drops the given loot table into the world.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["replace"]
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["entity"]
+							}
+						},
+						{
+							"type": "selector",
+							"argumentName": "entity"
+						},
+						{
+							"argumentName": "slotType",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/slotType.json"
+							}
+						},
+						{
+							"argumentName": "slotId",
+							"type": "number"
+						},
+						{
+							"argumentName": "count",
+							"type": "number"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["loot"]
+							}
+						},
+						{
+							"type": "string",
+							"argumentName": "lootTable",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/lootTable/dynamic/shortLootTablePathEnum.json"
+							}
+						},
+						{
+							"argumentName": "slot",
+							"type": "string",
+							"additionalData": {
+								"values": ["mainhand", "offhand"]
+							},
+							"isOptional": true
+						}
+					]
+				},
+				{
+					"commandName": "loot",
+					"description": "Drops the given loot table into the world.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["replace"]
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["entity"]
+							}
+						},
+						{
+							"type": "selector",
+							"argumentName": "entity"
+						},
+						{
+							"argumentName": "slotType",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/slotType.json"
+							}
+						},
+						{
+							"argumentName": "slotId",
+							"type": "number"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["loot"]
+							}
+						},
+						{
+							"type": "string",
+							"argumentName": "lootTable",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/lootTable/dynamic/shortLootTablePathEnum.json"
+							}
+						},
+						{
+							"argumentName": "tool",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/item_identifiers"
+							},
+							"isOptional": true
+						}
+					]
+				},
+				{
+					"commandName": "loot",
+					"description": "Drops the given loot table into the world.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["replace"]
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["entity"]
+							}
+						},
+						{
+							"type": "selector",
+							"argumentName": "entity"
+						},
+						{
+							"argumentName": "slotType",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/slotType.json"
+							}
+						},
+						{
+							"argumentName": "slotId",
+							"type": "number"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["loot"]
+							}
+						},
+						{
+							"type": "string",
+							"argumentName": "lootTable",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/lootTable/dynamic/shortLootTablePathEnum.json"
+							}
+						},
+						{
+							"argumentName": "slot",
+							"type": "string",
+							"additionalData": {
+								"values": ["mainhand", "offhand"]
+							},
 							"isOptional": true
 						}
 					]
