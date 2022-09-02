@@ -1,3 +1,13 @@
+/*
+ * Available Formats:
+ * hex - #RRGGBB
+ * hexa - #RRGGBBAA
+ * ahex - #AARRGGBB
+ * rgb - [r, g, b] 0-255
+ * rgbDec - [r, g, b] 0-1
+ * rgba - [r, g, b, a] 0-255
+ * rgbaDec - [r, g, b, a] 0-1
+ */
 {
 	"block": {
 		"hex": [
