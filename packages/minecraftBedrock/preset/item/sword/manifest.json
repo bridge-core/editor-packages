@@ -23,9 +23,12 @@
 			"IDENTIFIER",
 			{ "validate": ["required", "alphanumeric", "lowercase"] }
 		],
-		["Display Name", "IDENTIFIER_NAME", { "validate": ["required"] }]
+		[
+			"Display Name",
+			"IDENTIFIER_NAME",
+			{ "validate": ["required"] }
+		]
 	],
-
 	"createFiles": [
 		"presetScript/itemImages.js",
 		[
@@ -35,6 +38,11 @@
 		]
 	],
 	"expandFiles": [
+		[
+			"itemTexture.json",
+			"textures/item_texture.json",
+			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "packPath": "resourcePack" }
+		],
 		[
 			"en_US.lang",
 			"texts/en_US.lang",
