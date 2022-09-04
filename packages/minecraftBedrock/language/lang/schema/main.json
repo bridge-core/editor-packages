@@ -1,0 +1,45 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"keys": {
+			"description": "Define the language keys that should be proposed in auto-completions.",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"formats": {
+						"description": "The different formats of lang keys that can be created from the data that has been fetched from cache (defined in 'inject').",
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					"inject": {
+						"description": "The data to be injected into each key format.",
+						"type": "array",
+						"items": {
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"name": {
+									"type": "string",
+									"description": "The name to assign the fetched data, to be referenced in 'formats'."
+								},
+								"fileType": {
+									"type": "string",
+									"description": "The file type to fetch the data from."
+								},
+								"cacheKey": {
+									"type": "string",
+									"description": "The cache key of the data to fetch, from the specified 'fileType'."
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

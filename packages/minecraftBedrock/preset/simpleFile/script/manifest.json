@@ -1,7 +1,7 @@
 {
-	"name": "GameTest",
+	"name": "Script",
 	"icon": "mdi-test-tube",
-	"description": "Creates a blank GameTest.",
+	"description": "Creates a blank script for the GameTest framework.",
 	"category": "fileType.simpleFile",
 	"requires": {
 		"packTypes": ["behaviorPack"],
@@ -24,21 +24,15 @@
 				]
 			}
 		],
-		["File Name", "FILE_NAME", { "validate": ["required"] }]
+		["File Name", "FILE_NAME", { "validate": ["required"] }],
+		[
+			"Register GameTest template",
+			"GAMETEST",
+			{
+				"type": "switch"
+			}
+		]
 	],
 
-	"createFiles": [
-		[
-			"gameTest.js",
-			"{{PRESET_PATH}}{{FILE_NAME}}.{{LANGUAGE}}",
-			{ "inject": ["FILE_NAME", "LANGUAGE", "PRESET_PATH"], "openFile": true, "packPath": "behaviorPack" }
-		]
-	],
-	"expandFiles": [
-		[
-			"Main.js",
-			"scripts/main.js",
-			{ "inject": ["FILE_NAME", "PRESET_PATH"], "packPath": "behaviorPack" }
-		]
-	]
+	"createFiles": ["./scriptTemplate.js"]
 }

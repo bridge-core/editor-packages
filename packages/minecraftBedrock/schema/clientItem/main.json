@@ -64,7 +64,7 @@
 						"minecraft:use_animation": {
 							"title": "Use Animation",
 							"type": "string",
-							"description": "The animation to use when this item is being used, e.g when the item is being eaten",
+							"description": "The animation to use when this item is being used, e.g when the item is being eaten.",
 							"enum": [
 								"bow",
 								"eat",
@@ -75,7 +75,7 @@
 						},
 						"minecraft:hover_text_color": {
 							"title": "Hover Text Color",
-							"description": "The color of the item's name",
+							"description": "The color of the item's name.",
 							"$ref": "../general/minecraftColor.json"
 						},
 						"minecraft:render_offsets": {

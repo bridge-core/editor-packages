@@ -1,6 +1,6 @@
 {
 	"name": "Steve",
-	"icon": "mdi-face-outline",
+	"icon": "mdi-face-man-outline",
 	"description": "Add a Steve to the skin pack",
 	"category": "fileType.skins",
 	"requires": {
@@ -32,11 +32,18 @@
 
 	"createFiles": ["presetScript/optionalImage.js"],
 	"expandFiles": [
-		["skins.json", "skins.json", { "inject": ["IDENTIFIER"], "packPath": "skinPack" }],
+		[
+			"skins.json",
+			"skins.json",
+			{ "inject": ["IDENTIFIER"], "packPath": "skinPack" }
+		],
 		[
 			"en_US.lang",
 			"texts/en_US.lang",
-			{ "inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"], "packPath": "skinPack" }
+			{
+				"inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"],
+				"packPath": "skinPack"
+			}
 		]
 	]
 }
