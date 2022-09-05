@@ -6,8 +6,7 @@ declare interface CommandContext<T> {
 	name: (name: string) => void
 	schema: (schema: any) => void
 	template: (
-		templateFunction: (commandArgs: T, opts: TemplateContext) => void,
-		templateContext: TemplateContext
+		templateFunction: (commandArgs: T, opts: TemplateContext) => void
 	) => void
 }
 
