@@ -39,11 +39,6 @@
 	],
 	"expandFiles": [
 		[
-			"itemTexture.json",
-			"textures/item_texture.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "packPath": "resourcePack" }
-		],
-		[
 			"en_US.lang",
 			"texts/en_US.lang",
 			{ "inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"], "packPath": "resourcePack" }
