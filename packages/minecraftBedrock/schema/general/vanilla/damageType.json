@@ -4,6 +4,7 @@
 	"enum": [
 		"all",
 		"anvil",
+		"any",
 		"attack",
 		"block_explosion",
 		"charging",

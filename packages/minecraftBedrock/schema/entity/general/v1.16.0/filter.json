@@ -134,6 +134,7 @@
 						"in_water_or_rain",
 						"is_altitude",
 						"is_avoiding_mobs",
+						"is_baby", // v1.19.30+
 						"is_biome",
 						"is_block",
 						"is_brightness",
@@ -507,6 +508,23 @@
 				"properties": {
 					"value": {
 						"description": "Returns true if the subject entity is fleeing from other mobs.",
+						"type": "boolean"
+					}
+				}
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"test": {
+						"const": "is_baby"
+					}
+				}
+			},
+			"then": {
+				"properties": {
+					"value": {
+						"description": "Returns true when the subject entity is a baby.",
 						"type": "boolean"
 					}
 				}

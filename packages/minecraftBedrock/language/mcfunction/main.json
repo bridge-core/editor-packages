@@ -5684,6 +5684,69 @@
 					]
 				}
 			]
+		},
+		{
+			"requires": {
+				"targetVersion": [">=", "1.19.40"],
+				"experimentalGameplay": ["upcomingCreatorFeatures"]
+			},
+			"subcommands": [
+				{
+					"commandName": "execute",
+					"commands": [
+						// rotated (relative)
+						{
+							"commandName": "rotated",
+							"arguments": [
+								{
+									"argumentName": "yaw",
+									"type": "string",
+									"additionalData": {
+										"values": ["~"]
+									}
+								},
+								{
+									"argumentName": "pitch",
+									"type": "string",
+									"additionalData": {
+										"values": ["~"]
+									}
+								}
+							]
+						},
+						// rotated (absolute)
+						{
+							"commandName": "rotated",
+							"arguments": [
+								{
+									"argumentName": "yaw",
+									"type": "number"
+								},
+								{
+									"argumentName": "pitch",
+									"type": "number"
+								}
+							]
+						},
+						// rotated > as
+						{
+							"commandName": "rotated",
+							"arguments": [
+								{
+									"type": "string",
+									"additionalData": {
+										"values": ["as"]
+									}
+								},
+								{
+									"type": "selector",
+									"argumentName": "origin"
+								}
+							]
+						}
+					]
+				}
+			]
 		}
 	]
 }

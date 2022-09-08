@@ -1,0 +1,92 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows the mob to play with other mobs by chasing each other and moving around randomly.",
+	"type": "object",
+	"title": "Play",
+	"properties": {
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
+		"speed_multiplier": {
+			"title": "Speed Multiplier",
+			"description": "Movement speed multiplier of the mob when using this AI Goal.",
+			"type": "number",
+			"default": 1.0
+		},
+		"chance_to_start": {
+			"title": "Chance To Start",
+			"type": "number",
+			"default": 0.0,
+			"description": "Percent chance that the mob will start this goal, from 0 to 1.",
+			"minimum": 0,
+			"maximum": 1
+		},
+		"follow_distance": {
+			"description": "The distance (in blocks) that the mob tries to be in range of the friend it's following.",
+			"title": "Follow Distance",
+			"type": "integer",
+			"default": 2
+		},
+		"friend_search_area": {
+			"title": "Friend Search Area",
+			"description": "The dimensions of the AABB used to search for a potential friend to play with.",
+			"type": "array",
+			"minItems": 3,
+			"maxItems": 3,
+			"items": [
+				{
+					"type": "integer",
+					"default": 6
+				},
+				{
+					"type": "integer",
+					"default": 3
+				},
+				{
+					"type": "integer",
+					"default": 6
+				}
+			]
+		},
+		"friend_types": {
+			"title": "Friend Types",
+			"description": "The entity type(s) to consider when searching for a potential friend to play with.",
+			"type": "object",
+			"properties": {
+				"filters": {
+					"title": "Filters",
+					"anyOf": [
+						{
+							"type": "object",
+							"$ref": "../../general/v1.16.0/filter.json"
+						},
+						{
+							"type": "array",
+							"items": {
+								"type": "object",
+								"$ref": "../../general/v1.16.0/filter.json"
+							}
+						}
+					]
+				}
+			}
+		},
+		"max_play_duration_seconds": {
+			"title": "Maximum Play Duration (Seconds)",
+			"type": "number",
+			"default": 50,
+			"description": "The max amount of seconds that the mob will play for before exiting the Goal."
+		},
+		"random_pos_search_height": {
+			"description": "The height (in blocks) that the mob will search within to find a random position position to move to. Must be at least 1.",
+			"title": "Random Position Search Height",
+			"type": "integer",
+			"default": 3
+		},
+		"random_pos_search_range": {
+			"description": "The distance (in blocks) on ground that the mob will search within to find a random position to move to. Must be at least 1.",
+			"title": "Random Position Search Range",
+			"type": "integer",
+			"default": 16
+		}
+	}
+}
