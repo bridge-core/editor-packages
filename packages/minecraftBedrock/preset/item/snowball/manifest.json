@@ -17,7 +17,10 @@
 			"IDENTIFIER",
 			{ "validate": ["required", "alphanumeric", "lowercase"] }
 		],
-		["Display Name", "IDENTIFIER_NAME", { "validate": ["required"] }]
+		[
+			"Display Name", "IDENTIFIER_NAME",
+			{ "validate": ["required"] }
+		]
 	],
 
 	"createFiles": [
@@ -33,12 +36,12 @@
 		],
 		[
 			"clientEntity.json",
-			"entity/{{PRESET_PATH}}{{IDENTIFIER}}.json",
+			"entity/{{PRESET_PATH}}thrown_{{IDENTIFIER}}.entity.json",
 			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "openFile": true, "packPath": "resourcePack" }
 		],
 		[
 			"entity.json",
-			"entities/{{PRESET_PATH}}{{IDENTIFIER}}.json",
+			"entities/{{PRESET_PATH}}thrown_{{IDENTIFIER}}.json",
 			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "openFile": true, "packPath": "behaviorPack" }
 		]
 	],

@@ -23,9 +23,12 @@
 			"IDENTIFIER",
 			{ "validate": ["required", "alphanumeric", "lowercase"] }
 		],
-		["Display Name", "IDENTIFIER_NAME", { "validate": ["required"] }]
+		[
+			"Display Name",
+			"IDENTIFIER_NAME",
+			{ "validate": ["required"] }
+		]
 	],
-
 	"createFiles": [
 		"presetScript/itemImages.js",
 		[
