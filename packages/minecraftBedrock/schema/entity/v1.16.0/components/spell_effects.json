@@ -3,7 +3,7 @@
 	"additionalProperties": false,
 	"description": "Defines what mob effects to add and remove to the entity when adding this component.",
 	"type": "object",
-	"title": "Mob Effects",
+	"title": "Spell Effects",
 	"properties": {
 		"add_effects": {
 			"title": "Add Effects",
