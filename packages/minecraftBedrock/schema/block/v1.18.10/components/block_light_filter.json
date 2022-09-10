@@ -3,7 +3,7 @@
 	"additionalProperties": false,
 	"type": "integer",
 	"title": "Block Light Filter",
-	"description": "The amount of light this block will filter out. Higher value means more light will be filtered out.",
+	"description": "The amount that light will be dampened when it passes through the block, in a range (0-15). Higher value means the light will be dampened more.",
 	"minimum": 0,
 	"maximum": 15,
 	"default": 0

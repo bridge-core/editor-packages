@@ -11,9 +11,6 @@
 		"minecraft:light_emission": {
 			"$ref": "./light_emission.json"
 		},
-		"minecraft:light_dampening": {
-			"$ref": "./light_dampening.json"
-		},
 		"minecraft:friction": {
 			"$ref": "./friction.json"
 		},
@@ -46,6 +43,9 @@
 		},
 		"minecraft:preventsjumping": {
 			"$ref": "../../v1.18.30/components/preventsjumping.json"
+		},
+		"minecraft:block_light_filter": {
+			"$ref": "../../v1.18.10/components/block_light_filter.json"
 		},
 		"minecraft:creative_category": {
 			"$ref": "../../v1.16.100/components/creative_category.json"
