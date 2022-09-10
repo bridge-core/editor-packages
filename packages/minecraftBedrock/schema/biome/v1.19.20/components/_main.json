@@ -15,9 +15,9 @@
 		// Non-experimental
 		{
 			"properties": {
-                "minecraft:consolidated_features": {
-                    "$ref": "./consolidated_features.json"
-                },
+				"minecraft:consolidated_features": {
+					"$ref": "./consolidated_features.json"
+				},
 				"minecraft:ignore_automatic_features": {
 					"$ref": "../../v1.16.0/components/ignore_automatic_features.json"
 				},

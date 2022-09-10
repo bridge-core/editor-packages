@@ -1,12 +1,12 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "type": "string",
-    // DEPRECATED:
-    // query.actor_property
-    // query.has_actor_property
-    "enum": [
-        "query.had_component_group",
-        "query.has_property",
-        "query.property"
-    ]
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "string",
+	// DEPRECATED:
+	// query.actor_property
+	// query.has_actor_property
+	"enum": [
+		"query.had_component_group",
+		"query.has_property",
+		"query.property"
+	]
 }

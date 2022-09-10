@@ -6,7 +6,7 @@
 	"type": "object",
 	"properties": {
 		"num_particles": {
-            "title": "Number Of Particles",
+			"title": "Number Of Particles",
 			"$ref": "../../../molang/embedded.json"
 		}
 	}

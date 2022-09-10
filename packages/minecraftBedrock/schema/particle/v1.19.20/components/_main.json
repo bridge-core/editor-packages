@@ -1,12 +1,12 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
+	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
-    "type": "object",
-    "properties": {
-        "minecraft:particle_appearance_billboard": {
+	"type": "object",
+	"properties": {
+		"minecraft:particle_appearance_billboard": {
 			"$ref": "./particle_appearance_billboard.json"
 		},
-        "minecraft:emitter_local_space": {
+		"minecraft:emitter_local_space": {
 			"$ref": "../../v1.16.0/components/emitter_local_space.json"
 		},
 		"minecraft:emitter_initialization": {
@@ -90,5 +90,5 @@
 		"minecraft:particle_initialization": {
 			"$ref": "../../v1.16.0/components/particle_initialization.json"
 		}
-    }
+	}
 }

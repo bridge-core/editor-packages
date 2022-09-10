@@ -60,13 +60,13 @@
 				"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
 			}
 		},
-        "search_height": {
-            "title": "Search Height",
-            "type": "integer"
-        },
-        "pickup_same_items_as_in_hand": {
-            "title": "Pickup Same Items As In Hand",
-            "type": "boolean"
-        }
+		"search_height": {
+			"title": "Search Height",
+			"type": "integer"
+		},
+		"pickup_same_items_as_in_hand": {
+			"title": "Pickup Same Items As In Hand",
+			"type": "boolean"
+		}
 	}
 }

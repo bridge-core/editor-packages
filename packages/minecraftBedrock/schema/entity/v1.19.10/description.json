@@ -36,12 +36,22 @@
 										"title": "Range",
 										"type": "array",
 										"items": {
-											"type": ["string", "number", "boolean", "integer"]
+											"type": [
+												"string",
+												"number",
+												"boolean",
+												"integer"
+											]
 										}
 									},
 									"default": {
 										"title": "Default",
-										"type": ["string", "number", "boolean", "integer"]
+										"type": [
+											"string",
+											"number",
+											"boolean",
+											"integer"
+										]
 									},
 									"client_sync": {
 										"title": "Client Sync",

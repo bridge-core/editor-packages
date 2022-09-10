@@ -4,20 +4,20 @@
 	"additionalProperties": false,
 	"properties": {
 		"identifier": {
-            "title": "Identifier",
+			"title": "Identifier",
 			"$ref": "../general/reference/prefixedFileIdentifier.json"
 		},
 		"basic_render_parameters": {
-            "title": "Basic Render Parameters",
+			"title": "Basic Render Parameters",
 			"additionalProperties": false,
 			"type": "object",
 			"properties": {
 				"texture": {
-                    "title": "Texture",
+					"title": "Texture",
 					"$ref": "../general/reference/paths.json#/definitions/particle_texture_paths"
 				},
 				"material": {
-                    "title": "Material",
+					"title": "Material",
 					"type": "string",
 					"enum": ["particles_alpha", "particles_blend"]
 				}

@@ -1,24 +1,24 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "type": "string",
-    "anyOf": [
-        {
-            "$ref": "../../function/dynamic/entityTagEnum.json"
-        },
-        {
-            "$ref": "../../entity/dynamic/entityTagEnum.json"
-        },
-        {
-            "$ref": "../../block/dynamic/entityTagEnum.json"
-        },
-        {
-            "$ref": "../../item/dynamic/entityTagEnum.json"
-        },
-        {
-            "$ref": "../../animation/dynamic/entityTagEnum.json"
-        },
-        {
-            "$ref": "../../animationController/dynamic/entityTagEnum.json"
-        }
-    ]
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "string",
+	"anyOf": [
+		{
+			"$ref": "../../function/dynamic/entityTagEnum.json"
+		},
+		{
+			"$ref": "../../entity/dynamic/entityTagEnum.json"
+		},
+		{
+			"$ref": "../../block/dynamic/entityTagEnum.json"
+		},
+		{
+			"$ref": "../../item/dynamic/entityTagEnum.json"
+		},
+		{
+			"$ref": "../../animation/dynamic/entityTagEnum.json"
+		},
+		{
+			"$ref": "../../animationController/dynamic/entityTagEnum.json"
+		}
+	]
 }

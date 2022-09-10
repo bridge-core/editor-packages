@@ -1,11 +1,11 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-    "title": "Particle Appearance Billboard",
+	"title": "Particle Appearance Billboard",
 	"additionalProperties": false,
 	"type": "object",
 	"properties": {
 		"size": {
-            "title": "Size",
+			"title": "Size",
 			"description": "Specifies the x/y size of the billboard evaluated every frame",
 			"type": "array",
 			"minItems": 2,
@@ -15,7 +15,7 @@
 			}
 		},
 		"facing_camera_mode": {
-            "title": "Facing Camera Mode",
+			"title": "Facing Camera Mode",
 			"description": "Used to orient the billboard",
 			"type": "string",
 			"enum": [
@@ -32,23 +32,23 @@
 			]
 		},
 		"direction": {
-            "title": "Direction",
+			"title": "Direction",
 			"description": "Specifies how to calculate the direction of a particle, this will be used by facing modes that require a direction as input (for instance: lookat_direction and direction)",
 			"additionalProperties": false,
 			"type": "object",
 			"properties": {
 				"mode": {
-                    "title": "Mode",
+					"title": "Mode",
 					"type": "string",
 					"enum": ["derive_from_velocity", "custom_direction"]
 				},
 				"min_speed_threshold": {
-                    "title": "Minimum Speed Threshold",
+					"title": "Minimum Speed Threshold",
 					"description": "only used in 'derive_from_velocity' mode. The direction is set if the speed of the particle is above the threshold. The default is 0.01",
 					"type": "number"
 				},
 				"custom_direction": {
-                    "title": "Custom Direction",
+					"title": "Custom Direction",
 					"type": "array",
 					"minItems": 3,
 					"maxItems": 3,
@@ -59,21 +59,21 @@
 			}
 		},
 		"uv": {
-            "title": "UV",
+			"title": "UV",
 			"description": "Specifies the UVs for the particle",
 			"additionalProperties": false,
 			"type": "object",
 			"properties": {
 				"texture_height": {
-                    "title": "Texture Height",
+					"title": "Texture Height",
 					"type": "number"
 				},
 				"texture_width": {
-                    "title": "Texture Width",
+					"title": "Texture Width",
 					"type": "number"
 				},
 				"uv": {
-                    "title": "UV",
+					"title": "UV",
 					"description": "Assuming the specified texture width and height, use theseAssuming the specified texture width and height, use these uv coordinates.   uv coordinates.  ",
 					"type": "array",
 					"minItems": 2,
@@ -83,7 +83,7 @@
 					}
 				},
 				"uv_size": {
-                    "title": "UV Size",
+					"title": "UV Size",
 					"type": "array",
 					"minItems": 2,
 					"maxItems": 2,
@@ -92,13 +92,13 @@
 					}
 				},
 				"flipbook": {
-                    "title": "Flipbook",
+					"title": "Flipbook",
 					"description": "A flipbook animation uses pieces of the texture to animate, by stepping over time from one 'frame' to another",
 					"additionalProperties": false,
 					"type": "object",
 					"properties": {
 						"base_UV": {
-                            "title": "UV Base",
+							"title": "UV Base",
 							"type": "array",
 							"minItems": 2,
 							"maxItems": 2,
@@ -107,7 +107,7 @@
 							}
 						},
 						"size_UV": {
-                            "title": "UV Size",
+							"title": "UV Size",
 							"type": "array",
 							"minItems": 2,
 							"maxItems": 2,
@@ -116,7 +116,7 @@
 							}
 						},
 						"step_UV": {
-                            "title": "UV Step",
+							"title": "UV Step",
 							"type": "array",
 							"minItems": 2,
 							"maxItems": 2,
@@ -125,20 +125,20 @@
 							}
 						},
 						"frames_per_second": {
-                            "title": "Frames Per Second",
+							"title": "Frames Per Second",
 							"type": "number"
 						},
 						"max_frame": {
-                            "title": "Maximum Frame",
+							"title": "Maximum Frame",
 							"$ref": "../../../molang/embedded.json"
 						},
 						"stretch_to_lifetime": {
-                            "title": "Stretch To Lifetime",
+							"title": "Stretch To Lifetime",
 							"description": "Optional, adjust fps to match lifetime of particle. default=false",
 							"type": "boolean"
 						},
 						"loop": {
-                            "title": "Loop",
+							"title": "Loop",
 							"description": "Optional, makes the animation loop when it reaches the end",
 							"type": "boolean"
 						}

@@ -15,7 +15,9 @@
 							{
 								"description": "List of slash commands to run.",
 								"type": "array",
-								"items": { "$ref": "../../general/command.json" }
+								"items": {
+									"$ref": "../../general/command.json"
+								}
 							},
 							{
 								"description": "Slash command to run.",
