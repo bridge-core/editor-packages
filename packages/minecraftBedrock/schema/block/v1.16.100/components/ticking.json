@@ -19,12 +19,12 @@
 			"maxItems": 2,
 			"items": [
 				{
-					"type": "integer",
-					"default": 10
+					"type": "number",
+					"default": 10.0
 				},
 				{
-					"type": "integer",
-					"default": 10
+					"type": "number",
+					"default": 10.0
 				}
 			]
 		},
