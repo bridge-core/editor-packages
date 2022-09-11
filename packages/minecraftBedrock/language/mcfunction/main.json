@@ -1046,7 +1046,8 @@
 						{
 							"argumentName": "message",
 							"description": "Specifies the message to tell.",
-							"type": "string"
+							"type": "string",
+							"allowMultiple": true
 						}
 					]
 				},
@@ -1647,7 +1648,8 @@
 						{
 							"type": "string",
 							"argumentName": "message",
-							"description": "Specifies the message to say."
+							"description": "Specifies the message to say.",
+							"allowMultiple": true
 						}
 					]
 				},
@@ -2921,7 +2923,8 @@
 						{
 							"argumentName": "message",
 							"description": "Specifies the message to tell.",
-							"type": "string"
+							"type": "string",
+							"allowMultiple": true
 						}
 					]
 				},
@@ -3254,7 +3257,8 @@
 						{
 							"argumentName": "titleText",
 							"description": "Specifies the text to display as a title, subtitle, or on the action bar.",
-							"type": "string"
+							"type": "string",
+							"allowMultiple": true
 						}
 					]
 				},
@@ -3620,7 +3624,8 @@
 						{
 							"argumentName": "message",
 							"description": "Specifies the message to tell.",
-							"type": "string"
+							"type": "string",
+							"allowMultiple": true
 						}
 					]
 				},
