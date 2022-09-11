@@ -2,9 +2,7 @@
 	"format_version": "1.8.0",
 	"render_controllers": {
 		"controller.render.{{IDENTIFIER}}": {
-			"textures": [
-				"Texture.default"
-			],
+			"textures": ["Texture.default"],
 			"geometry": "Geometry.default",
 			"materials": [
 				{

@@ -50,19 +50,29 @@
 		[
 			"entity.json",
 			"entities/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "openFile": true, "packPath": "behaviorPack" }
+			{
+				"inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"],
+				"openFile": true,
+				"packPath": "behaviorPack"
+			}
 		],
 		[
 			"renderController.json",
 			"render_controllers/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		]
 	],
 	"expandFiles": [
 		[
 			"en_US.lang",
 			"texts/en_US.lang",
-			{ "inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"],
+				"packPath": "resourcePack"
+			}
 		]
 	]
 }

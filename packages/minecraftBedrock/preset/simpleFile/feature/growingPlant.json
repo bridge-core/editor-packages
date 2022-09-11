@@ -1,13 +1,13 @@
 {
-    "format_version": "",
-    "minecraft:growing_plant_feature": {
-        "description": {
-            "identifier": "{{PROJECT_PREFIX}}:{{FILE_NAME}}"
-        },
-        "height_distribution": {},
-        "allow_water": {},
-        "growth_direction": {},
-        "body_blocks": {},
-        "head_blocks": {}
-    }
+	"format_version": "",
+	"minecraft:growing_plant_feature": {
+		"description": {
+			"identifier": "{{PROJECT_PREFIX}}:{{FILE_NAME}}"
+		},
+		"height_distribution": {},
+		"allow_water": {},
+		"growth_direction": {},
+		"body_blocks": {},
+		"head_blocks": {}
+	}
 }

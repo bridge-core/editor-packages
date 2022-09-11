@@ -32,10 +32,10 @@
 		[
 			"Template",
 			"TEMPLATE",
-			{ 
-				"type": "selectInput", 
+			{
+				"type": "selectInput",
 				"optional": false,
-				"default": "Blank", 
+				"default": "Blank",
 				"options": [
 					"Blank",
 					"Shaped Recipe",
@@ -44,12 +44,10 @@
 					"Brewing Mix Recipe",
 					"Brewing Container Recipe",
 					"Material Reducer Recipe"
-				] 
+				]
 			}
 		]
 	],
 
-	"createFiles": [
-		"presetScript/fileTemplates.js"
-	]
+	"createFiles": ["presetScript/fileTemplates.js"]
 }

@@ -47,7 +47,11 @@
 		[
 			"block.json",
 			"blocks/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "openFile": true, "packPath": "behaviorPack" }
+			{
+				"inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"],
+				"openFile": true,
+				"packPath": "behaviorPack"
+			}
 		],
 		"presetScript/optionalModel.js",
 		"presetScript/blockImages.js"
@@ -56,12 +60,18 @@
 		[
 			"clientBlock.json",
 			"blocks.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PROJECT_PREFIX"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"en_US.lang",
 			"texts/en_US.lang",
-			{ "inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"],
+				"packPath": "resourcePack"
+			}
 		]
 	]
 }

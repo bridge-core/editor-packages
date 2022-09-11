@@ -6,7 +6,10 @@
 	"requires": {
 		"targetVersion": [">=", "1.16.100"],
 		"packTypes": ["behaviorPack", "resourcePack"],
-		"experimentalGameplay": ["holidayCreatorFeatures", "upcomingCreatorFeatures"]
+		"experimentalGameplay": [
+			"holidayCreatorFeatures",
+			"upcomingCreatorFeatures"
+		]
 	},
 	"additionalModels": {
 		"PRESET_PATH": ""
@@ -17,28 +20,34 @@
 			"IDENTIFIER",
 			{ "validate": ["required", "alphanumeric", "lowercase"] }
 		],
-		[
-			"Display Name",
-			"IDENTIFIER_NAME",
-			{ "validate": ["required"] }
-		]
+		["Display Name", "IDENTIFIER_NAME", { "validate": ["required"] }]
 	],
 
 	"createFiles": [
 		[
 			"block.json",
 			"blocks/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "openFile": true, "packPath": "behaviorPack" }
+			{
+				"inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"],
+				"openFile": true,
+				"packPath": "behaviorPack"
+			}
 		],
 		[
 			"doubleBlock.json",
 			"blocks/{{PRESET_PATH}}double_{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "packPath": "behaviorPack" }
+			{
+				"inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"],
+				"packPath": "behaviorPack"
+			}
 		],
 		[
 			"lootTable.json",
 			"loot_tables/blocks/double_{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX"], "packPath": "behaviorPack" }
+			{
+				"inject": ["IDENTIFIER", "PROJECT_PREFIX"],
+				"packPath": "behaviorPack"
+			}
 		],
 		[
 			"geometry.json",
@@ -50,12 +59,18 @@
 		[
 			"clientBlock.json",
 			"blocks.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PROJECT_PREFIX"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"en_US.lang",
 			"texts/en_US.lang",
-			{ "inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"],
+				"packPath": "resourcePack"
+			}
 		]
 	]
 }

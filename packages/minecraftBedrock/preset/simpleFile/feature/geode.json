@@ -1,18 +1,18 @@
 {
-    "format_version": "",
-    "minecraft:geode_feature": {
-        "description": {
-            "identifier": "{{PROJECT_PREFIX}}:{{FILE_NAME}}"
-        },
-        "filler": {},
-        "inner_layer": {},
-        "alternate_inner_layer": {},
-        "middle_layer": {},
-        "outer_layer": {},
-        "inner_placements": {},
-        "min_outer_wall_distance": {},
-        "max_outer_wall_distance": {},
-        "max_radius": {},
-        "invalid_blocks_threshold": {}
-    }
+	"format_version": "",
+	"minecraft:geode_feature": {
+		"description": {
+			"identifier": "{{PROJECT_PREFIX}}:{{FILE_NAME}}"
+		},
+		"filler": {},
+		"inner_layer": {},
+		"alternate_inner_layer": {},
+		"middle_layer": {},
+		"outer_layer": {},
+		"inner_placements": {},
+		"min_outer_wall_distance": {},
+		"max_outer_wall_distance": {},
+		"max_radius": {},
+		"invalid_blocks_threshold": {}
+	}
 }

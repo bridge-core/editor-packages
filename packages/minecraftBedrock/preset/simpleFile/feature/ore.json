@@ -1,15 +1,15 @@
 {
-    "format_version": "",
-    "minecraft:ore_feature": {
-        "description": {
-            "identifier": "{{PROJECT_PREFIX}}:{{FILE_NAME}}"
-        },
-        "count": 0,
-        "replace_rules": [
-            {
-                "places_block": {},
-                "may_replace": []
-            }
-        ]
-    }
+	"format_version": "",
+	"minecraft:ore_feature": {
+		"description": {
+			"identifier": "{{PROJECT_PREFIX}}:{{FILE_NAME}}"
+		},
+		"count": 0,
+		"replace_rules": [
+			{
+				"places_block": {},
+				"may_replace": []
+			}
+		]
+	}
 }

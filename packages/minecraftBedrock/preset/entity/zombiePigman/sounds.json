@@ -3,10 +3,7 @@
 		"entities": {
 			"{{PROJECT_PREFIX}}:{{IDENTIFIER}}": {
 				"volume": 1,
-				"pitch": [
-					0.8,
-					1.2
-				],
+				"pitch": [0.8, 1.2],
 				"events": {
 					"ambient": "mob.{{IDENTIFIER}}.zpig",
 					"hurt": "mob.{{IDENTIFIER}}.zpighurt",
@@ -14,10 +11,7 @@
 					"mad": {
 						"sound": "mob.{{IDENTIFIER}}.zpigangry",
 						"volume": 2,
-						"pitch": [
-							1.44,
-							2.16
-						]
+						"pitch": [1.44, 2.16]
 					}
 				}
 			}

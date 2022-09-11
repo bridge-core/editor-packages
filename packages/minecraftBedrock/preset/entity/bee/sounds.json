@@ -8,25 +8,16 @@
 					"hurt": {
 						"sound": "mob.{{IDENTIFIER}}.hurt",
 						"volume": 0.6,
-						"pitch": [
-							0.9,
-							1.1
-						]
+						"pitch": [0.9, 1.1]
 					},
 					"death": {
 						"sound": "mob.{{IDENTIFIER}}.death",
 						"volume": 0.6,
-						"pitch": [
-							0.9,
-							1.1
-						]
+						"pitch": [0.9, 1.1]
 					},
 					"attack": {
 						"sound": "mob.{{IDENTIFIER}}.sting",
-						"pitch": [
-							0.8,
-							1
-						]
+						"pitch": [0.8, 1]
 					},
 					"ambient.pollinate": {
 						"sound": "mob.{{IDENTIFIER}}.pollinate",

@@ -15,7 +15,11 @@
 		[
 			"material.material",
 			"{{PRESET_PATH}}{{FILE_NAME}}.material",
-			{ "inject": ["FILE_NAME", "PRESET_PATH"], "openFile": true, "packPath": "resourcePack" }
+			{
+				"inject": ["FILE_NAME", "PRESET_PATH"],
+				"openFile": true,
+				"packPath": "resourcePack"
+			}
 		]
 	]
 }

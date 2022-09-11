@@ -34,10 +34,10 @@
 					}
 				]
 			},
-      		"minecraft:icon": {
+			"minecraft:icon": {
 				"texture": "{{PROJECT_PREFIX}}_{{IDENTIFIER}}"
 			},
-     		 "minecraft:creative_category": {
+			"minecraft:creative_category": {
 				"parent": "itemGroup.name.shovel"
 			},
 			"tag:minecraft:is_shovel": {}

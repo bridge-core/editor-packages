@@ -31,17 +31,27 @@
 		[
 			"entity.json",
 			"entities/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "openFile": true, "packPath": "behaviorPack" }
+			{
+				"inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"],
+				"openFile": true,
+				"packPath": "behaviorPack"
+			}
 		],
 		[
 			"animation.json",
 			"animations/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"animationController.json",
 			"animation_controllers/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"geometry.json",
@@ -51,29 +61,44 @@
 		[
 			"lootTable.json",
 			"loot_tables/entities/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "behaviorPack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "behaviorPack"
+			}
 		],
 		[
 			"renderController.json",
 			"render_controllers/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"spawnRule.json",
 			"spawn_rules/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "packPath": "behaviorPack" }
+			{
+				"inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"],
+				"packPath": "behaviorPack"
+			}
 		],
 		[
 			"texture.tga",
 			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}.tga",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		]
 	],
 	"expandFiles": [
 		[
 			"en_US.lang",
 			"texts/en_US.lang",
-			{ "inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"soundDefinitions.json",
@@ -83,7 +108,10 @@
 		[
 			"sounds.json",
 			"sounds.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PROJECT_PREFIX"],
+				"packPath": "resourcePack"
+			}
 		]
 	]
 }

@@ -1,8 +1,8 @@
 {
-    "pools": [
-        {
-            "rolls": 1,
-            "entries": [{}]
-        }
-    ]
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [{}]
+		}
+	]
 }

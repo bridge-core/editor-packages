@@ -1,10 +1,10 @@
 {
-    "format_version": "",
-    "minecraft:aggregate_feature": {
-        "description": {
-            "identifier": "{{PROJECT_PREFIX}}:{{FILE_NAME}}"
-        },
-        "early_out": {},
-        "features": {}
-    }
+	"format_version": "",
+	"minecraft:aggregate_feature": {
+		"description": {
+			"identifier": "{{PROJECT_PREFIX}}:{{FILE_NAME}}"
+		},
+		"early_out": {},
+		"features": {}
+	}
 }

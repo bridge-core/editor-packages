@@ -1,5 +1,5 @@
 {
-  "{{PROJECT_PREFIX}}:{{IDENTIFIER}}": {
+	"{{PROJECT_PREFIX}}:{{IDENTIFIER}}": {
 		"sound": "stone"
-  }
+	}
 }

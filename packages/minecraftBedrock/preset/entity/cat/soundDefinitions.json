@@ -1,10 +1,7 @@
 {
 	"sound_definitions": {
 		"mob.{{IDENTIFIER}}.eat": {
-			"sounds": [
-				"sounds/mob/cat/eat1",
-				"sounds/mob/cat/eat2"
-			]
+			"sounds": ["sounds/mob/cat/eat1", "sounds/mob/cat/eat2"]
 		},
 		"mob.{{IDENTIFIER}}.hiss": {
 			"category": "neutral",

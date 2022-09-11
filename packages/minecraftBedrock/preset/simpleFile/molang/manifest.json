@@ -15,7 +15,11 @@
 		[
 			"molang.molang",
 			"{{PRESET_PATH}}{{FILE_NAME}}.molang",
-			{ "inject": ["FILE_NAME", "PRESET_PATH"], "openFile": true, "packPath": "behaviorPack" }
+			{
+				"inject": ["FILE_NAME", "PRESET_PATH"],
+				"openFile": true,
+				"packPath": "behaviorPack"
+			}
 		]
 	]
 }

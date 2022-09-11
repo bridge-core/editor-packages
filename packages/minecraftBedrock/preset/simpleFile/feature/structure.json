@@ -1,16 +1,16 @@
 {
-    "format_version": "",
-    "minecraft:structure_template_feature": {
-        "description": {
-            "identifier": "{{PROJECT_PREFIX}}:{{FILE_NAME}}"
-        },
-        "structure_name": {},
-        "adjustment_radius": {},
-        "facing_direction": {},
-        "constraints": {
-            "grounded": {},
-            "unburied": {},
-            "block_intersection": {}
-        }
-    }
+	"format_version": "",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "{{PROJECT_PREFIX}}:{{FILE_NAME}}"
+		},
+		"structure_name": {},
+		"adjustment_radius": {},
+		"facing_direction": {},
+		"constraints": {
+			"grounded": {},
+			"unburied": {},
+			"block_intersection": {}
+		}
+	}
 }

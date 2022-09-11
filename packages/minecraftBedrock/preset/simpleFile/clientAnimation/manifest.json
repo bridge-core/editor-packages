@@ -21,7 +21,11 @@
 		[
 			"animation.json",
 			"{{PRESET_PATH}}{{FILE_NAME}}.json",
-			{ "inject": ["FILE_NAME", "PRESET_PATH"], "openFile": true, "packPath": "resourcePack" }
+			{
+				"inject": ["FILE_NAME", "PRESET_PATH"],
+				"openFile": true,
+				"packPath": "resourcePack"
+			}
 		]
 	]
 }

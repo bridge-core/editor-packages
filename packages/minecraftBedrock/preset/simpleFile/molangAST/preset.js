@@ -7,6 +7,6 @@ module.exports = async ({ createFile, loadPresetFile, models }) => {
 			LANGUAGE === 'JavaScript' ? 'js' : 'ts'
 		}`,
 		file,
-		{ openFile: true, "packPath": "behaviorPack" }
+		{ openFile: true, packPath: 'behaviorPack' }
 	)
 }

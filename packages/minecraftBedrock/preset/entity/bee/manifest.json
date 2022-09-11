@@ -31,17 +31,27 @@
 		[
 			"entity.json",
 			"entities/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "openFile": true, "packPath": "behaviorPack" }
+			{
+				"inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"],
+				"openFile": true,
+				"packPath": "behaviorPack"
+			}
 		],
 		[
 			"animation.json",
 			"animations/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"animationController.json",
 			"animation_controllers/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"geometry.json",
@@ -51,39 +61,60 @@
 		[
 			"renderController.json",
 			"render_controllers/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"spawnRule.json",
 			"spawn_rules/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "packPath": "behaviorPack" }
+			{
+				"inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"],
+				"packPath": "behaviorPack"
+			}
 		],
 		[
 			"texture.png",
 			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"textureAngry.png",
 			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_angry.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"textureAngryNectar.png",
 			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_angry_nectar.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"textureNectar.png",
 			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_nectar.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		]
 	],
 	"expandFiles": [
 		[
 			"en_US.lang",
 			"texts/en_US.lang",
-			{ "inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"soundDefinitions.json",
@@ -93,7 +124,10 @@
 		[
 			"sounds.json",
 			"sounds.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PROJECT_PREFIX"],
+				"packPath": "resourcePack"
+			}
 		]
 	]
 }

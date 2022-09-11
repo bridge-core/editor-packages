@@ -12,16 +12,12 @@
 			"geometry": {
 				"default": "geometry.item_sprite"
 			},
-			"render_controllers": [
-				"controller.render.item_sprite"
-			],
+			"render_controllers": ["controller.render.item_sprite"],
 			"animations": {
 				"flying": "animation.actor.billboard"
 			},
 			"scripts": {
-				"animate": [
-					"flying"
-				]
+				"animate": ["flying"]
 			}
 		}
 	}

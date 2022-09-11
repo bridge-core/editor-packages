@@ -31,17 +31,27 @@
 		[
 			"entity.json",
 			"entities/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "openFile": true, "packPath": "behaviorPack" }
+			{
+				"inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"],
+				"openFile": true,
+				"packPath": "behaviorPack"
+			}
 		],
 		[
 			"animation.json",
 			"animations/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"animationController.json",
 			"animation_controllers/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"geometry.json",
@@ -51,139 +61,220 @@
 		[
 			"lootTable.json",
 			"loot_tables/entities/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "behaviorPack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "behaviorPack"
+			}
 		],
 		[
 			"lootTableGift.json",
 			"loot_tables/entities/{{PRESET_PATH}}{{IDENTIFIER}}_gift.json",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "behaviorPack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "behaviorPack"
+			}
 		],
 		[
 			"renderController.json",
 			"render_controllers/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"spawnRule.json",
 			"spawn_rules/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"], "packPath": "behaviorPack" }
+			{
+				"inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"],
+				"packPath": "behaviorPack"
+			}
 		],
 		[
 			"textureAllBlack.png",
 			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_allblackcat.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"textureAllBlackTame.tga",
 			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_allblackcat_tame.tga",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"textureBritish.png",
 			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_britishshorthair.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"textureBritishTame.tga",
 			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_britishshorthair_tame.tga",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"textureCalico.png",
 			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_calico.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"textureCalicoTame.tga",
 			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_calico_tame.tga",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"textureJellie.png",
 			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_jellie.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"textureJellieTame.tga",
 			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_jellie_tame.tga",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"texturePersian.png",
 			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_persian.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"texturePersianTame.tga",
 			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_persian_tame.tga",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"textureRagdoll.png",
 			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_ragdoll.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"textureRagdollTame.tga",
 			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_ragdoll_tame.tga",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"textureRedTabby.png",
 			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_redtabby.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"textureRedTabbyTame.tga",
 			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_redtabby_tame.tga",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"textureSiamese.png",
 			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_siamesecat.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"textureSiameseTame.tga",
 			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_siamesecat_tame.tga",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"textureTabby.png",
 			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_tabby.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"textureTabbyTame.tga",
 			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_tabby_tame.tga",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"textureTuxedo.png",
 			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_tuxedo.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"textureTuxedoTame.tga",
 			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_tuxedo_tame.tga",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"textureWhite.png",
 			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_white.png",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"textureWhiteTame.tga",
 			"textures/entity/{{PRESET_PATH}}{{IDENTIFIER}}/{{IDENTIFIER}}_white_tame.tga",
-			{ "inject": ["IDENTIFIER", "PRESET_PATH"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
 		]
 	],
 	"expandFiles": [
 		[
 			"en_US.lang",
 			"texts/en_US.lang",
-			{ "inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"],
+				"packPath": "resourcePack"
+			}
 		],
 		[
 			"soundDefinitions.json",
@@ -193,7 +284,10 @@
 		[
 			"sounds.json",
 			"sounds.json",
-			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX"], "packPath": "resourcePack" }
+			{
+				"inject": ["IDENTIFIER", "PROJECT_PREFIX"],
+				"packPath": "resourcePack"
+			}
 		]
 	]
 }

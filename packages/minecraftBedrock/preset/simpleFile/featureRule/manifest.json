@@ -22,7 +22,11 @@
 		[
 			"featureRule.json",
 			"{{PRESET_PATH}}{{FILE_NAME}}.json",
-			{ "inject": ["FILE_NAME", "PROJECT_PREFIX", "PRESET_PATH"], "openFile": true, "packPath": "behaviorPack" }
+			{
+				"inject": ["FILE_NAME", "PROJECT_PREFIX", "PRESET_PATH"],
+				"openFile": true,
+				"packPath": "behaviorPack"
+			}
 		]
 	]
 }

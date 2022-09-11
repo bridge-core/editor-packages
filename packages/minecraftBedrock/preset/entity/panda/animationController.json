@@ -1,103 +1,103 @@
 {
-	"format_version" : "1.10.0",
-	"animation_controllers" : {
-		"controller.animation.{{IDENTIFIER}}.baby" : {
-			"initial_state" : "baby",
-			"states" : {
-				"baby" : {
-					"animations" : [
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.{{IDENTIFIER}}.baby": {
+			"initial_state": "baby",
+			"states": {
+				"baby": {
+					"animations": [
 						{
-							"baby_transform" : "query.is_baby"
+							"baby_transform": "query.is_baby"
 						}
 					]
 				}
 			}
 		},
-		"controller.animation.{{IDENTIFIER}}.move" : {
-			"initial_state" : "default",
-			"states" : {
-				"default" : {
-					"animations" : [
+		"controller.animation.{{IDENTIFIER}}.move": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
 						{
-							"walk" : "query.modified_move_speed"
+							"walk": "query.modified_move_speed"
 						},
 						"look_at_target"
 					],
-					"transitions" : [
+					"transitions": [
 						{
-							"rolling" : "query.roll_counter > 0"
+							"rolling": "query.roll_counter > 0"
 						},
 						{
-							"sitting" : "query.sit_amount > 0"
+							"sitting": "query.sit_amount > 0"
 						},
 						{
-							"lying" : "query.lie_amount > 0"
+							"lying": "query.lie_amount > 0"
 						}
 					]
 				},
-				"lying" : {
-					"animations" : [ "lying" ],
-					"transitions" : [
+				"lying": {
+					"animations": ["lying"],
+					"transitions": [
 						{
-							"default" : "query.lie_amount <= 0"
+							"default": "query.lie_amount <= 0"
 						},
 						{
-							"rolling" : "query.roll_counter > 0"
+							"rolling": "query.roll_counter > 0"
 						},
 						{
-							"sitting" : "query.sit_amount > 0"
+							"sitting": "query.sit_amount > 0"
 						}
 					]
 				},
-				"rolling" : {
-					"animations" : [ "rolling" ],
-					"transitions" : [
+				"rolling": {
+					"animations": ["rolling"],
+					"transitions": [
 						{
-							"default" : "query.roll_counter <= 0"
+							"default": "query.roll_counter <= 0"
 						},
 						{
-							"sitting" : "query.sit_amount > 0"
+							"sitting": "query.sit_amount > 0"
 						},
 						{
-							"lying" : "query.lie_amount > 0"
+							"lying": "query.lie_amount > 0"
 						}
 					]
 				},
-				"sitting" : {
-					"animations" : [ "sitting" ],
-					"transitions" : [
+				"sitting": {
+					"animations": ["sitting"],
+					"transitions": [
 						{
-							"default" : "query.sit_amount <= 0"
+							"default": "query.sit_amount <= 0"
 						},
 						{
-							"rolling" : "query.roll_counter > 0"
+							"rolling": "query.roll_counter > 0"
 						},
 						{
-							"lying" : "query.lie_amount > 0"
+							"lying": "query.lie_amount > 0"
 						}
 					]
 				}
 			}
 		},
-		"controller.animation.{{IDENTIFIER}}.sneezing" : {
-			"initial_state" : "baby",
-			"states" : {
-				"baby" : {
-					"animations" : [
+		"controller.animation.{{IDENTIFIER}}.sneezing": {
+			"initial_state": "baby",
+			"states": {
+				"baby": {
+					"animations": [
 						{
-							"sneezing" : "query.sneeze_counter"
+							"sneezing": "query.sneeze_counter"
 						}
 					]
 				}
 			}
 		},
-		"controller.animation.{{IDENTIFIER}}.unhappy" : {
-			"initial_state" : "baby",
-			"states" : {
-				"baby" : {
-					"animations" : [
+		"controller.animation.{{IDENTIFIER}}.unhappy": {
+			"initial_state": "baby",
+			"states": {
+				"baby": {
+					"animations": [
 						{
-							"unhappy" : "query.unhappy_counter"
+							"unhappy": "query.unhappy_counter"
 						}
 					]
 				}

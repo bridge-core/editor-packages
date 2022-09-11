@@ -3,10 +3,7 @@
 		"entities": {
 			"{{PROJECT_PREFIX}}:{{IDENTIFIER}}": {
 				"volume": 1,
-				"pitch": [
-					0.8,
-					1.2
-				],
+				"pitch": [0.8, 1.2],
 				"events": {
 					"hurt": "mob.{{IDENTIFIER}}.hurt",
 					"hurt.in.water": "mob.{{IDENTIFIER}}.hurt",
