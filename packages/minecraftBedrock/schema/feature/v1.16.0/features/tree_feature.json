@@ -5,15 +5,19 @@
 			"type": "object",
 			"properties": {
 				"branch_length": {
+					"title": "Branch Length",
 					"type": "number"
 				},
 				"branch_position": {
+					"title": "Branch Position",
 					"type": "number"
 				},
 				"branch_chance": {
+					"title": "Branch Chance",
 					"type": "number"
 				},
 				"branch_canopy": {
+					"title": "Branch Canopy",
 					"$ref": "#/definitions/canopy_reference"
 				}
 			}
@@ -22,72 +26,91 @@
 			"type": "object",
 			"properties": {
 				"acacia_canopy": {
+					"title": "Acacia Canopy",
 					"type": "object",
 					"properties": {
 						"canopy_size": {
+							"title": "Canopy Size",
 							"type": "number"
 						},
 						"simplify_canopy": {
+							"title": "Simplify Canpoy",
 							"type": "boolean"
 						},
 						"leaf_block": {
+							"title": "Leaf Block",
 							"$ref": "../../general.json#/definitions/block_reference"
 						}
 					}
 				},
 				"canopy": {
+					"title": "Canpoy",
 					"additionalProperties": false,
 					"type": "object",
 					"properties": {
 						"canopy_offset": {
+							"title": "Canopy Offset",
 							"type": "object",
 							"properties": {
 								"min": {
+									"title": "Minimum",
 									"type": "number"
 								},
 								"max": {
+									"title": "Maximum",
 									"type": "number"
 								}
 							}
 						},
 						"min_width": {
+							"title": "Minimum Width",
 							"type": "number"
 						},
 						"canopy_slope": {
+							"title": "Canopy Slope",
 							"additionalProperties": false,
 							"type": "object",
 							"properties": {
 								"rise": {
+									"title": "Rise",
 									"type": "number"
 								},
 								"run": {
+									"title": "Run",
 									"type": "number"
 								}
 							}
 						},
 						"variation_chance": {
+							"title": "Variation Chance",
 							"type": "array",
 							"items": {
 								"$ref": "../../general.json#/definitions/chance_information"
 							}
 						},
 						"leaf_block": {
+							"title": "Leaf Block",
 							"$ref": "../../general.json#/definitions/block_reference"
 						},
 						"canopy_decoration": {
+							"title": "Canopy Decoration",
 							"additionalProperties": false,
 							"type": "object",
 							"properties": {
 								"decoration_chance": {
+									"title": "Decoration Chance",
 									"$ref": "../../general.json#/definitions/chance_information"
 								},
 								"decoration_block": {
+									"title": "Decoration Block",
 									"$ref": "../../general.json#/definitions/block_reference"
 								},
 								"num_steps": {
+									"title": "Number Of Steps",
 									"type": "number"
 								},
 								"step_direction": {
+									"title": "Step Direction",
 									"type": "string",
 									"enum": ["down", "up", "out", "away"]
 								}
@@ -96,97 +119,124 @@
 					}
 				},
 				"fancy_canopy": {
+					"title": "Fancy Canpoy",
 					"additionalProperties": false,
 					"type": "object",
 					"properties": {
 						"height": {
+							"title": "Height",
 							"type": "number"
 						},
 						"radius": {
+							"title": "Radius",
 							"type": "number"
 						},
 						"leaf_block": {
+							"title": "Leaf Block",
 							"$ref": "../../general.json#/definitions/block_reference"
 						}
 					}
 				},
 				"mega_canopy": {
+					"title": "Mega canpoy",
 					"additionalProperties": false,
 					"type": "object",
 					"properties": {
 						"canopy_height": {
+							"title": "Canopy Height",
 							"type": "number"
 						},
 						"core_width": {
+							"title": "Core Width",
 							"type": "number"
 						},
 						"base_radius": {
+							"title": "Base Radius",
 							"type": "number"
 						},
 						"simplify_canopy": {
+							"title": "Simplify Canopy",
 							"type": "boolean"
 						},
 						"leaf_block": {
+							"title": "Leaf Block",
 							"$ref": "../../general.json#/definitions/block_reference"
 						}
 					}
 				},
 				"mega_pine_canopy": {
+					"title": "Mega Pine Canopy",
 					"additionalProperties": false,
 					"type": "object",
 					"properties": {
 						"canopy_height": {
+							"title": "Canopy Height",
 							"type": "number"
 						},
 						"core_width": {
+							"title": "Core Width",
 							"type": "number"
 						},
 						"base_radius": {
+							"title": "Base Radius",
 							"type": "number"
 						},
 						"radius_step_modifier": {
+							"title": "Radius Step Modifier",
 							"type": "number"
 						},
 						"leaf_block": {
+							"title": "Leaf Block",
 							"$ref": "../../general.json#/definitions/block_reference"
 						}
 					}
 				},
 				"pine_canopy": {
+					"title": "Pine Canopy",
 					"additionalProperties": false,
 					"type": "object",
 					"properties": {
 						"canopy_height": {
+							"title": "Canopy Height",
 							"type": "number"
 						},
 						"core_width": {
+							"title": "Core Width",
 							"type": "number"
 						},
 						"outer_radius": {
+							"title": "Outer Radius",
 							"type": "number"
 						},
 						"inner_radius": {
+							"title": "Inner Radius",
 							"type": "number"
 						},
 						"leaf_block": {
+							"title": "Leaf Block",
 							"$ref": "../../general.json#/definitions/block_reference"
 						}
 					}
 				},
 				"spruce_canopy": {
+					"title": "Spruce Canopy",
 					"additionalProperties": false,
 					"type": "object",
 					"properties": {
 						"lower_offset": {
+							"title": "Lower Offset",
 							"type": "number"
 						},
 						"upper_offset": {
+							"title": "Upper Offset",
 							"type": "number"
 						},
 						"max_radius": {
+							"title": "Maximum Radius",
 							"type": "number"
 						},
 						"leaf_block": {
+							"title": "Leaf Block",
 							"$ref": "../../general.json#/definitions/block_reference"
 						}
 					}
@@ -204,144 +254,180 @@
 	],
 	"properties": {
 		"description": {
+			"title": "Description",
 			"type": "object",
 			"additionalProperties": false,
 			"properties": {
 				"identifier": {
+					"title": "Identifier",
 					// Needs to strictly match file name - don't change reference to "general/reference..." schema
 					"$ref": "../../../project/prefixedFileIdentifierEnum.json"
 				}
 			}
 		},
 		"base_cluster": {
+			"title": "Base Cluster",
 			"additionalProperties": false,
 			"type": "object",
 			"properties": {
 				"may_replace": {
+					"title": "May Replace",
 					"type": "array",
 					"items": {
 						"$ref": "../../general.json#/definitions/block_reference"
 					}
 				},
 				"num_clusters": {
+					"title": "Number Of Clusters",
 					"type": "number"
 				},
 				"cluster_radius": {
+					"title": "Cluster Radius",
 					"type": "number"
 				}
 			}
 		},
 		"may_grow_on": {
+			"title": "May Grow On",
 			"type": "array",
 			"items": {
 				"$ref": "../../general.json#/definitions/block_reference"
 			}
 		},
 		"may_grow_through": {
+			"title": "May Grow Through",
 			"type": "array",
 			"items": {
 				"$ref": "../../general.json#/definitions/block_reference"
 			}
 		},
 		"may_replace": {
+			"title": "May Replace",
 			"type": "array",
 			"items": {
 				"$ref": "../../general.json#/definitions/block_reference"
 			}
 		},
 		"acacia_trunk": {
+			"title": "Acacia Trunk",
 			"additionalProperties": false,
 			"type": "object",
 			"properties": {
 				"trunk_height": {
+					"title": "Trunk Height",
 					"type": "object",
 					"properties": {
 						"range_min": {
+							"title": "Minumum",
 							"type": "number"
 						},
 						"range_max": {
+							"title": "Maximum",
 							"type": "number"
 						}
 					}
 				},
 				"trunk_width": {
+					"title": "Trunk Width",
 					"type": "number"
 				},
 				"trunk_lean": {
+					"title": "Trunk Lean",
 					"additionalProperties": false,
 					"type": "object",
 					"properties": {
 						"allow_diagonal_growth": {
+							"title": "Allow Diagonal Growth",
 							"type": "boolean"
 						},
 						"lean_height": {
+							"title": "Lean Height",
 							"type": "number"
 						},
 						"lean_steps": {
+							"title": "Lean Steps",
 							"type": "number"
 						}
 					}
 				},
 				"trunk_block": {
+					"title": "Trunk Block",
 					"$ref": "../../general.json#/definitions/block_reference"
 				},
 				"trunk_decoration": {
+					"title": "Trunk Decoration",
 					"additionalProperties": false,
 					"type": "object",
 					"properties": {
 						"decoration_chance": {
+							"title": "Decoration Chance",
 							"$ref": "../../general.json#/definitions/chance_information"
 						},
 						"decoration_block": {
+							"title": "Decoration Block",
 							"$ref": "../../general.json#/definitions/block_reference"
 						},
 						"num_steps": {
+							"title": "Number Of Steps",
 							"type": "number"
 						},
 						"step_direction": {
+							"title": "Step Direction",
 							"type": "string",
 							"enum": ["down", "up", "out", "away"]
 						}
 					}
 				},
 				"branches": {
+					"title": "Branches",
 					"$ref": "#/definitions/branches_reference"
 				}
 			}
 		},
 		"fallen_trunk": {
+			"title": "Fallen Trunk",
 			"additionalProperties": false,
 			"type": "object",
 			"properties": {
 				"stump_height": {
+					"title": "Stump Height",
 					"type": "integer"
 				},
 				"height_modifier": {
+					"title": "Height Modifier",
 					"type": "number"
 				},
 				"log_length": {
+					"title": "Log Length",
 					"type": "integer"
 				},
 				"trunk_block": {
+					"title": "Trunk Block",
 					"$ref": "../../general.json#/definitions/block_reference"
 				},
 				"log_decoration_feature": {
+					"title": "Log Decoration Feature",
 					"$ref": "../../../general/reference/identifiers.json#/definitions/feature_identifiers"
 				},
 				"trunk_decoration": {
+					"title": "Trunk Decoration",
 					"additionalProperties": false,
 					"type": "object",
 					"properties": {
 						"decoration_chance": {
+							"title": "Decoration Chance",
 							"$ref": "../../general.json#/definitions/chance_information"
 						},
 						"decoration_block": {
+							"title": "Decoration Block",
 							"$ref": "../../general.json#/definitions/block_reference"
 						},
 						"num_steps": {
+							"title": "Number Of Steps",
 							"type": "number"
 						},
 						"step_direction": {
+							"title": "Step Direction",
 							"type": "string",
 							"enum": ["down", "up", "out", "away"]
 						}
@@ -350,47 +436,60 @@
 			}
 		},
 		"fancy_trunk": {
+			"title": "Fancy Trunk",
 			"additionalProperties": false,
 			"type": "object",
 			"properties": {
 				"trunk_height": {
+					"title": "Trunk Height",
 					"additionalProperties": false,
 					"type": "object",
 					"properties": {
 						"base": {
+							"title": "Base",
 							"type": "integer"
 						},
 						"variance": {
+							"title": "Variance",
 							"type": "number"
 						},
 						"scale": {
+							"title": "Scale",
 							"type": "number"
 						}
 					}
 				},
 				"trunk_width": {
+					"title": "Trunk Width",
 					"type": "integer"
 				},
 				"width_scale": {
+					"title": "Width Scale",
 					"type": "number"
 				},
 				"foliage_altitude_factor": {
+					"title": "Foliage Altitude Factor",
 					"type": "number"
 				},
 				"trunk_block": {
+					"title": "Trunk Block",
 					"$ref": "../../general.json#/definitions/block_reference"
 				},
 				"branches": {
+					"title": "Branches",
 					"additionalProperties": false,
 					"type": "object",
 					"properties": {
 						"slope": {
+							"title": "Slope",
 							"type": "number"
 						},
 						"density": {
+							"title": "Density",
 							"type": "number"
 						},
 						"min_altitude_factor": {
+							"title": "Minimum Altitude Factor",
 							"type": "number"
 						}
 					}
@@ -398,17 +497,21 @@
 			}
 		},
 		"mega_trunk": {
+			"title": "Mega Trunk",
 			"additionalProperties": false,
 			"type": "object",
 			"properties": {
 				"trunk_height": {
+					"title": "Trank Height",
 					"additionalProperties": false,
 					"type": "object",
 					"properties": {
 						"base": {
+							"title": "Base",
 							"type": "number"
 						},
 						"intervals": {
+							"title": "Intervals",
 							"type": "array",
 							"minItems": 2,
 							"maxItems": 2,
@@ -419,40 +522,50 @@
 					}
 				},
 				"trunk_width": {
+					"title": "Trunk Width",
 					"type": "number"
 				},
 				"trunk_block": {
+					"title": "Trunk Block",
 					"$ref": "../../general.json#/definitions/block_reference"
 				},
 				"trunk_decoration": {
+					"title": "Trunk Decoration",
 					"additionalProperties": false,
 					"type": "object",
 					"properties": {
 						"decoration_chance": {
+							"title": "Decoration Chance",
 							"$ref": "../../general.json#/definitions/chance_information"
 						},
 						"decoration_block": {
+							"title": "Decoration Block",
 							"$ref": "../../general.json#/definitions/block_reference"
 						},
 						"num_steps": {
+							"title": "Number Of Steps",
 							"type": "number"
 						},
 						"step_direction": {
+							"title": "Step Direction",
 							"type": "string",
 							"enum": ["down", "up", "out", "away"]
 						}
 					}
 				},
 				"branches": {
+					"title": "Branches",
 					"$ref": "#/definitions/branches_reference"
 				}
 			}
 		},
 		"trunk": {
+			"title": "Trunk",
 			"additionalProperties": false,
 			"type": "object",
 			"properties": {
 				"can_be_submerged": {
+					"title": "Can Be Submerged",
 					"anyOf": [
 						{
 							"type": "boolean"
@@ -461,6 +574,7 @@
 							"type": "object",
 							"properties": {
 								"max_depth": {
+									"title": "Maximum Depth",
 									"type": "number"
 								}
 							}
@@ -468,40 +582,51 @@
 					]
 				},
 				"trunk_height": {
+					"title": "Trunk Height",
 					"additionalProperties": false,
 					"type": "object",
 					"properties": {
 						"range_min": {
+							"title": "Range Minimum",
 							"type": "number"
 						},
 						"range_max": {
+							"title": "Range Maximum",
 							"type": "number"
 						}
 					}
 				},
 				"base_block": {
+					"title": "Base Block",
 					"$ref": "../../general.json#/definitions/block_reference"
 				},
 				"trunk_width": {
+					"title": "Trunk Width",
 					"type": "number"
 				},
 				"trunk_block": {
+					"title": "Trunk Block",
 					"$ref": "../../general.json#/definitions/block_reference"
 				},
 				"trunk_decoration": {
+					"title": "Trunk Decoration",
 					"additionalProperties": false,
 					"type": "object",
 					"properties": {
 						"decoration_chance": {
+							"title": "Decoration Chance",
 							"$ref": "../../general.json#/definitions/chance_information"
 						},
 						"decoration_block": {
+							"title": "Decoration Block",
 							"$ref": "../../general.json#/definitions/block_reference"
 						},
 						"num_steps": {
+							"title": "Number Of Steps",
 							"type": "number"
 						},
 						"step_direction": {
+							"title": "Step Direction",
 							"type": "string",
 							"enum": ["down", "up", "out", "away"]
 						}

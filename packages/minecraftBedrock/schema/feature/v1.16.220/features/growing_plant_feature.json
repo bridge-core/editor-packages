@@ -2,19 +2,23 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"description": "Places a growing plant in the world. A growing plant is a column that is anchored either to the ceiling or the floor, based on its growth direction. The growing plant has a body and a head, where the head is the tip of the plant, and the body consists of the remainder blocks. This feature can be used to define growing plants with variable body and head blocks, e.g. Cave Vines.",
 	"additionalProperties": false,
+	"title": "Growing Plant Feature",
 	"type": "object",
 	"properties": {
 		"description": {
+			"title": "Description",
 			"additionalProperties": false,
 			"type": "object",
 			"properties": {
 				"identifier": {
+					"title": "Identifier",
 					// Needs to strictly match file name - don't change reference to "general/reference..." schema
 					"$ref": "../../../project/prefixedFileIdentifierEnum.json"
 				}
 			}
 		},
 		"height_distribution": {
+			"title": "Height Distribution",
 			"description": "Collection of weighted heights that placement will select from.",
 			"type": "array",
 			"items": {
@@ -34,18 +38,22 @@
 			}
 		},
 		"allow_water": {
+			"title": "Allow Water",
 			"type": "boolean"
 		},
 		"growth_direction": {
+			"title": "Growth Direction",
 			"type": "string",
 			"description": "Direction that the plant grows towards.",
 			"enum": ["UP", "DOWN"]
 		},
 		"age": {
+			"title": "Age",
 			"description": "Age of the head of the plant.",
 			"$ref": "../../../molang/embedded.json"
 		},
 		"body_blocks": {
+			"title": "Body Blocks",
 			"type": "array",
 			"description": "Collection of weighted block descriptor that placement will select from for the body of the plant.",
 			"items": {
@@ -65,6 +73,7 @@
 			}
 		},
 		"head_blocks": {
+			"title": "Head Blocks",
 			"type": "array",
 			"description": "Collection of weighted block descriptor that placement will select from for the head of the plant.",
 			"items": {

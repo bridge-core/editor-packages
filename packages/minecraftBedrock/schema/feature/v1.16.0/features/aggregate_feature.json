@@ -1,24 +1,29 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Aggregate Feature",
 	"description": "Places a collection of features in an arbitary order. All features in the collection use the same input position. Features should not depend on each other, as there is no guarantee on the order the features will be placed.",
 	"additionalProperties": false,
 	"type": "object",
 	"properties": {
 		"description": {
+			"title": "Description",
 			"additionalProperties": false,
 			"type": "object",
 			"properties": {
 				"identifier": {
+					"title": "Identifier",
 					// Needs to strictly match file name - don't change reference to "general/reference..." schema
 					"$ref": "../../../project/prefixedFileIdentifierEnum.json"
 				}
 			}
 		},
 		"early_out": {
+			"title": "Early Out",
 			"description": "Do not continue placing features once either the first success or first failure has occurred.",
 			"$ref": "../../general.json#/definitions/early_outs"
 		},
 		"features": {
+			"title": "Features",
 			"description": "Collection of features to be placed one by one. No guarantee of order. All features use the same input position.",
 			"type": "array",
 			"items": {

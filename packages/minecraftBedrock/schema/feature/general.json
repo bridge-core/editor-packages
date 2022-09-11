@@ -24,9 +24,11 @@
 			"type": "object",
 			"properties": {
 				"numerator": {
+					"title": "Numerator",
 					"type": "number"
 				},
 				"denominator": {
+					"title": "Denominator",
 					"type": "number"
 				}
 			}
@@ -41,9 +43,11 @@
 					"type": "object",
 					"properties": {
 						"name": {
+							"title": "Name",
 							"$ref": "../general/reference/identifiers.json#/definitions/block_identifiers"
 						},
 						"states": {
+							"title": "States",
 							"$ref": "../general/blockState.json"
 						}
 					}
