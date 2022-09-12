@@ -1,0 +1,21 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"contexts": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"fileType": {
+						"type": "string"
+					},
+					"data": {
+						"$ref": "./main.json#/properties/vanilla"
+					}
+				}
+			}
+		}
+	}
+}

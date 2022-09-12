@@ -1,0 +1,92 @@
+{
+	"$schema": "./schema/context.json",
+	"contexts": [
+		{
+			"fileType": "particle",
+			"data": [
+				{
+					"values": [
+						{
+							"type": "variable",
+							"valueName": "emitter_lifetime",
+							"description": "Lifetime of the emitter.",
+							"isProperty": true
+						},
+						{
+							"type": "variable",
+							"valueName": "emitter_age",
+							"description": "Age of the emitter.",
+							"isProperty": true
+						},
+						{
+							"type": "variable",
+							"valueName": "emitter_random_1",
+							"description": "Random number between 0 and 1, constant per emitter loop.",
+							"isProperty": true
+						},
+						{
+							"type": "variable",
+							"valueName": "emitter_random_2",
+							"description": "Random number between 0 and 1, constant per emitter loop.",
+							"isProperty": true
+						},
+						{
+							"type": "variable",
+							"valueName": "emitter_random_3",
+							"description": "Random number between 0 and 1, constant per emitter loop.",
+							"isProperty": true
+						},
+						{
+							"type": "variable",
+							"valueName": "emitter_random_4",
+							"description": "Random number between 0 and 1, constant per emitter loop.",
+							"isProperty": true
+						},
+						{
+							"type": "variable",
+							"valueName": "particle_lifetime",
+							"description": "Lifetime of the particle.",
+							"isProperty": true
+						},
+						{
+							"type": "variable",
+							"valueName": "particle_age",
+							"description": "Age of the particle.",
+							"isProperty": true
+						},
+						{
+							"type": "variable",
+							"valueName": "particle_random_1",
+							"description": "Random number between 0 and 1, constant per particle loop.",
+							"isProperty": true
+						},
+						{
+							"type": "variable",
+							"valueName": "particle_random_2",
+							"description": "Random number between 0 and 1, constant per particle loop.",
+							"isProperty": true
+						},
+						{
+							"type": "variable",
+							"valueName": "particle_random_3",
+							"description": "Random number between 0 and 1, constant per particle loop.",
+							"isProperty": true
+						},
+						{
+							"type": "variable",
+							"valueName": "particle_random_4",
+							"description": "Random number between 0 and 1, constant per particle loop.",
+							"isProperty": true
+						},
+						{
+							"type": "variable",
+							"valueName": "entity_scale",
+							"description": "Scale of the attached entity.",
+							"isProperty": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

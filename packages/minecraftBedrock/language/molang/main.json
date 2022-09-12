@@ -1,5 +1,225 @@
 {
 	"$schema": "./schema/main.json",
-	"math": [],
-	"query": []
+	"vanilla": [
+		{
+			"values": [
+				{
+					"type": "math",
+					"valueName": "abs",
+					"description": "Absolute value of value.",
+					"arguments": [{ "argumentName": "value" }]
+				},
+				{
+					"type": "math",
+					"valueName": "acos",
+					"description": "arccos of value.",
+					"arguments": [{ "argumentName": "value" }]
+				},
+				{
+					"type": "math",
+					"valueName": "asin",
+					"description": "arcsin of value.",
+					"arguments": [{ "argumentName": "value" }]
+				},
+				{
+					"type": "math",
+					"valueName": "atan",
+					"description": "arctan of value.",
+					"arguments": [{ "argumentName": "value" }]
+				},
+				{
+					"type": "math",
+					"valueName": "atan2",
+					"description": "arctan of y/x.",
+					"arguments": [
+						{ "argumentName": "y" },
+						{ "argumentName": "x" }
+					]
+				},
+				{
+					"type": "math",
+					"valueName": "ceil",
+					"description": "Round value up to nearest integral number.",
+					"arguments": [{ "argumentName": "value" }]
+				},
+				{
+					"type": "math",
+					"valueName": "clamp",
+					"description": "Clamp value to between min and max inclusive.",
+					"arguments": [
+						{ "argumentName": "value" },
+						{ "argumentName": "min" },
+						{ "argumentName": "max" }
+					]
+				},
+				{
+					"type": "math",
+					"valueName": "cos",
+					"description": "Cosine (in degrees) of value.",
+					"arguments": [{ "argumentName": "value" }]
+				},
+				{
+					"type": "math",
+					"valueName": "die_roll",
+					"description": "Returns the sum of 'num' random numbers, each with a value from low to high. Note: the generated random numbers are not integers like normal dice. For that, use math.die_roll_integer.",
+					"arguments": [
+						{ "argumentName": "num" },
+						{ "argumentName": "low" },
+						{ "argumentName": "high" }
+					]
+				},
+				{
+					"type": "math",
+					"valueName": "die_roll_integer",
+					"description": "Returns the sum of 'num' random integer numbers, each with a value from low to high. Note: the generated random numbers are integers like normal dice.",
+					"arguments": [
+						{ "argumentName": "num" },
+						{ "argumentName": "low" },
+						{ "argumentName": "high" }
+					]
+				},
+				{
+					"type": "math",
+					"valueName": "exp",
+					"description": "Calculates e to the value'th power.",
+					"arguments": [{ "argumentName": "value" }]
+				},
+				{
+					"type": "math",
+					"valueName": "floor",
+					"description": "Round down to the nearest integral number.",
+					"arguments": [{ "argumentName": "value" }]
+				},
+				{
+					"type": "math",
+					"valueName": "hermite_blend",
+					"description": "Useful for simple smooth curve interpolation using one of the Hermite Basis functions: `3t^2 - 2t^3`. Note that while any valid float is a valid input, this function works best in the range [0,1].",
+					"arguments": [{ "argumentName": "value" }]
+				},
+				{
+					"type": "math",
+					"valueName": "lerp",
+					"description": "Lerp from start to end via 0_to_1.",
+					"arguments": [
+						{ "argumentName": "start" },
+						{ "argumentName": "end" },
+						{ "argumentName": "0_to_1" }
+					]
+				},
+				{
+					"type": "math",
+					"valueName": "lerprotate",
+					"description": "Lerp the shortest direction around a circle from start degrees to end degrees via 0_to_1.",
+					"arguments": [
+						{ "argumentName": "start" },
+						{ "argumentName": "end" },
+						{ "argumentName": "0_to_1" }
+					]
+				},
+				{
+					"type": "math",
+					"valueName": "ln",
+					"description": "Natural logarithm of value.",
+					"arguments": [{ "argumentName": "value" }]
+				},
+				{
+					"type": "math",
+					"valueName": "max",
+					"description": "Returns highest value of A or B.",
+					"arguments": [
+						{ "argumentName": "A" },
+						{ "argumentName": "B" }
+					]
+				},
+				{
+					"type": "math",
+					"valueName": "min",
+					"description": "Returns lowest value of A or B.",
+					"arguments": [
+						{ "argumentName": "A" },
+						{ "argumentName": "B" }
+					]
+				},
+				{
+					"type": "math",
+					"valueName": "mod",
+					"description": "Return the remainder of value / denominator.",
+					"arguments": [
+						{ "argumentName": "value" },
+						{ "argumentName": "denominator" }
+					]
+				},
+				{
+					"type": "math",
+					"valueName": "pi",
+					"description": "Returns the float representation of the constant pi.",
+					"isProperty": true
+				},
+				{
+					"type": "math",
+					"valueName": "pow",
+					"description": "Elevates base to the exponent'th power.",
+					"arguments": [
+						{ "argumentName": "base" },
+						{ "argumentName": "exponent" }
+					]
+				},
+				{
+					"type": "math",
+					"valueName": "random",
+					"description": "Random value between low and high inclusive.",
+					"arguments": [
+						{ "argumentName": "low" },
+						{ "argumentName": "high" }
+					]
+				},
+				{
+					"type": "math",
+					"valueName": "random_integer",
+					"description": "Random integer value between low and high inclusive.",
+					"arguments": [
+						{ "argumentName": "low" },
+						{ "argumentName": "high" }
+					]
+				},
+				{
+					"type": "math",
+					"valueName": "round",
+					"description": "Round value to nearest integral number.",
+					"arguments": [{ "argumentName": "value" }]
+				},
+				{
+					"type": "math",
+					"valueName": "sin",
+					"description": "Sine (in degrees) of value.",
+					"arguments": [{ "argumentName": "value" }]
+				},
+				{
+					"type": "math",
+					"valueName": "sqrt",
+					"description": "Square root of value.",
+					"arguments": [{ "argumentName": "value" }]
+				},
+				{
+					"type": "math",
+					"valueName": "trunc",
+					"description": "Round value towards zero.",
+					"arguments": [{ "argumentName": "value" }]
+				}
+			]
+		},
+		{
+			"requires": {
+				"targetVersion": [">=", "1.17.10"]
+			},
+			"values": [
+				{
+					"type": "math",
+					"valueName": "min_angle",
+					"description": "Minimize angle magnitude (in degrees) into the range [-180, 180].",
+					"arguments": [{ "argumentName": "value" }]
+				}
+			]
+		}
+	]
 }

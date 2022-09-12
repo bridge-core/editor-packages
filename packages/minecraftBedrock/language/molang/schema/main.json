@@ -2,112 +2,88 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"type": "object",
 	"properties": {
-		"variables": {
-			"description": "An array of variable names allowed in this Molang context (preceeded by 'v.' or 'variable.').",
-			"type": "array",
-			"items": {
-				"type": "string"
-			}
-		},
-		"context": {
-			"description": "An array of context variable names allowed in this Molang context (preceeded by 'c.' or 'context.').",
-			"type": "array",
-			"items": {
-				"type": "string"
-			}
-		},
-		"query": {
-			"description": "An array of query function definitions allowed in this Molang context (preceeded by 'q.' or 'query.').",
+		"vanilla": {
 			"type": "array",
 			"items": {
 				"type": "object",
 				"additionalProperties": false,
 				"properties": {
-					"functionName": {
-						"type": "string",
-						"description": "The name of the query function, e.g. 'anim_time'"
+					"requires": {
+						"$ref": "../../../../common/schema/bridge/requires.json"
 					},
-					"description": {
-						"type": "string",
-						"description": "A description of the query function."
-					},
-					"arguments": {
-						"description": "The ordered list of arguments for this query function. Note: if this is omitted, brackets after the query will be invalid.",
+					"values": {
 						"type": "array",
 						"items": {
+							"required": ["valueName", "type"],
 							"type": "object",
 							"additionalProperties": false,
 							"properties": {
-								"argumentName": {
-									"type": "string",
-									"description": "The name of the argument."
-								},
 								"type": {
-									"description": "The type of value that this argument accepts.",
 									"type": "string",
-									"enum": ["number", "string"]
+									"enum": [
+										"math",
+										"query",
+										"variable",
+										"context"
+									]
 								},
-								"additionalData": {
-									"description": "Additional data that will be proposed if the type is 'string' or the type is omitted.",
-									"type": "object",
-									"additionalProperties": false,
-									"properties": {
-										"values": {
-											"description": "An array of string values that are allowed at this argument.",
-											"type": "array",
-											"items": {
-												"type": "string"
+								"valueName": {
+									"type": "string",
+									"description": "The name of the molang value, e.g. 'math.cos'."
+								},
+								"description": {
+									"type": "string",
+									"description": "A description of the molang value."
+								},
+								"isProperty": {
+									"description": "Whether or not this is a property and not a function, e.g. 'math.pi'.",
+									"type": "boolean"
+								},
+								"arguments": {
+									"description": "An ordered list of the arguments allowed in this function.",
+									"type": "array",
+									"items": {
+										"type": "object",
+										"required": ["argumentName"],
+										"additionalProperties": false,
+										"properties": {
+											"argumentName": {
+												"type": "string",
+												"description": "The name of the argument."
+											},
+											"type": {
+												"description": "The type of value that this argument accepts.",
+												"type": "string",
+												"enum": ["number", "string"]
+											},
+											"additionalData": {
+												"description": "Additional data that will be proposed if the type is 'string' or the type is omitted.",
+												"type": "object",
+												"additionalProperties": false,
+												"properties": {
+													"values": {
+														"description": "An array of string values that are allowed at this argument.",
+														"type": "array",
+														"items": {
+															"type": "string"
+														}
+													},
+													"schemaReference": {
+														"type": "string",
+														"description": "The absolute path to a schema file, for dynamic references that are allowed at this argument."
+													}
+												}
 											}
-										},
-										"schemaReference": {
-											"type": "string",
-											"description": "The absolute path to a schema file, for dynamic references that are allowed at this argument."
 										}
 									}
-								}
-							}
-						}
-					},
-					"isDeprecated": {
-						"type": "boolean",
-						"description": "Whether this query is deprecated or not. If it is deprecated, it will not be proposed in auto-completions."
-					},
-					"deprecationMessage": {
-						"type": "string",
-						"description": "The warning message to display if the query is used, but deprecated."
-					}
-				}
-			}
-		},
-		"math": {
-			"description": "An array of math function definitions allowed in this Molang context (preceeded by 'm.' or 'math.').",
-			"type": "array",
-			"items": {
-				"type": "object",
-				"additionalProperties": false,
-				"properties": {
-					"functionName": {
-						"type": "string",
-						"description": "The name of the math function, e.g. 'cos'."
-					},
-					"description": {
-						"type": "string",
-						"description": "A description of the math function."
-					},
-					"isConstant": {
-						"description": "Whether or not this is a constant, e.g. 'math.pi'.",
-						"type": "boolean"
-					},
-					"arguments": {
-						"description": "An ordered list of the arguments allowed in this math",
-						"type": "array",
-						"items": {
-							"type": "object",
-							"additionalProperties": false,
-							"properties": {
-								"argumentName": {
+								},
+								"isDeprecated": {
+									"type": "boolean",
+									"description": "Whether this value is deprecated or not. If it is deprecated, it will not be proposed in auto-completions."
+								},
+								"deprecationMessage": {
 									"type": "string",
-									"description": "The name of the argument."
+									"description": "The warning message to display if the value is used, but deprecated."
 								}
 							}
 						}
