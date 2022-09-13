@@ -3062,7 +3062,7 @@
 						{
 							"argumentName": "radius",
 							"description": "Specifies the radius of a circular ticking area as the number of chunks from the center to the edge of the circle.",
-							"type": "$coordinates"
+							"type": "number"
 						},
 						{
 							"argumentName": "name",
@@ -4368,7 +4368,7 @@
 						{
 							"argumentName": "radius",
 							"description": "Specifies the radius of a circular ticking area as the number of chunks from the center to the edge of the circle.",
-							"type": "$coordinates"
+							"type": "number"
 						},
 						{
 							"argumentName": "name",
