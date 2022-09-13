@@ -321,11 +321,16 @@
 						{
 							"type": "$coordinates",
 							"argumentName": "begin",
-							"description": "Specifies the coordinates of two opposing corner blocks of the source region."
+							"description": "Specifies the first coordinate of two opposing corner blocks of the source region."
 						},
 						{
 							"type": "$coordinates",
 							"argumentName": "end",
+							"description": "Specifies the second coordinate of two opposing corner blocks of the source region."
+						},
+						{
+							"type": "$coordinates",
+							"argumentName": "destination",
 							"description": "Specifies the lower northwest corner of the destination region."
 						},
 						{
@@ -353,11 +358,16 @@
 						{
 							"type": "$coordinates",
 							"argumentName": "begin",
-							"description": "Specifies the coordinates of two opposing corner blocks of the source region."
+							"description": "Specifies the first coordinate of two opposing corner blocks of the source region."
 						},
 						{
 							"type": "$coordinates",
 							"argumentName": "end",
+							"description": "Specifies the second coordinate of two opposing corner blocks of the source region."
+						},
+						{
+							"type": "$coordinates",
+							"argumentName": "destination",
 							"description": "Specifies the lower northwest corner of the destination region."
 						},
 						{
@@ -393,11 +403,16 @@
 						{
 							"type": "$coordinates",
 							"argumentName": "begin",
-							"description": "Specifies the coordinates of two opposing corner blocks of the source region."
+							"description": "Specifies the first coordinate of two opposing corner blocks of the source region."
 						},
 						{
 							"type": "$coordinates",
 							"argumentName": "end",
+							"description": "Specifies the second coordinate of two opposing corner blocks of the source region."
+						},
+						{
+							"type": "$coordinates",
+							"argumentName": "destination",
 							"description": "Specifies the lower northwest corner of the destination region."
 						},
 						{
