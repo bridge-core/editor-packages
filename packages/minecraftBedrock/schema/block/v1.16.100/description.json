@@ -5,13 +5,32 @@
 	"properties": {
 		"identifier": {
 			"title": "Identifier",
-			"$ref": "../general/reference/prefixedFileIdentifier.json",
+			"$ref": "../../general/reference/prefixedFileIdentifier.json",
 			"description": "The identifier for this item. The name must include a namespace and must not use the Minecraft namespace unless overriding a Vanilla item."
 		},
 		"is_experimental": {
 			"title": "Is Experimental",
 			"type": "boolean",
 			"description": "If this item is experimental, it will only be registered if the world is marked as experimental."
+		},
+		"properties": {
+			"title": "Properties",
+			"description": "Define block properties and their possible values",
+			"anyOf": [
+				{
+					"$ref": "../../project/projectPrefix.json"
+				},
+				{
+					"patternProperties": {
+						".*": {
+							"type": "array",
+							"items": {
+								"type": ["boolean", "integer", "string"]
+							}
+						}
+					}
+				}
+			]
 		}
 	}
 }

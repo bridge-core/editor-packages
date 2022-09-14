@@ -9,39 +9,7 @@
 			"properties": {
 				"description": {
 					"title": "Description",
-					"allOf": [
-						{
-							"$ref": "../description.json"
-						},
-						{
-							"type": "object",
-							"properties": {
-								"properties": {
-									"title": "Properties",
-									"description": "Define block properties and their possible values",
-									"anyOf": [
-										{
-											"$ref": "../../project/projectPrefix.json"
-										},
-										{
-											"patternProperties": {
-												".*": {
-													"type": "array",
-													"items": {
-														"type": [
-															"boolean",
-															"integer",
-															"string"
-														]
-													}
-												}
-											}
-										}
-									]
-								}
-							}
-						}
-					]
+					"$ref": "../v1.16.100/description.json"
 				},
 				"permutations": {
 					"title": "Permutations",

@@ -2573,41 +2573,6 @@
 							}
 						},
 						{
-							"argumentName": "spawnPos",
-							"description": "Specifies the position to summon the entity. If not specified, defaults to the position of the command's execution.",
-							"type": "$coordinates",
-							"isOptional": true
-						},
-						{
-							"argumentName": "spawnEvent",
-							"description": "Specifies the in-game event for the entity.",
-							"type": "string",
-							"additionalData": {
-								"schemaReference": "/data/packages/minecraftBedrock/schema/entity/dynamic/eventReference.json"
-							},
-							"isOptional": true
-						},
-						{
-							"argumentName": "nameTag",
-							"description": "Specifies the name of the entity.",
-							"type": "string",
-							"isOptional": true
-						}
-					]
-				},
-				{
-					"commandName": "summon",
-					"description": "Summons an entity.",
-					"arguments": [
-						{
-							"argumentName": "entityType",
-							"description": "Specifies the entity to be summoned.",
-							"type": "string",
-							"additionalData": {
-								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/entity_identifiers"
-							}
-						},
-						{
 							"argumentName": "nameTag",
 							"description": "Specifies the name of the entity.",
 							"type": "string"
@@ -5763,6 +5728,68 @@
 									"argumentName": "origin"
 								}
 							]
+						},
+						// align
+						{
+							"commandName": "align",
+							"arguments": [
+								{
+									"argumentName": "axes",
+									"type": "string",
+									"additionalData": {
+										"values": [
+											"x",
+											"y",
+											"z",
+											"xy",
+											"yx",
+											"xz",
+											"zx",
+											"zy",
+											"yz",
+											"xyz",
+											"xzy",
+											"yzx",
+											"yxz",
+											"zxy",
+											"zyx"
+										]
+									}
+								}
+							]
+						},
+						// facing
+						{
+							"commandName": "facing",
+							"arguments": [
+								{
+									"argumentName": "position",
+									"type": "$coordinates"
+								}
+							]
+						},
+						// facing > entity
+						{
+							"commandName": "facing",
+							"arguments": [
+								{
+									"type": "string",
+									"additionalData": {
+										"values": ["entity"]
+									}
+								},
+								{
+									"type": "selector",
+									"argumentName": "origin"
+								},
+								{
+									"argumentName": "position",
+									"type": "string",
+									"additionalData": {
+										"values": ["eyes", "feet"]
+									}
+								}
+							]
 						}
 					]
 				}
@@ -6199,6 +6226,93 @@
 							"additionalData": {
 								"values": ["mainhand", "offhand"]
 							},
+							"isOptional": true
+						}
+					]
+				},
+				{
+					"commandName": "summon",
+					"description": "Summons an entity.",
+					"arguments": [
+						{
+							"argumentName": "entityType",
+							"description": "Specifies the entity to be summoned.",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/entity_identifiers"
+							}
+						},
+						{
+							"argumentName": "spawnPos",
+							"description": "Specifies the position to summon the entity. If not specified, defaults to the position of the command's execution.",
+							"type": "$coordinates",
+							"isOptional": true
+						},
+						{
+							"argumentName": "yRot",
+							"type": "number",
+							"isOptional": true
+						},
+						{
+							"argumentName": "xRot",
+							"type": "number",
+							"isOptional": true
+						},
+						{
+							"argumentName": "spawnEvent",
+							"description": "Specifies the in-game event for the entity.",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/entity/dynamic/eventReferenceEnum.json"
+							},
+							"isOptional": true
+						},
+						{
+							"argumentName": "nameTag",
+							"description": "Specifies the name of the entity.",
+							"type": "string",
+							"isOptional": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"requires": {
+				"targetVersion": ["<", "1.19.40"]
+			},
+			"commands": [
+				{
+					"commandName": "summon",
+					"description": "Summons an entity.",
+					"arguments": [
+						{
+							"argumentName": "entityType",
+							"description": "Specifies the entity to be summoned.",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/entity_identifiers"
+							}
+						},
+						{
+							"argumentName": "spawnPos",
+							"description": "Specifies the position to summon the entity. If not specified, defaults to the position of the command's execution.",
+							"type": "$coordinates",
+							"isOptional": true
+						},
+						{
+							"argumentName": "spawnEvent",
+							"description": "Specifies the in-game event for the entity.",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/entity/dynamic/eventReferenceEnum.json"
+							},
+							"isOptional": true
+						},
+						{
+							"argumentName": "nameTag",
+							"description": "Specifies the name of the entity.",
+							"type": "string",
 							"isOptional": true
 						}
 					]
