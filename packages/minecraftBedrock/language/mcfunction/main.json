@@ -1592,7 +1592,7 @@
 							"description": "Specifies the in-game event for the to-be-summoned entities.",
 							"type": "string",
 							"additionalData": {
-								"schemaReference": "/data/packages/minecraftBedrock/schema/entity/dynamic/eventReference.json"
+								"schemaReference": "/data/packages/minecraftBedrock/schema/entity/dynamic/eventReferenceEnum.json"
 							},
 							"isOptional": true
 						},
@@ -1644,7 +1644,7 @@
 							"description": "Specifies the in-game event for the to-be-summoned entities.",
 							"type": "string",
 							"additionalData": {
-								"schemaReference": "/data/packages/minecraftBedrock/schema/entity/dynamic/eventReference.json"
+								"schemaReference": "/data/packages/minecraftBedrock/schema/entity/dynamic/eventReferenceEnum.json"
 							},
 							"isOptional": true
 						},
