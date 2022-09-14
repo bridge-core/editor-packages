@@ -8,25 +8,33 @@
 				"type": "object",
 				"additionalProperties": false,
 				"properties": {
+					"namespace": {
+						"type": "array",
+						"items": {
+							"type": "string",
+							"enum": [
+								"math",
+								"query",
+								"variable",
+								"context",
+								"temp",
+								"q",
+								"c",
+								"v",
+								"t"
+							]
+						}
+					},
 					"requires": {
 						"$ref": "../../../../common/schema/bridge/requires.json"
 					},
 					"values": {
 						"type": "array",
 						"items": {
-							"required": ["valueName", "type"],
+							"required": ["valueName"],
 							"type": "object",
 							"additionalProperties": false,
 							"properties": {
-								"type": {
-									"type": "string",
-									"enum": [
-										"math",
-										"query",
-										"variable",
-										"context"
-									]
-								},
 								"valueName": {
 									"type": "string",
 									"description": "The name of the molang value, e.g. 'math.cos'."
