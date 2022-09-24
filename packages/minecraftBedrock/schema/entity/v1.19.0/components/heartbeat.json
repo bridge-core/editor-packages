@@ -6,8 +6,14 @@
 	"properties": {
 		"interval": {
 			"title": "Interval",
-			"description": "The interval in ticks between each heartbeat.",
+			"description": "A Molang expression defining the inter-beat interval in seconds. A value of zero or less means no heartbeat.",
 			"$ref": "../../../molang/embedded.json"
+		},
+		"sound_event": {
+			"type": "string",
+			"description": "Level sound event to be played as the heartbeat sound.",
+			"title": "Sound Event",
+			"$ref": "../../../general/reference/soundEvent.json"
 		}
 	}
 }

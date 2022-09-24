@@ -1,0 +1,28 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"maxProperties": 2,
+	"minProperties": 2,
+	"allOf": [
+		{
+			"$ref": "./recipe_furnace.json"
+		},
+		{
+			"$ref": "./recipe_shaped.json"
+		},
+		{
+			"$ref": "./recipe_shapeless.json"
+		},
+		{
+			"$ref": "../v1.18.10/recipe_brewing_mix.json"
+		},
+		{
+			"$ref": "../v1.18.10/recipe_brewing_container.json"
+		},
+		{
+			"$ref": "../../project/experimentalGameplay/educationEdition.json",
+			"then": {
+				"$ref": "/data/packages/minecraftBedrock/schema/recipe/v1.18.10/recipe_material_reduction.json"
+			}
+		}
+	]
+}

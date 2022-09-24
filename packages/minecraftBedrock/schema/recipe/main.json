@@ -3,232 +3,85 @@
 	"title": "Recipe",
 	"required": ["format_version"],
 	"type": "object",
-	"properties": {
-		"format_version": {
-			"type": "string",
-			"anyOf": [
-				{
-					"$ref": "../project/formatVersionEnum.json"
-				},
-				{
-					"const": "1.12"
-				}
-			]
-		}
-	},
 	"allOf": [
 		{
 			"properties": {
-				"minecraft:recipe_furnace": {
-					"description": "Represents a recipe for use with a Furnace.",
-					"additionalProperties": false,
-					"type": "object",
-					"properties": {
-						"description": {
-							"$ref": "./general.json#/definitions/description"
+				"format_version": {
+					"title": "Format Version",
+					"type": "string",
+					"anyOf": [
+						{
+							"$ref": "../project/formatVersionEnum.json"
 						},
-						"tags": {
-							"description": "Item that can create the furnace recipe, such as 'furnace'.",
-							"$ref": "./general.json#/definitions/tags"
-						},
-						"group": {
-							"$ref": "./general.json#/definitions/group"
-						},
-						"input": {
-							"description": "Items used as input for the furnace recipe.",
-							"$ref": "./general.json#/definitions/input"
-						},
-						"output": {
-							"description": "Items used as output for the furnace recipe.",
-							"$ref": "./general.json#/definitions/output"
+						{
+							"const": "1.12"
 						}
-					}
-				},
-				"minecraft:recipe_shaped": {
-					"description": "Represents a recipe that requires a dedicated pattern when using a Crafting Table.",
-					"additionalProperties": false,
-					"type": "object",
-					"properties": {
-						"description": {
-							"$ref": "./general.json#/definitions/description"
-						},
-						"tags": {
-							"description": "Item that can create the shaped recipe, such as 'crafting_table'.",
-							"$ref": "./general.json#/definitions/tags"
-						},
-						"group": {
-							"$ref": "./general.json#/definitions/group"
-						},
-						"priority": {
-							"description": "Sets the priority order of the recipe. Lower numbers represent a higher priority.",
-							"type": "integer"
-						},
-						"pattern": {
-							"type": "array",
-							"description": "Characters that represent a pattern to be defined by keys",
-							"maxItems": 3,
-							"items": {
-								"type": "string",
-								"minLength": 0,
-								"maxLength": 3
-							}
-						},
-						"key": {
-							"type": "object",
-							"description": "Keys to map characters to item names to be used in 'pattern'",
-							"propertyNames": {
-								"$ref": "./dynamic/currentContext/recipeKey.json"
-							},
-							"patternProperties": {
-								".*": {
-									"type": "object",
-									"properties": {
-										"item": {
-											"$ref": "./general.json#/definitions/item_or_block"
-										},
-										"data": {
-											"anyOf": [
-												{
-													"type": "integer"
-												},
-												{
-													"$ref": "../molang/embedded.json"
-												}
-											]
-										}
-									}
-								}
-							}
-						},
-						"result": {
-							"description": "When input items match the pattern then these items are the result.",
-							"$ref": "./general.json#/definitions/result"
-						}
-					}
-				},
-				"minecraft:recipe_shapeless": {
-					"description": "Represents a recipe that does not require a dedicated pattern.",
-					"additionalProperties": false,
-					"type": "object",
-					"properties": {
-						"description": {
-							"$ref": "./general.json#/definitions/description"
-						},
-						"tags": {
-							"description": "Item that can create the shapeless recipe such as 'stonecutter'.",
-							"$ref": "./general.json#/definitions/tags"
-						},
-						"group": {
-							"$ref": "./general.json#/definitions/group"
-						},
-						"priority": {
-							"description": "Sets the priority order of the recipe. Lower numbers represent a higher priority.",
-							"type": "integer"
-						},
-						"ingredients": {
-							"description": "Items used as input (without a shape) for the recipe.",
-							"type": "array",
-							"items": {
-								"type": "object",
-								"properties": {
-									"item": {
-										"description": "Provides the identifier for the result item",
-										"$ref": "./general.json#/definitions/item_or_block"
-									},
-									"data": {
-										"description": "Sets the result item's data value",
-										"type": "integer"
-									},
-									"count": {
-										"type": "integer",
-										"description": "Sets how many of the result item should be output"
-									}
-								}
-							}
-						},
-						"result": {
-							"description": "These items are the result.",
-							"$ref": "./general.json#/definitions/result"
-						}
-					}
-				},
-				"minecraft:recipe_brewing_mix": {
-					"description": "Represents a recipe that for use with a Potion Brewing station.",
-					"type": "object",
-					"additionalProperties": false,
-					"properties": {
-						"description": {
-							"$ref": "./general.json#/definitions/description"
-						},
-						"tags": {
-							"description": "Item that can create the Brewing Container Recipe, such as 'brewing_stand'.",
-							"$ref": "./general.json#/definitions/tags"
-						},
-						"input": {
-							"description": "Input potion used in the brewing container recipe.",
-							"$ref": "./general.json#/definitions/input"
-						},
-						"output": {
-							"description": "Output potion from the brewing container recipe.",
-							"$ref": "./general.json#/definitions/output"
-						},
-						"reagent": {
-							"description": "Item used in the brewing container recipe with the input potion.",
-							"$ref": "./general.json#/definitions/reagent"
-						}
-					}
-				},
-				"minecraft:recipe_brewing_container": {
-					"description": "Represents a recipe that for use with a Potion Brewing station.",
-					"type": "object",
-					"additionalProperties": false,
-					"properties": {
-						"description": {
-							"$ref": "./general.json#/definitions/description"
-						},
-						"tags": {
-							"description": "Item that can create the Brewing Container Recipe, such as 'brewing_stand'.",
-							"$ref": "./general.json#/definitions/tags"
-						},
-						"input": {
-							"description": "Input potion used in the brewing container recipe.",
-							"$ref": "./general.json#/definitions/input"
-						},
-						"output": {
-							"description": "Output potion from the brewing container recipe.",
-							"$ref": "./general.json#/definitions/output"
-						},
-						"reagent": {
-							"description": "Item used in the brewing container recipe with the input potion.",
-							"$ref": "./general.json#/definitions/reagent"
-						}
-					}
+					]
 				}
 			}
 		},
 		{
-			"$ref": "../project/experimentalGameplay/educationEdition.json",
-			"then": {
+			"if": {
 				"properties": {
-					"minecraft:recipe_material_reduction": {
-						"type": "object",
-						"additionalProperties": false,
-						"properties": {
-							"description": {
-								"$ref": "/data/packages/minecraftBedrock/schema/recipe/general.json#/definitions/description"
-							},
-							"tags": {
-								"$ref": "/data/packages/minecraftBedrock/schema/recipe/general.json#/definitions/tags"
-							},
-							"input": {
-								"$ref": "/data/packages/minecraftBedrock/schema/recipe/general.json#/definitions/input"
-							},
-							"output": {
-								"$ref": "/data/packages/minecraftBedrock/schema/recipe/general.json#/definitions/result"
-							}
-						}
+					"format_version": {
+						"enum": [
+							"",
+							"1.8.0",
+							"1.10.0",
+							"1.11.0",
+							"1.12",
+							"1.12.0",
+							"1.13.0",
+							"1.14.0",
+							"1.16.0",
+							"1.16.100",
+							"1.16.200",
+							"1.16.210",
+							"1.16.220",
+							"1.17.0",
+							"1.17.10",
+							"1.17.20",
+							"1.17.30",
+							"1.17.40",
+							"1.18.0"
+						]
 					}
 				}
+			},
+			"then": {
+				"$ref": "./v1.16.0/main.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": [
+							"1.18.10",
+							"1.18.20",
+							"1.18.30",
+							"1.19.0",
+							"1.19.10",
+							"1.19.20",
+							"1.19.30"
+						]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.18.10/main.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.19.40"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.19.40/main.json"
 			}
 		}
 	]

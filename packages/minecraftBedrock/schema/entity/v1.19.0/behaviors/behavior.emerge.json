@@ -3,7 +3,7 @@
 	"type": "object",
 	"additionalProperties": false,
 	"title": "Emerge",
-	"description": "Activates the 'EMERGING' actor flag during the specified duration and triggers 'on_done' at the end.",
+	"description": "Allows this entity to emerge from the ground.",
 	"properties": {
 		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"cooldown_time": {

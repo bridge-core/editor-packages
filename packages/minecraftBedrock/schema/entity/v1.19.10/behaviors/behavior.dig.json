@@ -3,7 +3,7 @@
 	"type": "object",
 	"additionalProperties": false,
 	"title": "Dig",
-	"description": "Activates the 'DIGGING' actor flag during the specified duration. Currently only Warden can use the Dig goal.",
+	"description": "Allows this entity to dig into the ground before despawning.",
 	"properties": {
 		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"allow_dig_when_named": {

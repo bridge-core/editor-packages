@@ -3,7 +3,7 @@
 	"type": "object",
 	"additionalProperties": false,
 	"title": "Investigate Suspicious Location",
-	"description": "The entity moves towards a 'suspicious' position based on data gathered in minecraft:suspect_tracking",
+	"description": "Allows this entity to move towards a 'suspicious' position based on data gathered in minecraft:suspect_tracking.",
 	"properties": {
 		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
 		"goal_radius": {

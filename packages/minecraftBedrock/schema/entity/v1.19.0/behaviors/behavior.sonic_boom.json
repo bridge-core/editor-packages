@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"type": "object",
-	"description": "Plays the provided sounds and activates the 'SONIC BOOM' actor flag during the specified duration.",
+	"description": "Allows this entity to perform a 'sonic boom' ranged attack.",
 	"additionalProperties": false,
 	"title": "Sonic Boom",
 	"properties": {

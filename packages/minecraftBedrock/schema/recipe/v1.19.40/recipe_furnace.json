@@ -1,0 +1,135 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"minecraft:recipe_furnace": {
+			"title": "Furnace Recipe",
+			"description": "Represents a recipe for use with a furnace.",
+			"additionalProperties": false,
+			"type": "object",
+			"properties": {
+				"description": {
+					"title": "Description",
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"identifier": {
+							"title": "Identifier",
+							"$ref": "../../general/reference/prefixedFileIdentifier.json"
+						}
+					}
+				},
+				"tags": {
+					"title": "Tags",
+					"description": "Defines where this recipe can be made.",
+					"$ref": "../../project/experimentalGameplay/educationEdition.json",
+					"then": {
+						"type": "array",
+						"items": {
+							"type": "string",
+							"anyOf": [
+								{
+									"enum": ["material_reducer"]
+								},
+								{
+									"enum": [
+										"blast_furnace",
+										"brewing_stand",
+										"campfire",
+										"cartography_table",
+										"crafting_table",
+										"furnace",
+										"smoker",
+										"stonecutter",
+										"soul_campfire"
+									]
+								},
+								{
+									"$ref": "/data/packages/minecraftBedrock/schema/recipe/dynamic/recipeTagEnum.json"
+								},
+								{
+									"$ref": "/data/packages/minecraftBedrock/schema/block/dynamic/recipeTagEnum.json"
+								}
+							]
+						}
+					},
+					"else": {
+						"type": "array",
+						"items": {
+							"type": "string",
+							"anyOf": [
+								{
+									"enum": [
+										"blast_furnace",
+										"brewing_stand",
+										"campfire",
+										"cartography_table",
+										"crafting_table",
+										"furnace",
+										"smoker",
+										"stonecutter",
+										"soul_campfire"
+									]
+								},
+								{
+									"$ref": "/data/packages/minecraftBedrock/schema/recipe/dynamic/recipeTagEnum.json"
+								},
+								{
+									"$ref": "/data/packages/minecraftBedrock/schema/block/dynamic/recipeTagEnum.json"
+								}
+							]
+						}
+					}
+				},
+				"group": {
+					"title": "Group",
+					"type": "string"
+				},
+				"input": {
+					"title": "Input",
+					"description": "Items used as input for the furnace recipe.",
+					"anyOf": [
+						{
+							"type": "string",
+							"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
+						},
+						{
+							"type": "string",
+							"$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
+						},
+						{
+							"type": "object",
+							"properties": {
+								"tag": {
+									"title": "Tag",
+									"type": "string",
+									"anyOf": [
+										{
+											"$ref": "../../general/reference/tags.json#/definitions/item_tags"
+										},
+										{
+											"$ref": "../../general/reference/tags.json#/definitions/block_tags"
+										}
+									]
+								}
+							}
+						}
+					]
+				},
+				"output": {
+					"title": "Output",
+					"description": "Items used as output for the furnace recipe.",
+					"type": "string",
+					"anyOf": [
+						{
+							"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
+						},
+						{
+							"$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
+						}
+					]
+				}
+			}
+		}
+	}
+}
