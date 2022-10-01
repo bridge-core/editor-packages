@@ -3,7 +3,81 @@
 	"type": "object",
 	"allOf": [
 		{
-			"$ref": "../description.json"
+			"type": "object",
+			"properties": {
+				"identifier": {
+					"title": "Identifier",
+					"$ref": "../../general/reference/prefixedFileIdentifier.json"
+				},
+				"runtime_identifier": {
+					"title": "Runtime Identifiers",
+					"$ref": "../../general/reference/identifiers.json#/definitions/entity_identifiers"
+				},
+				"is_spawnable": {
+					"title": "Is Spawnable",
+					"description": "Whether this entity should have a spawn egg.",
+					"type": "boolean"
+				},
+				"is_summonable": {
+					"title": "Is Summonable",
+					"description": "Whether this entity can be summoned with commands.",
+					"type": "boolean"
+				},
+				"is_experimental": {
+					"title": "Is Experimental",
+					"description": "Whether the entity requires experimental gameplay.",
+					"type": "boolean"
+				},
+				"animations": {
+					"title": "Animations",
+					"description": "List server animations and animation controllers to be used in this entity.",
+					"type": "object",
+					"allOf": [
+						{
+							"$ref": "../../animation/dynamic/shortNameProperty.json"
+						},
+						{
+							"$ref": "../../animationController/dynamic/shortNameProperty.json"
+						},
+						{
+							"patternProperties": {
+								".*": {
+									"$ref": "../../general/reference/serverAnimation.json"
+								}
+							}
+						}
+					]
+				},
+				"scripts": {
+					"title": "Scripts",
+					"type": "object",
+					"properties": {
+						"animate": {
+							"title": "Animate",
+							"description": "Animations to run on this entity.",
+							"type": "array",
+							"items": {
+								"anyOf": [
+									{
+										"$ref": "../dynamic/currentContext/animationEnum.json"
+									},
+									{
+										"type": "object",
+										"propertyNames": {
+											"$ref": "../dynamic/currentContext/animationEnum.json"
+										},
+										"patternProperties": {
+											".*": {
+												"$ref": "../../molang/embedded.json"
+											}
+										}
+									}
+								]
+							}
+						}
+					}
+				}
+			}
 		},
 		{
 			"$ref": "../../project/experimentalGameplay/upcomingCreatorFeatures.json",

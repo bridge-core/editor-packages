@@ -6,71 +6,84 @@
 			"title": "Block Definition",
 			"required": ["description"],
 			"type": "object",
-			"properties": {
-				"description": {
-					"title": "Description",
-					"$ref": "./description.json"
+			"allOf": [
+				{
+					"type": "object",
+					"properties": {
+						"description": {
+							"title": "Description",
+							"$ref": "./description.json"
+						},
+
+						"components": {
+							"title": "Components",
+							"allOf": [
+								{
+									"$ref": "../dynamic/customComponents.json"
+								},
+								{
+									"$ref": "./components/_main.json"
+								}
+							]
+						}
+					}
 				},
-				"permutations": {
-					"title": "Permutations",
-					"description": "List of block permutations based on MoLang queries",
-					"type": "array",
-					"items": {
+				{
+					"$ref": "../../project/experimentalGameplay/holidayCreatorFeatures.json",
+					"then": {
 						"type": "object",
-						"additionalProperties": false,
 						"properties": {
-							"condition": {
-								"title": "Condition",
-								"description": "MoLang condition",
-								"$ref": "../../molang/embedded.json"
+							"permutations": {
+								"title": "Permutations",
+								"description": "List of block permutations based on MoLang queries",
+								"type": "array",
+								"items": {
+									"type": "object",
+									"additionalProperties": false,
+									"properties": {
+										"condition": {
+											"title": "Condition",
+											"description": "MoLang condition",
+											"$ref": "/data/packages/minecraftBedrock/schema/molang/embedded.json"
+										},
+										"components": {
+											"title": "Components",
+											"description": "Components to add when the condition evaluates to 'true'",
+											"allOf": [
+												{
+													"$ref": "/data/packages/minecraftBedrock/schema/block/dynamic/customComponents.json"
+												},
+												{
+													"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/_main.json"
+												}
+											]
+										}
+									}
+								}
 							},
-							"components": {
-								"title": "Components",
-								"description": "Components to add when the condition evaluates to 'true'",
+							"events": {
+								"title": "Events",
+								"type": "object",
 								"allOf": [
 									{
-										"$ref": "../dynamic/customComponents.json"
+										"$ref": "/data/packages/minecraftBedrock/schema/block/dynamic/currentContext/eventReferenceProperty.json"
 									},
 									{
-										"$ref": "./components/_main.json"
+										"$ref": "/data/packages/minecraftBedrock/schema/project/projectPrefix.json"
+									},
+									{
+										"patternProperties": {
+											".*": {
+												"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/event.json"
+											}
+										}
 									}
 								]
 							}
 						}
 					}
-				},
-				"components": {
-					"title": "Components",
-					"allOf": [
-						{
-							"$ref": "../dynamic/customComponents.json"
-						},
-						{
-							"$ref": "./components/_main.json"
-						}
-					]
-				},
-				"events": {
-					"title": "Events",
-					"type": "object",
-					"allOf": [
-						{
-							"$ref": "../dynamic/currentContext/eventReferenceProperty.json"
-						},
-						{
-							"$ref": "../../project/projectPrefix.json"
-						},
-						{
-							"patternProperties": {
-								".*": {
-									"$ref": "./event.json"
-								}
-							}
-						}
-					]
 				}
-			},
-			"additionalProperties": false
+			]
 		}
 	}
 }

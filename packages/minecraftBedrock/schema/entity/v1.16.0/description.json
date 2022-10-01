@@ -4,11 +4,11 @@
 	"properties": {
 		"identifier": {
 			"title": "Identifier",
-			"$ref": "../general/reference/prefixedFileIdentifier.json"
+			"$ref": "../../general/reference/prefixedFileIdentifier.json"
 		},
 		"runtime_identifier": {
 			"title": "Runtime Identifiers",
-			"$ref": "../general/reference/identifiers.json#/definitions/entity_identifiers"
+			"$ref": "../../general/reference/identifiers.json#/definitions/entity_identifiers"
 		},
 		"is_spawnable": {
 			"title": "Is Spawnable",
@@ -31,15 +31,15 @@
 			"type": "object",
 			"allOf": [
 				{
-					"$ref": "../animation/dynamic/shortNameProperty.json"
+					"$ref": "../../animation/dynamic/shortNameProperty.json"
 				},
 				{
-					"$ref": "../animationController/dynamic/shortNameProperty.json"
+					"$ref": "../../animationController/dynamic/shortNameProperty.json"
 				},
 				{
 					"patternProperties": {
 						".*": {
-							"$ref": "../general/reference/serverAnimation.json"
+							"$ref": "../../general/reference/serverAnimation.json"
 						}
 					}
 				}
@@ -56,16 +56,16 @@
 					"items": {
 						"anyOf": [
 							{
-								"$ref": "./dynamic/currentContext/animationEnum.json"
+								"$ref": "../dynamic/currentContext/animationEnum.json"
 							},
 							{
 								"type": "object",
 								"propertyNames": {
-									"$ref": "./dynamic/currentContext/animationEnum.json"
+									"$ref": "../dynamic/currentContext/animationEnum.json"
 								},
 								"patternProperties": {
 									".*": {
-										"$ref": "../molang/embedded.json"
+										"$ref": "../../molang/embedded.json"
 									}
 								}
 							}

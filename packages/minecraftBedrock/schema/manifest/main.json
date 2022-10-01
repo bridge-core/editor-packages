@@ -254,6 +254,11 @@
 						"type": "string",
 						"const": "raytraced",
 						"description": "Allows the pack to use ray tracing features."
+					},
+					{
+						"type": "string",
+						"const": "script_eval",
+						"description": "Allows the pack to use the 'eval()' and 'new Function()' methods."
 					}
 				]
 			}

@@ -5790,6 +5790,35 @@
 									}
 								}
 							]
+						},
+						{
+							// in
+							"commandName": "in",
+							"arguments": [
+								{
+									"argumentName": "dimension",
+									"type": "string",
+									"additionalData": {
+										"values": [
+											"nether",
+											"overworld",
+											"the_end"
+										]
+									}
+								}
+							]
+						},
+						{
+							// anchored
+							"commandName": "anchored",
+							"arguments": [
+								{
+									"type": "string",
+									"additionalData": {
+										"values": ["feet", "eyes"]
+									}
+								}
+							]
 						}
 					]
 				}
