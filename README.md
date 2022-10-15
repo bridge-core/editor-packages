@@ -1,5 +1,9 @@
 # editor-packages
 
+<a href="https://pr.new/github.com/bridge-core/editor-packages" target="_blank">
+<img alt="Open in Codeflow" src="https://developer.stackblitz.com/img/open_in_codeflow_small.svg" >
+</a>
+
 Provides data such as schemas, file definitions or themes for bridge. v2
 
 ## Run dev environment
