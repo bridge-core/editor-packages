@@ -1,0 +1,9 @@
+{
+	"id": "sound",
+	"icon": "mdi-file-music-outline",
+	"detect": {
+		"packType": "resourcePack",
+		"scope": ["sounds/"],
+		"fileExtensions": [".ogg", ".fsb", ".mp3"]
+	}
+}
