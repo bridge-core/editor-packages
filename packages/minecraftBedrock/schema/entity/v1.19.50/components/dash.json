@@ -1,0 +1,27 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Dash",
+	"type": "object",
+	"description": "Ability for a ridable entity to dash.",
+	"additionalProperties": false,
+	"properties": {
+		"cooldown_time": {
+			"description": "The dash cooldown in seconds.",
+			"title": "Cooldown Time",
+			"type": "number",
+			"default": 1.0
+		},
+		"horizontal_momentum": {
+			"title": "Horizontal Momentum",
+			"description": "Horizontal momentum of the dash.",
+			"type": "number",
+			"default": 1.0
+		},
+		"vertical_momentum": {
+			"title": "Vertical Momentum",
+			"description": "Vertical momentum of the dash.",
+			"type": "number",
+			"default": 1.0
+		}
+	}
+}

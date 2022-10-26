@@ -35,30 +35,6 @@
 			"description": "The probability of randomly looking around/sitting.",
 			"type": "number",
 			"default": 0.02
-		},
-		"continue_if_leashed": {
-			"title": "Continue If Leashed",
-			"description": "If the goal should continue to be used as long as the mob is leashed.",
-			"type": "boolean",
-			"default": false
-		},
-		"max_angle_of_view_horizontal": {
-			"title": "Maximum Angle Of View Horizontal",
-			"description": "The rightmost angle a mob can look at on the horizontal plane with respect to its initial facing direction.",
-			"type": "number",
-			"default": 30.0
-		},
-		"min_angle_of_view_horizontal": {
-			"title": "Minimum Angle Of View Horizontal",
-			"description": "The leftmost angle a mob can look at on the horizontal plane with respect to its initial facing direction.",
-			"type": "number",
-			"default": -30.0
-		},
-		"random_look_around_cooldown": {
-			"title": "Random Look Around Cooldown",
-			"description": "The cooldown in seconds before the goal can be used again.",
-			"type": "integer",
-			"default": 0
 		}
 	}
 }

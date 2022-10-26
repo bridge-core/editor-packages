@@ -1,0 +1,42 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows the mob to randomly look around.",
+	"type": "object",
+	"title": "Random Look Around",
+	"properties": {
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
+		"look_time": {
+			"title": "Look Time",
+			"type": "array",
+			"maxItems": 2,
+			"minItems": 2,
+			"items": [
+				{
+					"type": "integer",
+					"default": 2
+				},
+				{
+					"type": "integer",
+					"default": 4
+				}
+			]
+		},
+		"look_distance": {
+			"title": "Look Distance",
+			"type": "number"
+		},
+		"max_angle_of_view_horizontal": {
+			"title": "Maximum Angle Of View Horizontal",
+			"type": "integer",
+			"description": "The rightmost angle a mob can look at on the horizontal plane with respect to its initial facing direction.",
+			"default": 30
+		},
+		"min_angle_of_view_horizontal": {
+			"title": "Minimum Angle Of View Horizontal",
+			"type": "integer",
+			"description": "The leftmost angle a mob can look at on the horizontal plane with respect to its initial facing direction.",
+			"default": -30
+		}
+	}
+}

@@ -1,0 +1,7 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"title": "Breathability",
+	"doNotSuggest": true,
+	"deprecationMessage": "Deprecated as of v1.19.50.21 - The breathing type of this block that affects the breathing state of mobs when they have their breathing points inside this block."
+}

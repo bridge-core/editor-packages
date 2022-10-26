@@ -1,0 +1,70 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows the mob to accept flowers from another mob with the minecraft:offer_flower behavior.",
+	"type": "object",
+	"title": "Take Flower",
+	"properties": {
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
+		"filters": {
+			"title": "Filters",
+			"description": "Conditions that need to be met for the behavior to start.",
+			"$ref": "../../general/v1.16.0/filter.json"
+		},
+		"max_head_rotation_y": {
+			"title": "Maximum Head Rotation Y",
+			"description": "Maximum rotation (in degrees), on the Y-axis, this entity can rotate its head while trying to look at the target.",
+			"type": "number",
+			"default": 30.0
+		},
+		"max_rotation_x": {
+			"title": "Maximum Rotation X",
+			"description": "Maximum rotation (in degrees), on the X-axis, this entity can rotate while trying to look at the target.",
+			"type": "number",
+			"default": 30.0
+		},
+		"max_wait_time": {
+			"title": "Maximum Wait Time",
+			"description": "The maximum amount of time (in seconds) for the mob to randomly wait for before taking the flower.",
+			"type": "number",
+			"default": 20.0
+		},
+		"min_distance_to_target": {
+			"title": "Minimum Distance To Target",
+			"description": "Minimum distance (in blocks) for the entity to be considered having reached its target.",
+			"type": "number",
+			"default": 2.0
+		},
+		"min_wait_time": {
+			"title": "Minimum Wait Time",
+			"description": "The minimum amount of time (in seconds) for the mob to randomly wait for before taking the flower.",
+			"type": "number",
+			"default": 4.0
+		},
+		"search_area": {
+			"title": "Search Area",
+			"description": "The dimensions of the AABB used to search for a potential mob to take a flower from.",
+			"type": "array",
+			"items": [
+				{
+					"type": "integer",
+					"default": 6
+				},
+				{
+					"type": "integer",
+					"default": 2
+				},
+				{
+					"type": "integer",
+					"default": 6
+				}
+			]
+		},
+		"speed_multiplier": {
+			"title": "Speed Multiplier",
+			"description": "Movement speed multiplier of the mob when using this AI Goal.",
+			"type": "number",
+			"default": 0.5
+		}
+	}
+}
