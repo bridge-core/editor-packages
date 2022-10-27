@@ -7,21 +7,6 @@
 			"then": {
 				"type": "object",
 				"properties": {
-					"minecraft:onlypistonpush": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.18.30/components/onlypistonpush.json"
-					},
-					"minecraft:breakonpush": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.18.30/components/breakonpush.json"
-					},
-					"minecraft:immovable": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.18.30/components/immovable.json"
-					},
-					"minecraft:preventsjumping": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.18.30/components/preventsjumping.json"
-					},
-					"minecraft:block_light_filter": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.18.10/components/block_light_filter.json"
-					},
 					"minecraft:aim_collision": {
 						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.18.10/components/aim_collision.json"
 					},
@@ -94,6 +79,9 @@
 		{
 			"type": "object",
 			"properties": {
+				"minecraft:block_light_filter": {
+					"$ref": "../../v1.18.10/components/block_light_filter.json"
+				},
 				"minecraft:destroy_time": {
 					"$ref": "../../v1.16.0/components/destroy_time.json"
 				},
@@ -121,6 +109,18 @@
 			"type": "object",
 			"properties": {
 				// Deprecated
+				"minecraft:immovable": {
+					"$ref": "./immovable.json"
+				},
+				"minecraft:breakonpush": {
+					"$ref": "./breakonpush.json"
+				},
+				"minecraft:onlypistonpush": {
+					"$ref": "./onlypistonpush.json"
+				},
+				"minecraft:preventsjumping": {
+					"$ref": "./preventsjumping.json"
+				},
 				"minecraft:entity_collision": {
 					"$ref": "../../v1.18.10/components/entity_collision.json"
 				},

@@ -10,9 +10,6 @@
 					"minecraft:queued_ticking": {
 						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.19.10/components/queued_ticking.json"
 					},
-					"minecraft:flammable": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.19.10/components/flammable.json"
-					},
 					"minecraft:part_visibility": {
 						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.19.10/components/part_visibility.json"
 					},
@@ -21,18 +18,6 @@
 					},
 					"minecraft:crafting_table": {
 						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.19.10/components/crafting_table.json"
-					},
-					"minecraft:onlypistonpush": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.18.30/components/onlypistonpush.json"
-					},
-					"minecraft:breakonpush": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.18.30/components/breakonpush.json"
-					},
-					"minecraft:immovable": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.18.30/components/immovable.json"
-					},
-					"minecraft:preventsjumping": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.18.30/components/preventsjumping.json"
 					},
 					"minecraft:block_light_filter": {
 						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.18.10/components/block_light_filter.json"
@@ -97,6 +82,12 @@
 		{
 			"type": "object",
 			"properties": {
+				"minecraft:flammable": {
+					"$ref": "./flammable.json"
+				},
+				"minecraft:block_light_filter": {
+					"$ref": "../../v1.18.10/components/block_light_filter.json"
+				},
 				"minecraft:destroy_time": {
 					"$ref": "../../v1.16.0/components/destroy_time.json"
 				},
@@ -127,14 +118,26 @@
 				"minecraft:ticking": {
 					"$ref": "./ticking.json"
 				},
+				"minecraft:immovable": {
+					"$ref": "../../v1.18.30/components/immovable.json"
+				},
+				"minecraft:breakonpush": {
+					"$ref": "../../v1.18.30/components/breakonpush.json"
+				},
+				"minecraft:onlypistonpush": {
+					"$ref": "../../v1.18.30/components/onlypistonpush.json"
+				},
+				"minecraft:preventsjumping": {
+					"$ref": "../../v1.18.30/components/preventsjumping.json"
+				},
 				"minecraft:entity_collision": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.18.10/components/entity_collision.json"
+					"$ref": "../../v1.18.10/components/entity_collision.json"
 				},
 				"minecraft:pick_collision": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.18.10/components/pick_collision.json"
+					"$ref": "../../v1.18.10/components/pick_collision.json"
 				},
 				"minecraft:block_light_absorption": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.18.10/components/block_light_absorption.json"
+					"$ref": "../../v1.18.10/components/block_light_absorption.json"
 				}
 			}
 		}
