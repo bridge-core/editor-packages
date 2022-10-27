@@ -5,86 +5,89 @@
 		{
 			"$ref": "../../../project/experimentalGameplay/holidayCreatorFeatures.json",
 			"then": {
-				"minecraft:block_light_filter": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.18.10/components/block_light_filter.json"
-				},
-				"minecraft:aim_collision": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.18.10/components/aim_collision.json"
-				},
-				"minecraft:block_collision": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.18.10/components/block_collision.json"
-				},
-				"minecraft:part_visibility": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/part_visibility.json"
-				},
-				"minecraft:creative_category": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/creative_category.json"
-				},
-				"minecraft:crafting_table": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/crafting_table.json"
-				},
-				"minecraft:display_name": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/display_name.json"
-				},
-				"minecraft:unit_cube": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/unit_cube.json"
-				},
-				"minecraft:material_instances": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/material_instances.json"
-				},
-				"minecraft:geometry": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/geometry.json"
-				},
-				"minecraft:on_step_on": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/on_step_on.json"
-				},
-				"minecraft:on_step_off": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/on_step_off.json"
-				},
-				"minecraft:on_player_destroyed": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/on_player_destroyed.json"
-				},
-				"minecraft:on_fall_on": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/on_fall_on.json"
-				},
-				"minecraft:on_placed": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/on_placed.json"
-				},
-				"minecraft:on_player_placing": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/on_player_placing.json"
-				},
-				"minecraft:on_interact": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/on_interact.json"
-				},
-				"minecraft:ticking": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/ticking.json"
-				},
-				"minecraft:random_ticking": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/random_ticking.json"
-				},
-				"minecraft:breakonpush": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/breakonpush.json"
-				},
-				"minecraft:immovable": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/immovable.json"
-				},
-				"minecraft:breathability": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/breathability.json"
-				},
-				"minecraft:onlypistonpush": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/onlypistonpush.json"
-				},
-				"minecraft:placement_filter": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/placement_filter.json"
-				},
-				"minecraft:preventsjumping": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/preventsjumping.json"
-				},
-				"minecraft:rotation": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/rotation.json"
-				},
-				"minecraft:unwalkable": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/unwalkable.json"
+				"type": "object",
+				"properties": {
+					"minecraft:block_light_filter": {
+						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.18.10/components/block_light_filter.json"
+					},
+					"minecraft:aim_collision": {
+						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.18.10/components/aim_collision.json"
+					},
+					"minecraft:block_collision": {
+						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.18.10/components/block_collision.json"
+					},
+					"minecraft:part_visibility": {
+						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/part_visibility.json"
+					},
+					"minecraft:creative_category": {
+						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/creative_category.json"
+					},
+					"minecraft:crafting_table": {
+						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/crafting_table.json"
+					},
+					"minecraft:display_name": {
+						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/display_name.json"
+					},
+					"minecraft:unit_cube": {
+						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/unit_cube.json"
+					},
+					"minecraft:material_instances": {
+						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/material_instances.json"
+					},
+					"minecraft:geometry": {
+						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/geometry.json"
+					},
+					"minecraft:on_step_on": {
+						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/on_step_on.json"
+					},
+					"minecraft:on_step_off": {
+						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/on_step_off.json"
+					},
+					"minecraft:on_player_destroyed": {
+						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/on_player_destroyed.json"
+					},
+					"minecraft:on_fall_on": {
+						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/on_fall_on.json"
+					},
+					"minecraft:on_placed": {
+						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/on_placed.json"
+					},
+					"minecraft:on_player_placing": {
+						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/on_player_placing.json"
+					},
+					"minecraft:on_interact": {
+						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/on_interact.json"
+					},
+					"minecraft:ticking": {
+						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/ticking.json"
+					},
+					"minecraft:random_ticking": {
+						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/random_ticking.json"
+					},
+					"minecraft:breakonpush": {
+						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/breakonpush.json"
+					},
+					"minecraft:immovable": {
+						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/immovable.json"
+					},
+					"minecraft:breathability": {
+						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/breathability.json"
+					},
+					"minecraft:onlypistonpush": {
+						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/onlypistonpush.json"
+					},
+					"minecraft:placement_filter": {
+						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/placement_filter.json"
+					},
+					"minecraft:preventsjumping": {
+						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/preventsjumping.json"
+					},
+					"minecraft:rotation": {
+						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/rotation.json"
+					},
+					"minecraft:unwalkable": {
+						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/components/unwalkable.json"
+					}
 				}
 			}
 		},
