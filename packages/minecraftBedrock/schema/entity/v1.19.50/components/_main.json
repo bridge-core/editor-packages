@@ -28,6 +28,12 @@
 		// Non-experimental
 		{
 			"properties": {
+				"minecraft:physics": {
+					"$ref": "./physics.json"
+				},
+				"minecraft:area_attack": {
+					"$ref": "./area_attack.json"
+				},
 				"minecraft:dash": {
 					"$ref": "./dash.json"
 				},
@@ -138,9 +144,6 @@
 				},
 				"minecraft:angry": {
 					"$ref": "../../v1.16.0/components/angry.json"
-				},
-				"minecraft:area_attack": {
-					"$ref": "../../v1.16.0/components/area_attack.json"
 				},
 				"minecraft:attack": {
 					"$ref": "../../v1.16.0/components/attack.json"
@@ -429,9 +432,6 @@
 				},
 				"minecraft:persistent": {
 					"$ref": "../../v1.16.0/components/persistent.json"
-				},
-				"minecraft:physics": {
-					"$ref": "../../v1.16.0/components/physics.json"
 				},
 				"minecraft:player.saturation": {
 					"$ref": "../../v1.16.0/components/player.saturation.json"

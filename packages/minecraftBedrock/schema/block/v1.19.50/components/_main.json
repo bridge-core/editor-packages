@@ -32,12 +32,6 @@
 				"minecraft:part_visibility": {
 					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.19.10/components/part_visibility.json"
 				},
-				"minecraft:collision_box": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.19.10/components/collision_box.json"
-				},
-				"minecraft:crafting_table": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.19.10/components/crafting_table.json"
-				},
 				"minecraft:onlypistonpush": {
 					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.18.30/components/onlypistonpush.json"
 				},
@@ -91,6 +85,12 @@
 		{
 			"type": "object",
 			"properties": {
+				"minecraft:collision_box": {
+					"$ref": "../../v1.19.10/components/collision_box.json"
+				},
+				"minecraft:crafting_table": {
+					"$ref": "../../v1.19.10/components/crafting_table.json"
+				},
 				"minecraft:material_instances": {
 					"$ref": "../../v1.16.100/components/material_instances.json"
 				},
