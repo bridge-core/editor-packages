@@ -9,6 +9,7 @@
 			"$ref": "../project/formatVersionEnum.json"
 		},
 		"sound_definitions": {
+			"type": "object",
 			"patternProperties": {
 				".*": {
 					"type": "object",

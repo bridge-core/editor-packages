@@ -4,6 +4,7 @@
 	"type": "object",
 	"properties": {
 		"render_controllers": {
+			"type": "object",
 			"patternProperties": {
 				"^controller.render\\..+$": {
 					"type": "object",

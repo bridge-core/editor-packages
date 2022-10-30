@@ -18,6 +18,7 @@
 					}
 				},
 				"components": {
+					"type": "object",
 					"required": ["minecraft:bounds"],
 					"$ref": "./components/_main.json"
 				}

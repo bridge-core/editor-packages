@@ -1,6 +1,5 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"additionalProperties": false,
 	"doNotSuggest": true,
 	"deprecationMessage": "Deprecated in favor of setting volume bounds via the /volumearea command (format_version: v1.18.20)."
 }

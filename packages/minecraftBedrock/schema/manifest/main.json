@@ -222,6 +222,7 @@
 				},
 				"generated_with": {
 					"description": "Credit to tools that were used to create the pack.",
+					"type": "object",
 					"patternProperties": {
 						"[a-zA-Z0-9_-]+": {
 							"type": "array",
