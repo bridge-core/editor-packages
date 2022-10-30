@@ -4,6 +4,7 @@
 		"build": "deno run -A ./scripts/build/build.ts",
 		"dev": "deno run -A ./scripts/build/dev.ts",
 		"get-vanilla-data": "deno run -A ./scripts/vanillaData/main.ts",
-		"test": "deno run -A ./scripts/build/build.ts && deno test --unstable --allow-net --allow-read"
+		"test": "deno run -A ./scripts/build/build.ts && deno test --unstable --allow-net --allow-read",
+		"test-silent": "deno run -A ./scripts/build/build.ts && deno test --unstable --allow-net --allow-read -- --silent"
 	}
 }

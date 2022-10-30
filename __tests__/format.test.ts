@@ -1,19 +1,17 @@
-import {
-	assert,
-	fail,
-	assertEquals,
-} from 'https://deno.land/std@0.155.0/testing/asserts.ts'
+import { fail } from 'https://deno.land/std@0.155.0/testing/asserts.ts'
 import Ajv from 'npm:ajv@7'
+
+const silentMode = !!Deno.args[0] && Deno.args[0] === '--silent'
 
 Deno.test({
 	name: 'Validate schemas',
 	fn: async (test) => {
 		const ajv = new Ajv.default({
 			validateSchema: true,
-			strictRequired: 'log',
+			strictRequired: silentMode ? false : 'log',
 			allowUnionTypes: true,
-			strictTypes: 'log',
-			strict: 'log',
+			strictTypes: silentMode ? false : 'log',
+			strict: silentMode ? false : 'log',
 			allowMatchingProperties: true,
 		})
 
@@ -131,12 +129,12 @@ Deno.test({
 									`/data/packages/minecraftBedrock/schema/${dirEntry.name}/main.json`
 								]
 							) {
-								console.log(dirEntry.name)
+								if (!silentMode) console.log(dirEntry.name)
 								ajv.validate(
 									`/data/packages/minecraftBedrock/schema/${dirEntry.name}/main.json`,
 									{}
 								)
-								console.log('\n')
+								if (!silentMode) console.log('\n')
 							}
 						}
 					}
