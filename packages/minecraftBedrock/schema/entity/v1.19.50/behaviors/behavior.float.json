@@ -1,0 +1,16 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows the mob to stay afloat while swimming. Passengers will be kicked out the moment the mob's head goes underwater, which may not happen for tall mobs.",
+	"type": "object",
+	"title": "Float",
+	"properties": {
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
+		"sink_with_passengers": {
+			"title": "Sink With Passengers",
+			"type": "boolean",
+			"description": "If true, the mob will keep sinking as long as it has passengers.",
+			"default": false
+		}
+	}
+}

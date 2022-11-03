@@ -43,6 +43,9 @@
 		// Non-experimental
 		{
 			"properties": {
+				"minecraft:behavior.float": {
+					"$ref": "./behavior.float.json"
+				},
 				"minecraft:behavior.take_flower": {
 					"$ref": "./behavior.take_flower.json"
 				},
@@ -264,9 +267,6 @@
 				},
 				"minecraft:behavior.flee_sun": {
 					"$ref": "../../v1.16.0/behaviors/behavior.flee_sun.json"
-				},
-				"minecraft:behavior.float": {
-					"$ref": "../../v1.16.0/behaviors/behavior.float.json"
 				},
 				"minecraft:behavior.float_wander": {
 					"$ref": "../../v1.16.0/behaviors/behavior.float_wander.json"
