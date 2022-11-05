@@ -13,37 +13,37 @@
 		{
 			"definition": "types/gameTest/legacy/componentData.d.ts",
 			"requires": {
-				"targetVersion": ["<=", "v1.17.30"]
+				"targetVersion": ["<=", "1.17.30"]
 			}
 		},
 		{
 			"definition": "types/gameTest/legacy/v1.16.220.d.ts",
 			"requires": {
-				"targetVersion": ["<=", "v1.16.220"]
+				"targetVersion": ["<=", "1.16.220"]
 			}
 		},
 		{
 			"definition": "types/gameTest/legacy/v1.17.0.d.ts",
 			"requires": {
-				"targetVersion": ["=", "v1.17.0"]
+				"targetVersion": ["=", "1.17.0"]
 			}
 		},
 		{
 			"definition": "types/gameTest/legacy/v1.17.10.d.ts",
 			"requires": {
-				"targetVersion": ["=", "v1.17.10"]
+				"targetVersion": ["=", "1.17.10"]
 			}
 		},
 		{
 			"definition": "types/gameTest/legacy/v1.17.20.d.ts",
 			"requires": {
-				"targetVersion": ["=", "v1.17.20"]
+				"targetVersion": ["=", "1.17.20"]
 			}
 		},
 		{
 			"definition": "types/gameTest/legacy/v1.17.20.d.ts",
 			"requires": {
-				"targetVersion": ["=", "v1.17.30"]
+				"targetVersion": ["=", "1.17.30"]
 			}
 		},
 
@@ -53,8 +53,8 @@
 			"definition": "types/gameTest/v1.17.40/mojang-minecraft.d.ts",
 			"requires": {
 				"targetVersion": {
-					"min": "v1.17.40",
-					"max": "v1.18.0"
+					"min": "1.17.40",
+					"max": "1.18.0"
 				},
 				"dependencies": ["@minecraft/server"]
 			}
@@ -63,8 +63,8 @@
 			"definition": "types/gameTest/v1.17.40/mojang-gametest.d.ts",
 			"requires": {
 				"targetVersion": {
-					"min": "v1.17.40",
-					"max": "v1.18.0"
+					"min": "1.17.40",
+					"max": "1.18.0"
 				},
 				"dependencies": ["@minecraft/server-gametest"]
 			}
@@ -73,14 +73,14 @@
 		{
 			"definition": "types/gameTest/v1.18.10/mojang-minecraft.d.ts",
 			"requires": {
-				"targetVersion": ["=", "v1.18.10"],
+				"targetVersion": ["=", "1.18.10"],
 				"dependencies": ["@minecraft/server"]
 			}
 		},
 		{
 			"definition": "types/gameTest/v1.18.10/mojang-gametest.d.ts",
 			"requires": {
-				"targetVersion": ["=", "v1.18.10"],
+				"targetVersion": ["=", "1.18.10"],
 				"dependencies": ["@minecraft/server-gametest"]
 			}
 		},
@@ -88,14 +88,14 @@
 		{
 			"definition": "types/gameTest/v1.18.20/mojang-minecraft.d.ts",
 			"requires": {
-				"targetVersion": ["=", "v1.18.20"],
+				"targetVersion": ["=", "1.18.20"],
 				"dependencies": ["@minecraft/server"]
 			}
 		},
 		{
 			"definition": "types/gameTest/v1.18.20/mojang-gametest.d.ts",
 			"requires": {
-				"targetVersion": ["=", "v1.18.20"],
+				"targetVersion": ["=", "1.18.20"],
 				"dependencies": ["@minecraft/server-gametest"]
 			}
 		},
@@ -103,21 +103,21 @@
 		{
 			"definition": "types/gameTest/v1.18.30/mojang-minecraft.d.ts",
 			"requires": {
-				"targetVersion": ["=", "v1.18.30"],
+				"targetVersion": ["=", "1.18.30"],
 				"dependencies": ["@minecraft/server"]
 			}
 		},
 		{
 			"definition": "types/gameTest/v1.18.30/mojang-gametest.d.ts",
 			"requires": {
-				"targetVersion": ["=", "v1.18.30"],
+				"targetVersion": ["=", "1.18.30"],
 				"dependencies": ["@minecraft/server-gametest"]
 			}
 		},
 		{
 			"definition": "types/gameTest/v1.18.30/mojang-minecraft-ui.d.ts",
 			"requires": {
-				"targetVersion": ["=", "v1.18.30"],
+				"targetVersion": ["=", "1.18.30"],
 				"dependencies": ["@minecraft/server-ui"]
 			}
 		},
@@ -127,8 +127,8 @@
 			"definition": "types/gameTest/v1.19.0/mojang-minecraft.d.ts",
 			"requires": {
 				"targetVersion": {
-					"min": "v1.19.0",
-					"max": "v1.19.20"
+					"min": "1.19.0",
+					"max": "1.19.20"
 				},
 				"dependencies": ["@minecraft/server"]
 			}
@@ -137,8 +137,8 @@
 			"definition": "types/gameTest/v1.19.0/mojang-gametest.d.ts",
 			"requires": {
 				"targetVersion": {
-					"min": "v1.19.0",
-					"max": "v1.19.20"
+					"min": "1.19.0",
+					"max": "1.19.20"
 				},
 				"dependencies": ["@minecraft/server-gametest"]
 			}
@@ -147,8 +147,8 @@
 			"definition": "types/gameTest/v1.19.0/mojang-minecraft-ui.d.ts",
 			"requires": {
 				"targetVersion": {
-					"min": "v1.19.0",
-					"max": "v1.19.30"
+					"min": "1.19.0",
+					"max": "1.19.30"
 				},
 				"dependencies": ["@minecraft/server-ui"]
 			}
@@ -157,8 +157,8 @@
 			"definition": "types/gameTest/v1.19.0/mojang-net.d.ts",
 			"requires": {
 				"targetVersion": {
-					"min": "v1.19.0",
-					"max": "v1.19.20"
+					"min": "1.19.0",
+					"max": "1.19.20"
 				},
 				"dependencies": ["@minecraft/server-net"]
 			}
@@ -167,8 +167,8 @@
 			"definition": "types/gameTest/v1.19.0/mojang-minecraft-server-admin.d.ts",
 			"requires": {
 				"targetVersion": {
-					"min": "v1.19.0",
-					"max": "v1.19.20"
+					"min": "1.19.0",
+					"max": "1.19.20"
 				},
 				"dependencies": ["@minecraft/server-admin"]
 			}
@@ -177,28 +177,28 @@
 		{
 			"definition": "types/gameTest/v1.19.30/mojang-minecraft.d.ts",
 			"requires": {
-				"targetVersion": ["=", "v1.19.30"],
+				"targetVersion": ["=", "1.19.30"],
 				"dependencies": ["@minecraft/server"]
 			}
 		},
 		{
 			"definition": "types/gameTest/v1.19.30/mojang-gametest.d.ts",
 			"requires": {
-				"targetVersion": ["=", "v1.19.30"],
+				"targetVersion": ["=", "1.19.30"],
 				"dependencies": ["@minecraft/server-gametest"]
 			}
 		},
 		{
 			"definition": "types/gameTest/v1.19.30/mojang-net.d.ts",
 			"requires": {
-				"targetVersion": ["=", "v1.19.30"],
+				"targetVersion": ["=", "1.19.30"],
 				"dependencies": ["@minecraft/server-net"]
 			}
 		},
 		{
 			"definition": "types/gameTest/v1.19.30/mojang-minecraft-server-admin.d.ts",
 			"requires": {
-				"targetVersion": ["=", "v1.19.30"],
+				"targetVersion": ["=", "1.19.30"],
 				"dependencies": ["@minecraft/server-admin"]
 			}
 		},
@@ -206,35 +206,35 @@
 		{
 			"definition": "types/gameTest/v1.19.40/server.d.ts",
 			"requires": {
-				"targetVersion": [">=", "v1.19.40"],
+				"targetVersion": [">=", "1.19.40"],
 				"dependencies": ["@minecraft/server"]
 			}
 		},
 		{
 			"definition": "types/gameTest/v1.19.40/server-gametest.d.ts",
 			"requires": {
-				"targetVersion": [">=", "v1.19.40"],
+				"targetVersion": [">=", "1.19.40"],
 				"dependencies": ["@minecraft/server-gametest"]
 			}
 		},
 		{
 			"definition": "types/gameTest/v1.19.40/server-net.d.ts",
 			"requires": {
-				"targetVersion": [">=", "v1.19.40"],
+				"targetVersion": [">=", "1.19.40"],
 				"dependencies": ["@minecraft/server-net"]
 			}
 		},
 		{
 			"definition": "types/gameTest/v1.19.40/server-admin.d.ts",
 			"requires": {
-				"targetVersion": [">=", "v1.19.40"],
+				"targetVersion": [">=", "1.19.40"],
 				"dependencies": ["@minecraft/server-admin"]
 			}
 		},
 		{
 			"definition": "types/gameTest/v1.19.40/server-ui.d.ts",
 			"requires": {
-				"targetVersion": [">=", "v1.19.40"],
+				"targetVersion": [">=", "1.19.40"],
 				"dependencies": ["@minecraft/server-ui"]
 			}
 		}

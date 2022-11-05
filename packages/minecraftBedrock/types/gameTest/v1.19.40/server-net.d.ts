@@ -8,22 +8,21 @@
    Copyright (c) Microsoft Corporation.
    ***************************************************************************** */
 /**
- * The `@minecraft/server-net` module contains types for executing
- * HTTP-based requests. This module can only be used on Bedrock
- * Dedicated Server.
+ * The `@minecraft/server-net` module contains types for
+ * executing HTTP-based requests. This module can only be used
+ * on Bedrock Dedicated Server.
  *
  * Manifest Details
  * ```json
  * {
- *   // @minecraft/server-net
- *   "uuid": "777b1798-13a6-401c-9cba-0cf17e31a81b",
+ *   "module_name": "@minecraft/server-net",
  *   "version": "1.0.0-beta"
  * }
  * ```
  *
  */
 declare module '@minecraft/server-net' {
-	import * as mojangminecraftserveradmin from '@minecraft/server-admin'
+	import * as minecraftserveradmin from '@minecraft/server-admin'
 	export enum HttpRequestMethod {
 		/**
 		 * Represents the method for an HTTP HEAD request. HEAD
@@ -105,10 +104,10 @@ declare module '@minecraft/server-net' {
 		/**
 		 * Value of the HTTP header.
 		 */
-		value: mojangminecraftserveradmin.SecretString | string
+		value: minecraftserveradmin.SecretString | string
 		constructor(
 			key: string,
-			value: mojangminecraftserveradmin.SecretString | string
+			value: minecraftserveradmin.SecretString | string
 		)
 	}
 	/**
@@ -146,9 +145,14 @@ declare module '@minecraft/server-net' {
 		 */
 		addHeader(
 			key: string,
-			value: mojangminecraftserveradmin.SecretString | string
+			value: minecraftserveradmin.SecretString | string
 		): HttpRequest
 		constructor(uri: string)
+		/**
+		 * @remarks
+		 * Updates the content of the body of the HTTP request.
+		 * @param body
+		 */
 		setBody(body: string): HttpRequest
 		/**
 		 * @remarks
@@ -156,6 +160,12 @@ declare module '@minecraft/server-net' {
 		 * @param headers
 		 */
 		setHeaders(headers: HttpHeader[]): HttpRequest
+		/**
+		 * @remarks
+		 * Sets the desired HTTP method (e.g., GET or PUT or PATCH) to
+		 * use for making the request.
+		 * @param method
+		 */
 		setMethod(method: HttpRequestMethod): HttpRequest
 		setTimeout(timeout: number): HttpRequest
 	}

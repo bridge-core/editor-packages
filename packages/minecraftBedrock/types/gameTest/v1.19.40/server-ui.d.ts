@@ -11,15 +11,15 @@
  * The `@minecraft/server-ui` module contains types for
  * expressing simple dialog-based user experiences.
  *
- *   * {@link mojang-minecraft-ui.ActionFormData} contain a list of
- * buttons with captions and images that can be used for
- * presenting a set of options to a player.
- *   * {@link mojang-minecraft-ui.MessageFormData} are simple
- * two-button message experiences that are functional for
- * Yes/No or OK/Cancel questions.
- *   * {@link mojang-minecraft-ui.ModalFormData} allow for a more
- * flexible "questionnaire-style" list of controls that can be
- * used to take input.
+ *   * {@link ActionFormData} contain a list of buttons with
+ * captions and images that can be used for presenting a set of
+ * options to a player.
+ *   * {@link MessageFormData} are simple two-button message
+ * experiences that are functional for Yes/No or OK/Cancel
+ * questions.
+ *   * {@link ModalFormData} allow for a more flexible
+ * "questionnaire-style" list of controls that can be used to
+ * take input.
  * @example createActionForm.js
  * ```typescript
  * const form = new ActionFormData()
@@ -42,15 +42,14 @@
  * Manifest Details
  * ```json
  * {
- *   // mojang-minecraft-ui
- *   "uuid": "2bd50a27-ab5f-4f40-a596-3641627c635e",
+ *   "module_name": "@minecraft/server-ui",
  *   "version": "0.1.0"
  * }
  * ```
  *
  */
 declare module '@minecraft/server-ui' {
-	import * as mojangminecraft from '@minecraft/server'
+	import * as minecraftserver from '@minecraft/server'
 	export enum FormCancelationReason {
 		userBusy = 'userBusy',
 		userClosed = 'userClosed',
@@ -83,7 +82,7 @@ declare module '@minecraft/server-ui' {
 		 * Player to show this dialog to.
 		 * @throws This function can throw errors.
 		 */
-		show(player: mojangminecraft.Player): Promise<ActionFormResponse>
+		show(player: minecraftserver.Player): Promise<ActionFormResponse>
 		/**
 		 * @remarks
 		 * This builder method sets the title for the modal dialog.
@@ -159,7 +158,7 @@ declare module '@minecraft/server-ui' {
 		 * Player to show this dialog to.
 		 * @throws This function can throw errors.
 		 */
-		show(player: mojangminecraft.Player): Promise<MessageFormResponse>
+		show(player: minecraftserver.Player): Promise<MessageFormResponse>
 		/**
 		 * @remarks
 		 * This builder method sets the title for the modal dialog.
@@ -213,7 +212,7 @@ declare module '@minecraft/server-ui' {
 		 * Player to show this dialog to.
 		 * @throws This function can throw errors.
 		 */
-		show(player: mojangminecraft.Player): Promise<ModalFormResponse>
+		show(player: minecraftserver.Player): Promise<ModalFormResponse>
 		/**
 		 * @remarks
 		 * Adds a numeric slider to the form.

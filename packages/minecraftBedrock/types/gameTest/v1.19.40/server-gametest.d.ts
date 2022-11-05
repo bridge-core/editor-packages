@@ -8,21 +8,21 @@
    Copyright (c) Microsoft Corporation.
    ***************************************************************************** */
 /**
- * The mojang-gametest module provides scriptable APIs for
- * scaffolding and testing content experiences in Minecraft.
+ * The @minecraft/server-gametest module provides scriptable
+ * APIs for scaffolding and testing content experiences in
+ * Minecraft.
  *
  * Manifest Details
  * ```json
  * {
- *   // @minecraft/server-gametest
- *   "uuid": "6f4b6893-1bb6-42fd-b458-7fa3d0c89616",
- *   "version": "1.0.0-beta"
+ *   "module_name": "@minecraft/server-gametest",
+ *   "version": "1.0.0-internal.release.1.19.40"
  * }
  * ```
  *
  */
 declare module '@minecraft/server-gametest' {
-	import * as mojangminecraft from '@minecraft/server'
+	import * as minecraftserver from '@minecraft/server'
 	/**
 	 * Returns information about whether this fence is connected to
 	 * other fences in several directions.
@@ -287,7 +287,7 @@ declare module '@minecraft/server-gametest' {
 		 * @param charge
 		 */
 		addCursorsWithOffset(
-			offset: mojangminecraft.BlockLocation,
+			offset: minecraftserver.BlockLocation,
 			charge: number
 		): void
 		/**
@@ -296,7 +296,7 @@ declare module '@minecraft/server-gametest' {
 		 * @param index
 		 * @throws This function can throw errors.
 		 */
-		getCursorPosition(index: number): mojangminecraft.BlockLocation
+		getCursorPosition(index: number): minecraftserver.BlockLocation
 		/**
 		 * @remarks
 		 * Returns a number of overall cursors for this sculk spreader.
@@ -316,26 +316,29 @@ declare module '@minecraft/server-gametest' {
 	 * how a player moves throughout the world and to support
 	 * testing of how entities and the environment will react to a
 	 * player. This type derives much of its structure and methods
-	 * from the {@link mojang-minecraft.Player} type.
+	 * from the {@link @minecraft/server.Player} type.
 	 */
-	export class SimulatedPlayer extends mojangminecraft.Player {
+	export class SimulatedPlayer extends minecraftserver.Player {
 		/**
 		 * Dimension that the simulated player is currently within.
 		 * @throws This property can throw when used.
 		 */
-		readonly dimension: mojangminecraft.Dimension
+		readonly dimension: minecraftserver.Dimension
 		/**
 		 * Location of the center of the head component of the player.
 		 * @throws This property can throw when used.
 		 */
-		readonly headLocation: mojangminecraft.Location
+		readonly headLocation: minecraftserver.Location
 		/**
 		 * Rotation of the head across pitch and yaw angles.
 		 * @throws This property can throw when used.
 		 */
-		readonly headRotation: mojangminecraft.XYRotation
+		readonly headRotation: minecraftserver.XYRotation
 		/**
-		 * Identifier for the player.
+		 * Unique identifier of the player. This identifier is intended
+		 * to be consistent across loads of a world instance. No
+		 * meaning should be inferred from the value and structure of
+		 * this unique identifier - do not parse or interpret it.
 		 * @throws This property can throw when used.
 		 */
 		readonly id: string
@@ -347,7 +350,7 @@ declare module '@minecraft/server-gametest' {
 		 * Current location of the player.
 		 * @throws This property can throw when used.
 		 */
-		readonly location: mojangminecraft.Location
+		readonly location: minecraftserver.Location
 		/**
 		 * Name of the player.
 		 * @throws This property can throw when used.
@@ -361,17 +364,17 @@ declare module '@minecraft/server-gametest' {
 		 * Contains methods for manipulating the on-screen display of a
 		 * Player.
 		 */
-		readonly onScreenDisplay: mojangminecraft.ScreenDisplay
+		readonly onScreenDisplay: minecraftserver.ScreenDisplay
 		/**
 		 * Main rotation of the entity.
 		 * @throws This property can throw when used.
 		 */
-		readonly rotation: mojangminecraft.XYRotation
+		readonly rotation: minecraftserver.XYRotation
 		/**
 		 * Returns a scoreboard identity that represents this entity.
 		 * @throws This property can throw when used.
 		 */
-		readonly scoreboard: mojangminecraft.ScoreboardIdentity
+		readonly scoreboard: minecraftserver.ScoreboardIdentity
 		/**
 		 * Manages the selected slot in the player's hotbar.
 		 */
@@ -381,17 +384,23 @@ declare module '@minecraft/server-gametest' {
 		 * AI-related behaviors, like attacking.
 		 * @throws This property can throw when used.
 		 */
-		readonly target: mojangminecraft.Entity
+		readonly target: minecraftserver.Entity
+		/**
+		 * Unique identifier of the type of the entity - for example,
+		 * 'minecraft:player'.
+		 * @throws This property can throw when used.
+		 */
+		readonly typeId: string
 		/**
 		 * Current speed of the player across X, Y, and Z dimensions.
 		 * @throws This property can throw when used.
 		 */
-		readonly velocity: mojangminecraft.Vector
+		readonly velocity: minecraftserver.Vector
 		/**
 		 * Vector of the current view of the player.
 		 * @throws This property can throw when used.
 		 */
-		readonly viewVector: mojangminecraft.Vector
+		readonly viewVector: minecraftserver.Vector
 		/**
 		 * @remarks
 		 * Adds an effect, like poison, to the entity.
@@ -405,7 +414,7 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		addEffect(
-			effectType: mojangminecraft.EffectType,
+			effectType: minecraftserver.EffectType,
 			duration: number,
 			amplifier?: number,
 			showParticles?: boolean
@@ -438,7 +447,7 @@ declare module '@minecraft/server-gametest' {
 		 * @param entity
 		 * @throws This function can throw errors.
 		 */
-		attackEntity(entity: mojangminecraft.Entity): boolean
+		attackEntity(entity: minecraftserver.Entity): boolean
 		/**
 		 * @remarks
 		 * Destroys the block at blockLocation, respecting the rules of
@@ -452,8 +461,8 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		breakBlock(
-			blockLocation: mojangminecraft.BlockLocation,
-			direction?: mojangminecraft.Direction
+			blockLocation: minecraftserver.BlockLocation,
+			direction?: minecraftserver.Direction
 		): boolean
 		/**
 		 * @remarks
@@ -464,8 +473,8 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		getBlockFromViewVector(
-			options?: mojangminecraft.BlockRaycastOptions
-		): mojangminecraft.Block
+			options?: minecraftserver.BlockRaycastOptions
+		): minecraftserver.Block
 		/**
 		 * @remarks
 		 * Gets a component (that represents additional capabilities)
@@ -476,13 +485,13 @@ declare module '@minecraft/server-gametest' {
 		 * 'minecraft:' is assumed. If the component is not present on
 		 * the entity, undefined is returned.
 		 */
-		getComponent(componentId: string): mojangminecraft.IEntityComponent
+		getComponent(componentId: string): minecraftserver.IEntityComponent
 		/**
 		 * @remarks
 		 * Returns all components that are both present on this entity
 		 * and supported by the API.
 		 */
-		getComponents(): mojangminecraft.IEntityComponent[]
+		getComponents(): minecraftserver.IEntityComponent[]
 		/**
 		 * @remarks
 		 * Returns a property value.
@@ -504,8 +513,8 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		getEffect(
-			effectType: mojangminecraft.EffectType
-		): mojangminecraft.Effect
+			effectType: minecraftserver.EffectType
+		): minecraftserver.Effect
 		/**
 		 * @remarks
 		 * Gets the first entity that intersects with the vector of the
@@ -515,8 +524,8 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		getEntitiesFromViewVector(
-			options?: mojangminecraft.EntityRaycastOptions
-		): mojangminecraft.Entity[]
+			options?: minecraftserver.EntityRaycastOptions
+		): minecraftserver.Entity[]
 		/**
 		 * @remarks
 		 * Gets the current item cooldown time for a particular
@@ -543,7 +552,7 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		giveItem(
-			itemStack: mojangminecraft.ItemStack,
+			itemStack: minecraftserver.ItemStack,
 			selectSlot?: boolean
 		): boolean
 		/**
@@ -584,8 +593,8 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		interactWithBlock(
-			blockLocation: mojangminecraft.BlockLocation,
-			direction?: mojangminecraft.Direction
+			blockLocation: minecraftserver.BlockLocation,
+			direction?: minecraftserver.Direction
 		): boolean
 		/**
 		 * @remarks
@@ -595,7 +604,7 @@ declare module '@minecraft/server-gametest' {
 		 * Entity to interact with.
 		 * @throws This function can throw errors.
 		 */
-		interactWithEntity(entity: mojangminecraft.Entity): boolean
+		interactWithEntity(entity: minecraftserver.Entity): boolean
 		/**
 		 * @remarks
 		 * Causes the simulated player to jump.
@@ -617,7 +626,7 @@ declare module '@minecraft/server-gametest' {
 		 * @param blockLocation
 		 * @throws This function can throw errors.
 		 */
-		lookAtBlock(blockLocation: mojangminecraft.BlockLocation): void
+		lookAtBlock(blockLocation: minecraftserver.BlockLocation): void
 		/**
 		 * @remarks
 		 * Rotates the simulated player's head/body to look at the
@@ -625,7 +634,7 @@ declare module '@minecraft/server-gametest' {
 		 * @param entity
 		 * @throws This function can throw errors.
 		 */
-		lookAtEntity(entity: mojangminecraft.Entity): void
+		lookAtEntity(entity: minecraftserver.Entity): void
 		/**
 		 * @remarks
 		 * Rotates the simulated player's head/body to look at the
@@ -633,7 +642,7 @@ declare module '@minecraft/server-gametest' {
 		 * @param location
 		 * @throws This function can throw errors.
 		 */
-		lookAtLocation(location: mojangminecraft.Location): void
+		lookAtLocation(location: minecraftserver.Location): void
 		/**
 		 * @remarks
 		 * Orders the simulated player to walk in the given direction
@@ -669,7 +678,7 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		moveToBlock(
-			blockLocation: mojangminecraft.BlockLocation,
+			blockLocation: minecraftserver.BlockLocation,
 			speed?: number
 		): void
 		/**
@@ -681,7 +690,7 @@ declare module '@minecraft/server-gametest' {
 		 * @param speed
 		 * @throws This function can throw errors.
 		 */
-		moveToLocation(location: mojangminecraft.Location, speed?: number): void
+		moveToLocation(location: minecraftserver.Location, speed?: number): void
 		/**
 		 * @remarks
 		 * Orders the simulated player to move to a specific block
@@ -695,9 +704,9 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		navigateToBlock(
-			blockLocation: mojangminecraft.BlockLocation,
+			blockLocation: minecraftserver.BlockLocation,
 			speed?: number
-		): mojangminecraft.NavigationResult
+		): minecraftserver.NavigationResult
 		/**
 		 * @remarks
 		 * Will use navigation to follow the selected entity to within
@@ -708,9 +717,9 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		navigateToEntity(
-			entity: mojangminecraft.Entity,
+			entity: minecraftserver.Entity,
 			speed?: number
-		): mojangminecraft.NavigationResult
+		): minecraftserver.NavigationResult
 		/**
 		 * @remarks
 		 * Orders the simulated player to move to a specific location
@@ -724,9 +733,9 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		navigateToLocation(
-			location: mojangminecraft.Location,
+			location: minecraftserver.Location,
 			speed?: number
-		): mojangminecraft.NavigationResult
+		): minecraftserver.NavigationResult
 		/**
 		 * @remarks
 		 * Use navigation to follow the route provided via the
@@ -739,7 +748,7 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		navigateToLocations(
-			locations: mojangminecraft.Location[],
+			locations: minecraftserver.Location[],
 			speed?: number
 		): void
 		/**
@@ -754,7 +763,7 @@ declare module '@minecraft/server-gametest' {
 		 */
 		playSound(
 			soundID: string,
-			soundOptions?: mojangminecraft.SoundOptions
+			soundOptions?: minecraftserver.SoundOptions
 		): void
 		postClientMessage(id: string, value: string): void
 		/**
@@ -780,31 +789,12 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		rotateBody(angleInDegrees: number): void
-		/**
-		 * @remarks
-		 * Runs a particular command from the context of this simulated
-		 * player.
-		 * @param commandString
-		 * Command to run. Note that command strings should not start
-		 * with slash.
-		 * @returns
-		 * For commands that return data, returns a JSON structure with
-		 * command response values.
-		 * @throws This function can throw errors.
-		 * @example commands.js
-		 * ```typescript
-		 *        player.runCommand("say You got a new high score!");
-		 *        player.runCommand("scoreboard players set @s score 10");
-		 *
-		 * ```
-		 */
 		runCommand(commandString: string): any
 		/**
 		 * @remarks
 		 * Runs a particular command asynchronously from the context of
-		 * this entity. Where possible, running a command
-		 * asynchronously is recommended, especially for long running
-		 * operations.
+		 * this entity. Note that there is a maximum queue of 128
+		 * asynchronous commands that can be run in a given tick.
 		 * @param commandString
 		 * Command to run. Note that command strings should not start
 		 * with slash.
@@ -815,7 +805,7 @@ declare module '@minecraft/server-gametest' {
 		 */
 		runCommandAsync(
 			commandString: string
-		): Promise<mojangminecraft.CommandResult>
+		): Promise<minecraftserver.CommandResult>
 		sendTestSkin(
 			geoData: string,
 			base64ImageData: string,
@@ -849,7 +839,7 @@ declare module '@minecraft/server-gametest' {
 		 * Game mode to set.
 		 * @throws This function can throw errors.
 		 */
-		setGameMode(gameMode: mojangminecraft.GameMode): void
+		setGameMode(gameMode: minecraftserver.GameMode): void
 		/**
 		 * @remarks
 		 * Sets a particular item for the simulated player.
@@ -862,7 +852,7 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		setItem(
-			itemStack: mojangminecraft.ItemStack,
+			itemStack: minecraftserver.ItemStack,
 			slot: number,
 			selectSlot?: boolean
 		): boolean
@@ -881,7 +871,7 @@ declare module '@minecraft/server-gametest' {
 		 * X/Y/Z components of the velocity.
 		 * @throws This function can throw errors.
 		 */
-		setVelocity(velocity: mojangminecraft.IVec3): void
+		setVelocity(velocity: minecraftserver.IVec3): void
 		/**
 		 * @remarks
 		 * Sets the item cooldown time for a particular cooldown
@@ -934,8 +924,8 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		teleport(
-			location: mojangminecraft.IVec3,
-			dimension: mojangminecraft.Dimension,
+			location: minecraftserver.IVec3,
+			dimension: minecraftserver.Dimension,
 			xRotation: number,
 			yRotation: number,
 			keepVelocity?: boolean
@@ -954,9 +944,9 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		teleportFacing(
-			location: mojangminecraft.IVec3,
-			dimension: mojangminecraft.Dimension,
-			facingLocation: mojangminecraft.IVec3,
+			location: minecraftserver.IVec3,
+			dimension: minecraftserver.Dimension,
+			facingLocation: minecraftserver.IVec3,
 			keepVelocity?: boolean
 		): void
 		/**
@@ -966,7 +956,7 @@ declare module '@minecraft/server-gametest' {
 		 * @param message
 		 * @throws This function can throw errors.
 		 */
-		tell(message: mojangminecraft.IRawMessage | string): void
+		tell(message: minecraftserver.IRawMessage | string): void
 		/**
 		 * @remarks
 		 * Triggers an entity type event. For every entity, a number of
@@ -987,7 +977,7 @@ declare module '@minecraft/server-gametest' {
 		 * Item to use.
 		 * @throws This function can throw errors.
 		 */
-		useItem(itemStack: mojangminecraft.ItemStack): boolean
+		useItem(itemStack: minecraftserver.ItemStack): boolean
 		/**
 		 * @remarks
 		 * Causes the simulated player to hold and use an item in their
@@ -1016,8 +1006,8 @@ declare module '@minecraft/server-gametest' {
 		 */
 		useItemInSlotOnBlock(
 			slot: number,
-			blockLocation: mojangminecraft.BlockLocation,
-			direction?: mojangminecraft.Direction,
+			blockLocation: minecraftserver.BlockLocation,
+			direction?: minecraftserver.Direction,
 			faceLocationX?: number,
 			faceLocationY?: number
 		): boolean
@@ -1039,9 +1029,9 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		useItemOnBlock(
-			itemStack: mojangminecraft.ItemStack,
-			blockLocation: mojangminecraft.BlockLocation,
-			direction?: mojangminecraft.Direction,
+			itemStack: minecraftserver.ItemStack,
+			blockLocation: minecraftserver.BlockLocation,
+			direction?: minecraftserver.Direction,
 			faceLocationX?: number,
 			faceLocationY?: number
 		): boolean
@@ -1109,8 +1099,8 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		assertBlockPresent(
-			blockType: mojangminecraft.BlockType,
-			blockLocation: mojangminecraft.BlockLocation,
+			blockType: minecraftserver.BlockType,
+			blockLocation: minecraftserver.BlockLocation,
 			isPresent?: boolean
 		): void
 		/**
@@ -1133,8 +1123,8 @@ declare module '@minecraft/server-gametest' {
 		 * ```
 		 */
 		assertBlockState(
-			blockLocation: mojangminecraft.BlockLocation,
-			callback: (arg: mojangminecraft.Block) => boolean
+			blockLocation: minecraftserver.BlockLocation,
+			callback: (arg: minecraftserver.Block) => boolean
 		): void
 		/**
 		 * @remarks
@@ -1153,8 +1143,8 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		assertCanReachLocation(
-			mob: mojangminecraft.Entity,
-			blockLocation: mojangminecraft.BlockLocation,
+			mob: minecraftserver.Entity,
+			blockLocation: minecraftserver.BlockLocation,
 			canReach?: boolean
 		): void
 		/**
@@ -1172,8 +1162,8 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		assertContainerContains(
-			itemStack: mojangminecraft.ItemStack,
-			blockLocation: mojangminecraft.BlockLocation
+			itemStack: minecraftserver.ItemStack,
+			blockLocation: minecraftserver.BlockLocation
 		): void
 		/**
 		 * @remarks
@@ -1184,7 +1174,7 @@ declare module '@minecraft/server-gametest' {
 		 * chest) to test is empty of contents.
 		 * @throws This function can throw errors.
 		 */
-		assertContainerEmpty(blockLocation: mojangminecraft.BlockLocation): void
+		assertContainerEmpty(blockLocation: minecraftserver.BlockLocation): void
 		/**
 		 * @remarks
 		 * Tests that an entity has a specific piece of armor equipped.
@@ -1215,7 +1205,7 @@ declare module '@minecraft/server-gametest' {
 			armorSlot: number,
 			armorName: string,
 			armorData: number,
-			blockLocation: mojangminecraft.BlockLocation,
+			blockLocation: minecraftserver.BlockLocation,
 			hasArmor?: boolean
 		): void
 		/**
@@ -1245,7 +1235,7 @@ declare module '@minecraft/server-gametest' {
 		assertEntityHasComponent(
 			entityTypeIdentifier: string,
 			componentIdentifier: string,
-			blockLocation: mojangminecraft.BlockLocation,
+			blockLocation: minecraftserver.BlockLocation,
 			hasComponent?: boolean
 		): void
 		/**
@@ -1264,8 +1254,8 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		assertEntityInstancePresent(
-			entity: mojangminecraft.Entity,
-			blockLocation: mojangminecraft.BlockLocation,
+			entity: minecraftserver.Entity,
+			blockLocation: minecraftserver.BlockLocation,
 			isPresent?: boolean
 		): void
 		/**
@@ -1288,7 +1278,7 @@ declare module '@minecraft/server-gametest' {
 		 */
 		assertEntityPresent(
 			entityTypeIdentifier: string,
-			blockLocation: mojangminecraft.BlockLocation,
+			blockLocation: minecraftserver.BlockLocation,
 			isPresent?: boolean
 		): void
 		/**
@@ -1355,9 +1345,9 @@ declare module '@minecraft/server-gametest' {
 		 * ```
 		 */
 		assertEntityState(
-			blockLocation: mojangminecraft.BlockLocation,
+			blockLocation: minecraftserver.BlockLocation,
 			entityTypeIdentifier: string,
-			callback: (arg: mojangminecraft.Entity) => boolean
+			callback: (arg: minecraftserver.Entity) => boolean
 		): void
 		/**
 		 * @remarks
@@ -1378,7 +1368,7 @@ declare module '@minecraft/server-gametest' {
 		 */
 		assertEntityTouching(
 			entityTypeIdentifier: string,
-			location: mojangminecraft.Location,
+			location: minecraftserver.Location,
 			isTouching?: boolean
 		): void
 		/**
@@ -1395,7 +1385,7 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		assertIsWaterlogged(
-			blockLocation: mojangminecraft.BlockLocation,
+			blockLocation: minecraftserver.BlockLocation,
 			isWaterlogged?: boolean
 		): void
 		/**
@@ -1419,8 +1409,8 @@ declare module '@minecraft/server-gametest' {
 		 * ```
 		 */
 		assertItemEntityCountIs(
-			itemType: mojangminecraft.ItemType,
-			blockLocation: mojangminecraft.BlockLocation,
+			itemType: minecraftserver.ItemType,
+			blockLocation: minecraftserver.BlockLocation,
 			searchDistance: number,
 			count: number
 		): void
@@ -1443,8 +1433,8 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		assertItemEntityPresent(
-			itemType: mojangminecraft.ItemType,
-			blockLocation: mojangminecraft.BlockLocation,
+			itemType: minecraftserver.ItemType,
+			blockLocation: minecraftserver.BlockLocation,
 			searchDistance: number,
 			isPresent?: boolean
 		): void
@@ -1459,11 +1449,11 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		assertRedstonePower(
-			blockLocation: mojangminecraft.BlockLocation,
+			blockLocation: minecraftserver.BlockLocation,
 			power: number
 		): void
 		destroyBlock(
-			blockLocation: mojangminecraft.BlockLocation,
+			blockLocation: minecraftserver.BlockLocation,
 			dropResources?: boolean
 		): void
 		/**
@@ -1493,14 +1483,14 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		getBlock(
-			blockLocation: mojangminecraft.BlockLocation
-		): mojangminecraft.Block
+			blockLocation: minecraftserver.BlockLocation
+		): minecraftserver.Block
 		/**
 		 * @remarks
 		 * Gets the dimension of this test.
 		 * @throws This function can throw errors.
 		 */
-		getDimension(): mojangminecraft.Dimension
+		getDimension(): minecraftserver.Dimension
 		/**
 		 * @remarks
 		 * If the block at the specified block location is a fence,
@@ -1511,7 +1501,7 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		getFenceConnectivity(
-			blockLocation: mojangminecraft.BlockLocation
+			blockLocation: minecraftserver.BlockLocation
 		): FenceConnectivity
 		/**
 		 * @remarks
@@ -1522,15 +1512,15 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		getSculkSpreader(
-			blockLocation: mojangminecraft.BlockLocation
+			blockLocation: minecraftserver.BlockLocation
 		): SculkSpreader
 		/**
 		 * @remarks
-		 * Returns the direction of the current test - see the
-		 * {@link mojang-minecraft}.Direction enum for more information on
+		 * Returns the direction of the current test - see the {@link
+		 * @minecraft/server.Direction} enum for more information on
 		 * potential values (north, east, south, west - values 2-5).
 		 */
-		getTestDirection(): mojangminecraft.Direction
+		getTestDirection(): minecraftserver.Direction
 		/**
 		 * @remarks
 		 * This asynchronous function will wait for the specified time
@@ -1554,7 +1544,7 @@ declare module '@minecraft/server-gametest' {
 		 * Will throw an error if a button is not present at the
 		 * specified position.
 		 */
-		pressButton(blockLocation: mojangminecraft.BlockLocation): void
+		pressButton(blockLocation: minecraftserver.BlockLocation): void
 		/**
 		 * @remarks
 		 * Displays the specified message to all players.
@@ -1572,7 +1562,7 @@ declare module '@minecraft/server-gametest' {
 		 * Will throw an error if a lever is not present at the
 		 * specified position.
 		 */
-		pullLever(blockLocation: mojangminecraft.BlockLocation): void
+		pullLever(blockLocation: minecraftserver.BlockLocation): void
 		/**
 		 * @remarks
 		 * Sends a Redstone pulse at a particular location by creating
@@ -1584,7 +1574,7 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		pulseRedstone(
-			blockLocation: mojangminecraft.BlockLocation,
+			blockLocation: minecraftserver.BlockLocation,
 			duration: number
 		): void
 		/**
@@ -1602,8 +1592,8 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		relativeBlockLocation(
-			worldBlockLocation: mojangminecraft.BlockLocation
-		): mojangminecraft.BlockLocation
+			worldBlockLocation: minecraftserver.BlockLocation
+		): minecraftserver.BlockLocation
 		/**
 		 * @remarks
 		 * From a location, returns a new location with coordinates
@@ -1619,8 +1609,8 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		relativeLocation(
-			worldLocation: mojangminecraft.Location
-		): mojangminecraft.Location
+			worldLocation: minecraftserver.Location
+		): minecraftserver.Location
 		/**
 		 * @remarks
 		 * Removes a simulated player from the world.
@@ -1642,9 +1632,9 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		rotateDirection(
-			direction: mojangminecraft.Direction
-		): mojangminecraft.Direction
-		rotateVector(vector: mojangminecraft.Vector): mojangminecraft.Vector
+			direction: minecraftserver.Direction
+		): minecraftserver.Direction
+		rotateVector(vector: minecraftserver.Vector): minecraftserver.Vector
 		/**
 		 * @remarks
 		 * Runs a specific callback after a specified delay of ticks
@@ -1680,8 +1670,8 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		setBlockPermutation(
-			blockData: mojangminecraft.BlockPermutation,
-			blockLocation: mojangminecraft.BlockLocation
+			blockData: minecraftserver.BlockPermutation,
+			blockLocation: minecraftserver.BlockLocation
 		): void
 		/**
 		 * @remarks
@@ -1694,8 +1684,8 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		setBlockType(
-			blockType: mojangminecraft.BlockType,
-			blockLocation: mojangminecraft.BlockLocation
+			blockType: minecraftserver.BlockType,
+			blockLocation: minecraftserver.BlockLocation
 		): void
 		/**
 		 * @remarks
@@ -1704,13 +1694,13 @@ declare module '@minecraft/server-gametest' {
 		 * @param location
 		 * Location of the fluid container block.
 		 * @param type
-		 * Type of fluid to set. See {@link mojang-gametest}.FluidType for a
-		 * list of values.
+		 * Type of fluid to set. See {@link
+		 * @minecraft/server-gametest.FluidType} for a list of values.
 		 * @throws This function can throw errors.
 		 */
 		setFluidContainer(
-			location: mojangminecraft.BlockLocation,
-			type: mojangminecraft.FluidType
+			location: minecraftserver.BlockLocation,
+			type: minecraftserver.FluidType
 		): void
 		/**
 		 * @remarks
@@ -1721,7 +1711,7 @@ declare module '@minecraft/server-gametest' {
 		 * Length of time, in ticks, before the entity explodes.
 		 * @throws This function can throw errors.
 		 */
-		setTntFuse(entity: mojangminecraft.Entity, fuseLength: number): void
+		setTntFuse(entity: minecraftserver.Entity, fuseLength: number): void
 		/**
 		 * @remarks
 		 * Spawns an entity at a location.
@@ -1761,8 +1751,8 @@ declare module '@minecraft/server-gametest' {
 		 */
 		spawn(
 			entityTypeIdentifier: string,
-			blockLocation: mojangminecraft.BlockLocation
-		): mojangminecraft.Entity
+			blockLocation: minecraftserver.BlockLocation
+		): minecraftserver.Entity
 		/**
 		 * @remarks
 		 * Spawns an entity at a location.
@@ -1783,8 +1773,8 @@ declare module '@minecraft/server-gametest' {
 		 */
 		spawnAtLocation(
 			entityTypeIdentifier: string,
-			location: mojangminecraft.Location
-		): mojangminecraft.Entity
+			location: minecraftserver.Location
+		): minecraftserver.Entity
 		/**
 		 * @remarks
 		 * Spawns an item entity at a specified location.
@@ -1804,9 +1794,9 @@ declare module '@minecraft/server-gametest' {
 		 * ```
 		 */
 		spawnItem(
-			itemStack: mojangminecraft.ItemStack,
-			location: mojangminecraft.Location
-		): mojangminecraft.Entity
+			itemStack: minecraftserver.ItemStack,
+			location: minecraftserver.Location
+		): minecraftserver.Entity
 		/**
 		 * @remarks
 		 * Creates a new simulated player within the world.
@@ -1818,9 +1808,9 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		spawnSimulatedPlayer(
-			blockLocation: mojangminecraft.BlockLocation,
+			blockLocation: minecraftserver.BlockLocation,
 			name?: string,
-			gameMode?: mojangminecraft.GameMode
+			gameMode?: minecraftserver.GameMode
 		): SimulatedPlayer
 		/**
 		 * @remarks
@@ -1834,8 +1824,8 @@ declare module '@minecraft/server-gametest' {
 		 */
 		spawnWithoutBehaviors(
 			entityTypeIdentifier: string,
-			blockLocation: mojangminecraft.BlockLocation
-		): mojangminecraft.Entity
+			blockLocation: minecraftserver.BlockLocation
+		): minecraftserver.Entity
 		/**
 		 * @remarks
 		 * Spawns an entity at a location without any AI behaviors.
@@ -1848,8 +1838,8 @@ declare module '@minecraft/server-gametest' {
 		 */
 		spawnWithoutBehaviorsAtLocation(
 			entityTypeIdentifier: string,
-			location: mojangminecraft.Location
-		): mojangminecraft.Entity
+			location: minecraftserver.Location
+		): minecraftserver.Entity
 		/**
 		 * @remarks
 		 * Tests that a particular item entity is present at a
@@ -1868,9 +1858,9 @@ declare module '@minecraft/server-gametest' {
 		 * ```
 		 */
 		spreadFromFaceTowardDirection(
-			blockLocation: mojangminecraft.BlockLocation,
-			fromFace: mojangminecraft.Direction,
-			direction: mojangminecraft.Direction
+			blockLocation: minecraftserver.BlockLocation,
+			fromFace: minecraftserver.Direction,
+			direction: minecraftserver.Direction
 		): void
 		/**
 		 * @remarks
@@ -1933,21 +1923,22 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 * @example simpleMobTest.ts
 		 * ```typescript
-		 *          gt.register("StarterTests", "simpleMobTest", (test: gt.Test) => {
-		 *            const attackerId = "fox";
-		 *            const victimId = "chicken";
+		 *        gt.register("StarterTests", "simpleMobTest", (test: gt.Test) => {
+		 *          const attackerId = "fox";
+		 *          const victimId = "chicken";
 		 *
-		 *            test.spawn(attackerId, new mc.BlockLocation(5, 2, 5));
-		 *            test.spawn(victimId, new mc.BlockLocation(2, 2, 2));
+		 *          test.spawn(attackerId, new mc.BlockLocation(5, 2, 5));
+		 *          test.spawn(victimId, new mc.BlockLocation(2, 2, 2));
 		 *
-		 *            test.assertEntityPresentInArea(victimId, true);
+		 *          test.assertEntityPresentInArea(victimId, true);
 		 *
-		 *            test.succeedWhen(() => {
-		 *              test.assertEntityPresentInArea(victimId, false);
-		 *            });
-		 *          })
-		 *            .maxTicks(400)
-		 *            .structureName("gametests:mediumglass");
+		 *          test.succeedWhen(() => {
+		 *            test.assertEntityPresentInArea(victimId, false);
+		 *          });
+		 *        })
+		 *          .maxTicks(400)
+		 *          .structureName("gametests:mediumglass");
+		 *
 		 * ```
 		 */
 		succeedWhen(callback: () => void): void
@@ -1968,8 +1959,8 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		succeedWhenBlockPresent(
-			blockType: mojangminecraft.BlockType,
-			blockLocation: mojangminecraft.BlockLocation,
+			blockType: minecraftserver.BlockType,
+			blockLocation: minecraftserver.BlockLocation,
 			isPresent?: boolean
 		): void
 		/**
@@ -1994,7 +1985,7 @@ declare module '@minecraft/server-gametest' {
 		succeedWhenEntityHasComponent(
 			entityTypeIdentifier: string,
 			componentIdentifier: string,
-			blockLocation: mojangminecraft.BlockLocation,
+			blockLocation: minecraftserver.BlockLocation,
 			hasComponent: boolean
 		): void
 		/**
@@ -2017,7 +2008,7 @@ declare module '@minecraft/server-gametest' {
 		 */
 		succeedWhenEntityPresent(
 			entityTypeIdentifier: string,
-			blockLocation: mojangminecraft.BlockLocation,
+			blockLocation: minecraftserver.BlockLocation,
 			isPresent?: boolean
 		): void
 		/**
@@ -2034,7 +2025,7 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		triggerInternalBlockEvent(
-			blockLocation: mojangminecraft.BlockLocation,
+			blockLocation: minecraftserver.BlockLocation,
 			event: string,
 			eventParameters?: number[]
 		): void
@@ -2063,8 +2054,8 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		walkTo(
-			mob: mojangminecraft.Entity,
-			blockLocation: mojangminecraft.BlockLocation,
+			mob: minecraftserver.Entity,
+			blockLocation: minecraftserver.BlockLocation,
 			speedModifier?: number
 		): void
 		/**
@@ -2082,8 +2073,8 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		walkToLocation(
-			mob: mojangminecraft.Entity,
-			location: mojangminecraft.Location,
+			mob: minecraftserver.Entity,
+			location: minecraftserver.Location,
 			speedModifier?: number
 		): void
 		/**
@@ -2099,8 +2090,8 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		worldBlockLocation(
-			relativeBlockLocation: mojangminecraft.BlockLocation
-		): mojangminecraft.BlockLocation
+			relativeBlockLocation: minecraftserver.BlockLocation
+		): minecraftserver.BlockLocation
 		/**
 		 * @remarks
 		 * From a location with coordinates relative to the GameTest
@@ -2114,8 +2105,8 @@ declare module '@minecraft/server-gametest' {
 		 * @throws This function can throw errors.
 		 */
 		worldLocation(
-			relativeLocation: mojangminecraft.Location
-		): mojangminecraft.Location
+			relativeLocation: minecraftserver.Location
+		): minecraftserver.Location
 		protected constructor()
 	}
 	/**
@@ -2130,7 +2121,7 @@ declare module '@minecraft/server-gametest' {
 	 * @param testFunction
 	 * Implementation of the test function.
 	 * @returns
-	 * Returns a {@link mojang-gametest.RegistrationBuilder} object where
+	 * Returns a {@link RegistrationBuilder} object where
 	 * additional options for this test can be specified via
 	 * builder methods.
 	 * @example example1.js
@@ -2176,7 +2167,7 @@ declare module '@minecraft/server-gametest' {
 	 * @param testFunction
 	 * Implementation of the test function.
 	 * @returns
-	 * Returns a {@link mojang-gametest.RegistrationBuilder} object where
+	 * Returns a {@link RegistrationBuilder} object where
 	 * additional options for this test can be specified via
 	 * builder methods.
 	 */

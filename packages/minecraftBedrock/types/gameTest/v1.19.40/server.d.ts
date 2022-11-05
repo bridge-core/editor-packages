@@ -14,8 +14,7 @@
  * Manifest Details
  * ```json
  * {
- *   // @mojang/server
- *   "uuid": "b26a4d4c-afdf-4690-88f8-931846312678",
+ *   "module_name": "@minecraft/server",
  *   "version": "0.1.0"
  * }
  * ```
@@ -648,11 +647,6 @@ declare module '@minecraft/server' {
 		 */
 		readonly dimension: Dimension
 		/**
-		 * Identifier of the type of block for this block.
-		 * @throws This property can throw when used.
-		 */
-		readonly id: string
-		/**
 		 * Returns or sets whether this block has a liquid on it.
 		 */
 		isWaterlogged: boolean
@@ -671,6 +665,11 @@ declare module '@minecraft/server' {
 		 * @throws This property can throw when used.
 		 */
 		readonly 'type': BlockType
+		/**
+		 * Identifier of the type of block for this block.
+		 * @throws This property can throw when used.
+		 */
+		readonly typeId: string
 		/**
 		 * X coordinate of the block.
 		 */
@@ -929,7 +928,7 @@ declare module '@minecraft/server' {
 	 */
 	export class BlockInventoryComponent extends BlockComponent {
 		/**
-		 * The container which holds an {@link mojang-minecraft.ItemStack}.
+		 * The container which holds an {@link ItemStack}.
 		 * @throws This property can throw when used.
 		 */
 		readonly container: BlockInventoryComponentContainer
@@ -937,12 +936,21 @@ declare module '@minecraft/server' {
 		 * Coordinates of the specified block.
 		 */
 		readonly location: BlockLocation
-		static readonly id = 'inventory'
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:inventory.
+		 */
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:inventory.
+		 */
+		static readonly componentId = 'minecraft:inventory'
 		protected constructor()
 	}
 	/**
-	 * Represents the inventory of a {@link mojang-minecraft.Block} in the
-	 * world. Used with blocks like chests.
+	 * Represents the inventory of a {@link Block} in the world.
+	 * Used with blocks like chests.
 	 */
 	export class BlockInventoryComponentContainer extends Container {
 		/**
@@ -1054,13 +1062,22 @@ declare module '@minecraft/server' {
 		 * Source location of the block.
 		 */
 		readonly location: BlockLocation
-		static readonly id = 'lavaContainer'
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:lavaContainer.
+		 */
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:lavaContainer.
+		 */
+		static readonly componentId = 'minecraft:lavaContainer'
 		protected constructor()
 	}
 	/**
 	 * Contains the integer X, Y, Z coordinates for a block. For
 	 * decimal locations useful for entities, items, and more, see
-	 * {@link mojang-minecraft.Location}.
+	 * {@link Location}.
 	 */
 	export class BlockLocation {
 		/**
@@ -1136,15 +1153,14 @@ declare module '@minecraft/server' {
 		offset(x: number, y: number, z: number): BlockLocation
 	}
 	/**
-	 * Contains the combination of type {@link mojang-minecraft.BlockType}
-	 * and properties (also sometimes called block state) which
-	 * describe a block (but does not belong to a specific
-	 * {@link mojang-minecraft.Block}). This type was introduced as of
-	 * version 1.17.10.21.
+	 * Contains the combination of type {@link BlockType} and
+	 * properties (also sometimes called block state) which
+	 * describe a block (but does not belong to a specific {@link
+	 * Block}). This type was introduced as of version 1.17.10.21.
 	 */
 	export class BlockPermutation {
 		/**
-		 * The {@link mojang-minecraft.BlockType} that the permutation has.
+		 * The {@link BlockType} that the permutation has.
 		 */
 		readonly 'type': BlockType
 		/**
@@ -1238,7 +1254,14 @@ declare module '@minecraft/server' {
 		 * Source location of the block.
 		 */
 		readonly location: BlockLocation
-		static readonly id = 'piston'
+		/**
+		 * Identifier of this component.
+		 */
+		readonly typeId: string
+		/**
+		 * Identifier of this component.
+		 */
+		static readonly componentId = 'minecraft:piston'
 		protected constructor()
 	}
 	/**
@@ -1300,7 +1323,16 @@ declare module '@minecraft/server' {
 		 * Source location of the block.
 		 */
 		readonly location: BlockLocation
-		static readonly id = 'potionContainer'
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:potionContainer.
+		 */
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:potionContainer.
+		 */
+		static readonly componentId = 'minecraft:potionContainer'
 		/**
 		 * @remarks
 		 * Sets the potion type based on an item stack.
@@ -1937,7 +1969,16 @@ declare module '@minecraft/server' {
 	 */
 	export class BlockRecordPlayerComponent extends BlockComponent {
 		readonly location: BlockLocation
-		static readonly id = 'recordPlayer'
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:recordPlayer.
+		 */
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:recordPlayer.
+		 */
+		static readonly componentId = 'minecraft:recordPlayer'
 		/**
 		 * @remarks
 		 * Clears the currently playing record of this record-playing
@@ -1961,10 +2002,29 @@ declare module '@minecraft/server' {
 		setRecord(recordItemType: ItemType): void
 		protected constructor()
 	}
+	/**
+	 * Represents a block that can display text on it.
+	 */
 	export class BlockSignComponent extends BlockComponent {
+		/**
+		 * Location of the sign.
+		 */
 		readonly location: BlockLocation
+		/**
+		 * Text of the sign
+		 * @throws This property can throw when used.
+		 */
 		readonly text: string
-		static readonly id = 'sign'
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:sign.
+		 */
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:sign.
+		 */
+		static readonly componentId = 'minecraft:sign'
 		protected constructor()
 	}
 	/**
@@ -1982,7 +2042,16 @@ declare module '@minecraft/server' {
 		 * Source location of the block.
 		 */
 		readonly location: BlockLocation
-		static readonly id = 'snowContainer'
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:snowContainer.
+		 */
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:snowContainer.
+		 */
+		static readonly componentId = 'minecraft:snowContainer'
 		protected constructor()
 	}
 	/**
@@ -2002,8 +2071,8 @@ declare module '@minecraft/server' {
 		readonly id: string
 		/**
 		 * @remarks
-		 * Creates the default {@link mojang-minecraft.BlockPermutation} for
-		 * this type which uses the default values for all properties.
+		 * Creates the default {@link BlockPermutation} for this type
+		 * which uses the default values for all properties.
 		 * @returns
 		 * Returns created permutation.
 		 * @throws This function can throw errors.
@@ -2030,7 +2099,16 @@ declare module '@minecraft/server' {
 		 * Source location of the block.
 		 */
 		readonly location: BlockLocation
-		static readonly id = 'waterContainer'
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:waterContainer.
+		 */
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:waterContainer.
+		 */
+		static readonly componentId = 'minecraft:waterContainer'
 		/**
 		 * @remarks
 		 * Adds an item and colors the water based on a dye item type.
@@ -2041,8 +2119,8 @@ declare module '@minecraft/server' {
 		protected constructor()
 	}
 	/**
-	 * Contains the state of a boolean-based property for a
-	 * {@link mojang-minecraft.BlockPermutation}.
+	 * Contains the state of a boolean-based property for a {@link
+	 * BlockPermutation}.
 	 */
 	export class BoolBlockProperty extends IBlockProperty {
 		/**
@@ -2057,9 +2135,8 @@ declare module '@minecraft/server' {
 		 * The current value of this property.
 		 * @throws
 		 * Setting this property can throw if the value passed is not
-		 * valid for the property. Use
-		 * {@link mojang-minecraft.BoolBlockProperty.validValues} to check
-		 * allowed values.
+		 * valid for the property. Use {@link
+		 * BoolBlockProperty.validValues} to check allowed values.
 		 */
 		value: boolean
 		protected constructor()
@@ -2541,31 +2618,13 @@ declare module '@minecraft/server' {
 		 * @throws This function can throw errors.
 		 */
 		getPlayers(getPlayers?: EntityQueryOptions): PlayerIterator
-		/**
-		 * @remarks
-		 * Runs a particular command from the context of the broader
-		 * dimension.
-		 * @param commandString
-		 * Command to run. Note that command strings should not start
-		 * with slash.
-		 * @returns
-		 * For commands that return data, returns a JSON structure with
-		 * command response values.
-		 * @throws This function can throw errors.
-		 * @example commands.js
-		 * ```typescript
-		 *        world.getDimension("overworld").runCommand("say You got a new high score!");
-		 *        world.getDimension("overworld").runCommand("scoreboard players set @p score 10");
-		 *
-		 * ```
-		 */
 		runCommand(commandString: string): any
 		/**
 		 * @remarks
 		 * Runs a particular command asynchronously from the context of
-		 * the broader dimension. Where possible - and especially for
-		 * long-running operations - you should use runCommandAsync
-		 * over runCommand.
+		 * the broader dimension.  Note that there is a maximum queue
+		 * of 128 asynchronous commands that can be run in a given
+		 * tick.
 		 * @param commandString
 		 * Command to run. Note that command strings should not start
 		 * with slash.
@@ -2688,10 +2747,9 @@ declare module '@minecraft/server' {
 		protected constructor()
 	}
 	/**
-	 * Class used in conjunction with
-	 * {@link mojang-minecraft.PropertyRegistry} to define dynamic
-	 * properties that can be used on entities of a specified type
-	 * or at the global World- level.
+	 * Class used in conjunction with {@link PropertyRegistry} to
+	 * define dynamic properties that can be used on entities of a
+	 * specified type or at the global World- level.
 	 */
 	export class DynamicPropertiesDefinition {
 		/**
@@ -2923,7 +2981,10 @@ declare module '@minecraft/server' {
 		 */
 		readonly headLocation: Location
 		/**
-		 * Unique identifier of the entity.
+		 * Unique identifier of the entity. This identifier is intended
+		 * to be consistent across loads of a world instance. No
+		 * meaning should be inferred from the value and structure of
+		 * this unique identifier - do not parse or interpret it.
 		 * @throws This property can throw when used.
 		 */
 		readonly id: string
@@ -2957,6 +3018,12 @@ declare module '@minecraft/server' {
 		 * @throws This property can throw when used.
 		 */
 		readonly target: Entity
+		/**
+		 * Unique identifier of the type of the entity - for example,
+		 * 'minecraft:skeleton'.
+		 * @throws This property can throw when used.
+		 */
+		readonly typeId: string
 		/**
 		 * Velocity of the entity.
 		 * @throws This property can throw when used.
@@ -3121,30 +3188,12 @@ declare module '@minecraft/server' {
 		 * @throws This function can throw errors.
 		 */
 		removeTag(tag: string): boolean
-		/**
-		 * @remarks
-		 * Runs a particular command from the context of this entity.
-		 * @param commandString
-		 * Command to run. Note that command strings should not start
-		 * with slash.
-		 * @returns
-		 * For commands that return data, returns a JSON structure with
-		 * command response values.
-		 * @throws This function can throw errors.
-		 * @example commands.js
-		 * ```typescript
-		 *        entity.runCommand("say You got a new high score!");
-		 *        entity.runCommand("scoreboard players set @p score 10");
-		 *
-		 * ```
-		 */
 		runCommand(commandString: string): any
 		/**
 		 * @remarks
 		 * Runs a particular command asynchronously from the context of
-		 * this entity. Where possible, running a command
-		 * asynchronously is recommended, especially for long running
-		 * operations.
+		 * this entity. Note that there is a maximum queue of 128
+		 * asynchronous commands that can be run in a given tick.
 		 * @param commandString
 		 * Command to run. Note that command strings should not start
 		 * with slash.
@@ -3257,7 +3306,12 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:addrider.
 		 */
-		static readonly id = 'minecraft:addrider'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:addrider.
+		 */
+		static readonly componentId = 'minecraft:addrider'
 		protected constructor()
 	}
 	/**
@@ -3293,7 +3347,12 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:ageable.
 		 */
-		static readonly id = 'minecraft:ageable'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:ageable.
+		 */
+		static readonly componentId = 'minecraft:ageable'
 		protected constructor()
 	}
 	/**
@@ -3357,7 +3416,12 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:breathable.
 		 */
-		static readonly id = 'minecraft:breathable'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:breathable.
+		 */
+		static readonly componentId = 'minecraft:breathable'
 		/**
 		 * @remarks
 		 * Sets the current air supply of the entity.
@@ -3372,13 +3436,17 @@ declare module '@minecraft/server' {
 	 * When added, this component signifies that the entity can
 	 * climb up ladders.
 	 */
-	// tslint:disable-next-line:no-unnecessary-class
 	export class EntityCanClimbComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
 		 * minecraft:can_climb.
 		 */
-		static readonly id = 'minecraft:can_climb'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:can_climb.
+		 */
+		static readonly componentId = 'minecraft:can_climb'
 		protected constructor()
 	}
 	/**
@@ -3386,26 +3454,34 @@ declare module '@minecraft/server' {
 	 * fly, and the pathfinder won't be restricted to paths where a
 	 * solid block is required underneath it.
 	 */
-	// tslint:disable-next-line:no-unnecessary-class
 	export class EntityCanFlyComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
 		 * minecraft:can_fly.
 		 */
-		static readonly id = 'minecraft:can_fly'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:can_fly.
+		 */
+		static readonly componentId = 'minecraft:can_fly'
 		protected constructor()
 	}
 	/**
 	 * When added, this component signifies that the entity can
 	 * power jump like the horse does within Minecraft.
 	 */
-	// tslint:disable-next-line:no-unnecessary-class
 	export class EntityCanPowerJumpComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
 		 * minecraft:can_power_jump.
 		 */
-		static readonly id = 'minecraft:can_power_jump'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:can_power_jump.
+		 */
+		static readonly componentId = 'minecraft:can_power_jump'
 		protected constructor()
 	}
 	/**
@@ -3414,6 +3490,11 @@ declare module '@minecraft/server' {
 	 */
 	export class EntityColorComponent extends IEntityComponent {
 		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:color.
+		 */
+		readonly typeId: string
+		/**
 		 * The palette color value of the entity.
 		 */
 		value: number
@@ -3421,7 +3502,7 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:color.
 		 */
-		static readonly id = 'minecraft:color'
+		static readonly componentId = 'minecraft:color'
 		protected constructor()
 	}
 	/**
@@ -3541,32 +3622,45 @@ declare module '@minecraft/server' {
 	 * When added, this component signifies that this entity
 	 * doesn't take damage from fire.
 	 */
-	// tslint:disable-next-line:no-unnecessary-class
 	export class EntityFireImmuneComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
 		 * minecraft:fire_immune.
 		 */
-		static readonly id = 'minecraft:fire_immune'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:fire_immune.
+		 */
+		static readonly componentId = 'minecraft:fire_immune'
 		protected constructor()
 	}
 	/**
 	 * When added, this component signifies that this entity can
 	 * float in liquid blocks.
 	 */
-	// tslint:disable-next-line:no-unnecessary-class
 	export class EntityFloatsInLiquidComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
 		 * minecraft:floats_in_liquid.
 		 */
-		static readonly id = 'minecraft:floats_in_liquid'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:floats_in_liquid.
+		 */
+		static readonly componentId = 'minecraft:floats_in_liquid'
 		protected constructor()
 	}
 	/**
 	 * Represents the flying speed of an entity.
 	 */
 	export class EntityFlyingSpeedComponent extends IEntityComponent {
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:flying_speed.
+		 */
+		readonly typeId: string
 		/**
 		 * Speed while flying value of the entity.
 		 */
@@ -3575,13 +3669,18 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:flying_speed.
 		 */
-		static readonly id = 'minecraft:flying_speed'
+		static readonly componentId = 'minecraft:flying_speed'
 		protected constructor()
 	}
 	/**
 	 * Defines how much friction affects this entity.
 	 */
 	export class EntityFrictionModifierComponent extends IEntityComponent {
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:friction_modifier.
+		 */
+		readonly typeId: string
 		/**
 		 * The higher the number, the more the friction affects this
 		 * entity. A value of 1.0 means regular friction, while 2.0
@@ -3592,7 +3691,7 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:friction_modifier.
 		 */
-		static readonly id = 'minecraft:friction_modifier'
+		static readonly componentId = 'minecraft:friction_modifier'
 		protected constructor()
 	}
 	/**
@@ -3600,6 +3699,11 @@ declare module '@minecraft/server' {
 	 * at.
 	 */
 	export class EntityGroundOffsetComponent extends IEntityComponent {
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:ground_offset.
+		 */
+		readonly typeId: string
 		/**
 		 * The value of the entity's offset from the terrain, in
 		 * blocks.
@@ -3609,7 +3713,7 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:ground_offset.
 		 */
-		static readonly id = 'minecraft:ground_offset'
+		static readonly componentId = 'minecraft:ground_offset'
 		protected constructor()
 	}
 	/**
@@ -3636,7 +3740,12 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:healable.
 		 */
-		static readonly id = 'minecraft:healable'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:healable.
+		 */
+		static readonly componentId = 'minecraft:healable'
 		protected constructor()
 	}
 	/**
@@ -3650,6 +3759,11 @@ declare module '@minecraft/server' {
 		 */
 		readonly current: number
 		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:health.
+		 */
+		readonly typeId: string
+		/**
 		 * Value for health as defined through entity components.
 		 * @throws This property can throw when used.
 		 */
@@ -3658,7 +3772,7 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:health.
 		 */
-		static readonly id = 'minecraft:health'
+		static readonly componentId = 'minecraft:health'
 		/**
 		 * @remarks
 		 * Resets the current health value of the entity to its default
@@ -3850,176 +3964,233 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:inventory.
 		 */
-		static readonly id = 'minecraft:inventory'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:inventory.
+		 */
+		static readonly componentId = 'minecraft:inventory'
 		protected constructor()
 	}
 	/**
 	 * When added, this component signifies that this entity is a
 	 * baby.
 	 */
-	// tslint:disable-next-line:no-unnecessary-class
 	export class EntityIsBabyComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
 		 * minecraft:is_baby.
 		 */
-		static readonly id = 'minecraft:is_baby'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:is_baby.
+		 */
+		static readonly componentId = 'minecraft:is_baby'
 		protected constructor()
 	}
 	/**
 	 * When added, this component signifies that this entity is
 	 * charged.
 	 */
-	// tslint:disable-next-line:no-unnecessary-class
 	export class EntityIsChargedComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
 		 * minecraft:is_charged.
 		 */
-		static readonly id = 'minecraft:is_charged'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:is_charged.
+		 */
+		static readonly componentId = 'minecraft:is_charged'
 		protected constructor()
 	}
 	/**
 	 * When added, this component signifies that this entity is
 	 * currently carrying a chest.
 	 */
-	// tslint:disable-next-line:no-unnecessary-class
 	export class EntityIsChestedComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
 		 * minecraft:is_chested.
 		 */
-		static readonly id = 'minecraft:is_chested'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:is_chested.
+		 */
+		static readonly componentId = 'minecraft:is_chested'
 		protected constructor()
 	}
 	/**
 	 * When added, this component signifies that dyes can be used
 	 * on this entity to change its color.
 	 */
-	// tslint:disable-next-line:no-unnecessary-class
 	export class EntityIsDyableComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
 		 * minecraft:is_dyeable.
 		 */
-		static readonly id = 'minecraft:is_dyeable'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:is_dyeable.
+		 */
+		static readonly componentId = 'minecraft:is_dyeable'
 		protected constructor()
 	}
 	/**
 	 * When added, this component signifies that this entity can
 	 * hide from hostile mobs while invisible.
 	 */
-	// tslint:disable-next-line:no-unnecessary-class
 	export class EntityIsHiddenWhenInvisibleComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
 		 * minecraft:is_hidden_when_invisible.
 		 */
-		static readonly id = 'minecraft:is_hidden_when_invisible'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:is_hidden_when_invisible.
+		 */
+		static readonly componentId = 'minecraft:is_hidden_when_invisible'
 		protected constructor()
 	}
 	/**
 	 * When added, this component signifies that this entity this
 	 * currently on fire.
 	 */
-	// tslint:disable-next-line:no-unnecessary-class
 	export class EntityIsIgnitedComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
 		 * minecraft:is_ignited.
 		 */
-		static readonly id = 'minecraft:is_ignited'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:is_ignited.
+		 */
+		static readonly componentId = 'minecraft:is_ignited'
 		protected constructor()
 	}
 	/**
 	 * When added, this component signifies that this entity is an
 	 * illager captain.
 	 */
-	// tslint:disable-next-line:no-unnecessary-class
 	export class EntityIsIllagerCaptainComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
 		 * minecraft:is_illager_captain.
 		 */
-		static readonly id = 'minecraft:is_illager_captain'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:is_illager_captain.
+		 */
+		static readonly componentId = 'minecraft:is_illager_captain'
 		protected constructor()
 	}
 	/**
 	 * When added, this component signifies that this entity is
 	 * currently saddled.
 	 */
-	// tslint:disable-next-line:no-unnecessary-class
 	export class EntityIsSaddledComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
 		 * minecraft:is_saddled.
 		 */
-		static readonly id = 'minecraft:is_saddled'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:is_saddled.
+		 */
+		static readonly componentId = 'minecraft:is_saddled'
 		protected constructor()
 	}
 	/**
 	 * When added, this component signifies that this entity is
 	 * currently shaking.
 	 */
-	// tslint:disable-next-line:no-unnecessary-class
 	export class EntityIsShakingComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
 		 * minecraft:is_shaking.
 		 */
-		static readonly id = 'minecraft:is_shaking'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:is_shaking.
+		 */
+		static readonly componentId = 'minecraft:is_shaking'
 		protected constructor()
 	}
 	/**
 	 * When added, this component signifies that this entity is
 	 * currently sheared.
 	 */
-	// tslint:disable-next-line:no-unnecessary-class
 	export class EntityIsShearedComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
 		 * minecraft:is_sheared.
 		 */
-		static readonly id = 'minecraft:is_sheared'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:is_sheared.
+		 */
+		static readonly componentId = 'minecraft:is_sheared'
 		protected constructor()
 	}
 	/**
 	 * When added, this component signifies that this entity can be
 	 * stacked.
 	 */
-	// tslint:disable-next-line:no-unnecessary-class
 	export class EntityIsStackableComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
 		 * minecraft:is_stackable.
 		 */
-		static readonly id = 'minecraft:is_stackable'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:is_stackable.
+		 */
+		static readonly componentId = 'minecraft:is_stackable'
 		protected constructor()
 	}
 	/**
 	 * When added, this component signifies that this entity is
 	 * currently stunned.
 	 */
-	// tslint:disable-next-line:no-unnecessary-class
 	export class EntityIsStunnedComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
 		 * minecraft:is_stunned.
 		 */
-		static readonly id = 'minecraft:is_stunned'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:is_stunned.
+		 */
+		static readonly componentId = 'minecraft:is_stunned'
 		protected constructor()
 	}
 	/**
 	 * When added, this component signifies that this entity is
 	 * currently tamed.
 	 */
-	// tslint:disable-next-line:no-unnecessary-class
 	export class EntityIsTamedComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
 		 * minecraft:is_tamed.
 		 */
-		static readonly id = 'minecraft:is_tamed'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:is_tamed.
+		 */
+		static readonly componentId = 'minecraft:is_tamed'
 		protected constructor()
 	}
 	/**
@@ -4037,7 +4208,11 @@ declare module '@minecraft/server' {
 		/**
 		 * Identifier of this component.
 		 */
-		static readonly id = 'minecraft:item'
+		readonly typeId: string
+		/**
+		 * Identifier of this component.
+		 */
+		static readonly componentId = 'minecraft:item'
 		protected constructor()
 	}
 	/**
@@ -4067,6 +4242,11 @@ declare module '@minecraft/server' {
 		 */
 		readonly current: number
 		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:lava_movement.
+		 */
+		readonly typeId: string
+		/**
 		 * Value for movement speed on lava as defined through entity
 		 * components.
 		 * @throws This property can throw when used.
@@ -4076,7 +4256,7 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:lava_movement.
 		 */
-		static readonly id = 'minecraft:lava_movement'
+		static readonly componentId = 'minecraft:lava_movement'
 		/**
 		 * @remarks
 		 * Resets the current movement speed on lava for the entity to
@@ -4124,7 +4304,12 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:leashable.
 		 */
-		static readonly id = 'minecraft:leashable'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:leashable.
+		 */
+		static readonly componentId = 'minecraft:leashable'
 		/**
 		 * @remarks
 		 * Leashes this entity to another entity.
@@ -4147,6 +4332,11 @@ declare module '@minecraft/server' {
 	 */
 	export class EntityMarkVariantComponent extends IEntityComponent {
 		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:mark_variant.
+		 */
+		readonly typeId: string
+		/**
 		 * The identifier of the variant. By convention, 0 is the
 		 * identifier of the base entity.
 		 */
@@ -4155,7 +4345,7 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:mark_variant.
 		 */
-		static readonly id = 'minecraft:mark_variant'
+		static readonly componentId = 'minecraft:mark_variant'
 		protected constructor()
 	}
 	/**
@@ -4167,7 +4357,12 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:mount_taming.
 		 */
-		static readonly id = 'minecraft:tamemount'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:mount_taming.
+		 */
+		static readonly componentId = 'minecraft:tamemount'
 		/**
 		 * @remarks
 		 * Sets this rideable entity as tamed.
@@ -4192,7 +4387,12 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:movement.amphibious.
 		 */
-		static readonly id = 'minecraft:movement.amphibious'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:movement.amphibious.
+		 */
+		static readonly componentId = 'minecraft:movement.amphibious'
 		protected constructor()
 	}
 	/**
@@ -4208,7 +4408,12 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:movement.basic.
 		 */
-		static readonly id = 'minecraft:movement.basic'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:movement.basic.
+		 */
+		static readonly componentId = 'minecraft:movement.basic'
 		protected constructor()
 	}
 	/**
@@ -4222,6 +4427,11 @@ declare module '@minecraft/server' {
 		 */
 		readonly current: number
 		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:movement.
+		 */
+		readonly typeId: string
+		/**
 		 * Value for default movement speed as defined through entity
 		 * components.
 		 * @throws This property can throw when used.
@@ -4231,7 +4441,7 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:movement.
 		 */
-		static readonly id = 'minecraft:movement'
+		static readonly componentId = 'minecraft:movement'
 		/**
 		 * @remarks
 		 * Resets the current default movement speed value for the
@@ -4275,7 +4485,12 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:movement.fly.
 		 */
-		static readonly id = 'minecraft:movement.fly'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:movement.fly.
+		 */
+		static readonly componentId = 'minecraft:movement.fly'
 		protected constructor()
 	}
 	/**
@@ -4292,7 +4507,12 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:movement.generic.
 		 */
-		static readonly id = 'minecraft:movement.generic'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:movement.generic.
+		 */
+		static readonly componentId = 'minecraft:movement.generic'
 		protected constructor()
 	}
 	/**
@@ -4318,7 +4538,12 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:movement.glide.
 		 */
-		static readonly id = 'minecraft:movement.glide'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:movement.glide.
+		 */
+		static readonly componentId = 'minecraft:movement.glide'
 		protected constructor()
 	}
 	/**
@@ -4334,7 +4559,12 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:movement.hover.
 		 */
-		static readonly id = 'minecraft:movement.hover'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:movement.hover.
+		 */
+		static readonly componentId = 'minecraft:movement.hover'
 		protected constructor()
 	}
 	/**
@@ -4351,7 +4581,12 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:movement.jump.
 		 */
-		static readonly id = 'minecraft:movement.jump'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:movement.jump.
+		 */
+		static readonly componentId = 'minecraft:movement.jump'
 		protected constructor()
 	}
 	/**
@@ -4368,7 +4603,12 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:movement.skip.
 		 */
-		static readonly id = 'minecraft:movement.skip'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:movement.skip.
+		 */
+		static readonly componentId = 'minecraft:movement.skip'
 		protected constructor()
 	}
 	/**
@@ -4395,7 +4635,12 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:movement.sway.
 		 */
-		static readonly id = 'minecraft:movement.sway'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:movement.sway.
+		 */
+		static readonly componentId = 'minecraft:movement.sway'
 		protected constructor()
 	}
 	/**
@@ -4517,7 +4762,12 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:navigation.climb.
 		 */
-		static readonly id = 'minecraft:navigation.climb'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:navigation.climb.
+		 */
+		static readonly componentId = 'minecraft:navigation.climb'
 		protected constructor()
 	}
 	/**
@@ -4639,7 +4889,12 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:navigation.float.
 		 */
-		static readonly id = 'minecraft:navigation.float'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:navigation.float.
+		 */
+		static readonly componentId = 'minecraft:navigation.float'
 		protected constructor()
 	}
 	/**
@@ -4761,7 +5016,12 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:navigation.fly.
 		 */
-		static readonly id = 'minecraft:navigation.fly'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:navigation.fly.
+		 */
+		static readonly componentId = 'minecraft:navigation.fly'
 		protected constructor()
 	}
 	/**
@@ -4884,7 +5144,12 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:navigation.generic.
 		 */
-		static readonly id = 'minecraft:navigation.generic'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:navigation.generic.
+		 */
+		static readonly componentId = 'minecraft:navigation.generic'
 		protected constructor()
 	}
 	/**
@@ -5007,7 +5272,12 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:navigation.hover.
 		 */
-		static readonly id = 'minecraft:navigation.hover'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:navigation.hover.
+		 */
+		static readonly componentId = 'minecraft:navigation.hover'
 		protected constructor()
 	}
 	/**
@@ -5129,13 +5399,23 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:navigation.swim.
 		 */
-		static readonly id = 'minecraft:navigation.walk'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:navigation.swim.
+		 */
+		static readonly componentId = 'minecraft:navigation.walk'
 		protected constructor()
 	}
 	/**
 	 * Sets the distance through which the entity can push through.
 	 */
 	export class EntityPushThroughComponent extends IEntityComponent {
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:push_through.
+		 */
+		readonly typeId: string
 		/**
 		 * The value of the entity's push-through, in blocks.
 		 */
@@ -5144,7 +5424,7 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:push_through.
 		 */
-		static readonly id = 'minecraft:push_through'
+		static readonly componentId = 'minecraft:push_through'
 		protected constructor()
 	}
 	/**
@@ -5204,7 +5484,12 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:rideable.
 		 */
-		static readonly id = 'minecraft:rideable'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:rideable.
+		 */
+		static readonly componentId = 'minecraft:rideable'
 		/**
 		 * @remarks
 		 * Adds an entity to this entity as a rider.
@@ -5236,6 +5521,11 @@ declare module '@minecraft/server' {
 	 */
 	export class EntityScaleComponent extends IEntityComponent {
 		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:scale.
+		 */
+		readonly typeId: string
+		/**
 		 * The value of the scale. 1.0 means the entity will appear at
 		 * the scale they are defined in their model. Higher numbers
 		 * make the entity bigger.
@@ -5245,7 +5535,7 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:scale.
 		 */
-		static readonly id = 'minecraft:scale'
+		static readonly componentId = 'minecraft:scale'
 		protected constructor()
 	}
 	/**
@@ -5253,6 +5543,11 @@ declare module '@minecraft/server' {
 	 * base skins for villagers.
 	 */
 	export class EntitySkinIdComponent extends IEntityComponent {
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:skin_id.
+		 */
+		readonly typeId: string
 		/**
 		 * The identifier of the skin. By convention, 0 is the
 		 * identifier of the base skin.
@@ -5262,7 +5557,7 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:skin_id.
 		 */
-		static readonly id = 'minecraft:skin_id'
+		static readonly componentId = 'minecraft:skin_id'
 		protected constructor()
 	}
 	/**
@@ -5276,6 +5571,11 @@ declare module '@minecraft/server' {
 		 */
 		readonly max: number
 		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:strength.
+		 */
+		readonly typeId: string
+		/**
 		 * Current strength value of this entity, after any effects or
 		 * component updates are applied.
 		 * @throws This property can throw when used.
@@ -5285,7 +5585,7 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:strength.
 		 */
-		static readonly id = 'minecraft:strength'
+		static readonly componentId = 'minecraft:strength'
 		protected constructor()
 	}
 	/**
@@ -5312,7 +5612,12 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:tameable.
 		 */
-		static readonly id = 'minecraft:tameable'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:tameable.
+		 */
+		static readonly componentId = 'minecraft:tameable'
 		/**
 		 * @remarks
 		 * Tames this entity.
@@ -5370,6 +5675,11 @@ declare module '@minecraft/server' {
 		 */
 		readonly current: number
 		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:underwater_movement.
+		 */
+		readonly typeId: string
+		/**
 		 * Value for movement speed underwater as defined through
 		 * entity components.
 		 * @throws This property can throw when used.
@@ -5379,7 +5689,7 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:underwater_movement.
 		 */
-		static readonly id = 'minecraft:underwater_movement'
+		static readonly componentId = 'minecraft:underwater_movement'
 		/**
 		 * @remarks
 		 * Resets the current movement speed underwater for the entity
@@ -5419,6 +5729,11 @@ declare module '@minecraft/server' {
 	 */
 	export class EntityVariantComponent extends IEntityComponent {
 		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:variant.
+		 */
+		readonly typeId: string
+		/**
 		 * The identifier of the variant. By convention, 0 is the
 		 * identifier of the base entity.
 		 * @throws This property can throw when used.
@@ -5428,20 +5743,24 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * minecraft:variant.
 		 */
-		static readonly id = 'minecraft:variant'
+		static readonly componentId = 'minecraft:variant'
 		protected constructor()
 	}
 	/**
 	 * When added, this component signifies that this entity wants
 	 * to become a jockey.
 	 */
-	// tslint:disable-next-line:no-unnecessary-class
 	export class EntityWantsJockeyComponent extends IEntityComponent {
 		/**
 		 * Identifier of this component. Should always be
 		 * minecraft:wants_jockey.
 		 */
-		static readonly id = 'minecraft:wants_jockey'
+		readonly typeId: string
+		/**
+		 * Identifier of this component. Should always be
+		 * minecraft:wants_jockey.
+		 */
+		static readonly componentId = 'minecraft:wants_jockey'
 		protected constructor()
 	}
 	/**
@@ -5586,6 +5905,10 @@ declare module '@minecraft/server' {
 		 * This event fires when a lever activates or is deactivated.
 		 */
 		readonly leverActivate: LeverActionEventSignal
+		/**
+		 * This event is an internal implementation detail, and is
+		 * otherwise not currently functional.
+		 */
 		readonly messageReceive: ServerMessageSignal
 		/**
 		 * This event fires when a piston expands or retracts.
@@ -5740,7 +6063,7 @@ declare module '@minecraft/server' {
 	}
 	/**
 	 * Contains an interface for defining the state of a property
-	 * for a {@link mojang-minecraft.BlockPermutation}.
+	 * for a {@link BlockPermutation}.
 	 */
 	export class IBlockProperty {
 		/**
@@ -5753,13 +6076,13 @@ declare module '@minecraft/server' {
 	 * Base interface that defines components associated with an
 	 * entity.
 	 */
-	// tslint:disable-next-line:no-unnecessary-class
 	export class IEntityComponent {
+		readonly typeId: string
 		protected constructor()
 	}
 	/**
-	 * Contains the state of an integer-based property for a
-	 * {@link mojang-minecraft.BlockPermutation}.
+	 * Contains the state of an integer-based property for a {@link
+	 * BlockPermutation}.
 	 */
 	export class IntBlockProperty extends IBlockProperty {
 		/**
@@ -5774,9 +6097,8 @@ declare module '@minecraft/server' {
 		 * The current value of this property.
 		 * @throws
 		 * Setting this property can throw if the value passed is not
-		 * valid for the property. Use
-		 * {@link mojang-minecraft.IntBlockProperty.validValues} to check
-		 * allowed values.
+		 * valid for the property. Use {@link
+		 * IntBlockProperty.validValues} to check allowed values.
 		 */
 		value: number
 		protected constructor()
@@ -5802,9 +6124,9 @@ declare module '@minecraft/server' {
 		/**
 		 * @remarks
 		 * Adds an item to the specified container. Items will be
-		 * placed in the first available empty slot. (Use
-		 * {@link mojang-minecraft.InventoryComponentContainer.setItem} if you
-		 * wish to set items in a particular slot.)
+		 * placed in the first available empty slot. (Use {@link
+		 * InventoryComponentContainer.setItem} if you wish to set
+		 * items in a particular slot.)
 		 * @param itemStack
 		 * The stack of items to add.
 		 * @throws This function can throw errors.
@@ -5947,7 +6269,7 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * 'minecraft:cooldown'.
 		 */
-		static readonly id = 'minecraft:cooldown'
+		static readonly componentId = 'minecraft:cooldown'
 		/**
 		 * @remarks
 		 * Starts a new cooldown period for this item.
@@ -6027,7 +6349,7 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * 'minecraft:durability'.
 		 */
-		static readonly id = 'minecraft:durability'
+		static readonly componentId = 'minecraft:durability'
 		/**
 		 * @remarks
 		 * Returns the maximum chance that this item would be damaged
@@ -6055,7 +6377,7 @@ declare module '@minecraft/server' {
 		/**
 		 * Identifier of this component.
 		 */
-		static readonly id = 'minecraft:enchantments'
+		static readonly componentId = 'minecraft:enchantments'
 		/**
 		 * @remarks
 		 * Removes all enchantments applied to this item stack.
@@ -6099,7 +6421,7 @@ declare module '@minecraft/server' {
 		 * Identifier of this component. Should always be
 		 * 'minecraft:food'.
 		 */
-		static readonly id = 'minecraft:food'
+		static readonly componentId = 'minecraft:food'
 		protected constructor()
 	}
 	/**
@@ -6176,23 +6498,23 @@ declare module '@minecraft/server' {
 		 */
 		data: number
 		/**
+		 * Given name of this stack of items.
+		 */
+		nameTag?: string
+		/**
 		 * Identifier of the type of items for the stack. If a
 		 * namespace is not specified, 'minecraft:' is assumed.
 		 * Examples include 'wheat' or 'apple'.
 		 */
-		readonly id: string
-		/**
-		 * Given name of this stack of items.
-		 */
-		nameTag?: string
+		readonly typeId: string
 		/**
 		 * @remarks
 		 * Creates a new instance of a stack of items for use in the
 		 * world.
 		 * @param itemType
-		 * Type of item to create. See the
-		 * {@link mojang-minecraft.MinecraftItemTypes} enumeration for a list
-		 * of standard item types in Minecraft experiences.
+		 * Type of item to create. See the {@link MinecraftItemTypes}
+		 * enumeration for a list of standard item types in Minecraft
+		 * experiences.
 		 * @param amount
 		 * Number of items to place in the stack, between 1 and 64.
 		 * Note that certain items can only have one item in the stack.
@@ -6603,8 +6925,8 @@ declare module '@minecraft/server' {
 	/**
 	 * Contains a location description that is useful for entities
 	 * and other items. X, Y, and Z can contain decimal fractions.
-	 * For integer-based locations useful for blocks, see
-	 * {@link mojang-minecraft.BlockLocation}.
+	 * For integer-based locations useful for blocks, see {@link
+	 * BlockLocation}.
 	 */
 	export class Location {
 		/**
@@ -12164,7 +12486,7 @@ declare module '@minecraft/server' {
 		static readonly stoneSword: ItemType
 		static readonly straySpawnEgg: ItemType
 		static readonly striderSpawnEgg: ItemType
-		static readonly string: ItemType
+		static readonly 'string': ItemType
 		/**
 		 * Represents an item that can place a stripped acacia log
 		 * within Minecraft.
@@ -12738,7 +13060,10 @@ declare module '@minecraft/server' {
 		 */
 		readonly headLocation: Location
 		/**
-		 * Identifier for the player.
+		 * Unique identifier of the player. This identifier is intended
+		 * to be consistent across loads of a world instance. No
+		 * meaning should be inferred from the value and structure of
+		 * this unique identifier - do not parse or interpret it.
 		 * @throws This property can throw when used.
 		 */
 		readonly id: string
@@ -12787,6 +13112,12 @@ declare module '@minecraft/server' {
 		 * @throws This property can throw when used.
 		 */
 		readonly target: Entity
+		/**
+		 * Unique identifier of the type of the entity - for example,
+		 * 'minecraft:player'.
+		 * @throws This property can throw when used.
+		 */
+		readonly typeId: string
 		/**
 		 * Current speed of the player across X, Y, and Z dimensions.
 		 * @throws This property can throw when used.
@@ -12945,30 +13276,12 @@ declare module '@minecraft/server' {
 		 * @throws This function can throw errors.
 		 */
 		removeTag(tag: string): boolean
-		/**
-		 * @remarks
-		 * Runs a particular command from the context of this player.
-		 * @param commandString
-		 * Command to run. Note that command strings should not start
-		 * with slash.
-		 * @returns
-		 * For commands that return data, returns a JSON structure with
-		 * command response values.
-		 * @throws This function can throw errors.
-		 * @example commands.js
-		 * ```typescript
-		 *        player.runCommand("say You got a new high score!");
-		 *        player.runCommand("scoreboard players set @s score 10");
-		 *
-		 * ```
-		 */
 		runCommand(commandString: string): any
 		/**
 		 * @remarks
 		 * Runs a particular command asynchronously from the context of
-		 * this entity. Where possible, running a command
-		 * asynchronously is recommended, especially for long running
-		 * operations.
+		 * this entity.  Note that there is a maximum queue of 128
+		 * asynchronous commands that can be run in a given tick.
 		 * @param commandString
 		 * Command to run. Note that command strings should not start
 		 * with slash.
@@ -13081,8 +13394,7 @@ declare module '@minecraft/server' {
 		protected constructor()
 	}
 	/**
-	 * Represents the inventory of a {@link mojang-minecraft.Player} in
-	 * the world.
+	 * Represents the inventory of a {@link Player} in the world.
 	 */
 	export class PlayerInventoryComponentContainer extends InventoryComponentContainer {
 		/**
@@ -13578,8 +13890,8 @@ declare module '@minecraft/server' {
 		protected constructor()
 	}
 	/**
-	 * Contains the state of a string-based property for a
-	 * {@link mojang-minecraft.BlockPermutation}.
+	 * Contains the state of a string-based property for a {@link
+	 * BlockPermutation}.
 	 */
 	export class StringBlockProperty extends IBlockProperty {
 		/**
@@ -13594,9 +13906,8 @@ declare module '@minecraft/server' {
 		 * The current value of this property.
 		 * @throws
 		 * Setting this property can throw if the value passed is not
-		 * valid for the property. Use
-		 * {@link mojang-minecraft.StringBlockProperty.validValues} to check
-		 * allowed values.
+		 * valid for the property. Use {@link
+		 * StringBlockProperty.validValues} to check allowed values.
 		 */
 		value: string
 		protected constructor()
@@ -13610,6 +13921,19 @@ declare module '@minecraft/server' {
 		 * lifecycle of items in the Minecraft system.
 		 */
 		readonly events: SystemEvents
+		/**
+		 * @remarks
+		 * Runs a specified function at a future time. This is
+		 * frequently used to implement delayed behaviors and game
+		 * loops.
+		 * @param callback
+		 * Function callback to run when the tickDelay time criteria is
+		 * met.
+		 * @returns
+		 * An opaque identifier that can be used with the `clearRun`
+		 * function to cancel the execution of this run.
+		 */
+		run(callback: (arg: TickEvent) => void): void
 		protected constructor()
 	}
 	/**
@@ -13888,6 +14212,10 @@ declare module '@minecraft/server' {
 		 */
 		readonly scoreboard: Scoreboard
 		broadcastClientMessage(id: string, value: string): void
+		/**
+		 * @remarks
+		 * Returns the absolute time since the start of the world.
+		 */
 		getAbsoluteTime(): number
 		/**
 		 * @param dimensionId
@@ -13916,6 +14244,10 @@ declare module '@minecraft/server' {
 		 * @throws This function can throw errors.
 		 */
 		getPlayers(options?: EntityQueryOptions): PlayerIterator
+		/**
+		 * @remarks
+		 * Sets the current game time of the day.
+		 */
 		getTime(): number
 		/**
 		 * @remarks
@@ -13966,6 +14298,11 @@ declare module '@minecraft/server' {
 			identifier: string,
 			value: boolean | number | string
 		): void
+		/**
+		 * @remarks
+		 * Returns the current game time of the day.
+		 * @param timeOfDay
+		 */
 		setTime(timeOfDay: number): void
 		/**
 		 * @remarks
@@ -14202,8 +14539,8 @@ declare module '@minecraft/server' {
 		maxDistance?: number
 	}
 	/**
-	 * Additional configuration options for the
-	 * {@link mojang-minecraft.Dimension.createExplosion} method.
+	 * Additional configuration options for the {@link
+	 * Dimension.createExplosion} method.
 	 */
 	export interface ExplosionOptions {
 		/**
@@ -14225,23 +14562,54 @@ declare module '@minecraft/server' {
 		 */
 		source?: Entity
 	}
+	/**
+	 * An interface that describes the signature of a message that
+	 * is passed into a say/tell API request.
+	 */
 	// tslint:disable-next-line:interface-name
 	export interface IRawMessage {
+		/**
+		 * A list of text objects used to build a message.
+		 */
 		rawtext?: IRawMessage | string[]
+		/**
+		 * Contains plain text to display directly. Only valid when
+		 * used as a sub member in a parent _rawtext_ or _with_ member.
+		 */
 		text?: string
+		/**
+		 * Contains a resource pack translation identifier that can be
+		 * used to translate text in the player's selected language.
+		 */
 		translate?: string
+		/**
+		 * A list of text object arguments that can be used to fill
+		 * values in the _translate_ text. Ignored when _translate_ is
+		 * not present.
+		 */
 		with?: IRawMessage | string[]
 	}
+	/**
+	 * Contains a description of a vector.
+	 */
 	// tslint:disable-next-line:interface-name
 	export interface IVec3 {
+		/**
+		 * X component of this vector.
+		 */
 		x: number
+		/**
+		 * Y component of this vector.
+		 */
 		y: number
+		/**
+		 * Z component of this vector.
+		 */
 		z: number
 	}
 	/**
-	 * Additional configuration options for
-	 * {@link mojang-minecraft.World.playMusic}/{@link mojang-minecraft.World.queueMusic}
-	 * methods.
+	 * Additional configuration options for {@link
+	 * World.playMusic}/{@link World.queueMusic} methods.
 	 */
 	export interface MusicOptions {
 		/**
@@ -14258,9 +14626,8 @@ declare module '@minecraft/server' {
 		volume?: number
 	}
 	/**
-	 * Additional configuration options for the
-	 * {@link mojang-minecraft.Player.playSound}/{@link mojang-minecraft.World.playSound}
-	 * method.
+	 * Additional configuration options for the {@link
+	 * Player.playSound}/{@link World.playSound} method.
 	 */
 	export interface SoundOptions {
 		/**
