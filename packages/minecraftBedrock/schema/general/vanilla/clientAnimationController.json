@@ -115,6 +115,8 @@
 		"controller.animation.tripod_camera.base_pose",
 		"controller.animation.turtle.general",
 		"controller.animation.turtle.move",
+		"controller.animation.vex.charge",
+		"controller.animation.vex.idle",
 		"controller.animation.vex.move",
 		"controller.animation.villager.baby",
 		"controller.animation.villager.general",

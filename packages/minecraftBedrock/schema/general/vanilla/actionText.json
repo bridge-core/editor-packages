@@ -15,6 +15,7 @@
 		"action.interact.dye",
 		"action.interact.edit",
 		"action.interact.exit.boat",
+		"action.interact.exit.raft",
 		"action.interact.feed",
 		"action.interact.fishing",
 		"action.interact.leash",
