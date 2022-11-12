@@ -37,7 +37,7 @@
 			"type": "object",
 			"additionalProperties": false,
 			"properties": {
-				"creative_group": {
+				"group": {
 					"title": "Creative Catgeory",
 					"type": "string",
 					"anyOf": [
