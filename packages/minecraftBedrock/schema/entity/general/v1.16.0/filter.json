@@ -107,6 +107,7 @@
 					"type": "string",
 					"description": "The name of the test to apply",
 					"enum": [
+						"actor_health", // v1.19.60+
 						"bool_property", // v1.19.40+
 						"clock_time",
 						"distance_to_nearest_player",
@@ -176,15 +177,35 @@
 						"light_level",
 						"moon_intensity",
 						"moon_phase",
+						"on_fire", // v1.19.60+
 						"on_ground",
+						"on_hot_block", // v1.19.60+
 						"on_ladder",
 						"random_chance",
 						"rider_count",
 						"surface_mob",
+						"target_distance", // v1.19.60+
 						"trusts",
 						"weather",
 						"weather_at_position"
 					]
+				}
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"test": {
+						"const": "actor_health"
+					}
+				}
+			},
+			"then": {
+				"properties": {
+					"value": {
+						"description": "Tests the health of an actor.",
+						"type": "integer"
+					}
 				}
 			}
 		},
@@ -1354,6 +1375,23 @@
 			"if": {
 				"properties": {
 					"test": {
+						"const": "on_fire"
+					}
+				}
+			},
+			"then": {
+				"properties": {
+					"value": {
+						"description": "Tests if the subject is on fire.",
+						"type": "boolean"
+					}
+				}
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"test": {
 						"const": "on_ground"
 					}
 				}
@@ -1362,6 +1400,23 @@
 				"properties": {
 					"value": {
 						"description": "Returns true when the subject entity is on ground.",
+						"type": "boolean"
+					}
+				}
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"test": {
+						"const": "on_hot_block"
+					}
+				}
+			},
+			"then": {
+				"properties": {
+					"value": {
+						"description": "Tests if the subject is on a hot block.",
 						"type": "boolean"
 					}
 				}
@@ -1431,6 +1486,23 @@
 					"value": {
 						"description": "Tests if the subject is a surface mob.",
 						"type": "boolean"
+					}
+				}
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"test": {
+						"const": "target_distance"
+					}
+				}
+			},
+			"then": {
+				"properties": {
+					"value": {
+						"description": "Tests the distance between the calling entity and its target.",
+						"type": "number"
 					}
 				}
 			}

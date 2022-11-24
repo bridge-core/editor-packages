@@ -1,0 +1,62 @@
+{
+  "version": "2",
+  "remote": {
+    "https://cdn.skypack.dev/-/fflate@v0.7.2-LsWNNrE2U2EOa3FhlTZp/dist=es2019,mode=imports,min/optimized/fflate.js": "5ddfa8237aa3b33471f0ce99c69ef35ae50338cb8f8c0fc18e955c69247fae3a",
+    "https://cdn.skypack.dev/-/json5@v2.2.0-2jpNGKqjKBnKA81QQzdk/dist=es2019,mode=imports/optimized/json5.js": "ece3fb60010a49b3198e9dd66a181ab394bdc8a784f5bacaafccd5511bb96197",
+    "https://cdn.skypack.dev/-/lodash@v4.17.19-edyNmC6baEqCMCqcyujz/dist=es2019,mode=imports/optimized/lodash.js": "bcc865cc5063c2610ab88858a70aeb2860b893d64fe8b20d7e061d2117d1d288",
+    "https://cdn.skypack.dev/fflate?min": "404d4e56be673c3c96c75a033c68b49f0dc4a52d9b613dbf8e974d8ac53bbd75",
+    "https://cdn.skypack.dev/json5@v2.2.0": "774040188bc288bf587e4a91052ada7b8f6dbe227b24c7fd9e5d944a58e2f5c6",
+    "https://cdn.skypack.dev/lodash@4.17.19": "729b0a4bfd71e573760c1d14a3976eb55eda330546cd678a8a4cbcb197892bba",
+    "https://deno.land/std@0.103.0/_util/assert.ts": "2f868145a042a11d5ad0a3c748dcf580add8a0dbc0e876eaa0026303a5488f58",
+    "https://deno.land/std@0.103.0/_util/os.ts": "4bfbbb53cf87ec0c0f562b5b836c4d5392faa0365a30580cdfd3acb9944dcca1",
+    "https://deno.land/std@0.103.0/path/_constants.ts": "1247fee4a79b70c89f23499691ef169b41b6ccf01887a0abd131009c5581b853",
+    "https://deno.land/std@0.103.0/path/_interface.ts": "1fa73b02aaa24867e481a48492b44f2598cd9dfa513c7b34001437007d3642e4",
+    "https://deno.land/std@0.103.0/path/_util.ts": "2e06a3b9e79beaf62687196bd4b60a4c391d862cfa007a20fc3a39f778ba073b",
+    "https://deno.land/std@0.103.0/path/common.ts": "eaf03d08b569e8a87e674e4e265e099f237472b6fd135b3cbeae5827035ea14a",
+    "https://deno.land/std@0.103.0/path/glob.ts": "697fec7edbada26ed12b696023646a28c3897370c94ef7a555d317494b8bc270",
+    "https://deno.land/std@0.103.0/path/mod.ts": "4465dc494f271b02569edbb4a18d727063b5dbd6ed84283ff906260970a15d12",
+    "https://deno.land/std@0.103.0/path/posix.ts": "b81974c768d298f8dcd2c720229639b3803ca4a241fa9a355c762fa2bc5ef0c1",
+    "https://deno.land/std@0.103.0/path/separator.ts": "8fdcf289b1b76fd726a508f57d3370ca029ae6976fcde5044007f062e643ff1c",
+    "https://deno.land/std@0.103.0/path/win32.ts": "f4a3d4a3f2c9fe894da046d5eac48b5e789a0ebec5152b2c0985efe96a9f7ae1",
+    "https://deno.land/std@0.155.0/fmt/colors.ts": "ff7dc9c9f33a72bd48bc24b21bbc1b4545d8494a431f17894dbc5fe92a938fc4",
+    "https://deno.land/std@0.155.0/testing/_diff.ts": "a23e7fc2b4d8daa3e158fa06856bedf5334ce2a2831e8bf9e509717f455adb2c",
+    "https://deno.land/std@0.155.0/testing/_format.ts": "cd11136e1797791045e639e9f0f4640d5b4166148796cad37e6ef75f7d7f3832",
+    "https://deno.land/std@0.155.0/testing/asserts.ts": "ac295f7fd22a7af107580e2475402a8c386cb1bf18bf837ae266ac0665786026",
+    "https://deno.land/x/dotenv@v2.0.0/mod.ts": "327b0f2c335e69ca127b0e8b282210d21e45a1f9f6ce597484fbb3f3b23cb461",
+    "https://deno.land/x/dotenv@v2.0.0/util.ts": "693730877b13f8ead2b79b2aa31e2a0652862f7dc0c5f6d2f313f4d39c7b7670"
+  },
+  "npm": {
+    "specifiers": { "ajv@7": "ajv@7.2.4" },
+    "packages": {
+      "ajv@7.2.4": {
+        "integrity": "sha512-nBeQgg/ZZA3u3SYxyaDvpvDtgZ/EZPF547ARgZBrG9Bhu1vKDwAIjtIf+sDtJUKa2zOcEbmRLBRSyMraS/Oy1A==",
+        "dependencies": {
+          "fast-deep-equal": "fast-deep-equal@3.1.3",
+          "json-schema-traverse": "json-schema-traverse@1.0.0",
+          "require-from-string": "require-from-string@2.0.2",
+          "uri-js": "uri-js@4.4.1"
+        }
+      },
+      "fast-deep-equal@3.1.3": {
+        "integrity": "sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==",
+        "dependencies": {}
+      },
+      "json-schema-traverse@1.0.0": {
+        "integrity": "sha512-NM8/P9n3XjXhIZn1lLhkFaACTOURQXjWhV4BA/RnOv8xvgqtqpAX9IO4mRQxSx1Rlo4tqzeqb0sOlruaOy3dug==",
+        "dependencies": {}
+      },
+      "punycode@2.1.1": {
+        "integrity": "sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==",
+        "dependencies": {}
+      },
+      "require-from-string@2.0.2": {
+        "integrity": "sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==",
+        "dependencies": {}
+      },
+      "uri-js@4.4.1": {
+        "integrity": "sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==",
+        "dependencies": { "punycode": "punycode@2.1.1" }
+      }
+    }
+  }
+}

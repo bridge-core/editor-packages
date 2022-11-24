@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"title": "Variable Maximum Auto Step",
-	"description": "Entities with this component will have a maximum auto step height that is different depending on wether they are on a block that prevents jumping. Incompatible with 'runtime_identifier' of 'minecraft:horse'.",
+	"description": "Entities with this component will have a maximum auto step height that is different depending on whether they are on a block that prevents jumping. Incompatible with 'runtime_identifier' of 'minecraft:horse'.",
 	"type": "object",
 	"additionalProperties": false,
 	"properties": {

@@ -19,7 +19,11 @@
 				"material": {
 					"title": "Material",
 					"type": "string",
-					"enum": ["particles_alpha", "particles_blend"]
+					"enum": [
+						"particles_alpha",
+						"particles_blend",
+						"particles_add" // v1.19.60
+					]
 				}
 			}
 		}
