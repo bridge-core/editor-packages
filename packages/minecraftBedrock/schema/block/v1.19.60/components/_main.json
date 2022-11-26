@@ -104,7 +104,7 @@
 			"properties": {
 				// Deprecated
 				"minecraft:breathability": {
-					"$ref": "./breathability.json"
+					"$ref": "../../v1.19.50/components/breathability.json"
 				},
 				"minecraft:block_light_filter": {
 					"$ref": "../../v1.19.40/components/block_light_filter.json"
