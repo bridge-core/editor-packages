@@ -3,7 +3,9 @@ import { DocumentationScraper } from './Scraper/documentation.ts'
 import { GameScraper } from './Scraper/game.ts'
 import { basename, join } from 'path'
 
-const res = await fetch(`https://bedrock.dev/docs/beta/Addons`)
+const res = await fetch(
+	'https://raw.githubusercontent.com/Mojang/bedrock-samples/preview/documentation/Addons.html'
+)
 const text = await res.text()
 
 const docScraper = new DocumentationScraper(text, toScrape.documentation)
