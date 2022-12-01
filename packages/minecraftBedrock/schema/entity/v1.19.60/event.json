@@ -92,7 +92,7 @@
 			"$ref": "../../event/v1.16.100/transformItem.json"
 		},
 		{
-			"$ref": "../../event/v1.19.20/setProperty.json"
+			"$ref": "../../event/v1.19.50/setProperty.json"
 		}
 	]
 }
