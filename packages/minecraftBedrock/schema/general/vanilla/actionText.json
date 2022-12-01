@@ -14,6 +14,8 @@
 		"action.interact.cure",
 		"action.interact.dye",
 		"action.interact.edit",
+		"action.interact.equipcarpet",
+		"action.interact.equiphorsearmor",
 		"action.interact.exit.boat",
 		"action.interact.exit.raft",
 		"action.interact.feed",

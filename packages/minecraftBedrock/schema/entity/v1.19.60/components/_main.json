@@ -28,6 +28,9 @@
 		// Non-experimental
 		{
 			"properties": {
+				"minecraft:inventory": {
+					"$ref": "./inventory.json"
+				},
 				"minecraft:physics": {
 					"$ref": "../../v1.19.50/components/physics.json"
 				},
@@ -282,9 +285,6 @@
 				},
 				"minecraft:instant_despawn": {
 					"$ref": "../../v1.16.0/components/instant_despawn.json"
-				},
-				"minecraft:inventory": {
-					"$ref": "../../v1.16.0/components/inventory.json"
 				},
 				"minecraft:is_baby": {
 					"$ref": "../../v1.16.0/components/is_baby.json"

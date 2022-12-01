@@ -52,7 +52,8 @@
 							"hand",
 							"head",
 							"leg",
-							"torso"
+							"torso",
+							"inventory" // 1.19.60.22
 						]
 					}
 				}

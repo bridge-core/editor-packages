@@ -260,6 +260,11 @@
 						"type": "string",
 						"const": "script_eval",
 						"description": "Allows the pack to use the 'eval()' and 'new Function()' methods."
+					},
+					{
+						"type": "string",
+						"const": "editorExtension",
+						"description": "Indicates that this pack contains extensions for editing."
 					}
 				]
 			}

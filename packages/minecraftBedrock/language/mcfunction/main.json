@@ -6949,6 +6949,30 @@
 					]
 				}
 			]
+		},
+		{
+			"requires": {
+				"experimentalGameplay": ["enableGameTestFramework"],
+				"targetVersion": [">=", "1.19.60"]
+			},
+			"commands": [
+				{
+					"commandName": "scriptevent",
+					"description": "Triggers a script event with an ID and message.",
+					"arguments": [
+						{
+							"argumentName": "messageId",
+							"type": "string",
+							"description": "A namespaced id of the event to trigger."
+						},
+						{
+							"argumentName": "message",
+							"type": "string",
+							"description": "The message for the script to recieve. Maximum 256 characters."
+						}
+					]
+				}
+			]
 		}
 	]
 }
