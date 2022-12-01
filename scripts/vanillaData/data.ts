@@ -8,11 +8,13 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 		{
 			id: 'prefixed_entity_identifiers',
 			target: 'Entities/Identifier',
+			filter: (val: string) => !['undefined_test_only'].includes(val),
 			map: (val: string) => `minecraft:${val}`,
 		},
 		{
 			id: 'unprefixed_entity_identifiers',
 			target: 'Entities/Identifier',
+			filter: (val: string) => !['undefined_test_only'].includes(val),
 		},
 		{
 			id: 'prefixed_block_identifiers',
@@ -380,9 +382,5 @@ export const baseData: Record<string, string[]> = {
 		'trident_glint',
 		'trident_riptide',
 	],
-	damageType: [
-		'fatal',
-		'attack',
-		'any'
-	]
+	damageType: ['fatal', 'attack', 'any'],
 }
