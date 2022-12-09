@@ -28,6 +28,9 @@
 		// Non-experimental
 		{
 			"properties": {
+				"minecraft:shooter": {
+					"$ref": "./shooter.json"
+				},
 				"minecraft:inventory": {
 					"$ref": "./inventory.json"
 				},
@@ -480,9 +483,6 @@
 				},
 				"minecraft:scheduler": {
 					"$ref": "../../v1.16.0/components/scheduler.json"
-				},
-				"minecraft:shooter": {
-					"$ref": "../../v1.16.0/components/shooter.json"
 				},
 				"minecraft:sittable": {
 					"$ref": "../../v1.16.0/components/sittable.json"
