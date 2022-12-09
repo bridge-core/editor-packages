@@ -208,8 +208,13 @@
 				"anyOf": [
 					{
 						"type": "object",
+						"additionalProperties": false,
 						"properties": {
+							"moduleName": {
+								"type": "string"
+							},
 							"definition": {
+								"description": "URL or path to fetch the type definition from.",
 								"type": "string"
 							},
 							"requires": {

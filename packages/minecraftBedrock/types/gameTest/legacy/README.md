@@ -1,1 +1,0 @@
-Unofficial GameTest types, used before official types were made available.
