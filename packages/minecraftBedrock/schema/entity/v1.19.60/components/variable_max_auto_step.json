@@ -1,0 +1,27 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Variable Maximum Auto Step",
+	"description": "Entities with this component will have a maximum auto step height that is different depending on whether they are on a block that prevents jumping. Incompatible with 'runtime_identifier' of 'minecraft:horse'.",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"base_value": {
+			"title": "Base Value",
+			"description": "The maximum auto step height when on any other block.",
+			"type": "number",
+			"default": 0.5625
+		},
+		"jump_prevented_value": {
+			"title": "Jump Prevented Value",
+			"description": "The maximum auto step height when on a block that prevents jumping.",
+			"type": "number",
+			"default": 0.5625
+		},
+		"controlled_value": {
+			"title": "Controlled Value",
+			"description": "The maximum auto step height when on any other block and controlled by the player.",
+			"type": "number",
+			"default": 0.5625
+		}
+	}
+}

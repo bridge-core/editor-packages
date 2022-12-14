@@ -28,6 +28,9 @@
 		// Non-experimental
 		{
 			"properties": {
+				"minecraft:variable_max_auto_step": {
+					"$ref": "./variable_max_auto_step.json"
+				},
 				"minecraft:shooter": {
 					"$ref": "./shooter.json"
 				},
@@ -42,9 +45,6 @@
 				},
 				"minecraft:dash": {
 					"$ref": "../../v1.19.50/components/dash.json"
-				},
-				"minecraft:variable_max_auto_step": {
-					"$ref": "../../v1.19.50/components/variable_max_auto_step.json"
 				},
 				"minecraft:game_event_movement_tracking": {
 					"$ref": "../../v1.19.20/components/game_event_movement_tracking.json"
