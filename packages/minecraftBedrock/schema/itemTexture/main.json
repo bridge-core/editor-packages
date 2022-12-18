@@ -19,13 +19,14 @@
 						"textures": {
 							"anyOf": [
 								{
+									"type": "string",
+									"$ref": "../general/reference/paths.json#/definitions/item_texture_paths"
+								},
+								{
 									"type": "array",
 									"items": {
 										"$ref": "../general/reference/paths.json#/definitions/item_texture_paths"
 									}
-								},
-								{
-									"$ref": "../general/reference/paths.json#/definitions/item_texture_paths"
 								}
 							]
 						}
