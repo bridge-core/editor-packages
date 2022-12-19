@@ -1,12 +1,11 @@
 {
 	"name": "Script",
 	"icon": "mdi-test-tube",
-	"description": "Creates a blank script for the GameTest framework.",
+	"description": "Creates a blank script.",
 	"category": "fileType.simpleFile",
 	"requires": {
 		"packTypes": ["behaviorPack"],
-		"targetVersion": [">=", "1.16.210"],
-		"experimentalGameplay": ["enableGameTestFramework"]
+		"targetVersion": [">=", "1.16.210"]
 	},
 	"additionalModels": {
 		"PRESET_PATH": "scripts/"
