@@ -1,9 +1,8 @@
 {
-	"format_version": "1.16.100",
+	"format_version": "1.19.50",
 	"minecraft:block": {
 		"description": {
-			"identifier": "{{PROJECT_PREFIX}}:{{IDENTIFIER}}",
-			"is_experimental": false
+			"identifier": "{{PROJECT_PREFIX}}:{{IDENTIFIER}}"
 		},
 		"components": {
 			"minecraft:geometry": "geometry.{{IDENTIFIER}}",
@@ -12,14 +11,6 @@
 					"texture": "{{PROJECT_PREFIX}}_{{IDENTIFIER}}",
 					"render_method": "alpha_test"
 				}
-			},
-			"minecraft:pick_collision": {
-				"origin": [-8, 0, -8],
-				"size": [16, 16, 16]
-			},
-			"minecraft:entity_collision": {
-				"origin": [-8, 0, -8],
-				"size": [16, 16, 16]
 			}
 		}
 	}
