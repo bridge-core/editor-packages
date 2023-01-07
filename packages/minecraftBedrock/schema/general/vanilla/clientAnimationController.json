@@ -60,6 +60,7 @@
 		"controller.animation.humanoid.look_at_target",
 		"controller.animation.humanoid.move",
 		"controller.animation.humanoid.riding",
+		"controller.animation.humanoid.riding_legs_only",
 		"controller.animation.humanoid.sneaking",
 		"controller.animation.humanoid.swimming",
 		"controller.animation.humanoid.use_item_progress",

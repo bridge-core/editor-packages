@@ -19,10 +19,20 @@
 				"material": {
 					"title": "Material",
 					"type": "string",
-					"enum": [
-						"particles_alpha",
-						"particles_blend",
-						"particles_add" // v1.19.60
+					"anyOf": [
+						{
+							"const": "particles_alpha",
+							"description": "Pixels with an alpha of 0 will be fully transparent, colored pixels will always be opaque."
+						},
+						{
+							"const": "particles_blend",
+							"description": "Enables color blending and transparency in colored pixels, uses a normal blend mode."
+						},
+						{
+							// v1.19.60
+							"const": "particles_add",
+							"description": "Enables color blending and transparency in colored pixels, uses an additive blend mode."
+						}
 					]
 				}
 			}

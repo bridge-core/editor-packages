@@ -31,6 +31,7 @@
 				},
 				"components": {
 					"title": "Components",
+					"type": "object",
 					"additionalProperties": false,
 					"$ref": "./components/_main.json"
 				}
