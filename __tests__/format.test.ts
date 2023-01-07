@@ -33,8 +33,12 @@ Deno.test({
 					uniqueItems: true,
 				}
 				const customEnumDef = ajv.getKeyword('enum')
-				customEnumDef.code = () => {}
-				ajv.removeKeyword('enum').addKeyword(customEnumDef)
+
+				if (typeof customEnumDef === 'object') {
+					// @ts-ignore Typescript thinks the code property can't exist on AddedKeywordDefinition
+					customEnumDef.code = () => {}
+					ajv.removeKeyword('enum').addKeyword(customEnumDef)
+				}
 
 				metaSchema.properties = {
 					deprecationMessage: {
