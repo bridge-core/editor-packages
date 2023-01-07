@@ -17,7 +17,9 @@
 			"!components/**/*",
 			"!components/*",
 			"!commands/**/*",
-			"!commands/*"
+			"!commands/*",
+			"!preprocessor_scripts/**/*",
+			"!preprocessor_scripts/*"
 		],
 		"fileExtensions": [".js", ".ts"]
 	},
