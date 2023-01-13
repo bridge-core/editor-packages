@@ -40,9 +40,6 @@
 					"minecraft:random_ticking": {
 						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/random_ticking.json"
 					},
-					"minecraft:placement_filter": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/placement_filter.json"
-					},
 					"minecraft:rotation": {
 						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/rotation.json"
 					}
@@ -52,6 +49,9 @@
 		{
 			"type": "object",
 			"properties": {
+				"minecraft:placement_filter": {
+					"$ref": "../../v1.16.100/components/placement_filter.json"
+				},
 				"minecraft:display_name": {
 					"$ref": "../../v1.16.100/components/display_name.json"
 				},
