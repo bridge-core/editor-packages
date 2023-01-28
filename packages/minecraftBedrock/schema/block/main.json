@@ -146,7 +146,7 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.19.60"]
+						"enum": ["1.19.60", "1.19.70"]
 					}
 				}
 			},

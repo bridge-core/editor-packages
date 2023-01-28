@@ -44,7 +44,7 @@
 		{
 			"properties": {
 				"minecraft:behavior.trade_with_player": {
-					"$ref": "./behavior.trade_with_player.json"
+					"$ref": "../../v1.19.60/behaviors/behavior.trade_with_player.json"
 				},
 				"minecraft:behavior.float": {
 					"$ref": "../../v1.19.50/behaviors/behavior.float.json"

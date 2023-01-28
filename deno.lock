@@ -40,7 +40,9 @@
     "https://deno.land/x/dotenv@v2.0.0/util.ts": "693730877b13f8ead2b79b2aa31e2a0652862f7dc0c5f6d2f313f4d39c7b7670"
   },
   "npm": {
-    "specifiers": { "ajv@7": "ajv@7.2.4" },
+    "specifiers": {
+      "ajv@7": "ajv@7.2.4"
+    },
     "packages": {
       "ajv@7.2.4": {
         "integrity": "sha512-nBeQgg/ZZA3u3SYxyaDvpvDtgZ/EZPF547ARgZBrG9Bhu1vKDwAIjtIf+sDtJUKa2zOcEbmRLBRSyMraS/Oy1A==",
@@ -69,7 +71,9 @@
       },
       "uri-js@4.4.1": {
         "integrity": "sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==",
-        "dependencies": { "punycode": "punycode@2.1.1" }
+        "dependencies": {
+          "punycode": "punycode@2.1.1"
+        }
       }
     }
   }

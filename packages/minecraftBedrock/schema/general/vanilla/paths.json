@@ -5347,6 +5347,7 @@
 		"loot_table_paths": {
 			"type": "string",
 			"enum": [
+				"loot_tables/blocks/tallgrass.json",
 				"loot_tables/chests/abandoned_mineshaft.json",
 				"loot_tables/chests/ancient_city.json",
 				"loot_tables/chests/ancient_city_ice_box.json",
