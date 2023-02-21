@@ -102,7 +102,7 @@ Deno.test({
 		if (bundledSchemas) {
 			await test.step({
 				name: '3. Register schemas to AJV',
-				fn: async () => {
+				fn: () => {
 					for (const path in bundledSchemas) {
 						const shortPath = path.replace('file://', '')
 						// Need to first add an $id to the schema

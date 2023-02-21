@@ -274,6 +274,15 @@
 				"type": "number",
 				"default": 0
 			}
+		},
+		"parent_centric_attribute_blending": {
+			"title": "Parent Centric Attribute Blending",
+			"description": "List of attributes that should benefit from parent centric attribute blending. For example, horses blend their health, movement, and jump_strength in their offspring.",
+			"type": "array",
+			"items": {
+				"type": "string",
+				"$ref": "../../general/v1.16.0/componentsList.json"
+			}
 		}
 	}
 }

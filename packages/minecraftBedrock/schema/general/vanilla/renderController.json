@@ -101,6 +101,7 @@
 		"controller.render.skeleton_horse.v3",
 		"controller.render.slime",
 		"controller.render.slime_armor",
+		"controller.render.sniffer",
 		"controller.render.snowgolem",
 		"controller.render.spider",
 		"controller.render.splash_potion",
