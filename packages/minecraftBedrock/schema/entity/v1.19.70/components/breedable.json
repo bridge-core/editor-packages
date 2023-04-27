@@ -13,7 +13,7 @@
 		},
 		"blend_attributes": {
 			"title": "Blend Attributes",
-			"description": "If true, the entities will blend their attributes in the offspring after they breed. For example, horses blend their health, movement, and jump_strength in their offspring.",
+			"description": "If true, the entities will blend their attributes in the offspring after they breed.",
 			"type": "boolean",
 			"default": true
 		},
