@@ -1,0 +1,32 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows the mob to give items it has to others.",
+	"type": "object",
+	"title": "Share Items",
+	"properties": {
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
+		"max_dist": {
+			"title": "Max Distance",
+			"description": "Maximum distance in blocks this mob will look for entities to share items with.",
+			"type": "number",
+			"default": 0.0
+		},
+		"goal_radius": {
+			"title": "Goal Radius",
+			"description": "Distance in blocks within the mob considers it has reached the goal. This is the 'wiggle room' to stop the AI from bouncing back and forth trying to reach a specific spot.",
+			"type": "number",
+			"default": 0.5
+		},
+		"speed_multiplier": {
+			"title": "Speed Multiplier",
+			"description": "Movement speed multiplier of the mob when using this AI Goal.",
+			"type": "number",
+			"default": 1.0
+		},
+		"entity_types": {
+			"title": "Entity Types",
+			"$ref": "../../general/v1.19.80/entityType.json"
+		}
+	}
+}

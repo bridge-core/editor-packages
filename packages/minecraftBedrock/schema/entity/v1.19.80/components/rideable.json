@@ -1,0 +1,159 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Determines whether this entity can be ridden. Allows specifying the different seat positions and quantity.",
+	"type": "object",
+	"title": "Rideable",
+	"properties": {
+		"controlling_seat": {
+			"title": "Controlling Seat",
+			"description": "The seat that designates the driver of the entity.",
+			"type": "integer",
+			"default": 0
+		},
+		"crouching_skip_interact": {
+			"title": "Crouching Skip Interact",
+			"description": "If true, this entity can't be interacted with if the entity interacting with it is crouching.",
+			"type": "boolean",
+			"default": true
+		},
+		"family_types": {
+			"title": "Family Types",
+			"description": "List of entities that can ride this entity.",
+			"type": "array",
+			"items": {
+				"$ref": "../../../general/reference/family.json"
+			}
+		},
+		"interact_text": {
+			"title": "Interact Text",
+			"description": "The text to display when the player can interact with the entity when playing with Touch-screen controls.",
+			"$ref": "../../../general/reference/actionText.json"
+		},
+		"passenger_max_width": {
+			"title": "Passenger Max Width",
+			"description": "The max width a mob can be to be a passenger. A value of 0 ignores this parameter.",
+			"type": "number",
+			"default": 0.00
+		},
+		"pull_in_entities": {
+			"title": "Pull In Entities",
+			"description": "If true, this entity will pull in entities that are in the correct family_types into any available seats.",
+			"type": "boolean",
+			"default": false
+		},
+		"rider_can_interact": {
+			"title": "Rider Can Interact",
+			"description": "If true, this entity will be picked when looked at by the rider.",
+			"type": "boolean",
+			"default": false
+		},
+		"seat_count": {
+			"title": "Seat Count",
+			"description": "The number of entities that can ride this entity at the same time.",
+			"type": "integer",
+			"default": 1
+		},
+		"seats": {
+			"title": "Seats",
+			"anyOf": [
+				{
+					"description": "The list of positions and number of riders for each position for entities riding this entity.",
+					"type": "array",
+					"items": {
+						"type": "object",
+						"additionalProperties": false,
+						"properties": {
+							"lock_rider_rotation": {
+								"title": "Lock Rider Rotation",
+								"description": "Angle in degrees that a rider is allowed to rotate while riding this entity. Omit this property for no limit.",
+								"$ref": "../../../general/degree.json",
+								"default": 181.0
+							},
+							"max_rider_count": {
+								"title": "Maximum Rider Count",
+								"description": "Defines the maximum number of riders that can be riding this entity for this seat to be valid.",
+								"type": "integer"
+							},
+							"min_rider_count": {
+								"title": "Minimum Rider Count",
+								"description": "Defines the minimum number of riders that need to be riding this entity before this seat can be used.",
+								"type": "integer",
+								"default": 0
+							},
+							"position": {
+								"title": "Position",
+								"description": "Position of this seat relative to this entity's position.",
+								"type": "array",
+								"minItems": 3,
+								"maxItems": 3,
+								"items": {
+									"type": "number"
+								}
+							},
+							"rotate_rider_by": {
+								"title": "Rotate Rider By",
+								"default": 0,
+								"description": "Offset to rotate riders by.",
+								"anyOf": [
+									{
+										"$ref": "../../../general/degree.json"
+									},
+									{
+										"$ref": "../../../molang/embedded.json"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"lock_rider_rotation": {
+							"title": "Lock Rider Rotation",
+							"description": "Angle in degrees that a rider is allowed to rotate while riding this entity. Omit this property for no limit.",
+							"$ref": "../../../general/degree.json",
+							"default": 181.0
+						},
+						"max_rider_count": {
+							"title": "Maximum Rider Count",
+							"description": "Defines the maximum number of riders that can be riding this entity for this seat to be valid.",
+							"type": "integer"
+						},
+						"min_rider_count": {
+							"title": "Minimum Rider Count",
+							"description": "Defines the minimum number of riders that need to be riding this entity before this seat can be used.",
+							"type": "integer",
+							"default": 0
+						},
+						"position": {
+							"title": "Position",
+							"description": "Position of this seat relative to this entity's position.",
+							"type": "array",
+							"minItems": 3,
+							"maxItems": 3,
+							"items": {
+								"type": "number"
+							}
+						},
+						"rotate_rider_by": {
+							"title": "Rotate Rider By",
+							"default": 0,
+							"description": "Offset to rotate riders by.",
+							"anyOf": [
+								{
+									"$ref": "../../../general/degree.json"
+								},
+								{
+									"$ref": "../../../molang/embedded.json"
+								}
+							]
+						}
+					}
+				}
+			]
+		}
+	}
+}
