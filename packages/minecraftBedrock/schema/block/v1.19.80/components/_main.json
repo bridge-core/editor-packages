@@ -68,7 +68,7 @@
 					"$ref": "../../v1.16.100/components/material_instances.json"
 				},
 				"minecraft:geometry": {
-					"$ref": "../../v1.16.100/components/geometry.json"
+					"$ref": "../../v1.19.80/components/geometry.json"
 				},
 				"minecraft:light_dampening": {
 					"$ref": "../../v1.19.40/components/light_dampening.json"
