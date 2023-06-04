@@ -18,6 +18,52 @@
 	 *	https://www.npmjs.com/package/@minecraft/server-net?activeTab=versions
 	 */
 	"types": [
+		// 1.19.80
+		{
+			"moduleName": "@minecraft/server",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@1.2.0-beta.1.19.80-stable/index.d.ts",
+			"requires": {
+				"dependencies": ["@minecraft/server"],
+				"targetVersion": [">=", "1.19.80"],
+				"experimentalGameplay": ["enableGameTestFramework"]
+			}
+		},
+		{
+			"moduleName": "@minecraft/server-gametest",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-gametest@1.0.0-beta.1.19.80-stable/index.d.ts",
+			"requires": {
+				"dependencies": ["@minecraft/server-gametest"],
+				"targetVersion": [">=", "1.19.80"],
+				"experimentalGameplay": ["enableGameTestFramework"]
+			}
+		},
+		{
+			"moduleName": "@minecraft/server-ui",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-ui@1.0.0-beta.1.19.80-stable/index.d.ts",
+			"requires": {
+				"dependencies": ["@minecraft/server-ui"],
+				"targetVersion": [">=", "1.19.80"],
+				"experimentalGameplay": ["enableGameTestFramework"]
+			}
+		},
+		{
+			"moduleName": "@minecraft/server-admin",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-admin@1.0.0-beta.1.19.80-stable/index.d.ts",
+			"requires": {
+				"dependencies": ["@minecraft/server-admin"],
+				"targetVersion": [">=", "1.19.80"],
+				"experimentalGameplay": ["enableGameTestFramework"]
+			}
+		},
+		{
+			"moduleName": "@minecraft/server-net",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-net@1.0.0-beta.1.19.80-stable/index.d.ts",
+			"requires": {
+				"dependencies": ["@minecraft/server-net"],
+				"targetVersion": [">=", "1.19.80"],
+				"experimentalGameplay": ["enableGameTestFramework"]
+			}
+		},
 		// 1.19.70
 		{
 			"moduleName": "@minecraft/server",

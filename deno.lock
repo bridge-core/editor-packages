@@ -1,10 +1,10 @@
 {
   "version": "2",
   "remote": {
-    "https://cdn.skypack.dev/-/fflate@v0.7.2-LsWNNrE2U2EOa3FhlTZp/dist=es2019,mode=imports,min/optimized/fflate.js": "5ddfa8237aa3b33471f0ce99c69ef35ae50338cb8f8c0fc18e955c69247fae3a",
+    "https://cdn.skypack.dev/-/fflate@v0.8.0-9lwslwAa54POmYjLobRf/dist=es2019,mode=imports,min/optimized/fflate.js": "ea55d28973170b0a00ec64b3982153e7baa4d6e0f7cc824375325e348fec4168",
     "https://cdn.skypack.dev/-/json5@v2.2.0-2jpNGKqjKBnKA81QQzdk/dist=es2019,mode=imports/optimized/json5.js": "ece3fb60010a49b3198e9dd66a181ab394bdc8a784f5bacaafccd5511bb96197",
     "https://cdn.skypack.dev/-/lodash@v4.17.19-edyNmC6baEqCMCqcyujz/dist=es2019,mode=imports/optimized/lodash.js": "bcc865cc5063c2610ab88858a70aeb2860b893d64fe8b20d7e061d2117d1d288",
-    "https://cdn.skypack.dev/fflate?min": "404d4e56be673c3c96c75a033c68b49f0dc4a52d9b613dbf8e974d8ac53bbd75",
+    "https://cdn.skypack.dev/fflate?min": "d320b73423a4efb176248d0771c2eab45fc8d4ce5a1994e6b7e00508e0187f72",
     "https://cdn.skypack.dev/json5@v2.2.0": "774040188bc288bf587e4a91052ada7b8f6dbe227b24c7fd9e5d944a58e2f5c6",
     "https://cdn.skypack.dev/lodash@4.17.19": "729b0a4bfd71e573760c1d14a3976eb55eda330546cd678a8a4cbcb197892bba",
     "https://deno.land/std@0.103.0/_util/assert.ts": "2f868145a042a11d5ad0a3c748dcf580add8a0dbc0e876eaa0026303a5488f58",
