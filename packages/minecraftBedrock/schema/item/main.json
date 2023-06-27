@@ -152,13 +152,7 @@
 				}
 			},
 			"then": {
-				"$ref": "../project/experimentalGameplay/holidayCreatorFeatures.json",
-				"then": {
-					"$ref": "/data/packages/minecraftBedrock/schema/item/v1.20.10/main.json"
-				},
-				"else": {
-					"$ref": "/data/packages/minecraftBedrock/schema/item/v1.10.0/main.json"
-				}
+				"$ref": "/data/packages/minecraftBedrock/schema/item/v1.20.10/main.json"
 			}
 		}
 	]

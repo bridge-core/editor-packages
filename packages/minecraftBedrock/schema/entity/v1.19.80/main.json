@@ -105,13 +105,13 @@
 											"title": "Components",
 											"allOf": [
 												{
-													"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.70/components/_main.json"
+													"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.80/components/_main.json"
 												},
 												{
-													"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.70/annotations/_main.json"
+													"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.80/annotations/_main.json"
 												},
 												{
-													"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.70/behaviors/_main.json"
+													"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.80/behaviors/_main.json"
 												},
 												{
 													"$ref": "/data/packages/minecraftBedrock/schema/entity/dynamic/customComponents.json"
