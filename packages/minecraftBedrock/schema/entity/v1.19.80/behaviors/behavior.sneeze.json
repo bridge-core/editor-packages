@@ -1,0 +1,61 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows the mob to stop and sneeze possibly startling nearby mobs and dropping an item.",
+	"type": "object",
+	"title": "Sneeze",
+	"properties": {
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
+		"probability": {
+			"title": "Probability",
+			"description": "The probability of sneezing. A value of 1.00 is 100%.",
+			"type": "number"
+		},
+		"cooldown_time": {
+			"title": "Cooldown Time",
+			"description": "Time in seconds the mob has to wait before using the goal again.",
+			"type": "number",
+			"default": 0.0
+		},
+		"within_radius": {
+			"title": "Within Radius",
+			"description": "Distance in blocks that mobs will be startled.",
+			"type": "number",
+			"default": 0.0
+		},
+		"entity_types": {
+			"title": "Entity Types",
+			"description": "List of entity types this mob will startle (cause to jump) when it sneezes.",
+			"$ref": "../../general/v1.19.80/entityType.json"
+		},
+		"drop_item_chance": {
+			"title": "Drop Item Chance",
+			"description": "The probability that the mob will drop an item when it sneezes.",
+			"type": "number",
+			"default": 1.0
+		},
+		"loot_table": {
+			"title": "Loot Table",
+			"description": "Loot table to select dropped items from.",
+			"type": "string"
+		},
+		"prepare_sound": {
+			"title": "Prepare Sound",
+			"description": "Sound to play when the sneeze is about to happen.",
+			"type": "string",
+			"$ref": "../../../general/reference/soundEvent.json"
+		},
+		"prepare_time": {
+			"title": "Prepare Time",
+			"description": "The time in seconds that the mob takes to prepare to sneeze (while the prepare_sound is playing).",
+			"type": "number",
+			"default": 1.0
+		},
+		"sound": {
+			"title": "Sound",
+			"description": "Sound to play when the sneeze occurs.",
+			"type": "string",
+			"$ref": "../../../general/reference/soundEvent.json"
+		}
+	}
+}

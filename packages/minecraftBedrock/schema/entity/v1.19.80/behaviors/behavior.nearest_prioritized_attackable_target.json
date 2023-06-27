@@ -1,0 +1,71 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows the mob to check for and pursue the nearest valid target.",
+	"type": "object",
+	"title": "Nearest Prioritized Attackable Target",
+	"properties": {
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
+		"set_persistent": {
+			"title": "Set Persistent",
+			"type": "boolean"
+		},
+		"attack_interval": {
+			"title": "Attack Interval",
+			"description": "Time in seconds before selecting a target.",
+			"type": "integer",
+			"default": 0
+		},
+		"cooldown": {
+			"title": "Cooldown",
+			"description": "The amount of time in seconds that the mob has to wait before selecting a target of the same type again",
+			"type": "number",
+			"default": 0.0
+		},
+		"within_radius": {
+			"title": "Within Radius",
+			"type": "number"
+		},
+		"must_reach": {
+			"title": "Must Reach",
+			"description": "If true, only entities that this mob can path to can be selected as targets.",
+			"type": "boolean",
+			"default": false
+		},
+		"must_see": {
+			"title": "Must See",
+			"description": "If true, only entities in this mob's viewing range can be selected as targets.",
+			"type": "boolean",
+			"default": false
+		},
+		"must_see_forget_duration": {
+			"title": "Must See Forget Duration",
+			"description": "Determines the amount of time in seconds that this mob will look for a target before forgetting about it and looking for a new one when the target isn't visible any more.",
+			"type": "boolean",
+			"default": 3.0
+		},
+		"reselect_targets": {
+			"title": "Reselect Targets",
+			"description": "If true, the target will change to the current closest entity whenever a different entity is closer.",
+			"type": "boolean",
+			"default": false
+		},
+		"target_search_height": {
+			"title": "Target Search Height",
+			"description": "Height in blocks to search for a target mob. -1.0f means the height does not matter.",
+			"type": "number",
+			"default": -1.0
+		},
+		"persist_time": {
+			"title": "Persist Time",
+			"description": "Time in seconds for a valid target to stay targeted when it becomes and invalid target.",
+			"type": "number",
+			"default": 0.0
+		},
+		"entity_types": {
+			"title": "Entity Types",
+			"description": "List of entity types that this mob considers valid targets.",
+			"$ref": "../../general/v1.19.80/prioritizedEntityType.json"
+		}
+	}
+}

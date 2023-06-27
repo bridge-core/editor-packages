@@ -1,0 +1,89 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"minecraft:block": {
+			"title": "Block Definition",
+			"required": ["description"],
+			"type": "object",
+			"allOf": [
+				{
+					"type": "object",
+					"properties": {
+						"description": {
+							"title": "Description",
+							"$ref": "../v1.19.80/description.json"
+						},
+
+						"components": {
+							"title": "Components",
+							"allOf": [
+								{
+									"$ref": "../dynamic/customComponents.json"
+								},
+								{
+									"$ref": "./components/_main.json"
+								}
+							]
+						}
+					}
+				},
+				{
+					"$ref": "../../project/experimentalGameplay/holidayCreatorFeatures.json",
+					"then": {
+						"type": "object",
+						"properties": {
+							"permutations": {
+								"title": "Permutations",
+								"description": "List of block permutations based on MoLang queries",
+								"type": "array",
+								"items": {
+									"type": "object",
+									"additionalProperties": false,
+									"properties": {
+										"condition": {
+											"title": "Condition",
+											"description": "MoLang condition",
+											"$ref": "/data/packages/minecraftBedrock/schema/molang/embedded.json"
+										},
+										"components": {
+											"title": "Components",
+											"description": "Components to add when the condition evaluates to 'true'",
+											"allOf": [
+												{
+													"$ref": "/data/packages/minecraftBedrock/schema/block/dynamic/customComponents.json"
+												},
+												{
+													"$ref": "/data/packages/minecraftBedrock/schema/block/v1.19.80/components/_main.json"
+												}
+											]
+										}
+									}
+								}
+							},
+							"events": {
+								"title": "Events",
+								"type": "object",
+								"allOf": [
+									{
+										"$ref": "/data/packages/minecraftBedrock/schema/block/dynamic/currentContext/eventReferenceProperty.json"
+									},
+									{
+										"$ref": "/data/packages/minecraftBedrock/schema/project/projectPrefix.json"
+									},
+									{
+										"patternProperties": {
+											".*": {
+												"$ref": "/data/packages/minecraftBedrock/schema/block/v1.19.80/event.json"
+											}
+										}
+									}
+								]
+							}
+						}
+					}
+				}
+			]
+		}
+	}
+}

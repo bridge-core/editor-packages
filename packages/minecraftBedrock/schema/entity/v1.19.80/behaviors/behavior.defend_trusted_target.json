@@ -1,0 +1,53 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows the mob to target another mob that hurts an entity it trusts.",
+	"type": "object",
+	"title": "Defend Trusted Target",
+	"properties": {
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
+		"attack_interval": {
+			"title": "Attack Interval",
+			"description": "Time in seconds between attacks.",
+			"type": "integer",
+			"default": 0
+		},
+		"within_radius": {
+			"title": "Within Radius",
+			"type": "number",
+			"description": "Distance in blocks that the target can be within to launch an attack.",
+			"default": 0.0
+		},
+		"must_see": {
+			"title": "Must See",
+			"description": "If true, only entities in this mob's viewing range can be selected as targets.",
+			"type": "boolean",
+			"default": false
+		},
+		"aggro_sound": {
+			"title": "Aggro Sound",
+			"description": "Sound to occasionally play while defending.",
+			"type": "string",
+			"$ref": "../../../general/reference/soundEvent.json"
+		},
+		"sound_chance": {
+			"title": "Sound Chance",
+			"type": "number"
+		},
+		"on_defend_start": {
+			"title": "Event: On Defend Start",
+			"$ref": "../../general/v1.16.0/eventDefinition.json"
+		},
+		"must_see_forget_duration": {
+			"title": "Must See Forget Duration",
+			"description": "Determines the amount of time in seconds that this mob will look for a target before forgetting about it and looking for a new one when the target isn't visible any more.",
+			"type": "number",
+			"default": 3.0
+		},
+		"entity_types": {
+			"title": "Entity Types",
+			"description": "List of entity types that this mob considers valid targets.",
+			"$ref": "../../general/v1.19.80/entityType.json"
+		}
+	}
+}

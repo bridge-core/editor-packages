@@ -161,6 +161,7 @@
 						"is_moving",
 						"is_owner",
 						"is_persistent",
+						"is_raider", // v1.19.80+
 						"is_riding",
 						"is_skin_id",
 						"is_sleeping",
@@ -185,6 +186,7 @@
 						"random_chance",
 						"rider_count",
 						"surface_mob",
+						"taking_fire_damage", // v1.19.80+
 						"target_distance", // v1.19.60+
 						"trusts",
 						"weather",
@@ -204,7 +206,7 @@
 			"then": {
 				"properties": {
 					"value": {
-						"description": "Tests the health of an actor.",
+						"description": "Tests the health of the subject.",
 						"type": "integer"
 					}
 				}
@@ -1044,6 +1046,23 @@
 			"if": {
 				"properties": {
 					"test": {
+						"const": "is_raider"
+					}
+				}
+			},
+			"then": {
+				"properties": {
+					"value": {
+						"description": "Tests if the subject is a raider.",
+						"type": "boolean"
+					}
+				}
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"test": {
 						"const": "is_riding"
 					}
 				}
@@ -1486,6 +1505,23 @@
 				"properties": {
 					"value": {
 						"description": "Tests if the subject is a surface mob.",
+						"type": "boolean"
+					}
+				}
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"test": {
+						"const": "taking_fire_damage"
+					}
+				}
+			},
+			"then": {
+				"properties": {
+					"value": {
+						"description": "Tests if the subject is taking fire damage. Requires the damage_sensor component",
 						"type": "boolean"
 					}
 				}
