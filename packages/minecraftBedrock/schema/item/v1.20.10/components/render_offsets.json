@@ -1,5 +1,6 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "title": "Render Offsets",
-    "doNotSuggest": true
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Render Offsets",
+	"doNotSuggest": true,
+	"deprecationMessage": "Render offsets has been deprecated."
 }

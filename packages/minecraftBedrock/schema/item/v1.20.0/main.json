@@ -1,0 +1,44 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"minecraft:item": {
+			"required": ["description"],
+			"type": "object",
+			"properties": {
+				"description": {
+					"$ref": "../v1.19.0/description.json"
+				},
+				"components": {
+					"allOf": [
+						{
+							"$ref": "./components/_main.json"
+						},
+						{
+							"$ref": "../dynamic/customComponents.json"
+						}
+					]
+				},
+				"events": {
+					"type": "object",
+					"allOf": [
+						{
+							"$ref": "../dynamic/currentContext/eventReferenceProperty.json"
+						},
+						{
+							"$ref": "../../project/projectPrefix.json"
+						},
+						{
+							"patternProperties": {
+								".*": {
+									"$ref": "../v1.19.0/event.json"
+								}
+							}
+						}
+					]
+				}
+			},
+			"additionalProperties": false
+		}
+	}
+}
