@@ -39,7 +39,11 @@ export class DocumentationScraper {
 		const tables = this.data.getElementsByTagName('table')
 		const output = []
 		for (const table of tables) {
-			if (table.previousElementSibling?.children[0]?.id === tableId) {
+			if (
+				table.previousElementSibling?.children[0]?.id === tableId ||
+				table.previousElementSibling?.previousElementSibling
+					?.children[0]?.id === tableId
+			) {
 				const tableChildren = table.children[0].children
 				const headers = tableChildren[0].children
 				let headerIndex = 0
