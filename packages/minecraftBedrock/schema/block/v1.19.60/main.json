@@ -12,7 +12,7 @@
 					"properties": {
 						"description": {
 							"title": "Description",
-							"$ref": "../v1.19.40/description.json"
+							"$ref": "./description.json"
 						},
 
 						"components": {
@@ -54,7 +54,7 @@
 													"$ref": "/data/packages/minecraftBedrock/schema/block/dynamic/customComponents.json"
 												},
 												{
-													"$ref": "/data/packages/minecraftBedrock/schema/block/v1.19.60/components/_main.json"
+													"$ref": "./components/_main.json"
 												}
 											]
 										}
@@ -74,7 +74,7 @@
 									{
 										"patternProperties": {
 											".*": {
-												"$ref": "/data/packages/minecraftBedrock/schema/block/v1.19.60/event.json"
+												"$ref": "./event.json"
 											}
 										}
 									}
