@@ -7,7 +7,7 @@
 			"type": "object",
 			"properties": {
 				"description": {
-					"$ref": "../v1.19.0/description.json"
+					"$ref": "./description.json"
 				},
 				"components": {
 					"allOf": [
@@ -31,7 +31,7 @@
 						{
 							"patternProperties": {
 								".*": {
-									"$ref": "../v1.19.0/event.json"
+									"$ref": "./event.json"
 								}
 							}
 						}
