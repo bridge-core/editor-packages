@@ -10,3 +10,5 @@ dist/minecraftBedrock/*
 packages.zip
 dataPackage.ts
 scripts/vanillaData/raw
+
+deno.lock
