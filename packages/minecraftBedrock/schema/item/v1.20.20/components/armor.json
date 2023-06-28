@@ -3,7 +3,7 @@
 	"additionalProperties": false,
 	"type": "object",
 	"doNotSuggest": true,
-	"deprecationMessage": "Deprecated in favor of using 'protection' in 'minecraft:wearable'",
+	"deprecationMessage": "Deprecated in favor of 'minecraft:wearable' (format_version: v1.20.20)",
 	"description": "The armor item component determines the amount of protection you have in your armor item.",
 	"properties": {
 		"protection": {

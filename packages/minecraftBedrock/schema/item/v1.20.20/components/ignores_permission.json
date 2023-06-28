@@ -2,7 +2,6 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"type": "boolean",
-	"description": "Ignores player permissions when holding the item.",
 	"doNotSuggest": true,
-	"deprecationMessage": "Ignores permission has been removed"
+	"deprecationMessage": "Deprecated as of v1.20.20 - Ignores player permissions when holding the item."
 }
