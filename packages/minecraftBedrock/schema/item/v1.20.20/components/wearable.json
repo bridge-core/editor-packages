@@ -5,7 +5,7 @@
 	"description": "Makes an item wearable.",
 	"properties": {
 		"slot": {
-			"$ref": "../../../general/slotType.json"
+			"$ref": "../../../general/itemWearableType.json"
 		},
 		"dispensable": {
 			"type": "boolean"
