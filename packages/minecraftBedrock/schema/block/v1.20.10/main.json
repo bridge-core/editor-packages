@@ -12,7 +12,7 @@
 					"properties": {
 						"description": {
 							"title": "Description",
-							"$ref": "../v1.20.0/description.json"
+							"$ref": "../v1.20.10/description.json"
 						},
 
 						"components": {
