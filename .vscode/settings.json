@@ -5,6 +5,7 @@
 	"deno.importMap": "importMap.json",
 
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
 
 	"files.associations": {
 		"*.json": "jsonc"
