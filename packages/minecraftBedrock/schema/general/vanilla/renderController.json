@@ -93,6 +93,7 @@
 		"controller.render.ravager",
 		"controller.render.salmon",
 		"controller.render.sheep",
+		"controller.render.shield",
 		"controller.render.shulker",
 		"controller.render.shulker_bullet",
 		"controller.render.silverfish",
