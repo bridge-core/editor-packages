@@ -1,4 +1,5 @@
-import { path, json5 } from './deps.ts'
+import { join } from 'path'
+import { parse } from 'json5'
 
 export async function bundleFileDefs() {
 	const fileTypes = []
@@ -7,9 +8,9 @@ export async function bundleFileDefs() {
 	)) {
 		if (entry.isFile)
 			fileTypes.push(
-				json5.parse(
+				parse(
 					await Deno.readTextFile(
-						path.join(
+						join(
 							'./packages/minecraftBedrock/fileDefinition',
 							entry.name
 						)

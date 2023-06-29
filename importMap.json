@@ -2,9 +2,9 @@
 	"imports": {
 		"path": "https://deno.land/std@0.103.0/path/mod.ts",
 		"fflate": "https://cdn.skypack.dev/fflate@0.8.0?min",
-		"json5": "https://cdn.skypack.dev/json5@v2.2.0",
+		"json5": "https://deno.land/x/json5@v1.0.0/mod.ts",
 		"dotenv": "https://deno.land/x/dotenv@v2.0.0/mod.ts",
-		"lodash": "https://cdn.skypack.dev/lodash@4.17.19",
-		"deno-dom": "https://deno.land/x/deno_dom@v0.1.12-alpha/deno-dom-wasm.ts"
+		"lodash": "https://deno.land/x/lodash_es@v0.0.2/mod.ts",
+		"deno-dom": "https://deno.land/x/deno_dom@v0.1.38/deno-dom-wasm.ts"
 	}
 }
