@@ -1,10 +1,6 @@
 .DS_Store
 
-!dist/
-dist/*
-!dist/minecraftBedrock
-dist/minecraftBedrock/*
-!dist/minecraftBedrock/fileDefinitions.json
+dist
 
 .env
 packages.zip
