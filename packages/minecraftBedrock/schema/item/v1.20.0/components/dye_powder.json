@@ -2,5 +2,5 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"doNotSuggest": true,
-	"deprecationMessage": "Dye powder has been deprecated."
+	"deprecationMessage": "Deprecated as of v1.20.0 - Set that this item is a dye and its dye color."
 }
