@@ -41,7 +41,7 @@
 						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/random_ticking.json"
 					},
 					"minecraft:rotation": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/rotation.json"
+						"$ref": "./rotation.json"
 					}
 				}
 			}
