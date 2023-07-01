@@ -17,7 +17,6 @@
 						"type": "string",
 						"enum": ["minecraft:cardinal_direction"]
 					},
-					"uniqueItems": true,
 					"minItems": 1
 				},
 				"y_rotation_offset": {
