@@ -71,6 +71,12 @@
 					},
 					"minecraft:render_offsets": {
 						"$ref": "./render_offsets.json"
+					},
+					"minecraft:knockback_resistance": {
+						"$ref": "../../v1.20.0/components/knockback_resistance.json"
+					},
+					"minecraft:dye_powder": {
+						"$ref": "../../v1.20.0/components/dye_powder.json"
 					}
 				}
 			}

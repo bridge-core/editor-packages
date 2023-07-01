@@ -34,7 +34,7 @@
 						"$ref": "../../v1.16.100/components/damage.json"
 					},
 					"minecraft:dye_powder": {
-						"$ref": "../../v1.16.100/components/dye_powder.json"
+						"$ref": "./dye_powder.json"
 					},
 					"minecraft:mirrored_art": {
 						"$ref": "../../v1.16.100/components/mirrored_art.json"
@@ -55,7 +55,7 @@
 						"$ref": "../../v1.16.100/components/block_placer.json"
 					},
 					"minecraft:knockback_resistance": {
-						"$ref": "../../v1.16.100/components/knockback_resistance.json"
+						"$ref": "./knockback_resistance.json"
 					},
 					"minecraft:enchantable": {
 						"$ref": "../../v1.16.100/components/enchantable.json"
