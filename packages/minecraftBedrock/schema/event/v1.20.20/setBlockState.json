@@ -8,7 +8,7 @@
 				"type": "object",
 				"description": "Sets a block state on this block.",
 				"propertyNames": {
-					"$ref": "../../block/dynamic/currentContext/propertyEnum.json"
+					"$ref": "../../block/dynamic/currentContext/stateEnum.json"
 				},
 				"patternProperties": {
 					".+": {
