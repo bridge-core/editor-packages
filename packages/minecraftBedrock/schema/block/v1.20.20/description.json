@@ -15,9 +15,9 @@
 					"type": "boolean",
 					"description": "If this item is experimental, it will only be registered if the world is marked as experimental."
 				},
-				"properties": {
-					"title": "Properties",
-					"description": "Define block properties and their possible values",
+				"states": {
+					"title": "States",
+					"description": "Define block states and their possible values",
 					"anyOf": [
 						{
 							"$ref": "../../project/projectPrefix.json"
