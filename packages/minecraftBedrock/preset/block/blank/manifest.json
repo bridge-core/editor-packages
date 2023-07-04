@@ -5,8 +5,14 @@
 	"category": "fileType.block",
 	"showIfDisabled": false,
 	"requires": {
-		"targetVersion": [">=", "1.16.100"],
-		"packTypes": ["behaviorPack", "resourcePack"]
+		"targetVersion": [
+			">=",
+			"1.20.0"
+		],
+		"packTypes": [
+			"behaviorPack",
+			"resourcePack"
+		]
 	},
 	"additionalModels": {
 		"DEFAULT_TEXTURE": "texture.png",
@@ -16,23 +22,44 @@
 		[
 			"Image (Optional)",
 			"TEXTURE",
-			{ "type": "fileInput", "accept": "image/png", "optional": true }
+			{
+				"type": "fileInput",
+				"accept": "image/png",
+				"optional": true
+			}
 		],
 		[
 			"Identifier",
 			"IDENTIFIER",
-			{ "validate": ["required", "alphanumeric", "lowercase"] }
+			{
+				"validate": [
+					"required",
+					"alphanumeric",
+					"lowercase"
+				]
+			}
 		],
-		["Display Name", "IDENTIFIER_NAME", { "validate": ["required"] }]
+		[
+			"Display Name",
+			"IDENTIFIER_NAME",
+			{
+				"validate": [
+					"required"
+				]
+			}
+		]
 	],
-
 	"createFiles": [
 		"presetScript/blockImages.js",
 		[
 			"block.json",
 			"blocks/{{PRESET_PATH}}{{IDENTIFIER}}.json",
 			{
-				"inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"],
+				"inject": [
+					"IDENTIFIER",
+					"PROJECT_PREFIX",
+					"PRESET_PATH"
+				],
 				"openFile": true,
 				"packPath": "behaviorPack"
 			}
@@ -43,7 +70,10 @@
 			"clientBlock.json",
 			"blocks.json",
 			{
-				"inject": ["IDENTIFIER", "PROJECT_PREFIX"],
+				"inject": [
+					"IDENTIFIER",
+					"PROJECT_PREFIX"
+				],
 				"packPath": "resourcePack"
 			}
 		],
@@ -51,7 +81,11 @@
 			"en_US.lang",
 			"texts/en_US.lang",
 			{
-				"inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"],
+				"inject": [
+					"IDENTIFIER",
+					"IDENTIFIER_NAME",
+					"PROJECT_PREFIX"
+				],
 				"packPath": "resourcePack"
 			}
 		]
