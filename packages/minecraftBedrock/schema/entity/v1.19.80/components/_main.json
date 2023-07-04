@@ -473,7 +473,7 @@
 					"$ref": "../../v1.16.0/components/ravager_blocked.json"
 				},
 				"minecraft:rideable": {
-					"$ref": "../../v1.19.80/components/rideable.json"
+					"$ref": "./rideable.json"
 				},
 				"minecraft:scale": {
 					"$ref": "../../v1.16.0/components/scale.json"

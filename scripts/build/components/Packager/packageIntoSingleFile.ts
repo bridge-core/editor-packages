@@ -36,6 +36,7 @@ async function packageIntoSingleFileObj(
 		) {
 			current[`file:///data/${newPath.replaceAll('\\', '/')}`] =
 				await loadFile(newPath)
+					.catch(e => console.log(e.message, "in file", newPath))
 		}
 	}
 

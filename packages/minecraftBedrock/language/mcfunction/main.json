@@ -6432,6 +6432,31 @@
 								}
 							]
 						},
+						// if > block
+						{
+							"commandName": "if",
+							"description": "Specify a condition which must be met to execute the next subcommand.",
+							"arguments": [
+								{
+									"type": "string",
+									"description": "Compares the block at a given position to a given block ID and state.",
+									"additionalData": {
+										"values": ["block"]
+									}
+								},
+								{
+									"argumentName": "position",
+									"type": "$coordinates"
+								},
+								{
+									"argumentName": "block",
+									"type": "string",
+									"additionalData": {
+										"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/block_identifiers"
+									}
+								}
+							]
+						},
 						// if > block > block state
 						{
 							"commandName": "if",

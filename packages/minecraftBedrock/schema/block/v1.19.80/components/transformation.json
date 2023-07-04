@@ -1,9 +1,10 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
-	"type": "array",
+	"type": "object",
 	"title": "Transformation",
 	"description": "Transforms a block",
+
 	"properties": {
 		"translation": {
 			"title": "Translation",

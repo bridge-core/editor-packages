@@ -1,0 +1,14 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "string",
+	"enum": [
+		"slot.armor",
+		"slot.armor.chest",
+		"slot.armor.feet",
+		"slot.armor.head",
+		"slot.armor.legs",
+		"slot.chest",
+		"slot.saddle",
+		"slot.weapon.offhand"
+	]
+}

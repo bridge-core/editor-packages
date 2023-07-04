@@ -1,0 +1,19 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"type": "object",
+	"description": "Makes an item wearable.",
+	"properties": {
+		"slot": {
+			"$ref": "../../../general/itemWearableType.json"
+		},
+		"dispensable": {
+			"type": "boolean"
+		},
+		"protection": {
+			"description": "How much protection does the wearable item have.",
+			"type": "integer",
+			"minimum": 0
+		}
+	}
+}
