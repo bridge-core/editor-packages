@@ -7,9 +7,6 @@
 			"then": {
 				"type": "object",
 				"properties": {
-					"minecraft:transformation": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.19.80/components/transformation.json"
-					},
 					"minecraft:queued_ticking": {
 						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.19.10/components/queued_ticking.json"
 					},
@@ -41,7 +38,7 @@
 						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/random_ticking.json"
 					},
 					"minecraft:rotation": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/rotation.json"
+						"$ref": "./rotation.json"
 					}
 				}
 			}
@@ -49,6 +46,9 @@
 		{
 			"type": "object",
 			"properties": {
+				"minecraft:transformation": {
+					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.19.80/components/transformation.json"
+				},
 				"minecraft:placement_filter": {
 					"$ref": "../../v1.16.100/components/placement_filter.json"
 				},

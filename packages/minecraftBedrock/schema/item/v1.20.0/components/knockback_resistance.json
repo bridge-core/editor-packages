@@ -1,0 +1,6 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"doNotSuggest": true,
+	"deprecationMessage": "Deprecated as of v1.20.0 - For items that provide knockback resistance."
+}

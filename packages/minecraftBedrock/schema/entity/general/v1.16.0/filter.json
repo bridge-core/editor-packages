@@ -190,7 +190,9 @@
 						"target_distance", // v1.19.60+
 						"trusts",
 						"weather",
-						"weather_at_position"
+						"weather_at_position",
+						"all_slots_empty",
+						"any_slot_empty"
 					]
 				}
 			}
@@ -1655,6 +1657,60 @@
 					"value": {
 						"description": "Returns true when the subject entity is in lava.",
 						"type": "boolean"
+					}
+				}
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"test": {
+						"const": "all_slots_empty"
+					}
+				}
+			},
+			"then": {
+				"properties": {
+					"value": {
+						"description": "Returns true when the designated equipment location for the subject entity is completely empty.",
+						"type": "string",
+						"enum": [
+							"any",
+							"armor",
+							"feet",
+							"hand",
+							"head",
+							"inventory",
+							"leg",
+							"torso"
+						]
+					}
+				}
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"test": {
+						"const": "any_slots_empty"
+					}
+				}
+			},
+			"then": {
+				"properties": {
+					"value": {
+						"description": "Returns true when the designated equipment location for the subject entity is completely empty.",
+						"type": "string",
+						"enum": [
+							"any",
+							"armor",
+							"feet",
+							"hand",
+							"head",
+							"inventory",
+							"leg",
+							"torso"
+						]
 					}
 				}
 			}

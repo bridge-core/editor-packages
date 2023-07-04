@@ -3,5 +3,5 @@
 	"additionalProperties": false,
 	"title": "Part Visibility",
 	"doNotSuggest": true,
-	"deprecationMessage": "Deprecated as of v1.19.80.20 - Sets conditions for when the block's different parts are visible."
+	"deprecationMessage": "Deprecated as of v1.19.80 minecraft:bone_visbility (format_version: v1.19.80)."
 }

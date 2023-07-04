@@ -19,7 +19,6 @@
 		"controller.animation.blaze.move",
 		"controller.animation.camel.general",
 		"controller.animation.camel.idle",
-		"controller.animation.camel.look_at_player",
 		"controller.animation.cat.baby",
 		"controller.animation.cat.look_at_target",
 		"controller.animation.cat.move",
