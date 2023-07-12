@@ -4,7 +4,9 @@
 	"properties": {
 		"minecraft:block": {
 			"title": "Block Definition",
-			"required": ["description"],
+			"required": [
+				"description"
+			],
 			"type": "object",
 			"allOf": [
 				{
@@ -14,7 +16,6 @@
 							"title": "Description",
 							"$ref": "./description.json"
 						},
-
 						"components": {
 							"title": "Components",
 							"allOf": [
