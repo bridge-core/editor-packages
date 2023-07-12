@@ -21,7 +21,7 @@
 		// 1.20.20
 		{
 			"moduleName": "@minecraft/server",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@1.5.0-beta.1.20.20-preview.20/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@1.5.0-beta.1.20.20-preview.21/index.d.ts",
 			"requires": {
 				"dependencies": ["@minecraft/server"],
 				"targetVersion": [">=", "1.20.20"],
@@ -30,7 +30,7 @@
 		},
 		{
 			"moduleName": "@minecraft/server-gametest",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-gametest@1.0.0-beta.1.20.20-preview.20/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-gametest@1.0.0-beta.1.20.20-preview.21/index.d.ts",
 			"requires": {
 				"dependencies": ["@minecraft/server-gametest"],
 				"targetVersion": [">=", "1.20.20"],
@@ -39,7 +39,7 @@
 		},
 		{
 			"moduleName": "@minecraft/server-ui",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-ui@1.2.0-beta.1.20.20-preview.20/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-ui@1.2.0-beta.1.20.20-preview.21/index.d.ts",
 			"requires": {
 				"dependencies": ["@minecraft/server-ui"],
 				"targetVersion": [">=", "1.20.20"],
@@ -48,7 +48,7 @@
 		},
 		{
 			"moduleName": "@minecraft/server-admin",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-admin@1.0.0-beta.1.20.20-preview.20/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-admin@1.0.0-beta.1.20.20-preview.21/index.d.ts",
 			"requires": {
 				"dependencies": ["@minecraft/server-admin"],
 				"targetVersion": [">=", "1.20.20"],
@@ -57,7 +57,16 @@
 		},
 		{
 			"moduleName": "@minecraft/server-net",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-net@1.0.0-beta.1.20.20-preview.20/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-net@1.0.0-beta.1.20.20-preview.21/index.d.ts",
+			"requires": {
+				"dependencies": ["@minecraft/server-net"],
+				"targetVersion": [">=", "1.20.20"],
+				"experimentalGameplay": ["enableGameTestFramework"]
+			}
+		},
+		{
+			"moduleName": "@minecraft/server-editor",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-editor@0.1.0-beta.1.20.20-preview.21/index.d.ts",
 			"requires": {
 				"dependencies": ["@minecraft/server-net"],
 				"targetVersion": [">=", "1.20.20"],
