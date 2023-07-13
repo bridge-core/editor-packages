@@ -16,37 +16,25 @@
 						"$ref": "../../v1.18.10/components/food.json"
 					},
 					"minecraft:creative_category": {
-						"$ref": "./creative_category.json"
+						"$ref": ".//creative_category.json"
 					},
 					"minecraft:ignores_permission": {
-						"$ref": "./ignores_permission.json"
+						"$ref": ".//ignores_permission.json"
 					},
 					"minecraft:mining_speed": {
 						"$ref": "../../v1.16.100/components/mining_speed.json"
 					},
-					"minecraft:damage": {
-						"$ref": "../../v1.16.100/components/damage.json"
-					},
 					"minecraft:mirrored_art": {
-						"$ref": "./mirrored_art.json"
-					},
-					"minecraft:explodable": {
-						"$ref": "../../v1.16.100/components/explodable.json"
-					},
-					"minecraft:liquid_clipped": {
-						"$ref": "../../v1.16.100/components/liquid_clipped.json"
-					},
-					"minecraft:allow_off_hand": {
-						"$ref": "../../v1.16.100/components/allow_off_hand.json"
+						"$ref": ".//mirrored_art.json"
 					},
 					"minecraft:enchantable": {
 						"$ref": "../../v1.16.100/components/enchantable.json"
 					},
 					"minecraft:armor": {
-						"$ref": "./armor.json"
+						"$ref": ".//armor.json"
 					},
 					"minecraft:wearable": {
-						"$ref": "./wearable.json"
+						"$ref": ".//wearable.json"
 					},
 					"minecraft:weapon": {
 						"$ref": "../../v1.16.100/components/weapon.json"
@@ -66,9 +54,6 @@
 					"minecraft:potion": {
 						"$ref": "../../v1.16.100/components/potion.json"
 					},
-					"minecraft:use_animation": {
-						"$ref": "../../v1.16.100/components/use_animation.json"
-					},
 					"minecraft:render_offsets": {
 						"$ref": "../../v1.20.10/components/render_offsets.json"
 					},
@@ -84,6 +69,27 @@
 		{
 			"type": "object",
 			"properties": {
+				"minecraft:animates_in_toolbar": {
+					"$ref": "./animates_in_toolbar.json"
+				},
+				"minecraft:should_despawn": {
+					"$ref": "./should_despawn.json"
+				},
+				"minecraft:explodable": {
+					"$ref": "./explodable.json"
+				},
+				"minecraft:damage": {
+					"$ref": "../../v1.16.100/components/damage.json"
+				},
+				"minecraft:liquid_clipped": {
+					"$ref": "../../v1.16.100/components/liquid_clipped.json"
+				},
+				"minecraft:allow_off_hand": {
+					"$ref": "../../v1.16.100/components/allow_off_hand.json"
+				},
+				"minecraft:use_animation": {
+					"$ref": "../../v1.16.100/components/use_animation.json"
+				},
 				"minecraft:hover_text_color": {
 					"$ref": "../../v1.16.100/components/hover_text_color.json"
 				},
@@ -127,7 +133,7 @@
 					"$ref": "../../v1.10.0/components/stacked_by_data.json"
 				},
 				"minecraft:glint": {
-					"$ref": "./glint.json"
+					"$ref": ".//glint.json"
 				},
 				"minecraft:display_name": {
 					"$ref": "../../v1.16.100/components/display_name.json"
