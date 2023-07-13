@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"$ref": "../../project/experimentalGameplay/holidayCreatorFeatures.json",
+	"$ref": "../../project/experimentalGameplay/upcomingCreatorFeatures.json",
 	"then": {
 		"properties": {
 			"set_block_state": {
@@ -23,7 +23,7 @@
 		"properties": {
 			"set_block_state": {
 				"doNotSuggest": true,
-				"deprecationMessage": "This property requires the following experimental toggle(s) enabled in your project config: 'holidayCreatorFeatures'."
+				"deprecationMessage": "This property requires the following experimental toggle(s) enabled in your project config: 'upcomingCreatorFeatures'."
 			}
 		}
 	}
