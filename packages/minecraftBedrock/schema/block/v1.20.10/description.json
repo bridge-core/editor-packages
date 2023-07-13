@@ -17,7 +17,12 @@
 				},
 				"properties": {
 					"title": "Properties",
-					"description": "Define block properties and their possible values",
+					"description": "Deprecated in favor of states (format_version: v1.20.10).",
+					"doNotSuggest": true
+				},
+				"states": {
+					"title": "States",
+					"description": "Define block states and their possible values",
 					"anyOf": [
 						{
 							"$ref": "../../project/projectPrefix.json"
