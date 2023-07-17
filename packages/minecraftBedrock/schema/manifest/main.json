@@ -208,7 +208,8 @@
 									"@minecraft/server-ui",
 									"@minecraft/server-admin",
 									"@minecraft/server-net",
-									"@minecraft/server-editor"
+									"@minecraft/server-editor",
+									"@minecraft/vanilla-data"
 								]
 							}
 						]
