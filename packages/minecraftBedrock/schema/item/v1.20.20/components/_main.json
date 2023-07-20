@@ -76,7 +76,7 @@
 					"$ref": "./wearable.json"
 				},
 				"minecraft:explodable": {
-					"$ref": "./explodable.json"
+					"$ref": "./explodeable.json"
 				},
 				"minecraft:damage": {
 					"$ref": "../../v1.16.100/components/damage.json"

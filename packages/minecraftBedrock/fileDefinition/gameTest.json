@@ -26,7 +26,7 @@
 		// 1.20.20
 		{
 			"moduleName": "@minecraft/server",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@1.5.0-beta.1.20.20-preview.21/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@1.5.0-beta.1.20.20-preview.22/index.d.ts",
 			"requires": {
 				"dependencies": [
 					"@minecraft/server"
