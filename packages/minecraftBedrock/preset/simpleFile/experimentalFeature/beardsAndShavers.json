@@ -1,0 +1,15 @@
+{
+	"format_version": "",
+	"minecraft:beards_and_shavers": {
+		"description": {
+			"identifier": "{{PROJECT_PREFIX}}:{{FILE_NAME}}"
+		},
+		"places_feature": {},
+		"bounding_box_min": {},
+		"bounding_box_max": {},
+		"surface_block_type": {},
+		"subsurface_block_type": {},
+		"beard_raggedness_min": {},
+		"beard_raggedness_max": {}
+	}
+}
