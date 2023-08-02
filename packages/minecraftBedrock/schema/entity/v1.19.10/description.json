@@ -106,16 +106,18 @@
 										"type": "string",
 										"enum": ["int", "float", "bool", "enum"]
 									},
+									"values": {
+										"title": "Values",
+										"type": "array",
+										"items": {
+											"type": ["string"]
+										}
+									},
 									"range": {
 										"title": "Range",
 										"type": "array",
 										"items": {
-											"type": [
-												"string",
-												"number",
-												"boolean",
-												"integer"
-											]
+											"type": ["number", "integer"]
 										}
 									},
 									"default": {

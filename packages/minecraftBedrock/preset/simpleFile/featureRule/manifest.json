@@ -5,7 +5,7 @@
 	"category": "fileType.simpleFile",
 	"requires": {
 		"packTypes": ["behaviorPack"],
-		"experimentalGameplay": ["creationOfCustomBiomes"]
+		"experimentalGameplay": []
 	},
 	"additionalModels": {
 		"PRESET_PATH": "feature_rules/"
