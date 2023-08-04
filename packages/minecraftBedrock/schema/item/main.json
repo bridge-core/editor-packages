@@ -171,12 +171,12 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.20.21"]
+						"enum": ["1.20.30"]
 					}
 				}
 			},
 			"then": {
-				"$ref": "/data/packages/minecraftBedrock/schema/item/v1.20.20/main.json"
+				"$ref": "/data/packages/minecraftBedrock/schema/item/v1.20.30/main.json"
 			}
 		}
 	]
