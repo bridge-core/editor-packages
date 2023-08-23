@@ -554,6 +554,7 @@
 				"textures/entity/zombie_villager2/professions/shepherd",
 				"textures/entity/zombie_villager2/professions/stonemason",
 				"textures/entity/zombie_villager2/professions/toolsmith",
+				"textures/entity/zombie_villager2/professions/unskilled",
 				"textures/entity/zombie_villager2/professions/weaponsmith",
 				"textures/entity/zombie_villager2/zombie-villager"
 			]
@@ -3742,6 +3743,10 @@
 				"sounds/dig/wood3",
 				"sounds/dig/wood4",
 				"sounds/elytra/elytra_loop",
+				"sounds/enchant/thorns/hit1",
+				"sounds/enchant/thorns/hit2",
+				"sounds/enchant/thorns/hit3",
+				"sounds/enchant/thorns/hit4",
 				"sounds/event/raid/raidhorn_01",
 				"sounds/event/raid/raidhorn_02",
 				"sounds/event/raid/raidhorn_03",
@@ -5522,6 +5527,8 @@
 				"sounds/random/swim3",
 				"sounds/random/swim4",
 				"sounds/random/toast",
+				"sounds/random/toast_recipe_unlocking_in",
+				"sounds/random/toast_recipe_unlocking_out",
 				"sounds/random/use_totem",
 				"sounds/random/wood_click",
 				"sounds/sniffer_egg/egg_break1",
