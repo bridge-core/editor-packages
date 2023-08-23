@@ -2,8 +2,10 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"title": "Item",
 	"type": "object",
-	"required": ["format_version", "minecraft:item"],
-
+	"required": [
+		"format_version",
+		"minecraft:item"
+	],
 	"allOf": [
 		{
 			"properties": {
@@ -71,7 +73,12 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.17.20", "1.17.30", "1.17.40", "1.18.0"]
+						"enum": [
+							"1.17.20",
+							"1.17.30",
+							"1.17.40",
+							"1.18.0"
+						]
 					}
 				}
 			},
@@ -89,7 +96,11 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.18.10", "1.18.20", "1.18.30"]
+						"enum": [
+							"1.18.10",
+							"1.18.20",
+							"1.18.30"
+						]
 					}
 				}
 			},
@@ -135,7 +146,9 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.20.0"]
+						"enum": [
+							"1.20.0"
+						]
 					}
 				}
 			},
@@ -147,7 +160,9 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.20.10"]
+						"enum": [
+							"1.20.10"
+						]
 					}
 				}
 			},
@@ -159,7 +174,9 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.20.20"]
+						"enum": [
+							"1.20.20"
+						]
 					}
 				}
 			},
@@ -171,12 +188,28 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.20.21"]
+						"enum": [
+							"1.20.21"
+						]
 					}
 				}
 			},
 			"then": {
 				"$ref": "/data/packages/minecraftBedrock/schema/item/v1.20.20/main.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": [
+							"1.20.30"
+						]
+					}
+				}
+			},
+			"then": {
+				"$ref": "/data/packages/minecraftBedrock/schema/item/v1.20.30/main.json"
 			}
 		}
 	]
