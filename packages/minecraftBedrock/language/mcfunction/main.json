@@ -13,7 +13,6 @@
 			}
 		]
 	},
-
 	"vanilla": [
 		{
 			"selectorArguments": [
@@ -223,7 +222,9 @@
 					"arguments": [
 						{
 							"additionalData": {
-								"values": ["add"]
+								"values": [
+									"add"
+								]
 							}
 						},
 						{
@@ -247,7 +248,10 @@
 							"description": "Specifies the type of camera shake direction.",
 							"argumentName": "shakeType",
 							"additionalData": {
-								"values": ["positional", "rotational"]
+								"values": [
+									"positional",
+									"rotational"
+								]
 							},
 							"isOptional": true
 						}
@@ -259,7 +263,9 @@
 					"arguments": [
 						{
 							"additionalData": {
-								"values": ["stop"]
+								"values": [
+									"stop"
+								]
 							}
 						},
 						{
@@ -337,7 +343,10 @@
 							"type": "string",
 							"description": "Specifies whether to filter the blocks being cloned.",
 							"additionalData": {
-								"values": ["replace", "masked"]
+								"values": [
+									"replace",
+									"masked"
+								]
 							},
 							"isOptional": true
 						},
@@ -345,7 +354,11 @@
 							"type": "string",
 							"description": "Specifies how to treat the source region.",
 							"additionalData": {
-								"values": ["force", "move", "normal"]
+								"values": [
+									"force",
+									"move",
+									"normal"
+								]
 							},
 							"isOptional": true
 						}
@@ -373,14 +386,20 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["filtered"]
+								"values": [
+									"filtered"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"description": "Specifies how to treat the source region.",
 							"additionalData": {
-								"values": ["force", "move", "normal"]
+								"values": [
+									"force",
+									"move",
+									"normal"
+								]
 							}
 						},
 						{
@@ -418,14 +437,20 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["filtered"]
+								"values": [
+									"filtered"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"description": "Specifies how to treat the source region.",
 							"additionalData": {
-								"values": ["force", "move", "normal"]
+								"values": [
+									"force",
+									"move",
+									"normal"
+								]
 							}
 						},
 						{
@@ -467,7 +492,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["clear"]
+								"values": [
+									"clear"
+								]
 							}
 						}
 					]
@@ -563,7 +590,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["entity"]
+								"values": [
+									"entity"
+								]
 							}
 						},
 						{
@@ -699,7 +728,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["replace"]
+								"values": [
+									"replace"
+								]
 							}
 						},
 						{
@@ -748,7 +779,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["replace"]
+								"values": [
+									"replace"
+								]
 							}
 						},
 						{
@@ -779,7 +812,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["push"]
+								"values": [
+									"push"
+								]
 							}
 						},
 						{
@@ -811,7 +846,10 @@
 							"description": "Specifies whether to remove the fog in pop or remove mode.",
 							"type": "string",
 							"additionalData": {
-								"values": ["pop", "remove"]
+								"values": [
+									"pop",
+									"remove"
+								]
 							}
 						},
 						{
@@ -848,11 +886,9 @@
 									"survival",
 									"s",
 									"0",
-
 									"creative",
 									"c",
 									"1",
-
 									"adventure",
 									"a",
 									"2"
@@ -886,21 +922,27 @@
 									"doimmediaterespawn",
 									"domobloot",
 									"domobspawning",
+									"dolimitedcrafting",
 									"dotiledrops",
 									"doweathercycle",
 									"drowningdamage",
 									"falldamage",
 									"firedamage",
+									"freezedamage",
 									"functioncommandlimit",
 									"keepinventory",
 									"maxcommandchainlength",
 									"mobgriefing",
 									"naturalregeneration",
+									"playersleepingpercentage",
 									"pvp",
 									"randomtickspeed",
+									"respawnblocksexplode",
 									"sendcommandfeedback",
+									"showbordereffect",
 									"showcoordinates",
 									"showdeathmessages",
+									"showtags",
 									"tntexplodes"
 								]
 							}
@@ -932,21 +974,27 @@
 									"doimmediaterespawn",
 									"domobloot",
 									"domobspawning",
+									"dolimitedcrafting",
 									"dotiledrops",
 									"doweathercycle",
 									"drowningdamage",
 									"falldamage",
 									"firedamage",
+									"freezedamage",
 									"functioncommandlimit",
 									"keepinventory",
 									"maxcommandchainlength",
 									"mobgriefing",
 									"naturalregeneration",
+									"playersleepingpercentage",
 									"pvp",
 									"randomtickspeed",
+									"respawnblocksexplode",
 									"sendcommandfeedback",
-									"show$coordinates",
+									"showbordereffect",
+									"showcoordinates",
 									"showdeathmessages",
+									"showtags",
 									"tntexplodes"
 								]
 							}
@@ -1073,7 +1121,10 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["play", "queue"]
+								"values": [
+									"play",
+									"queue"
+								]
 							}
 						},
 						{
@@ -1098,7 +1149,10 @@
 							"description": "Specified whether set the music on repeat or not. If unspecified, defaults to play_once.",
 							"type": "string",
 							"additionalData": {
-								"values": ["loop", "play_once"]
+								"values": [
+									"loop",
+									"play_once"
+								]
 							},
 							"isOptional": true
 						}
@@ -1111,7 +1165,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["stop"]
+								"values": [
+									"stop"
+								]
 							}
 						},
 						{
@@ -1129,7 +1185,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["volume"]
+								"values": [
+									"volume"
+								]
 							}
 						},
 						{
@@ -1265,7 +1323,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["block"]
+								"values": [
+									"block"
+								]
 							}
 						},
 						{
@@ -1276,7 +1336,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["slot.container"]
+								"values": [
+									"slot.container"
+								]
 							}
 						},
 						{
@@ -1319,7 +1381,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["entity"]
+								"values": [
+									"entity"
+								]
 							}
 						},
 						{
@@ -1375,7 +1439,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["block"]
+								"values": [
+									"block"
+								]
 							}
 						},
 						{
@@ -1386,7 +1452,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["slot.container"]
+								"values": [
+									"slot.container"
+								]
 							}
 						},
 						{
@@ -1398,7 +1466,10 @@
 							"argumentName": "oldItemHandling",
 							"type": "string",
 							"additionalData": {
-								"values": ["destroy", "keep"]
+								"values": [
+									"destroy",
+									"keep"
+								]
 							}
 						},
 						{
@@ -1436,7 +1507,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["entity"]
+								"values": [
+									"entity"
+								]
 							}
 						},
 						{
@@ -1461,7 +1534,10 @@
 							"argumentName": "oldItemHandling",
 							"type": "string",
 							"additionalData": {
-								"values": ["destroy", "keep"]
+								"values": [
+									"destroy",
+									"keep"
+								]
 							}
 						},
 						{
@@ -1503,7 +1579,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["start_riding"]
+								"values": [
+									"start_riding"
+								]
 							}
 						},
 						{
@@ -1516,7 +1594,10 @@
 							"description": "Specified which entities are teleported. If unspecified, defaults to teleport_rider",
 							"type": "string",
 							"additionalData": {
-								"values": ["teleport_ride", "teleport_rider"]
+								"values": [
+									"teleport_ride",
+									"teleport_rider"
+								]
 							},
 							"isOptional": true
 						},
@@ -1524,7 +1605,10 @@
 							"argumentName": "howToFill",
 							"type": "string",
 							"additionalData": {
-								"values": ["if_group_fits", "until_full"]
+								"values": [
+									"if_group_fits",
+									"until_full"
+								]
 							},
 							"isOptional": true
 						}
@@ -1542,7 +1626,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["stop_riding"]
+								"values": [
+									"stop_riding"
+								]
 							}
 						}
 					]
@@ -1559,7 +1645,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["evict_riders"]
+								"values": [
+									"evict_riders"
+								]
 							}
 						}
 					]
@@ -1576,7 +1664,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["summon_rider"]
+								"values": [
+									"summon_rider"
+								]
 							}
 						},
 						{
@@ -1616,7 +1706,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["summon_ride"]
+								"values": [
+									"summon_ride"
+								]
 							}
 						},
 						{
@@ -1675,13 +1767,17 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["on_area_loaded"]
+								"values": [
+									"on_area_loaded"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["add"]
+								"values": [
+									"add"
+								]
 							}
 						},
 						{
@@ -1711,19 +1807,25 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["on_area_loaded"]
+								"values": [
+									"on_area_loaded"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["add"]
+								"values": [
+									"add"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["circle"]
+								"values": [
+									"circle"
+								]
 							}
 						},
 						{
@@ -1753,19 +1855,25 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["on_area_loaded"]
+								"values": [
+									"on_area_loaded"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["add"]
+								"values": [
+									"add"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["tickingarea"]
+								"values": [
+									"tickingarea"
+								]
 							}
 						},
 						{
@@ -1790,13 +1898,17 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["objectives"]
+								"values": [
+									"objectives"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["add"]
+								"values": [
+									"add"
+								]
 							}
 						},
 						{
@@ -1806,7 +1918,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["dummy"]
+								"values": [
+									"dummy"
+								]
 							}
 						},
 						{
@@ -1823,13 +1937,17 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["objectives"]
+								"values": [
+									"objectives"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["list"]
+								"values": [
+									"list"
+								]
 							}
 						}
 					]
@@ -1841,13 +1959,17 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["objectives"]
+								"values": [
+									"objectives"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["remove"]
+								"values": [
+									"remove"
+								]
 							}
 						},
 						{
@@ -1866,19 +1988,25 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["objectives"]
+								"values": [
+									"objectives"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["setdisplay"]
+								"values": [
+									"setdisplay"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["belowname"]
+								"values": [
+									"belowname"
+								]
 							}
 						},
 						{
@@ -1898,19 +2026,26 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["objectives"]
+								"values": [
+									"objectives"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["setdisplay"]
+								"values": [
+									"setdisplay"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["list", "sidebar"]
+								"values": [
+									"list",
+									"sidebar"
+								]
 							}
 						},
 						{
@@ -1924,7 +2059,10 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["ascending", "descending"]
+								"values": [
+									"ascending",
+									"descending"
+								]
 							},
 							"isOptional": true
 						}
@@ -1937,13 +2075,17 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["players"]
+								"values": [
+									"players"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["list"]
+								"values": [
+									"list"
+								]
 							}
 						},
 						{
@@ -1960,13 +2102,17 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["players"]
+								"values": [
+									"players"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["reset"]
+								"values": [
+									"reset"
+								]
 							}
 						},
 						{
@@ -1990,13 +2136,17 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["players"]
+								"values": [
+									"players"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["test"]
+								"values": [
+									"test"
+								]
 							}
 						},
 						{
@@ -2028,13 +2178,17 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["players"]
+								"values": [
+									"players"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["random"]
+								"values": [
+									"random"
+								]
 							}
 						},
 						{
@@ -2065,13 +2219,19 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["players"]
+								"values": [
+									"players"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["set", "add", "remove"]
+								"values": [
+									"set",
+									"add",
+									"remove"
+								]
 							}
 						},
 						{
@@ -2098,13 +2258,17 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["players"]
+								"values": [
+									"players"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["operation"]
+								"values": [
+									"operation"
+								]
 							}
 						},
 						{
@@ -2176,7 +2340,11 @@
 							"description": "Specifies how to handle the block change.",
 							"type": "string",
 							"additionalData": {
-								"values": ["destroy", "keep", "replace"]
+								"values": [
+									"destroy",
+									"keep",
+									"replace"
+								]
 							},
 							"isOptional": true
 						}
@@ -2210,7 +2378,11 @@
 							"description": "Specifies how to handle the block change.",
 							"type": "string",
 							"additionalData": {
-								"values": ["destroy", "keep", "replace"]
+								"values": [
+									"destroy",
+									"keep",
+									"replace"
+								]
 							},
 							"isOptional": true
 						}
@@ -2303,7 +2475,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["save"]
+								"values": [
+									"save"
+								]
 							}
 						},
 						{
@@ -2328,7 +2502,10 @@
 							"description": "Specifies the storage location.",
 							"type": "string",
 							"additionalData": {
-								"values": ["disk", "memory"]
+								"values": [
+									"disk",
+									"memory"
+								]
 							},
 							"isOptional": true
 						}
@@ -2341,7 +2518,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["save"]
+								"values": [
+									"save"
+								]
 							}
 						},
 						{
@@ -2372,7 +2551,10 @@
 							"description": "Specifies the storage location.",
 							"type": "string",
 							"additionalData": {
-								"values": ["disk", "memory"]
+								"values": [
+									"disk",
+									"memory"
+								]
 							},
 							"isOptional": true
 						},
@@ -2391,7 +2573,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["load"]
+								"values": [
+									"load"
+								]
 							}
 						},
 						{
@@ -2425,7 +2609,12 @@
 							"description": "Specifies the axis of mirror flip when loading a structure. If unspecified, defaults to none.",
 							"type": "string",
 							"additionalData": {
-								"values": ["x", "z", "xz", "none"]
+								"values": [
+									"x",
+									"z",
+									"xz",
+									"none"
+								]
 							},
 							"isOptional": true
 						},
@@ -2462,7 +2651,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["load"]
+								"values": [
+									"load"
+								]
 							}
 						},
 						{
@@ -2496,7 +2687,12 @@
 							"description": "Specifies the axis of mirror flip when loading a structure. If unspecified, defaults to none.",
 							"type": "string",
 							"additionalData": {
-								"values": ["x", "z", "xz", "none"]
+								"values": [
+									"x",
+									"z",
+									"xz",
+									"none"
+								]
 							},
 							"isOptional": true
 						},
@@ -2505,7 +2701,10 @@
 							"description": "Specifies the animation to generate structures.",
 							"type": "string",
 							"additionalData": {
-								"values": ["block_by_block", "layer_by_layer"]
+								"values": [
+									"block_by_block",
+									"layer_by_layer"
+								]
 							},
 							"isOptional": true
 						},
@@ -2548,7 +2747,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["delete"]
+								"values": [
+									"delete"
+								]
 							}
 						},
 						{
@@ -2597,7 +2798,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["add"]
+								"values": [
+									"add"
+								]
 							}
 						},
 						{
@@ -2622,7 +2825,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["remove"]
+								"values": [
+									"remove"
+								]
 							}
 						},
 						{
@@ -2647,7 +2852,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["list"]
+								"values": [
+									"list"
+								]
 							}
 						}
 					]
@@ -2708,7 +2915,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["facing"]
+								"values": [
+									"facing"
+								]
 							}
 						},
 						{
@@ -2736,7 +2945,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["facing"]
+								"values": [
+									"facing"
+								]
 							}
 						},
 						{
@@ -2803,7 +3014,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["facing"]
+								"values": [
+									"facing"
+								]
 							}
 						},
 						{
@@ -2836,7 +3049,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["facing"]
+								"values": [
+									"facing"
+								]
 							}
 						},
 						{
@@ -2984,7 +3199,10 @@
 							"description": "Specifies how to match blocks.",
 							"type": "string",
 							"additionalData": {
-								"values": ["all", "masked"]
+								"values": [
+									"all",
+									"masked"
+								]
 							},
 							"isOptional": true
 						}
@@ -2997,7 +3215,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["add"]
+								"values": [
+									"add"
+								]
 							}
 						},
 						{
@@ -3025,13 +3245,17 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["add"]
+								"values": [
+									"add"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["circle"]
+								"values": [
+									"circle"
+								]
 							}
 						},
 						{
@@ -3059,7 +3283,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["remove"]
+								"values": [
+									"remove"
+								]
 							}
 						},
 						{
@@ -3076,7 +3302,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["remove"]
+								"values": [
+									"remove"
+								]
 							}
 						},
 						{
@@ -3093,7 +3321,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["remove_all"]
+								"values": [
+									"remove_all"
+								]
 							}
 						}
 					]
@@ -3105,7 +3335,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["list"]
+								"values": [
+									"list"
+								]
 							}
 						},
 						{
@@ -3113,7 +3345,9 @@
 							"description": "Specifies whether the ticking area in other dimensions should be listed.",
 							"type": "string",
 							"additionalData": {
-								"values": ["all-dimensions"]
+								"values": [
+									"all-dimensions"
+								]
 							},
 							"isOptional": true
 						}
@@ -3126,7 +3360,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["add"]
+								"values": [
+									"add"
+								]
 							}
 						},
 						{
@@ -3143,7 +3379,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["query"]
+								"values": [
+									"query"
+								]
 							}
 						},
 						{
@@ -3151,7 +3389,11 @@
 							"description": "Specifies the time to query.",
 							"type": "string",
 							"additionalData": {
-								"values": ["daytime", "gametime", "day"]
+								"values": [
+									"daytime",
+									"gametime",
+									"day"
+								]
 							}
 						}
 					]
@@ -3163,7 +3405,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["set"]
+								"values": [
+									"set"
+								]
 							}
 						},
 						{
@@ -3180,7 +3424,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["set"]
+								"values": [
+									"set"
+								]
 							}
 						},
 						{
@@ -3213,7 +3459,10 @@
 							"argumentName": "option",
 							"type": "string",
 							"additionalData": {
-								"values": ["clear", "reset"]
+								"values": [
+									"clear",
+									"reset"
+								]
 							}
 						}
 					]
@@ -3231,7 +3480,11 @@
 							"argumentName": "titleLocation",
 							"type": "string",
 							"additionalData": {
-								"values": ["title", "subtitle", "actionbar"]
+								"values": [
+									"title",
+									"subtitle",
+									"actionbar"
+								]
 							}
 						},
 						{
@@ -3254,7 +3507,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["times"]
+								"values": [
+									"times"
+								]
 							}
 						},
 						{
@@ -3287,7 +3542,10 @@
 							"argumentName": "option",
 							"type": "string",
 							"additionalData": {
-								"values": ["clear", "reset"]
+								"values": [
+									"clear",
+									"reset"
+								]
 							}
 						}
 					]
@@ -3305,7 +3563,11 @@
 							"argumentName": "titleLocation",
 							"type": "string",
 							"additionalData": {
-								"values": ["title", "subtitle", "actionbar"]
+								"values": [
+									"title",
+									"subtitle",
+									"actionbar"
+								]
 							}
 						},
 						{
@@ -3327,7 +3589,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["times"]
+								"values": [
+									"times"
+								]
 							}
 						},
 						{
@@ -3409,7 +3673,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["facing"]
+								"values": [
+									"facing"
+								]
 							}
 						},
 						{
@@ -3437,7 +3703,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["facing"]
+								"values": [
+									"facing"
+								]
 							}
 						},
 						{
@@ -3504,7 +3772,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["facing"]
+								"values": [
+									"facing"
+								]
 							}
 						},
 						{
@@ -3537,7 +3807,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["facing"]
+								"values": [
+									"facing"
+								]
 							}
 						},
 						{
@@ -3617,7 +3889,11 @@
 							"argumentName": "weather",
 							"type": "string",
 							"additionalData": {
-								"values": ["clear", "rain", "thunder"]
+								"values": [
+									"clear",
+									"rain",
+									"thunder"
+								]
 							}
 						},
 						{
@@ -3636,13 +3912,19 @@
 							"argumentName": "weather",
 							"type": "string",
 							"additionalData": {
-								"values": ["clear", "rain", "thunder"]
+								"values": [
+									"clear",
+									"rain",
+									"thunder"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["query"]
+								"values": [
+									"query"
+								]
 							}
 						}
 					]
@@ -3668,7 +3950,10 @@
 		},
 		{
 			"requires": {
-				"targetVersion": [">=", "v1.17.10"]
+				"targetVersion": [
+					">=",
+					"v1.17.10"
+				]
 			},
 			"commands": [
 				{
@@ -3678,7 +3963,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["change"]
+								"values": [
+									"change"
+								]
 							}
 						},
 						{
@@ -3706,7 +3993,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["open"]
+								"values": [
+									"open"
+								]
 							}
 						},
 						{
@@ -3731,7 +4020,9 @@
 		},
 		{
 			"requires": {
-				"experimentalGameplay": ["educationEdition"]
+				"experimentalGameplay": [
+					"educationEdition"
+				]
 			},
 			"commands": [
 				{
@@ -3746,7 +4037,9 @@
 							"type": "string",
 							"argumentName": "ability",
 							"additionalData": {
-								"values": ["mayfly"]
+								"values": [
+									"mayfly"
+								]
 							},
 							"description": "This allows players to fly around the world, or be limited to ground travel only."
 						},
@@ -3769,7 +4062,9 @@
 							"type": "string",
 							"argumentName": "ability",
 							"additionalData": {
-								"values": ["mute"]
+								"values": [
+									"mute"
+								]
 							},
 							"description": "If you want to prevent a target from talking, you can set this ability to true. The user(s) will see the message 'chat has been disabled'."
 						},
@@ -3792,7 +4087,9 @@
 							"type": "string",
 							"argumentName": "ability",
 							"additionalData": {
-								"values": ["worldbuilder"]
+								"values": [
+									"worldbuilder"
+								]
 							},
 							"description": "You can control who is allowed to build and change the world with this command."
 						},
@@ -3807,7 +4104,10 @@
 		},
 		{
 			"requires": {
-				"targetVersion": [">=", "1.18.0"]
+				"targetVersion": [
+					">=",
+					"1.18.0"
+				]
 			},
 			"commands": [
 				{
@@ -3817,7 +4117,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["spawn"]
+								"values": [
+									"spawn"
+								]
 							}
 						},
 						{
@@ -3828,7 +4130,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["loot"]
+								"values": [
+									"loot"
+								]
 							}
 						},
 						{
@@ -3855,7 +4159,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["spawn"]
+								"values": [
+									"spawn"
+								]
 							}
 						},
 						{
@@ -3866,7 +4172,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["loot"]
+								"values": [
+									"loot"
+								]
 							}
 						},
 						{
@@ -3880,7 +4188,10 @@
 							"argumentName": "slot",
 							"type": "string",
 							"additionalData": {
-								"values": ["mainhand", "offhand"]
+								"values": [
+									"mainhand",
+									"offhand"
+								]
 							},
 							"isOptional": true
 						}
@@ -3890,7 +4201,10 @@
 		},
 		{
 			"requires": {
-				"targetVersion": [">=", "1.18.10"]
+				"targetVersion": [
+					">=",
+					"1.18.10"
+				]
 			},
 			"commands": [
 				{
@@ -3943,7 +4257,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["entity"]
+								"values": [
+									"entity"
+								]
 							}
 						},
 						{
@@ -3957,7 +4273,10 @@
 		},
 		{
 			"requires": {
-				"targetVersion": [">=", "1.18.20"]
+				"targetVersion": [
+					">=",
+					"1.18.20"
+				]
 			},
 			"selectorArguments": [
 				{
@@ -3979,7 +4298,9 @@
 							"argumentName": "mode",
 							"type": "string",
 							"additionalData": {
-								"values": ["add"]
+								"values": [
+									"add"
+								]
 							}
 						},
 						{
@@ -4016,14 +4337,18 @@
 							"argumentName": "mode",
 							"type": "string",
 							"additionalData": {
-								"values": ["list"]
+								"values": [
+									"list"
+								]
 							}
 						},
 						{
 							"argumentName": "volumeDimension",
 							"type": "string",
 							"additionalData": {
-								"values": ["all-dimensions"]
+								"values": [
+									"all-dimensions"
+								]
 							}
 						}
 					]
@@ -4036,7 +4361,9 @@
 							"argumentName": "mode",
 							"type": "string",
 							"additionalData": {
-								"values": ["remove"]
+								"values": [
+									"remove"
+								]
 							}
 						},
 						{
@@ -4055,7 +4382,9 @@
 							"argumentName": "mode",
 							"type": "string",
 							"additionalData": {
-								"values": ["remove"]
+								"values": [
+									"remove"
+								]
 							}
 						},
 						{
@@ -4074,7 +4403,9 @@
 							"argumentName": "mode",
 							"type": "string",
 							"additionalData": {
-								"values": ["remove_all"]
+								"values": [
+									"remove_all"
+								]
 							}
 						}
 					]
@@ -4086,7 +4417,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["spawn"]
+								"values": [
+									"spawn"
+								]
 							}
 						},
 						{
@@ -4097,7 +4430,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["kill"]
+								"values": [
+									"kill"
+								]
 							}
 						},
 						{
@@ -4121,7 +4456,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["spawn"]
+								"values": [
+									"spawn"
+								]
 							}
 						},
 						{
@@ -4132,7 +4469,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["kill"]
+								"values": [
+									"kill"
+								]
 							}
 						},
 						{
@@ -4143,7 +4482,10 @@
 							"argumentName": "slot",
 							"type": "string",
 							"additionalData": {
-								"values": ["mainhand", "offhand"]
+								"values": [
+									"mainhand",
+									"offhand"
+								]
 							},
 							"isOptional": true
 						}
@@ -4156,7 +4498,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["give"]
+								"values": [
+									"give"
+								]
 							}
 						},
 						{
@@ -4166,7 +4510,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["kill"]
+								"values": [
+									"kill"
+								]
 							}
 						},
 						{
@@ -4190,7 +4536,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["give"]
+								"values": [
+									"give"
+								]
 							}
 						},
 						{
@@ -4200,7 +4548,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["kill"]
+								"values": [
+									"kill"
+								]
 							}
 						},
 						{
@@ -4211,7 +4561,10 @@
 							"argumentName": "slot",
 							"type": "string",
 							"additionalData": {
-								"values": ["mainhand", "offhand"]
+								"values": [
+									"mainhand",
+									"offhand"
+								]
 							},
 							"isOptional": true
 						}
@@ -4224,7 +4577,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["give"]
+								"values": [
+									"give"
+								]
 							}
 						},
 						{
@@ -4234,7 +4589,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["loot"]
+								"values": [
+									"loot"
+								]
 							}
 						},
 						{
@@ -4261,7 +4618,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["give"]
+								"values": [
+									"give"
+								]
 							}
 						},
 						{
@@ -4271,7 +4630,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["loot"]
+								"values": [
+									"loot"
+								]
 							}
 						},
 						{
@@ -4285,7 +4646,10 @@
 							"argumentName": "slot",
 							"type": "string",
 							"additionalData": {
-								"values": ["mainhand", "offhand"]
+								"values": [
+									"mainhand",
+									"offhand"
+								]
 							},
 							"isOptional": true
 						}
@@ -4298,7 +4662,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["add"]
+								"values": [
+									"add"
+								]
 							}
 						},
 						{
@@ -4331,13 +4697,17 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["add"]
+								"values": [
+									"add"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["circle"]
+								"values": [
+									"circle"
+								]
 							}
 						},
 						{
@@ -4370,7 +4740,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["preload"]
+								"values": [
+									"preload"
+								]
 							}
 						},
 						{
@@ -4392,7 +4764,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["preload"]
+								"values": [
+									"preload"
+								]
 							}
 						},
 						{
@@ -4450,7 +4824,10 @@
 		},
 		{
 			"requires": {
-				"targetVersion": [">=", "1.18.30"]
+				"targetVersion": [
+					">=",
+					"1.18.30"
+				]
 			},
 			"commands": [
 				{
@@ -4460,7 +4837,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["insert"]
+								"values": [
+									"insert"
+								]
 							}
 						},
 						{
@@ -4471,7 +4850,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["kill"]
+								"values": [
+									"kill"
+								]
 							}
 						},
 						{
@@ -4495,7 +4876,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["insert"]
+								"values": [
+									"insert"
+								]
 							}
 						},
 						{
@@ -4506,7 +4889,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["kill"]
+								"values": [
+									"kill"
+								]
 							}
 						},
 						{
@@ -4517,7 +4902,10 @@
 							"argumentName": "slot",
 							"type": "string",
 							"additionalData": {
-								"values": ["mainhand", "offhand"]
+								"values": [
+									"mainhand",
+									"offhand"
+								]
 							},
 							"isOptional": true
 						}
@@ -4530,7 +4918,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["insert"]
+								"values": [
+									"insert"
+								]
 							}
 						},
 						{
@@ -4541,7 +4931,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["loot"]
+								"values": [
+									"loot"
+								]
 							}
 						},
 						{
@@ -4568,7 +4960,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["insert"]
+								"values": [
+									"insert"
+								]
 							}
 						},
 						{
@@ -4579,7 +4973,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["loot"]
+								"values": [
+									"loot"
+								]
 							}
 						},
 						{
@@ -4593,7 +4989,10 @@
 							"argumentName": "slot",
 							"type": "string",
 							"additionalData": {
-								"values": ["mainhand", "offhand"]
+								"values": [
+									"mainhand",
+									"offhand"
+								]
 							},
 							"isOptional": true
 						}
@@ -4601,10 +5000,12 @@
 				}
 			]
 		},
-
 		{
 			"requires": {
-				"targetVersion": [">=", "1.19.0"]
+				"targetVersion": [
+					">=",
+					"1.19.0"
+				]
 			},
 			"commands": [
 				{
@@ -4614,13 +5015,17 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["replace"]
+								"values": [
+									"replace"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["entity"]
+								"values": [
+									"entity"
+								]
 							}
 						},
 						{
@@ -4645,7 +5050,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["kill"]
+								"values": [
+									"kill"
+								]
 							}
 						},
 						{
@@ -4669,13 +5076,17 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["replace"]
+								"values": [
+									"replace"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["entity"]
+								"values": [
+									"entity"
+								]
 							}
 						},
 						{
@@ -4700,7 +5111,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["kill"]
+								"values": [
+									"kill"
+								]
 							}
 						},
 						{
@@ -4711,13 +5124,15 @@
 							"argumentName": "slot",
 							"type": "string",
 							"additionalData": {
-								"values": ["mainhand", "offhand"]
+								"values": [
+									"mainhand",
+									"offhand"
+								]
 							},
 							"isOptional": true
 						}
 					]
 				},
-
 				{
 					"commandName": "loot",
 					"description": "Drops the given loot table into the specified inventory or into the world.",
@@ -4725,13 +5140,17 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["replace"]
+								"values": [
+									"replace"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["entity"]
+								"values": [
+									"entity"
+								]
 							}
 						},
 						{
@@ -4752,7 +5171,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["kill"]
+								"values": [
+									"kill"
+								]
 							}
 						},
 						{
@@ -4776,13 +5197,17 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["replace"]
+								"values": [
+									"replace"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["entity"]
+								"values": [
+									"entity"
+								]
 							}
 						},
 						{
@@ -4803,7 +5228,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["kill"]
+								"values": [
+									"kill"
+								]
 							}
 						},
 						{
@@ -4814,13 +5241,15 @@
 							"argumentName": "slot",
 							"type": "string",
 							"additionalData": {
-								"values": ["mainhand", "offhand"]
+								"values": [
+									"mainhand",
+									"offhand"
+								]
 							},
 							"isOptional": true
 						}
 					]
 				},
-
 				{
 					"commandName": "loot",
 					"description": "Drops the given loot table into the world.",
@@ -4828,13 +5257,17 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["replace"]
+								"values": [
+									"replace"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["entity"]
+								"values": [
+									"entity"
+								]
 							}
 						},
 						{
@@ -4859,7 +5292,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["loot"]
+								"values": [
+									"loot"
+								]
 							}
 						},
 						{
@@ -4886,13 +5321,17 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["replace"]
+								"values": [
+									"replace"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["entity"]
+								"values": [
+									"entity"
+								]
 							}
 						},
 						{
@@ -4917,7 +5356,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["loot"]
+								"values": [
+									"loot"
+								]
 							}
 						},
 						{
@@ -4931,7 +5372,10 @@
 							"argumentName": "slot",
 							"type": "string",
 							"additionalData": {
-								"values": ["mainhand", "offhand"]
+								"values": [
+									"mainhand",
+									"offhand"
+								]
 							},
 							"isOptional": true
 						}
@@ -4944,13 +5388,17 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["replace"]
+								"values": [
+									"replace"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["entity"]
+								"values": [
+									"entity"
+								]
 							}
 						},
 						{
@@ -4971,7 +5419,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["loot"]
+								"values": [
+									"loot"
+								]
 							}
 						},
 						{
@@ -4998,13 +5448,17 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["replace"]
+								"values": [
+									"replace"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["entity"]
+								"values": [
+									"entity"
+								]
 							}
 						},
 						{
@@ -5025,7 +5479,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["loot"]
+								"values": [
+									"loot"
+								]
 							}
 						},
 						{
@@ -5039,7 +5495,10 @@
 							"argumentName": "slot",
 							"type": "string",
 							"additionalData": {
-								"values": ["mainhand", "offhand"]
+								"values": [
+									"mainhand",
+									"offhand"
+								]
 							},
 							"isOptional": true
 						}
@@ -5049,7 +5508,10 @@
 		},
 		{
 			"requires": {
-				"targetVersion": ["<", "1.19.10"]
+				"targetVersion": [
+					"<",
+					"1.19.10"
+				]
 			},
 			"commands": [
 				{
@@ -5071,8 +5533,13 @@
 		{
 			"requires": {
 				"matchAll": false,
-				"experimentalGameplay": ["!upcomingCreatorFeatures"],
-				"targetVersion": ["<", "1.19.10"]
+				"experimentalGameplay": [
+					"!upcomingCreatorFeatures"
+				],
+				"targetVersion": [
+					"<",
+					"1.19.10"
+				]
 			},
 			"commands": [
 				{
@@ -5113,7 +5580,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["detect"]
+								"values": [
+									"detect"
+								]
 							}
 						},
 						{
@@ -5145,7 +5614,10 @@
 		},
 		{
 			"requires": {
-				"targetVersion": [">=", "1.19.10"]
+				"targetVersion": [
+					">=",
+					"1.19.10"
+				]
 			},
 			"commands": [
 				{
@@ -5173,7 +5645,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["biome"]
+								"values": [
+									"biome"
+								]
 							}
 						},
 						{
@@ -5192,7 +5666,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["structure"]
+								"values": [
+									"structure"
+								]
 							}
 						},
 						{
@@ -5217,7 +5693,9 @@
 					"min": "1.19.10",
 					"max": "1.19.40"
 				},
-				"experimentalGameplay": ["upcomingCreatorFeatures"]
+				"experimentalGameplay": [
+					"upcomingCreatorFeatures"
+				]
 			},
 			"commands": [
 				{
@@ -5231,7 +5709,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["run"]
+								"values": [
+									"run"
+								]
 							}
 						},
 						{
@@ -5286,7 +5766,9 @@
 								{
 									"type": "string",
 									"additionalData": {
-										"values": ["as"]
+										"values": [
+											"as"
+										]
 									}
 								},
 								{
@@ -5304,7 +5786,9 @@
 									"type": "string",
 									"description": "Compares the block at a given position to a given block ID and state.",
 									"additionalData": {
-										"values": ["block"]
+										"values": [
+											"block"
+										]
 									}
 								},
 								{
@@ -5333,7 +5817,9 @@
 									"type": "string",
 									"description": "Compares the block at a given position to a given block ID and data value.",
 									"additionalData": {
-										"values": ["block"]
+										"values": [
+											"block"
+										]
 									}
 								},
 								{
@@ -5362,7 +5848,9 @@
 									"type": "string",
 									"description": "Compares the blocks in two equally sized volumes.",
 									"additionalData": {
-										"values": ["blocks"]
+										"values": [
+											"blocks"
+										]
 									}
 								},
 								{
@@ -5381,7 +5869,10 @@
 									"argumentName": "scanMode",
 									"type": "string",
 									"additionalData": {
-										"values": ["all", "masked"]
+										"values": [
+											"all",
+											"masked"
+										]
 									}
 								}
 							]
@@ -5395,7 +5886,9 @@
 									"type": "string",
 									"description": "Checks whether one or more entities exist.",
 									"additionalData": {
-										"values": ["entity"]
+										"values": [
+											"entity"
+										]
 									}
 								},
 								{
@@ -5413,7 +5906,9 @@
 									"type": "string",
 									"description": "Check whether a score has a specific relation to another score.",
 									"additionalData": {
-										"values": ["score"]
+										"values": [
+											"score"
+										]
 									}
 								},
 								{
@@ -5431,7 +5926,13 @@
 									"argumentName": "operation",
 									"type": "string",
 									"additionalData": {
-										"values": ["<", "<=", "=", ">", ">="]
+										"values": [
+											"<",
+											"<=",
+											"=",
+											">",
+											">="
+										]
 									}
 								},
 								{
@@ -5456,7 +5957,9 @@
 									"type": "string",
 									"description": "Check whether a score is in a given range.",
 									"additionalData": {
-										"values": ["score"]
+										"values": [
+											"score"
+										]
 									}
 								},
 								{
@@ -5473,7 +5976,9 @@
 								{
 									"type": "string",
 									"additionalData": {
-										"values": ["matches"]
+										"values": [
+											"matches"
+										]
 									}
 								},
 								{
@@ -5491,7 +5996,9 @@
 									"type": "string",
 									"description": "Compares the block at a given position to a given block ID and state.",
 									"additionalData": {
-										"values": ["block"]
+										"values": [
+											"block"
+										]
 									}
 								},
 								{
@@ -5520,7 +6027,9 @@
 									"type": "string",
 									"description": "Compares the block at a given position to a given block ID and data value.",
 									"additionalData": {
-										"values": ["block"]
+										"values": [
+											"block"
+										]
 									}
 								},
 								{
@@ -5549,7 +6058,9 @@
 									"type": "string",
 									"description": "Compares the blocks in two equally sized volumes.",
 									"additionalData": {
-										"values": ["blocks"]
+										"values": [
+											"blocks"
+										]
 									}
 								},
 								{
@@ -5568,7 +6079,10 @@
 									"argumentName": "scanMode",
 									"type": "string",
 									"additionalData": {
-										"values": ["all", "masked"]
+										"values": [
+											"all",
+											"masked"
+										]
 									}
 								}
 							]
@@ -5582,7 +6096,9 @@
 									"type": "string",
 									"description": "Checks whether one or more entities exist.",
 									"additionalData": {
-										"values": ["entity"]
+										"values": [
+											"entity"
+										]
 									}
 								},
 								{
@@ -5600,7 +6116,9 @@
 									"type": "string",
 									"description": "Check whether a score has a specific relation to another score.",
 									"additionalData": {
-										"values": ["score"]
+										"values": [
+											"score"
+										]
 									}
 								},
 								{
@@ -5618,7 +6136,13 @@
 									"argumentName": "operation",
 									"type": "string",
 									"additionalData": {
-										"values": ["<", "<=", "=", ">", ">="]
+										"values": [
+											"<",
+											"<=",
+											"=",
+											">",
+											">="
+										]
 									}
 								},
 								{
@@ -5643,7 +6167,9 @@
 									"type": "string",
 									"description": "Check whether a score is in a given range.",
 									"additionalData": {
-										"values": ["score"]
+										"values": [
+											"score"
+										]
 									}
 								},
 								{
@@ -5660,7 +6186,9 @@
 								{
 									"type": "string",
 									"additionalData": {
-										"values": ["matches"]
+										"values": [
+											"matches"
+										]
 									}
 								},
 								{
@@ -5675,8 +6203,13 @@
 		},
 		{
 			"requires": {
-				"targetVersion": ["=", "1.19.40"],
-				"experimentalGameplay": ["upcomingCreatorFeatures"]
+				"targetVersion": [
+					"=",
+					"1.19.40"
+				],
+				"experimentalGameplay": [
+					"upcomingCreatorFeatures"
+				]
 			},
 			"subcommands": [
 				{
@@ -5690,14 +6223,18 @@
 									"argumentName": "yaw",
 									"type": "string",
 									"additionalData": {
-										"values": ["~"]
+										"values": [
+											"~"
+										]
 									}
 								},
 								{
 									"argumentName": "pitch",
 									"type": "string",
 									"additionalData": {
-										"values": ["~"]
+										"values": [
+											"~"
+										]
 									}
 								}
 							]
@@ -5723,7 +6260,9 @@
 								{
 									"type": "string",
 									"additionalData": {
-										"values": ["as"]
+										"values": [
+											"as"
+										]
 									}
 								},
 								{
@@ -5778,7 +6317,9 @@
 								{
 									"type": "string",
 									"additionalData": {
-										"values": ["entity"]
+										"values": [
+											"entity"
+										]
 									}
 								},
 								{
@@ -5789,7 +6330,10 @@
 									"argumentName": "position",
 									"type": "string",
 									"additionalData": {
-										"values": ["eyes", "feet"]
+										"values": [
+											"eyes",
+											"feet"
+										]
 									}
 								}
 							]
@@ -5818,7 +6362,10 @@
 								{
 									"type": "string",
 									"additionalData": {
-										"values": ["feet", "eyes"]
+										"values": [
+											"feet",
+											"eyes"
+										]
 									}
 								}
 							]
@@ -5829,7 +6376,10 @@
 		},
 		{
 			"requires": {
-				"targetVersion": [">=", "1.19.40"]
+				"targetVersion": [
+					">=",
+					"1.19.40"
+				]
 			},
 			"commands": [
 				{
@@ -5839,13 +6389,17 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["replace"]
+								"values": [
+									"replace"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["block"]
+								"values": [
+									"block"
+								]
 							}
 						},
 						{
@@ -5855,7 +6409,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["slot.container"]
+								"values": [
+									"slot.container"
+								]
 							}
 						},
 						{
@@ -5869,7 +6425,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["kill"]
+								"values": [
+									"kill"
+								]
 							}
 						},
 						{
@@ -5893,13 +6451,17 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["replace"]
+								"values": [
+									"replace"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["block"]
+								"values": [
+									"block"
+								]
 							}
 						},
 						{
@@ -5909,7 +6471,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["slot.container"]
+								"values": [
+									"slot.container"
+								]
 							}
 						},
 						{
@@ -5923,7 +6487,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["kill"]
+								"values": [
+									"kill"
+								]
 							}
 						},
 						{
@@ -5934,13 +6500,15 @@
 							"argumentName": "slot",
 							"type": "string",
 							"additionalData": {
-								"values": ["mainhand", "offhand"]
+								"values": [
+									"mainhand",
+									"offhand"
+								]
 							},
 							"isOptional": true
 						}
 					]
 				},
-
 				{
 					"commandName": "loot",
 					"description": "Drops the given loot table into the specified inventory or into the world.",
@@ -5948,13 +6516,17 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["replace"]
+								"values": [
+									"replace"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["block"]
+								"values": [
+									"block"
+								]
 							}
 						},
 						{
@@ -5964,7 +6536,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["slot.container"]
+								"values": [
+									"slot.container"
+								]
 							}
 						},
 						{
@@ -5974,7 +6548,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["kill"]
+								"values": [
+									"kill"
+								]
 							}
 						},
 						{
@@ -5998,13 +6574,17 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["replace"]
+								"values": [
+									"replace"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["block"]
+								"values": [
+									"block"
+								]
 							}
 						},
 						{
@@ -6014,7 +6594,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["slot.container"]
+								"values": [
+									"slot.container"
+								]
 							}
 						},
 						{
@@ -6024,7 +6606,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["kill"]
+								"values": [
+									"kill"
+								]
 							}
 						},
 						{
@@ -6035,13 +6619,15 @@
 							"argumentName": "slot",
 							"type": "string",
 							"additionalData": {
-								"values": ["mainhand", "offhand"]
+								"values": [
+									"mainhand",
+									"offhand"
+								]
 							},
 							"isOptional": true
 						}
 					]
 				},
-
 				{
 					"commandName": "loot",
 					"description": "Drops the given loot table into the world.",
@@ -6049,13 +6635,17 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["replace"]
+								"values": [
+									"replace"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["block"]
+								"values": [
+									"block"
+								]
 							}
 						},
 						{
@@ -6065,7 +6655,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["slot.container"]
+								"values": [
+									"slot.container"
+								]
 							}
 						},
 						{
@@ -6079,7 +6671,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["loot"]
+								"values": [
+									"loot"
+								]
 							}
 						},
 						{
@@ -6106,13 +6700,17 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["replace"]
+								"values": [
+									"replace"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["block"]
+								"values": [
+									"block"
+								]
 							}
 						},
 						{
@@ -6122,7 +6720,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["slot.container"]
+								"values": [
+									"slot.container"
+								]
 							}
 						},
 						{
@@ -6136,7 +6736,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["loot"]
+								"values": [
+									"loot"
+								]
 							}
 						},
 						{
@@ -6150,7 +6752,10 @@
 							"argumentName": "slot",
 							"type": "string",
 							"additionalData": {
-								"values": ["mainhand", "offhand"]
+								"values": [
+									"mainhand",
+									"offhand"
+								]
 							},
 							"isOptional": true
 						}
@@ -6163,13 +6768,17 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["replace"]
+								"values": [
+									"replace"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["block"]
+								"values": [
+									"block"
+								]
 							}
 						},
 						{
@@ -6179,7 +6788,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["slot.container"]
+								"values": [
+									"slot.container"
+								]
 							}
 						},
 						{
@@ -6189,7 +6800,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["loot"]
+								"values": [
+									"loot"
+								]
 							}
 						},
 						{
@@ -6216,13 +6829,17 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["replace"]
+								"values": [
+									"replace"
+								]
 							}
 						},
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["block"]
+								"values": [
+									"block"
+								]
 							}
 						},
 						{
@@ -6232,7 +6849,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["slot.container"]
+								"values": [
+									"slot.container"
+								]
 							}
 						},
 						{
@@ -6242,7 +6861,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["loot"]
+								"values": [
+									"loot"
+								]
 							}
 						},
 						{
@@ -6256,7 +6877,10 @@
 							"argumentName": "slot",
 							"type": "string",
 							"additionalData": {
-								"values": ["mainhand", "offhand"]
+								"values": [
+									"mainhand",
+									"offhand"
+								]
 							},
 							"isOptional": true
 						}
@@ -6311,7 +6935,10 @@
 		},
 		{
 			"requires": {
-				"targetVersion": ["<", "1.19.40"]
+				"targetVersion": [
+					"<",
+					"1.19.40"
+				]
 			},
 			"commands": [
 				{
@@ -6354,7 +6981,10 @@
 		{
 			// New execute out of experimental
 			"requires": {
-				"targetVersion": [">=", "1.19.50"]
+				"targetVersion": [
+					">=",
+					"1.19.50"
+				]
 			},
 			"commands": [
 				{
@@ -6368,7 +6998,9 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": ["run"]
+								"values": [
+									"run"
+								]
 							}
 						},
 						{
@@ -6423,7 +7055,9 @@
 								{
 									"type": "string",
 									"additionalData": {
-										"values": ["as"]
+										"values": [
+											"as"
+										]
 									}
 								},
 								{
@@ -6441,7 +7075,9 @@
 									"type": "string",
 									"description": "Compares the block at a given position to a given block ID and state.",
 									"additionalData": {
-										"values": ["block"]
+										"values": [
+											"block"
+										]
 									}
 								},
 								{
@@ -6466,7 +7102,9 @@
 									"type": "string",
 									"description": "Compares the block at a given position to a given block ID and state.",
 									"additionalData": {
-										"values": ["block"]
+										"values": [
+											"block"
+										]
 									}
 								},
 								{
@@ -6495,7 +7133,9 @@
 									"type": "string",
 									"description": "Compares the block at a given position to a given block ID and data value.",
 									"additionalData": {
-										"values": ["block"]
+										"values": [
+											"block"
+										]
 									}
 								},
 								{
@@ -6524,7 +7164,9 @@
 									"type": "string",
 									"description": "Compares the blocks in two equally sized volumes.",
 									"additionalData": {
-										"values": ["blocks"]
+										"values": [
+											"blocks"
+										]
 									}
 								},
 								{
@@ -6543,7 +7185,10 @@
 									"argumentName": "scanMode",
 									"type": "string",
 									"additionalData": {
-										"values": ["all", "masked"]
+										"values": [
+											"all",
+											"masked"
+										]
 									}
 								}
 							]
@@ -6557,7 +7202,9 @@
 									"type": "string",
 									"description": "Checks whether one or more entities exist.",
 									"additionalData": {
-										"values": ["entity"]
+										"values": [
+											"entity"
+										]
 									}
 								},
 								{
@@ -6575,7 +7222,9 @@
 									"type": "string",
 									"description": "Check whether a score has a specific relation to another score.",
 									"additionalData": {
-										"values": ["score"]
+										"values": [
+											"score"
+										]
 									}
 								},
 								{
@@ -6593,7 +7242,13 @@
 									"argumentName": "operation",
 									"type": "string",
 									"additionalData": {
-										"values": ["<", "<=", "=", ">", ">="]
+										"values": [
+											"<",
+											"<=",
+											"=",
+											">",
+											">="
+										]
 									}
 								},
 								{
@@ -6618,7 +7273,9 @@
 									"type": "string",
 									"description": "Check whether a score is in a given range.",
 									"additionalData": {
-										"values": ["score"]
+										"values": [
+											"score"
+										]
 									}
 								},
 								{
@@ -6635,7 +7292,9 @@
 								{
 									"type": "string",
 									"additionalData": {
-										"values": ["matches"]
+										"values": [
+											"matches"
+										]
 									}
 								},
 								{
@@ -6653,7 +7312,9 @@
 									"type": "string",
 									"description": "Compares the block at a given position to a given block ID and state.",
 									"additionalData": {
-										"values": ["block"]
+										"values": [
+											"block"
+										]
 									}
 								},
 								{
@@ -6682,7 +7343,9 @@
 									"type": "string",
 									"description": "Compares the block at a given position to a given block ID and data value.",
 									"additionalData": {
-										"values": ["block"]
+										"values": [
+											"block"
+										]
 									}
 								},
 								{
@@ -6711,7 +7374,9 @@
 									"type": "string",
 									"description": "Compares the blocks in two equally sized volumes.",
 									"additionalData": {
-										"values": ["blocks"]
+										"values": [
+											"blocks"
+										]
 									}
 								},
 								{
@@ -6730,7 +7395,10 @@
 									"argumentName": "scanMode",
 									"type": "string",
 									"additionalData": {
-										"values": ["all", "masked"]
+										"values": [
+											"all",
+											"masked"
+										]
 									}
 								}
 							]
@@ -6744,7 +7412,9 @@
 									"type": "string",
 									"description": "Checks whether one or more entities exist.",
 									"additionalData": {
-										"values": ["entity"]
+										"values": [
+											"entity"
+										]
 									}
 								},
 								{
@@ -6762,7 +7432,9 @@
 									"type": "string",
 									"description": "Check whether a score has a specific relation to another score.",
 									"additionalData": {
-										"values": ["score"]
+										"values": [
+											"score"
+										]
 									}
 								},
 								{
@@ -6780,7 +7452,13 @@
 									"argumentName": "operation",
 									"type": "string",
 									"additionalData": {
-										"values": ["<", "<=", "=", ">", ">="]
+										"values": [
+											"<",
+											"<=",
+											"=",
+											">",
+											">="
+										]
 									}
 								},
 								{
@@ -6805,7 +7483,9 @@
 									"type": "string",
 									"description": "Check whether a score is in a given range.",
 									"additionalData": {
-										"values": ["score"]
+										"values": [
+											"score"
+										]
 									}
 								},
 								{
@@ -6822,7 +7502,9 @@
 								{
 									"type": "string",
 									"additionalData": {
-										"values": ["matches"]
+										"values": [
+											"matches"
+										]
 									}
 								},
 								{
@@ -6838,14 +7520,18 @@
 									"argumentName": "yaw",
 									"type": "string",
 									"additionalData": {
-										"values": ["~"]
+										"values": [
+											"~"
+										]
 									}
 								},
 								{
 									"argumentName": "pitch",
 									"type": "string",
 									"additionalData": {
-										"values": ["~"]
+										"values": [
+											"~"
+										]
 									}
 								}
 							]
@@ -6871,7 +7557,9 @@
 								{
 									"type": "string",
 									"additionalData": {
-										"values": ["as"]
+										"values": [
+											"as"
+										]
 									}
 								},
 								{
@@ -6926,7 +7614,9 @@
 								{
 									"type": "string",
 									"additionalData": {
-										"values": ["entity"]
+										"values": [
+											"entity"
+										]
 									}
 								},
 								{
@@ -6937,7 +7627,10 @@
 									"argumentName": "position",
 									"type": "string",
 									"additionalData": {
-										"values": ["eyes", "feet"]
+										"values": [
+											"eyes",
+											"feet"
+										]
 									}
 								}
 							]
@@ -6966,7 +7659,10 @@
 								{
 									"type": "string",
 									"additionalData": {
-										"values": ["feet", "eyes"]
+										"values": [
+											"feet",
+											"eyes"
+										]
 									}
 								}
 							]
@@ -6977,8 +7673,13 @@
 		},
 		{
 			"requires": {
-				"experimentalGameplay": ["enableGameTestFramework"],
-				"targetVersion": [">=", "1.19.60"]
+				"experimentalGameplay": [
+					"enableGameTestFramework"
+				],
+				"targetVersion": [
+					">=",
+					"1.19.60"
+				]
 			},
 			"commands": [
 				{
