@@ -7699,6 +7699,93 @@
 					]
 				}
 			]
+		},
+		{
+			"requires": {
+				"targetVersion": [
+					">=",
+					"1.19.80"
+				]
+			},
+			"commands": [
+				{
+					"commandName": "inputpermission",
+					"description": "Specify the operation for the player's permission status.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": [
+									"set"
+								]
+							}
+						},
+						{
+							"argumentName": "target",
+							"type": "selector"
+						},
+						{
+							"argumentName": "permission",
+							"type": "string",
+							"additionalData": {
+								"values": [
+									"movement",
+									"camera"
+								]
+							}
+						},
+						{
+							"argumentName": "state",
+							"type": "string",
+							"additionalData": {
+								"values": [
+									"enabled",
+									"disabled"
+								]
+							}
+						}
+					]
+				},
+				{
+					"commandName": "inputpermission",
+					"description": "Specify the operation for the player's permission status.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": [
+									"query"
+								]
+							}
+						},
+						{
+							"argumentName": "target",
+							"type": "selector"
+						},
+						{
+							"argumentName": "permission",
+							"type": "string",
+							"additionalData": {
+								"values": [
+									"movement",
+									"camera"
+								]
+							}
+						},
+						{
+							"argumentName": "state",
+							"type": "string",
+							"isOptional": true,
+							"additionalData": {
+								"values": [
+									"enabled",
+									"disabled"
+								]
+							}
+						}
+					]
+				}
+			]
 		}
 	]
 }
