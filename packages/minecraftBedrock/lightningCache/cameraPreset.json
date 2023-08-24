@@ -1,0 +1,10 @@
+[
+    {
+        "cacheKey": "identifier",
+        "path": "minecraft:camera_preset/identifier"
+    },
+    {
+        "cacheKey": "inheritorIdentifier",
+        "path": "minecraft:camera_preset/inherit_from"
+    }
+]

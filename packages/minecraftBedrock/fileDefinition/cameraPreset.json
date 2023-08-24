@@ -1,0 +1,22 @@
+{
+	"id": "cameraPreset",
+	"icon": "mdi-camera",
+	"detect": {
+		"packType": "behaviorPack",
+		"scope": "cameras/presets/",
+		"matcher": ["cameras/presets/**/*", "cameras/presets/*"],
+		"fileContent": ["minecraft:camera_preset"],
+		"fileExtensions": [".json"]
+	},
+
+	"schema": "file:///data/packages/minecraftBedrock/schema/cameraPreset/main.json",
+
+	"lightningCache": "cameraPreset.json",
+	"documentation": {
+		"baseUrl": "https://learn.microsoft.com/en-us/minecraft/creator/documents/cameracommandintroduction#camera-presets",
+		"supportsQuerying": true
+	},
+	"highlighterConfiguration": {
+		"typeIdentifiers": ["format_version", "identifier", "inherit_from"]
+	}
+}
