@@ -7787,5 +7787,37 @@
 				}
 			]
 		}
+		/*
+		{
+			"requires": {
+				"targetVersion": [ ">=", "1.20.0" ]
+			},
+			"commands": [
+				{
+					"commandName": "camera",
+					"description": "",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": [ "set" ]
+							}
+						},
+						{
+							"argumentName": "preset",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/camera_preset_identifiers"
+							}
+						}
+					]
+				}
+			]
+		}
+		*/
 	]
 }
