@@ -66,34 +66,34 @@
 			"$ref": "../../v1.19.40/behaviors/behavior.play.json"
 		},
 		"minecraft:behavior.wither_target_highest_damage": {
-			"$ref": "../../v1.19.20/behaviors/behavior.wither_target_highest_damage.json"
+			"$ref": "../../v1.19.80/behaviors/behavior.wither_target_highest_damage.json"
 		},
 		"minecraft:behavior.vex_copy_owner_target": {
-			"$ref": "../../v1.19.20/behaviors/behavior.vex_copy_owner_target.json"
+			"$ref": "../../v1.19.80/behaviors/behavior.vex_copy_owner_target.json"
 		},
 		"minecraft:behavior.swim_with_entity": {
 			"$ref": "../../v1.19.20/behaviors/behavior.swim_with_entity.json"
 		},
 		"minecraft:behavior.sneeze": {
-			"$ref": "../../v1.19.20/behaviors/behavior.sneeze.json"
+			"$ref": "../../v1.19.80/behaviors/behavior.sneeze.json"
 		},
 		"minecraft:behavior.share_items": {
-			"$ref": "../../v1.19.20/behaviors/behavior.share_items.json"
+			"$ref": "../../v1.19.80/behaviors/behavior.share_items.json"
 		},
 		"minecraft:behavior.owner_hurt_target": {
-			"$ref": "../../v1.19.20/behaviors/behavior.owner_hurt_target.json"
+			"$ref": "../../v1.19.80/behaviors/behavior.owner_hurt_target.json"
 		},
 		"minecraft:behavior.owner_hurt_by_target": {
-			"$ref": "../../v1.19.20/behaviors/behavior.owner_hurt_by_target.json"
+			"$ref": "../../v1.19.80/behaviors/behavior.owner_hurt_by_target.json"
 		},
 		"minecraft:behavior.nearest_attackable_target": {
 			"$ref": "../../v1.19.20/behaviors/behavior.nearest_attackable_target.json"
 		},
 		"minecraft:behavior.hurt_by_target": {
-			"$ref": "../../v1.19.20/behaviors/behavior.hurt_by_target.json"
+			"$ref": "../../v1.19.80/behaviors/behavior.hurt_by_target.json"
 		},
 		"minecraft:behavior.follow_caravan": {
-			"$ref": "../../v1.19.20/behaviors/behavior.follow_caravan.json"
+			"$ref": "../../v1.19.80/behaviors/behavior.follow_caravan.json"
 		},
 		"minecraft:behavior.drop_item_for": {
 			"$ref": "../../v1.19.20/behaviors/behavior.drop_item_for.json"
@@ -105,13 +105,13 @@
 			"$ref": "../../v1.19.20/behaviors/behavior.defend_village_target.json"
 		},
 		"minecraft:behavior.defend_trusted_target": {
-			"$ref": "../../v1.19.20/behaviors/behavior.defend_trusted_target.json"
+			"$ref": "../../v1.19.80/behaviors/behavior.defend_trusted_target.json"
 		},
 		"minecraft:behavior.avoid_mob_type": {
 			"$ref": "../../v1.19.20/behaviors/behavior.avoid_mob_type.json"
 		},
 		"minecraft:behavior.nearest_prioritized_attackable_target": {
-			"$ref": "../../v1.19.20/behaviors/behavior.nearest_prioritized_attackable_target.json"
+			"$ref": "../../v1.19.80/behaviors/behavior.nearest_prioritized_attackable_target.json"
 		},
 		"minecraft:behavior.drink_milk": {
 			"$ref": "../../v1.19.10/behaviors/behavior.drink_milk.json"
@@ -153,7 +153,7 @@
 			}
 		},
 		"minecraft:behavior.melee_attack": {
-			"$ref": "../../v1.17.0/behaviors/behavior.melee_attack.json"
+			"$ref": "../../v1.20.30/behaviors/behavior.melee_attack.json"
 		},
 		"minecraft:behavior.play_dead": {
 			"$ref": "../../v1.16.220/behaviors/behavior.play_dead.json"
