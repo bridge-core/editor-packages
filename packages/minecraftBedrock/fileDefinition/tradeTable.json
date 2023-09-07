@@ -15,6 +15,6 @@
 		"keywords": ["tiers"],
 		"variables": ["functions"],
 		"typeIdentifiers": ["item"],
-		"definitions": ["trades", "groups"]
+		"definitions": ["trades", "groups", "filters"]
 	}
 }
