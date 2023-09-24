@@ -1,0 +1,6 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Scenting",
+    "doNotSuggest": true,
+    "deprecationMessage": "Removed as of v1.20.40 - Use minecraft:behavior.timer_flag_1 instead to achieve the same functionality"
+}
