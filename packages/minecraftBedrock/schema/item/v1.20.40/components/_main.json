@@ -151,7 +151,7 @@
 					"$ref": "../../v1.16.100/components/icon.json"
 				},
 				"minecraft:interact_button": {
-					"$ref": "./interact_button.json"
+					"$ref": "../../v1.20.30/components/interact_button.json"
 				}
 			}
 		}
