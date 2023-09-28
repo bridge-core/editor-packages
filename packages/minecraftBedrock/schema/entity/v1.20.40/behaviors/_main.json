@@ -33,7 +33,7 @@
 			"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.0/behaviors/behavior.stay_near_noteblock.json"
 		},
 		"minecraft:behavior.random_search_and_dig": {
-			"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.70/behaviors/behavior.random_search_and_dig.json"
+			"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.20.40/behaviors/behavior.random_search_and_dig.json"
 		},
 		"minecraft:behavior.timer_flag_1": {
 			"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.20.40/behaviors/behavior.timer_flag_1.json"
