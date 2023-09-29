@@ -1,0 +1,6 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Explodeable",
+	"doNotSuggest": true,
+	"deprecationMessage": "Deprecated as of v1.20.20 - Whether the item entity survives an explosion."
+}

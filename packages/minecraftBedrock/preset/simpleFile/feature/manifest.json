@@ -5,7 +5,7 @@
 	"category": "fileType.simpleFile",
 	"requires": {
 		"packTypes": ["behaviorPack"],
-		"experimentalGameplay": ["creationOfCustomBiomes"]
+		"experimentalGameplay": []
 	},
 	"additionalModels": {
 		"PRESET_PATH": "features/",
@@ -29,9 +29,7 @@
 				["Snap to Surface Feature", "snapToSurface.json"],
 				["Vegetation Patch Feature", "vegetationPatch.json"],
 				["Geode Feature", "geode.json"],
-				["Multiface Feature", "multiface.json"],
-				["Beards and Shavers Feature", "beardsAndShavers.json"],
-				["Rect Layout Feature", "rectLayout.json"]
+				["Multiface Feature", "multiface.json"]
 			]
 		}
 	},
@@ -66,9 +64,7 @@
 					"Snap to Surface Feature",
 					"Vegetation Patch Feature",
 					"Geode Feature",
-					"Multiface Feature",
-					"Beards and Shavers Feature",
-					"Rect Layout Feature"
+					"Multiface Feature"
 				]
 			}
 		]

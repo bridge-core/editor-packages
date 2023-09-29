@@ -109,6 +109,8 @@
 					"description": "The name of the test to apply",
 					"enum": [
 						"actor_health", // v1.19.60+
+						"any_slot_empty", // v1.20.0+
+						"all_slots_empty", // v1.20.0+
 						"bool_property", // v1.19.40+
 						"clock_time",
 						"distance_to_nearest_player",
@@ -190,9 +192,7 @@
 						"target_distance", // v1.19.60+
 						"trusts",
 						"weather",
-						"weather_at_position",
-						"all_slots_empty",
-						"any_slot_empty"
+						"weather_at_position"
 					]
 				}
 			}
@@ -1176,7 +1176,12 @@
 					"value": {
 						"description": "Tests whether the current temperature is a given type.",
 						"type": "string",
-						"enum": ["cold", "ocean", "mild", "warm"]
+						"enum": [
+							"cold",
+							"ocean",
+							"mild",
+							"warm"
+						]
 					}
 				}
 			}

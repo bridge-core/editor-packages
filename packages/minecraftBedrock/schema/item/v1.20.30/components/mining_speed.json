@@ -1,0 +1,6 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Mining Speed",
+	"doNotSuggest": true,
+	"deprecationMessage": "Deprecated in favor of minecraft:digger (format version: v.1.30.20)."
+}

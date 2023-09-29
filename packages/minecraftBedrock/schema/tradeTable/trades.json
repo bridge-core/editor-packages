@@ -104,6 +104,9 @@
 									},
 									"functions": {
 										"$ref": "../lootTable/functions.json"
+									},
+									"filters": {
+										"$ref": "../entity/general/v1.16.0/filter.json"
 									}
 								}
 							}

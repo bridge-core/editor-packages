@@ -3,7 +3,11 @@
 	"title": "Manifest",
 	"description": "The manifest contains the basic information to register the pack into Minecraft.",
 	"type": "object",
-	"required": ["format_version", "header", "modules"],
+	"required": [
+		"format_version",
+		"header",
+		"modules"
+	],
 	"additionalProperties": false,
 	"definitions": {
 		"triple_integer": {
@@ -18,7 +22,10 @@
 	"properties": {
 		"format_version": {
 			"type": "integer",
-			"enum": [1, 2],
+			"enum": [
+				1,
+				2
+			],
 			"title": "Format Version",
 			"description": "This defines the current version of the manifest. Don't change this unless you have a good reason to."
 		},
@@ -26,7 +33,12 @@
 			"type": "object",
 			"title": "Header",
 			"description": "This is the heading of the manifest and is required for the manifest to be valid.",
-			"required": ["name", "description", "uuid", "version"],
+			"required": [
+				"name",
+				"description",
+				"uuid",
+				"version"
+			],
 			"additionalProperties": false,
 			"properties": {
 				"name": {
@@ -73,7 +85,11 @@
 				"type": "object",
 				"additionalProperties": false,
 				"title": "Module",
-				"required": ["type", "uuid", "version"],
+				"required": [
+					"type",
+					"uuid",
+					"version"
+				],
 				"properties": {
 					"type": {
 						"enum": [
@@ -108,7 +124,9 @@
 					},
 					"language": {
 						"type": "string",
-						"enum": ["javascript"]
+						"enum": [
+							"javascript"
+						]
 					}
 				}
 			}
@@ -121,10 +139,16 @@
 				"additionalProperties": false,
 				"oneOf": [
 					{
-						"required": ["uuid", "version"]
+						"required": [
+							"uuid",
+							"version"
+						]
 					},
 					{
-						"required": ["module_name", "version"]
+						"required": [
+							"module_name",
+							"version"
+						]
 					}
 				],
 				"properties": {
@@ -174,6 +198,18 @@
 									"mojang-minecraft-ui",
 									"mojang-minecraft-server-admin",
 									"mojang-net"
+								]
+							},
+							{
+								"type": "string",
+								"enum": [
+									"@minecraft/server",
+									"@minecraft/server-gametest",
+									"@minecraft/server-ui",
+									"@minecraft/server-admin",
+									"@minecraft/server-net",
+									"@minecraft/server-editor",
+									"@minecraft/vanilla-data"
 								]
 							}
 						]

@@ -7,7 +7,7 @@
 	"requires": {
 		"targetVersion": [">=", "1.16.100"],
 		"packTypes": ["behaviorPack", "resourcePack"],
-		"experimentalGameplay": ["creationOfCustomBiomes"]
+		"experimentalGameplay": []
 	},
 	"additionalModels": {
 		"DEFAULT_TEXTURE": "texture.png",
