@@ -1749,6 +1749,24 @@
 				"yellow_wool"
 			]
 		},
+		"prefixed_camera_preset_identifiers": {
+			"type": "string",
+			"enum": [
+				"minecraft:first_person",
+				"minecraft:third_person",
+				"minecraft:third_person_front",
+				"minecraft:free"
+			]
+		},
+		"unprefixed_camera_preset_identifiers": {
+			"type": "string",
+			"enum": [
+				"first_person",
+				"third_person",
+				"third_person_front",
+				"free"
+			]
+		},
 		"prefixed_item_identifiers": {
 			"type": "string",
 			"enum": [

@@ -1,0 +1,9 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "string",
+	// DEPRECATED:
+	// query.is_scenting
+	// query.is_rising
+	// query.is_feeling_happy
+	"enum": ["query.timer_flag_1", "query.timer_flag_2", "query.timer_flag_3", "query.is_in_lava"]
+}
