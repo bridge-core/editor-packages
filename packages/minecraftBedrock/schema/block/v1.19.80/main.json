@@ -4,7 +4,9 @@
 	"properties": {
 		"minecraft:block": {
 			"title": "Block Definition",
-			"required": ["description"],
+			"required": [
+				"description"
+			],
 			"type": "object",
 			"allOf": [
 				{
@@ -14,7 +16,6 @@
 							"title": "Description",
 							"$ref": "./description.json"
 						},
-
 						"components": {
 							"title": "Components",
 							"allOf": [
@@ -25,6 +26,34 @@
 									"$ref": "./components/_main.json"
 								}
 							]
+						},
+						"permutations": {
+							"title": "Permutations",
+							"description": "List of block permutations based on MoLang queries",
+							"type": "array",
+							"items": {
+								"type": "object",
+								"additionalProperties": false,
+								"properties": {
+									"condition": {
+										"title": "Condition",
+										"description": "MoLang condition",
+										"$ref": "/data/packages/minecraftBedrock/schema/molang/embedded.json"
+									},
+									"components": {
+										"title": "Components",
+										"description": "Components to add when the condition evaluates to 'true'",
+										"allOf": [
+											{
+												"$ref": "/data/packages/minecraftBedrock/schema/block/dynamic/customComponents.json"
+											},
+											{
+												"$ref": "./components/_main.json"
+											}
+										]
+									}
+								}
+							}
 						}
 					}
 				},
@@ -33,34 +62,6 @@
 					"then": {
 						"type": "object",
 						"properties": {
-							"permutations": {
-								"title": "Permutations",
-								"description": "List of block permutations based on MoLang queries",
-								"type": "array",
-								"items": {
-									"type": "object",
-									"additionalProperties": false,
-									"properties": {
-										"condition": {
-											"title": "Condition",
-											"description": "MoLang condition",
-											"$ref": "/data/packages/minecraftBedrock/schema/molang/embedded.json"
-										},
-										"components": {
-											"title": "Components",
-											"description": "Components to add when the condition evaluates to 'true'",
-											"allOf": [
-												{
-													"$ref": "/data/packages/minecraftBedrock/schema/block/dynamic/customComponents.json"
-												},
-												{
-													"$ref": "./components/_main.json"
-												}
-											]
-										}
-									}
-								}
-							},
 							"events": {
 								"title": "Events",
 								"type": "object",

@@ -7,9 +7,6 @@
 			"then": {
 				"type": "object",
 				"properties": {
-					"minecraft:transformation": {
-						"$ref": "../../v1.19.80/components/transformation.json"
-					},
 					"minecraft:queued_ticking": {
 						"$ref": "../../v1.19.10/components/queued_ticking.json"
 					},
@@ -49,6 +46,9 @@
 		{
 			"type": "object",
 			"properties": {
+				"minecraft:transformation": {
+					"$ref": "../../v1.19.80/components/transformation.json"
+				},
 				"minecraft:placement_filter": {
 					"$ref": "../../v1.16.100/components/placement_filter.json"
 				},

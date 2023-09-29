@@ -1,16 +1,10 @@
 {
   "version": "2",
   "remote": {
-    "https://cdn.skypack.dev/-/fflate@v0.7.1-cxSMGBdtEHP8PRtJiyCQ/dist=es2020,mode=imports,min/optimized/fflate.js": "59310534bcfb992c995f79405622afff6ec2d2c285f5e20e91d54b187a47cb91",
     "https://cdn.skypack.dev/-/fflate@v0.8.0-9lwslwAa54POmYjLobRf/dist=es2019,mode=imports,min/optimized/fflate.js": "ea55d28973170b0a00ec64b3982153e7baa4d6e0f7cc824375325e348fec4168",
-    "https://cdn.skypack.dev/-/json5@v2.2.0-2jpNGKqjKBnKA81QQzdk/dist=es2020,mode=imports/optimized/json5.js": "ece3fb60010a49b3198e9dd66a181ab394bdc8a784f5bacaafccd5511bb96197",
     "https://cdn.skypack.dev/-/json5@v2.2.3-595sOcismSLIYZuuBGYo/dist=es2019,mode=imports/optimized/json5.js": "e3902909af865e1bab65bf170d79bc0d6f72f2c3626601aed12d9b0aaee3169c",
-    "https://cdn.skypack.dev/-/lodash@v4.17.19-edyNmC6baEqCMCqcyujz/dist=es2020,mode=imports/optimized/lodash.js": "bcc865cc5063c2610ab88858a70aeb2860b893d64fe8b20d7e061d2117d1d288",
-    "https://cdn.skypack.dev/fflate?min": "e9e16254a3b68df2445618a2fda44b45620c41d3c249bd04386c9042e5da3fdc",
     "https://cdn.skypack.dev/fflate@0.8.0?min": "d320b73423a4efb176248d0771c2eab45fc8d4ce5a1994e6b7e00508e0187f72",
     "https://cdn.skypack.dev/json5": "9e731bca7ee24e6532af2f3745357ff72c9be405ebb2b0eba8489e589ba13ee8",
-    "https://cdn.skypack.dev/json5@v2.2.0": "e6e9ef9d4889d7f3030013633622f58507414b65a456e7b391f54a9a875011e6",
-    "https://cdn.skypack.dev/lodash@4.17.19": "74c56e20a6ebc37226c5e67fca33598db16f4e5ec6f97bcffe6cd9cd550fee61",
     "https://deno.land/std@0.103.0/_util/assert.ts": "2f868145a042a11d5ad0a3c748dcf580add8a0dbc0e876eaa0026303a5488f58",
     "https://deno.land/std@0.103.0/_util/os.ts": "4bfbbb53cf87ec0c0f562b5b836c4d5392faa0365a30580cdfd3acb9944dcca1",
     "https://deno.land/std@0.103.0/path/_constants.ts": "1247fee4a79b70c89f23499691ef169b41b6ccf01887a0abd131009c5581b853",

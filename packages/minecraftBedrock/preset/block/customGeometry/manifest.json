@@ -4,12 +4,21 @@
 	"description": "Creates a new, basic block with custom geometry.",
 	"category": "fileType.block",
 	"requires": {
-		"targetVersion": [">=", "1.16.100"],
-		"packTypes": ["behaviorPack", "resourcePack"]
+		"targetVersion": [
+			">=",
+			"1.19.50"
+		],
+		"packTypes": [
+			"behaviorPack",
+			"resourcePack"
+		]
 	},
 	"additionalModels": {
 		"DEFAULT_TEXTURE": "texture.png",
-		"MODEL_SAVE_PATH": ["resourcePack", "models/blocks/"],
+		"MODEL_SAVE_PATH": [
+			"resourcePack",
+			"models/blocks/"
+		],
 		"DEFAULT_MODEL": "geometry.json",
 		"PRESET_PATH": ""
 	},
@@ -17,9 +26,23 @@
 		[
 			"Identifier",
 			"IDENTIFIER",
-			{ "validate": ["required", "alphanumeric", "lowercase"] }
+			{
+				"validate": [
+					"required",
+					"alphanumeric",
+					"lowercase"
+				]
+			}
 		],
-		["Display Name", "IDENTIFIER_NAME", { "validate": ["required"] }],
+		[
+			"Display Name",
+			"IDENTIFIER_NAME",
+			{
+				"validate": [
+					"required"
+				]
+			}
+		],
 		[
 			"Block Model",
 			"MODEL",
@@ -41,13 +64,16 @@
 			}
 		]
 	],
-
 	"createFiles": [
 		[
 			"block.json",
 			"blocks/{{PRESET_PATH}}{{IDENTIFIER}}.json",
 			{
-				"inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"],
+				"inject": [
+					"IDENTIFIER",
+					"PROJECT_PREFIX",
+					"PRESET_PATH"
+				],
 				"openFile": true,
 				"packPath": "behaviorPack"
 			}
@@ -60,7 +86,10 @@
 			"clientBlock.json",
 			"blocks.json",
 			{
-				"inject": ["IDENTIFIER", "PROJECT_PREFIX"],
+				"inject": [
+					"IDENTIFIER",
+					"PROJECT_PREFIX"
+				],
 				"packPath": "resourcePack"
 			}
 		],
@@ -68,7 +97,11 @@
 			"en_US.lang",
 			"texts/en_US.lang",
 			{
-				"inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"],
+				"inject": [
+					"IDENTIFIER",
+					"IDENTIFIER_NAME",
+					"PROJECT_PREFIX"
+				],
 				"packPath": "resourcePack"
 			}
 		]
