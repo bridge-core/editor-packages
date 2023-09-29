@@ -148,7 +148,7 @@
 					"$ref": "../../v1.16.100/components/entity_placer.json"
 				},
 				"minecraft:icon": {
-					"$ref": "../../v1.16.100/components/icon.json"
+					"$ref": "./icon.json"
 				},
 				"minecraft:interact_button": {
 					"$ref": "../../v1.20.30/components/interact_button.json"
