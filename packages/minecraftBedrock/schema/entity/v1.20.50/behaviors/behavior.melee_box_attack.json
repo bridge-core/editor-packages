@@ -1,0 +1,173 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows an entity to deal damage through a melee attack.",
+	"type": "object",
+	"title": "Melee Attack",
+	"properties": {
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
+		"attack_once": {
+			"title": "Attack Once",
+			"description": "Allows the entity to use this attack behavior, only once EVER.",
+			"type": "boolean",
+			"default": false
+		},
+		"melee_fov": {
+			"title": "Melee FOV",
+			"description": "The allowable FOV the actor will use to determine if it can make a valid melee attack.",
+			"$ref": "../../../general/degree.json",
+			"default": 90
+		},
+		"random_stop_interval": {
+			"title": "Random Stop Interval",
+			"description": "Defines the probability the mob will stop fighting. A value of 0 disables randomly stopping, while a value of 1 defines a 50% chance.",
+			"type": "integer",
+			"default": 0
+		},
+		"horizontal_reach": {
+			"title": "Horizontal Reach",
+			"description": "The attack reach of the mob will be a box with the size of the mobs bounds increased by this value in all horizontal directions.",
+			"type": "number",
+			"default": 0.8
+		},
+		"require_complete_path": {
+			"title": "Require Complete Path",
+			"description": "If true, this goal will only trigger if the mob can reach its target.",
+			"type": "boolean",
+			"default": false
+		},
+		"speed_multiplier": {
+			"title": "Speed Multiplier",
+			"description": "Movement speed multiplier of the mob when using this AI Goal.",
+			"type": "number",
+			"default": 1.0
+		},
+		"track_target": {
+			"title": "Track Target",
+			"description": "If true, this mob will chase after the target as long as it's a valid target.",
+			"type": "boolean",
+			"default": false
+		},
+		"look_distance": {
+			"title": "Look Distance",
+			"type": "number"
+		},
+		"untrackable_cooldown_delay": {
+			"title": "Untrackable Cooldown Delay",
+			"type": "number"
+		},
+		"target_tracking": {
+			"title": "Target Tracking",
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"refresh_period_min": {
+					"title": "Refresh Period Min",
+					"type": "number"
+				},
+				"refresh_period_max": {
+					"title": "Refresh Period Max",
+					"type": "number"
+				},
+				"backoff": {
+					"title": "Backoff",
+					"type": "array",
+					"items": {
+						"type": "object",
+						"additionalProperties": false,
+						"properties": {
+							"distance_squared_gt": {
+								"title": "Distance Squared GT",
+								"type": "number"
+							},
+							"refresh_period_delta": {
+								"title": "Refresh Period Delta",
+								"type": "number"
+							}
+						}
+					}
+				}
+			}
+		},
+		"on_attack": {
+			"title": "Event: On Attack",
+			"$ref": "../../general/v1.16.0/eventDefinition.json"
+		},
+		"on_kill": {
+			"title": "Event: On Kill",
+			"$ref": "../../general/v1.16.0/eventDefinition.json"
+		},
+		"cooldown_time": {
+			"title": "Cooldown Time",
+			"description": "Cooldown time (in seconds) between attacks.",
+			"type": "number",
+			"default": 1.0
+		},
+		"inner_boundary_time_increase": {
+			"title": "Inner Boundary Time Increase",
+			"description": "Time (in seconds) to add to attack path recalculation when the target is beyond the 'path_inner_boundary'.",
+			"type": "number",
+			"default": 0.25
+		},
+		"max_path_time": {
+			"title": "Maximum Path Time",
+			"description": "Maximum base time (in seconds) to recalculate new attack path to target (before increases applied).",
+			"type": "number",
+			"default": 0.55
+		},
+		"min_path_time": {
+			"title": "Minimum Path Time",
+			"description": "Minimum base time (in seconds) to recalculate new attack path to target (before increases applied).",
+			"type": "number",
+			"default": 0.2
+		},
+		"outer_boundary_time_increase": {
+			"title": "Outer Boundary Time Increase",
+			"description": "Time (in seconds) to add to attack path recalculation when the target is beyond the 'path_outer_boundary'.",
+			"type": "number",
+			"default": 0.5
+		},
+		"path_fail_time_increase": {
+			"title": "Path Fail Time Increase",
+			"description": "Time (in seconds) to add to attack path recalculation when this entity cannot move along the current path.",
+			"type": "number",
+			"default": 0.75
+		},
+		"path_inner_boundary": {
+			"title": "Path Inner Boundary",
+			"description": "Distance at which to increase attack path recalculation by 'inner_boundary_tick_increase'.",
+			"type": "number",
+			"default": 16
+		},
+		"path_outer_boundary": {
+			"title": "Path Outer Boundary",
+			"description": "Distance at which to increase attack path recalculation by 'outer_boundary_tick_increase'.",
+			"type": "number",
+			"default": 32
+		},
+		"set_persistent": {
+			"title": "Set Persistent",
+			"description": "Allows the actor to be set to persist upon targeting a player.",
+			"type": "boolean",
+			"default": false
+		},
+		"x_max_rotation": {
+			"title": "X Max Rotation",
+			"description": "Maximum rotation (in degrees), on the X-axis, this entity can rotate while trying to look at the target.",
+			"type": "number",
+			"default": 30
+		},
+		"y_max_head_rotation": {
+			"title": "Y Max Head Rotation",
+			"description": "Maximum rotation (in degrees), on the Y-axis, this entity can rotate its head while trying to look at the target.",
+			"type": "number",
+			"default": 30
+		},
+		"can_spread_on_fire": {
+			"title": "Can Spread on Fire",
+			"description": "If the entity is on fire, this allows the entity's target to catch on fire after being hit.",
+			"type": "boolean",
+			"default": false
+		}
+	}
+}
