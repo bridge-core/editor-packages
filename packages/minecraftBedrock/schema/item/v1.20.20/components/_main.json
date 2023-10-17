@@ -133,7 +133,7 @@
 					"$ref": "../../v1.10.0/components/stacked_by_data.json"
 				},
 				"minecraft:glint": {
-					"$ref": ".//glint.json"
+					"$ref": "./glint.json"
 				},
 				"minecraft:display_name": {
 					"$ref": "../../v1.16.100/components/display_name.json"
