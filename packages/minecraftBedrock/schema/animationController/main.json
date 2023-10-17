@@ -10,6 +10,7 @@
 		},
 		"animation_controllers": {
 			"title": "Animation Controllers",
+			"type": "object",
 			"propertyNames": {
 				"pattern": "^controller.animation\\..+$"
 			},
