@@ -50,10 +50,7 @@
 			"type": "string",
 			"anyOf": [
 				{
-					"$ref": "../vanilla/identifiers.json#/definitions/prefixed_camera_preset_identifiers"
-				},
-				{
-					"$ref": "../vanilla/identifiers.json#/definitions/unprefixed_camera_preset_identifiers"
+					"enum": ["minecraft:free", "free"]
 				},
 				{
 					"$ref": "../../cameraPreset/dynamic/identifierEnum.json"
