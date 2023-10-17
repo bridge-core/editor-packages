@@ -55,6 +55,7 @@
 						"materials": {
 							"title": "Materials",
 							"description": "Defines the materials used in the attachable.",
+							"type": "object",
 							"patternProperties": {
 								".*": {
 									"$ref": "../general/vanilla/material.json"
@@ -64,6 +65,7 @@
 						"textures": {
 							"title": "Textures",
 							"description": "Defines the textures used in the attachable.",
+							"type": "object",
 							"patternProperties": {
 								".*": {
 									"$ref": "../general/reference/paths.json#/definitions/entity_texture_paths"

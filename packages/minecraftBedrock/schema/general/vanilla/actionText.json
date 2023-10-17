@@ -43,6 +43,7 @@
 		"action.interact.trade",
 		"action.interact.unballoon",
 		"action.interact.unleash",
+		"action.interact.use",
 		"action.interact.wakevillager",
 		"action.interact.write"
 	]

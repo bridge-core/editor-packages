@@ -10,6 +10,7 @@
 		},
 		"animations": {
 			"title": "Animations",
+			"type": "object",
 			"propertyNames": {
 				"pattern": "^animation\\..+$"
 			},
@@ -35,6 +36,7 @@
 						},
 						"timeline": {
 							"title": "Timeline",
+							"type": "object",
 							"propertyNames": {
 								"pattern": "^\\d+(\\.\\d+)?$"
 							},
