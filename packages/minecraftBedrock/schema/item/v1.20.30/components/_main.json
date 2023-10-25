@@ -19,7 +19,7 @@
 						"$ref": "../../v1.20.20/components/ignores_permission.json"
 					},
 					"minecraft:mining_speed": {
-						"$ref": "../../v1.16.100/components/mining_speed.json"
+						"$ref": "../../v1.20.30/components/mining_speed.json"
 					},
 					"minecraft:mirrored_art": {
 						"$ref": "../../v1.20.20/components/mirrored_art.json"
