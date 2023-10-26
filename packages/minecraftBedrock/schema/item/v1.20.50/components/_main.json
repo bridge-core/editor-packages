@@ -7,7 +7,7 @@
 				"type": "object",
 				"properties": {
 					"minecraft:chargeable": {
-						"$ref": "../../v1.19.0/components/chargeable.json"
+						"$ref": "./chargeable.json"
 					},
 					"minecraft:item_storage": {
 						"$ref": "../../v1.18.10/components/item_storage.json"
@@ -19,7 +19,7 @@
 						"$ref": "../../v1.20.20/components/ignores_permission.json"
 					},
 					"minecraft:mining_speed": {
-						"$ref": "../../v1.16.100/components/mining_speed.json"
+						"$ref": "../../v1.20.30/components/mining_speed.json"
 					},
 					"minecraft:mirrored_art": {
 						"$ref": "../../v1.20.20/components/mirrored_art.json"
@@ -28,13 +28,13 @@
 						"$ref": "../../v1.20.20/components/armor.json"
 					},
 					"minecraft:weapon": {
-						"$ref": "../../v1.20.40/weapon.json"
+						"$ref": "../../v1.20.40/components/weapon.json"
 					},
 					"minecraft:on_use_on": {
-						"$ref": "../../v1.20.40/on_use_on.json"
+						"$ref": "../../v1.20.40/components/on_use_on.json"
 					},
 					"minecraft:on_use": {
-						"$ref": "../../v1.20.40/on_use.json"
+						"$ref": "../../v1.20.40/components/on_use.json"
 					},
 					"minecraft:fertilizer": {
 						"$ref": "../../v1.16.100/components/fertilizer.json"
@@ -117,8 +117,11 @@
 				"minecraft:cooldown": {
 					"$ref": "../../v1.16.100/components/cooldown.json"
 				},
+				"minecraft:use_modifiers": {
+					"$ref": "./use_modifiers.json"
+				},
 				"minecraft:use_duration": {
-					"$ref": "../../v1.10.0/components/use_duration.json"
+					"$ref": "./use_duration.json"
 				},
 				"minecraft:max_stack_size": {
 					"$ref": "../../v1.10.0/components/max_stack_size.json"

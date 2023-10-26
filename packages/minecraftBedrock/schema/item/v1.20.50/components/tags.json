@@ -1,5 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Tags",
+    "description": "Determines which tags an item has on it.",
     "type": "array",
     "items": {
         "type": "string"
