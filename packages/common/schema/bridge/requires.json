@@ -54,7 +54,21 @@
 		"dependencies": {
 			"type": "array",
 			"items": {
-				"type": "string"
+				"type": "object",
+				"properties": {
+					"module_name": {
+						"type": "string"
+					}
+				},
+				"anyOf": [
+					{
+						"properties": {
+							"version": {
+								"type": "string"
+							}
+						}
+					}
+				]
 			}
 		},
 		"matchAll": {
