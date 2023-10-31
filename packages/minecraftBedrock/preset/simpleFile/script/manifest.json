@@ -4,8 +4,7 @@
 	"description": "Creates a blank script.",
 	"category": "fileType.simpleFile",
 	"requires": {
-		"packTypes": ["behaviorPack"],
-		"targetVersion": [">=", "1.16.210"]
+		"packTypes": ["behaviorPack"]
 	},
 	"additionalModels": {
 		"PRESET_PATH": "scripts/"
@@ -25,8 +24,8 @@
 		],
 		["File Name", "FILE_NAME", { "validate": ["required"] }],
 		[
-			"Register GameTest template",
-			"GAMETEST",
+			"Use scripting template",
+			"TEMPLATE",
 			{
 				"type": "switch"
 			}
