@@ -19,6 +19,9 @@
 		},
 		{
 			"$ref": "../../animationController/dynamic/entityTagEnum.json"
+		},
+		{
+			"type": "string"
 		}
 	]
 }

@@ -25,9 +25,10 @@
 					"propertyNames": {
 						"$ref": "../../../geometry/dynamic/boneEnum.json"
 					},
-					"additionalProperties": {
-						"type": "boolean",
-						"default": true
+					"patternProperties": {
+						".+": {
+							"$ref": "../../../molang/embedded.json"
+						}
 					}
 				}
 			}
