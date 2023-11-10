@@ -95,8 +95,8 @@
 		"minecraft:behavior.enderman_take_block": {
 			"$ref": "./behavior.enderman_take_block.json"
 		},
-		"minecraft:behavior.equip_items": {
-			"$ref": "./behavior.equip_items.json"
+		"minecraft:behavior.equip_item": {
+			"$ref": "./behavior.equip_item.json"
 		},
 		"minecraft:behavior.explore_outskirts": {
 			"$ref": "./behavior.explore_outskirts.json"
