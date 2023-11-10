@@ -199,7 +199,7 @@
 		"minecraft:behavior.eat_carried_item",
 		"minecraft:behavior.enderman_leave_block",
 		"minecraft:behavior.enderman_take_block",
-		"minecraft:behavior.equip_items",
+		"minecraft:behavior.equip_item",
 		"minecraft:behavior.explore_outskirts",
 		"minecraft:behavior.find_cover",
 		"minecraft:behavior.find_mount",
