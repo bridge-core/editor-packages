@@ -3,28 +3,28 @@
 	"type": "object",
 	"properties": {
 		"minecraft:destroy_time": {
-			"$ref": "./destroy_time.json"
+			"$ref": "../../v1.16.0/components/destroy_time.json"
 		},
 		"minecraft:block_light_emission": {
-			"$ref": "./block_light_emission.json"
+			"$ref": "../../v1.16.0/components/block_light_emission.json"
 		},
 		"minecraft:block_light_absorption": {
-			"$ref": "./block_light_absorption.json"
+			"$ref": "../../v1.16.0/components/block_light_absorption.json"
 		},
 		"minecraft:map_color": {
-			"$ref": "./map_color.json"
+			"$ref": "../../v1.16.0/components/map_color.json"
 		},
 		"minecraft:flammable": {
-			"$ref": "./flammable.json"
+			"$ref": "../../v1.16.0/components/flammable.json"
 		},
 		"minecraft:friction": {
-			"$ref": "./friction.json"
+			"$ref": "../../v1.16.0/components/friction.json"
 		},
 		"minecraft:explosion_resistance": {
-			"$ref": "./explosion_resistance.json"
+			"$ref": "../../v1.16.0/components/explosion_resistance.json"
 		},
 		"minecraft:loot": {
-			"$ref": "./loot.json"
+			"$ref": "../../v1.16.0/components/loot.json"
 		}
 	}
 }

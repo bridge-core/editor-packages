@@ -9,7 +9,7 @@
 				"type": "object",
 				"anyOf": [
 					{
-						"$ref": "../../dynamic/currentContext/propertyProperty.json"
+						"$ref": "../../entity/dynamic/currentContext/propertyProperty.json"
 					},
 					{
 						"patternProperties": {
