@@ -47,7 +47,7 @@
 			"type": "object",
 			"properties": {
 				"minecraft:transformation": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.19.80/components/transformation.json"
+					"$ref": "../../v1.19.80/components/transformation.json"
 				},
 				"minecraft:placement_filter": {
 					"$ref": "../../v1.16.100/components/placement_filter.json"

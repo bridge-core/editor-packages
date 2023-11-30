@@ -89,7 +89,7 @@
 						"type": "object",
 						"patternProperties": {
 							".*": {
-								"$ref": "/data/packages/minecraftBedrock/schema/entity/dynamic/currentContext/propertyForAlias.json"
+								"$ref": "../dynamic/currentContext/propertyForAlias.json"
 							}
 						}
 					},

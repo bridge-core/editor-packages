@@ -50,7 +50,7 @@
 												"$ref": "./components/_main.json"
 											},
 											{
-												"$ref": "/data/packages/minecraftBedrock/schema/entity/dynamic/customComponents.json"
+												"$ref": "../dynamic/customComponents.json"
 											}
 										]
 									}
@@ -99,22 +99,22 @@
 									"properties": {
 										"condition": {
 											"title": "Condition",
-											"$ref": "/data/packages/minecraftBedrock/schema/molang/embedded.json"
+											"$ref": "../../molang/embedded.json"
 										},
 										"components": {
 											"title": "Components",
 											"allOf": [
 												{
-													"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.60/components/_main.json"
+													"$ref": "../v1.19.60/components/_main.json"
 												},
 												{
-													"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.60/annotations/_main.json"
+													"$ref": "../v1.19.60/annotations/_main.json"
 												},
 												{
-													"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.60/behaviors/_main.json"
+													"$ref": "../v1.19.60/behaviors/_main.json"
 												},
 												{
-													"$ref": "/data/packages/minecraftBedrock/schema/entity/dynamic/customComponents.json"
+													"$ref": "../dynamic/customComponents.json"
 												}
 											]
 										}

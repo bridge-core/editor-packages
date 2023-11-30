@@ -8,12 +8,12 @@
 			"type": "object",
 			"anyOf": [
 				{
-					"$ref": "/data/packages/minecraftBedrock/schema/entity/dynamic/currentContext/propertyProperty.json"
+					"$ref": "../../entity/dynamic/currentContext/propertyProperty.json"
 				},
 				{
 					"patternProperties": {
 						".*": {
-							"$ref": "/data/packages/minecraftBedrock/schema/molang/embedded.json"
+							"$ref": "../../molang/embedded.json"
 						}
 					}
 				}

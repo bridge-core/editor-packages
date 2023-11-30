@@ -8,19 +8,19 @@
 			"then": {
 				"properties": {
 					"minecraft:vibration_listener": {
-						"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.18.30/components/vibration_listener.json"
+						"$ref": "../../v1.18.30/components/vibration_listener.json"
 					},
 					"minecraft:anger_level": {
-						"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.0/components/anger_level.json"
+						"$ref": "../../v1.19.0/components/anger_level.json"
 					},
 					"minecraft:heartbeat": {
-						"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.0/components/heartbeat.json"
+						"$ref": "../../v1.19.0/components/heartbeat.json"
 					},
 					"minecraft:suspect_tracking": {
-						"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.0/components/suspect_tracking.json"
+						"$ref": "../../v1.19.0/components/suspect_tracking.json"
 					},
 					"minecraft:vibration_damper": {
-						"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.0/components/vibration_damper.json"
+						"$ref": "../../v1.19.0/components/vibration_damper.json"
 					}
 				}
 			}
@@ -29,13 +29,13 @@
 		{
 			"properties": {
 				"minecraft:variable_max_auto_step": {
-					"$ref": "./variable_max_auto_step.json"
+					"$ref": "../../v1.19.60/components/variable_max_auto_step.json"
 				},
 				"minecraft:shooter": {
-					"$ref": "./shooter.json"
+					"$ref": "../../v1.19.60/components/shooter.json"
 				},
 				"minecraft:inventory": {
-					"$ref": "./inventory.json"
+					"$ref": "../../v1.19.60/components/inventory.json"
 				},
 				"minecraft:physics": {
 					"$ref": "../../v1.19.50/components/physics.json"
@@ -61,10 +61,10 @@
 				"minecraft:interact": {
 					"$ref": "../../../project/experimentalGameplay/theWildUpdate.json",
 					"then": {
-						"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.0/components/interact.json"
+						"$ref": "../../v1.19.0/components/interact.json"
 					},
 					"else": {
-						"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.18.20/components/interact.json"
+						"$ref": "../../v1.18.20/components/interact.json"
 					}
 				},
 				"minecraft:block_sensor": {

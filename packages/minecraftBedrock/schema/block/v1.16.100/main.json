@@ -44,17 +44,17 @@
 										"condition": {
 											"title": "Condition",
 											"description": "MoLang condition",
-											"$ref": "/data/packages/minecraftBedrock/schema/molang/embedded.json"
+											"$ref": "../../embedded.json"
 										},
 										"components": {
 											"title": "Components",
 											"description": "Components to add when the condition evaluates to 'true'",
 											"allOf": [
 												{
-													"$ref": "/data/packages/minecraftBedrock/schema/block/dynamic/customComponents.json"
+													"$ref": "../dynamic/customComponents.json"
 												},
 												{
-													"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/_main.json"
+													"$ref": "../v1.16.100/components/_main.json"
 												}
 											]
 										}
@@ -66,15 +66,15 @@
 								"type": "object",
 								"allOf": [
 									{
-										"$ref": "/data/packages/minecraftBedrock/schema/block/dynamic/currentContext/eventReferenceProperty.json"
+										"$ref": "../dynamic/currentContext/eventReferenceProperty.json"
 									},
 									{
-										"$ref": "/data/packages/minecraftBedrock/schema/project/projectPrefix.json"
+										"$ref": "../../project/projectPrefix.json"
 									},
 									{
 										"patternProperties": {
 											".*": {
-												"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/event.json"
+												"$ref": "../v1.16.100/event.json"
 											}
 										}
 									}

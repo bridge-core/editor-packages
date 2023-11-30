@@ -45,10 +45,10 @@
 									]
 								},
 								{
-									"$ref": "/data/packages/minecraftBedrock/schema/recipe/dynamic/recipeTagEnum.json"
+									"$ref": "../dynamic/recipeTagEnum.json"
 								},
 								{
-									"$ref": "/data/packages/minecraftBedrock/schema/block/dynamic/recipeTagEnum.json"
+									"$ref": "../../block/dynamic/recipeTagEnum.json"
 								}
 							]
 						}
@@ -72,10 +72,10 @@
 									]
 								},
 								{
-									"$ref": "/data/packages/minecraftBedrock/schema/recipe/dynamic/recipeTagEnum.json"
+									"$ref": "../dynamic/recipeTagEnum.json"
 								},
 								{
-									"$ref": "/data/packages/minecraftBedrock/schema/block/dynamic/recipeTagEnum.json"
+									"$ref": "../../block/dynamic/recipeTagEnum.json"
 								}
 							]
 						}
