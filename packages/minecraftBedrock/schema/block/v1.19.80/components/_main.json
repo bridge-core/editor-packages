@@ -8,37 +8,37 @@
 				"type": "object",
 				"properties": {
 					"minecraft:queued_ticking": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.19.10/components/queued_ticking.json"
+						"$ref": "../../v1.19.10/components/queued_ticking.json"
 					},
 					"minecraft:unit_cube": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/unit_cube.json"
+						"$ref": "../../v1.16.100/components/unit_cube.json"
 					},
 					"minecraft:on_step_on": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/on_step_on.json"
+						"$ref": "../../v1.16.100/components/on_step_on.json"
 					},
 					"minecraft:on_step_off": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/on_step_off.json"
+						"$ref": "../../v1.16.100/components/on_step_off.json"
 					},
 					"minecraft:on_player_destroyed": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/on_player_destroyed.json"
+						"$ref": "../../v1.16.100/components/on_player_destroyed.json"
 					},
 					"minecraft:on_fall_on": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/on_fall_on.json"
+						"$ref": "../../v1.16.100/components/on_fall_on.json"
 					},
 					"minecraft:on_placed": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/on_placed.json"
+						"$ref": "../../v1.16.100/components/on_placed.json"
 					},
 					"minecraft:on_player_placing": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/on_player_placing.json"
+						"$ref": "../../v1.16.100/components/on_player_placing.json"
 					},
 					"minecraft:on_interact": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/on_interact.json"
+						"$ref": "../../v1.16.100/components/on_interact.json"
 					},
 					"minecraft:random_ticking": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/random_ticking.json"
+						"$ref": "../../v1.16.100/components/random_ticking.json"
 					},
 					"minecraft:rotation": {
-						"$ref": "./rotation.json"
+						"$ref": "../../v1.19.80/components/rotation.json"
 					}
 				}
 			}
@@ -47,7 +47,7 @@
 			"type": "object",
 			"properties": {
 				"minecraft:transformation": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.19.80/components/transformation.json"
+					"$ref": "../../v1.19.80/components/transformation.json"
 				},
 				"minecraft:placement_filter": {
 					"$ref": "../../v1.16.100/components/placement_filter.json"
@@ -68,7 +68,7 @@
 					"$ref": "../../v1.16.100/components/material_instances.json"
 				},
 				"minecraft:geometry": {
-					"$ref": "/data/packages/minecraftBedrock/schema/block/v1.19.80/components/geometry.json"
+					"$ref": "../../v1.19.80/components/geometry.json"
 				},
 				"minecraft:light_dampening": {
 					"$ref": "../../v1.19.40/components/light_dampening.json"

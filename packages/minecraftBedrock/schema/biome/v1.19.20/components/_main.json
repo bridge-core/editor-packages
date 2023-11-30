@@ -7,7 +7,7 @@
 			"then": {
 				"properties": {
 					"minecraft:mountain_parameters": {
-						"$ref": "/data/packages/minecraftBedrock/schema/biome/v1.16.210/components/mountain_parameters.json"
+						"$ref": "../../v1.16.210/components/mountain_parameters.json"
 					}
 				}
 			}

@@ -3,46 +3,46 @@
 	"type": "object",
 	"properties": {
 		"minecraft:behavior.dig": {
-			"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.10/behaviors/behavior.dig.json"
+			"$ref": "../../v1.19.10/behaviors/behavior.dig.json"
 		},
 		"minecraft:behavior.go_and_give_items_to_noteblock": {
-			"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.0/behaviors/behavior.go_and_give_items_to_noteblock.json"
+			"$ref": "../../v1.19.0/behaviors/behavior.go_and_give_items_to_noteblock.json"
 		},
 		"minecraft:behavior.go_and_give_items_to_owner": {
-			"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.0/behaviors/behavior.go_and_give_items_to_owner.json"
+			"$ref": "../../v1.19.0/behaviors/behavior.go_and_give_items_to_owner.json"
 		},
 		"minecraft:behavior.croak": {
-			"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.0/behaviors/behavior.croak.json"
+			"$ref": "../../v1.19.0/behaviors/behavior.croak.json"
 		},
 		"minecraft:behavior.eat_mob": {
-			"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.0/behaviors/behavior.eat_mob.json"
+			"$ref": "../../v1.19.0/behaviors/behavior.eat_mob.json"
 		},
 		"minecraft:behavior.emerge": {
-			"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.0/behaviors/behavior.emerge.json"
+			"$ref": "../../v1.19.0/behaviors/behavior.emerge.json"
 		},
 		"minecraft:behavior.investigate_suspicious_location": {
-			"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.0/behaviors/behavior.investigate_suspicious_location.json"
+			"$ref": "../../v1.19.0/behaviors/behavior.investigate_suspicious_location.json"
 		},
 		"minecraft:behavior.roar": {
-			"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.0/behaviors/behavior.roar.json"
+			"$ref": "../../v1.19.0/behaviors/behavior.roar.json"
 		},
 		"minecraft:behavior.sniff": {
-			"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.0/behaviors/behavior.sniff.json"
+			"$ref": "../../v1.19.0/behaviors/behavior.sniff.json"
 		},
 		"minecraft:behavior.stay_near_noteblock": {
-			"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.0/behaviors/behavior.stay_near_noteblock.json"
+			"$ref": "../../v1.19.0/behaviors/behavior.stay_near_noteblock.json"
 		},
 		"minecraft:behavior.random_search_and_dig": {
-			"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.70/behaviors/behavior.random_search_and_dig.json"
+			"$ref": "../../v1.19.70/behaviors/behavior.random_search_and_dig.json"
 		},
 		"minecraft:behavior.feeling_happy": {
-			"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.70/behaviors/behavior.feeling_happy.json"
+			"$ref": "../../v1.19.70/behaviors/behavior.feeling_happy.json"
 		},
 		"minecraft:behavior.rising": {
-			"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.70/behaviors/behavior.rising.json"
+			"$ref": "../../v1.19.70/behaviors/behavior.rising.json"
 		},
 		"minecraft:behavior.scenting": {
-			"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.70/behaviors/behavior.scenting.json"
+			"$ref": "../../v1.19.70/behaviors/behavior.scenting.json"
 		},
 		"minecraft:behavior.trade_with_player": {
 			"$ref": "../../v1.19.60/behaviors/behavior.trade_with_player.json"
@@ -128,10 +128,10 @@
 		"minecraft:behavior.follow_owner": {
 			"$ref": "../../../project/experimentalGameplay/theWildUpdate.json",
 			"then": {
-				"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.18.30/behaviors/behavior.follow_owner.json"
+				"$ref": "../../v1.18.30/behaviors/behavior.follow_owner.json"
 			},
 			"else": {
-				"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.16.0/behaviors/behavior.follow_owner.json"
+				"$ref": "../../v1.16.0/behaviors/behavior.follow_owner.json"
 			}
 		},
 		"minecraft:behavior.work_composter": {
@@ -146,10 +146,10 @@
 		"minecraft:behavior.lay_egg": {
 			"$ref": "../../../project/experimentalGameplay/theWildUpdate.json",
 			"then": {
-				"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.18.10/behaviors/behavior.lay_egg.json"
+				"$ref": "../../v1.18.10/behaviors/behavior.lay_egg.json"
 			},
 			"else": {
-				"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.16.0/behaviors/behavior.lay_egg.json"
+				"$ref": "../../v1.16.0/behaviors/behavior.lay_egg.json"
 			}
 		},
 		"minecraft:behavior.melee_attack": {

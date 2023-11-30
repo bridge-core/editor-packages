@@ -11,10 +11,10 @@
 		"minecraft:behavior.lay_egg": {
 			"$ref": "../../../project/experimentalGameplay/theWildUpdate.json",
 			"then": {
-				"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.18.10/behaviors/behavior.lay_egg.json"
+				"$ref": "../../v1.18.10/behaviors/behavior.lay_egg.json"
 			},
 			"else": {
-				"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.16.0/behaviors/behavior.lay_egg.json"
+				"$ref": "../../v1.16.0/behaviors/behavior.lay_egg.json"
 			}
 		},
 		"minecraft:behavior.melee_attack": {

@@ -8,19 +8,19 @@
 			"then": {
 				"properties": {
 					"minecraft:vibration_listener": {
-						"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.18.30/components/vibration_listener.json"
+						"$ref": "../../v1.18.30/components/vibration_listener.json"
 					},
 					"minecraft:anger_level": {
-						"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.0/components/anger_level.json"
+						"$ref": "../../v1.19.0/components/anger_level.json"
 					},
 					"minecraft:heartbeat": {
-						"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.0/components/heartbeat.json"
+						"$ref": "../../v1.19.0/components/heartbeat.json"
 					},
 					"minecraft:suspect_tracking": {
-						"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.0/components/suspect_tracking.json"
+						"$ref": "../../v1.19.0/components/suspect_tracking.json"
 					},
 					"minecraft:vibration_damper": {
-						"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.0/components/vibration_damper.json"
+						"$ref": "../../v1.19.0/components/vibration_damper.json"
 					}
 				}
 			}
@@ -29,21 +29,21 @@
 		{
 			"properties": {
 				"minecraft:mob_effect": {
-					"$ref": "./mob_effect.json"
+					"$ref": "../../v1.19.0/components/mob_effect.json"
 				},
 				"minecraft:movement_sound_distance_offset": {
-					"$ref": "./movement_sound_distance_offset.json"
+					"$ref": "../../v1.19.0/components/movement_sound_distance_offset.json"
 				},
 				"minecraft:ambient_sound_interval": {
-					"$ref": "./ambient_sound_interval.json"
+					"$ref": "../../v1.19.0/components/ambient_sound_interval.json"
 				},
 				"minecraft:interact": {
 					"$ref": "../../../project/experimentalGameplay/theWildUpdate.json",
 					"then": {
-						"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.0/components/interact.json"
+						"$ref": "../../v1.19.0/components/interact.json"
 					},
 					"else": {
-						"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.18.20/components/interact.json"
+						"$ref": "../../v1.18.20/components/interact.json"
 					}
 				},
 				"minecraft:block_sensor": {
