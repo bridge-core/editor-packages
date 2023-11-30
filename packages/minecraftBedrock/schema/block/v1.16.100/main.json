@@ -44,7 +44,7 @@
 										"condition": {
 											"title": "Condition",
 											"description": "MoLang condition",
-											"$ref": "../../embedded.json"
+											"$ref": "../../molang/embedded.json"
 										},
 										"components": {
 											"title": "Components",
