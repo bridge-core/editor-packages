@@ -162,6 +162,7 @@
 						"is_missing_health", // v1.18.10+
 						"is_moving",
 						"is_owner",
+						"is_panicking", // v1.20.60+
 						"is_persistent",
 						"is_raider", // v1.19.80+
 						"is_riding",
@@ -169,6 +170,7 @@
 						"is_sleeping",
 						"is_sneaking",
 						"is_snow_covered",
+						"is_sprinting", // v1.20.60+
 						"is_target",
 						"is_temperature_type",
 						"is_temperature_value",
@@ -1716,6 +1718,40 @@
 							"leg",
 							"torso"
 						]
+					}
+				}
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"test": {
+						"const": "is_panicking"
+					}
+				}
+			},
+			"then": {
+				"properties": {
+					"value": {
+						"description": "Tests if the subject is panicking.",
+						"type": "boolean"
+					}
+				}
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"test": {
+						"const": "is_sprinting"
+					}
+				}
+			},
+			"then": {
+				"properties": {
+					"value": {
+						"description": "Tests if the subject is sprinting.",
+						"type": "boolean"
 					}
 				}
 			}
