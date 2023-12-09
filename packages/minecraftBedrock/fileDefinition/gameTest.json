@@ -101,7 +101,8 @@
 						"module_name": "@minecraft/server",
 						"version": "1.4.0-beta"
 					}
-				]
+				],
+				"experimentalGameplay": ["educationEdition"]
 			}
 		},
 		{
