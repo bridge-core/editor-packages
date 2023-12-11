@@ -83,6 +83,9 @@
 		// 	"$ref": "../../event/v1.16.100/playSound.json"
 		// },
 		{
+			"$ref": "../../event/v1.20.60/runCommand.json"
+		},
+		{
 			"$ref": "../../event/v1.20.60/queueCommand.json"
 		},
 		{
