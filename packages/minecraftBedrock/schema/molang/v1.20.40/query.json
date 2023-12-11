@@ -5,5 +5,10 @@
 	// query.is_scenting
 	// query.is_rising
 	// query.is_feeling_happy
-	"enum": ["query.timer_flag_1", "query.timer_flag_2", "query.timer_flag_3", "query.is_in_lava"]
+	"enum": [
+		"query.timer_flag_1",
+		"query.timer_flag_2",
+		"query.timer_flag_3",
+		"query.is_in_lava"
+	]
 }
