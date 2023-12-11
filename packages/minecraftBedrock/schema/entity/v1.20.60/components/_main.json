@@ -48,13 +48,7 @@
 			"$ref": "../../v1.19.0/components/ambient_sound_interval.json"
 		},
 		"minecraft:interact": {
-			"$ref": "../../../project/experimentalGameplay/theWildUpdate.json",
-			"then": {
-				"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.19.0/components/interact.json"
-			},
-			"else": {
-				"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.18.20/components/interact.json"
-			}
+			"$ref": "./interact.json"
 		},
 		"minecraft:block_sensor": {
 			"$ref": "../../v1.18.30/components/block_sensor.json"
