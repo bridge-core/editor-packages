@@ -1,6 +1,6 @@
 {
 	"name": "Bee",
-	"icon": "mdi-bee",
+	"icon": "emoji_nature",
 	"description": "Creates a new bee entity.",
 	"category": "fileType.entity",
 	"requires": {

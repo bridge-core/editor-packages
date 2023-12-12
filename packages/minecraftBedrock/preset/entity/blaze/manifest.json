@@ -1,6 +1,6 @@
 {
 	"name": "Blaze",
-	"icon": "mdi-fire",
+	"icon": "local_fire_department",
 	"description": "Creates a new blaze entity.",
 	"category": "fileType.entity",
 	"requires": {

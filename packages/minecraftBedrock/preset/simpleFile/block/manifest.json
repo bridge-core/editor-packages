@@ -1,6 +1,6 @@
 {
 	"name": "Block",
-	"icon": "mdi-cube-outline",
+	"icon": "deployed_code",
 	"description": "Creates a blank block.",
 	"category": "fileType.simpleFile",
 	"requires": {

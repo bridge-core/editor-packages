@@ -1,6 +1,6 @@
 {
 	"name": "Ore",
-	"icon": "mdi-cube-outline",
+	"icon": "deployed_code",
 	"description": "Creates a new ore block with natural generation.",
 	"category": "fileType.block",
 	"showIfDisabled": false,

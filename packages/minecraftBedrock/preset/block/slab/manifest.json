@@ -1,6 +1,6 @@
 {
 	"name": "Slab",
-	"icon": "mdi-cube-outline",
+	"icon": "deployed_code",
 	"description": "Creates a new slab block.",
 	"category": "fileType.block",
 	"requires": {

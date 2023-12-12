@@ -1,6 +1,6 @@
 {
 	"name": "Cat",
-	"icon": "mdi-cat",
+	"icon": "pets",
 	"description": "Creates a new cat entity.",
 	"category": "fileType.entity",
 	"requires": {

@@ -1,18 +1,12 @@
 {
 	"name": "Blank Block",
-	"icon": "mdi-cube-outline",
+	"icon": "deployed_code",
 	"description": "Creates a new, basic block.",
 	"category": "fileType.block",
 	"showIfDisabled": false,
 	"requires": {
-		"targetVersion": [
-			">=",
-			"1.20.0"
-		],
-		"packTypes": [
-			"behaviorPack",
-			"resourcePack"
-		]
+		"targetVersion": [">=", "1.20.0"],
+		"packTypes": ["behaviorPack", "resourcePack"]
 	},
 	"additionalModels": {
 		"DEFAULT_TEXTURE": "texture.png",
@@ -32,20 +26,14 @@
 			"Identifier",
 			"IDENTIFIER",
 			{
-				"validate": [
-					"required",
-					"alphanumeric",
-					"lowercase"
-				]
+				"validate": ["required", "alphanumeric", "lowercase"]
 			}
 		],
 		[
 			"Display Name",
 			"IDENTIFIER_NAME",
 			{
-				"validate": [
-					"required"
-				]
+				"validate": ["required"]
 			}
 		]
 	],
@@ -55,11 +43,7 @@
 			"block.json",
 			"blocks/{{PRESET_PATH}}{{IDENTIFIER}}.json",
 			{
-				"inject": [
-					"IDENTIFIER",
-					"PROJECT_PREFIX",
-					"PRESET_PATH"
-				],
+				"inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"],
 				"openFile": true,
 				"packPath": "behaviorPack"
 			}
@@ -70,10 +54,7 @@
 			"clientBlock.json",
 			"blocks.json",
 			{
-				"inject": [
-					"IDENTIFIER",
-					"PROJECT_PREFIX"
-				],
+				"inject": ["IDENTIFIER", "PROJECT_PREFIX"],
 				"packPath": "resourcePack"
 			}
 		],
@@ -81,11 +62,7 @@
 			"en_US.lang",
 			"texts/en_US.lang",
 			{
-				"inject": [
-					"IDENTIFIER",
-					"IDENTIFIER_NAME",
-					"PROJECT_PREFIX"
-				],
+				"inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"],
 				"packPath": "resourcePack"
 			}
 		]
