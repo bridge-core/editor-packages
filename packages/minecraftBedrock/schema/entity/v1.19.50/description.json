@@ -96,10 +96,6 @@
 							"title": "Type",
 							"type": "string",
 							"enum": ["int", "float", "bool", "enum"]
-						},
-						"client_sync": {
-							"title": "Client Sync",
-							"type": "boolean"
 						}
 					},
 					"oneOf": [
@@ -108,6 +104,10 @@
 							"properties": {
 								"type": {
 									"const": "bool"
+								},
+								"client_sync": {
+									"title": "Client Sync",
+									"type": "boolean"
 								},
 								"default": {
 									"title": "Default",
@@ -120,6 +120,10 @@
 							"properties": {
 								"type": {
 									"const": "int"
+								},
+								"client_sync": {
+									"title": "Client Sync",
+									"type": "boolean"
 								},
 								"default": {
 									"title": "Default",
@@ -142,6 +146,10 @@
 								"type": {
 									"const": "float"
 								},
+								"client_sync": {
+									"title": "Client Sync",
+									"type": "boolean"
+								},
 								"default": {
 									"title": "Default",
 									"type": ["number", "string"]
@@ -162,6 +170,10 @@
 							"properties": {
 								"type": {
 									"const": "enum"
+								},
+								"client_sync": {
+									"title": "Client Sync",
+									"type": "boolean"
 								},
 								"default": {
 									"title": "Default",
