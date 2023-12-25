@@ -97,29 +97,87 @@
 							"type": "string",
 							"enum": ["int", "float", "bool", "enum"]
 						},
-						"values": {
-							"title": "Values",
-							"type": "array",
-							"items": {
-								"type": ["string"]
-							}
-						},
-						"range": {
-							"title": "Range",
-							"type": "array",
-							"items": {
-								"type": ["number", "integer"]
-							}
-						},
-						"default": {
-							"title": "Default",
-							"type": ["string", "number", "boolean", "integer"]
-						},
 						"client_sync": {
 							"title": "Client Sync",
 							"type": "boolean"
 						}
-					}
+					},
+					"oneOf": [
+						{
+							"additionalProperties": false,
+							"properties": {
+								"type": {
+									"const": "bool"
+								},
+								"default": {
+									"title": "Default",
+									"type": ["boolean", "string"]
+								}
+							}
+						},
+						{
+							"additionalProperties": false,
+							"properties": {
+								"type": {
+									"const": "int"
+								},
+								"default": {
+									"title": "Default",
+									"type": ["integer", "string"]
+								},
+								"range": {
+									"title": "Range",
+									"type": "array",
+									"items": {
+										"type": "integer"
+									},
+									"minItems": 2,
+									"maxItems": 2
+								}
+							}
+						},
+						{
+							"additionalProperties": false,
+							"properties": {
+								"type": {
+									"const": "float"
+								},
+								"default": {
+									"title": "Default",
+									"type": ["number", "string"]
+								},
+								"range": {
+									"title": "Range",
+									"type": "array",
+									"items": {
+										"type": "number"
+									},
+									"minItems": 2,
+									"maxItems": 2
+								}
+							}
+						},
+						{
+							"additionalProperties": false,
+							"properties": {
+								"type": {
+									"const": "enum"
+								},
+								"default": {
+									"title": "Default",
+									"type": "string"
+								},
+								"values": {
+									"title": "Values",
+									"type": "array",
+									"items": {
+										"type": "string"
+									},
+									"minItems": 1
+								}
+							}
+						}
+					]
 				}
 			}
 		}
