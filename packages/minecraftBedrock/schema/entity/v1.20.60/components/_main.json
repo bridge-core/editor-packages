@@ -69,7 +69,7 @@
 			"$ref": "../../v1.17.0/components/genetics.json"
 		},
 		"minecraft:ageable": {
-			"$ref": "../../v1.17.0/components/ageable.json"
+			"$ref": "../../v1.20.60/components/ageable.json"
 		},
 		"minecraft:combat_regeneration": {
 			"$ref": "../../v1.16.220/components/combat_regeneration.json"

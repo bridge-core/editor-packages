@@ -1,0 +1,91 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Adds a timer for the entity to grow up. It can be accelerated by giving the entity the items it likes as defined by feedItems.",
+	"type": "object",
+	"title": "Ageable",
+	"properties": {
+		"duration": {
+			"title": "Duration",
+			"description": "Amount of time before the entity grows up, -1 for always a baby.",
+			"type": "number",
+			"default": 1200.0
+		},
+		"feed_items": {
+			"title": "Feed Items",
+			"description": "List of items that can be fed to the entity. Includes 'item' for the item name and 'growth' to define how much time it grows up by.",
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"anyOf": [
+							{
+								"type": "object",
+								"additionalProperties": false,
+								"properties": {
+									"item": {
+										"title": "Item",
+										"anyOf": [
+											{
+												"type": "string",
+												"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
+											},
+											{
+												"type": "object",
+												"additionalProperties": false,
+												"properties": {
+													"any_tag": {
+														"title": "Any Tag",
+														"type": "array",
+														"items": {
+															"type": "string",
+															"$ref": "../../../general/reference/tags.json#/definitions/item_tags"
+														}
+													}
+												}
+											}
+										]
+									},
+									"growth": {
+										"title": "Growth",
+										"type": "number"
+									}
+								}
+							},
+							{
+								"type": "string",
+								"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
+							}
+						]
+					}
+				},
+				{
+					"type": "string",
+					"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
+				}
+			]
+		},
+		"drop_items": {
+			"title": "Drop Items",
+			"description": "List of items that the entity drops when it grows up.",
+			"type": "array",
+			"items": {
+				"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
+			}
+		},
+		"grow_up": {
+			"title": "Event: Grow Up",
+			"description": "Event to run when this entity grows up.",
+			"$ref": "../../general/v1.16.0/eventDefinition.json"
+		},
+		"transform_to_item": {
+			"title": "Transform To Item",
+			"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
+		},
+		"interact_filters": {
+			"title": "Interact Filters",
+			"description": "List of conditions to meet so that the entity can be fed.",
+			"$ref": "../../general/v1.16.0/filter.json"
+		}
+	}
+}
