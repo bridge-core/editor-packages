@@ -5,6 +5,10 @@
 	},
 	{
 		"cacheKey": "tags",
+		"path": "minecraft:biome/components/minecraft:tags/tags"
+	},
+	{
+		"cacheKey": "tags",
 		"path": "minecraft:biome/components",
 		"filter": [
 			"minecraft:ignore_automatic_features",

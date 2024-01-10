@@ -99,17 +99,39 @@
 					},
 					{
 						"type": "object",
-						"properties": {
-							"name": {
-								"title": "Name",
-								"type": "string",
-								"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+						"anyOf": [
+							{
+								"properties": {
+									"name": {
+										"title": "Name",
+										"type": "string",
+										"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+									},
+									"states": {
+										"title": "States",
+										"$ref": "../../../general/blockState.json"
+									}
+								}
 							},
-							"states": {
-								"title": "States",
-								"$ref": "../../../general/blockState.json"
+							{
+								"properties": {
+									"tags": {
+										"title": "Tags",
+										"anyOf": [
+											{
+												"type": "string"
+											},
+											{
+												"enum": [
+													"query.any_tag()",
+													"query.all_tags()"
+												]
+											}
+										]
+									}
+								}
 							}
-						}
+						]
 					}
 				]
 			}
