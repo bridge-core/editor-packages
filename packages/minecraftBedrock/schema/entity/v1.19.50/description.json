@@ -94,6 +94,7 @@
 					"properties": {
 						"type": {
 							"title": "Type",
+							"description": "The data type of the property.",
 							"type": "string",
 							"enum": ["int", "float", "bool", "enum"]
 						}
@@ -107,11 +108,14 @@
 								},
 								"client_sync": {
 									"title": "Client Sync",
-									"type": "boolean"
+									"description": "Defaults to false, allows the property to be queried on the client.",
+									"type": "boolean",
+									"default": false
 								},
 								"default": {
 									"title": "Default",
-									"type": ["boolean", "string"]
+									"description": "The default value of the property, supports a boolean value or a molang string.",
+									"$ref": "../../molang/embedded.json"
 								}
 							}
 						},
@@ -123,14 +127,26 @@
 								},
 								"client_sync": {
 									"title": "Client Sync",
-									"type": "boolean"
+									"description": "Defaults to false, allows the property to be queried on the client.",
+									"type": "boolean",
+									"default": false
 								},
 								"default": {
 									"title": "Default",
-									"type": ["integer", "string"]
+									"description": "The default value of the property, supports an integer value or a molang string.",
+									"oneOf": [
+										{
+											"$ref": "../../molang/embedded.json"
+										},
+										{
+											"type": "integer",
+											"default": 0
+										}
+									]
 								},
 								"range": {
 									"title": "Range",
+									"description": "The range of values of the property.",
 									"type": "array",
 									"items": {
 										"type": "integer"
@@ -148,14 +164,26 @@
 								},
 								"client_sync": {
 									"title": "Client Sync",
-									"type": "boolean"
+									"description": "Defaults to false, allows the property to be queried on the client.",
+									"type": "boolean",
+									"default": false
 								},
 								"default": {
 									"title": "Default",
-									"type": ["number", "string"]
+									"description": "The default value of the property, supports a float value or a molang string.",
+									"oneOf": [
+										{
+											"$ref": "../../molang/embedded.json"
+										},
+										{
+											"type": "number",
+											"default": 0.0
+										}
+									]
 								},
 								"range": {
 									"title": "Range",
+									"description": "The range of values of the property.",
 									"type": "array",
 									"items": {
 										"type": "number"
@@ -173,14 +201,25 @@
 								},
 								"client_sync": {
 									"title": "Client Sync",
-									"type": "boolean"
+									"description": "Defaults to false, allows the property to be queried on the client.",
+									"type": "boolean",
+									"default": false
 								},
 								"default": {
 									"title": "Default",
-									"type": "string"
+									"description": "The default value of the property, supports an enum value or a molang string.",
+									"oneOf": [
+										{
+											"$ref": "../../molang/embedded.json"
+										},
+										{
+											"type": "string"
+										}
+									]
 								},
 								"values": {
 									"title": "Values",
+									"description": "The enum values of the property.",
 									"type": "array",
 									"items": {
 										"type": "string"
