@@ -522,13 +522,13 @@
 			"$ref": "../../v1.16.0/behaviors/behavior.work.json"
 		},
 		"minecraft:behavior.fire_at_target": {
-			"$ref": "./behavior.fire_at_target.json"
+			"$ref": "../../v1.20.60/behaviors/behavior.fire_at_target.json"
 		},
 		"minecraft:behavior.move_away_from_target": {
-			"$ref": "./behavior.move_away_from_target.json"
+			"$ref": "../../v1.20.60/behaviors/behavior.move_away_from_target.json"
 		},
 		"minecraft:behavior.jump_around_target": {
-			"$ref": "./behavior.jump_around_target.json"
+			"$ref": "../../v1.20.60/behaviors/behavior.jump_around_target.json"
 		}
 	}
 }

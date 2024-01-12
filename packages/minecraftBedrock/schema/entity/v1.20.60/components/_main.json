@@ -537,7 +537,7 @@
 			"$ref": "../../v1.20.50/components/can_join_raid.json"
 		},
 		"minecraft:reflect_projectiles": {
-			"$ref": "./reflect_projectiles.json"
+			"$ref": "../../v1.20.60/components/reflect_projectiles.json"
 		},
 		// Deprecated
 		"minecraft:scaffolding_climber": {
