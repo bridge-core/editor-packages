@@ -1,4 +1,4 @@
-import { join, globToRegExp } from 'path'
+import { join, globToRegExp, sep } from 'path'
 import json5 from 'json5'
 import { packageIntoSingleFile } from './packageIntoSingleFile.ts'
 
@@ -69,9 +69,11 @@ export async function packageDirectory(
 				await copyJson(
 					newPath,
 					newOutPath,
-					newPath.startsWith('packages/minecraftBedrock/preset') &&
+					newPath
+						.replaceAll(sep, '/')
+						.startsWith('packages/minecraftBedrock/preset') &&
 						entry.name !== 'manifest.json'
-				).catch(e => console.log(e.message, "in file" + newPath))
+				).catch((e) => console.log(e.message, 'in file' + newPath))
 			else if (entry.name !== '.DS_Store' && !entry.name.endsWith('.md'))
 				await Deno.copyFile(newPath, newOutPath)
 		}
