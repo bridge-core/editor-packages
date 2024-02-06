@@ -1,0 +1,34 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"description": "Specifies a list of blocks and a distance. The mob can then spawn only if the nearest block within the specified distance below the desired spawnpoint in that list.",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"blocks": {
+			"type": "array",
+			"items": {
+				"anyOf": [
+					{
+						"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+					},
+					{
+						"type": "object",
+						"properties": {
+							"name": {
+								"title": "Name",
+								"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+							},
+							"states": {
+								"title": "States",
+								"$ref": "../../../general/blockState.json"
+							}
+						}
+					}
+				]
+			}
+		},
+		"distance": {
+			"type": "integer"
+		}
+	}
+}

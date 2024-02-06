@@ -193,6 +193,7 @@
 						"taking_fire_damage", // v1.19.80+
 						"target_distance", // v1.19.60+
 						"trusts",
+						"was_last_hurt_by", // v1.20.70+
 						"weather",
 						"weather_at_position"
 					]
@@ -1178,12 +1179,7 @@
 					"value": {
 						"description": "Tests whether the current temperature is a given type.",
 						"type": "string",
-						"enum": [
-							"cold",
-							"ocean",
-							"mild",
-							"warm"
-						]
+						"enum": ["cold", "ocean", "mild", "warm"]
 					}
 				}
 			}
