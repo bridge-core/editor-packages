@@ -1,7 +1,10 @@
+import { config } from 'dotenv'
 import { exportRaw, toScrape } from './data.ts'
 import { DocumentationScraper } from './Scraper/documentation.ts'
 import { GameScraper } from './Scraper/game.ts'
 import { basename, join } from 'path'
+
+const { MINECRAFT_DATA_PATH } = config({ safe: true })
 
 const res = await fetch(
 	'https://raw.githubusercontent.com/Mojang/bedrock-samples/preview/documentation/Addons.html'
@@ -28,11 +31,11 @@ if (windowsAppsFolder) {
 			previewDataFolder = join(windowsAppsFolder, app.name, 'data')
 	}
 
-	if (!retailDataFolder && !previewDataFolder) {
+	if (!retailDataFolder && !previewDataFolder && !MINECRAFT_DATA_PATH) {
 		console.warn('Game data scraper requires a Minecraft installation.')
 	} else {
 		const gameScraper = new GameScraper(
-			(previewDataFolder ?? retailDataFolder)!,
+			(MINECRAFT_DATA_PATH ?? previewDataFolder ?? retailDataFolder)!,
 			toScrape.game
 		)
 		await gameScraper.run()
