@@ -211,9 +211,6 @@
 									"oneOf": [
 										{
 											"$ref": "../../molang/embedded.json"
-										},
-										{
-											"type": "string"
 										}
 									]
 								},
