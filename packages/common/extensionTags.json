@@ -1,35 +1,32 @@
 {
-	"Curated": {
-		"icon": "mdi-star",
-		"color": "warning"
-	},
-	"Verified": {
-		"icon": "mdi-shield-check",
+	"All": {
+		"icon": "list",
 		"color": "primary"
 	},
+	"Curated": {
+		"icon": "star",
+		"color": "warning"
+	},
 	"Utility": {
-		"icon": "mdi-wrench"
+		"icon": "build"
 	},
 	"Theme": {
-		"icon": "mdi-palette",
+		"icon": "palette",
 		"color": "error"
 	},
 	"Snippets": {
-		"icon": "mdi-attachment",
+		"icon": "attachment",
 		"color": "info"
 	},
 	"Component": {
-		"icon": "mdi-package-variant",
+		"icon": "package_2",
 		"color": "success"
 	},
-	"Command": {
-		"icon": "mdi-console-line"
-	},
 	"Presets": {
-		"icon": "mdi-text-box-multiple-outline",
+		"icon": "description",
 		"color": "purple"
 	},
 	"Compiler": {
-		"icon": "mdi-cogs"
+		"icon": "manufacturing"
 	}
 }
