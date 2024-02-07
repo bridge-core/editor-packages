@@ -9,6 +9,8 @@
 	// query.client_input_type
 	// query.get_nearby_entities
 	// query.get_nearby_entities_except_self
+	// query.get_ride
+	// query.get_riders
 	"enum": [
 		"query.rider_body_x_rotation",
 		"query.rider_body_y_rotation",
