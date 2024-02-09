@@ -5588,6 +5588,7 @@
 				"minecraft:totem_particle",
 				"minecraft:trial_spawner_detection",
 				"minecraft:underwater_torch_particle",
+				"minecraft:vault_connection_particle",
 				"minecraft:vibration_signal",
 				"minecraft:villager_angry",
 				"minecraft:villager_happy",
