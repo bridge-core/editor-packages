@@ -40,11 +40,10 @@
 					"title": "Bone Visibility",
 					"type": "object",
 					"description": "A JSON object that contains a list of key/value pairs that map from bone name in a geometry file (key) to a boolean value that turns their rendering on/off (value).",
-					"propertyNames": {
-						"$ref": "../../../geometry/dynamic/boneEnum.json"
-					},
-					"additionalProperties": {
-						"$ref": "../../../molang/embedded.json"
+					"patternProperties": {
+						".+": {
+							"$ref": "../../../molang/embedded.json"
+						}
 					}
 				},
 				"culling": {

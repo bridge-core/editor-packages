@@ -64,8 +64,7 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 			id: 'biomeTag',
 			path: 'biomes',
 			packType: 'definitions',
-			content: 'minecraft:biome/components',
-			filter: (val: string) => !val.startsWith('minecraft:'),
+			content: 'minecraft:biome/components/minecraft:tags/tags',
 		},
 		{
 			id: 'family',
