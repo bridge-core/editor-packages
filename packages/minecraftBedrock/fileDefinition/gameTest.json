@@ -42,7 +42,6 @@
 						"version": "1.9.0"
 					}
 				],
-				"experimentalGameplay": ["enableGameTestFramework"],
 				"targetVersion": [">=", "1.20.70"]
 			}
 		},
@@ -56,8 +55,7 @@
 						"version": "1.9.0-beta"
 					}
 				],
-				"experimentalGameplay": ["enableGameTestFramework"],
-				"targetVersion": [">=", "1.20.60"]
+				"experimentalGameplay": ["enableGameTestFramework"]
 			}
 		},
 		{
@@ -69,22 +67,7 @@
 						"module_name": "@minecraft/server",
 						"version": "1.8.0"
 					}
-				],
-				"experimentalGameplay": ["enableGameTestFramework"],
-				"targetVersion": [">=", "1.20.60"]
-			}
-		},
-		{
-			"moduleName": "@minecraft/server",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@1.8.0-beta.1.20.50-stable/index.d.ts",
-			"requires": {
-				"dependencies": [
-					{
-						"module_name": "@minecraft/server",
-						"version": "1.8.0-beta"
-					}
-				],
-				"experimentalGameplay": ["enableGameTestFramework"]
+				]
 			}
 		},
 		{
