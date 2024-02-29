@@ -74,6 +74,7 @@
 		"geometry.llama",
 		"geometry.llama.v1.8",
 		"geometry.llamaspit",
+		"geometry.map_marker",
 		"geometry.minecart",
 		"geometry.minecart.v1.8",
 		"geometry.mob_head",

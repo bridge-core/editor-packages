@@ -72,6 +72,7 @@
 		"controller.animation.humanoid.sneaking",
 		"controller.animation.humanoid.swimming",
 		"controller.animation.humanoid.use_item_progress",
+		"controller.animation.idle",
 		"controller.animation.iron_golem.arm_movement",
 		"controller.animation.iron_golem.move",
 		"controller.animation.llama.baby",

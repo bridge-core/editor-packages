@@ -32,6 +32,7 @@
 		"action.interact.read",
 		"action.interact.removewolfarmor",
 		"action.interact.repair",
+		"action.interact.repairwolfarmor",
 		"action.interact.ride.boat",
 		"action.interact.ride.horse",
 		"action.interact.ride.minecart",

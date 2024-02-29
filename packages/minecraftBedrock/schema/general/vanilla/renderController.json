@@ -67,6 +67,7 @@
 		"controller.render.llama",
 		"controller.render.llama_spit",
 		"controller.render.magma_cube",
+		"controller.render.map_marker",
 		"controller.render.minecart",
 		"controller.render.mooshroom",
 		"controller.render.mule.v1.and.v2",

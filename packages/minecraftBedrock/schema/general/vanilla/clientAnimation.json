@@ -228,6 +228,7 @@
 		"animation.llama.setup.v1.0",
 		"animation.llama_spit.setup",
 		"animation.magma_cube.move",
+		"animation.map_marker.idle",
 		"animation.minecart.move",
 		"animation.minecart.move.v1.0",
 		"animation.mooshroom.baby_transform",
