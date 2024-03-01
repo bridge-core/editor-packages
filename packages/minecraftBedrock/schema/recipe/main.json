@@ -100,9 +100,19 @@
 			"if": {
 				"properties": {
 					"format_version": {
+						"enum": ["1.19.80", "1.20.0"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.19.80/main.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
 						"enum": [
-							"1.19.80",
-							"1.20.0",
 							"1.20.10",
 							"1.20.20",
 							"1.20.30",
@@ -115,7 +125,7 @@
 				}
 			},
 			"then": {
-				"$ref": "./v1.19.80/main.json"
+				"$ref": "./v1.20.10/main.json"
 			}
 		}
 	]

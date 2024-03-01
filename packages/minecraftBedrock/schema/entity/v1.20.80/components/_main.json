@@ -48,7 +48,7 @@
 			"$ref": "../../v1.19.0/components/ambient_sound_interval.json"
 		},
 		"minecraft:interact": {
-			"$ref": "../../v1.20.60/components/interact.json"
+			"$ref": "../../v1.20.80/components/interact.json"
 		},
 		"minecraft:block_sensor": {
 			"$ref": "../../v1.18.30/components/block_sensor.json"
