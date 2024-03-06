@@ -86,5 +86,9 @@
 			"minecraft:block/events/**/run_command/command/*"
 		],
 		"script": "const func = /\\/function\\s+([aA-zZ0-9\\/]+)/g.exec(Bridge.value); if (func) return Bridge.resolvePackPath('behaviorPack', `functions/${func[1]}.mcfunction`)"
+	},
+	{
+		"cacheKey": "customComponent",
+		"path": "minecraft:block/components/minecraft:custom_components"
 	}
 ]

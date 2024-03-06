@@ -4,6 +4,6 @@
 	"description": "Sets an ordered list of custom component names which are bound in script to be executed upon a block event.",
 	"type": "array",
 	"items": {
-		"type": "string"
+		"$ref": "../../dynamic/customComponentEnum.json"
 	}
 }
