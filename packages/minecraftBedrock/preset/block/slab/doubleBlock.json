@@ -1,5 +1,5 @@
 {
-	"format_version": "1.19.50",
+	"format_version": "1.20.60",
 	"minecraft:block": {
 		"description": {
 			"identifier": "{{PROJECT_PREFIX}}:double_{{IDENTIFIER}}"

@@ -4,7 +4,7 @@
 	"description": "Creates a new slab block.",
 	"category": "fileType.block",
 	"requires": {
-		"targetVersion": [">=", "1.16.100"],
+		"targetVersion": [">=", "1.20.60"],
 		"packTypes": ["behaviorPack", "resourcePack"],
 		"experimentalGameplay": [
 			"holidayCreatorFeatures",
@@ -53,6 +53,22 @@
 			"geometry.json",
 			"models/blocks/slab.geo.json",
 			{ "packPath": "resourcePack" }
+		],
+		[
+			"blockCullingRules.json",
+			"block_culling/slab.json",
+			{
+				"inject": ["PROJECT_PREFIX"],
+				"packPath": "resourcePack"
+			}
+		],
+		[
+			"blockCullingRulesTop.json",
+			"block_culling/slab_top.json",
+			{
+				"inject": ["PROJECT_PREFIX"],
+				"packPath": "resourcePack"
+			}
 		]
 	],
 	"expandFiles": [
