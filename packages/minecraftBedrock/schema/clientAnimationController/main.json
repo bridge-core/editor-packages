@@ -43,6 +43,20 @@
 																"$ref": "../molang/embedded.json"
 															}
 														}
+													},
+													{
+														"$ref": "../attachable/dynamic/animationReferenceEnum.json"
+													},
+													{
+														"type": "object",
+														"propertyNames": {
+															"$ref": "../attachable/dynamic/animationReferenceEnum.json"
+														},
+														"patternProperties": {
+															".+": {
+																"$ref": "../molang/embedded.json"
+															}
+														}
 													}
 												]
 											}
@@ -136,7 +150,14 @@
 													"effect": {
 														"title": "Effect",
 														"description": "The name of a particle effect that should be played.",
-														"$ref": "../clientEntity/dynamic/particleReferenceEnum.json"
+														"anyOf": [
+															{
+																"$ref": "../clientEntity/dynamic/particleReferenceEnum.json"
+															},
+															{
+																"$ref": "../attachable/dynamic/particleReferenceEnum.json"
+															}
+														]
 													},
 													"locator": {
 														"title": "Locator",
@@ -166,7 +187,14 @@
 													"effect": {
 														"title": "Effect",
 														"description": "Valid sound effect names should be listed in the entity's resource definition json file.",
-														"$ref": "../clientEntity/dynamic/soundEffectReferenceEnum.json"
+														"anyOf": [
+															{
+																"$ref": "../clientEntity/dynamic/soundEffectReferenceEnum.json"
+															},
+															{
+																"$ref": "../attachable/dynamic/soundEffectReferenceEnum.json"
+															}
+														]
 													}
 												}
 											}
