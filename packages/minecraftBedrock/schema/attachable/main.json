@@ -66,11 +66,20 @@
 							"title": "Textures",
 							"description": "Defines the textures used in the attachable.",
 							"type": "object",
-							"patternProperties": {
-								".*": {
-									"$ref": "../general/reference/paths.json#/definitions/entity_texture_paths"
+							"allOf": [
+								{
+									"properties": {
+										"default": {}
+									}
+								},
+								{
+									"patternProperties": {
+										".*": {
+											"$ref": "../general/reference/paths.json#/definitions/entity_texture_paths"
+										}
+									}
 								}
-							}
+							]
 						},
 						"geometry": {
 							"title": "Geometry",
