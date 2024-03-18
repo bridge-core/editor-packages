@@ -16,10 +16,6 @@
 		"id": "enableGameTestFramework" // Beta APIs toggle
 	},
 	{
-		"icon": "mdi-alpha-m",
-		"id": "experimentalMolangFeatures"
-	},
-	{
 		"icon": "mdi-school-outline",
 		"id": "educationEdition"
 	}
@@ -30,5 +26,5 @@
  * { "icon": "mdi-image-filter-hdr", "id": "cavesAndCliffs" } - 1.18.0
  * { "icon": "mdi-plus-circle", "id": "additionalModdingCapabilities" } - 1.18.30
  * { "icon": "mdi-pine-tree", "id": "theWildUpdate" } - 1.19.0
- *
+ * { "icon": "md-alpha-m", "id": "experimentalMolangFeatures" } - 1.20.70
  */
