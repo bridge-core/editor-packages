@@ -73,6 +73,12 @@
 									}
 								},
 								{
+									"$ref": "../general/trimPattern.json"
+								},
+								{
+									"$ref": "../general/trimPalette.json"
+								},
+								{
 									"patternProperties": {
 										".*": {
 											"$ref": "../general/reference/paths.json#/definitions/entity_texture_paths"

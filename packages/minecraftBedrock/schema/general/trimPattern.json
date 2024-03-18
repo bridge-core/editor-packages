@@ -1,0 +1,22 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"bolt_trim": {},
+		"coast_trim": {},
+		"dune_trim": {},
+		"eye_trim": {},
+		"flow_trim": {},
+		"host_trim": {},
+		"raiser_trim": {},
+		"rib_trim": {},
+		"shaper_trim": {},
+		"silence_trim": {},
+		"snout_trim": {},
+		"spire_trim": {},
+		"tide_trim": {},
+		"ward_trim": {},
+		"wayfinder_trim": {},
+		"wild_trim": {}
+	}
+}
