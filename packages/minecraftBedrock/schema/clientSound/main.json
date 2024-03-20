@@ -105,11 +105,49 @@
 						},
 						"events": {
 							"title": "Events",
-							"patternProperties": {
-								".*": {
-									"$ref": "#/definitions/sound_object"
+							"allOf": [
+								{
+									"properties": {
+										"fall.big": {},
+										"fall.small": {},
+										"splash": {},
+										"swim": {},
+										"fizz": {},
+										"drink": {},
+										"eat": {},
+										"ambient": {},
+										"ambient.tame": {},
+										"flop": {},
+										"hurt": {},
+										"death": {},
+										"ambient.in.water": {},
+										"hurt.in.water": {},
+										"death.in.water": {},
+										"ambient.in.raid": {},
+										"takeoff": {},
+										"shoot": {},
+										"step": {},
+										"attack": {},
+										"breathe": {},
+										"jump": {},
+										"mad": {},
+										"stare": {},
+										"sniff": {},
+										"sleep": {},
+										"spit": {},
+										"warn": {},
+										"scream": {},
+										"charge": {}
+									}
+								},
+								{
+									"patternProperties": {
+										".*": {
+											"$ref": "#/definitions/sound_object"
+										}
+									}
 								}
-							}
+							]
 						}
 					}
 				},
