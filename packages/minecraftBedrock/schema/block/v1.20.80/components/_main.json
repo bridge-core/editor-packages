@@ -47,6 +47,12 @@
 				"properties": {
 					"minecraft:custom_components": {
 						"$ref": "./custom_components.json"
+					},
+					"minecraft:tick": {
+						"$ref": "./tick.json"
+					},
+					"minecraft:entity_fall_on": {
+						"$ref": "./entity_fall_on.json"
 					}
 				}
 			}
