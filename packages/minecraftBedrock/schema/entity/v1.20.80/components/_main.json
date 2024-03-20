@@ -62,6 +62,9 @@
 		"minecraft:block_climber": {
 			"$ref": "../../v1.17.10/components/block_climber.json"
 		},
+		"minecraft:body_rotation_blocked": {
+			"$ref": "../../v1.20.80/components/body_rotation_blocked.json"
+		},
 		"minecraft:drying_out_timer": {
 			"$ref": "../../v1.17.0/components/drying_out_timer.json"
 		},
