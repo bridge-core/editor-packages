@@ -18,7 +18,10 @@
 	},
 	{
 		"cacheKey": "itemTexture",
-		"path": "minecraft:item/components/minecraft:icon/texture"
+		"path": [
+			"minecraft:item/components/minecraft:icon/texture",
+			"minecraft:item/components/minecraft:icon/textures/default"
+		]
 	},
 	{
 		"cacheKey": "tag",
@@ -60,5 +63,9 @@
 			"minecraft:item/events/**/run_command/command/*"
 		],
 		"script": "const func = /\\/function\\s+([aA-zZ0-9\\/]+)/g.exec(Bridge.value); if (func) return Bridge.resolvePackPath('behaviorPack', `functions/${func[1]}.mcfunction`)"
+	},
+	{
+		"cacheKey": "customComponent",
+		"path": "minecraft:item/components/minecraft:custom_components"
 	}
 ]
