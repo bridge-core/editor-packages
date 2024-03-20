@@ -127,6 +127,18 @@
 			"then": {
 				"$ref": "./v1.20.10/main.json"
 			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.20.80"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.20.80/main.json"
+			}
 		}
 	]
 }

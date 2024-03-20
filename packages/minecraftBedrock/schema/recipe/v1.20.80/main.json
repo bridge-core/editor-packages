@@ -1,0 +1,34 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"maxProperties": 2,
+	"minProperties": 2,
+	"allOf": [
+		{
+			"$ref": "../v1.19.80/recipe_smithing_trim.json"
+		},
+		{
+			"$ref": "../v1.19.80/recipe_smithing_transform.json"
+		},
+		{
+			"$ref": "../v1.19.40/recipe_furnace.json"
+		},
+		{
+			"$ref": "../v1.20.80/recipe_shaped.json"
+		},
+		{
+			"$ref": "../v1.20.10/recipe_shapeless.json"
+		},
+		{
+			"$ref": "../v1.18.10/recipe_brewing_mix.json"
+		},
+		{
+			"$ref": "../v1.18.10/recipe_brewing_container.json"
+		},
+		{
+			"$ref": "../../project/experimentalGameplay/educationEdition.json",
+			"then": {
+				"$ref": "../v1.18.10/recipe_material_reduction.json"
+			}
+		}
+	]
+}
