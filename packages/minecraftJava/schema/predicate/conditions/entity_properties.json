@@ -1,0 +1,22 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"condition": {
+			"title": "Entity Properties",
+			"description": "Checks properties of an entity. Invokable from any context.",
+			"const": "minecraft:entity_properties"
+		},
+		"entity": {
+			"title": "Entity",
+			"description": "The entity to check. Specifies an entity from loot context.",
+			"type": "string",
+			"enum": ["this", "killer", "direct_killer", "killer_player"]
+		},
+		"predicate": {
+			"title": "Predicate",
+			"description": "Predicate applied to entity, uses same structure as advancements.",
+			"$ref": "../../general/entityPredicate.json"
+		}
+	}
+}

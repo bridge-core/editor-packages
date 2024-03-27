@@ -3,6 +3,7 @@ import { exportRaw, toScrape } from './data.ts'
 import { DocumentationScraper } from './Scraper/documentation.ts'
 import { GameScraper } from './Scraper/game.ts'
 import { basename, join } from 'path'
+import { MisodeScraper } from './Scraper/misode.ts'
 
 const { MINECRAFT_DATA_PATH } = config({ safe: true })
 
@@ -13,6 +14,9 @@ const text = await res.text()
 
 const docScraper = new DocumentationScraper(text, toScrape.documentation)
 await docScraper.run()
+
+const misodeScraper = new MisodeScraper('24w12a', toScrape.misode)
+misodeScraper.run()
 
 const programFiles = Deno.env.get('PROGRAMFILES')
 const windowsAppsFolder = programFiles
@@ -47,11 +51,11 @@ for (const target of exportRaw) {
 	if (target.from.length === 1) {
 		const raw = target.from[0]
 		const data = await Deno.readTextFile(
-			join('./scripts/vanillaData/raw', raw)
+			join(`./scripts/vanillaData/raw/${target.package}`, raw)
 		).catch(() => {
 			console.warn(
 				`Could not find raw data for ${join(
-					'./scripts/vanillaData/raw',
+					`./scripts/vanillaData/raw/${target.package}`,
 					raw
 				)}`
 			)
@@ -74,18 +78,18 @@ for (const target of exportRaw) {
 				  }),
 		}
 		await Deno.writeTextFile(
-			join('./packages/minecraftBedrock/schema', target.to),
+			join(`./packages/${target.package}/schema`, target.to),
 			JSON.stringify(schema, null, '\t')
 		)
 	} else {
 		let defs: any = {}
 		for (const raw of target.from) {
 			const data = await Deno.readTextFile(
-				join('./scripts/vanillaData/raw', raw)
+				join(`./scripts/vanillaData/raw/${target.package}`, raw)
 			).catch(() => {
 				console.warn(
 					`Could not find raw data for ${join(
-						'./scripts/vanillaData/raw',
+						`./scripts/vanillaData/raw/${target.package}`,
 						raw
 					)}`
 				)
@@ -103,7 +107,7 @@ for (const target of exportRaw) {
 			definitions: defs,
 		}
 		await Deno.writeTextFile(
-			join('./packages/minecraftBedrock/schema', target.to),
+			join(`./packages/${target.package}/schema`, target.to),
 			JSON.stringify(schema, null, '\t')
 		)
 	}

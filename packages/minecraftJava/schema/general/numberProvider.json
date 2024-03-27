@@ -1,0 +1,197 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"anyOf": [
+		{
+			"type": "number"
+		},
+		{
+			"type": "object",
+			"properties": {
+				"type": {
+					"enum": [
+						"minecraft:constant",
+						"minecraft:uniform",
+						"minecraft:binomial",
+						"minecraft:score"
+					]
+				}
+			},
+			"required": ["type"]
+		},
+		{
+			"if": {
+				"properties": {
+					"type": {
+						"const": "minecraft:constant"
+					}
+				},
+				"required": ["type"]
+			},
+			"then": {
+				"properties": {
+					"type": {
+						"title": "Constant",
+						"description": "A constant value.",
+						"const": "minecraft:constant"
+					},
+					"value": {
+						"title": "Value",
+						"description": "The exact value.",
+						"type": "number"
+					}
+				},
+				"required": ["type"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"type": {
+						"const": "minecraft:uniform"
+					}
+				},
+				"required": ["type"]
+			},
+			"then": {
+				"properties": {
+					"type": {
+						"title": "Uniform",
+						"description": "A random number following a uniform distribution between two values (inclusive).",
+						"const": "minecraft:uniform"
+					},
+					"min": {
+						"title": "Min",
+						"description": "A number provider. The minimum value.",
+						"$ref": "#"
+					},
+					"max": {
+						"title": "Max",
+						"description": "A number provider. The maximum value.",
+						"$ref": "#"
+					}
+				},
+				"required": ["type"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"type": {
+						"const": "minecraft:binomial"
+					}
+				},
+				"required": ["type"]
+			},
+			"then": {
+				"properties": {
+					"type": {
+						"title": "Binomial",
+						"description": "A random number following a binomial distrbution.",
+						"const": "minecraft:binomial"
+					},
+					"n": {
+						"title": "N",
+						"description": "Number provider. The amount of trials.",
+						"$ref": "#"
+					},
+					"p": {
+						"title": "P",
+						"description": "Number provider. The probability of success on an individual trial.",
+						"$ref": "#"
+					}
+				}
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"type": {
+						"const": "minecraft:score"
+					}
+				},
+				"required": ["type"]
+			},
+			"then": {
+				"properties": {
+					"type": {
+						"title": "Score",
+						"description": "To query and use a scoreboard value.",
+						"const": "minecraft:score"
+					},
+					"target": {
+						"title": "Target",
+						"description": "To choose with player name or entity UUID to query.",
+						"type": "object",
+						"anyOf": [
+							{
+								"properties": {
+									"type": {
+										"title": "Type",
+										"description": "Set to 'fixed' to manually specify a player name or UUID. Set to 'context' to use an entity from loot context.",
+										"type": "string",
+										"enum": ["fixed", "context"]
+									}
+								},
+								"required": ["type"]
+							},
+							{
+								"if": {
+									"properties": {
+										"type": {
+											"const": "fixed"
+										}
+									},
+									"required": ["type"]
+								},
+								"then": {
+									"properties": {
+										"name": {
+											"title": "Name",
+											"description": "Specifies the name of the player, or the entity's UUID (in hypenated hexadecimal format) whose score to query.",
+											"type": "string"
+										}
+									}
+								}
+							},
+							{
+								"if": {
+									"properties": {
+										"type": {
+											"const": "context"
+										}
+									},
+									"required": ["type"]
+								},
+								"then": {
+									"properties": {
+										"target": {
+											"title": "Target",
+											"description": "Specifies an entity from loot context to query the score of.",
+											"type": "string",
+											"enum": [
+												"this",
+												"killer",
+												"direct_killer",
+												"killer_player"
+											]
+										}
+									}
+								}
+							}
+						]
+					},
+					"score": {
+						"title": "Score",
+						"description": "The scoreboard objective to query on the selected player name or UUID.",
+						"type": "string" // TODO: Scoreboards lightning cache
+					},
+					"scale": {
+						"title": "Scale",
+						"description": "Optional. Scale to multiply the score before returning it.",
+						"type": "number"
+					}
+				}
+			}
+		}
+	]
+}

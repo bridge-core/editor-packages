@@ -1,0 +1,17 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"condition": {
+			"title": "Block State Property",
+			"description": "Checks the mined block and its block states. Requires block state provided by loot context, and always fails if not provided.",
+			"const": "minecraft:block_state_property"
+		},
+		"block": {
+			"$ref": "../../general/vanilla/identifiers.json/#/definitions/block_identifiers"
+		},
+		"properties": {
+			"type": "object" // TODO: Vanilla block properties
+		}
+	}
+}

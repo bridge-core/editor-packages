@@ -1,0 +1,26 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"condition": {
+			"title": "Table Bonus",
+			"description": "Passes with probability picked from a list, indexed by enchantment power. Requires tool provided by loot context. If not provided, the enchantment level is regarded as 0.",
+			"const": "minecraft:table_bonus"
+		},
+		"enchantment": {
+			"title": "enchantment",
+			"description": "Resource location of enchantment.",
+			"$ref": "../../general/vanilla/identifiers.json/#/definitions/enchantment_identifiers"
+		},
+		"chances": {
+			"title": "Chances",
+			"description": "List of probabilities for enchantment power, indexed from 0.",
+			"type": "array",
+			"items": {
+				"type": "number",
+				"minimum": 0.0,
+				"maximum": 1.0
+			}
+		}
+	}
+}

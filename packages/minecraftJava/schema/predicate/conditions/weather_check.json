@@ -1,0 +1,16 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"raining": {
+			"title": "Raining",
+			"description": "If true, the condition passes only if it is raining or thundering.",
+			"type": "boolean"
+		},
+		"thundering": {
+			"title": "Thundering",
+			"description": "If true, the condition passes only if it is thundering.",
+			"type": "boolean"
+		}
+	}
+}

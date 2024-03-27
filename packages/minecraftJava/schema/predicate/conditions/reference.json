@@ -1,0 +1,16 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"condition": {
+			"title": "Reference",
+			"description": "Invokes a predicate file and returns its result. Invokable from any context.",
+			"const": "minecraft:reference"
+		},
+		"name": {
+			"title": "Name",
+			"description": "The resource location of the predicate to invoke. A cyclic reference causes a parsing failure.",
+			"type": "string" // TODO: Lightning cache
+		}
+	}
+}

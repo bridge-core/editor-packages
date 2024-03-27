@@ -1,0 +1,146 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"components": {
+			"title": "Components",
+			"description": "Matches item components. Each key in the compound corresponds to a component to test, with its value as the desired data to compare.‌",
+			"type": "object" // TODO: Data component types
+		},
+		"count": {
+			"title": "Count",
+			"description": "Test the number of items in this item stack. Use an integer to test for a single value. Use an object with 'min' and 'max' keys to test for a range of values (inclusive).",
+			"anyOf": [
+				{
+					"type": "integer"
+				},
+				{
+					"type": "object",
+					"properties": {
+						"min": {
+							"title": "Min",
+							"description": "The minimum value.",
+							"type": "integer"
+						},
+						"max": {
+							"title": "Max",
+							"description": "The maximum value.",
+							"type": "integer"
+						}
+					}
+				}
+			]
+		},
+		"custom_data": {
+			"title": "Custom Data",
+			"description": "Test for data in the 'minecraft:custom_data' item component. The outer braces of the NBT '{}' must be present within this string. Additional care is required if the NBT contains quotation marks.",
+			"type": "string"
+		},
+		"durability": {
+			"title": "durability",
+			"description": "Test the durability of items in this item stack, represented by the number of uses remaining (not number of uses consumed). Use an integer to test for a single value. Use an object with 'min' and 'max' keys to test for a range of values (inclusive).",
+			"anyOf": [
+				{
+					"type": "integer"
+				},
+				{
+					"type": "object",
+					"properties": {
+						"min": {
+							"title": "Min",
+							"description": "The minimum value.",
+							"type": "integer"
+						},
+						"max": {
+							"title": "Max",
+							"description": "The maximum value.",
+							"type": "integer"
+						}
+					}
+				}
+			]
+		},
+		"enchantments": {
+			"title": "Enchantments",
+			"description": "Test the enchantments on the items in this stack. To pass, all items within the list must be satisfied by at least one enchantment on the item that matches.",
+			"$ref": "#/definitions/enchantment_list"
+		},
+		"stored_enchantments": {
+			"title": "Stored Enchantments",
+			"description": "To test for stored enchantments on an enchanted book.",
+			"$ref": "#/definitions/enchantment_list"
+		},
+		"items": {
+			"title": "Items",
+			"description": "Test the type of item in the item stack. Accepts a single item ID, a list of item IDs, or a hash-prefixed item tag.",
+			"anyOf": [
+				{
+					"$ref": "./vanilla/identifiers.json#/definitions/item_identifiers"
+				},
+				{
+					"$ref": "./reference/tags.json#/definitions/hash_prefixed_item_tags"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "./vanilla/identifiers.json#/definitions/item_identifiers"
+					}
+				}
+			]
+		},
+		"potions": {
+			"title": "Potions",
+			"description": "Test the type of potion this item is. Uses 'minecraft:empty' if the item is not a potion. Accepts a singular or list of brewed potion IDs. Passes if any ID matches.",
+			"anyOf": [
+				{
+					"$ref": "./vanilla/identifiers.json#/definitions/potion_identifiers"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "./vanilla/identifiers.json#/definitions/potion_identifiers"
+					}
+				}
+			]
+		}
+	},
+	"definitions": {
+		"enchantment_list": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"enchantment": {
+						"title": "Enchantment",
+						"description": "The enchantment ID to test for.",
+						"$ref": "./vanilla/identifiers.json#/definitions/enchantment_identifiers"
+					},
+					"levels": {
+						"title": "Levels",
+						"description": "The level(s) of enchantments that can satisfy this condition. Use an integer to test for a single value. Use an object with 'min' and 'max' keys to test for a range of values (inclusive).",
+						"anyOf": [
+							{
+								"type": "integer"
+							},
+							{
+								"type": "object",
+								"properties": {
+									"min": {
+										"title": "Min",
+										"description": "The minimum value.",
+										"type": "integer"
+									},
+									"max": {
+										"title": "Max",
+										"description": "The maximum value.",
+										"type": "integer"
+									}
+								}
+							}
+						]
+					}
+				}
+			}
+		}
+	}
+}

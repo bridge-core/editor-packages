@@ -1,9 +1,18 @@
-import { DocTarget, ExportTarget, GameTarget } from './interfaces.ts'
+import {
+	DocTarget,
+	ExportTarget,
+	GameTarget,
+	MisodeTarget,
+} from './interfaces.ts'
 
 /**
  * Define the data that should be scraped from the game files and documentation.
  */
-export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
+export const toScrape: {
+	documentation: DocTarget[]
+	game: GameTarget[]
+	misode: MisodeTarget[]
+} = {
 	documentation: [
 		{
 			id: 'prefixed_entity_identifiers',
@@ -194,6 +203,330 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 			content: '^action\\.interact\\.',
 		},
 	],
+	misode: [
+		{
+			id: 'advancement_identifiers',
+			registry: 'advancement',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'attribute_identifiers',
+			registry: 'attribute',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'banner_pattern_identifiers',
+			registry: 'banner_pattern',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'block_identifiers',
+			registry: 'block',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'block_entity_type_identifiers',
+			registry: 'block_entity_type',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'cat_variant_identifiers',
+			registry: 'cat_variant',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'damage_type_identifiers',
+			registry: 'damage_type',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'decorated_pot_pattern_identifiers',
+			registry: 'decorated_pot_patterns',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'dimension_identifiers',
+			registry: 'dimension',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'dimension_type_identifiers',
+			registry: 'dimension_type',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'enchantment_identifiers',
+			registry: 'enchantment',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'entity_type_identifiers',
+			registry: 'entity_type',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'fluid_identifiers',
+			registry: 'fluid',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'frog_variant_identifiers',
+			registry: 'frog_variant',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'game_event_identifiers',
+			registry: 'game_event',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'instrument_identifiers',
+			registry: 'instrument',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'item_identifiers',
+			registry: 'item',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'loot_table_identifiers',
+			registry: 'loot_table',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'mob_effect_identifiers',
+			registry: 'mob_effect',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'potion_identifiers',
+			registry: 'potion',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'painting_variant_identifiers',
+			registry: 'painting_variant',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'recipe_identifiers',
+			registry: 'recipe',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'structure_template_identifiers',
+			registry: 'structure',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'trim_material_identifiers',
+			registry: 'trim_material',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'trim_pattern_identifiers',
+			registry: 'trim_pattern',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'villager_type_identifiers',
+			registry: 'villager_type',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'wolf_variant_identifiers',
+			registry: 'wolf_variant',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		// Worldgen
+		{
+			id: 'biome_identifiers',
+			registry: 'worldgen/biome',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'configured_carver_identifiers',
+			registry: 'worldgen/configured_carver',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'configured_feature_identifiers',
+			registry: 'worldgen/configured_feature',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'density_function_identifiers',
+			registry: 'worldgen/density_function',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'noise_identifiers',
+			registry: 'worldgen/noise',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'noise_settings_identifiers',
+			registry: 'worldgen/noise_settings',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'placed_feature_identifiers',
+			registry: 'worldgen/placed_feature',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'processor_list_identifiers',
+			registry: 'worldgen/processor_list',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'structure_identifiers',
+			registry: 'worldgen/structure',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'structure_set_identifiers',
+			registry: 'worldgen/structure_set',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'template_pool_identifiers',
+			registry: 'worldgen/template_pool',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		// Tags
+		{
+			id: 'banner_pattern_tags',
+			registry: 'tag/banner_pattern',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'hash_prefixed_banner_pattern_tags',
+			registry: 'tag/banner_pattern',
+			map: (val: string) => (val.length > 0 ? `#minecraft:${val}` : val),
+		},
+		{
+			id: 'block_tags',
+			registry: 'tag/block',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'hash_prefixed_block_tags',
+			registry: 'tag/block',
+			map: (val: string) => (val.length > 0 ? `#minecraft:${val}` : val),
+		},
+		{
+			id: 'cat_variant_tags',
+			registry: 'tag/cat_variant',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'hash_prefixed_cat_variant_tags',
+			registry: 'tag/cat_variant',
+			map: (val: string) => (val.length > 0 ? `#minecraft:${val}` : val),
+		},
+		{
+			id: 'damage_type_tags',
+			registry: 'tag/damage_type',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'hash_prefixed_damage_type_tags',
+			registry: 'tag/damage_type',
+			map: (val: string) => (val.length > 0 ? `#minecraft:${val}` : val),
+		},
+		{
+			id: 'entity_type_tags',
+			registry: 'tag/entity_type',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'hash_prefixed_entity_type_tags',
+			registry: 'tag/entity_type',
+			map: (val: string) => (val.length > 0 ? `#minecraft:${val}` : val),
+		},
+		{
+			id: 'fluid_tags',
+			registry: 'tag/fluid',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'hash_prefixed_fluid_tags',
+			registry: 'tag/fluid',
+			map: (val: string) => (val.length > 0 ? `#minecraft:${val}` : val),
+		},
+		{
+			id: 'game_event_tags',
+			registry: 'tag/game_event',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'hash_prefixed_game_event_tags',
+			registry: 'tag/game_event',
+			map: (val: string) => (val.length > 0 ? `#minecraft:${val}` : val),
+		},
+		{
+			id: 'instrument_tags',
+			registry: 'tag/instrument',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'hash_prefixed_instrument_tags',
+			registry: 'tag/instrument',
+			map: (val: string) => (val.length > 0 ? `#minecraft:${val}` : val),
+		},
+		{
+			id: 'item_tags',
+			registry: 'tag/item',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'hash_prefixed_item_tags',
+			registry: 'tag/item',
+			map: (val: string) => (val.length > 0 ? `#minecraft:${val}` : val),
+		},
+		{
+			id: 'painting_variant_tags',
+			registry: 'tag/painting_variant',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'hash_prefixed_painting_variant_tags',
+			registry: 'tag/painting_variant',
+			map: (val: string) => (val.length > 0 ? `#minecraft:${val}` : val),
+		},
+		{
+			id: 'point_of_interest_type_tags',
+			registry: 'tag/point_of_interest_type',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'hash_prefixed_point_of_interest_type_tags',
+			registry: 'tag/point_of_interest_type',
+			map: (val: string) => (val.length > 0 ? `#minecraft:${val}` : val),
+		},
+		{
+			id: 'biome_tags',
+			registry: 'tag/worldgen/biome',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'hash_prefixed_biome_tags',
+			registry: 'tag/worldgen/biome',
+			map: (val: string) => (val.length > 0 ? `#minecraft:${val}` : val),
+		},
+		{
+			id: 'structure_tags',
+			registry: 'tag/worldgen/structure',
+			map: (val: string) => (val.length > 0 ? `minecraft:${val}` : val),
+		},
+		{
+			id: 'hash_prefixed_structure_tags',
+			registry: 'tag/worldgen/structure',
+			map: (val: string) => (val.length > 0 ? `#minecraft:${val}` : val),
+		},
+	],
 }
 
 /**
@@ -215,26 +548,32 @@ export const exportRaw: ExportTarget[] = [
 			'feature_rule_identifiers.json',
 		],
 		to: 'general/vanilla/identifiers.json',
+		package: 'minecraftBedrock',
 	},
 	{
 		from: ['damageType.json'],
 		to: 'general/vanilla/damageType.json',
+		package: 'minecraftBedrock',
 	},
 	{
 		from: ['animation.json'],
 		to: 'general/vanilla/clientAnimation.json',
+		package: 'minecraftBedrock',
 	},
 	{
 		from: ['animationController.json'],
 		to: 'general/vanilla/clientAnimationController.json',
+		package: 'minecraftBedrock',
 	},
 	{
 		from: ['family.json'],
 		to: 'general/vanilla/family.json',
+		package: 'minecraftBedrock',
 	},
 	{
 		from: ['itemTexture.json'],
 		to: 'general/vanilla/itemTexture.json',
+		package: 'minecraftBedrock',
 	},
 	{
 		from: [
@@ -247,43 +586,141 @@ export const exportRaw: ExportTarget[] = [
 			'trade_table_paths.json',
 		],
 		to: 'general/vanilla/paths.json',
+		package: 'minecraftBedrock',
 	},
 	{
 		from: ['soundDefinition.json'],
 		to: 'general/vanilla/soundDefinition.json',
+		package: 'minecraftBedrock',
 	},
 	{
 		from: ['renderController.json'],
 		to: 'general/vanilla/renderController.json',
+		package: 'minecraftBedrock',
 	},
 	{
 		from: ['terrainTexture.json'],
 		to: 'general/vanilla/terrainTexture.json',
+		package: 'minecraftBedrock',
 	},
 	{
 		from: ['geometry.json'],
 		to: 'general/vanilla/geometry.json',
+		package: 'minecraftBedrock',
 	},
 	{
 		from: ['biomeTag.json'],
 		to: 'general/vanilla/biomeTagEnum.json',
+		package: 'minecraftBedrock',
 	},
 	{
 		from: ['biomeTag.json'],
 		to: 'general/vanilla/biomeTagProperty.json',
 		type: 'property',
+		package: 'minecraftBedrock',
 	},
 	{
 		from: ['material.json'],
 		to: 'general/vanilla/material.json',
+		package: 'minecraftBedrock',
 	},
 	{
 		from: ['actionText.json'],
 		to: 'general/vanilla/actionText.json',
+		package: 'minecraftBedrock',
 	},
 	{
 		from: ['itemGroup.json'],
 		to: 'general/vanilla/itemGroup.json',
+		package: 'minecraftBedrock',
+	},
+	// Java Edition Package
+	{
+		from: [
+			'attribute_identifiers.json',
+			'block_identifiers.json',
+			'cat_variant_identifiers.json',
+			'decorated_pot_pattern_identifiers.json',
+			'enchantment_identifiers.json',
+			'entity_type_identifiers.json',
+			'fluid_identifiers.json',
+			'frog_variant_identifiers.json',
+			'game_event_identifiers.json',
+			'instrument_identifiers.json',
+			'item_identifiers.json',
+			'mob_effect_identifiers.json',
+			'painting_variant_identifiers.json',
+			'potion_identifiers.json',
+			'villager_type_identifiers.json',
+		],
+		to: 'general/vanilla/identifiers.json',
+		package: 'minecraftJava',
+	},
+	{
+		from: [
+			'advancement_identifiers.json',
+			'banner_pattern_identifiers.json',
+			'damage_type_identifiers.json',
+			'dimension_identifiers.json',
+			'dimension_type_identifiers.json',
+			'loot_table_identifiers.json',
+			'recipe_identifiers.json',
+			'structure_template_identifiers.json',
+			'trim_material_identifiers.json',
+			'trim_pattern_identifiers.json',
+			'wolf_variant_identifiers.json',
+		],
+		to: 'general/vanilla/data.json',
+		package: 'minecraftJava',
+	},
+	{
+		from: [
+			'biome_identifiers.json',
+			'configured_carver_identifiers.json',
+			'configured_feature_identifiers.json',
+			'density_function_identifiers.json',
+			'noise_identifiers.json',
+			'noise_settings_identifiers.json',
+			'placed_feature_identifiers.json',
+			'processor_list_identifiers.json',
+			'structure_identifiers.json',
+			'structure_set_identifiers.json',
+			'template_pool_identifiers.json',
+		],
+		to: 'general/vanilla/worldgen.json',
+		package: 'minecraftJava',
+	},
+	{
+		from: [
+			'banner_pattern_tags.json',
+			'hash_prefixed_banner_pattern_tags.json',
+			'block_tags.json',
+			'hash_prefixed_block_tags.json',
+			'cat_variant_tags.json',
+			'hash_prefixed_cat_variant_tags.json',
+			'damage_type_tags.json',
+			'hash_prefixed_damage_type_tags.json',
+			'entity_type_tags.json',
+			'hash_prefixed_entity_type_tags.json',
+			'fluid_tags.json',
+			'hash_prefixed_fluid_tags.json',
+			'game_event_tags.json',
+			'hash_prefixed_game_event_tags.json',
+			'instrument_tags.json',
+			'hash_prefixed_instrument_tags.json',
+			'item_tags.json',
+			'hash_prefixed_item_tags.json',
+			'painting_variant_tags.json',
+			'hash_prefixed_painting_variant_tags.json',
+			'point_of_interest_type_tags.json',
+			'hash_prefixed_point_of_interest_type_tags.json',
+			'biome_tags.json',
+			'hash_prefixed_biome_tags.json',
+			'structure_tags.json',
+			'hash_prefixed_structure_tags.json',
+		],
+		to: 'general/vanilla/tags.json',
+		package: 'minecraftJava',
 	},
 ]
 

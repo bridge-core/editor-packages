@@ -1,0 +1,34 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"definitions": {
+		"text_component": {
+			"type": "object",
+			"properties": {
+				// TODO: Text component
+				"type": {
+					"const": "text"
+				},
+				"text": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"oneOf": [
+		{
+			"description": " A string containing plain text to display directly.",
+			"type": "string"
+		},
+		{
+			"description": "A list of raw JSON text components.",
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/text_component"
+			}
+		},
+		{
+			"description": "Atext component object.",
+			"$ref": "#/definitions/text_component"
+		}
+	]
+}

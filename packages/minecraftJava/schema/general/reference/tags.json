@@ -1,0 +1,165 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"definitions": {
+		"block_tags": {
+			"anyOf": [
+				{
+					"$ref": "../vanilla/tags.json#/definitions/block_tags"
+				},
+				{
+					// TODO: Lightning cache
+				}
+			]
+		},
+		"hash_prefixed_block_tags": {
+			"anyOf": [
+				{
+					"$ref": "../vanilla/tags.json#/definitions/hash_prefixed_block_tags"
+				},
+				{
+					// TODO: Lightning cache
+				}
+			]
+		},
+		"cat_variant_tags": {
+			"anyOf": [
+				{
+					"$ref": "../vanilla/tags.json#/definitions/cat_variant_tags"
+				},
+				{
+					// TODO: Lightning cache
+				}
+			]
+		},
+		"fluid_tags": {
+			"anyOf": [
+				{
+					"$ref": "../vanilla/tags.json#/definitions/fluid_tags"
+				},
+				{
+					// TODO: Lightning cache
+				}
+			]
+		},
+		"hash_prefixed_fluid_tags": {
+			"anyOf": [
+				{
+					"$ref": "../vanilla/tags.json#/definitions/hash_prefixed_fluid_tags"
+				},
+				{
+					// TODO: Lightning cache
+				}
+			]
+		},
+		"hash_prefixed_cat_variant_tags": {
+			"anyOf": [
+				{
+					"$ref": "../vanilla/tags.json#/definitions/hash_prefixed_cat_variant_tags"
+				},
+				{
+					// TODO: Lightning cache
+				}
+			]
+		},
+		"entity_type_tags": {
+			"anyOf": [
+				{
+					"$ref": "../vanilla/tags.json#/definitions/entity_type_tags"
+				},
+				{
+					// TODO: Lightning cache
+				}
+			]
+		},
+		"hash_prefixed_entity_type_tags": {
+			"anyOf": [
+				{
+					"$ref": "../vanilla/tags.json#/definitions/hash_prefixed_entity_type_tags"
+				},
+				{
+					// TODO: Lightning cache
+				}
+			]
+		},
+		"item_tags": {
+			"anyOf": [
+				{
+					"$ref": "../vanilla/tags.json#/definitions/item_tags"
+				},
+				{
+					// TODO: Lightning cache
+				}
+			]
+		},
+		"hash_prefixed_item_tags": {
+			"anyOf": [
+				{
+					"$ref": "../vanilla/tags.json#/definitions/hash_prefixed_item_tags"
+				},
+				{
+					// TODO: Lightning cache
+				}
+			]
+		},
+		"painting_variant_tags": {
+			"anyOf": [
+				{
+					"$ref": "../vanilla/tags.json#/definitions/painting_variant_tags"
+				},
+				{
+					// TODO: Lightning cache
+				}
+			]
+		},
+		"hash_prefixed_painting_variant_tags": {
+			"anyOf": [
+				{
+					"$ref": "../vanilla/tags.json#/definitions/hash_prefixed_painting_variant_tags"
+				},
+				{
+					// TODO: Lightning cache
+				}
+			]
+		},
+		"biome_tags": {
+			"anyOf": [
+				{
+					"$ref": "../vanilla/tags.json#/definitions/biome_tags"
+				},
+				{
+					// TODO: Lightning cache
+				}
+			]
+		},
+		"hash_prefixed_biome_tags": {
+			"anyOf": [
+				{
+					"$ref": "../vanilla/tags.json#/definitions/hash_prefixed_biome_tags"
+				},
+				{
+					// TODO: Lightning cache
+				}
+			]
+		},
+		"structure_tags": {
+			"anyOf": [
+				{
+					"$ref": "../vanilla/tags.json#/definitions/structure_tags"
+				},
+				{
+					// TODO: Lightning cache
+				}
+			]
+		},
+		"hash_prefixed_structure_tags": {
+			"anyOf": [
+				{
+					"$ref": "../vanilla/tags.json#/definitions/hash_prefixed_structure_tags"
+				},
+				{
+					// TODO: Lightning cache
+				}
+			]
+		}
+	}
+}

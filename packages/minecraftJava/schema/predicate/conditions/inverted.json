@@ -1,0 +1,16 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"condition": {
+			"title": "Inverted",
+			"description": "Inverts another predicate condition. Invokable from any context.",
+			"const": "minecraft:inverted"
+		},
+		"term": {
+			"title": "Term",
+			"description": "The condition to be negated, following the same structure as outlined here, recursively.",
+			"$ref": "../general.json/#/definitions/predicate"
+		}
+	}
+}

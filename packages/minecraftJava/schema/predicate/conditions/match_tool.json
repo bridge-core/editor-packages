@@ -1,0 +1,16 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"type": "object",
+	"properties": {
+		"condition": {
+			"title": "Match Tool",
+			"description": "Checks tool used to mine the block. Requires tool provided by loot context, and always fails if not provided.",
+			"const": "minecraft:match_tool"
+		},
+		"predicate": {
+			"title": "Predicate",
+			"description": "Predicate applied to item, uses same structure as advancements.",
+			"$ref": "../../general/itemPredicate.json"
+		}
+	}
+}

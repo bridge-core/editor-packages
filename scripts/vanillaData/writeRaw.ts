@@ -1,6 +1,10 @@
 import { baseData } from './data.ts'
 
-export async function writeRaw(id: string, data: string[]) {
+export async function writeRaw(
+	id: string,
+	data: string[],
+	packageLocation: 'minecraftBedrock' | 'minecraftJava'
+) {
 	let writeData: string[] = []
 
 	const base = baseData[id] ?? undefined
@@ -9,7 +13,7 @@ export async function writeRaw(id: string, data: string[]) {
 
 	await Deno.mkdir('./scripts/vanillaData/raw', { recursive: true })
 	await Deno.writeTextFile(
-		`./scripts/vanillaData/raw/${id}.json`,
+		`./scripts/vanillaData/raw/${packageLocation}/${id}.json`,
 		JSON.stringify(writeData)
 	)
 }

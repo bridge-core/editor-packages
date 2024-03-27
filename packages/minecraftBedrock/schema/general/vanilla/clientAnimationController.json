@@ -7,6 +7,7 @@
 		"controller.animation.allay.general",
 		"controller.animation.allay.holding",
 		"controller.animation.allay.look_at_target",
+		"controller.animation.armadillo.look_at_target",
 		"controller.animation.armadillo.roll_up",
 		"controller.animation.armadillo.walk",
 		"controller.animation.armor_stand.pose",

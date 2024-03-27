@@ -1,0 +1,31 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"condition": {
+			"title": "Location Check",
+			"description": "Checks the current location against location criteria. Requires origin provided by loot context, and always fails if not provided.",
+			"const": "minecraft:location_check"
+		},
+		"offsetX": {
+			"title": "Offset X",
+			"description": "An optional x offset to the location.",
+			"type": "integer"
+		},
+		"offsetY": {
+			"title": "Offset Y",
+			"description": "An optional y offset to the location.",
+			"type": "integer"
+		},
+		"offsetZ": {
+			"title": "Offset Z",
+			"description": "An optional z offset to the location.",
+			"type": "integer"
+		},
+		"predicate": {
+			"title": "Predicate",
+			"description": "Predicate applied to location, uses same structure as advancements.",
+			"$ref": "../../general/locationPredicate.json"
+		}
+	}
+}

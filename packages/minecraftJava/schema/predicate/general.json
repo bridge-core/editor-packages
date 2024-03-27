@@ -1,0 +1,275 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"definitions": {
+		"predicate": {
+			"type": "object",
+			"anyOf": [
+				{
+					"properties": {
+						"condition": {
+							"$ref": "#/definitions/condition_types"
+						}
+					},
+					"required": ["condition"]
+				},
+				{
+					"if": {
+						"properties": {
+							"condition": {
+								"const": "minecraft:all_of"
+							}
+						},
+						"required": ["condition"]
+					},
+					"then": {
+						"$ref": "./conditions/all_of.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"condition": {
+								"const": "minecraft:any_of"
+							}
+						},
+						"required": ["condition"]
+					},
+					"then": {
+						"$ref": "./conditions/any_of.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"condition": {
+								"const": "minecraft:block_state_property"
+							}
+						},
+						"required": ["condition"]
+					},
+					"then": {
+						"$ref": "./conditions/block_state_property.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"condition": {
+								"const": "minecraft:damage_source_properties"
+							}
+						},
+						"required": ["condition"]
+					},
+					"then": {
+						"$ref": "./conditions/damage_source_properties.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"condition": {
+								"const": "minecraft:entity_properties"
+							}
+						},
+						"required": ["condition"]
+					},
+					"then": {
+						"$ref": "./conditions/entity_properties.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"condition": {
+								"const": "minecraft:entity_scores"
+							}
+						},
+						"required": ["condition"]
+					},
+					"then": {
+						"$ref": "./conditions/entity_scores.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"condition": {
+								"const": "minecraft:inverted"
+							}
+						},
+						"required": ["condition"]
+					},
+					"then": {
+						"$ref": "./conditions/inverted.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"condition": {
+								"const": "minecraft:killed_by_player"
+							}
+						},
+						"required": ["condition"]
+					},
+					"then": {
+						"$ref": "./conditions/killed_by_player.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"condition": {
+								"const": "minecraft:location_check"
+							}
+						},
+						"required": ["condition"]
+					},
+					"then": {
+						"$ref": "./conditions/location_check.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"condition": {
+								"const": "minecraft:match_tool"
+							}
+						},
+						"required": ["condition"]
+					},
+					"then": {
+						"$ref": "./conditions/match_tool.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"condition": {
+								"const": "minecraft:random_chance"
+							}
+						},
+						"required": ["condition"]
+					},
+					"then": {
+						"$ref": "./conditions/random_chance.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"condition": {
+								"const": "minecraft:random_chance_with_looting"
+							}
+						},
+						"required": ["condition"]
+					},
+					"then": {
+						"$ref": "./conditions/random_chance_with_looting.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"condition": {
+								"const": "minecraft:reference"
+							}
+						},
+						"required": ["condition"]
+					},
+					"then": {
+						"$ref": "./conditions/reference.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"condition": {
+								"const": "minecraft:survives_explosion"
+							}
+						},
+						"required": ["condition"]
+					},
+					"then": {
+						"$ref": "./conditions/survives_explosion.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"condition": {
+								"const": "minecraft:table_bonus"
+							}
+						},
+						"required": ["condition"]
+					},
+					"then": {
+						"$ref": "./conditions/table_bonus.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"condition": {
+								"const": "minecraft:time_check"
+							}
+						},
+						"required": ["condition"]
+					},
+					"then": {
+						"$ref": "./conditions/time_check.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"condition": {
+								"const": "minecraft:value_check"
+							}
+						},
+						"required": ["condition"]
+					},
+					"then": {
+						"$ref": "./conditions/value_check.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"condition": {
+								"const": "minecraft:weather_check"
+							}
+						},
+						"required": ["condition"]
+					},
+					"then": {
+						"$ref": "./conditions/weather_check.json"
+					}
+				}
+			]
+		},
+		"condition_types": {
+			"type": "string",
+			"enum": [
+				"minecraft:all_of",
+				"minecraft:any_of",
+				"minecraft:block_state_property",
+				"minecraft:damage_source_properties",
+				"minecraft:entity_properties",
+				"minecraft:entity_scores",
+				"minecraft:inverted",
+				"minecraft:killed_by_player",
+				"minecraft:location_check",
+				"minecraft:match_tool",
+				"minecraft:random_chance",
+				"minecraft:random_chance_with_looting",
+				"minecraft:reference",
+				"minecraft:survives_explosion",
+				"minecraft:table_bonus",
+				"minecraft:time_check",
+				"minecraft:value_check",
+				"minecraft:weather_check"
+			]
+		}
+	}
+}

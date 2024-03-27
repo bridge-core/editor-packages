@@ -1,0 +1,16 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"asset_id": {
+			"title": "Asset ID",
+			"description": "Used to set the texture asset ID for this banner pattern.",
+			"type": "string"
+		},
+		"translation_key": {
+			"title": "Translation Key",
+			"description": "Used to set the lang entry for this banner pattern.",
+			"type": "string"
+		}
+	}
+}

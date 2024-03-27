@@ -1,0 +1,234 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"biomes": {
+			"$ref": "#/definitions/biomes"
+		},
+		"block": {
+			"$ref": "#/definitions/block"
+		},
+		"dimension": {
+			"title": "Dimension",
+			"description": "A resource location for the dimension.",
+			"$ref": "./reference/data.json#/definitions/dimension_identifiers"
+		},
+		"fluid": {
+			"$ref": "#/definitions/fluid"
+		},
+		"light": {
+			"$ref": "#/definitions/light"
+		},
+		"position": {
+			"$ref": "#/definitions/position"
+		},
+		"smokey": {
+			"title": "Smokey",
+			"description": "When true, success if the block is closely above a campfire or soul campfire. When false, success if not.",
+			"type": "boolean"
+		},
+		"structures": {
+			"$ref": "#/definitions/structures"
+		}
+	},
+	"definitions": {
+		"biomes": {
+			"title": "Biomes",
+			"description": "The biome at this location. Accepts biome resource locations as a single entry or a list. Also accepts a hash-prefixed biome tag.",
+			"anyOf": [
+				{
+					"$ref": "./reference/worldgen.json#/definitions/biome_identifiers"
+				},
+				{
+					"$ref": "./reference/tags.json#/definitions/hash_prefixed_biome_tags"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "./reference/worldgen.json#/definitions/biome_identifiers"
+					}
+				}
+			]
+		},
+		"block": {
+			"title": "Block",
+			"description": "The block at the location. Test fails if the location is unloaded.",
+			"type": "object",
+			"properties": {
+				"blocks": {
+					"title": "Blocks",
+					"description": "Accepts block resource locations as a single entry or a list. Also accepts a hash-prefixed block tag.",
+					"anyOf": [
+						{
+							"$ref": "./vanilla/identifiers.json#/definitions/block_identifiers"
+						},
+						{
+							"$ref": "./reference/tags.json#/definitions/hash_prefixed_block_tags"
+						},
+						{
+							"type": "array",
+							"items": {
+								"$ref": "./vanilla/identifiers.json#/definitions/block_identifiers"
+							}
+						}
+					]
+				},
+				"nbt": {
+					"title": "NBT",
+					"description": "The block NBT.",
+					"type": "string"
+				},
+				"state": {
+					// TODO: Block properties
+					"title": "State",
+					"description": "The block property.",
+					"patternProperties": {
+						".*": {
+							"anyOf": [
+								{
+									"type": "string"
+								},
+								{
+									"type": "object",
+									"properties": {
+										"min": {
+											"title": "Min",
+											"description": "The minimum value.",
+											"type": "string"
+										},
+										"max": {
+											"title": "Max",
+											"description": "The maximum value.",
+											"type": "string"
+										}
+									}
+								}
+							]
+						}
+					}
+				}
+			}
+		},
+		"fluid": {
+			"title": "Fluid",
+			"description": "The fluid at the location. Test fails if the location is unloaded.",
+			"type": "object",
+			"properties": {
+				"fluids": {
+					"title": "Fluids",
+					"description": "The fluid at this block. Accepts fluid IDs as a single entry or a list. Also supports a hash-prefixed fluid tag.",
+					"anyOf": [
+						{
+							"$ref": "./vanilla/identifiers.json#/definitions/fluid_identifiers"
+						},
+						{
+							"$ref": "./reference/tags.json#/definitions/hash_prefixed_fluid_tags"
+						},
+						{
+							"type": "array",
+							"items": {
+								"$ref": "./vanilla/identifiers.json#/definitions/fluid_identifiers"
+							}
+						}
+					]
+				},
+				"state": {
+					// TODO: Fluid properties
+					"title": "State",
+					"description": "The fluid property.",
+					"patternProperties": {
+						".*": {
+							"anyOf": [
+								{
+									"type": "string"
+								},
+								{
+									"type": "object",
+									"properties": {
+										"min": {
+											"title": "Min",
+											"description": "The minimum value.",
+											"type": "string"
+										},
+										"max": {
+											"title": "Max",
+											"description": "The maximum value.",
+											"type": "string"
+										}
+									}
+								}
+							]
+						}
+					}
+				}
+			}
+		},
+		"light": {
+			"title": "Light",
+			"description": "The light at the location. Test fails if the location is unloaded.",
+			"$ref": "#/definitions/int_range_or_constant"
+		},
+		"position": {
+			"title": "Position",
+			"description": "The position.",
+			"type": "object",
+			"properties": {
+				"x": {
+					"title": "X",
+					"description": "The x position.",
+					"$ref": "#/definitions/int_range_or_constant"
+				},
+				"y": {
+					"title": "Y",
+					"description": "The y position.",
+					"$ref": "#/definitions/int_range_or_constant"
+				},
+				"z": {
+					"title": "Z",
+					"description": "The z position.",
+					"$ref": "#/definitions/int_range_or_constant"
+				}
+			}
+		},
+		"structures": {
+			"title": "Structures",
+			"description": "The structure at this location. Accepts structure resource locations as a single entry or a list. Also accepts a hash-prefixed structure tag.",
+			"anyOf": [
+				{
+					"$ref": "./reference/worldgen.json#/definitions/structure_identifiers"
+				},
+				{
+					"$ref": "./reference/tags.json#/definitions/hash_prefixed_structure_tags"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "./reference/worldgen.json#/definitions/structure_identifiers"
+					}
+				}
+			]
+		},
+		"int_range_or_constant": {
+			"anyOf": [
+				{
+					"type": "integer"
+				},
+				{
+					"type": "object",
+					"properties": {
+						"min": {
+							"title": "Min",
+							"description": "The minimum value.",
+							"type": "integer"
+						},
+						"max": {
+							"title": "Max",
+							"description": "The maximum value.",
+							"type": "integer"
+						}
+					}
+				}
+			]
+		}
+	}
+}

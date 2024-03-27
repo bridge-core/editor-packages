@@ -1,0 +1,11 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"condition": {
+			"title": "Survives Explosion",
+			"description": "Returns success with '1 / explosion radius' probability. Requires explosion radius provided by loot context, and always success if not provided.",
+			"const": "minecraft:survives_explosion"
+		}
+	}
+}

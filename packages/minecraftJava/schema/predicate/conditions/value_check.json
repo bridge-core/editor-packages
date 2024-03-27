@@ -1,0 +1,41 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"condition": {
+			"title": "Value Check",
+			"description": "Compares a number against another number or range of numbers. Invokable from any context.",
+			"const": "minecraft:value_check"
+		},
+		"value": {
+			"title": "Value",
+			"description": "The number to test.",
+			"$ref": "../../general/numberProvider.json"
+		},
+		"range": {
+			"title": "Range",
+			"anyOf": [
+				{
+					"description": "Shorthand version of range above, used to compare value against a single number only. Number providers cannot be used in this shorthand form.",
+					"type": "integer"
+				},
+				{
+					"description": "The range of numbers to compare 'value' against.",
+					"type": "object",
+					"properties": {
+						"min": {
+							"title": "Min",
+							"description": "The minimum value.",
+							"$ref": "../../general/numberProvider.json"
+						},
+						"max": {
+							"title": "Max",
+							"description": "The maximum value.",
+							"$ref": "../../general/numberProvider.json"
+						}
+					}
+				}
+			]
+		}
+	}
+}

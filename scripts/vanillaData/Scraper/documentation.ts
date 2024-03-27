@@ -22,8 +22,7 @@ export class DocumentationScraper {
 				? // @ts-ignore
 				  filtered.map((i) => target.map(i))
 				: filtered
-
-			await writeRaw(target.id, mapped)
+			await writeRaw(target.id, mapped, 'minecraftBedrock')
 		}
 	}
 	/**

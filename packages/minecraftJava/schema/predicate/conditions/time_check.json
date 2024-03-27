@@ -1,0 +1,21 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"condition": {
+			"title": "Time Check",
+			"description": "Compares the current day time against given values. Invokable from any context.",
+			"const": "minecraft:time_check"
+		},
+		"value": {
+			"title": "Value",
+			"description": "The time to compare the day time against.",
+			"$ref": "../../general/numberProvider.json"
+		},
+		"period": {
+			"title": "Period",
+			"description": "If present, the day time is first reduced modulo the given number before being checked against  value. For example, setting this to 24000 causes the checked time to be equal to the current daytime.",
+			"type": "integer"
+		}
+	}
+}

@@ -1,0 +1,23 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"condition": {
+			"title": "Random Chance with Looting",
+			"description": "Generates a random number between 0.0 and 1.0, and checks if it is less than a specified value that has been affected by the level of Looting on the killer entity. Requires killer entity provided by loot context, and if not provided, the looting level is regarded as 0.",
+			"const": "minecraft:random_chance_with_looting"
+		},
+		"chance": {
+			"title": "Chance",
+			"description": "Base success rate.",
+			"type": "number",
+			"minimum": 0.0,
+			"maximum": 1.0
+		},
+		"looting_multiplier": {
+			"title": "Looting Multiplier",
+			"description": "Looting adjustment to the base success rate.",
+			"type": "number"
+		}
+	}
+}

@@ -1,0 +1,21 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"condition": {
+			"title": "Entity Scores",
+			"description": "Checks the scoreboard scores of an entity. Requires the specified entity provided by loot context, and always fails if not provided.",
+			"const": "minecraft:entity_scores"
+		},
+		"scores": {
+			"title": "Scores",
+			"description": "Scores to check. All specified scores must pass for the condition to pass.",
+			"type": "object",
+			"patternProperties": {
+				".*": {
+					"$ref": "../../general/numberProvider.json"
+				}
+			}
+		}
+	}
+}

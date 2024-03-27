@@ -1,0 +1,16 @@
+TODO:
+- Advancements
+- Recipes
+- Loot Tables
+- Damage Types
+- Chat Types
+- Item Modifiers
+- Trim Materials
+- Trim Patterns
+- Tags
+- Lightning cache
+
+Finished:
+- Predicates
+- Banner Patterns
+- Wolf Variants

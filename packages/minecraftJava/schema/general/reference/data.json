@@ -1,0 +1,52 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"definitions": {
+		"advancement_identifiers": {
+			"anyOf": [
+				{
+					"$ref": "../vanilla/data.json#/definitions/advancement_identifiers"
+				},
+				{
+					// TODO: Lightning cache
+				}
+			]
+		},
+		"dimension_identifiers": {
+			"anyOf": [
+				{
+					"$ref": "../vanilla/data.json#/definitions/dimension_identifiers"
+				}
+			]
+		},
+		"loot_table_identifiers": {
+			"anyOf": [
+				{
+					"$ref": "../vanilla/data.json#/definitions/loot_table_identifiers"
+				},
+				{
+					// TODO: Lightning cache
+				}
+			]
+		},
+		"recipe_identifiers": {
+			"anyOf": [
+				{
+					"$ref": "../vanilla/data.json#/definitions/recipe_identifiers"
+				},
+				{
+					// TODO: Lightning cache
+				}
+			]
+		},
+		"wolf_variant_identifiers": {
+			"anyOf": [
+				{
+					"$ref": "../vanilla/data.json#/definitions/wolf_variant_identifiers"
+				},
+				{
+					// TODO: Lightning cache
+				}
+			]
+		}
+	}
+}

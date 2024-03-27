@@ -1,0 +1,822 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"distance": {
+			"$ref": "#/definitions/distance"
+		},
+		"effects": {
+			"$ref": "#/definitions/effects"
+		},
+		"equipment": {
+			"$ref": "#/definitions/equipment"
+		},
+		"flags": {
+			"$ref": "#/definitions/flags"
+		},
+		"location": {
+			"title": "Location",
+			"description": "Test properties of this entity's location",
+			"$ref": "./locationPredicate.json"
+		},
+		"nbt": {
+			"title": "NBT",
+			"description": "Test NBT data of this entity. The outer braces '{}' of the NBT must be included within this string. Additional care is required if the NBT contains quotation marks.",
+			"type": "string"
+		},
+		"passenger": {
+			"title": "Passenger",
+			"description": "Test the entity directly riding this entity.",
+			"$ref": "#"
+		},
+		"slots": {
+			"title": "Slots",
+			"description": "Test for items in specific inventory slots.",
+			"type": "object",
+			"patternProperties": {
+				".*": {
+					"$ref": "./itemPredicate.json"
+				}
+			},
+			"propertyNames": {
+				"type": "number"
+			}
+		},
+		"stepping_on": {
+			"title": "Stepping On",
+			"description": "Test properties of the block the entity is standing on, using a location predicate.",
+			"$ref": "./locationPredicate.json"
+		},
+		"team": {
+			"type": "string" // TODO: Team lightning cache
+		},
+		"type": {
+			"$ref": "#/definitions/type"
+		},
+		"targeted_entity": {
+			"title": "Targeted Entity",
+			"description": "Test properties of the entity which this entity is targeting for attacks.",
+			"$ref": "#"
+		},
+		"vehicle": {
+			"title": "Vehicle",
+			"description": "Test properties of the vehicle entity that this entity is riding upon.",
+			"$ref": "#"
+		},
+		"type_specific": {
+			"$ref": "#/definitions/type_specific"
+		}
+	},
+	"definitions": {
+		"distance": {
+			"title": "Distance",
+			"description": "To test the distance to the entity this predicate is invoked upon. Passes if the calculated distance is between the entered 'min' and 'max', inclusive.",
+			"type": "object",
+			"properties": {
+				"absolute": {
+					"title": "Absolute",
+					"description": "Test the distance between the two points, ignoring the Y value.",
+					"$ref": "#/definitions/float_range"
+				},
+				"horizontal": {
+					"title": "horizontal",
+					"description": "Test the distance between the two points, ignoring the Y value.",
+					"$ref": "#/definitions/float_range"
+				},
+				"x": {
+					"title": "X",
+					"description": "Test the absolute difference between the X-coordinates of the two points.",
+					"$ref": "#/definitions/float_range"
+				},
+				"y": {
+					"description": "Test the absolute difference between the Y-coordinates of the two points.",
+					"$ref": "#/definitions/float_range"
+				},
+				"z": {
+					"description": "Test the absolute difference between the z-coordinates of the two points.",
+					"$ref": "#/definitions/float_range"
+				}
+			}
+		},
+		"effects": {
+			"title": "Effects",
+			"description": "For testing the active status effects on the entity.",
+			"patternProperties": {
+				".*": {
+					"type": "object",
+					"properties": {
+						"ambient": {
+							"title": "Ambient",
+							"description": "Test whether the effect is from a beacon.",
+							"type": "boolean"
+						},
+						"amplifier": {
+							"title": "Amplifier",
+							"anyOf": [
+								{
+									"description": "Test if the effect's amplifier matches an exact value. Level I is represented by 0.",
+									"type": "integer"
+								},
+								{
+									"description": "Test if the effect amplifier falls within a range of values. Level I is represented by 0.",
+									"$ref": "#/definitions/int_range"
+								}
+							]
+						},
+						"duration": {
+							"title": "Duration",
+							"anyOf": [
+								{
+									"description": "Test if the effect's remaining time (in ticks) matches an exact value.",
+									"type": "integer"
+								},
+								{
+									"description": "Test if the effect's remaining time (in ticks) is between two numbers, inclusive.",
+									"$ref": "#/definitions/int_range"
+								}
+							]
+						},
+						"visible": {
+							"title": "Visible",
+							"description": "Test if the effect has visible particles.",
+							"type": "boolean"
+						}
+					}
+				}
+			},
+			"propertyNames": {
+				"$ref": "./vanilla/identifiers.json/#/definitions/mob_effect_identifiers"
+			}
+		},
+		"equipment": {
+			"title": "Equipment",
+			"description": "For testing the items that this entity holds in its equipment slots.",
+			"type": "object",
+			"properties": {
+				"mainhand": {
+					"title": "Mainhand",
+					"description": "Test the item in the entity's mainhand.",
+					"$ref": "./itemPredicate.json"
+				},
+				"offhand": {
+					"title": "Offhand",
+					"description": "Test the item in the entity's offhand.",
+					"$ref": "./itemPredicate.json"
+				},
+				"head": {
+					"title": "Head",
+					"description": "Test the item in the entity's head armor slot.",
+					"$ref": "./itemPredicate.json"
+				},
+				"chest": {
+					"title": "Chest",
+					"description": "Test the item in the entity's chest armor slot.",
+					"$ref": "./itemPredicate.json"
+				},
+				"legs": {
+					"title": "Legs",
+					"description": "Test the item in the entity's legs armor slot.",
+					"$ref": "./itemPredicate.json"
+				},
+				"feet": {
+					"title": "Feet",
+					"description": "Test the item in the entity's feet armor slot.",
+					"$ref": "./itemPredicate.json"
+				}
+			}
+		},
+		"flags": {
+			"title": "Flags",
+			"description": "To test flags of the entity.",
+			"type": "object",
+			"properties": {
+				"is_baby": {
+					"title": "Is Baby",
+					"description": "Test whether the entity is or is not a baby variant.",
+					"type": "boolean"
+				},
+				"is_on_fire": {
+					"title": "Is On Fire",
+					"description": "Test whether the entity is or is not on fire.",
+					"type": "boolean"
+				},
+				"is_sneaking": {
+					"title": "Is Sneaking",
+					"description": "Test whether the entity is or is not sneaking.",
+					"type": "boolean"
+				},
+				"is_sprinting": {
+					"title": "Is Sprinting",
+					"description": "Test whether the entity is or is not sprinting.",
+					"type": "boolean"
+				},
+				"is_swimming": {
+					"title": "Is Swimming",
+					"description": "Test whether the entity is or is not swimming.",
+					"type": "boolean"
+				}
+			}
+		},
+		"type": {
+			"title": "Type",
+			"description": "Test this entity's type.",
+			"anyOf": [
+				{
+					"$ref": "./vanilla/identifiers.json#/definitions/entity_type_identifiers"
+				},
+				{
+					"$ref": "./reference/tags.json#/definitions/hash_prefixed_entity_type_tags"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "./vanilla/identifiers.json#/definitions/entity_type_identifiers"
+					}
+				}
+			]
+		},
+		"type_specific": {
+			"title": "Type Specific",
+			"description": "To test entity properties that can only be applied to certain entity types.",
+			"type": "object",
+			"anyOf": [
+				{
+					"properties": {
+						"type": {
+							"title": "Type",
+							"description": "Dictates which type-specific properties to test for.",
+							"type": "string",
+							"enum": [
+								"minecraft:axolotl",
+								"minecraft:boat",
+								"minecraft:cat",
+								"minecraft:fishing_hook",
+								"minecraft:fox",
+								"minecraft:frog",
+								"minecraft:horse",
+								"minecraft:lightning",
+								"minecraft:llama",
+								"minecraft:mooshroom",
+								"minecraft:painting",
+								"minecraft:parrot",
+								"minecraft:player",
+								"minecraft:rabbit",
+								"minecraft:slime",
+								"minecraft:tropical_fish",
+								"minecraft:villager",
+								"minecraft:wolf"
+							]
+						}
+					},
+					"required": ["type"]
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "minecraft:axolotl"
+							}
+						},
+						"required": ["type"]
+					},
+					"then": {
+						"properties": {
+							"variant": {
+								"title": "Variant",
+								"description": "A value specifying an axolotl variant.",
+								"type": "string",
+								"enum": ["lucy", "wild", "gold", "cyan", "blue"]
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "minecraft:boat"
+							}
+						},
+						"required": ["type"]
+					},
+					"then": {
+						"properties": {
+							"variant": {
+								"title": "Variant",
+								"description": "A value specifying a boat variant.",
+								"type": "string",
+								"enum": [
+									"oak",
+									"spruce",
+									"birch",
+									"jungle",
+									"acacia",
+									"dark_oak",
+									"mangrove",
+									"bamboo"
+								]
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "minecraft:cat"
+							}
+						},
+						"required": ["type"]
+					},
+					"then": {
+						"properties": {
+							"variant": {
+								"title": "Variant",
+								"description": "A resource location specifying a cat variant.",
+								"anyOf": [
+									{
+										"$ref": "./vanilla/identifiers.json#/definitions/cat_variant_identifiers"
+									},
+									{
+										"$ref": "./reference/tags.json#/definitions/cat_variant_tags"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "minecraft:fishing_hook"
+							}
+						},
+						"required": ["type"]
+					},
+					"then": {
+						"properties": {
+							"in_open_water": {
+								"title": "In Open Water",
+								"description": "Whether the fishing hook was in open water.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "minecraft:fox"
+							}
+						},
+						"required": ["type"]
+					},
+					"then": {
+						"properties": {
+							"variant": {
+								"title": "Variant",
+								"description": "A value specifying a fox variant.",
+								"type": "string",
+								"enum": ["red", "snow"]
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "minecraft:frog"
+							}
+						},
+						"required": ["type"]
+					},
+					"then": {
+						"properties": {
+							"variant": {
+								"title": "Variant",
+								"description": "A resource location specifying a frog variant.",
+								"$ref": "./vanilla/identifiers.json#/definitions/frog_variant_identifiers"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "minecraft:horse"
+							}
+						},
+						"required": ["type"]
+					},
+					"then": {
+						"properties": {
+							"variant": {
+								"title": "Variant",
+								"description": "A value specifying a horse variant.",
+								"type": "string",
+								"enum": [
+									"white",
+									"creamy",
+									"chestnut",
+									"brown",
+									"black",
+									"gray",
+									"dark_brown"
+								]
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "minecraft:lightning"
+							}
+						},
+						"required": ["type"]
+					},
+					"then": {
+						"properties": {
+							"blocks_set_on_fire": {
+								"title": "Blocks Set on Fire",
+								"anyOf": [
+									{
+										"description": "Test if the number of blocks set on fire by this lightning bolt matches an exact value.",
+										"type": "integer"
+									},
+									{
+										"description": "Test the number of blocks set on fire by this lightning bolt is between a minimum and maximum value.",
+										"$ref": "#/definitions/int_range"
+									}
+								]
+							},
+							"entity_struck": {
+								"title": "Entity Struck",
+								"description": "Test the properties of entities struck by this lightning bolt. Passes if at least one of the struck entities matches the entered conditions.",
+								"$ref": "#"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "minecraft:llama"
+							}
+						},
+						"required": ["type"]
+					},
+					"then": {
+						"properties": {
+							"variant": {
+								"title": "Variant",
+								"description": "A value specifying a llama variant.",
+								"type": "string",
+								"enum": ["creamy", "white", "brown", "gray"]
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "minecraft:mooshroom"
+							}
+						},
+						"required": ["type"]
+					},
+					"then": {
+						"properties": {
+							"variant": {
+								"title": "Variant",
+								"description": "A value specifying a mooshroom variant.",
+								"type": "string",
+								"enum": ["red", "brown"]
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "minecraft:painting"
+							}
+						},
+						"required": ["type"]
+					},
+					"then": {
+						"properties": {
+							"variant": {
+								"title": "Variant",
+								"description": "A resource location specifying a painting variant.",
+								"anyOf": [
+									{
+										"$ref": "./vanilla/identifiers.json#/definitions/painting_variant_identifiers"
+									},
+									{
+										"$ref": "./reference/tags.json#/definitions/painting_variant_tags"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "minecraft:parrot"
+							}
+						},
+						"required": ["type"]
+					},
+					"then": {
+						"properties": {
+							"variant": {
+								"title": "Variant",
+								"description": "A value specifying a parrot variant.",
+								"type": "string",
+								"enum": [
+									"red_blue",
+									"blue",
+									"green",
+									"yellow_blue",
+									"gray"
+								]
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "minecraft:player"
+							}
+						},
+						"required": ["type"]
+					},
+					"then": {
+						"properties": {
+							"looking_at": {
+								"title": "Looking At",
+								"description": "Tests properties of the entity that this player is looking at, as long as it is visible and within a radius of 100 blocks. Visibility is defined through the line from the player's eyes to the entity's eyes, rather than the direction that the player is looking in.",
+								"$ref": "#"
+							},
+							"advancements": {
+								"title": "Advancements",
+								"description": "To test the player's advancements.",
+								"patternProperties": {
+									".*": {
+										"anyOf": [
+											{
+												"description": "Test whether an advancement is granted or not granted. Key is an advancement ID, value is true or false to test for granted/not granted respectively.",
+												"type": "boolean"
+											},
+											{
+												"description": "Test whether specific criterions of an advancement are marked as complete.",
+												"type": "object",
+												"patternProperties": {
+													".*": {
+														"description": "Key is one of the criteria of the advancement, value is true or false to test for completed/not completed respectively.",
+														"type": "boolean"
+													}
+												}
+												// TODO: criterion lightning cache? not sure if it's needed.
+											}
+										]
+									}
+								},
+								"propertyNames": {
+									"$ref": "./reference/data.json#/definitions/advancement_identifiers"
+								}
+							},
+							"recipes": {
+								"title": "Recipes",
+								"description": "To test if recipes are known or unknown to this player.",
+								"type": "object",
+								"patternProperties": {
+									".*": {
+										"description": "Key is the recipe ID; value is true or false to test for known/unknown respectively.",
+										"type": "boolean"
+									}
+								},
+								"propertyNames": {
+									"$ref": "./reference/data.json#/definitions/recipe_identifiers"
+								}
+							},
+							"stats": {
+								"title": "Stats",
+								"description": "To test this player's statistics.",
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"title": "Type",
+											"description": "The statistic type.",
+											"type": "string",
+											"enum": [
+												"minecraft:custom",
+												"minecraft:crafted",
+												"minecraft:used",
+												"minecraft:broken",
+												"minecraft:mined",
+												"minecraft:killed",
+												"minecraft:picked_up",
+												"minecraft:dropped",
+												"minecraft:killed_by"
+											]
+										},
+										"stat": {
+											"title": "Stat",
+											"description": "The statistic ID to test.",
+											"type": "string" // TODO: Stat autocompletions
+										},
+										"value": {
+											"title": "Value",
+											"anyOf": [
+												{
+													"description": "Test if the value of the statistic matches an exact number.",
+													"type": "number"
+												},
+												{
+													"description": "Test if the value of the statistic is between 'min' and 'max' values, inclusive.",
+													"$ref": "#/definitions/int_range"
+												}
+											]
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "minecraft:rabbit"
+							}
+						},
+						"required": ["type"]
+					},
+					"then": {
+						"properties": {
+							"variant": {
+								"title": "Variant",
+								"description": "A value specifying a rabbit variant.",
+								"type": "string",
+								"enum": [
+									"brown",
+									"white",
+									"black",
+									"white_splotched",
+									"gold",
+									"salt",
+									"evil"
+								]
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "minecraft:slime"
+							}
+						},
+						"required": ["type"]
+					},
+					"then": {
+						"properties": {
+							"size": {
+								"title": "Size",
+								"anyOf": [
+									{
+										"description": "Test if the size of this slime matches an exact value.",
+										"type": "integer"
+									},
+									{
+										"description": "Test if the size of this slime is between 'min' and 'max' values, inclusive.",
+										"$ref": "#/definitions/int_range"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "minecraft:tropical_fish"
+							}
+						},
+						"required": ["type"]
+					},
+					"then": {
+						"properties": {
+							"variant": {
+								"title": "Variant",
+								"description": "A value specifying a tropical fish variant.",
+								"type": "string",
+								"enum": [
+									"kob",
+									"sunstreak",
+									"snooper",
+									"dasher",
+									"brinely",
+									"spotty",
+									"flopper",
+									"stripey",
+									"glitter",
+									"blockfish",
+									"betty",
+									"clayfish"
+								]
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "minecraft:villager"
+							}
+						},
+						"required": ["type"]
+					},
+					"then": {
+						"properties": {
+							"variant": {
+								"title": "Variant",
+								"description": "A resource location specifying a villager type.",
+								"$ref": "./vanilla/identifiers.json/#/definitions/villager_type_identifiers"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "minecraft:wolf"
+							}
+						},
+						"required": ["type"]
+					},
+					"then": {
+						"properties": {
+							"variant": {
+								"title": "Variant",
+								"description": "A resource location specifying a wolf variant.",
+								"$ref": "./reference/data.json#/definitions/wolf_variant_identifiers"
+							}
+						}
+					}
+				}
+			]
+		},
+		"int_range": {
+			"type": "object",
+			"properties": {
+				"min": {
+					"title": "Min",
+					"description": "The minimum value.",
+					"type": "integer"
+				},
+				"max": {
+					"title": "Max",
+					"description": "The maximum value.",
+					"type": "integer"
+				}
+			}
+		},
+		"float_range": {
+			"type": "object",
+			"properties": {
+				"min": {
+					"title": "Min",
+					"description": "The minimum value.",
+					"type": "number"
+				},
+				"max": {
+					"title": "Max",
+					"description": "The maximum value.",
+					"type": "number"
+				}
+			}
+		}
+	}
+}

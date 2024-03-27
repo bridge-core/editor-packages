@@ -39,6 +39,12 @@ export interface GameTarget extends ScrapeTarget {
 	 */
 	extensions?: boolean
 }
+export interface MisodeTarget extends ScrapeTarget {
+	/**
+	 * A vanilla registry to scrape data from
+	 */
+	registry: string
+}
 
 export interface ExportTarget {
 	/**
@@ -53,4 +59,8 @@ export interface ExportTarget {
 	 * Whether to export as properties or enum. Default: 'enum'.
 	 */
 	type?: 'enum' | 'property'
+	/**
+	 * Whether to export to minecraftBedrock schema or minecraftJava schema
+	 */
+	package: 'minecraftBedrock' | 'minecraftJava'
 }

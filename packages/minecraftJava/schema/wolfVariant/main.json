@@ -1,0 +1,39 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"wild_texture": {
+			"title": "Wild Texture",
+			"description": "Texture used when this wolf variant is wild.",
+			"type": "string" // TODO: Texture path autocompletions
+		},
+		"angry_texture": {
+			"title": "Angry Texture",
+			"description": "Texture used when this wolf variant is angry.",
+			"type": "string" // TODO: Texture path autocompletions
+		},
+		"tame_texture": {
+			"title": "Tame Texture",
+			"description": "Texture used when this wolf variant is tamed.",
+			"type": "string" // TODO: Texture path autocompletions
+		},
+		"biomes": {
+			"title": "Biomes",
+			"description": "Which biomes will let a wolf spawn as this variant. Accepts a single biome ID, list of biome IDs, or a hash-prefixed biome tag.",
+			"anyOf": [
+				{
+					"$ref": "../general/reference/worldgen.json#/definitions/biome_identifiers"
+				},
+				{
+					"$ref": "../general/reference/tags.json#/definitions/biome_tags"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../general/reference/worldgen.json#/definitions/biome_identifiers"
+					}
+				}
+			]
+		}
+	}
+}

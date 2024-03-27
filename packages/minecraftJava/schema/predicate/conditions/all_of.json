@@ -1,0 +1,19 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"type": "object",
+	"properties": {
+		"condition": {
+			"title": "All Of",
+			"description": "Evaluates a list of predicates and passes if all of them pass. Invokable from any context.",
+			"const": "minecraft:all_of"
+		},
+		"terms": {
+			"title": "Terms",
+			"description": "The list of predicates to evaluate. A predicate within this array must be a object.",
+			"type": "array",
+			"items": {
+				"$ref": "../general.json/#/definitions/predicate"
+			}
+		}
+	}
+}

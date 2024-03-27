@@ -1,0 +1,11 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"condition": {
+			"title": "Killed by Player",
+			"description": "Checks if there is a 'killer_player' entity provided by loot context. Requires 'killer_player' entity provided by loot context, and always fails if not provided.",
+			"const": "minecraft:killed_by_player"
+		}
+	}
+}

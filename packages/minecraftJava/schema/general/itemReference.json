@@ -1,0 +1,21 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"id": {
+			"title": "ID",
+			"description": "Item/Block ID. If not specified, gets treated as air, resulting in the item being removed.",
+			"$ref": "./reference/identifiers.json/#/definitions/item_identifiers"
+		},
+		"count": {
+			"title": "Count",
+			"description": "Number of items stacked. Any item can be stacked, even if unstackable through normal means. Values below 0 cause the item to be treated as air, resulting in the item being removed.",
+			"type": "number"
+		},
+		"components": {
+			"title": "Components",
+			"description": "Additional information about the item. This tag is optional for most items.",
+			"type": "object" // TODO: Data components
+		}
+	}
+}
