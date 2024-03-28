@@ -17,11 +17,11 @@ jobs:
                   persist-credentials: false
 
             - name: Checkout Packages Release 🚀
-                uses: actions/checkout@v2
-                with:
-                    path: './editor-packages-release'
-                    ref: 'release'
-                    persist-credentials: false
+              uses: actions/checkout@v2
+              with:
+                  path: './editor-packages-release'
+                  ref: 'release'
+                  persist-credentials: false
 
             - name: Setup Deno 🚧
               uses: denolib/setup-deno@v2
