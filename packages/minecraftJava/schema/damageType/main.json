@@ -1,0 +1,43 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"message_id": {
+			"title": "Message ID",
+			"description": "Used as part of the death message translation key if 'death_message_type' is set to 'default'.",
+			"type": "string"
+		},
+		"exhaustion": {
+			"title": "Exhaustion",
+			"description": "The amount of hunger exhaustion caused by this damage type.",
+			"type": "number"
+		},
+		"scaling": {
+			"title": "Scaling",
+			"description": "Whether this damage type scalse with difficulty.",
+			"type": "string",
+			"enum": ["never", "always", "when_caused_by_living_non_player"]
+		},
+		"effects": {
+			"title": "Effects",
+			"description": "Optional field controlling how incoming damage is shown to the player.",
+			"type": "string",
+			"enum": [
+				"hurt",
+				"thorns",
+				"drowning",
+				"burning",
+				"poking",
+				"freezing"
+			],
+			"default": "hurt"
+		},
+		"death_message_type": {
+			"title": "Death Message Type",
+			"description": "Optional field that controls the kind of death messages to use.",
+			"type": "string",
+			"enum": ["default", "fall_variants", "intentional_game_design"],
+			"default": "default"
+		}
+	}
+}

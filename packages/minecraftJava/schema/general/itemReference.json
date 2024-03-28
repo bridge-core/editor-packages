@@ -5,7 +5,7 @@
 		"id": {
 			"title": "ID",
 			"description": "Item/Block ID. If not specified, gets treated as air, resulting in the item being removed.",
-			"$ref": "./reference/identifiers.json/#/definitions/item_identifiers"
+			"$ref": "./vanilla/identifiers.json#/definitions/item_identifiers"
 		},
 		"count": {
 			"title": "Count",
