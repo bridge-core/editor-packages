@@ -692,6 +692,30 @@
 					"if": {
 						"properties": {
 							"type": {
+								"const": "minecraft:raider"
+							}
+						},
+						"required": ["type"]
+					},
+					"then": {
+						"properties": {
+							"has_raid": {
+								"title": "Has Raid",
+								"description": "Match whether the raider is in an active raid.",
+								"type": "boolean"
+							},
+							"is_captain": {
+								"title": "Is Captain",
+								"description": "Match whether the raider is a captain.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
 								"const": "minecraft:slime"
 							}
 						},
