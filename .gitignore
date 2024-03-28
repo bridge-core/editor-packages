@@ -7,6 +7,4 @@ dist/minecraftBedrock/*
 !dist/minecraftBedrock/fileDefinitions.json
 
 .env
-packages.zip
-dataPackage.ts
 scripts/vanillaData/raw
