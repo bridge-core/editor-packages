@@ -3,7 +3,7 @@ name: Build Data
 on:
     push:
         branches:
-            - main
+            - refactor
     workflow_dispatch:
 
 jobs:
@@ -16,15 +16,6 @@ jobs:
                   path: './editor-packages'
                   persist-credentials: false
 
-            - name: Checkout Editor 🛎
-              uses: actions/checkout@v2
-              with:
-                  repository: 'bridge-core/editor'
-                  ref: 'dev'
-                  path: './editor'
-                  fetch-depth: 0
-                  persist-credentials: false
-
             - name: Setup Deno 🚧
               uses: denolib/setup-deno@v2
               with:
@@ -34,12 +25,12 @@ jobs:
               run: |
                   cd ./editor-packages
                   deno task build
-                  mv packages.zip ../editor/public
-                  mv dataPackage.ts ../editor/src/utils/app
+                  mkdir ./public
+                  mv packages.zip ./public
 
             - name: Commit files ✅
               run: |
-                  cd ./editor
+                  cd ./editor-packages
                   git config --local user.email "${{ github.event.pusher.email }}"
                   git config --local user.name "${{ github.event.pusher.name }}"
                   git add -A && git commit -m "${{ github.event.head_commit.message }}"
@@ -47,7 +38,7 @@ jobs:
             - name: Push changes 🔼
               uses: ad-m/github-push-action@v0.6.0
               with:
-                  directory: './editor'
-                  repository: 'bridge-core/editor'
-                  branch: 'dev'
+                  directory: './editor-packages'
+                  repository: 'bridge-core/editor-packages'
+                  branch: 'refactor'
                   github_token: ${{ secrets.EDITOR_DATA_PACKAGES }}
