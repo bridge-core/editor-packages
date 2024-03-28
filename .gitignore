@@ -8,3 +8,7 @@ dist/minecraftBedrock/*
 
 .env
 scripts/vanillaData/raw
+
+hash
+DataPackage.ts
+packages.zip

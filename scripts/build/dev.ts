@@ -12,13 +12,15 @@ let events: Record<string, Deno.FsEvent['kind']> = {}
 const update = debounce(async () => {
 	await build(
 		join(EDITOR_DIR, './public/packages.zip'),
-		join(EDITOR_DIR, './src/libs/app/DataPackage.ts')
+		join(EDITOR_DIR, './src/libs/app/DataPackage.ts'),
+		join(EDITOR_DIR, './public/hash')
 	)
 }, 1000)
 
 await build(
 	join(EDITOR_DIR, './public/packages.zip'),
-	join(EDITOR_DIR, './src/libs/app/DataPackage.ts')
+	join(EDITOR_DIR, './src/libs/app/DataPackage.ts'),
+	join(EDITOR_DIR, './public/hash')
 )
 
 for await (const event of watcher) {
