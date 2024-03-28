@@ -16,6 +16,13 @@ jobs:
                   path: './editor-packages'
                   persist-credentials: false
 
+            - name: Checkout Packages Release 🚀
+                uses: actions/checkout@v2
+                with:
+                    path: './editor-packages-release'
+                    ref: 'release'
+                    persist-credentials: false
+
             - name: Setup Deno 🚧
               uses: denolib/setup-deno@v2
               with:
@@ -25,12 +32,11 @@ jobs:
               run: |
                   cd ./editor-packages
                   deno task build
-                  mkdir ./public
-                  mv packages.zip ./public
+                  mv packages.zip ../editor-packages-release/
 
             - name: Commit files ✅
               run: |
-                  cd ./editor-packages
+                  cd ./editor-packages-release
                   git config --local user.email "${{ github.event.pusher.email }}"
                   git config --local user.name "${{ github.event.pusher.name }}"
                   git add -A && git commit -m "${{ github.event.head_commit.message }}"
@@ -38,7 +44,7 @@ jobs:
             - name: Push changes 🔼
               uses: ad-m/github-push-action@v0.6.0
               with:
-                  directory: './editor-packages'
+                  directory: './editor-packages-release'
                   repository: 'bridge-core/editor-packages'
-                  branch: 'refactor'
+                  branch: 'release'
                   github_token: ${{ secrets.EDITOR_DATA_PACKAGES }}
