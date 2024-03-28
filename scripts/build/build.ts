@@ -16,11 +16,11 @@ export async function build(
 	await zipFolder('./dist', zipOutputPath)
 
 	// Get ZIP size
-	const stat = await Deno.stat(zipOutputPath)
-	await Deno.writeTextFile(
-		packageSizeOutputPath,
-		`export const zipSize = ${stat.size}`
-	)
+	// const stat = await Deno.stat(zipOutputPath)
+	// await Deno.writeTextFile(
+	// 	packageSizeOutputPath,
+	// 	`export const zipSize = ${stat.size}`
+	// )
 
 	// for await (const entry of Deno.readDir('./packages')) {
 	// 	if (entry.isDirectory)
