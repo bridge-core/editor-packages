@@ -33,7 +33,6 @@ jobs:
                   cd ./editor-packages
                   deno task build
                   mv packages.zip ../editor-packages-release/
-                  mv DataPackages.ts ../editor-packages-release/
                   mv hash ../editor-packages-release/
 
             - name: Commit files ✅
