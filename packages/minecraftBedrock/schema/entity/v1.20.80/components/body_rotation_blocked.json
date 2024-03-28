@@ -1,7 +1,0 @@
-{
-	"$schema": "http://json-schema.org/draft-07/schema",
-	"title": "Body Rotation Blocked",
-	"description": "When set, the entity will no longer visually rotate their body to match their facing direction.",
-	"type": "object",
-	"additionalProperties": false
-}

@@ -1,9 +1,0 @@
-{
-	"format_version": "",
-	"minecraft:recipe_shaped": {
-		"description": {
-			"identifier": "{{PROJECT_PREFIX}}:{{FILE_NAME}}"
-		},
-		"tags": {}
-	}
-}

@@ -1,9 +1,0 @@
-{
-	"$schema": "http://json-schema.org/draft-07/schema",
-	"title": "Friction",
-	"description": "Describes the friction for this block in a range of (0.0-0.9). Friction affects an entity's movement speed when it travels on the block. Greater value results in more friction.",
-	"type": "number",
-	"minimum": 0.0,
-	"maximum": 0.9,
-	"default": 0.4
-}

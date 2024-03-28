@@ -1,6 +1,0 @@
-{
-	"$schema": "http://json-schema.org/draft-07/schema",
-	"title": "Render Offsets",
-	"doNotSuggest": true,
-	"deprecationMessage": "Deprecated as of v1.20.10 - The offset of the item rendered in an entity's hand."
-}

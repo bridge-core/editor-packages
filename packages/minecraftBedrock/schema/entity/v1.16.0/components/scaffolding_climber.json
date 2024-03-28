@@ -1,7 +1,0 @@
-{
-	"$schema": "http://json-schema.org/draft-07/schema",
-	"additionalProperties": false,
-	"description": "Allows the player to detect and manuever on the scaffolding block.",
-	"type": "object",
-	"title": "Scaffolding Climber"
-}

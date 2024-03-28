@@ -1,5 +1,0 @@
-{
-	"type": "properties",
-	"generateFile": "soundDefinition/dynamic/shortNameProperty.json",
-	"script": "return getCacheDataFor('soundDefinition', undefined, 'identifier').then(ids => (ids || []).map(id => id.split('.').pop()))"
-}

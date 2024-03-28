@@ -1,8 +1,0 @@
-{
-	"$schema": "http://json-schema.org/draft-07/schema",
-	"additionalProperties": false,
-	"type": "number",
-	"description": "How much power it can resist from explosion. Bigger the value is, more explosion power it blocks from explosion. If the value is less than remaining power from explosion, the block would destroy.",
-	"default": 0.0,
-	"title": "Explosion Resistance"
-}

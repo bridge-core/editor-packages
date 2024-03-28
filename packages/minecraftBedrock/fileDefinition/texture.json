@@ -1,9 +1,0 @@
-{
-	"id": "texture",
-	"icon": "mdi-file-image-outline",
-	"detect": {
-		"packType": "resourcePack",
-		"scope": ["textures/"],
-		"fileExtensions": [".png", ".jpeg", ".jpg", ".tga"]
-	}
-}

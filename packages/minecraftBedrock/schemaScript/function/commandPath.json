@@ -1,5 +1,0 @@
-{
-	"type": "enum",
-	"generateFile": "function/dynamic/commandPathEnum.json",
-	"script": "return readdir(resolvePackPath('behaviorPack', 'functions')).then(dirents => dirents.filter(dirent => dirent.path.endsWith('.mcfunction')).map(dirent => dirent.path.replace(`${resolvePackPath('behaviorPack', 'functions')}/`, '').replace('.mcfunction', '')))"
-}

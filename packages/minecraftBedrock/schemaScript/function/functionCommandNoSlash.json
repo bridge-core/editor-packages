@@ -1,5 +1,0 @@
-{
-	"type": "enum",
-	"generateFile": "function/dynamic/commandNoSlashEnum.json",
-	"script": "return readdir(resolvePackPath('behaviorPack', 'functions')).then(dirents => dirents.map(dirent => `function ${dirent.path.replace(`${resolvePackPath('behaviorPack', 'functions')}/`, '').replace('.mcfunction', '')}`).filter(command => !command.endsWith('.json')))"
-}
