@@ -5,7 +5,27 @@
 	"description": "Makes an item enchantable.",
 	"properties": {
 		"slot": {
-			"type": "string"
+			"type": "string",
+			"enum": [
+				"armor_feet",
+				"armor_torso",
+				"armor_head",
+				"armor_legs",
+				"axe",
+				"bow",
+				"cosmetic_head",
+				"crossbow",
+				"elytra",
+				"fishing_rod",
+				"flintsteel",
+				"hoe",
+				"pickaxe",
+				"shears",
+				"shield",
+				"shovel",
+				"sword",
+				"all"
+			]
 		},
 		"value": {
 			"type": "integer"

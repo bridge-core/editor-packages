@@ -3,5 +3,16 @@
 	"additionalProperties": false,
 	"type": "string",
 	"description": "The animation to use when this item is being used, e.g when the item is being eaten.",
-	"enum": ["bow", "eat", "drink", "crossbow", "camera"]
+	"enum": [
+		"block",
+		"bow",
+		"brush",
+		"camera",
+		"crossbow",
+		"eat",
+		"drink",
+		"none",
+		"spear",
+		"spyglass"
+	]
 }
