@@ -1,0 +1,31 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "string",
+	"enum": [
+		"geometry.enderman",
+		"geometry.evoker",
+		"geometry.humanoid.armor.boots",
+		"geometry.humanoid.armor.chestplate",
+		"geometry.humanoid.armor.helmet",
+		"geometry.humanoid.armor.leggings",
+		"geometry.humanoid.armor1",
+		"geometry.humanoid.armor2",
+		"geometry.humanoid.custom",
+		"geometry.pigzombie",
+		"geometry.pigzombie.baby",
+		"geometry.player.armor.boots",
+		"geometry.player.armor.chestplate",
+		"geometry.player.armor.helmet",
+		"geometry.player.armor.leggings",
+		"geometry.player.armor1",
+		"geometry.player.armor2",
+		"geometry.sheep",
+		"geometry.sheep.v1.8",
+		"geometry.vex",
+		"geometry.villager.witch",
+		"geometry.villager.witch.v1.8",
+		"geometry.zombie",
+		"geometry.zombie.husk",
+		"geometry.zombie.villager"
+	]
+}

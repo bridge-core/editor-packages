@@ -152,6 +152,15 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 			filter: (val: string) => val.startsWith('geometry.'),
 		},
 		{
+			id: 'geometry2',
+			path: 'models',
+			packType: 'resourcePack',
+			content: ['minecraft:geometry/0/description/identifier', '/'],
+			filter: (val: string) =>
+				val.startsWith('geometry.') && val.includes(':'),
+			map: (val: string) => val.split(':')[0],
+		},
+		{
 			id: 'biome_identifiers',
 			path: 'biomes',
 			packType: 'definitions',
@@ -270,6 +279,10 @@ export const exportRaw: ExportTarget[] = [
 	{
 		from: ['geometry.json'],
 		to: 'general/vanilla/geometry.json',
+	},
+	{
+		from: ['geometry2.json'],
+		to: 'general/vanilla/geometry2.json',
 	},
 	{
 		from: ['biomeTag.json'],
