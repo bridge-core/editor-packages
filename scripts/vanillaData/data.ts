@@ -83,6 +83,11 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 			content: 'texture_data',
 		},
 		{
+			id: 'misc_texture_paths',
+			path: 'textures/misc',
+			packType: 'resourcePack',
+		},
+		{
 			id: 'entity_texture_paths',
 			path: 'textures/entity',
 			packType: 'resourcePack',
@@ -239,6 +244,7 @@ export const exportRaw: ExportTarget[] = [
 	},
 	{
 		from: [
+			'misc_texture_paths.json',
 			'entity_texture_paths.json',
 			'item_texture_paths.json',
 			'particle_texture_paths.json',

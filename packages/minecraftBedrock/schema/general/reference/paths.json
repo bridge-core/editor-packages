@@ -8,6 +8,9 @@
 				},
 				{
 					"$ref": "../vanilla/paths.json#/definitions/entity_texture_paths"
+				},
+				{
+					"$ref": "../vanilla/paths.json#/definitions/misc_texture_paths"
 				}
 			]
 		},

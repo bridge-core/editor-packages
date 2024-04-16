@@ -125,7 +125,9 @@ export class GameScraper {
 		const fileData = await Deno.readTextFile(join(fullPath, fileName ?? ''))
 		const lines = fileData.split('\n')
 		for (const line of lines) {
-			for (const path of typeof contentPath === 'string' ? [contentPath] : contentPath) {
+			for (const path of typeof contentPath === 'string'
+				? [contentPath]
+				: contentPath) {
 				if (line.match(path)) output.push(line.split('=')[0])
 			}
 		}
