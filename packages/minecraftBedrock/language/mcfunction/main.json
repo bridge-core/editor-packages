@@ -902,6 +902,7 @@
 									"sendcommandfeedback",
 									"showbordereffect",
 									"showcoordinates",
+									"showdaysplayed",
 									"showdeathmessages",
 									"showtags",
 									"tntexplodes"
@@ -954,6 +955,7 @@
 									"sendcommandfeedback",
 									"showbordereffect",
 									"showcoordinates",
+									"showdaysplayed",
 									"showdeathmessages",
 									"showtags",
 									"tntexplodes"

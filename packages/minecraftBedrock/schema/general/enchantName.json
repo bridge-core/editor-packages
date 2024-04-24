@@ -6,7 +6,9 @@
 		"bane_of_arthropods",
 		"binding",
 		"blast_protection",
+		"breach",
 		"channeling",
+		"density",
 		"depth_strider",
 		"efficiency",
 		"feather_falling",
@@ -39,6 +41,7 @@
 		"swift_sneak",
 		"thorns",
 		"unbreaking",
-		"vanishing"
+		"vanishing",
+		"wind_burst"
 	]
 }
