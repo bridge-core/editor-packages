@@ -133,6 +133,18 @@
 		},
 		{
 			"moduleName": "@minecraft/server",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@1.4.0-beta.1.20.10-stable/index.d.ts",
+			"requires": {
+				"dependencies": [
+					{
+						"module_name": "@minecraft/server",
+						"version": "1.4.0-beta"
+					}
+				]
+			}
+		},
+		{
+			"moduleName": "@minecraft/server",
 			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@1.4.0/index.d.ts",
 			"requires": {
 				"dependencies": [
