@@ -20,6 +20,33 @@
 		// @minecraft/server
 		{
 			"moduleName": "@minecraft/server",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@1.13.0-beta.1.21.10-preview.20/index.d.ts",
+			"requires": {
+				"dependencies": [
+					{
+						"module_name": "@minecraft/server",
+						"version": "1.13.0-beta"
+					}
+				],
+				"experimentalGameplay": ["enableGameTestFramework"],
+				"targetVersion": [">=", "1.21.10"]
+			}
+		},
+		{
+			"moduleName": "@minecraft/server",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@1.12.0-rc.1.21.10-preview.20/index.d.ts",
+			"requires": {
+				"dependencies": [
+					{
+						"module_name": "@minecraft/server",
+						"version": "1.12.0"
+					}
+				],
+				"targetVersion": [">=", "1.21.10"]
+			}
+		},
+		{
+			"moduleName": "@minecraft/server",
 			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@1.12.0-beta.1.21.0-preview.23/index.d.ts",
 			"requires": {
 				"dependencies": [
@@ -206,7 +233,7 @@
 		// @minecraft/server-gametest
 		{
 			"moduleName": "@minecraft/server-gametest",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-gametest@1.0.0-beta.1.21.0-preview.23/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-gametest@1.0.0-beta.1.21.10-preview.20/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
@@ -214,8 +241,7 @@
 						"version": "1.0.0-beta"
 					}
 				],
-				"experimentalGameplay": ["enableGameTestFramework"],
-				"targetVersion": [">=", "1.21.0"]
+				"experimentalGameplay": ["enableGameTestFramework"]
 			}
 		},
 		{
@@ -234,7 +260,7 @@
 		// @minecraft/server-ui
 		{
 			"moduleName": "@minecraft/server-ui",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-ui@1.2.0-beta.1.21.0-preview.23/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-ui@1.2.0-beta.1.21.10-preview.20/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
@@ -243,7 +269,7 @@
 					}
 				],
 				"experimentalGameplay": ["enableGameTestFramework"],
-				"targetVersion": [">=", "1.21.0"]
+				"targetVersion": [">=", "1.21.10"]
 			}
 		},
 		{
@@ -283,11 +309,10 @@
 				]
 			}
 		},
-
 		// @server-admin
 		{
 			"moduleName": "@minecraft/server-admin",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-admin@1.0.0-beta.1.21.0-preview.23/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-admin@1.0.0-beta.1.21.10-preview.20/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
@@ -295,8 +320,7 @@
 						"version": "1.0.0-beta"
 					}
 				],
-				"experimentalGameplay": ["enableGameTestFramework"],
-				"targetVersion": [">=", "1.21.0"]
+				"experimentalGameplay": ["enableGameTestFramework"]
 			}
 		},
 		{
@@ -316,7 +340,7 @@
 		// @server-net
 		{
 			"moduleName": "@minecraft/server-net",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-net@1.0.0-beta.1.21.0-preview.23/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-net@1.0.0-beta.1.21.10-preview.20/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
@@ -324,8 +348,7 @@
 						"version": "1.0.0-beta"
 					}
 				],
-				"experimentalGameplay": ["enableGameTestFramework"],
-				"targetVersion": [">=", "1.21.0"]
+				"experimentalGameplay": ["enableGameTestFramework"]
 			}
 		},
 		{
@@ -344,7 +367,7 @@
 		// @server-editor
 		{
 			"moduleName": "@minecraft/server-editor",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-editor@0.1.0-beta.1.21.0-preview.23/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-editor@0.1.0-beta.1.21.10-preview.20/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
