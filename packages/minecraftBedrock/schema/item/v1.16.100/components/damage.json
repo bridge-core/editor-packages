@@ -2,5 +2,5 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"additionalProperties": false,
 	"type": "integer",
-	"description": "Set the damage an item deals."
+	"description": "How much extra damage the item does on attack."
 }

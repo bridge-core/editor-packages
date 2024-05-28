@@ -1,7 +1,5 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"title": "Should Despawn",
-	"description": "Whether the item should eventually despawn while floating in the world.",
 	"anyOf": [
 		{
 			"type": "boolean"
@@ -14,5 +12,6 @@
 				}
 			}
 		}
-	]
+	],
+	"description": "Whether the item interacts with liquid blocks on use."
 }

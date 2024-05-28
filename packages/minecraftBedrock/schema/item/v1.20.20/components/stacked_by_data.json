@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"title": "Should Despawn",
-	"description": "Whether the item should eventually despawn while floating in the world.",
+	"description": "Whether the same item with different aux values can stack. Also defines whether the item actors can merge while floating in the world.",
 	"anyOf": [
 		{
 			"type": "boolean"

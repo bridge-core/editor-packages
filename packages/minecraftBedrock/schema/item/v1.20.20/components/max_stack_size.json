@@ -1,19 +1,19 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"additionalProperties": false,
 	"anyOf": [
 		{
-			"type": "boolean",
-			"minimum": 0
+			"type": "integer",
+			"default": 64
 		},
 		{
 			"type": "object",
 			"properties": {
 				"value": {
-					"type": "boolean"
+					"type": "integer",
+					"default": 64
 				}
 			}
 		}
 	],
-	"description": "Whether the item has the glint effect."
+	"description": "The max stack size of the item."
 }

@@ -1,19 +1,19 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"additionalProperties": false,
 	"anyOf": [
 		{
-			"type": "boolean",
+			"type": "integer",
 			"minimum": 0
 		},
 		{
 			"type": "object",
 			"properties": {
 				"value": {
-					"type": "boolean"
+					"type": "integer",
+					"minimum": 0
 				}
 			}
 		}
 	],
-	"description": "Whether the item has the glint effect."
+	"description": "How much extra damage the item does on attack."
 }

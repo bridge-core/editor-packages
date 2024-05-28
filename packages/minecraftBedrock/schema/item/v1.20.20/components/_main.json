@@ -79,22 +79,22 @@
 					"$ref": "./explodeable.json"
 				},
 				"minecraft:damage": {
-					"$ref": "../../v1.16.100/components/damage.json"
+					"$ref": "./damage.json"
 				},
 				"minecraft:liquid_clipped": {
-					"$ref": "../../v1.16.100/components/liquid_clipped.json"
+					"$ref": "./liquid_clipped.json"
 				},
 				"minecraft:allow_off_hand": {
-					"$ref": "../../v1.16.100/components/allow_off_hand.json"
+					"$ref": "./allow_off_hand.json"
 				},
 				"minecraft:use_animation": {
-					"$ref": "../../v1.16.100/components/use_animation.json"
+					"$ref": "./use_animation.json"
 				},
 				"minecraft:hover_text_color": {
-					"$ref": "../../v1.16.100/components/hover_text_color.json"
+					"$ref": "./hover_text_color.json"
 				},
 				"minecraft:can_destroy_in_creative": {
-					"$ref": "../../v1.16.100/components/can_destroy_in_creative.json"
+					"$ref": "./can_destroy_in_creative.json"
 				},
 				"minecraft:projectile": {
 					"$ref": "../../v1.16.100/components/projectile.json"
@@ -127,10 +127,10 @@
 					"$ref": "../../v1.16.100/components/max_damage.json"
 				},
 				"minecraft:hand_equipped": {
-					"$ref": "../../v1.10.0/components/hand_equipped.json"
+					"$ref": "./hand_equipped.json"
 				},
 				"minecraft:stacked_by_data": {
-					"$ref": "../../v1.10.0/components/stacked_by_data.json"
+					"$ref": "./stacked_by_data.json"
 				},
 				"minecraft:glint": {
 					"$ref": "./glint.json"
