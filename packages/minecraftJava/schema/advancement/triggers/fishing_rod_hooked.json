@@ -1,0 +1,47 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"trigger": {
+			"title": "Trigger: Fishing Rod Hooked",
+			"description": "Triggers after the player successfully catches an item with a fishing rod or pulls an entity with a fishing rod.",
+			"const": "minecraft:fishing_rod_hooked"
+		},
+		"conditions": {
+			"title": "Conditions",
+			"description": "Object containing conditions that need to be met when the trigger gets activated. The criterion is marked completed when the trigger activates and all conditions passed.",
+			"type": "object",
+			"properties": {
+				"player": {
+					"$ref": "../general/player.json"
+				},
+				"entity": {
+					"title": "Entity",
+					"anyOf": [
+						{
+							"description": "Another format for 'entity'. Specifies a list of predicates that must pass in order for the criterion to be granted. The checks are applied to the entity pulled or the bobber, with the origin being the position of the player that would get the advancement.",
+							"type": "array",
+							"items": {
+								"$ref": "../../predicate/general.json#/definitions/predicate"
+							}
+						},
+						{
+							"description": "The entity that was pulled, or the fishing bobber if no entity is pulled.",
+							"$ref": "../../general/entityProperties.json"
+						}
+					]
+				},
+				"item": {
+					"title": "Item",
+					"description": "The item that was caught.",
+					"$ref": "../../general/itemProperties.json"
+				},
+				"rod": {
+					"title": "Rod",
+					"description": "The fishing rod used.",
+					"$ref": "../../general/itemProperties.json"
+				}
+			}
+		}
+	}
+}

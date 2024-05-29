@@ -1,0 +1,35 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Rewards",
+	"description": "An object representing the rewards provided when this advancement is obtained.",
+	"type": "object",
+	"properties": {
+		"recipes": {
+			"title": "Recipes",
+			"description": "To unlock recipes.",
+			"type": "array",
+			"items": {
+				"$ref": "../general/reference/data.json#/definitions/recipe_identifiers"
+			}
+		},
+		"loot": {
+			"title": "Loot",
+			"description": "To give items from loot tables to the player.",
+			"type": "array",
+			"items": {
+				"$ref": "../general/reference/data.json#/definitions/loot_table_identifiers"
+			}
+		},
+		"experience": {
+			"title": "Experience",
+			"description": "To given an amount of experience",
+			"type": "number",
+			"default": 0
+		},
+		"function": {
+			"title": "Function",
+			"description": "To run a function. Function tags are not allowed.",
+			"type": "string" // TODO: Functions
+		}
+	}
+}

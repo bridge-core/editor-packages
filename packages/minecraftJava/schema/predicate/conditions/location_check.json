@@ -24,8 +24,8 @@
 		},
 		"predicate": {
 			"title": "Predicate",
-			"description": "Predicate applied to location, uses same structure as advancements.",
-			"$ref": "../../general/locationPredicate.json"
+			"description": "Predicate applied to location.",
+			"$ref": "../../general/locationProperties.json"
 		}
 	}
 }

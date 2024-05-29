@@ -1,0 +1,38 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"trigger": {
+			"title": "Trigger: Levitation",
+			"description": "Triggers when the player has the levitation status effect.",
+			"const": "minecraft:levitation"
+		},
+		"conditions": {
+			"title": "Conditions",
+			"description": "Object containing conditions that need to be met when the trigger gets activated. The criterion is marked completed when the trigger activates and all conditions passed.",
+			"type": "object",
+			"properties": {
+				"player": {
+					"$ref": "../general/player.json"
+				},
+				"distance": {
+					"title": "Distance",
+					"description": "The distance between the position where the player started levitating and the player's current position.",
+					"$ref": "../../general/distanceProperties.json"
+				},
+				"duration": {
+					"title": "Duration",
+					"description": "The duration of the levitation in ticks.",
+					"anyOf": [
+						{
+							"type": "integer"
+						},
+						{
+							"$ref": "../../general/reference/intRange.json"
+						}
+					]
+				}
+			}
+		}
+	}
+}

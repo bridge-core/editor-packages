@@ -1,0 +1,69 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"trigger": {
+			"title": "Trigger: Bred Animals",
+			"description": "Triggers after the player breeds 2 animals.",
+			"const": "minecraft:bred_animals"
+		},
+		"conditions": {
+			"title": "Conditions",
+			"description": "Object containing conditions that need to be met when the trigger gets activated. The criterion is marked completed when the trigger activates and all conditions passed.",
+			"type": "object",
+			"properties": {
+				"player": {
+					"$ref": "../general/player.json"
+				},
+				"child": {
+					"title": "Child",
+					"anyOf": [
+						{
+							"description": "Specifies a list of predicates that must pass in order for the criterion to be granted. The origin of the predicate is the position of the player that would get the advancement.",
+							"type": "array",
+							"items": {
+								"$ref": "../../predicate/general.json#/definitions/predicate"
+							}
+						},
+						{
+							"description": "Checks properties of the child that results from the breeding.",
+							"$ref": "../../general/entityProperties.json"
+						}
+					]
+				},
+				"parent": {
+					"title": "Parent",
+					"anyOf": [
+						{
+							"description": "Specifies a list of predicates that must pass in order for the criterion to be granted. The origin of the predicate is the position of the player that would get the advancement.",
+							"type": "array",
+							"items": {
+								"$ref": "../../predicate/general.json#/definitions/predicate"
+							}
+						},
+						{
+							"description": "Checks properties of the parent.",
+							"$ref": "../../general/entityProperties.json"
+						}
+					]
+				},
+				"partner": {
+					"title": "Partner",
+					"anyOf": [
+						{
+							"description": "Specifies a list of predicates that must pass in order for the criterion to be granted. The origin of the predicate is the position of the player that would get the advancement.",
+							"type": "array",
+							"items": {
+								"$ref": "../../predicate/general.json#/definitions/predicate"
+							}
+						},
+						{
+							"description": "Checks properties of the partner. (The entity the parent was bred with). ",
+							"$ref": "../../general/entityProperties.json"
+						}
+					]
+				}
+			}
+		}
+	}
+}

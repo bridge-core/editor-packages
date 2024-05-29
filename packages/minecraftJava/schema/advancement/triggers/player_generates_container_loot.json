@@ -1,0 +1,27 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"trigger": {
+			"title": "Trigger: Player Generates Container Loot",
+			"description": "Triggers when the player generates the contents of a container with a loot table set.",
+			"const": "minecraft:player_generates_container_loot"
+		},
+		"conditions": {
+			"title": "Conditions",
+			"description": "Object containing conditions that need to be met when the trigger gets activated. The criterion is marked completed when the trigger activates and all conditions passed.",
+			"type": "object",
+			"properties": {
+				"player": {
+					"$ref": "../general/player.json"
+				},
+				"loot_table": {
+					"title": "Loot Table",
+					"description": "The resource location of the generated loot table.",
+					"$ref": "../../general/reference/data.json#/definitions/loot_table_identifiers"
+				}
+			},
+			"required": ["loot_table"]
+		}
+	}
+}

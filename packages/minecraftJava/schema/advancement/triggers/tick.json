@@ -1,0 +1,21 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"trigger": {
+			"title": "Trigger: Tick",
+			"description": "Triggers every tick (20 times a second).",
+			"const": "minecraft:tick"
+		},
+		"conditions": {
+			"title": "Conditions",
+			"description": "Object containing conditions that need to be met when the trigger gets activated. The criterion is marked completed when the trigger activates and all conditions passed.",
+			"type": "object",
+			"properties": {
+				"player": {
+					"$ref": "../general/player.json"
+				}
+			}
+		}
+	}
+}

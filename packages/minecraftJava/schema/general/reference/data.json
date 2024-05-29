@@ -15,6 +15,9 @@
 			"anyOf": [
 				{
 					"$ref": "../vanilla/data.json#/definitions/dimension_identifiers"
+				},
+				{
+					// TODO: Lightning cache
 				}
 			]
 		},

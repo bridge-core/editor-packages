@@ -1,0 +1,44 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"properties": {
+		"blocked": {
+			"title": "Blocked",
+			"description": "Checks if the damage was successfully blocked.",
+			"type": "boolean"
+		},
+		"dealt": {
+			"title": "Dealt",
+			"description": "Checks the amount of incoming damage before damage reduction.",
+			"anyOf": [
+				{
+					"type": "number"
+				},
+				{
+					"$ref": "./reference/floatRange.json"
+				}
+			]
+		},
+		"source_entity": {
+			"title": "Source Entity",
+			"description": "Checks the entity that was the source of the damage (for example: The skeleton that shot the arrow).",
+			"$ref": "./entityProperties.json"
+		},
+		"taken": {
+			"title": "Taken",
+			"description": "Checks the amount of incoming damage after damage reduction.",
+			"anyOf": [
+				{
+					"type": "number"
+				},
+				{
+					"$ref": "./floatRange.json"
+				}
+			]
+		},
+		"type": {
+			"title": "Type",
+			"description": "Checks the type of damage done.",
+			"$ref": "./damageSourceProperties.json"
+		}
+	}
+}

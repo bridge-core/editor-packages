@@ -1,0 +1,26 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"trigger": {
+			"title": "Trigger: Consume Item",
+			"description": "Triggers when the player consumes an item.",
+			"const": "minecraft:consume_item"
+		},
+		"conditions": {
+			"title": "Conditions",
+			"description": "Object containing conditions that need to be met when the trigger gets activated. The criterion is marked completed when the trigger activates and all conditions passed.",
+			"type": "object",
+			"properties": {
+				"player": {
+					"$ref": "../general/player.json"
+				},
+				"item": {
+					"title": "Item",
+					"description": "The item that was consumed.",
+					"$ref": "../../general/itemProperties.json"
+				}
+			}
+		}
+	}
+}

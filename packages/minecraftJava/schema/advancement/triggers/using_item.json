@@ -1,0 +1,26 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"trigger": {
+			"title": "Trigger: Using Item",
+			"description": "Triggers for every tick that the player uses an item that is used continuously. It is known to trigger for bows, crossbows, honey bottles, milk buckets, potions, shields, spyglasses, tridents, food items, eyes of ender, etc. Most items that activate from a single click, such as fishing rods, do not affect this trigger.",
+			"const": "minecraft:using_item"
+		},
+		"conditions": {
+			"title": "Conditions",
+			"description": "Object containing conditions that need to be met when the trigger gets activated. The criterion is marked completed when the trigger activates and all conditions passed.",
+			"type": "object",
+			"properties": {
+				"player": {
+					"$ref": "../general/player.json"
+				},
+				"item": {
+					"title": "Item",
+					"description": "The item that is used.",
+					"$ref": "../../general/itemProperties.json"
+				}
+			}
+		}
+	}
+}

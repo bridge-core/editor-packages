@@ -15,7 +15,7 @@ const text = await res.text()
 const docScraper = new DocumentationScraper(text, toScrape.documentation)
 await docScraper.run()
 
-const misodeScraper = new MisodeScraper('24w13a', toScrape.misode)
+const misodeScraper = new MisodeScraper('1.20.5', toScrape.misode)
 misodeScraper.run()
 
 const programFiles = Deno.env.get('PROGRAMFILES')

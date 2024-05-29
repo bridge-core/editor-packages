@@ -1,0 +1,29 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"trigger": {
+			"title": "Trigger: Allay Drop Item on Block",
+			"description": "Triggers when an allay drops an item on a block.",
+			"const": "minecraft:allay_drop_item_on_block"
+		},
+		"conditions": {
+			"title": "Conditions",
+			"description": "Object containing conditions that need to be met when the trigger gets activated. The criterion is marked completed when the trigger activates and all conditions passed.",
+			"type": "object",
+			"properties": {
+				"player": {
+					"$ref": "../general/player.json"
+				},
+				"location": {
+					"title": "Location",
+					"description": " Specifies a list of predicates that must pass in order for the criterion to be granted. The origin is the location of the block the item was dropped on, the block state belongs to that block, and the tool is the item dropped on the block. The `this` entity is the player that would get the advancement.",
+					"type": "array",
+					"items": {
+						"$ref": "../../../predicate/general.json#/definitions/predicate"
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,35 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"trigger": {
+			"title": "Trigger: Crafter Recipe Crafted",
+			"description": "Triggers when the player is within a certain range of a crafter when it crafts a recipe.",
+			"const": "minecraft:crafter_recipe_crafted"
+		},
+		"conditions": {
+			"title": "Conditions",
+			"description": "Object containing conditions that need to be met when the trigger gets activated. The criterion is marked completed when the trigger activates and all conditions passed.",
+			"type": "object",
+			"properties": {
+				"player": {
+					"$ref": "../general/player.json"
+				},
+				"recipe_id": {
+					"title": "Recipe ID",
+					"description": "The recipe that was crafted.",
+					"$ref": "../../general/reference/data.json#/definitions/recipe_identifiers"
+				},
+				"ingredients": {
+					"title": "Ingredients",
+					"description": "An array of item predicates for the recipe ingredients. Each item can only match one predicate, and every predicate needs to pass for the criterion to be granted.",
+					"type": "array",
+					"items": {
+						"$ref": "../../general/itemProperties.json"
+					}
+				}
+			},
+			"required": ["recipe_id"]
+		}
+	}
+}

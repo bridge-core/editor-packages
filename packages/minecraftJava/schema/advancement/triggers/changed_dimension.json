@@ -1,0 +1,31 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"trigger": {
+			"title": "Trigger: Changed Dimension",
+			"description": "Triggers after the player travels between two dimensions.",
+			"const": "minecraft:changed_dimension"
+		},
+		"conditions": {
+			"title": "Conditions",
+			"description": "Object containing conditions that need to be met when the trigger gets activated. The criterion is marked completed when the trigger activates and all conditions passed.",
+			"type": "object",
+			"properties": {
+				"player": {
+					"$ref": "../general/player.json"
+				},
+				"from": {
+					"title": "From",
+					"description": "The dimension the entity traveled from. This tag is a resource location for a dimension.",
+					"$ref": "../../general/reference/data.json#/definitions/dimension_identifiers"
+				},
+				"to": {
+					"title": "To",
+					"description": "The dimension the entity traveled to. This tag is a resource location for a dimension.",
+					"$ref": "../../general/reference/data.json#/definitions/dimension_identifiers"
+				}
+			}
+		}
+	}
+}

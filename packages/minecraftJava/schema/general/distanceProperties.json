@@ -1,0 +1,64 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"absolute": {
+			"title": "Absolute",
+			"description": "Test the distance between the two points, ignoring the Y value.",
+			"anyOf": [
+				{
+					"type": "number"
+				},
+				{
+					"$ref": "./reference/floatRange.json"
+				}
+			]
+		},
+		"horizontal": {
+			"title": "horizontal",
+			"description": "Test the distance between the two points, ignoring the Y value.",
+			"anyOf": [
+				{
+					"type": "number"
+				},
+				{
+					"$ref": "./reference/floatRange.json"
+				}
+			]
+		},
+		"x": {
+			"title": "X",
+			"description": "Test the absolute difference between the X-coordinates of the two points.",
+			"anyOf": [
+				{
+					"type": "number"
+				},
+				{
+					"$ref": "./reference/floatRange.json"
+				}
+			]
+		},
+		"y": {
+			"description": "Test the absolute difference between the Y-coordinates of the two points.",
+			"anyOf": [
+				{
+					"type": "number"
+				},
+				{
+					"$ref": "./reference/floatRange.json"
+				}
+			]
+		},
+		"z": {
+			"description": "Test the absolute difference between the z-coordinates of the two points.",
+			"anyOf": [
+				{
+					"type": "number"
+				},
+				{
+					"$ref": "./reference/floatRange.json"
+				}
+			]
+		}
+	}
+}

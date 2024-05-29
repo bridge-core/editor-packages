@@ -1,0 +1,53 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"trigger": {
+			"title": "Trigger: Killed by Crossbow",
+			"description": "Triggers after the player kills a mob or player using a crossbow in ranged combat.",
+			"const": "minecraft:killed_by_crossbow"
+		},
+		"conditions": {
+			"title": "Conditions",
+			"description": "Object containing conditions that need to be met when the trigger gets activated. The criterion is marked completed when the trigger activates and all conditions passed.",
+			"type": "object",
+			"properties": {
+				"player": {
+					"$ref": "../general/player.json"
+				},
+				"unique_entity_types": {
+					"title": "Unique Entity Types",
+					"description": "The exact count of types of entities killed.",
+					"anyOf": [
+						{
+							"type": "integer"
+						},
+						{
+							"$ref": "../../general/reference/intRange.json"
+						}
+					]
+				},
+				"victims": {
+					"title": "Victims",
+					"description": "A list of victims. All of the entries must be matched, and one killed entity may match only one entry.",
+					"type": "array",
+					"items": {
+						"anyOf": [
+							{
+								"description": "Specifies a list of predicates that must pass in order for the criterion to be granted. The checks are applied to the victim, with the origin being the position of the player that would get the advancement.",
+								"type": "array",
+								"items": {
+									"$ref": "../../predicate/general.json#/definitions/predicate"
+								}
+							},
+							{
+								"description": "Checks the victim.",
+								"$ref": "../../general/entityProperties.json"
+							}
+						]
+					}
+				}
+			}
+		}
+	}
+}

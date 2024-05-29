@@ -1,0 +1,33 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"trigger": {
+			"title": "Trigger: Used Ender Eye",
+			"description": "Triggers when the player uses an eye of ender (in a world where strongholds generate).",
+			"const": "minecraft:used_ender_eye"
+		},
+		"conditions": {
+			"title": "Conditions",
+			"description": "Object containing conditions that need to be met when the trigger gets activated. The criterion is marked completed when the trigger activates and all conditions passed.",
+			"type": "object",
+			"properties": {
+				"player": {
+					"$ref": "../general/player.json"
+				},
+				"distance": {
+					"title": "Distance",
+					"description": "The horizontal distance between the player and the stronghold.",
+					"anyOf": [
+						{
+							"type": "number"
+						},
+						{
+							"$ref": "../../general/reference/floatRange.json"
+						}
+					]
+				}
+			}
+		}
+	}
+}

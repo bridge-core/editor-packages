@@ -1,0 +1,42 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"trigger": {
+			"title": "Trigger: Player Killed Entity",
+			"description": "Triggers after a player is the source of a mob or player being killed.",
+			"const": "minecraft:player_killed_entity"
+		},
+		"conditions": {
+			"title": "Conditions",
+			"description": "Object containing conditions that need to be met when the trigger gets activated. The criterion is marked completed when the trigger activates and all conditions passed.",
+			"type": "object",
+			"properties": {
+				"player": {
+					"$ref": "../general/player.json"
+				},
+				"entity": {
+					"title": "Entity",
+					"anyOf": [
+						{
+							"description": "Specifies a list of predicates that must pass in order for the criterion to be granted. The checks are applied to the entity, with the origin being the position of the player that would get the advancement.",
+							"type": "array",
+							"items": {
+								"$ref": "../../predicate/general.json#/definitions/predicate"
+							}
+						},
+						{
+							"description": "Checks the entity that was killed.",
+							"$ref": "../../general/entityProperties.json"
+						}
+					]
+				},
+				"killing_blow": {
+					"title": "Killing Blow",
+					"description": "Checks the type of damage that killed an entity.",
+					"$ref": "../../general/damageSourceProperties.json"
+				}
+			}
+		}
+	}
+}

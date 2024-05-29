@@ -1,0 +1,42 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"trigger": {
+			"title": "Trigger: Player Hurt Entity",
+			"description": "Triggers after the player hurts a mob or player.",
+			"const": "minecraft:player_hurt_entity"
+		},
+		"conditions": {
+			"title": "Conditions",
+			"description": "Object containing conditions that need to be met when the trigger gets activated. The criterion is marked completed when the trigger activates and all conditions passed.",
+			"type": "object",
+			"properties": {
+				"player": {
+					"$ref": "../general/player.json"
+				},
+				"damage": {
+					"title": "Damage",
+					"description": "The damage that was dealt.",
+					"$ref": "../../general/damageProperties.json"
+				},
+				"entity": {
+					"title": "Entity",
+					"anyOf": [
+						{
+							"description": "Specifies a list of predicates that must pass in order for the criterion to be granted. The checks are applied to the entity, with the origin being the position of the player that would get the advancement.",
+							"type": "array",
+							"items": {
+								"$ref": "../../predicate/general.json#/definitions/predicate"
+							}
+						},
+						{
+							"description": "Checks the entity that was damaged.",
+							"$ref": "../../general/entityProperties.json"
+						}
+					]
+				}
+			}
+		}
+	}
+}

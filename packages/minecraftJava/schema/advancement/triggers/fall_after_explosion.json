@@ -1,0 +1,47 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"trigger": {
+			"title": "Trigger: Fall After Explosion",
+			"description": "Triggers when a player lands after bein launched upwards by an explosion or wind burst.",
+			"const": "minecraft:fall_after_explosion"
+		},
+		"conditions": {
+			"title": "Conditions",
+			"description": "Object containing conditions that need to be met when the trigger gets activated. The criterion is marked completed when the trigger activates and all conditions passed.",
+			"type": "object",
+			"properties": {
+				"player": {
+					"$ref": "../general/player.json"
+				},
+				"start_position": {
+					"title": "Start Position",
+					"description": "A location predicate for the last position before the falling started.",
+					"$ref": "../../general/locationProperties.json"
+				},
+				"distance": {
+					"title": "Distance",
+					"description": "The distance between the start position and the player's position.",
+					"$ref": "../../general/distanceProperties.json"
+				},
+				"source": {
+					"title": "Source",
+					"anyOf": [
+						{
+							"description": "Specifies a list of predicates that must pass in order for the criterion to be granted. The checks are applied to the entity that kills the player, with the origin being the position of the player that would get the advancement.",
+							"type": "array",
+							"items": {
+								"$ref": "../../predicate/general.json#/definitions/predicate"
+							}
+						},
+						{
+							"description": "Checks the entity that was the source of the explosion or wind burst that launched the player upwards.",
+							"$ref": "../../general/entityProperties.json"
+						}
+					]
+				}
+			}
+		}
+	}
+}

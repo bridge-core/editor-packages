@@ -1,0 +1,55 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"trigger": {
+			"title": "Trigger: Bee Nest Destroyed",
+			"description": "Triggers when the player breaks a bee nest or beehive.",
+			"const": "minecraft:bee_nest_destroyed"
+		},
+		"conditions": {
+			"title": "Conditions",
+			"description": "Object containing conditions that need to be met when the trigger gets activated. The criterion is marked completed when the trigger activates and all conditions passed.",
+			"type": "object",
+			"properties": {
+				"player": {
+					"$ref": "../general/player.json"
+				},
+				"block": {
+					"title": "Block",
+					"description": "Checks the block that was destroyed. Accepts block IDs.",
+					"$ref": "../../general/vanilla/identifiers.json#/block_identifiers"
+				},
+				"item": {
+					"title": "Item",
+					"description": "The item used to break the block.",
+					"$ref": "../../general/itemProperties.json"
+				},
+				"num_bees_inside": {
+					"title": "Number of Bees Inside",
+					"description": "The number of bees that were inside the bee nest/beehive before it was broken.",
+					"anyOf": [
+						{
+							"type": "integer"
+						},
+						{
+							"type": "object",
+							"properties": {
+								"min": {
+									"title": "Min",
+									"description": "THe minimum value.",
+									"type": "integer"
+								},
+								"max": {
+									"title": "Max",
+									"description": "THe maximum value.",
+									"type": "integer"
+								}
+							}
+						}
+					]
+				}
+			}
+		}
+	}
+}

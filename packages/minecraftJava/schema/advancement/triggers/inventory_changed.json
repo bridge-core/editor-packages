@@ -1,0 +1,72 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"trigger": {
+			"title": "Trigger: Inventory Changed",
+			"description": "Triggers after any changes happen to the player's inventory.",
+			"const": "minecraft:inventory_changed"
+		},
+		"conditions": {
+			"title": "Conditions",
+			"description": "Object containing conditions that need to be met when the trigger gets activated. The criterion is marked completed when the trigger activates and all conditions passed.",
+			"type": "object",
+			"properties": {
+				"player": {
+					"$ref": "../general/player.json"
+				},
+				"items": {
+					"title": "Items",
+					"description": "A list of items in the player's inventory. All items in the list must be in the player's inventory, but not all items in the player's inventory have to be in this list.",
+					"type": "array",
+					"items": {
+						"$ref": "../../general/itemProperties.json"
+					}
+				},
+				"slots": {
+					"title": "Slots",
+					"description": "Checks the properties of the player's inventory slots",
+					"type": "object",
+					"properties": {
+						"empty": {
+							"title": "Empty",
+							"description": "The amount of slots empty in the inventory.",
+							"anyOf": [
+								{
+									"type": "integer"
+								},
+								{
+									"$ref": "../../general/reference/intRange.json"
+								}
+							]
+						},
+						"full": {
+							"title": "Full",
+							"description": "The amount of slots completely filled (stack size) in the inventory.",
+							"anyOf": [
+								{
+									"type": "integer"
+								},
+								{
+									"$ref": "../../general/reference/intRange.json"
+								}
+							]
+						},
+						"occupied": {
+							"title": "Occupied",
+							"description": "The amount of slots occupied in the inventory.",
+							"anyOf": [
+								{
+									"type": "integer"
+								},
+								{
+									"$ref": "../../general/reference/intRange.json"
+								}
+							]
+						}
+					}
+				}
+			}
+		}
+	}
+}

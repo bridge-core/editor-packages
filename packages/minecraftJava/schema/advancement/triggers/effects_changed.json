@@ -1,0 +1,50 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"trigger": {
+			"title": "Trigger: Effects Changed",
+			"description": "Triggers after the player gets a status effect applied or taken from them.",
+			"const": "minecraft:effects_changed"
+		},
+		"conditions": {
+			"title": "Conditions",
+			"description": "Object containing conditions that need to be met when the trigger gets activated. The criterion is marked completed when the trigger activates and all conditions passed.",
+			"type": "object",
+			"properties": {
+				"player": {
+					"$ref": "../general/player.json"
+				},
+				"effects": {
+					"title": "Effects",
+					"description": "The key name is a status effect name.",
+					"type": "object",
+					"patternProperties": {
+						".*": {
+							"$ref": "../../general/reference/mobEffect.json"
+						}
+					},
+					"propertyNames": {
+						"$ref": "../../vanilla/identifiers.json/#/definitions/mob_effect_identifiers"
+					}
+				},
+				"source": {
+					"title": "Source",
+					"anyOf": [
+						{
+							"description": "Specifies a list of predicates that must pass in order for the criterion to be granted. The checks are applied to the source, with the origin being the position of the player that would get the advancement.",
+							"type": "array",
+							"items": {
+								"$ref": "../../predicate/general.json#/definitions/predicate"
+							}
+						},
+						{
+							"description": "The entity that was the source of the status effect. When there is no entity or when the effect was self-applied or removed, the test passes only if the source is not specified.",
+							"$ref": "../general/entityProperties.json"
+						}
+					]
+				}
+			}
+		}
+	}
+}

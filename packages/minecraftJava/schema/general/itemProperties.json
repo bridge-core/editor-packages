@@ -102,6 +102,12 @@
 					}
 				}
 			]
+		},
+		"predicates": {
+			"title": "Predicates", // TODO: Data component predicates
+			"description": "Matches item sub predicates. All fields are optional.",
+			"type": "object",
+			"properties": {}
 		}
 	},
 	"definitions": {

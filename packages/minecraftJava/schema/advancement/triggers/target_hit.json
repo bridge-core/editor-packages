@@ -1,0 +1,65 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"trigger": {
+			"title": "Trigger: Target Hit",
+			"description": "Triggers when the player shoots a target block.",
+			"const": "minecraft:target_hit"
+		},
+		"conditions": {
+			"title": "Conditions",
+			"description": "Object containing conditions that need to be met when the trigger gets activated. The criterion is marked completed when the trigger activates and all conditions passed.",
+			"type": "object",
+			"properties": {
+				"player": {
+					"$ref": "../general/player.json"
+				},
+				"signal_strength": {
+					"title": "Signal Strength",
+					"description": "The redstone signal that will come out of the target block.",
+					"anyOf": [
+						{
+							"type": "integer"
+						},
+						{
+							"$ref": "../../general/reference/intRange.json"
+						}
+					]
+				},
+				"shooter": {
+					"title": "Shooter",
+					"anyOf": [
+						{
+							"description": "Specifies a list of predicates that must pass in order for the criterion to be granted. The checks are applied to the player, with the origin being the position of the player that would get the advancement.",
+							"type": "array",
+							"items": {
+								"$ref": "../../predicate/general.json#/definitions/predicate"
+							}
+						},
+						{
+							"description": "The player who shot or threw the projectile.",
+							"$ref": "../../general/entityProperties.json"
+						}
+					]
+				},
+				"projectile": {
+					"title": "Projectile",
+					"anyOf": [
+						{
+							"description": "Specifies a list of predicates that must pass in order for the criterion to be granted. The checks are applied to the projectile, with the origin being the position of the player that would get the advancement.",
+							"type": "array",
+							"items": {
+								"$ref": "../../predicate/general.json#/definitions/predicate"
+							}
+						},
+						{
+							"description": "The projectile which hit the target block.",
+							"$ref": "../../general/entityProperties.json"
+						}
+					]
+				}
+			}
+		}
+	}
+}

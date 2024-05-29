@@ -1,0 +1,16 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"min": {
+			"title": "Min",
+			"description": "The minimum value.",
+			"type": "integer"
+		},
+		"max": {
+			"title": "Max",
+			"description": "The maximum value.",
+			"type": "integer"
+		}
+	}
+}

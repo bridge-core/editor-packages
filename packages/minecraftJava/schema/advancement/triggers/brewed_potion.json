@@ -1,0 +1,26 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"trigger": {
+			"title": "Trigger: Brewed Potion",
+			"description": "Triggers after the player takes any item out of a brewing stand.",
+			"const": "minecraft:brewed_potion"
+		},
+		"conditions": {
+			"title": "Conditions",
+			"description": "Object containing conditions that need to be met when the trigger gets activated. The criterion is marked completed when the trigger activates and all conditions passed.",
+			"type": "object",
+			"properties": {
+				"player": {
+					"$ref": "../general/player.json"
+				},
+				"potion": {
+					"title": "Potion",
+					"description": "A brewed potion ID.",
+					"$ref": "../../general/vanilla/identifiers.json#/definitions/potion_identifiers"
+				}
+			}
+		}
+	}
+}

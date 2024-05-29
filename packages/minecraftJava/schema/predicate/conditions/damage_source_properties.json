@@ -10,39 +10,7 @@
 		"predicate": {
 			"title": "Predicate",
 			"description": "Predicate applied to the damage source.",
-			"type": "object",
-			"properties": {
-				"direct_entity": {
-					"title": "Direct Entity",
-					"description": "The entity that was the direct cause of the damage.",
-					"$ref": "../../general/entityPredicate.json"
-				},
-				"source_entity": {
-					"title": "Source Entity",
-					"description": "Checks the entity that was the source of the damage (for example: The skeleton that shot the arrow).",
-					"$ref": "../../general/entityPredicate.json"
-				},
-				"tags": {
-					"title": "Tags",
-					"description": "An array of objects containing damage type tags that the type of the damage should be included in.",
-					"type": "array",
-					"items": {
-						"type": "object",
-						"properties": {
-							"id": {
-								"title": "ID",
-								"description": "The resource location of the tag.",
-								"type": "string" // TODO: Damage type tags
-							},
-							"expected": {
-								"title": "Expected",
-								"description": "Whether this tag should be present on the damage type.",
-								"type": "boolean"
-							}
-						}
-					}
-				}
-			}
+			"$ref": "../../general/damageSourceProperties.json"
 		}
 	}
 }

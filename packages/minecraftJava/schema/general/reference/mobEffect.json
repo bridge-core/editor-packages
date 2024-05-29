@@ -1,0 +1,40 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"ambient": {
+			"title": "Ambient",
+			"description": "Whether the effect is from a beacon.",
+			"type": "boolean"
+		},
+		"amplifier": {
+			"title": "Amplifier",
+			"description": "The effect amplifier.",
+			"anyOf": [
+				{
+					"type": "integer"
+				},
+				{
+					"$ref": "./int_range.json"
+				}
+			]
+		},
+		"duration": {
+			"title": "Duration",
+			"description": "The effect duration.",
+			"anyOf": [
+				{
+					"type": "integer"
+				},
+				{
+					"$ref": "./int_range.json"
+				}
+			]
+		},
+		"visible": {
+			"title": "Visible",
+			"description": "Whether the effect has visible particles.",
+			"type": "boolean"
+		}
+	}
+}

@@ -1,0 +1,43 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"trigger": {
+			"title": "Trigger: Construct Beacon",
+			"description": "Triggers after the player changes the structure of a beacon. (When the beacon updates itself).",
+			"const": "minecraft:construct_beacon"
+		},
+		"conditions": {
+			"title": "Conditions",
+			"description": "Object containing conditions that need to be met when the trigger gets activated. The criterion is marked completed when the trigger activates and all conditions passed.",
+			"type": "object",
+			"properties": {
+				"player": {
+					"$ref": "../general/player.json"
+				},
+				"level": {
+					"title": "Level",
+					"description": "The level of the updated beacon structure.",
+					"anyOf": [
+						{
+							"type": "integer"
+						},
+						{
+							"type": "object",
+							"properties": {
+								"min": {
+									"title": "Min",
+									"description": "The minimum value."
+								},
+								"max": {
+									"title": "Max",
+									"description": "The maximum value."
+								}
+							}
+						}
+					]
+				}
+			}
+		}
+	}
+}

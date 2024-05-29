@@ -3,7 +3,9 @@
 	"type": "object",
 	"properties": {
 		"distance": {
-			"$ref": "#/definitions/distance"
+			"title": "Distance",
+			"description": "To test the distance to the entity this predicate is invoked upon. Passes if the calculated distance is between the entered 'min' and 'max', inclusive.",
+			"$ref": "./distanceProperties.json"
 		},
 		"effects": {
 			"$ref": "#/definitions/effects"
@@ -17,7 +19,7 @@
 		"location": {
 			"title": "Location",
 			"description": "Test properties of this entity's location",
-			"$ref": "./locationPredicate.json"
+			"$ref": "./locationProperties.json"
 		},
 		"nbt": {
 			"title": "NBT",
@@ -35,7 +37,7 @@
 			"type": "object",
 			"patternProperties": {
 				".*": {
-					"$ref": "./itemPredicate.json"
+					"$ref": "./itemProperties.json"
 				}
 			},
 			"propertyNames": {
@@ -45,7 +47,7 @@
 		"stepping_on": {
 			"title": "Stepping On",
 			"description": "Test properties of the block the entity is standing on, using a location predicate.",
-			"$ref": "./locationPredicate.json"
+			"$ref": "./locationProperties.json"
 		},
 		"team": {
 			"type": "string" // TODO: Team lightning cache
@@ -68,80 +70,12 @@
 		}
 	},
 	"definitions": {
-		"distance": {
-			"title": "Distance",
-			"description": "To test the distance to the entity this predicate is invoked upon. Passes if the calculated distance is between the entered 'min' and 'max', inclusive.",
-			"type": "object",
-			"properties": {
-				"absolute": {
-					"title": "Absolute",
-					"description": "Test the distance between the two points, ignoring the Y value.",
-					"$ref": "#/definitions/float_range"
-				},
-				"horizontal": {
-					"title": "horizontal",
-					"description": "Test the distance between the two points, ignoring the Y value.",
-					"$ref": "#/definitions/float_range"
-				},
-				"x": {
-					"title": "X",
-					"description": "Test the absolute difference between the X-coordinates of the two points.",
-					"$ref": "#/definitions/float_range"
-				},
-				"y": {
-					"description": "Test the absolute difference between the Y-coordinates of the two points.",
-					"$ref": "#/definitions/float_range"
-				},
-				"z": {
-					"description": "Test the absolute difference between the z-coordinates of the two points.",
-					"$ref": "#/definitions/float_range"
-				}
-			}
-		},
 		"effects": {
 			"title": "Effects",
 			"description": "For testing the active status effects on the entity.",
 			"patternProperties": {
 				".*": {
-					"type": "object",
-					"properties": {
-						"ambient": {
-							"title": "Ambient",
-							"description": "Test whether the effect is from a beacon.",
-							"type": "boolean"
-						},
-						"amplifier": {
-							"title": "Amplifier",
-							"anyOf": [
-								{
-									"description": "Test if the effect's amplifier matches an exact value. Level I is represented by 0.",
-									"type": "integer"
-								},
-								{
-									"description": "Test if the effect amplifier falls within a range of values. Level I is represented by 0.",
-									"$ref": "#/definitions/int_range"
-								}
-							]
-						},
-						"duration": {
-							"title": "Duration",
-							"anyOf": [
-								{
-									"description": "Test if the effect's remaining time (in ticks) matches an exact value.",
-									"type": "integer"
-								},
-								{
-									"description": "Test if the effect's remaining time (in ticks) is between two numbers, inclusive.",
-									"$ref": "#/definitions/int_range"
-								}
-							]
-						},
-						"visible": {
-							"title": "Visible",
-							"description": "Test if the effect has visible particles.",
-							"type": "boolean"
-						}
-					}
+					"$ref": "./reference/mobEffect.json"
 				}
 			},
 			"propertyNames": {
@@ -156,32 +90,32 @@
 				"mainhand": {
 					"title": "Mainhand",
 					"description": "Test the item in the entity's mainhand.",
-					"$ref": "./itemPredicate.json"
+					"$ref": "./itemProperties.json"
 				},
 				"offhand": {
 					"title": "Offhand",
 					"description": "Test the item in the entity's offhand.",
-					"$ref": "./itemPredicate.json"
+					"$ref": "./itemProperties.json"
 				},
 				"head": {
 					"title": "Head",
 					"description": "Test the item in the entity's head armor slot.",
-					"$ref": "./itemPredicate.json"
+					"$ref": "./itemProperties.json"
 				},
 				"chest": {
 					"title": "Chest",
 					"description": "Test the item in the entity's chest armor slot.",
-					"$ref": "./itemPredicate.json"
+					"$ref": "./itemProperties.json"
 				},
 				"legs": {
 					"title": "Legs",
 					"description": "Test the item in the entity's legs armor slot.",
-					"$ref": "./itemPredicate.json"
+					"$ref": "./itemProperties.json"
 				},
 				"feet": {
 					"title": "Feet",
 					"description": "Test the item in the entity's feet armor slot.",
-					"$ref": "./itemPredicate.json"
+					"$ref": "./itemProperties.json"
 				}
 			}
 		},
@@ -452,7 +386,7 @@
 									},
 									{
 										"description": "Test the number of blocks set on fire by this lightning bolt is between a minimum and maximum value.",
-										"$ref": "#/definitions/int_range"
+										"$ref": "./reference/intRange.json"
 									}
 								]
 							},
@@ -651,7 +585,7 @@
 												},
 												{
 													"description": "Test if the value of the statistic is between 'min' and 'max' values, inclusive.",
-													"$ref": "#/definitions/int_range"
+													"$ref": "./reference/intRange.json"
 												}
 											]
 										}
@@ -733,7 +667,7 @@
 									},
 									{
 										"description": "Test if the size of this slime is between 'min' and 'max' values, inclusive.",
-										"$ref": "#/definitions/int_range"
+										"$ref": "./reference/intRange.json"
 									}
 								]
 							}
@@ -812,36 +746,6 @@
 					}
 				}
 			]
-		},
-		"int_range": {
-			"type": "object",
-			"properties": {
-				"min": {
-					"title": "Min",
-					"description": "The minimum value.",
-					"type": "integer"
-				},
-				"max": {
-					"title": "Max",
-					"description": "The maximum value.",
-					"type": "integer"
-				}
-			}
-		},
-		"float_range": {
-			"type": "object",
-			"properties": {
-				"min": {
-					"title": "Min",
-					"description": "The minimum value.",
-					"type": "number"
-				},
-				"max": {
-					"title": "Max",
-					"description": "The maximum value.",
-					"type": "number"
-				}
-			}
 		}
 	}
 }

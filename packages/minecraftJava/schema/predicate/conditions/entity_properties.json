@@ -15,8 +15,8 @@
 		},
 		"predicate": {
 			"title": "Predicate",
-			"description": "Predicate applied to entity, uses same structure as advancements.",
-			"$ref": "../../general/entityPredicate.json"
+			"description": "Predicate applied to entity.",
+			"$ref": "../../general/entityProperties.json"
 		}
 	}
 }

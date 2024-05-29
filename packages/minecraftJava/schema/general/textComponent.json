@@ -4,7 +4,7 @@
 		"text_component": {
 			"type": "object",
 			"properties": {
-				// TODO: Text component
+				// TODO: Text component, move this over to it's own folder.
 				"type": {
 					"const": "text"
 				},

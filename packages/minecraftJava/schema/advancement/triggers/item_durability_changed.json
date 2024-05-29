@@ -1,0 +1,50 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"trigger": {
+			"title": "Trigger: Item Durability Changed",
+			"description": "Triggers after any item in the inventory has been damaged in any form.",
+			"const": "minecraft:item_durability_changed"
+		},
+		"conditions": {
+			"title": "Conditions",
+			"description": "Object containing conditions that need to be met when the trigger gets activated. The criterion is marked completed when the trigger activates and all conditions passed.",
+			"type": "object",
+			"properties": {
+				"player": {
+					"$ref": "../general/player.json"
+				},
+				"delta": {
+					"title": "Delta",
+					"description": "The change in durability (negative numbers are used to indicate a decrease in durability).",
+					"anyOf": [
+						{
+							"type": "integer"
+						},
+						{
+							"$ref": "../../general/reference/intRange.json"
+						}
+					]
+				},
+				"durability": {
+					"title": "Durability",
+					"description": "The remaining durability of the item.",
+					"anyOf": [
+						{
+							"type": "integer"
+						},
+						{
+							"$ref": "../../general/reference/intRange.json"
+						}
+					]
+				},
+				"item": {
+					"title": "Item",
+					"description": "The item before it was damaged, allows you to check the durability before the item was damaged.",
+					"$ref": "../../general/itemProperties.json"
+				}
+			}
+		}
+	}
+}

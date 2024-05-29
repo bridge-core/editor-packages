@@ -1,0 +1,42 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"trigger": {
+			"title": "Trigger: Thrown Item Picked Up by Entity",
+			"description": "Triggers after the player throws an item and another entity picks it up.",
+			"const": "minecraft:thrown_item_picked_up_by_entity"
+		},
+		"conditions": {
+			"title": "Conditions",
+			"description": "Object containing conditions that need to be met when the trigger gets activated. The criterion is marked completed when the trigger activates and all conditions passed.",
+			"type": "object",
+			"properties": {
+				"player": {
+					"$ref": "../general/player.json"
+				},
+				"item": {
+					"title": "Item",
+					"description": "The thrown item which was picked up.",
+					"$ref": "../../general/itemProperties.json"
+				},
+				"entity": {
+					"title": "Entity",
+					"anyOf": [
+						{
+							"description": "Specifies a list of predicates that must pass in order for the criterion to be granted. The checks are applied to the entity, with the origin being the position of the player that would get the advancement.",
+							"type": "array",
+							"items": {
+								"$ref": "../../predicate/general.json#/definitions/predicate"
+							}
+						},
+						{
+							"description": "The entity which picked up the item.",
+							"$ref": "../../general/entityProperties.json"
+						}
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,38 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"trigger": {
+			"title": "Trigger: Enchanted Item",
+			"description": "Triggers after the player enchants an item through an enchanting table (does not get triggered through an anvil, or through commands).",
+			"const": "minecraft:enchanted_item"
+		},
+		"conditions": {
+			"title": "Conditions",
+			"description": "Object containing conditions that need to be met when the trigger gets activated. The criterion is marked completed when the trigger activates and all conditions passed.",
+			"type": "object",
+			"properties": {
+				"player": {
+					"$ref": "../general/player.json"
+				},
+				"item": {
+					"title": "Item",
+					"description": "The item after it has been enchanted.",
+					"$ref": "../../general/itemProperties.json"
+				},
+				"levels": {
+					"title": "Levels",
+					"description": "The levels spent by the player on the enchantment.",
+					"anyOf": [
+						{
+							"type": "integer"
+						},
+						{
+							"$ref": "../../general/reference/intRange.json"
+						}
+					]
+				}
+			}
+		}
+	}
+}

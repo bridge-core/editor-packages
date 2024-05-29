@@ -1,0 +1,31 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"trigger": {
+			"title": "Trigger: Ride Entity in Lava",
+			"description": "Triggers when a player mounts an entity walking on lava and while the entity moves with them.",
+			"const": "minecraft:ride_entity_in_lava"
+		},
+		"conditions": {
+			"title": "Conditions",
+			"description": "Object containing conditions that need to be met when the trigger gets activated. The criterion is marked completed when the trigger activates and all conditions passed.",
+			"type": "object",
+			"properties": {
+				"player": {
+					"$ref": "../general/player.json"
+				},
+				"start_position": {
+					"title": "Start Position",
+					"description": "A location predicate for the last position before the player mounted the entity.",
+					"$ref": "../../general/locationProperties.json"
+				},
+				"distance": {
+					"title": "Distance",
+					"description": "The distance between the start position and the player's position.",
+					"$ref": "../../general/distanceProperties.json"
+				}
+			}
+		}
+	}
+}

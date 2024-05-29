@@ -1,4 +1,5 @@
 {
+	// TODO: Move all of this into its own folder and improve organization
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"anyOf": [
 		{
@@ -189,6 +190,35 @@
 						"title": "Scale",
 						"description": "Optional. Scale to multiply the score before returning it.",
 						"type": "number"
+					}
+				}
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"type": {
+						"const": "minecraft:storage"
+					}
+				},
+				"required": ["type"]
+			},
+			"then": {
+				"properties": {
+					"type": {
+						"title": "Storage",
+						"description": "A value in command storage.",
+						"const": "minecraft:storage"
+					},
+					"storage": {
+						"title": "Storage",
+						"description": "The resource location of the storage.",
+						"type": "string"
+					},
+					"path": {
+						"title": "Path",
+						"description": "The nbt path to the field in storage.",
+						"type": "string"
 					}
 				}
 			}

@@ -1,0 +1,56 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"trigger": {
+			"title": "Trigger: Slide Down Block",
+			"description": "Triggers when the player slides down a block.",
+			"const": "minecraft:slide_down_block"
+		},
+		"conditions": {
+			"title": "Conditions",
+			"description": "Object containing conditions that need to be met when the trigger gets activated. The criterion is marked completed when the trigger activates and all conditions passed.",
+			"type": "object",
+			"properties": {
+				"player": {
+					"$ref": "../general/player.json"
+				},
+				"block": {
+					"title": "Block",
+					"description": "The block that the player is standing in. Accepts block IDs",
+					"$ref": "../../general/vanilla/identifiers.json#/block_identifiers"
+				},
+				"state": {
+					"title": "State",
+					"description": "A map of block property names to values. Errors if the block doesn't have these properties.",
+					"type": "object",
+					"patternProperties": {
+						".*": {
+							"anyOf": [
+								{
+									"type": "string"
+								},
+								{
+									"type": "object",
+									"properties": {
+										"min": {
+											"title": "Min",
+											"description": "The minimum value.",
+											"type": "string"
+										},
+										"max": {
+											"title": "Max",
+											"description": "The maximum value.",
+											"type": "string"
+										}
+									}
+								}
+							]
+						}
+					},
+					"propertyNames": true // TODO: Block properties
+				}
+			}
+		}
+	}
+}

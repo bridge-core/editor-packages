@@ -2767,6 +2767,7 @@
 				"minecraft:health_boost",
 				"minecraft:hero_of_the_village",
 				"minecraft:hunger",
+				"minecraft:infested",
 				"minecraft:instant_damage",
 				"minecraft:instant_health",
 				"minecraft:invisibility",
@@ -2776,7 +2777,9 @@
 				"minecraft:mining_fatigue",
 				"minecraft:nausea",
 				"minecraft:night_vision",
+				"minecraft:oozing",
 				"minecraft:poison",
+				"minecraft:raid_omen",
 				"minecraft:regeneration",
 				"minecraft:resistance",
 				"minecraft:saturation",
@@ -2784,9 +2787,12 @@
 				"minecraft:slowness",
 				"minecraft:speed",
 				"minecraft:strength",
+				"minecraft:trial_omen",
 				"minecraft:unluck",
 				"minecraft:water_breathing",
 				"minecraft:weakness",
+				"minecraft:weaving",
+				"minecraft:wind_charged",
 				"minecraft:wither"
 			]
 		},
@@ -2832,6 +2838,7 @@
 				"minecraft:fire_resistance",
 				"minecraft:harming",
 				"minecraft:healing",
+				"minecraft:infested",
 				"minecraft:invisibility",
 				"minecraft:leaping",
 				"minecraft:long_fire_resistance",
@@ -2850,6 +2857,7 @@
 				"minecraft:luck",
 				"minecraft:mundane",
 				"minecraft:night_vision",
+				"minecraft:oozing",
 				"minecraft:poison",
 				"minecraft:regeneration",
 				"minecraft:slow_falling",
@@ -2869,7 +2877,9 @@
 				"minecraft:turtle_master",
 				"minecraft:water",
 				"minecraft:water_breathing",
-				"minecraft:weakness"
+				"minecraft:weakness",
+				"minecraft:weaving",
+				"minecraft:wind_charged"
 			]
 		},
 		"villager_type_identifiers": {

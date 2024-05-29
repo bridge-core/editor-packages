@@ -1,0 +1,10 @@
+[
+	{
+		"cacheKey": "identifier",
+		"path": "" // TODO
+	},
+	{
+		"cacheKey": "criterion",
+		"path": "criteria"
+	}
+]

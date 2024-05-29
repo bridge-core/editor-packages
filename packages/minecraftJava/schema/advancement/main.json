@@ -1,0 +1,35 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"display": {
+			"$ref": "./display.json"
+		},
+		"parent": {
+			"title": "Parent",
+			"description": "The parent advancement directory of this advancement. If absent, this advancement is a root advancement. Circular references cause a loading failure.",
+			"$ref": "../general/reference/data.json#/definitions/advancement_identifiers"
+		},
+		"criteria": {
+			"type": "object",
+			"patternProperties": {
+				".*": {
+					"$ref": "./criterion.json"
+				}
+			}
+		},
+		"requirements": {
+			"$ref": "./requirements.json"
+		},
+		"rewards": {
+			"$ref": "./rewards.json"
+		},
+		"sends_telemetry_event": {
+			"title": "Sends Telemetry Event",
+			"description": "Determines whether telemetry data should be collected when this advancement is achieved or not. Defaults to 'false'.",
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"required": ["criteria"]
+}

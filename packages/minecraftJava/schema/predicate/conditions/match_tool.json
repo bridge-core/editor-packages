@@ -9,8 +9,8 @@
 		},
 		"predicate": {
 			"title": "Predicate",
-			"description": "Predicate applied to item, uses same structure as advancements.",
-			"$ref": "../../general/itemPredicate.json"
+			"description": "Predicate applied to item.",
+			"$ref": "../../general/itemProperties.json"
 		}
 	}
 }

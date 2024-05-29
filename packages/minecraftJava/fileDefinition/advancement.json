@@ -1,0 +1,12 @@
+{
+	"id": "advancement",
+	"icon": "mdi-trophy-outline",
+
+	"detect": {
+		"matcher": [
+			"DP/data/*/advancements/*.json",
+			"DP/data/*/advancements/**/*.json"
+		]
+	},
+	"schema": "file:///data/packages/minecraftJava/schema/advancement/main.json"
+}
