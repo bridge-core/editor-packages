@@ -1,0 +1,26 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"type": {
+			"title": "Score",
+			"description": "To query and use a scoreboard value.",
+			"const": "minecraft:score"
+		},
+		"target": {
+			"title": "Target",
+			"description": "To choose with player name or entity UUID to query.",
+			"$ref": "../general/scoreboardTarget.json"
+		},
+		"score": {
+			"title": "Score",
+			"description": "The scoreboard objective to query on the selected player name or UUID.",
+			"type": "string" // TODO: Scoreboards lightning cache
+		},
+		"scale": {
+			"title": "Scale",
+			"description": "Optional. Scale to multiply the score before returning it.",
+			"type": "number"
+		}
+	}
+}

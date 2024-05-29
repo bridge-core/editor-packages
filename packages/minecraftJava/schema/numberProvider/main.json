@@ -1,0 +1,85 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"anyOf": [
+		{
+			"type": "number",
+			"default": 0
+		},
+		{
+			"type": "object",
+			"properties": {
+				"type": {
+					"title": "Type",
+					"description": "The number provider type as a resource location.",
+					"$ref": "./general/typeEnum.json"
+				}
+			},
+			"required": ["type"]
+		},
+		{
+			"if": {
+				"properties": {
+					"type": {
+						"const": "minecraft:constant"
+					}
+				},
+				"required": ["type"]
+			},
+			"then": {
+				"$ref": "./types/constant.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"type": {
+						"const": "minecraft:uniform"
+					}
+				},
+				"required": ["type"]
+			},
+			"then": {
+				"$ref": "./types/uniform.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"type": {
+						"const": "minecraft:binomial"
+					}
+				},
+				"required": ["type"]
+			},
+			"then": {
+				"$ref": "./types/binomial.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"type": {
+						"const": "minecraft:score"
+					}
+				},
+				"required": ["type"]
+			},
+			"then": {
+				"$ref": "./types/score.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"type": {
+						"const": "minecraft:storage"
+					}
+				},
+				"required": ["type"]
+			},
+			"then": {
+				"$ref": "./types/storage.json"
+			}
+		}
+	]
+}

@@ -1,0 +1,21 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"type": {
+			"title": "Storage",
+			"description": "A value in command storage.",
+			"const": "minecraft:storage"
+		},
+		"storage": {
+			"title": "Storage",
+			"description": "The resource location of the storage.",
+			"type": "string"
+		},
+		"path": {
+			"title": "Path",
+			"description": "The nbt path to the field in storage.",
+			"type": "string"
+		}
+	}
+}

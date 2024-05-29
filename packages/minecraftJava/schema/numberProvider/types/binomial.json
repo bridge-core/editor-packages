@@ -1,0 +1,21 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"type": {
+			"title": "Binomial",
+			"description": "A random number following a binomial distribution.",
+			"const": "minecraft:binomial"
+		},
+		"n": {
+			"title": "Number",
+			"description": "The amount of trials.",
+			"$ref": "../main.json"
+		},
+		"p": {
+			"title": "Probability",
+			"description": "The probability of success on an individual trial.",
+			"$ref": "../main.json"
+		}
+	}
+}

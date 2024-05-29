@@ -10,7 +10,7 @@
 		"value": {
 			"title": "Value",
 			"description": "The time to compare the day time against.",
-			"$ref": "../../general/numberProvider.json"
+			"$ref": "../../numberProvider/main.json"
 		},
 		"period": {
 			"title": "Period",

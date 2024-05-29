@@ -1,0 +1,61 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"anyOf": [
+		{
+			"properties": {
+				"type": {
+					"title": "Type",
+					"description": "Set to 'fixed' to manually specify a player name or UUID. Set to 'context' to use an entity from loot context.",
+					"type": "string",
+					"enum": ["minecraft:fixed", "minecraft:context"]
+				}
+			},
+			"required": ["type"]
+		},
+		{
+			"if": {
+				"properties": {
+					"type": {
+						"const": "minecraft:fixed"
+					}
+				},
+				"required": ["type"]
+			},
+			"then": {
+				"properties": {
+					"name": {
+						"title": "Name",
+						"description": "Specifies the name of the player, or the entity's UUID (in hypenated hexadecimal format) whose score to query.",
+						"type": "string"
+					}
+				}
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"type": {
+						"const": "minecraft:context"
+					}
+				},
+				"required": ["type"]
+			},
+			"then": {
+				"properties": {
+					"target": {
+						"title": "Target",
+						"description": "Specifies an entity from loot context to query the score of.",
+						"type": "string",
+						"enum": [
+							"this",
+							"killer",
+							"direct_killer",
+							"killer_player"
+						]
+					}
+				}
+			}
+		}
+	]
+}

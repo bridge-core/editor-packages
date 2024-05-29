@@ -10,7 +10,7 @@
 		"value": {
 			"title": "Value",
 			"description": "The number to test.",
-			"$ref": "../../general/numberProvider.json"
+			"$ref": "../../numberProvider/main.json"
 		},
 		"range": {
 			"title": "Range",
@@ -26,12 +26,12 @@
 						"min": {
 							"title": "Min",
 							"description": "The minimum value.",
-							"$ref": "../../general/numberProvider.json"
+							"$ref": "../../numberProvider/main.json"
 						},
 						"max": {
 							"title": "Max",
 							"description": "The maximum value.",
-							"$ref": "../../general/numberProvider.json"
+							"$ref": "../../numberProvider/main.json"
 						}
 					}
 				}

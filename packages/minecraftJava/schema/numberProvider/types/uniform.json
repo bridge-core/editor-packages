@@ -1,0 +1,21 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"type": {
+			"title": "Uniform",
+			"description": "A random number following a uniform distribution between two values (inclusive).",
+			"const": "minecraft:uniform"
+		},
+		"min": {
+			"title": "Minimum",
+			"description": "The minimum value.",
+			"$ref": "../main.json"
+		},
+		"max": {
+			"title": "Maximum",
+			"description": "The maximum value.",
+			"$ref": "../main.json"
+		}
+	}
+}

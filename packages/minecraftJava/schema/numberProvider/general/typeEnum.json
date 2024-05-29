@@ -1,0 +1,11 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "string",
+	"enum": [
+		"minecraft:constant",
+		"minecraft:uniform",
+		"minecraft:binomial",
+		"minecraft:score",
+		"minecraft:storage"
+	]
+}
