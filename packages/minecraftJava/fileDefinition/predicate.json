@@ -1,0 +1,12 @@
+{
+	"id": "predicate",
+	"icon": "mdi-file-question-outline",
+
+	"detect": {
+		"matcher": [
+			"DP/data/*/predicate/*.json",
+			"DP/data/*/predicate/**/*.json"
+		]
+	},
+	"schema": "file:///data/packages/minecraftJava/schema/predicate/main.json"
+}

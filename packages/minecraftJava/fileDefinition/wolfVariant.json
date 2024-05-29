@@ -1,0 +1,12 @@
+{
+	"id": "wolfVariant",
+	"icon": "mdi-dog",
+
+	"detect": {
+		"matcher": [
+			"DP/data/*/wolf_variant/*.json",
+			"DP/data/*/wolf_variant/**/*.json"
+		]
+	},
+	"schema": "file:///data/packages/minecraftJava/schema/wolfVariant/main.json"
+}

@@ -1,0 +1,12 @@
+{
+	"id": "damageType",
+	"icon": "mdi-bottle-tonic-skull-outline",
+
+	"detect": {
+		"matcher": [
+			"DP/data/*/damage_type/*.json",
+			"DP/data/*/damage_type/**/*.json"
+		]
+	},
+	"schema": "file:///data/packages/minecraftJava/schema/damageType/main.json"
+}

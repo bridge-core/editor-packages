@@ -1,0 +1,12 @@
+{
+	"id": "bannerPattern",
+	"icon": "mdi-flag-outline",
+
+	"detect": {
+		"matcher": [
+			"DP/data/*/banner_pattern/*.json",
+			"DP/data/*/banner_pattern/**/*.json"
+		]
+	},
+	"schema": "file:///data/packages/minecraftJava/schema/bannerPattern/main.json"
+}
