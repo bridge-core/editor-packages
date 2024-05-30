@@ -20,7 +20,7 @@
 					"description": "Specifies a list of predicates that must pass in order for the criterion to be granted. The origin is the location of the block that was interacted with and the block state belongs to that block. Note that for this trigger, a 'tool' is not provided. The 'this' entity is the player that would get the advancement.",
 					"type": "array",
 					"items": {
-						"$ref": "../../../predicate/general.json#/definitions/predicate"
+						"$ref": "../../predicate/general.json#/definitions/predicate"
 					}
 				}
 			}

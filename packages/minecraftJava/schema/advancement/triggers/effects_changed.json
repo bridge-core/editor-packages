@@ -25,7 +25,7 @@
 						}
 					},
 					"propertyNames": {
-						"$ref": "../../vanilla/identifiers.json/#/definitions/mob_effect_identifiers"
+						"$ref": "../../vanilla/identifiers.json#/definitions/mob_effect_identifiers"
 					}
 				},
 				"source": {
@@ -40,7 +40,7 @@
 						},
 						{
 							"description": "The entity that was the source of the status effect. When there is no entity or when the effect was self-applied or removed, the test passes only if the source is not specified.",
-							"$ref": "../general/entityProperties.json"
+							"$ref": "../../general/entityProperties.json"
 						}
 					]
 				}

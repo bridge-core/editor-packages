@@ -8,7 +8,7 @@
 			"const": "minecraft:block_state_property"
 		},
 		"block": {
-			"$ref": "../../general/vanilla/identifiers.json/#/definitions/block_identifiers"
+			"$ref": "../../general/vanilla/identifiers.json#/definitions/block_identifiers"
 		},
 		"properties": {
 			"type": "object" // TODO: Vanilla block properties

@@ -25,7 +25,7 @@
 								"description": "Specifies a list of predicates that must pass in order for the criterion to be granted. The checks are applied to the victim hit by the lighting, with the origin being the position of the player that would get the advancement.",
 								"type": "array",
 								"items": {
-									"$ref": "../../../predicate/general.json#/definitions/predicate"
+									"$ref": "../../predicate/general.json#/definitions/predicate"
 								}
 							},
 							{
