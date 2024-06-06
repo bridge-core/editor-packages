@@ -1,0 +1,25 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Component: Bees",
+	"description": "The entities currently in the beehive or bee nest.",
+	"type": "array",
+	"items": {
+		"type": "object",
+		"properties": {
+			"entity_data": {
+				"type": "object",
+				"additionalProperties": true
+			},
+			"min_ticks_in_hive": {
+				"title": "Mininum Ticks in Hive",
+				"description": "The minimum amount of time in ticks for this entity to stay in the hive.",
+				"type": "integer"
+			},
+			"ticks_in_hive": {
+				"title": "Ticks in Hive",
+				"description": "The amount of ticks the entity has stayed in the hive.",
+				"type": "integer"
+			}
+		}
+	}
+}

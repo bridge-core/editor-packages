@@ -1,0 +1,6 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Component: Base Color",
+	"description": "The base dye color of the banner pattern applied on a shield.",
+	"$ref": "../../general/dyeColor.json"
+}

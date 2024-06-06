@@ -1,0 +1,32 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Component: Attribute Modifiers",
+	"description": "Contains attribute modifiers on this item which modify attributes of the wearer or holder.",
+	"anyOf": [
+		{
+			"type": "object",
+			"properties": {
+				"modifiers": {
+					"title": "Modifiers",
+					"description": "Specifies a list of attribute modifiers.",
+					"type": "array",
+					"items": {
+						"$ref": "../../attribute/modifier.json"
+					}
+				},
+				"show_in_tooltip": {
+					"title": "Show in Tooltip",
+					"description": "Show or hide attribute modifiers on this item's tooltip.",
+					"type": "boolean",
+					"default": true
+				}
+			}
+		},
+		{
+			"type": "array",
+			"items": {
+				"$ref": "../../attribute/modifier.json"
+			}
+		}
+	]
+}

@@ -11,6 +11,16 @@
 				}
 			]
 		},
+		"banner_pattern_identifiers": {
+			"anyOf": [
+				{
+					"$ref": "../vanilla/data.json#/definitions/banner_pattern_identifiers"
+				},
+				{
+					// TODO: Lightning cache
+				}
+			]
+		},
 		"dimension_identifiers": {
 			"anyOf": [
 				{

@@ -1,0 +1,29 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Component: Banner Patterns",
+	"description": "List of all patterns applied to a banner or shield.",
+	"type": "array",
+	"items": {
+		"type": "object",
+		"properties": {
+			"color": {
+				"title": "Color",
+				"description": "Dye color of the section.",
+				"$ref": "../../general/dyeColor.json"
+			},
+			"pattern": {
+				"title": "Pattern",
+				"anyOf": [
+					{
+						"description": "Banner pattern referenced by a resource location.",
+						"$ref": "../../general/reference/data.json#/definitions/banner_pattern_identifiers"
+					},
+					{
+						"description": "Inlined banner pattern.",
+						"$ref": "../../bannerPattern/main.json"
+					}
+				]
+			}
+		}
+	}
+}
