@@ -7,6 +7,7 @@
 				"title": "Set Block Property",
 				"type": "object",
 				"description": "Sets a block property on this block.",
+				"deprecationMessage": "This event will be deprecated in 1.21.20 in favor of custom components",
 				"propertyNames": {
 					"$ref": "../../block/dynamic/currentContext/propertyEnum.json"
 				},

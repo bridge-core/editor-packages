@@ -7,6 +7,7 @@
 				"title": "Spawn Loot",
 				"type": "object",
 				"description": "Spawn loot from block.",
+				"deprecationMessage": "This event will be deprecated in 1.21.20 in favor of custom components",
 				"additionalProperties": false,
 				"properties": {
 					"table": {
