@@ -7,6 +7,7 @@
 				"title": "Remove Mob Effect",
 				"type": "object",
 				"description": "Removes mob effect from target.",
+				"deprecationMessage": "This event will be deprecated in 1.21.20 in favor of custom components",
 				"additionalProperties": false,
 				"properties": {
 					"effect": {

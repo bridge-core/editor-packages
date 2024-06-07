@@ -7,6 +7,7 @@
 				"title": "Transform Item",
 				"type": "object",
 				"description": "Transforms item into another item.",
+				"deprecationMessage": "This event will be deprecated in 1.21.20 in favor of custom components",
 				"additionalProperties": false,
 				"properties": {
 					"transform": {

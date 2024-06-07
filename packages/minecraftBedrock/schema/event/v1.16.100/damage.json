@@ -7,6 +7,7 @@
 				"title": "Damage",
 				"type": "object",
 				"description": "Deals damage to the target.",
+				"deprecationMessage": "This event will be deprecated in 1.21.20 in favor of custom components",
 				"additionalProperties": false,
 				"properties": {
 					"type": {

@@ -6,6 +6,7 @@
 			"trigger": {
 				"title": "Trigger",
 				"description": "Trigger an event.",
+				"deprecationMessage": "This event will be deprecated in 1.21.20 in favor of custom components",
 				"anyOf": [
 					{
 						"$ref": "../../item/dynamic/currentContext/eventEnum.json",
