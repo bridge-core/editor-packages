@@ -1,12 +1,16 @@
 {
-	"name": "Blank Block",
+	"name": "Ore",
 	"icon": "mdi-cube-outline",
-	"description": "Creates a new, basic block.",
+	"description": "Creates a new ore block with natural generation.",
 	"category": "fileType.block",
 	"showIfDisabled": false,
 	"requires": {
-		"targetVersion": [">=", "1.20.80"],
-		"packTypes": ["behaviorPack", "resourcePack"]
+		"targetVersion": {
+			"min": "1.19.50",
+			"max": "1.20.70"
+		},
+		"packTypes": ["behaviorPack", "resourcePack"],
+		"experimentalGameplay": []
 	},
 	"additionalModels": {
 		"DEFAULT_TEXTURE": "texture.png",
@@ -16,27 +20,16 @@
 		[
 			"Image (Optional)",
 			"TEXTURE",
-			{
-				"type": "fileInput",
-				"accept": "image/png",
-				"optional": true
-			}
+			{ "type": "fileInput", "accept": "image/png", "optional": true }
 		],
 		[
 			"Identifier",
 			"IDENTIFIER",
-			{
-				"validate": ["required", "alphanumeric", "lowercase"]
-			}
+			{ "validate": ["required", "alphanumeric", "lowercase"] }
 		],
-		[
-			"Display Name",
-			"IDENTIFIER_NAME",
-			{
-				"validate": ["required"]
-			}
-		]
+		["Display Name", "IDENTIFIER_NAME", { "validate": ["required"] }]
 	],
+
 	"createFiles": [
 		"presetScript/blockImages.js",
 		[
@@ -44,6 +37,24 @@
 			"blocks/{{PRESET_PATH}}{{IDENTIFIER}}.json",
 			{
 				"inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"],
+				"openFile": true,
+				"packPath": "behaviorPack"
+			}
+		],
+		[
+			"feature.json",
+			"features/{{IDENTIFIER}}_feature.json",
+			{
+				"inject": ["IDENTIFIER", "PROJECT_PREFIX"],
+				"openFile": true,
+				"packPath": "behaviorPack"
+			}
+		],
+		[
+			"featureRule.json",
+			"feature_rules/overworld_underground_{{IDENTIFIER}}.json",
+			{
+				"inject": ["IDENTIFIER", "PROJECT_PREFIX"],
 				"openFile": true,
 				"packPath": "behaviorPack"
 			}

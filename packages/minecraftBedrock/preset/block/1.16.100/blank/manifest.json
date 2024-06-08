@@ -7,7 +7,7 @@
 	"requires": {
 		"targetVersion": {
 			"min": "1.16.100",
-			"max": "1.19.80"
+			"max": "1.19.70"
 		},
 		"packTypes": ["behaviorPack", "resourcePack"]
 	},
