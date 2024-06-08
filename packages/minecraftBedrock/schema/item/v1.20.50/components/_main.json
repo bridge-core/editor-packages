@@ -40,7 +40,7 @@
 						"$ref": "../../v1.16.100/components/fertilizer.json"
 					},
 					"minecraft:potion": {
-						"$ref": "../../v1.16.100/components/potion.json"
+						"$ref": "../../v1.20.20/components/potion.json"
 					},
 					"minecraft:render_offsets": {
 						"$ref": "../../v1.20.10/components/render_offsets.json"

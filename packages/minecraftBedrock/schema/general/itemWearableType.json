@@ -3,6 +3,7 @@
 	"type": "string",
 	"enum": [
 		"slot.armor",
+		"slot.armor.body",
 		"slot.armor.chest",
 		"slot.armor.feet",
 		"slot.armor.head",

@@ -1,0 +1,33 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Durability Sensor",
+	"description": "Allows an item to emit effects when it receives damage. Requires the `minecraft:durability` component.",
+	"type": "object",
+	"properties": {
+		"durability_thresholds": {
+			"title": "Durability Thresholds",
+			"description": "List of durability thresholds and effects emitted when each threshold is met.",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"durability": {
+						"title": "Durability",
+						"description": "Effects are emitted when the durability is less than or equal to this value."
+					},
+					"particle_type": {
+						"title": "Particle Type",
+						"description": "Particle effect to emit when the threshold is met.",
+						"$ref": "../../../general/reference/identifiers.json#/definitions/particle_identifiers"
+					},
+					"sound_event": {
+						"title": "Sound Event",
+						"description": "Sound effect to emit when the threshold is met.",
+						"$ref": "../../../general/reference/soundDefinition.json"
+					}
+				}
+			}
+		}
+	},
+	"additionalProperties": false
+}

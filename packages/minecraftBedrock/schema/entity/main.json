@@ -298,12 +298,24 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.20.80"]
+						"enum": ["1.20.80", "1.21.0"]
 					}
 				}
 			},
 			"then": {
 				"$ref": "./v1.20.80/main.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.21.10"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.21.10/main.json"
 			}
 		}
 	]

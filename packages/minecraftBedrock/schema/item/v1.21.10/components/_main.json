@@ -13,17 +13,6 @@
 			}
 		},
 		{
-			"$ref": "../../../project/experimentalGameplay/enableGameTestFramework.json",
-			"then": {
-				"type": "object",
-				"properties": {
-					"minecraft:custom_components": {
-						"$ref": "../../v1.20.80/components/custom_components.json"
-					}
-				}
-			}
-		},
-		{
 			"type": "object",
 			"properties": {
 				"minecraft:allow_off_hand": {
@@ -38,8 +27,14 @@
 				"minecraft:cooldown": {
 					"$ref": "../../v1.16.100/components/cooldown.json"
 				},
+				"minecraft:custom_components": {
+					"$ref": "../../v1.20.80/components/custom_components.json"
+				},
 				"minecraft:damage": {
 					"$ref": "../../v1.20.20/components/damage.json"
+				},
+				"minecraft:damage_absorption": {
+					"$ref": "../../v1.21.10/components/damage_absorption.json"
 				},
 				"minecraft:digger": {
 					"$ref": "../../v1.20.20/components/digger.json"
@@ -49,6 +44,9 @@
 				},
 				"minecraft:durability": {
 					"$ref": "../../v1.16.100/components/durability.json"
+				},
+				"minecraft:durability_sensor": {
+					"$ref": "../../v1.21.10/components/durability_sensor.json"
 				},
 				"minecraft:enchantable": {
 					"$ref": "../../v1.16.100/components/enchantable.json"

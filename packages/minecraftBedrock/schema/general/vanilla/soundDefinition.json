@@ -93,6 +93,8 @@
 		"conduit.attack",
 		"conduit.deactivate",
 		"conduit.short",
+		"crafter.craft",
+		"crafter.fail",
 		"crossbow.loading.end",
 		"crossbow.loading.middle",
 		"crossbow.loading.start",
@@ -593,6 +595,7 @@
 		"use.snow",
 		"use.stone",
 		"use.wood",
+		"vault.reject_rewarded_player",
 		"vr.stutterturn"
 	]
 }

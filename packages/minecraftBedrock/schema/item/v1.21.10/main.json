@@ -1,0 +1,30 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"minecraft:item": {
+			"required": ["description"],
+			"type": "object",
+			"properties": {
+				"description": {
+					"$ref": "./description.json"
+				},
+				"components": {
+					"allOf": [
+						{
+							"$ref": "./components/_main.json"
+						},
+						{
+							"$ref": "../dynamic/customComponents.json"
+						}
+					]
+				},
+				"events": {
+					"doNotSuggest": true,
+					"deprecationMessage": "Deprecated in favor of custom components (format_version: v1.21.20)"
+				}
+			},
+			"additionalProperties": false
+		}
+	}
+}
