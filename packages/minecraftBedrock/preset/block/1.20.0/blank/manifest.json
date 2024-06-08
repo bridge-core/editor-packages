@@ -6,8 +6,8 @@
 	"showIfDisabled": false,
 	"requires": {
 		"targetVersion": {
-			"min": "1.16.100",
-			"max": "1.19.80"
+			"min": "1.20.0",
+			"max": "1.20.70"
 		},
 		"packTypes": ["behaviorPack", "resourcePack"]
 	},

@@ -1,30 +1,22 @@
 {
-	"name": "Blank Block",
+	"name": "Custom Geometry Block",
 	"icon": "mdi-cube-outline",
-	"description": "Creates a new, basic block.",
+	"description": "Creates a new, basic block with custom geometry.",
 	"category": "fileType.block",
-	"showIfDisabled": false,
 	"requires": {
 		"targetVersion": {
-			"min": "1.16.100",
-			"max": "1.19.80"
+			"min": "1.19.50",
+			"max": "1.20.70"
 		},
 		"packTypes": ["behaviorPack", "resourcePack"]
 	},
 	"additionalModels": {
 		"DEFAULT_TEXTURE": "texture.png",
+		"MODEL_SAVE_PATH": ["resourcePack", "models/blocks/"],
+		"DEFAULT_MODEL": "geometry.json",
 		"PRESET_PATH": ""
 	},
 	"fields": [
-		[
-			"Image (Optional)",
-			"TEXTURE",
-			{
-				"type": "fileInput",
-				"accept": "image/png",
-				"optional": true
-			}
-		],
 		[
 			"Identifier",
 			"IDENTIFIER",
@@ -38,10 +30,29 @@
 			{
 				"validate": ["required"]
 			}
+		],
+		[
+			"Block Model",
+			"MODEL",
+			{
+				"type": "fileInput",
+				"accept": "application/json",
+				"optional": "true",
+				"icon": "mdi-file-chart"
+			}
+		],
+		[
+			"Block Texture",
+			"TEXTURE",
+			{
+				"type": "fileInput",
+				"accept": "image/png,image/jpeg",
+				"optional": "true",
+				"icon": "mdi-file-image"
+			}
 		]
 	],
 	"createFiles": [
-		"presetScript/blockImages.js",
 		[
 			"block.json",
 			"blocks/{{PRESET_PATH}}{{IDENTIFIER}}.json",
@@ -50,7 +61,9 @@
 				"openFile": true,
 				"packPath": "behaviorPack"
 			}
-		]
+		],
+		"presetScript/optionalModel.js",
+		"presetScript/blockImages.js"
 	],
 	"expandFiles": [
 		[
