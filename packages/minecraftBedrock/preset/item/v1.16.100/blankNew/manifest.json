@@ -5,7 +5,10 @@
 	"category": "fileType.item",
 	"showIfDisabled": false,
 	"requires": {
-		"targetVersion": [">=", "1.16.100"],
+		"targetVersion": {
+			"min": "1.16.100",
+			"max": "1.20.70"
+		},
 		"packTypes": ["behaviorPack", "resourcePack"],
 		"experimentalGameplay": ["holidayCreatorFeatures"]
 	},

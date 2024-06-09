@@ -4,10 +4,7 @@
 	"description": "Creates a snowball item with a projectile entity.",
 	"category": "fileType.item",
 	"requires": {
-		"targetVersion": {
-			"min": "1.16.100",
-			"max": "1.20.70"
-		},
+		"targetVersion": [">=", "1.20.80"],
 		"packTypes": ["behaviorPack", "resourcePack"],
 		"experimentalGameplay": ["holidayCreatorFeatures"]
 	},

@@ -4,7 +4,10 @@
 	"description": "Creates a sword item.",
 	"category": "fileType.item",
 	"requires": {
-		"targetVersion": [">=", "1.16.100"],
+		"targetVersion": {
+			"min": "1.16.100",
+			"max": "1.20.70"
+		},
 		"packTypes": ["behaviorPack", "resourcePack"],
 		"experimentalGameplay": ["holidayCreatorFeatures"]
 	},

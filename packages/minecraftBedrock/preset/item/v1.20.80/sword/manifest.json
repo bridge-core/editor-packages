@@ -1,16 +1,12 @@
 {
-	"name": "Blank Item",
+	"name": "Sword",
 	"icon": "mdi-sword",
-	"description": "Creates a new, blank item.",
+	"description": "Creates a sword item.",
 	"category": "fileType.item",
-	"showIfDisabled": false,
 	"requires": {
-		"targetVersion": {
-			"min": "1.10.0",
-			"max": "1.16.100"
-		},
+		"targetVersion": [">=", "1.20.80"],
 		"packTypes": ["behaviorPack", "resourcePack"],
-		"experimentalGameplay": ["!holidayCreatorFeatures"]
+		"experimentalGameplay": ["holidayCreatorFeatures"]
 	},
 	"additionalModels": {
 		"DEFAULT_TEXTURE": "icon.png",
@@ -29,7 +25,6 @@
 		],
 		["Display Name", "IDENTIFIER_NAME", { "validate": ["required"] }]
 	],
-
 	"createFiles": [
 		"presetScript/itemImages.js",
 		[
@@ -39,15 +34,6 @@
 				"inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"],
 				"openFile": true,
 				"packPath": "behaviorPack"
-			}
-		],
-		[
-			"clientItem.json",
-			"items/{{PRESET_PATH}}{{IDENTIFIER}}.json",
-			{
-				"inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"],
-				"openFile": true,
-				"packPath": "resourcePack"
 			}
 		]
 	],
