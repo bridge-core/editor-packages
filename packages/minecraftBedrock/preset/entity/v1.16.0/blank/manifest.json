@@ -1,0 +1,81 @@
+{
+	"name": "Blank Entity",
+	"icon": "mdi-minecraft",
+	"description": "Creates a new, basic entity.",
+	"category": "fileType.entity",
+	"requires": {
+		"targetVersion": {
+			"min": "1.8.0",
+			"max": "1.20.70"
+		},
+		"packTypes": ["behaviorPack", "resourcePack"]
+	},
+	"additionalModels": {
+		"DEFAULT_TEXTURE": "texture.png",
+		"MODEL_SAVE_PATH": ["resourcePack", "models/entity/"],
+		"DEFAULT_MODEL": "geometry.json",
+		"PRESET_PATH": "",
+		"CLIENT_ENTITY_NO_EGG": "clientEntityNoEggTexture.json",
+		"CLIENT_ENTITY_EGG": "clientEntityEggTexture.json"
+	},
+	"fields": [
+		[
+			"Entity Texture (Optional)",
+			"TEXTURE",
+			{ "type": "fileInput", "accept": "image/png", "optional": true }
+		],
+		[
+			"Entity Model (Optional)",
+			"MODEL",
+			{
+				"type": "fileInput",
+				"accept": "application/json",
+				"optional": "true",
+				"icon": "mdi-file-chart"
+			}
+		],
+		[
+			"Spawn Egg Image (Optional)",
+			"SPAWN_EGG",
+			{ "type": "fileInput", "accept": "image/png", "optional": true }
+		],
+		[
+			"Identifier",
+			"IDENTIFIER",
+			{ "validate": ["required", "alphanumeric", "lowercase"] }
+		],
+		["Display Name", "IDENTIFIER_NAME", { "validate": ["required"] }]
+	],
+
+	"createFiles": [
+		"presetScript/entityImages.js",
+		"presetScript/optionalModel.js",
+		[
+			"entity.json",
+			"entities/{{PRESET_PATH}}{{IDENTIFIER}}.json",
+			{
+				"inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"],
+				"openFile": true,
+				"packPath": "behaviorPack"
+			}
+		],
+		[
+			"renderController.json",
+			"render_controllers/{{PRESET_PATH}}{{IDENTIFIER}}.json",
+			{
+				"inject": ["IDENTIFIER", "PRESET_PATH"],
+				"packPath": "resourcePack"
+			}
+		]
+	],
+	"expandFiles": [
+		[
+			"en_US.lang",
+			"texts/en_US.lang",
+			{
+				"inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"],
+				"packPath": "resourcePack"
+			}
+		]
+	]
+}

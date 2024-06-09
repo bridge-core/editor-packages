@@ -1,0 +1,50 @@
+{
+	"name": "Shovel",
+	"icon": "mdi-shovel",
+	"description": "Creates a new shovel item.",
+	"category": "fileType.item",
+	"requires": {
+		"targetVersion": [">=", "1.20.80"],
+		"packTypes": ["behaviorPack", "resourcePack"]
+	},
+	"additionalModels": {
+		"DEFAULT_TEXTURE": "icon.png",
+		"PRESET_PATH": ""
+	},
+	"fields": [
+		[
+			"Image (Optional)",
+			"TEXTURE",
+			{ "type": "fileInput", "accept": "image/png", "optional": true }
+		],
+		[
+			"Identifier",
+			"IDENTIFIER",
+			{ "validate": ["required", "alphanumeric", "lowercase"] }
+		],
+		["Display Name", "IDENTIFIER_NAME", { "validate": ["required"] }]
+	],
+
+	"createFiles": [
+		"presetScript/itemImages.js",
+		[
+			"item.json",
+			"items/{{PRESET_PATH}}{{IDENTIFIER}}.json",
+			{
+				"inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"],
+				"openFile": true,
+				"packPath": "behaviorPack"
+			}
+		]
+	],
+	"expandFiles": [
+		[
+			"en_US.lang",
+			"texts/en_US.lang",
+			{
+				"inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"],
+				"packPath": "resourcePack"
+			}
+		]
+	]
+}
