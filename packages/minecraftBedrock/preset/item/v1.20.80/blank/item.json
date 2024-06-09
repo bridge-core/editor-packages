@@ -3,7 +3,9 @@
 	"minecraft:item": {
 		"description": {
 			"identifier": "{{PROJECT_PREFIX}}:{{IDENTIFIER}}",
-			"category": "nature"
+			"menu_category": {
+				"category": "nature"
+			}
 		},
 		"components": {
 			"minecraft:icon": {

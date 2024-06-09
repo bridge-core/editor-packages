@@ -4,7 +4,7 @@
 		"description": {
 			"identifier": "{{PROJECT_PREFIX}}:{{IDENTIFIER}}",
 			"menu_category": {
-				"group": "itemGroup.name.pickaxe"
+				"group": "itemGroup.name.axe"
 			}
 		},
 		"components": {
@@ -38,7 +38,7 @@
 				]
 			},
 			"minecraft:icon": "{{PROJECT_PREFIX}}_{{IDENTIFIER}}",
-			"tag:minecraft:is_axe": {}
+			"minecraft:tags": ["minecraft:is_axe"]
 		}
 	}
 }

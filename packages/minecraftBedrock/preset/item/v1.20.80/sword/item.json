@@ -3,7 +3,10 @@
 	"minecraft:item": {
 		"description": {
 			"identifier": "{{PROJECT_PREFIX}}:{{IDENTIFIER}}",
-			"category": "equipment"
+			"category": "equipment",
+			"menu_category": {
+				"group": "itemGroup.name.sword"
+			}
 		},
 		"components": {
 			"minecraft:can_destroy_in_creative": false,
@@ -56,30 +59,7 @@
 					}
 				]
 			},
-			"minecraft:weapon": {
-				"on_hurt_entity": {
-					"event": "damaged",
-					"target": "self"
-				}
-			},
-			"tag:minecraft:is_sword": {},
-			"tag:minecraft:is_tool": {}
-		},
-		"events": {
-			"damaged": {
-				"damage": {
-					"type": "durability",
-					"amount": 1,
-					"target": "self"
-				}
-			},
-			"on_tool_used": {
-				"damage": {
-					"type": "durability",
-					"amount": 2,
-					"target": "self"
-				}
-			}
+			"minecraft:tags": ["minecraft:is_sword", "minecraft:is_tool"]
 		}
 	}
 }

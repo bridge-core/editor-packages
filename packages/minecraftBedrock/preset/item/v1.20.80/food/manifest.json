@@ -5,8 +5,7 @@
 	"category": "fileType.item",
 	"requires": {
 		"targetVersion": [">=", "1.20.80"],
-		"packTypes": ["behaviorPack", "resourcePack"],
-		"experimentalGameplay": ["holidayCreatorFeatures"]
+		"packTypes": ["behaviorPack", "resourcePack"]
 	},
 	"additionalModels": {
 		"DEFAULT_TEXTURE": "icon.png",
