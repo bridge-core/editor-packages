@@ -6,7 +6,7 @@
 	"requires": {
 		"targetVersion": {
 			"min": "1.16.100",
-			"max": "1.20.10"
+			"max": "1.20.70"
 		},
 		"packTypes": ["behaviorPack", "resourcePack"],
 		"experimentalGameplay": ["holidayCreatorFeatures"]
