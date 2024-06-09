@@ -4,7 +4,10 @@
 	"description": "Creates a new, basic entity.",
 	"category": "fileType.entity",
 	"requires": {
-		"targetVersion": [">=", "1.8.0"],
+		"targetVersion": {
+			"min": "1.8.0",
+			"max": "1.20.70"
+		},
 		"packTypes": ["behaviorPack", "resourcePack"]
 	},
 	"additionalModels": {
