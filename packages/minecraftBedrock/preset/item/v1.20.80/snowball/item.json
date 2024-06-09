@@ -9,9 +9,7 @@
 		},
 		"components": {
 			"minecraft:max_stack_size": 16,
-			"minecraft:icon": {
-				"texture": "{{PROJECT_PREFIX}}_{{IDENTIFIER}}"
-			},
+			"minecraft:icon": "{{PROJECT_PREFIX}}_{{IDENTIFIER}}",
 			"minecraft:throwable": {
 				"do_swing_animation": true,
 				"launch_power_scale": 2

@@ -4,6 +4,7 @@
 		"description": {
 			"identifier": "{{PROJECT_PREFIX}}:{{IDENTIFIER}}",
 			"menu_category": {
+				"category": "equipment",
 				"group": "itemGroup.name.pickaxe"
 			}
 		},
@@ -13,9 +14,7 @@
 			"minecraft:durability": {
 				"max_durability": 150
 			},
-			"minecraft:icon": {
-				"texture": "{{PROJECT_PREFIX}}_{{IDENTIFIER}}"
-			},
+			"minecraft:icon": "{{PROJECT_PREFIX}}_{{IDENTIFIER}}",
 			"minecraft:repairable": {
 				"repair_items": [
 					{
@@ -48,7 +47,9 @@
 					}
 				]
 			},
-			"minecraft:tags": ["minecraft:is_pickaxe"]
+			"minecraft:tags": {
+				"tags": ["minecraft:is_pickaxe"]
+			}
 		}
 	}
 }

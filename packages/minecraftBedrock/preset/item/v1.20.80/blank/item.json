@@ -8,9 +8,7 @@
 			}
 		},
 		"components": {
-			"minecraft:icon": {
-				"texture": "{{PROJECT_PREFIX}}_{{IDENTIFIER}}"
-			}
+			"minecraft:icon": "{{PROJECT_PREFIX}}_{{IDENTIFIER}}"
 		}
 	}
 }

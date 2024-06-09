@@ -13,7 +13,7 @@
 			},
 			"minecraft:food": {
 				"nutrition": 4,
-				"saturation_modifier": "low"
+				"saturation_modifier": 1
 			},
 			"minecraft:icon": "{{PROJECT_PREFIX}}_{{IDENTIFIER}}",
 			"minecraft:use_animation": "eat"

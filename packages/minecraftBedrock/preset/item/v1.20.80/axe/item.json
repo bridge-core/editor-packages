@@ -4,6 +4,7 @@
 		"description": {
 			"identifier": "{{PROJECT_PREFIX}}:{{IDENTIFIER}}",
 			"menu_category": {
+				"category": "equipment",
 				"group": "itemGroup.name.axe"
 			}
 		},
@@ -38,7 +39,9 @@
 				]
 			},
 			"minecraft:icon": "{{PROJECT_PREFIX}}_{{IDENTIFIER}}",
-			"minecraft:tags": ["minecraft:is_axe"]
+			"minecraft:tags": {
+				"tags": ["minecraft:is_axe"]
+			}
 		}
 	}
 }

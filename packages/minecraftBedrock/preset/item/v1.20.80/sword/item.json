@@ -3,16 +3,13 @@
 	"minecraft:item": {
 		"description": {
 			"identifier": "{{PROJECT_PREFIX}}:{{IDENTIFIER}}",
-			"category": "equipment",
 			"menu_category": {
+				"category": "equipment",
 				"group": "itemGroup.name.sword"
 			}
 		},
 		"components": {
 			"minecraft:can_destroy_in_creative": false,
-			"minecraft:creative_category": {
-				"parent": "itemGroup.name.sword"
-			},
 			"minecraft:durability": {
 				"max_durability": 251
 			},
@@ -22,18 +19,10 @@
 				"destroy_speeds": [
 					{
 						"block": "minecraft:web",
-						"on_dig": {
-							"event": "on_tool_used",
-							"target": "self"
-						},
 						"speed": 15
 					},
 					{
 						"block": "minecraft:bamboo",
-						"on_dig": {
-							"event": "on_tool_used",
-							"target": "self"
-						},
 						"speed": 60
 					}
 				]
@@ -43,9 +32,7 @@
 				"slot": "sword"
 			},
 			"minecraft:hand_equipped": true,
-			"minecraft:icon": {
-				"texture": "{{PROJECT_PREFIX}}_{{IDENTIFIER}}"
-			},
+			"minecraft:icon": "{{PROJECT_PREFIX}}_{{IDENTIFIER}}",
 			"minecraft:max_stack_size": 1,
 			"minecraft:repairable": {
 				"repair_items": [
@@ -59,7 +46,9 @@
 					}
 				]
 			},
-			"minecraft:tags": ["minecraft:is_sword", "minecraft:is_tool"]
+			"minecraft:tags": {
+				"tags": ["minecraft:is_sword", "minecraft:is_tool"]
+			}
 		}
 	}
 }
