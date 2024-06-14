@@ -1,10 +1,10 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"additionalProperties": false,
 	"anyOf": [
 		{
 			"type": "object",
 			"description": "The icon item componenent determines the icon to represent the item in the UI and elsewhere.",
+			"additionalProperties": false,
 			"properties": {
 				"texture": {
 					"description": "The key from the RP/textures/item_texture.json 'texture_data' object associated with the texture file Example: blaze_powder.",

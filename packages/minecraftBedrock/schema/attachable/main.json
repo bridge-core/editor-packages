@@ -66,11 +66,26 @@
 							"title": "Textures",
 							"description": "Defines the textures used in the attachable.",
 							"type": "object",
-							"patternProperties": {
-								".*": {
-									"$ref": "../general/reference/paths.json#/definitions/entity_texture_paths"
+							"allOf": [
+								{
+									"properties": {
+										"default": {}
+									}
+								},
+								{
+									"$ref": "../general/trimPattern.json"
+								},
+								{
+									"$ref": "../general/trimPalette.json"
+								},
+								{
+									"patternProperties": {
+										".*": {
+											"$ref": "../general/reference/paths.json#/definitions/entity_texture_paths"
+										}
+									}
 								}
-							}
+							]
 						},
 						"geometry": {
 							"title": "Geometry",
@@ -141,11 +156,71 @@
 						"animations": {
 							"title": "Animations",
 							"type": "object",
-							"patternProperties": {
-								".*": {
-									"$ref": "../general/reference/clientAnimation.json"
+							"allOf": [
+								{
+									"$ref": "../clientAnimation/dynamic/shortNameProperty.json"
+								},
+								{
+									"$ref": "../clientAnimationController/dynamic/shortNameProperty.json"
+								},
+								{
+									"patternProperties": {
+										".*": {
+											"$ref": "../general/reference/clientAnimation.json"
+										}
+									}
 								}
-							}
+							]
+						},
+						"sound_effects": {
+							"title": "Sound Effects",
+							"description": "Defines the sounds to be played on the attachable.",
+							"type": "object",
+							"allOf": [
+								{
+									"$ref": "../soundDefinition/dynamic/shortNameProperty.json"
+								},
+								{
+									"patternProperties": {
+										".*": {
+											"$ref": "../soundDefinition/dynamic/identifierEnum.json"
+										}
+									}
+								}
+							]
+						},
+						"particle_effects": {
+							"title": "Particle Effects",
+							"description": "Defines the particles to be played on the attachable.",
+							"type": "object",
+							"allOf": [
+								{
+									"$ref": "../particle/dynamic/shortNameProperty.json"
+								},
+								{
+									"patternProperties": {
+										".*": {
+											"$ref": "../general/reference/identifiers.json#/definitions/particle_identifiers"
+										}
+									}
+								}
+							]
+						},
+						"particle_emitters": {
+							"title": "Particle Emitters",
+							"description": "Defines the attachable's particle emitters.",
+							"allOf": [
+								{
+									"$ref": "../particle/dynamic/shortNameProperty.json"
+								},
+								{
+									"patternProperties": {
+										".*": {
+											"$ref": "../general/reference/identifiers.json#/definitions/particle_identifiers"
+										}
+									}
+								}
+							]
 						},
 						"render_controllers": {
 							"title": "Render Controllers",

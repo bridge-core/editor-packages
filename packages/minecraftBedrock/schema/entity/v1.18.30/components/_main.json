@@ -8,7 +8,7 @@
 			"then": {
 				"properties": {
 					"minecraft:vibration_listener": {
-						"$ref": "/data/packages/minecraftBedrock/schema/entity/v1.18.30/components/vibration_listener.json"
+						"$ref": "../../v1.18.30/components/vibration_listener.json"
 					}
 				}
 			}
@@ -17,10 +17,10 @@
 		{
 			"properties": {
 				"minecraft:block_sensor": {
-					"$ref": "./block_sensor.json"
+					"$ref": "../../v1.18.30/components/block_sensor.json"
 				},
 				"minecraft:exhaustion_values": {
-					"$ref": "./exhaustion_values.json"
+					"$ref": "../../v1.18.30/components/exhaustion_values.json"
 				},
 				"minecraft:interact": {
 					"$ref": "../../v1.18.20/components/interact.json"

@@ -6,6 +6,7 @@
 			"set_block_at_pos": {
 				"title": "Set Block At Position",
 				"description": "Sets a block relative to this block to another block type.",
+				"deprecationMessage": "This event will be deprecated in 1.21.20 in favor of custom components",
 				"type": "object",
 				"additionalProperties": false,
 				"properties": {

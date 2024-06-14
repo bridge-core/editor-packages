@@ -1,0 +1,70 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"additionalProperties": false,
+	"title": "Entity Sensor",
+	"description": "A component that owns multiple subsensors, each one firing an event when a set of conditions are met by other entities within the defined range",
+	"type": "object",
+	"properties": {
+		"relative_range": {
+			"title": "Relative Range",
+			"description": "If true, the subsensors' range is additive on top of the entity's size.",
+			"type": "boolean",
+			"default": true
+		},
+		"subsensors": {
+			"title": "Subsensors",
+			"description": "The list of subsensors which sense for entities and emit events when all their conditions are met.",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"cooldown": {
+						"title": "Cooldown",
+						"description": "How many seconds should elapse before the subsensor can once again sense for entities. The cooldown is applied on top of the base 1 tick (0.05 seconds) delay. Negative values will result in no cooldown being used.",
+						"type": "number",
+						"default": -1
+					},
+					"event": {
+						"title": "Event",
+						"type": "string",
+						"$ref": "../../dynamic/currentContext/eventEnum.json"
+					},
+					"event_filters": {
+						"title": "Event Filters",
+						"$ref": "../../general/v1.16.0/filter.json"
+					},
+					"maximum_count": {
+						"title": "Maximum Count",
+						"description": "The maximum number of entities that must pass the filter conditions for the event to send.",
+						"type": "integer",
+						"default": -1
+					},
+					"minimum_count": {
+						"title": "Minimum Count",
+						"description": "The minimum number of entities that must pass the filter conditions for the event to send.",
+						"type": "integer",
+						"default": 1
+					},
+					"range": {
+						"title": "Range",
+						"description": "The maximum horizontal and vertical distance another entity can be from this and have the filters checked against it.",
+						"type": "array",
+						"minItems": 2,
+						"maxItems": 2,
+						"items": {
+							"type": "integer",
+							"default": 10
+						}
+					},
+					"require_all": {
+						"title": "Require All",
+						"description": "If true requires all nearby entities to pass the filter conditions for the events to send.",
+						"type": "boolean",
+						"default": false
+					}
+				}
+			}
+		}
+	}
+}

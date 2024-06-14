@@ -4,7 +4,7 @@
 	"minProperties": 2,
 	"allOf": [
 		{
-			"$ref": "./recipe_smithing_transform.json"
+			"$ref": "../v1.19.60/recipe_smithing_transform.json"
 		},
 		{
 			"$ref": "../v1.19.40/recipe_furnace.json"
@@ -24,7 +24,7 @@
 		{
 			"$ref": "../../project/experimentalGameplay/educationEdition.json",
 			"then": {
-				"$ref": "/data/packages/minecraftBedrock/schema/recipe/v1.18.10/recipe_material_reduction.json"
+				"$ref": "../v1.18.10/recipe_material_reduction.json"
 			}
 		}
 	]

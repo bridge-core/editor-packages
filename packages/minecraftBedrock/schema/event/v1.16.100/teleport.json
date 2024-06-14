@@ -7,6 +7,7 @@
 				"title": "Teleport",
 				"type": "object",
 				"description": "Teleport target randomly around destination point",
+				"deprecationMessage": "This event will be deprecated in 1.21.20 in favor of custom components",
 				"additionalProperties": false,
 				"properties": {
 					"target": {

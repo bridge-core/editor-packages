@@ -10,6 +10,9 @@
 		},
 		{
 			"$ref": "../../attachable/dynamic/renderControllerIdentifierEnum.json"
+		},
+		{
+			"$ref": "../../renderController/dynamic/identifierEnum.json"
 		}
 	]
 }

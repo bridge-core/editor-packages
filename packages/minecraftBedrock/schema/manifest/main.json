@@ -3,11 +3,7 @@
 	"title": "Manifest",
 	"description": "The manifest contains the basic information to register the pack into Minecraft.",
 	"type": "object",
-	"required": [
-		"format_version",
-		"header",
-		"modules"
-	],
+	"required": ["format_version", "header", "modules"],
 	"additionalProperties": false,
 	"definitions": {
 		"triple_integer": {
@@ -22,10 +18,7 @@
 	"properties": {
 		"format_version": {
 			"type": "integer",
-			"enum": [
-				1,
-				2
-			],
+			"enum": [1, 2],
 			"title": "Format Version",
 			"description": "This defines the current version of the manifest. Don't change this unless you have a good reason to."
 		},
@@ -33,12 +26,7 @@
 			"type": "object",
 			"title": "Header",
 			"description": "This is the heading of the manifest and is required for the manifest to be valid.",
-			"required": [
-				"name",
-				"description",
-				"uuid",
-				"version"
-			],
+			"required": ["name", "description", "uuid", "version"],
 			"additionalProperties": false,
 			"properties": {
 				"name": {
@@ -85,11 +73,7 @@
 				"type": "object",
 				"additionalProperties": false,
 				"title": "Module",
-				"required": [
-					"type",
-					"uuid",
-					"version"
-				],
+				"required": ["type", "uuid", "version"],
 				"properties": {
 					"type": {
 						"enum": [
@@ -124,9 +108,7 @@
 					},
 					"language": {
 						"type": "string",
-						"enum": [
-							"javascript"
-						]
+						"enum": ["javascript"]
 					}
 				}
 			}
@@ -136,153 +118,13 @@
 			"description": "Defines the dependencies of the pack",
 			"items": {
 				"type": "object",
+				"additionalProperties": false,
 				"oneOf": [
 					{
-						"required": [
-							"uuid",
-							"version"
-						]
+						"required": ["uuid", "version"]
 					},
 					{
-						"required": [
-							"module_name",
-							"version"
-						]
-					}
-				],
-				"anyOf": [
-					{
-						"properties": {
-							"module_name": {
-								"type": "string"
-							},
-							"version": {
-								"type": "string",
-								"description": "This is the specific version of the pack that your pack depends on. Should match the version the other pack has in its manifest file."
-							}
-						}
-					},
-					{
-						"if": {
-							"properties": {
-								"module_name": {
-									"const": "@minecraft/server"
-								}
-							}
-						},
-						"then": {
-							"properties": {
-								"version": {
-									"type": "string",
-									"enum": [
-										"1.0.0",
-										"1.1.0",
-										"1.2.0",
-										"1.3.0",
-										"1.4.0",
-										"1.5.0",
-										"1.6.0",
-										"1.7.0",
-										"1.8.0-beta"
-									]
-								}
-							}
-						}
-					},
-					{
-						"if": {
-							"properties": {
-								"module_name": {
-									"const": "@minecraft/server-gametest"
-								}
-							}
-						},
-						"then": {
-							"properties": {
-								"version": {
-									"type": "string",
-									"enum": ["1.0.0-beta"]
-								}
-							}
-						}
-					},
-					{
-						"if": {
-							"properties": {
-								"module_name": {
-									"const": "@minecraft/server-ui"
-								}
-							}
-						},
-						"then": {
-							"properties": {
-								"version": {
-									"type": "string",
-									"enum": [
-										"1.0.0",
-										"1.1.0",
-										"1.2.0-beta"
-									]
-								}
-							}
-						}
-					},
-					{
-						"if": {
-							"properties": {
-								"module_name": {
-									"const": "@minecraft/server-admin"
-								}
-							}
-						},
-						"then": {
-							"properties": {
-								"version": {
-									"type": "string",
-									"enum": [
-										"1.0.0-beta"
-									]
-								}
-							}
-						}
-					},
-					{
-						"if": {
-							"properties": {
-								"module_name": {
-									"const": "@minecraft/server-net"
-								}
-							}
-						},
-						"then": {
-							"properties": {
-								"version": {
-									"type": "string",
-									"enum": [
-										"1.0.0-beta"
-									]
-								}
-							}
-						}
-					},
-					{
-						"if": {
-							"properties": {
-								"module_name": {
-									"const": "@minecraft/server-editor"
-								}
-							}
-						},
-						"then": {
-							"properties": {
-								"version": {
-									"type": "string",
-									"enum": [
-										"0.1.0-beta"
-									]
-								}
-							}
-						}
+						"required": ["module_name", "version"]
 					}
 				],
 				"properties": {
@@ -297,6 +139,36 @@
 							}
 						],
 						"description": "This is the unique identifier of the pack that this pack depends on. It needs to be the exact same UUID that the pack has defined in the header section of it's manifest file."
+					},
+					"module_name": {
+						"type": "string",
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "string",
+								"enum": [
+									"@minecraft/server",
+									"@minecraft/server-gametest",
+									"@minecraft/server-ui",
+									"@minecraft/server-admin",
+									"@minecraft/server-editor",
+									"@minecraft/debug-utilities"
+								]
+							}
+						]
+					},
+					"version": {
+						"anyOf": [
+							{
+								"$ref": "#/definitions/triple_integer"
+							},
+							{
+								"type": "string"
+							}
+						],
+						"description": "This is the specific version of the pack that your pack depends on. Should match the version the other pack has in its manifest file."
 					}
 				}
 			}

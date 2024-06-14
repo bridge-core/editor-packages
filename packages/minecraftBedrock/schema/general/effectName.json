@@ -14,6 +14,7 @@
 		"heal",
 		"health_boost",
 		"hunger",
+		"infested",
 		"instant_damage",
 		"instant_health",
 		"invisibility",
@@ -22,7 +23,9 @@
 		"mining_fatigue",
 		"nausea",
 		"night_vision",
+		"oozing",
 		"poison",
+		"raid_omen",
 		"regeneration",
 		"resistance",
 		"saturation",
@@ -30,9 +33,12 @@
 		"slowness",
 		"speed",
 		"strength",
+		"trial_omen",
 		"village_hero",
 		"water_breathing",
 		"weakness",
+		"weaving",
+		"wind_charged",
 		"wither"
 	]
 }

@@ -1,0 +1,9 @@
+{
+	"format_version": "",
+	"minecraft:block_culling_rules": {
+		"description": {
+			"identifier": ""
+		},
+		"rules": []
+	}
+}

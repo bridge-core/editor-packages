@@ -20,12 +20,6 @@
 		{
 			"$ref": "../../event/v1.16.100/removeMobEffect.json"
 		},
-		// {
-		// 	"$ref": "../../event/v1.16.100/playEffect.json"
-		// },
-		// {
-		// 	"$ref": "../../event/v1.16.100/playSound.json"
-		// },
 		{
 			"$ref": "../../event/v1.16.100/runCommand.json"
 		},

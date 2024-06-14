@@ -93,6 +93,8 @@
 		"conduit.attack",
 		"conduit.deactivate",
 		"conduit.short",
+		"crafter.craft",
+		"crafter.fail",
 		"crossbow.loading.end",
 		"crossbow.loading.middle",
 		"crossbow.loading.start",
@@ -568,6 +570,7 @@
 		"step.cloth",
 		"step.grass",
 		"step.gravel",
+		"step.heavy_core",
 		"step.ladder",
 		"step.sand",
 		"step.slime",
@@ -577,6 +580,9 @@
 		"tile.piston.in",
 		"tile.piston.out",
 		"ui.cartography_table.take_result",
+		"ui.hardcore_disable",
+		"ui.hardcore_enable",
+		"ui.hardcore_toggle_press",
 		"ui.loom.select_pattern",
 		"ui.loom.take_result",
 		"ui.stonecutter.take_result",
@@ -589,6 +595,7 @@
 		"use.snow",
 		"use.stone",
 		"use.wood",
+		"vault.reject_rewarded_player",
 		"vr.stutterturn"
 	]
 }

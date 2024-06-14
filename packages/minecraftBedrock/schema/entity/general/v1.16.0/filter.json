@@ -121,6 +121,7 @@
 						"has_component",
 						"has_container_open",
 						"has_damage",
+						"has_damaged_equipment", // v1.20.80+
 						"has_equipment",
 						"has_mob_effect",
 						"has_nametag", // v1.18.0+
@@ -162,13 +163,16 @@
 						"is_missing_health", // v1.18.10+
 						"is_moving",
 						"is_owner",
+						"is_panicking", // v1.20.60+
 						"is_persistent",
 						"is_raider", // v1.19.80+
 						"is_riding",
 						"is_skin_id",
+						"is_sitting", // v1.20.80+
 						"is_sleeping",
 						"is_sneaking",
 						"is_snow_covered",
+						"is_sprinting", // v1.20.60+
 						"is_target",
 						"is_temperature_type",
 						"is_temperature_value",
@@ -191,6 +195,7 @@
 						"taking_fire_damage", // v1.19.80+
 						"target_distance", // v1.19.60+
 						"trusts",
+						"was_last_hurt_by", // v1.20.70+
 						"weather",
 						"weather_at_position"
 					]
@@ -1176,12 +1181,7 @@
 					"value": {
 						"description": "Tests whether the current temperature is a given type.",
 						"type": "string",
-						"enum": [
-							"cold",
-							"ocean",
-							"mild",
-							"warm"
-						]
+						"enum": ["cold", "ocean", "mild", "warm"]
 					}
 				}
 			}
@@ -1715,6 +1715,81 @@
 							"inventory",
 							"leg",
 							"torso"
+						]
+					}
+				}
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"test": {
+						"const": "is_panicking"
+					}
+				}
+			},
+			"then": {
+				"properties": {
+					"value": {
+						"description": "Tests if the subject is panicking.",
+						"type": "boolean"
+					}
+				}
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"test": {
+						"const": "is_sprinting"
+					}
+				}
+			},
+			"then": {
+				"properties": {
+					"value": {
+						"description": "Tests if the subject is sprinting.",
+						"type": "boolean"
+					}
+				}
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"test": {
+						"const": "is_sitting"
+					}
+				}
+			},
+			"then": {
+				"properties": {
+					"value": {
+						"description": "Tests if the subject is sitting.",
+						"type": "boolean"
+					}
+				}
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"test": {
+						"const": "has_damaged_equipment"
+					}
+				}
+			},
+			"then": {
+				"properties": {
+					"value": {
+						"description": "Tests for the presence of a damaged named item in the designated slot of the subject entity.",
+						"anyOf": [
+							{
+								"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
+							},
+							{
+								"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+							}
 						]
 					}
 				}

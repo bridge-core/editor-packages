@@ -1,0 +1,88 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"minecraft:block": {
+			"title": "Block Definition",
+			"required": ["description"],
+			"type": "object",
+			"allOf": [
+				{
+					"type": "object",
+					"properties": {
+						"description": {
+							"title": "Description",
+							"$ref": "./description.json"
+						},
+						"components": {
+							"title": "Components",
+							"allOf": [
+								{
+									"$ref": "../dynamic/customComponents.json"
+								},
+								{
+									"$ref": "./components/_main.json"
+								}
+							]
+						},
+						"permutations": {
+							"title": "Permutations",
+							"description": "List of block permutations based on MoLang queries",
+							"type": "array",
+							"items": {
+								"type": "object",
+								"additionalProperties": false,
+								"properties": {
+									"condition": {
+										"title": "Condition",
+										"description": "MoLang condition",
+										"$ref": "../../molang/embedded.json"
+									},
+									"components": {
+										"title": "Components",
+										"description": "Components to add when the condition evaluates to 'true'",
+										"allOf": [
+											{
+												"$ref": "../dynamic/customComponents.json"
+											},
+											{
+												"$ref": "./components/_main.json"
+											}
+										]
+									}
+								}
+							}
+						}
+					}
+				},
+				{
+					"$ref": "../../project/experimentalGameplay/holidayCreatorFeatures.json",
+					"then": {
+						"type": "object",
+						"properties": {
+							"events": {
+								"title": "Events",
+								"type": "object",
+								"allOf": [
+									{
+										"$ref": "../dynamic/currentContext/eventReferenceProperty.json"
+									},
+									{
+										"$ref": "../../project/projectPrefix.json"
+									},
+									{
+										"patternProperties": {
+											".*": {
+												"$ref": "./event.json"
+											}
+										}
+									}
+								]
+							}
+						}
+					}
+				}
+			]
+		}
+	}
+}

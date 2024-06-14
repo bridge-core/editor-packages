@@ -1,9 +1,0 @@
-{
-	"format_version": "1.20.0",
-	"minecraft:block": {
-		"description": {
-			"identifier": "{{PROJECT_PREFIX}}:{{IDENTIFIER}}"
-		},
-		"components": {}
-	}
-}

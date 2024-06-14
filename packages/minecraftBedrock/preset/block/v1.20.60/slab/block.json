@@ -1,0 +1,87 @@
+{
+	"format_version": "1.20.60",
+	"minecraft:block": {
+		"description": {
+			"identifier": "{{PROJECT_PREFIX}}:{{IDENTIFIER}}",
+			"traits": {
+				"minecraft:placement_position": {
+					"enabled_states": ["minecraft:vertical_half"]
+				}
+			},
+			"menu_category": {
+				"category": "construction",
+				"group": "itemGroup.name.slab"
+			}
+		},
+		"permutations": [
+			{
+				"condition": "query.block_state('minecraft:vertical_half') == 'top'",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.slab_top",
+						"culling": "{{PROJECT_PREFIX}}:slab_top"
+					},
+					"minecraft:collision_box": {
+						"origin": [-8, 8, -8],
+						"size": [16, 8, 16]
+					},
+					"minecraft:selection_box": {
+						"origin": [-8, 8, -8],
+						"size": [16, 8, 16]
+					}
+				}
+			}
+		],
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 1
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 6
+			},
+			"minecraft:geometry": {
+				"identifier": "geometry.slab",
+				"culling": "{{PROJECT_PREFIX}}:slab"
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "stone_slab_side",
+					"render_method": "opaque"
+				},
+				"down": {
+					"texture": "stone_slab_bottom",
+					"render_method": "opaque"
+				},
+				"up": {
+					"texture": "stone_slab_top",
+					"render_method": "opaque"
+				}
+			},
+			"minecraft:collision_box": {
+				"origin": [-8, 0, -8],
+				"size": [16, 8, 16]
+			},
+			"minecraft:selection_box": {
+				"origin": [-8, 0, -8],
+				"size": [16, 8, 16]
+			},
+			"minecraft:on_interact": {
+				"event": "{{PROJECT_PREFIX}}:create_double_slab",
+				"condition": "query.is_item_name_any('slot.weapon.mainhand', '{{PROJECT_PREFIX}}:{{IDENTIFIER}}') && ((query.block_face == 0.0 && query.block_state('minecraft:vertical_half') == 'top') || (query.block_face == 1.0 && query.block_state('minecraft:vertical_half') == 'bottom'))"
+			},
+			"minecraft:map_color": "#707070"
+		},
+		"events": {
+			"{{PROJECT_PREFIX}}:create_double_slab": {
+				"set_block": {
+					"block_type": "{{PROJECT_PREFIX}}:double_{{IDENTIFIER}}"
+				},
+				"run_command": {
+					"command": "playsound dig.stone @a ~ ~ ~",
+					"target": "self"
+				},
+				"decrement_stack": {}
+			}
+		}
+	}
+}

@@ -1,0 +1,73 @@
+{
+	"name": "Blank Block",
+	"icon": "deployed_code",
+	"description": "Creates a new, basic block.",
+	"category": "fileType.block",
+	"showIfDisabled": false,
+	"requires": {
+		"targetVersion": {
+			"min": "1.20.0",
+			"max": "1.20.70"
+		},
+		"packTypes": ["behaviorPack", "resourcePack"]
+	},
+	"additionalModels": {
+		"DEFAULT_TEXTURE": "texture.png",
+		"PRESET_PATH": ""
+	},
+	"fields": [
+		[
+			"Image (Optional)",
+			"TEXTURE",
+			{
+				"type": "fileInput",
+				"accept": "image/png",
+				"optional": true
+			}
+		],
+		[
+			"Identifier",
+			"IDENTIFIER",
+			{
+				"validate": ["required", "alphanumeric", "lowercase"]
+			}
+		],
+		[
+			"Display Name",
+			"IDENTIFIER_NAME",
+			{
+				"validate": ["required"]
+			}
+		]
+	],
+	"createFiles": [
+		"presetScript/blockImages.js",
+		[
+			"block.json",
+			"blocks/{{PRESET_PATH}}{{IDENTIFIER}}.json",
+			{
+				"inject": ["IDENTIFIER", "PROJECT_PREFIX", "PRESET_PATH"],
+				"openFile": true,
+				"packPath": "behaviorPack"
+			}
+		]
+	],
+	"expandFiles": [
+		[
+			"clientBlock.json",
+			"blocks.json",
+			{
+				"inject": ["IDENTIFIER", "PROJECT_PREFIX"],
+				"packPath": "resourcePack"
+			}
+		],
+		[
+			"en_US.lang",
+			"texts/en_US.lang",
+			{
+				"inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"],
+				"packPath": "resourcePack"
+			}
+		]
+	]
+}

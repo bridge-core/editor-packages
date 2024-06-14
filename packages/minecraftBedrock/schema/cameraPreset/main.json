@@ -1,75 +1,56 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "title": "Camera Preset",
-    "type": "object",
-    "required": [
-        "format_version",
-        "minecraft:camera_preset"
-    ],
-    "properties": {
-        "format_version": {
-            "title": "Format Version",
-            "$ref": "../project/formatVersionEnum.json"
-        },
-        "minecraft:camera_preset": {
-            "title": "Camera Preset Definition",
-            "required": [
-                "identifier"
-            ],
-            "type": "object",
-            "properties": {
-                "identifier": {
-                    "title": "Identifier",
-                    "$ref": "../general/reference/prefixedFileIdentifier.json",
-                    "description": "The identifier for this camera preset. The name must include a namespace and must not use the Minecraft namespace."
-                },
-                "inherit_from": {
-                    "title": "Camera Inheritor",
-                    "description": "Inherits the properties of the specified camera preset.",
-                    "$ref": "../general/reference/identifiers.json#/definitions/camera_preset_identifiers"
-                },
-                "pos_x": {
-                    "title": "X Position",
-                    "description": "The offset of the camera on the X coordinate.",
-                    "type": "integer"
-                },
-                "pos_y": {
-                    "title": "Y Position",
-                    "description": "The offset of the camera on the Y coordinate.",
-                    "type": "integer"
-                },
-                "pos_z": {
-                    "title": "Y Position",
-                    "description": "The offset of the camera on the Y coordinate.",
-                    "type": "integer"
-                },
-                "rot_x": {
-                    "title": "X Rotation",
-                    "description": "The pitch rotation of the camera, supports any value between -90 and 90.",
-                    "type": "integer",
-                    "minimum": -90,
-                    "maximum": 90
-                },
-                "rot_y": {
-                    "title": "Y Rotation",
-                    "description": "The yaw rotation of the camera.",
-                    "minimum": -360,
-                    "maximum": 360
-                },
-                "listener": {
-                    "title": "Listener",
-                    "description": "Sets the audio system to use the player's position for audio positioning.",
-                    "type": "string",
-                    "enum": [
-                        "player"
-                    ]
-                },
-                "player_effects": {
-                    "title": "Player Effects",
-                    "description": "If false, will disable camera effects such as night vision or darkness. Defaults to true.",
-                    "type": "boolean"
-                }
-            }
-        }
-    }
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Camera Preset",
+	"type": "object",
+	"required": ["format_version", "minecraft:camera_preset"],
+	"allOf": [
+		{
+			"properties": {
+				"format_version": {
+					"anyOf": [
+						{
+							"$ref": "../project/formatVersionEnum.json"
+						},
+						{
+							"const": "1.20.0"
+						}
+					]
+				}
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": [
+							"",
+							"1.20.0",
+							"1.20.10",
+							"1.20.20",
+							"1.20.30",
+							"1.20.40",
+							"1.20.50",
+							"1.20.60",
+							"1.20.70"
+						]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.20.0/main.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.20.80"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.20.80/main.json"
+			}
+		}
+	]
 }

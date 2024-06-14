@@ -7,6 +7,7 @@
 				"title": "Swing",
 				"type": "object",
 				"description": "Event causes the actor to swing.",
+				"deprecationMessage": "This event will be deprecated in 1.21.20 in favor of custom components",
 				"additionalProperties": false
 			}
 		}

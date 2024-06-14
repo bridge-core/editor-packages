@@ -4,9 +4,11 @@
 		"item_tags": {
 			"type": "string",
 			"anyOf": [
-				// TODO - vanilla tags
 				{
 					"$ref": "../../item/dynamic/tagEnum.json"
+				},
+				{
+					"$ref": "../vanilla/itemTagEnum.json"
 				}
 			]
 		},

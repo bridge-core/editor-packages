@@ -18,7 +18,14 @@
 	},
 	{
 		"cacheKey": "itemTexture",
-		"path": "minecraft:item/components/minecraft:icon/texture"
+		"path": [
+			"minecraft:item/components/minecraft:icon/texture",
+			"minecraft:item/components/minecraft:icon/textures/default"
+		]
+	},
+	{
+		"cacheKey": "tag",
+		"path": "minecraft:item/components/minecraft:tags/tags"
 	},
 	{
 		"cacheKey": "tag",
@@ -27,22 +34,38 @@
 	},
 	{
 		"cacheKey": "lootTablePath",
-		"path": ["minecraft:item/events/*/spawn_loot/table", "minecraft:item/events/**/spawn_loot/table"],
+		"path": [
+			"minecraft:item/events/*/spawn_loot/table",
+			"minecraft:item/events/**/spawn_loot/table"
+		],
 		"script": "return Bridge.resolvePackPath('behaviorPack', Bridge.value)"
 	},
 	{
 		"cacheKey": "entityTag",
-		"path": ["minecraft:item/events/**/run_command/command", "minecraft:item/events/**/run_command/command/*"],
+		"path": [
+			"minecraft:item/events/**/run_command/command",
+			"minecraft:item/events/**/run_command/command/*"
+		],
 		"script": "const entityTags = Bridge.value.match(/(tag\\s@[a-z][\\[.+\\]]?)\\s(add|remove)\\s([a-zA-z_0-9]+)/); if (entityTags) return entityTags[3]"
 	},
 	{
 		"cacheKey": "scoreboardObjective",
-		"path": ["minecraft:item/events/**/run_command/command", "minecraft:item/events/**/run_command/command/*"],
+		"path": [
+			"minecraft:item/events/**/run_command/command",
+			"minecraft:item/events/**/run_command/command/*"
+		],
 		"script": "const scoreboardObjective = Bridge.value.match(/(scoreboard\\s+objectives\\s+add\\s+)(.+)(\\s+dummy)/); if (scoreboardObjective) return scoreboardObjective[2]"
 	},
 	{
 		"cacheKey": "functionPath",
-		"path": ["minecraft:item/events/**/run_command/command", "minecraft:item/events/**/run_command/command/*"],
+		"path": [
+			"minecraft:item/events/**/run_command/command",
+			"minecraft:item/events/**/run_command/command/*"
+		],
 		"script": "const func = /\\/function\\s+([aA-zZ0-9\\/]+)/g.exec(Bridge.value); if (func) return Bridge.resolvePackPath('behaviorPack', `functions/${func[1]}.mcfunction`)"
+	},
+	{
+		"cacheKey": "customComponent",
+		"path": "minecraft:item/components/minecraft:custom_components"
 	}
 ]

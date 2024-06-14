@@ -1,0 +1,17 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:block": {
+		"description": {
+			"identifier": "{{PROJECT_PREFIX}}:{{IDENTIFIER}}"
+		},
+		"components": {
+			"minecraft:geometry": "geometry.{{IDENTIFIER}}",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "{{PROJECT_PREFIX}}_{{IDENTIFIER}}",
+					"render_method": "alpha_test"
+				}
+			}
+		}
+	}
+}

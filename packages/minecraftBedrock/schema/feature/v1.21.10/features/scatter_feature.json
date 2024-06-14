@@ -1,0 +1,47 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Scatter Feature",
+	"description": "Scatters a feature throughout a chunk. The 'x', 'y', and 'z' fields are per-coordinate parameters. Note that coordinates represent an offset from the input position, not an absolute position. Coordinates may be a single value, a random distribution, or molang expression that resolves to a numeric value. The 'coordinate_eval_order' field is provided for finer control of coordinate resolution (particularly when using the 'grid' distribution). 'iterations' controls how many individual placements should occur if the 'scatter_chance' check succeeds. The 'scatter_chance' check happens once, so either all placements will run or none will.",
+	"additionalProperties": false,
+	"type": "object",
+	"properties": {
+		"description": {
+			"title": "Description",
+			"additionalProperties": false,
+			"type": "object",
+			"properties": {
+				"identifier": {
+					"title": "Identifier",
+					// Needs to strictly match file name - don't change reference to "general/reference..." schema
+					"$ref": "../../../project/prefixedFileIdentifierEnum.json"
+				}
+			}
+		},
+		"distribution": {
+			"title": "Distribution",
+			"description": "Parameters controlling the scatter of the feature.",
+			"$ref": "../../../featureRule/main.json#/definitions/distribution"
+		},
+		"project_input_to_floor": {
+			"title": "Project Input To Floor",
+			"description": "If true, snaps the y-value of the scattered position to the terrain heightmap. If false or unset, y-value is unmodified.",
+			"type": "boolean"
+		},
+		"places_feature": {
+			"title": "Place Feature",
+			"description": "Named reference of feature to be placed.",
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../../../general/reference/identifiers.json#/definitions/feature_identifiers"
+					}
+				},
+				{
+					"type": "string",
+					"$ref": "../../../general/reference/identifiers.json#/definitions/feature_identifiers"
+				}
+			]
+		}
+	}
+}

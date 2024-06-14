@@ -8,82 +8,82 @@
 				"type": "object",
 				"properties": {
 					"minecraft:aim_collision": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.18.10/components/aim_collision.json"
+						"$ref": "../../v1.18.10/components/aim_collision.json"
 					},
 					"minecraft:block_collision": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.18.10/components/block_collision.json"
+						"$ref": "../../v1.18.10/components/block_collision.json"
 					},
 					"minecraft:part_visibility": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/part_visibility.json"
+						"$ref": "../../v1.16.100/components/part_visibility.json"
 					},
 					"minecraft:creative_category": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/creative_category.json"
+						"$ref": "../../v1.16.100/components/creative_category.json"
 					},
 					"minecraft:crafting_table": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/crafting_table.json"
+						"$ref": "../../v1.16.100/components/crafting_table.json"
 					},
 					"minecraft:display_name": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/display_name.json"
+						"$ref": "../../v1.16.100/components/display_name.json"
 					},
 					"minecraft:unit_cube": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/unit_cube.json"
+						"$ref": "../../v1.16.100/components/unit_cube.json"
 					},
 					"minecraft:material_instances": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/material_instances.json"
+						"$ref": "../../v1.16.100/components/material_instances.json"
 					},
 					"minecraft:geometry": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/geometry.json"
+						"$ref": "../../v1.16.100/components/geometry.json"
 					},
 					"minecraft:on_step_on": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/on_step_on.json"
+						"$ref": "../../v1.16.100/components/on_step_on.json"
 					},
 					"minecraft:on_step_off": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/on_step_off.json"
+						"$ref": "../../v1.16.100/components/on_step_off.json"
 					},
 					"minecraft:on_player_destroyed": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/on_player_destroyed.json"
+						"$ref": "../../v1.16.100/components/on_player_destroyed.json"
 					},
 					"minecraft:on_fall_on": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/on_fall_on.json"
+						"$ref": "../../v1.16.100/components/on_fall_on.json"
 					},
 					"minecraft:on_placed": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/on_placed.json"
+						"$ref": "../../v1.16.100/components/on_placed.json"
 					},
 					"minecraft:on_player_placing": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/on_player_placing.json"
+						"$ref": "../../v1.16.100/components/on_player_placing.json"
 					},
 					"minecraft:on_interact": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/on_interact.json"
+						"$ref": "../../v1.16.100/components/on_interact.json"
 					},
 					"minecraft:ticking": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/ticking.json"
+						"$ref": "../../v1.16.100/components/ticking.json"
 					},
 					"minecraft:random_ticking": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/random_ticking.json"
+						"$ref": "../../v1.16.100/components/random_ticking.json"
 					},
 					"minecraft:breakonpush": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/breakonpush.json"
+						"$ref": "../../v1.16.100/components/breakonpush.json"
 					},
 					"minecraft:immovable": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/immovable.json"
+						"$ref": "../../v1.16.100/components/immovable.json"
 					},
 					"minecraft:breathability": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/breathability.json"
+						"$ref": "../../v1.16.100/components/breathability.json"
 					},
 					"minecraft:onlypistonpush": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/onlypistonpush.json"
+						"$ref": "../../v1.16.100/components/onlypistonpush.json"
 					},
 					"minecraft:placement_filter": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/placement_filter.json"
+						"$ref": "../../v1.16.100/components/placement_filter.json"
 					},
 					"minecraft:preventsjumping": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/preventsjumping.json"
+						"$ref": "../../v1.16.100/components/preventsjumping.json"
 					},
 					"minecraft:rotation": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/rotation.json"
+						"$ref": "../../v1.16.100/components/rotation.json"
 					},
 					"minecraft:unwalkable": {
-						"$ref": "/data/packages/minecraftBedrock/schema/block/v1.16.100/components/unwalkable.json"
+						"$ref": "../../v1.16.100/components/unwalkable.json"
 					}
 				}
 			}
@@ -92,7 +92,7 @@
 			"type": "object",
 			"properties": {
 				"minecraft:block_light_filter": {
-					"$ref": "./block_light_filter.json"
+					"$ref": "../../v1.18.10/components/block_light_filter.json"
 				},
 				"minecraft:destroy_time": {
 					"$ref": "../../v1.16.0/components/destroy_time.json"
@@ -122,13 +122,13 @@
 			"properties": {
 				// Deprecated
 				"minecraft:entity_collision": {
-					"$ref": "./entity_collision.json"
+					"$ref": "../../v1.18.10/components/entity_collision.json"
 				},
 				"minecraft:pick_collision": {
-					"$ref": "./pick_collision.json"
+					"$ref": "../../v1.18.10/components/pick_collision.json"
 				},
 				"minecraft:block_light_absorption": {
-					"$ref": "./block_light_absorption.json"
+					"$ref": "../../v1.18.10/components/block_light_absorption.json"
 				}
 			}
 		}

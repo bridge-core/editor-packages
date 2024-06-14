@@ -4,7 +4,10 @@
 	"description": "Creates a blank volume.",
 	"category": "fileType.simpleFile",
 	"requires": {
-		"targetVersion": [">=", "1.18.20"],
+		"targetVersion": {
+			"min": "1.18.20",
+			"max": "1.20.0"
+		},
 		"packTypes": ["behaviorPack"],
 		"experimentalGameplay": ["upcomingCreatorFeatures"]
 	},

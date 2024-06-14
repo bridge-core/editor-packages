@@ -1,0 +1,18 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "string",
+	"description": "The color of the item's name.",
+	"anyOf": [
+		{
+			"$ref": "../../../general/minecraftColor.json"
+		},
+		{
+			"type": "object",
+			"properties": {
+				"value": {
+					"$ref": "../../../general/minecraftColor.json"
+				}
+			}
+		}
+	]
+}

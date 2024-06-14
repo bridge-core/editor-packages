@@ -1,0 +1,17 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Damage Absorption",
+	"description": "Allows an item to absorb damage that would otherwise be dealt to its wearer. The absorbed damage reduces the item's durability, with any excess damage being ignored. Requires the `minecraft:durability` component.",
+	"type": "object",
+	"properties": {
+		"absorbable_causes": {
+			"title": "Absorbable Causes",
+			"description": "List of damage causes that can be absorbed by the item. By default, no damage cause is absorbed.",
+			"type": "array",
+			"items": {
+				"$ref": "../../../general/vanilla/damageType.json"
+			}
+		}
+	},
+	"additionalProperties": false
+}

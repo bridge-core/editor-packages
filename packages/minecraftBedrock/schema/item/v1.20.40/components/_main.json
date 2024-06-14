@@ -40,7 +40,7 @@
 						"$ref": "../../v1.16.100/components/fertilizer.json"
 					},
 					"minecraft:potion": {
-						"$ref": "../../v1.16.100/components/potion.json"
+						"$ref": "../../v1.20.20/components/potion.json"
 					},
 					"minecraft:render_offsets": {
 						"$ref": "../../v1.20.10/components/render_offsets.json"
@@ -70,7 +70,7 @@
 					"$ref": "../../v1.20.20/components/wearable.json"
 				},
 				"minecraft:food": {
-					"$ref": "../../v1.18.10/components/food.json"
+					"$ref": "../../v1.20.30/components/food.json"
 				},
 				"minecraft:explodable": {
 					"$ref": "../../v1.20.20/components/explodeable.json"
@@ -79,22 +79,22 @@
 					"$ref": "../../v1.16.100/components/enchantable.json"
 				},
 				"minecraft:damage": {
-					"$ref": "../../v1.16.100/components/damage.json"
+					"$ref": "../../v1.20.20/components/damage.json"
 				},
 				"minecraft:liquid_clipped": {
-					"$ref": "../../v1.16.100/components/liquid_clipped.json"
+					"$ref": "../../v1.20.20/components/liquid_clipped.json"
 				},
 				"minecraft:allow_off_hand": {
-					"$ref": "../../v1.16.100/components/allow_off_hand.json"
+					"$ref": "../../v1.20.20/components/allow_off_hand.json"
 				},
 				"minecraft:use_animation": {
-					"$ref": "../../v1.16.100/components/use_animation.json"
+					"$ref": "../../v1.20.20/components/use_animation.json"
 				},
 				"minecraft:hover_text_color": {
-					"$ref": "../../v1.16.100/components/hover_text_color.json"
+					"$ref": "../../v1.20.20/components/hover_text_color.json"
 				},
 				"minecraft:can_destroy_in_creative": {
-					"$ref": "../../v1.16.100/components/can_destroy_in_creative.json"
+					"$ref": "../../v1.20.20/components/can_destroy_in_creative.json"
 				},
 				"minecraft:projectile": {
 					"$ref": "../../v1.16.100/components/projectile.json"
@@ -121,16 +121,16 @@
 					"$ref": "../../v1.10.0/components/use_duration.json"
 				},
 				"minecraft:max_stack_size": {
-					"$ref": "../../v1.10.0/components/max_stack_size.json"
+					"$ref": "../../v1.20.20/components/max_stack_size.json"
 				},
 				"minecraft:max_damage": {
-					"$ref": "../../v1.10.0/components/max_damage.json"
+					"$ref": "../../v1.16.100/components/max_damage.json"
 				},
 				"minecraft:hand_equipped": {
-					"$ref": "../../v1.10.0/components/hand_equipped.json"
+					"$ref": "../../v1.20.20/components/hand_equipped.json"
 				},
 				"minecraft:stacked_by_data": {
-					"$ref": "../../v1.10.0/components/stacked_by_data.json"
+					"$ref": "../../v1.20.20/components/stacked_by_data.json"
 				},
 				"minecraft:glint": {
 					"$ref": "../../v1.20.20/components/glint.json"

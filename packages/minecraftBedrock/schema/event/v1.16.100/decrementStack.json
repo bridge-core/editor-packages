@@ -7,6 +7,7 @@
 				"title": "Decrement Stack",
 				"type": "object",
 				"description": "Decrement the item stack.",
+				"deprecationMessage": "This event will be deprecated in 1.21.20 in favor of custom components",
 				"additionalProperties": false
 			}
 		}

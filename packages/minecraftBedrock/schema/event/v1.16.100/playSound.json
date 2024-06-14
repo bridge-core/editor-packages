@@ -7,6 +7,7 @@
 				"title": "Play Sound",
 				"type": "object",
 				"description": "Play a sound relative to target position.",
+				"deprecationMessage": "This event will be deprecated in 1.21.20 in favor of custom components",
 				"additionalProperties": false,
 				"properties": {
 					"target": {

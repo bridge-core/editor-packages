@@ -158,7 +158,14 @@
 									"properties": {
 										"effect": {
 											"title": "Effect",
-											"$ref": "../clientEntity/dynamic/particleReferenceEnum.json"
+											"anyOf": [
+												{
+													"$ref": "../clientEntity/dynamic/particleReferenceEnum.json"
+												},
+												{
+													"$ref": "../attachable/dynamic/particleReferenceEnum.json"
+												}
+											]
 										},
 										"locator": {
 											"title": "Locator",
@@ -187,7 +194,14 @@
 									"properties": {
 										"effect": {
 											"title": "Effect",
-											"$ref": "../clientEntity/dynamic/soundEffectReferenceEnum.json"
+											"anyOf": [
+												{
+													"$ref": "../clientEntity/dynamic/soundEffectReferenceEnum.json"
+												},
+												{
+													"$ref": "../attachable/dynamic/soundEffectReferenceEnum.json"
+												}
+											]
 										}
 									}
 								}

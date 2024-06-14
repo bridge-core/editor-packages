@@ -1,0 +1,16 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"amethyst_palette": {},
+		"copper_palette": {},
+		"diamond_palette": {},
+		"emerald_palette": {},
+		"gold_palette": {},
+		"iron_palette": {},
+		"lapis_palette": {},
+		"quartz_palette": {},
+		"netherite_palette": {},
+		"redstone_palette": {}
+	}
+}

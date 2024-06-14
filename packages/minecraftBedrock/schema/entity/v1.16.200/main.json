@@ -47,7 +47,7 @@
 										"$ref": "./components/_main.json"
 									},
 									{
-										"$ref": "/data/packages/minecraftBedrock/schema/entity/dynamic/customComponents.json"
+										"$ref": "../dynamic/customComponents.json"
 									}
 								]
 							}

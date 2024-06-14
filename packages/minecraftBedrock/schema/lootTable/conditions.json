@@ -70,9 +70,31 @@
 							"$ref": "../general/reference/identifiers.json#/definitions/item_identifiers"
 						},
 						"count": {
-							"type": "integer",
+							"type": "object",
 							"description": "How many items of the specified identifier the player must have selected",
-							"minimum": 1
+							"properties": {
+								"range_min": {
+									"type": "integer",
+									"description": "Minimum count for this condition to pass"
+								},
+								"range_max": {
+									"type": "integer",
+									"description": "Maximum count for this condition to pass"
+								}
+							}
+						},
+						"durability": {
+							"type": "object",
+							"properties": {
+								"range_min": {
+									"type": "integer",
+									"description": "Minimum durability level for this condition to pass"
+								},
+								"range_max": {
+									"type": "integer",
+									"description": "Maximum durability level for this condition to pass"
+								}
+							}
 						},
 						"enchantments": {
 							"type": "array",
@@ -84,11 +106,11 @@
 										"description": "The enchantment to test for",
 										"$ref": "../general/enchantName.json"
 									},
-									"min": {
+									"range_min": {
 										"type": "integer",
 										"description": "Minimum enchantment level for this condition to pass"
 									},
-									"max": {
+									"range_max": {
 										"type": "integer",
 										"description": "Maximum enchantment level for this condition to pass"
 									}

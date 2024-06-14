@@ -2,10 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"title": "Item",
 	"type": "object",
-	"required": [
-		"format_version",
-		"minecraft:item"
-	],
+	"required": ["format_version", "minecraft:item"],
 	"allOf": [
 		{
 			"properties": {
@@ -62,10 +59,10 @@
 			"then": {
 				"$ref": "../project/experimentalGameplay/holidayCreatorFeatures.json",
 				"then": {
-					"$ref": "/data/packages/minecraftBedrock/schema/item/v1.16.100/main.json"
+					"$ref": "./v1.16.100/main.json"
 				},
 				"else": {
-					"$ref": "/data/packages/minecraftBedrock/schema/item/v1.10.0/main.json"
+					"$ref": "./v1.10.0/main.json"
 				}
 			}
 		},
@@ -73,22 +70,17 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [
-							"1.17.20",
-							"1.17.30",
-							"1.17.40",
-							"1.18.0"
-						]
+						"enum": ["1.17.20", "1.17.30", "1.17.40", "1.18.0"]
 					}
 				}
 			},
 			"then": {
 				"$ref": "../project/experimentalGameplay/holidayCreatorFeatures.json",
 				"then": {
-					"$ref": "/data/packages/minecraftBedrock/schema/item/v1.17.20/main.json"
+					"$ref": "./v1.17.20/main.json"
 				},
 				"else": {
-					"$ref": "/data/packages/minecraftBedrock/schema/item/v1.10.0/main.json"
+					"$ref": "./v1.10.0/main.json"
 				}
 			}
 		},
@@ -96,21 +88,17 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [
-							"1.18.10",
-							"1.18.20",
-							"1.18.30"
-						]
+						"enum": ["1.18.10", "1.18.20", "1.18.30"]
 					}
 				}
 			},
 			"then": {
 				"$ref": "../project/experimentalGameplay/holidayCreatorFeatures.json",
 				"then": {
-					"$ref": "/data/packages/minecraftBedrock/schema/item/v1.18.10/main.json"
+					"$ref": "./v1.18.10/main.json"
 				},
 				"else": {
-					"$ref": "/data/packages/minecraftBedrock/schema/item/v1.10.0/main.json"
+					"$ref": "./v1.10.0/main.json"
 				}
 			}
 		},
@@ -135,10 +123,10 @@
 			"then": {
 				"$ref": "../project/experimentalGameplay/holidayCreatorFeatures.json",
 				"then": {
-					"$ref": "/data/packages/minecraftBedrock/schema/item/v1.19.0/main.json"
+					"$ref": "./v1.19.0/main.json"
 				},
 				"else": {
-					"$ref": "/data/packages/minecraftBedrock/schema/item/v1.10.0/main.json"
+					"$ref": "./v1.10.0/main.json"
 				}
 			}
 		},
@@ -146,94 +134,108 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [
-							"1.20.0"
-						]
+						"enum": ["1.20.0"]
 					}
 				}
 			},
 			"then": {
-				"$ref": "/data/packages/minecraftBedrock/schema/item/v1.20.0/main.json"
+				"$ref": "./v1.20.0/main.json"
 			}
 		},
 		{
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [
-							"1.20.10"
-						]
+						"enum": ["1.20.10"]
 					}
 				}
 			},
 			"then": {
-				"$ref": "/data/packages/minecraftBedrock/schema/item/v1.20.10/main.json"
+				"$ref": "./v1.20.10/main.json"
 			}
 		},
 		{
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [
-							"1.20.20"
-						]
+						"enum": ["1.20.20"]
 					}
 				}
 			},
 			"then": {
-				"$ref": "/data/packages/minecraftBedrock/schema/item/v1.20.20/main.json"
+				"$ref": "./v1.20.20/main.json"
 			}
 		},
 		{
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [
-							"1.20.21"
-						]
+						"enum": ["1.20.30"]
 					}
 				}
 			},
 			"then": {
-				"$ref": "/data/packages/minecraftBedrock/schema/item/v1.20.20/main.json"
+				"$ref": "./v1.20.30/main.json"
 			}
 		},
 		{
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [
-							"1.20.30"
-						]
+						"enum": ["1.20.40"]
 					}
 				}
 			},
 			"then": {
-				"$ref": "/data/packages/minecraftBedrock/schema/item/v1.20.30/main.json"
+				"$ref": "./v1.20.40/main.json"
 			}
 		},
 		{
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [ "1.20.40" ]
+						"enum": ["1.20.50"]
 					}
 				}
 			},
 			"then": {
-				"$ref": "/data/packages/minecraftBedrock/schema/item/v1.20.40/main.json"
+				"$ref": "./v1.20.50/main.json"
 			}
 		},
 		{
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [ "1.20.50" ]
+						"enum": ["1.20.60", "1.20.70"]
 					}
 				}
 			},
 			"then": {
-				"$ref": "/data/packages/minecraftBedrock/schema/item/v1.20.50/main.json"
+				"$ref": "./v1.20.60/main.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.20.80", "1.21.0"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.20.80/main.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.21.10"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.21.10/main.json"
 			}
 		}
 	]

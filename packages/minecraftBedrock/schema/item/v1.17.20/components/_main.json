@@ -117,7 +117,7 @@
 			"$ref": "../../v1.10.0/components/max_stack_size.json"
 		},
 		"minecraft:max_damage": {
-			"$ref": "../../v1.10.0/components/max_damage.json"
+			"$ref": "../../v1.16.100/components/max_damage.json"
 		},
 		"minecraft:hand_equipped": {
 			"$ref": "../../v1.10.0/components/hand_equipped.json"
