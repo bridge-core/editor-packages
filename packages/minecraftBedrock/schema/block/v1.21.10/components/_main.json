@@ -62,10 +62,10 @@
 					"$ref": "../../v1.19.10/components/crafting_table.json"
 				},
 				"minecraft:custom_components": {
-					"$ref": "../../v1.20.80/custom_components.json"
+					"$ref": "../../v1.20.80/components/custom_components.json"
 				},
 				"minecraft:entity_fall_on": {
-					"$ref": "../../v1.20.80/entity_fall_on.json"
+					"$ref": "../../v1.20.80/components/entity_fall_on.json"
 				},
 				"minecraft:material_instances": {
 					"$ref": "../../v1.16.100/components/material_instances.json"
@@ -92,7 +92,7 @@
 					"$ref": "../../v1.19.10/components/flammable.json"
 				},
 				"minecraft:tick": {
-					"$ref": "../../v1.20.80/tick.json"
+					"$ref": "../../v1.20.80/components/tick.json"
 				},
 				"minecraft:block_light_filter": {
 					"$ref": "../../v1.18.10/components/block_light_filter.json"
