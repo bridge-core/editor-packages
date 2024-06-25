@@ -193,6 +193,12 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 			path: 'texts/en_US.lang',
 			content: '^action\\.interact\\.',
 		},
+		{
+			id: 'blockSound',
+			packType: 'resourcePack',
+			path: 'blocks.json',
+			content: '*/sound'
+		}
 	],
 }
 
@@ -285,6 +291,10 @@ export const exportRaw: ExportTarget[] = [
 		from: ['itemGroup.json'],
 		to: 'general/vanilla/itemGroup.json',
 	},
+	{
+		from: ['blockSound.json'],
+		to: 'general/vanilla/blockSound.json'
+	}
 ]
 
 /**
