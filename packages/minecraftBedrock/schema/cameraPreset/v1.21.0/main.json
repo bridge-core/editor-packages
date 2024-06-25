@@ -60,6 +60,15 @@
 					"title": "Extend Player Rendering",
 					"type": "boolean",
 					"default": false
+				},
+				"view_offset": {
+					"title": "View Offset",
+					"type": "array",
+					"minItems": 2,
+					"maxItems": 2,
+					"items": {
+						"type": "number"
+					}
 				}
 			}
 		}

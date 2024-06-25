@@ -2285,6 +2285,11 @@
 							"argumentName": "victim",
 							"description": "Specifies the targets to spread.",
 							"type": "selector"
+						},
+						{
+							"argumentName": "maxHeight",
+							"description": "Specifies the maximum height for resulting positions.",
+							"type": "number"
 						}
 					]
 				},

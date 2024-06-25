@@ -51,6 +51,8 @@
 		"block.lantern.place",
 		"block.lantern.step",
 		"block.loom.use",
+		"block.mob_spawner.break",
+		"block.mob_spawner.step",
 		"block.scaffolding.break",
 		"block.scaffolding.climb",
 		"block.scaffolding.fall",
