@@ -230,7 +230,7 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.21.10"]
+						"enum": ["1.21.10", "1.21.20"]
 					}
 				}
 			},
