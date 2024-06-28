@@ -413,6 +413,9 @@
 		"minecraft:behavior.random_swim": {
 			"$ref": "../../v1.16.0/behaviors/behavior.random_swim.json"
 		},
+		"minecraft:behavior.swim_up_for_breath": {
+			"$ref": "../../v1.21.20/behaviors/behavior.swim_up_for_breath.json"
+		},
 		"minecraft:behavior.ranged_attack": {
 			"$ref": "../../v1.16.0/behaviors/behavior.ranged_attack.json"
 		},
