@@ -190,6 +190,7 @@
 						"on_ground",
 						"on_hot_block", // v1.19.60+
 						"on_ladder",
+						"owner_distance", // v1.21.20
 						"random_chance",
 						"rider_count",
 						"surface_mob",
@@ -1480,6 +1481,23 @@
 					"value": {
 						"description": "Returns true when the subject entity is on a ladder.",
 						"type": "boolean"
+					}
+				}
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"test": {
+						"const": "owner_distance"
+					}
+				}
+			},
+			"then": {
+				"properties": {
+					"value": {
+						"description": "Tests the distance between the subject and its owner. Returns false if there is no owner.",
+						"type": "number"
 					}
 				}
 			}
