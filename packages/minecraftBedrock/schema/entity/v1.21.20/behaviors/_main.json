@@ -528,7 +528,7 @@
 			"$ref": "../../v1.20.60/behaviors/behavior.fire_at_target.json"
 		},
 		"minecraft:behavior.move_around_target": {
-			"$ref": "../../v1.20.60/behaviors/behavior.move_around_target.json"
+			"$ref": "../../v1.21.20/behaviors/behavior.move_around_target.json"
 		},
 		"minecraft:behavior.jump_around_target": {
 			"$ref": "../../v1.20.60/behaviors/behavior.jump_around_target.json"
