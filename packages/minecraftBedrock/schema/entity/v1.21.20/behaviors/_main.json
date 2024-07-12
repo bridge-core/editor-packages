@@ -534,7 +534,7 @@
 			"$ref": "../../v1.20.60/behaviors/behavior.jump_around_target.json"
 		},
 		"minecraft:behavior.teleport_to_owner": {
-			"$ref": "../../v.1.21.20/behaviors/behavior.teleport_to_owner.json"
+			"$ref": "../../v1.21.20/behaviors/behavior.teleport_to_owner.json"
 		}
 	}
 }
