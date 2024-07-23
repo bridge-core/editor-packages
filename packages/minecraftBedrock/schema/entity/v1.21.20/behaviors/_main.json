@@ -135,13 +135,7 @@
 			"$ref": "../../v1.19.0/behaviors/behavior.sleep.json"
 		},
 		"minecraft:behavior.follow_owner": {
-			"$ref": "../../../project/experimentalGameplay/theWildUpdate.json",
-			"then": {
-				"$ref": "../../v1.18.30/behaviors/behavior.follow_owner.json"
-			},
-			"else": {
-				"$ref": "../../v1.16.0/behaviors/behavior.follow_owner.json"
-			}
+			"$ref": "../../v1.21.20/behaviors/behavior.follow_owner.json"
 		},
 		"minecraft:behavior.work_composter": {
 			"$ref": "../../v1.18.30/behaviors/behavior.work_composter.json"
