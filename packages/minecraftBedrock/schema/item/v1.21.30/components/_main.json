@@ -9,7 +9,7 @@
 					"minecraft:bundle_interaction": {
 						"$ref": "../../v1.21.30/components/bundle_interaction.json"
 					},
-					"minecraft:item_storage": {
+					"minecraft:storage_item": {
 						"$ref": "../../v1.21.30/components/storage_item.json"
 					}
 				}
