@@ -1,0 +1,19 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Redstone Conductivity",
+	"description": "The basic redstone properties of a block",
+	"type": "object",
+	"properties": {
+		"allows_wire_to_step_down": {
+			"title": "Allows Wire to Step Down",
+			"description": "Specifies if redstone wire can stair-step downward on the block",
+			"type": "boolean"
+		},
+		"redstone_conductor": {
+			"title": "Redstone Conductor",
+			"description": "Specifies if the block can be powered by redstone",
+			"type": "boolean"
+		}
+	},
+	"additionalProperties": false
+}
