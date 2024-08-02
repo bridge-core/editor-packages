@@ -1,0 +1,26 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Rarity",
+	"description": "Specifies the base rarity and subsequently color of the item name when the player hovers the cursor over the item.",
+	"oneOf": [
+		{
+			"$ref": "#/definitions/rarity_enum"
+		},
+		{
+			"type": "object",
+			"properties": {
+				"value": {
+					"title": "Value",
+					"description": "Sets the base rarity of the item. The rarity of an item automatically increases when enchanted, either to Rare when the base rarity is Common or Uncommon, or Epic when the base rarity is Rare.",
+					"$ref": "#/definitions/rarity_enum"
+				}
+			}
+		}
+	],
+	"definitions": {
+		"rarity_enum": {
+			"type": "string",
+			"enum": ["common", "uncommon", "rare", "epic"]
+		}
+	}
+}
