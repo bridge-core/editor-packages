@@ -6,7 +6,7 @@
 		"matcher": "splashes.json",
 		"fileExtensions": [".json"]
 	},
-	"schema": "file:///data/packages/minecraftBedrock/splashes/main.json",
+	"schema": "file:///data/packages/minecraftBedrock/schema/splashes/main.json",
 	"highlighterConfiguration": {
 		"typeIdentifiers": ["conditional"],
 		"keywords": ["requires"]
