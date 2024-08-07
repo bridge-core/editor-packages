@@ -1,0 +1,87 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Destructible By Mining",
+	"description": "Describes the destructible by mining properties for this block. If set to true, the block will take the default number of seconds to destroy. If set to false, this block is indestructible by mining. If the component is omitted, the block will take the default number of seconds to destroy.",
+	"oneOf": [
+		{
+			"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
+			"then": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"seconds_to_destroy": {
+						"title": "Seconds to Destroy",
+						"description": "Sets the number of seconds it takes to destroy the block with base equipment. Greater numbers result in greater mining times.",
+						"type": "number",
+						"default": 0.0
+					},
+					"item_specific_speeds": {
+						"$ref": "#/definitions/item_specific_speeds"
+					}
+				}
+			},
+			"else": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"seconds_to_destroy": {
+						"title": "Seconds to Destroy",
+						"description": "Sets the number of seconds it takes to destroy the block with base equipment. Greater numbers result in greater mining times.",
+						"type": "number",
+						"default": 0.0
+					}
+				}
+			}
+		},
+		{
+			"type": "boolean"
+		}
+	],
+	"definitions": {
+		"item_specific_speeds": {
+			"title": "Item Specific Speeds",
+			"description": "Defines the destroy time of this block when mined by specific items.",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"destroy_speed": {
+						"title": "Destroy Speed",
+						"description": "The speed modifier of this block's destroy time.",
+						"type": "number"
+					},
+					"item": {
+						"title": "Item",
+						"description": "The items for the speed modifier.",
+						"$ref": "#/definitions/item_descriptor"
+					}
+				}
+			}
+		},
+		"item_descriptor": {
+			"oneOf": [
+				{
+					"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
+				},
+				{
+					"type": "object",
+					"properties": {
+						"tags": {
+							"oneOf": [
+								{
+									"enum": [
+										"query.any_tag()",
+										"query.all_tags()"
+									]
+								},
+								{
+									"type": "string"
+								}
+							]
+						}
+					}
+				}
+			]
+		}
+	}
+}

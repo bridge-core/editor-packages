@@ -3,17 +3,7 @@
 	"type": "object",
 	"allOf": [
 		{
-			"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
-			"then": {
-				"type": "object",
-				"properties": {
-					"minecraft:redstone_conductivity": {
-						"$ref": "../../v1.21.30/components/redstone_conductivity.json"
-					}
-				}
-			}
-		},
-		{
+			// TODO: Deprecate these once they go stable.
 			"$ref": "../../../project/experimentalGameplay/holidayCreatorFeatures.json",
 			"then": {
 				"type": "object",
@@ -94,7 +84,7 @@
 					"$ref": "../../v1.19.20/components/friction.json"
 				},
 				"minecraft:destructible_by_mining": {
-					"$ref": "../../v1.19.20/components/destructible_by_mining.json"
+					"$ref": "../../v1.21.30/components/destructible_by_mining.json"
 				},
 				"minecraft:destructible_by_explosion": {
 					"$ref": "../../v1.19.20/components/destructible_by_explosion.json"
@@ -117,9 +107,21 @@
 			}
 		},
 		{
+			// Experimental Upcoming Creator Features
+			"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
+			"then": {
+				"type": "object",
+				"properties": {
+					"minecraft:redstone_conductivity": {
+						"$ref": "../../v1.21.30/components/redstone_conductivity.json"
+					}
+				}
+			}
+		},
+		{
+			// Deprecated components
 			"type": "object",
 			"properties": {
-				// Deprecated
 				"minecraft:part_visibility": {
 					"$ref": "../../v1.19.80/components/part_visibility.json"
 				},

@@ -1267,7 +1267,17 @@
 				},
 				{
 					"commandName": "reload",
-					"description": "Reloads functions from disk."
+					"description": "Reloads functions and scripts.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["all"]
+							},
+							"description": "Exits the world and reloads all behaviors and resources without closing the game.",
+							"isOptional": true
+						}
+					]
 				},
 				{
 					"commandName": "replaceitem",
