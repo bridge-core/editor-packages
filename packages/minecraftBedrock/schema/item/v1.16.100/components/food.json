@@ -22,8 +22,9 @@
 			"description": "When used, convert the *this* item to the one specified by 'using_converts_to'."
 		},
 		"on_consume": {
-			"description": "Event to fire once the item has been consumed.",
-			"$ref": "../../general/eventDefinition.json"
+			"title": "Event: On Consume",
+			"deprecationMessage": "Deprecated in favor of 'minecraft:custom_components'. (format_version: v1.21.10)",
+			"doNotSuggest": true
 		},
 		"effects": {
 			"doNotSuggest": true,

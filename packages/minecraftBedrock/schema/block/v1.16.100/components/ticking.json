@@ -1,37 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"additionalProperties": false,
-	"type": "object",
-	"title": "Ticking",
-	"description": "Triggers the specified event, either once, or at a regular interval equal to a number of ticks randomly chosen from the range provided.",
-	"properties": {
-		"looping": {
-			"title": "Looping",
-			"type": "boolean",
-			"description": "Does the event loop? If false, the event will only be triggered once, after a delay equal to a number of ticks randomly chosen from the range. If true, the event will loop, and each interval between events will be equal to a number of ticks randomly chosen from the range.",
-			"default": true
-		},
-		"range": {
-			"title": "Range",
-			"type": "array",
-			"description": "The range between which the component will trigger his event.",
-			"minItems": 2,
-			"maxItems": 2,
-			"items": [
-				{
-					"type": "number",
-					"default": 10.0
-				},
-				{
-					"type": "number",
-					"default": 10.0
-				}
-			]
-		},
-		"on_tick": {
-			"title": "Event: On Tick",
-			"description": "The event that will be triggered once or on an interval.",
-			"$ref": "../../general/eventDefinition.json"
-		}
-	}
+	"title": "Ticking",,
+	"deprecationMessage": "Deprecated in favor of 'minecraft:custom_components'. (format_version: v1.21.10)",
+	"doNotSuggest": true
 }

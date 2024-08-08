@@ -1,0 +1,67 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"type": "object",
+	"properties": {
+		"canMerge": {
+			"title": "Can Merge",
+			"description": "Whether this splashes file is additive",
+			"type": "boolean",
+			"default": false
+		},
+		"conditional": {
+			"title": "Conditional",
+			"description": "Defines a list of conditional splash messages",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"requires": {
+						"title": "Requires",
+						"type": "object",
+						"properties": {
+							"platforms": {
+								"title": "Platforms",
+								"type": "array",
+								"items": {
+									"type": "string"
+								}
+							},
+							"treatments": {
+								"title": "Treatments",
+								"type": "array",
+								"items": {
+									"type": "string"
+								}
+							},
+							"stores": {
+								"title": "Stores",
+								"type": "array",
+								"items": {
+									"type": "string"
+								}
+							}
+						}
+					},
+					"splashes": {
+						"title": "Splashes",
+						"description": "A list of splash messages",
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					}
+				}
+			}
+		},
+		"splashes": {
+			"title": "Splashes",
+			"description": "A list of splash messages",
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		}
+	},
+	"required": ["splashes"],
+	"additionalProperties": false
+}

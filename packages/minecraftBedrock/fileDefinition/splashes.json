@@ -1,0 +1,14 @@
+{
+	"id": "splashes",
+	"detect": {
+		"packType": "resourcePack",
+		"scope": "splashes.json",
+		"matcher": "splashes.json",
+		"fileExtensions": [".json"]
+	},
+	"schema": "file:///data/packages/minecraftBedrock/schema/splashes/main.json",
+	"highlighterConfiguration": {
+		"typeIdentifiers": ["conditional"],
+		"keywords": ["requires"]
+	}
+}
