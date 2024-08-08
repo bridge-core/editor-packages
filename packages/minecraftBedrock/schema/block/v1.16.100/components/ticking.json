@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"title": "Ticking",,
+	"title": "Ticking",
 	"deprecationMessage": "Deprecated in favor of 'minecraft:custom_components'. (format_version: v1.21.10)",
 	"doNotSuggest": true
 }
