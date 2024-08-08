@@ -1,14 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"additionalProperties": false,
-	"type": "object",
 	"title": "Random Ticking",
-	"description": "Triggers the specified event randomly based on the random tick speed gamerule. The random tick speed determines how often blocks are updated. Some other examples of game mechanics that use random ticking are crop growth and fire spreading.",
-	"properties": {
-		"on_tick": {
-			"title": "Event: On Tick",
-			"description": "The event that will be triggered on random ticks.",
-			"$ref": "../../general/eventDefinition.json"
-		}
-	}
+	"deprecationMessage": "Deprecated in favor of 'minecraft:custom_components'. (format_version: v1.21.10)",
+	"doNotSuggest": true
 }

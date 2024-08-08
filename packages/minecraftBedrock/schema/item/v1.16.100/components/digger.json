@@ -54,8 +54,9 @@
 			}
 		},
 		"on_dig": {
-			"description": "Trigger for when you dig a block that isn't listed in 'destroy_speeds'.",
-			"$ref": "../../general/eventDefinition.json"
+			"title": "Event: On Dig",
+			"deprecationMessage": "Deprecated in favor of 'minecraft:custom_components'. (format_version: v1.21.10)",
+			"doNotSuggest": true
 		}
 	}
 }
