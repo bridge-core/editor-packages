@@ -1,7 +1,7 @@
 {
     "id": "1d23211e-32ce-4ec3-a180-a571b2cc1ff0",
     "icon": "mdi-alert-circle-outline",
-    "color": "warning",
+    "color": "error",
     "title": "Holiday Creator Features have been removed",
     "description": "The Holiday Creator Features (HCF) experiment has been removed in 1.21.20, Add-Ons using this experiment will no longer function. HCF presets and schemas will be removed from bridge.",
     "experimentRequired": "holidayCreatorFeatures",
