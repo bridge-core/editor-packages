@@ -4,6 +4,9 @@
 	"allOf": [
 		{
 			"properties": {
+				"minecraft:block_placer": {
+					"$ref": "../../v1.20.10/components/block_placer.json"
+				},
 				"minecraft:can_destroy_in_creative": {
 					"$ref": "../../v1.20.10/components/can_destroy_in_creative.json"
 				},
