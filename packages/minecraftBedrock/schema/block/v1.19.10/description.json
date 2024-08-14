@@ -31,6 +31,35 @@
 					}
 				}
 			]
+		},
+		"menu_category": {
+			"title": "Menu Category",
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"group": {
+					"title": "Creative Catgeory",
+					"type": "string",
+					"anyOf": [
+						{
+							"$ref": "../../general/creativeCategory.json"
+						},
+						{
+							"$ref": "../../general/reference/itemGroup.json"
+						}
+					]
+				},
+				"category": {
+					"title": "Category",
+					"type": "string",
+					"description": "Determines which category this block will be placed under in the inventory and crafting table container screens. Options are 'construction', 'nature', 'equipment', 'items', and 'none'. If omitted or 'none' is specified, the block will not appear in the inventory or crafting table container screens.",
+					"$ref": "../../general/creativeCategory.json"
+				},
+				"is_hidden_in_commands": {
+					"title": "Is Hidden In Commands",
+					"type": "boolean"
+				}
+			}
 		}
 	}
 }

@@ -21,6 +21,34 @@
 							"$ref": "./components/_main.json"
 						}
 					]
+				},
+				"permutations": {
+					"title": "Permutations",
+					"description": "List of block permutations based on MoLang queries",
+					"type": "array",
+					"items": {
+						"type": "object",
+						"additionalProperties": false,
+						"properties": {
+							"condition": {
+								"title": "Condition",
+								"description": "MoLang condition",
+								"$ref": "../../molang/embedded.json"
+							},
+							"components": {
+								"title": "Components",
+								"description": "Components to add when the condition evaluates to 'true'",
+								"allOf": [
+									{
+										"$ref": "../dynamic/customComponents.json"
+									},
+									{
+										"$ref": "./components/_main.json"
+									}
+								]
+							}
+						}
+					}
 				}
 			},
 			"additionalProperties": false

@@ -32,22 +32,34 @@
 				}
 			]
 		},
-		"group": {
-			"title": "Group",
-			"description": "Specifies the language file key that maps to which expandable/collapsible group this block will be a part of within a category. If the string given can not be resolved as a loc string, then we will check if there is an existing group whose name matches the raw string. If this field is omitted, or there is no group whose name matches the loc string or the raw string, this block will be placed standalone in the given category.",
-			"anyOf": [
-				{
+		"menu_category": {
+			"title": "Menu Category",
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"group": {
+					"title": "Creative Catgeory",
+					"type": "string",
+					"anyOf": [
+						{
+							"$ref": "../../general/creativeCategory.json"
+						},
+						{
+							"$ref": "../../general/reference/itemGroup.json"
+						}
+					]
+				},
+				"category": {
+					"title": "Category",
+					"type": "string",
+					"description": "Determines which category this block will be placed under in the inventory and crafting table container screens. Options are 'construction', 'nature', 'equipment', 'items', and 'none'. If omitted or 'none' is specified, the block will not appear in the inventory or crafting table container screens.",
 					"$ref": "../../general/creativeCategory.json"
 				},
-				{
-					"$ref": "../../general/reference/itemGroup.json"
+				"is_hidden_in_commands": {
+					"title": "Is Hidden In Commands",
+					"type": "boolean"
 				}
-			]
-		},
-		"category": {
-			"title": "Category",
-			"description": "Determines which category this block will be placed under in the inventory and crafting table container screens. Options are 'construction', 'nature', 'equipment', 'items', and 'none'. If omitted or 'none' is specified, the block will not appear in the inventory or crafting table container screens.",
-			"$ref": "../../general/creativeCategory.json"
+			}
 		}
 	}
 }
