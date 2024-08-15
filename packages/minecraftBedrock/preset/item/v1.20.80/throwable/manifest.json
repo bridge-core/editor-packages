@@ -1,7 +1,7 @@
 {
-	"name": "Snowball",
+	"name": "Throwable",
 	"icon": "mdi-circle",
-	"description": "Creates a snowball item with a projectile entity.",
+	"description": "Creates a throwable item with a projectile entity.",
 	"category": "fileType.item",
 	"requires": {
 		"targetVersion": [">=", "1.20.80"],
