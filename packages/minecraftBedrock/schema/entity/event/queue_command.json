@@ -1,11 +1,11 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
 	"properties": {
 		"queue_command": {
 			"title": "Queue Command",
-			"type": "object",
 			"description": "Triggers a slash command or a list of slash commands.",
-			"additionalProperties": false,
+			"type": "object",
 			"properties": {
 				"command": {
 					"title": "Command",
@@ -29,7 +29,8 @@
 					"description": "The target context to execute against.",
 					"$ref": "../../general/filter/subject.json"
 				}
-			}
+			},
+			"additionalProperties": false
 		}
 	}
 }

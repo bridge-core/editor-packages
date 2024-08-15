@@ -5,10 +5,9 @@
 		"set_property": {
 			"title": "Set Property",
 			"description": "Set a property on the entity.",
-			"type": "object",
 			"anyOf": [
 				{
-					"$ref": "../../entity/dynamic/currentContext/propertyProperty.json"
+					"$ref": "../dynamic/currentContext/propertyProperty.json"
 				},
 				{
 					"patternProperties": {

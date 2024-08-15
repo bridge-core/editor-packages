@@ -7,11 +7,10 @@
 			"description": "Trigger an event.",
 			"anyOf": [
 				{
-					"$ref": "../../entity/general/v1.16.0/eventDefinition.json"
+					"$ref": "../general/v1.16.0/eventDefinition.json"
 				},
 				{
-					"$ref": "../../entity/dynamic/currentContext/eventEnum.json",
-					"type": "string"
+					"$ref": "../dynamic/currentContext/eventEnum.json"
 				}
 			]
 		}

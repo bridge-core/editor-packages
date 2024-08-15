@@ -3,15 +3,25 @@
 	"type": "object",
 	"allOf": [
 		{
-			"$ref": "../../event/componentGroup/add.json"
+			"$ref": "./add.json"
 		},
 		{
-			"$ref": "../../event/componentGroup/remove.json"
+			"$ref": "./emit_vibration.json"
 		},
 		{
-			"$ref": "../../event/v1.16.100/triggerEntity.json"
+			"$ref": "./queue_command.json"
 		},
 		{
+			"$ref": "./remove.json"
+		},
+		{
+			"$ref": "./set_property.json"
+		},
+		{
+			"$ref": "./trigger.json"
+		},
+		{
+			"type": "object",
 			"properties": {
 				"randomize": {
 					"title": "Randomize",
@@ -19,6 +29,7 @@
 					"items": {
 						"allOf": [
 							{
+								"type": "object",
 								"properties": {
 									"weight": {
 										"title": "Weight",
@@ -42,6 +53,7 @@
 					"items": {
 						"allOf": [
 							{
+								"type": "object",
 								"properties": {
 									"filters": {
 										"title": "Filters",
@@ -56,36 +68,6 @@
 					}
 				}
 			}
-		},
-		{
-			"$ref": "../../event/v1.16.100/damage.json"
-		},
-		{
-			"$ref": "../../event/v1.16.100/decrementStack.json"
-		},
-		{
-			"$ref": "../../event/v1.16.100/die.json"
-		},
-		{
-			"$ref": "../../event/v1.16.100/addMobEffect.json"
-		},
-		{
-			"$ref": "../../event/v1.16.100/removeMobEffect.json"
-		},
-		// {
-		// 	"$ref": "../../event/v1.16.100/playEffect.json"
-		// },
-		// {
-		// 	"$ref": "../../event/v1.16.100/playSound.json"
-		// },
-		{
-			"$ref": "../../event/v1.16.100/runCommand.json"
-		},
-		{
-			"$ref": "../../event/v1.16.100/teleport.json"
-		},
-		{
-			"$ref": "../../event/v1.16.100/transformItem.json"
 		}
 	]
 }
