@@ -4,11 +4,6 @@
 	"type": "object",
 	"description": "Repairable item component: how much damage can this item repair, what items can repair it.",
 	"properties": {
-		"on_repaired": {
-			"title": "Event: On Repaired",
-			"deprecationMessage": "Deprecated in favor of 'minecraft:custom_components'. (format_version: v1.21.10)",
-			"doNotSuggest": true
-		},
 		"repair_items": {
 			"type": "array",
 			"description": "Repair item entries.",
