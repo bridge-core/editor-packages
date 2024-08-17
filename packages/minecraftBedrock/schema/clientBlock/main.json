@@ -7,12 +7,17 @@
 	"properties": {
 		"format_version": {
 			"title": "Format Version",
-			"type": "array",
-			"minItems": 3,
-			"maxItems": 3,
-			"items": {
-				"type": "integer"
-			}
+			"anyOf": [
+				{
+					"type": "array",
+					"minItems": 3,
+					"maxItems": 3
+				},
+				{
+					"type": "string",
+					"enum": ["1.21.10", "1.21.20", "1.21.30"]
+				}
+			]
 		}
 	},
 	"patternProperties": {

@@ -47,7 +47,7 @@
 		},
 		{
 			"moduleName": "@minecraft/server",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@1.14.0-beta.1.21.20-preview.23/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@1.14.0-beta.1.21.20-stable/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
@@ -61,56 +61,26 @@
 		},
 		{
 			"moduleName": "@minecraft/server",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@1.13.0-rc.1.21.20-preview.23/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@1.13.0/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
 						"module_name": "@minecraft/server",
 						"version": "1.13.0"
 					}
-				],
-				"targetVersion": [">=", "1.21.20"]
+				]
 			}
 		},
 		{
 			"moduleName": "@minecraft/server",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@1.13.0-beta.1.21.10-preview.24/index.d.ts",
-			"requires": {
-				"dependencies": [
-					{
-						"module_name": "@minecraft/server",
-						"version": "1.13.0-beta"
-					}
-				],
-				"experimentalGameplay": ["enableGameTestFramework"],
-				"targetVersion": [">=", "1.21.10"]
-			}
-		},
-		{
-			"moduleName": "@minecraft/server",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@1.12.0-rc.1.21.10-preview.24/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@1.12.0/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
 						"module_name": "@minecraft/server",
 						"version": "1.12.0"
 					}
-				],
-				"targetVersion": [">=", "1.21.10"]
-			}
-		},
-		{
-			"moduleName": "@minecraft/server",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@1.12.0-beta.1.21.0-stable/index.d.ts",
-			"requires": {
-				"dependencies": [
-					{
-						"module_name": "@minecraft/server",
-						"version": "1.12.0-beta"
-					}
-				],
-				"experimentalGameplay": ["enableGameTestFramework"],
-				"targetVersion": [">=", "1.21.0"]
+				]
 			}
 		},
 		{
@@ -315,29 +285,14 @@
 		},
 		{
 			"moduleName": "@minecraft/server-ui",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-ui@1.2.0-rc.1.21.30-preview.22/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-ui@1.2.0/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
 						"module_name": "@minecraft/server-ui",
 						"version": "1.2.0"
 					}
-				],
-				"targetVersion": [">=", "1.21.10"] // TODO Remove this check once 1.21.10 is stable.
-			}
-		},
-		{
-			// TODO Remove this once 1.21.10 is stable.
-			"moduleName": "@minecraft/server-ui",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-ui@1.2.0-beta.1.21.0-stable/index.d.ts",
-			"requires": {
-				"dependencies": [
-					{
-						"module_name": "@minecraft/server-ui",
-						"version": "1.2.0-beta"
-					}
-				],
-				"experimentalGameplay": ["enableGameTestFramework"]
+				]
 			}
 		},
 		{

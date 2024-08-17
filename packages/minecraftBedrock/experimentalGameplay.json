@@ -1,9 +1,5 @@
 [
 	{
-		"icon": "mdi-gift",
-		"id": "holidayCreatorFeatures"
-	},
-	{
 		"icon": "mdi-earth-box",
 		"id": "creationOfCustomBiomes"
 	},

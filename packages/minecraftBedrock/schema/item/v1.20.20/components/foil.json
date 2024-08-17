@@ -1,0 +1,6 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Foil",
+	"deprecationMessage": "Deprecated in favor of 'minecraft:glint' (format_version: v1.20.20).",
+	"doNotSuggest": true
+}

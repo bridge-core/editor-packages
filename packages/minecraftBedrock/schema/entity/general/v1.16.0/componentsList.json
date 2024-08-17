@@ -255,7 +255,6 @@
 		"minecraft:behavior.owner_hurt_by_target",
 		"minecraft:behavior.owner_hurt_target",
 		"minecraft:behavior.panic",
-		"minecraft:behavior.peek",
 		"minecraft:behavior.pet_sleep_with_owner",
 		"minecraft:behavior.pickup_items",
 		"minecraft:behavior.play",

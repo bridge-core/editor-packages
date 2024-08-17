@@ -1,0 +1,73 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"allOf": [
+		{
+			"$ref": "./add.json"
+		},
+		{
+			"$ref": "./emit_vibration.json"
+		},
+		{
+			"$ref": "./queue_command.json"
+		},
+		{
+			"$ref": "./remove.json"
+		},
+		{
+			"$ref": "./set_property.json"
+		},
+		{
+			"$ref": "./trigger.json"
+		},
+		{
+			"type": "object",
+			"properties": {
+				"randomize": {
+					"title": "Randomize",
+					"type": "array",
+					"items": {
+						"allOf": [
+							{
+								"type": "object",
+								"properties": {
+									"weight": {
+										"title": "Weight",
+										"type": "number"
+									},
+									"filters": {
+										"title": "Filters",
+										"$ref": "../general/v1.16.0/filter.json"
+									}
+								}
+							},
+							{
+								"$ref": "#"
+							}
+						]
+					}
+				},
+				"sequence": {
+					"title": "Sequence",
+					"type": "array",
+					"items": {
+						"allOf": [
+							{
+								"type": "object",
+								"properties": {
+									"filters": {
+										"title": "Filters",
+										"$ref": "../general/v1.16.0/filter.json"
+									}
+								}
+							},
+							{
+								"$ref": "#"
+							}
+						]
+					}
+				}
+			}
+		}
+	]
+}

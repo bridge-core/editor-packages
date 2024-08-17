@@ -18,24 +18,6 @@
 							"$ref": "../dynamic/customComponents.json"
 						}
 					]
-				},
-				"events": {
-					"type": "object",
-					"allOf": [
-						{
-							"$ref": "../dynamic/currentContext/eventReferenceProperty.json"
-						},
-						{
-							"$ref": "../../project/projectPrefix.json"
-						},
-						{
-							"patternProperties": {
-								".*": {
-									"$ref": "./event.json"
-								}
-							}
-						}
-					]
 				}
 			},
 			"additionalProperties": false
