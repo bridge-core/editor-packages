@@ -157,12 +157,24 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.21.10"]
+						"enum": ["1.21.10", "1.21.20", "1.21.30"]
 					}
 				}
 			},
 			"then": {
 				"$ref": "./v1.21.10/features/_main.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.21.40"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.21.40/features/_main.json"
 			}
 		}
 	]
