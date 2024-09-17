@@ -7166,6 +7166,75 @@
 					]
 				}
 			]
+		},
+		{
+			"requires": {
+				"targetVersion": [">=", "1.21.30"]
+			},
+			"commands": [
+				{
+					"commandName": "effect",
+					"description": "Add or remove status effects.",
+					"arguments": [
+						{
+							"type": "selector",
+							"argumentName": "player",
+							"description": "Specifies the target(s)."
+						},
+						{
+							"argumentName": "effect",
+							"description": "Specifies the effect to be added or removed.",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/effectName.json"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["infinite"]
+							}
+						},
+						{
+							"argumentName": "amplifier",
+							"description": "Specifies the number of additional levels to add to the effect. If not specified, defaults to 0. Note that the first tier of a status effect (e.g. Regeneration I) is 0, so the second tier, for example Regeneration II, would be specified by an amplifier level of 1.",
+							"type": "number",
+							"isOptional": true
+						},
+						{
+							"argumentName": "hideParticles",
+							"description": "Specifies whether the particles and the HUD indicator‌ of the status effect should be hidden. If not specified, defaults to false.",
+							"type": "boolean",
+							"isOptional": true
+						}
+					]
+				},
+				{
+					"commandName": "effect",
+					"description": "Add or remove status effects.",
+					"arguments": [
+						{
+							"type": "selector",
+							"argumentName": "player",
+							"description": "Specifies the target(s)."
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["clear"]
+							}
+						},
+						{
+							"argumentName": "effect",
+							"description": "Specifies the effect to be added or removed.",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/effectName.json"
+							}
+						}
+					]
+				}
+			]
 		}
 		/*
 		{
