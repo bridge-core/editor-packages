@@ -7169,7 +7169,7 @@
 		},
 		{
 			"requires": {
-				"targetVersion": [">=", "1.21.30"]
+				"targetVersion": [">=", "1.21.40"]
 			},
 			"commands": [
 				{
