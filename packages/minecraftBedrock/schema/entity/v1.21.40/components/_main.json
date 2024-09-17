@@ -335,9 +335,6 @@
 		"minecraft:leashable": {
 			"$ref": "../../v1.16.0/components/leashable.json"
 		},
-		"minecraft:lookat": {
-			"$ref": "../../v1.16.0/components/lookat.json"
-		},
 		"minecraft:loot": {
 			"$ref": "../../v1.16.0/components/loot.json"
 		},
@@ -551,6 +548,9 @@
 		"minecraft:transient": {
 			"$ref": "../../v1.21.40/components/transient.json"
 		},
+		"minecraft:looked_at": {
+			"$ref": "../../v1.21.40/components/looked_at.json"
+		},
 
 		// Deprecated
 		"minecraft:scaffolding_climber": {
@@ -558,6 +558,9 @@
 		},
 		"minecraft:foot_size": {
 			"$ref": "../../v1.16.0/components/foot_size.json"
+		},
+		"minecraft:lookat": {
+			"$ref": "../../v1.21.40/components/lookat.json"
 		}
 	}
 }
