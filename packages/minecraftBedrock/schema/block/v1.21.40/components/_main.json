@@ -52,6 +52,9 @@
 				"minecraft:placement_filter": {
 					"$ref": "../../v1.19.60/components/placement_filter.json"
 				},
+				"minecraft:redstone_conductivity": {
+					"$ref": "../../v1.21.30/components/redstone_conductivity.json"
+				},
 				"minecraft:selection_box": {
 					"$ref": "../../v1.19.60/components/selection_box.json"
 				},
@@ -60,18 +63,6 @@
 				},
 				"minecraft:transformation": {
 					"$ref": "../../v1.19.80/components/transformation.json"
-				}
-			}
-		},
-		{
-			// Upcoming Creator Features
-			"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
-			"then": {
-				"properties": {
-					// TODO: Once 1.21.40 is released, remove experimental requirement
-					"minecraft:redstone_conductivity": {
-						"$ref": "../../v1.21.30/components/redstone_conductivity.json"
-					}
 				}
 			}
 		},

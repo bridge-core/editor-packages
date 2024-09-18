@@ -56,12 +56,36 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.20.0", "1.21.10"]
+						"enum": ["1.20.0", "1.21.10", "v1.21.20"]
 					}
 				}
 			},
 			"then": {
 				"$ref": "./v1.21.0/main.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.20.30"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.21.30/main.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.20.40"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.21.40/main.json"
 			}
 		}
 	]
