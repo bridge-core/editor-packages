@@ -22,6 +22,22 @@
 			"minecraft:use_on": {
 				"blocks": ["grass", "dirt", "grass_path"]
 			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"minecraft:iron_ingot"
+						],
+						"repair_amount": "query.max_durability * 0.25"
+					},
+					{
+						"items": [
+							"{{PROJECT_PREFIX}}:{{IDENTIFIER}}"
+						],
+						"repair_amount": "context.other->query.remaining_durability + 0.12 * context.other->query.max_durability"
+					}
+				]
+			},
 			"minecraft:icon": "{{PROJECT_PREFIX}}_{{IDENTIFIER}}",
 			"minecraft:tags": {
 				"tags": ["minecraft:is_hoe"]
