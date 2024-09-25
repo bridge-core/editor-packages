@@ -1,13 +1,14 @@
 {
-	"name": "Client Item",
-	"icon": "mdi-sword",
-	"description": "Creates a blank client item.",
+	"name": "Client Biome",
+	"icon": "mdi-island",
+	"description": "Creates a blank client biome.",
 	"category": "fileType.simpleFile",
 	"requires": {
-		"packTypes": ["resourcePack"]
+		"packTypes": ["resourcePack"],
+		"targetVersion": [">=", "1.21.40"]
 	},
 	"additionalModels": {
-		"PRESET_PATH": "items/"
+		"PRESET_PATH": "biomes/"
 	},
 	"fields": [
 		[
@@ -16,10 +17,9 @@
 			{ "validate": ["required", "alphanumeric", "lowercase"] }
 		]
 	],
-
 	"createFiles": [
 		[
-			"clientItem.json",
+			"clientBiome.json",
 			"{{PRESET_PATH}}{{FILE_NAME}}.json",
 			{
 				"inject": ["FILE_NAME", "PRESET_PATH"],
