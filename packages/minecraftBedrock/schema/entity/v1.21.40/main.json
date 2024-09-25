@@ -82,6 +82,10 @@
 					"additionalProperties": false
 				}
 			}
+		},
+		"use_beta_features": {
+			"title": "Use Beta Features",
+			"type": "boolean"
 		}
 	}
 }

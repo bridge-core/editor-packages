@@ -25,10 +25,6 @@
 			"description": "Defines how the the entity will be restricted to its home position. However, entities that somehow got too far away from their home will always be able to move closer to it, if prompted to do so.",
 			"type": "string",
 			"enum": ["none", "random_movement", "all_movement"]
-		},
-		"use_beta_features": {
-			"title": "Use Beta Features",
-			"type": "boolean"
 		}
 	}
 }
