@@ -20,7 +20,7 @@
 		// @minecraft/server
 		{
 			"moduleName": "@minecraft/server",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@1.16.0-beta.1.21.40-preview.22/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@1.16.0-beta.1.21.40-preview.23/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
@@ -34,7 +34,7 @@
 		},
 		{
 			"moduleName": "@minecraft/server",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@1.15.0-rc.1.21.40-preview.22/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@1.15.0-rc.1.21.40-preview.23/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
@@ -243,7 +243,7 @@
 		// @minecraft/server-gametest
 		{
 			"moduleName": "@minecraft/server-gametest",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-gametest@1.0.0-beta.1.21.40-preview.22/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-gametest@1.0.0-beta.1.21.40-preview.23/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
@@ -270,7 +270,7 @@
 		// @minecraft/server-ui
 		{
 			"moduleName": "@minecraft/server-ui",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-ui@1.4.0-beta.1.21.40-preview.22/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-ui@1.4.0-beta.1.21.40-preview.23/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
@@ -333,7 +333,7 @@
 		// @server-admin
 		{
 			"moduleName": "@minecraft/server-admin",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-admin@1.0.0-beta.1.21.40-preview.22/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-admin@1.0.0-beta.1.21.40-preview.23/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
@@ -375,7 +375,7 @@
 		// @server-editor
 		{
 			"moduleName": "@minecraft/server-editor",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-editor@0.1.0-beta.1.21.40-preview.22/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-editor@0.1.0-beta.1.21.40-preview.23/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
