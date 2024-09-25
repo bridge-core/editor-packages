@@ -18,8 +18,10 @@
 			"minecraft:repairable": {
 				"repair_items": [
 					{
-						"items": ["{{PROJECT_PREFIX}}:{{IDENTIFIER}}"],
-						"repair_amount": 20
+						"items": [
+							"i{{PROJECT_PREFIX}}:{{IDENTIFIER}}"
+						],
+						"repair_amount": "context.other->query.remaining_durability + 0.12 * context.other->query.max_durability"
 					}
 				]
 			},

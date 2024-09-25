@@ -14,19 +14,21 @@
 			"minecraft:durability": {
 				"max_durability": 250
 			},
-			"minecraft:mining_speed": 1,
 			"minecraft:damage": 1,
 			"minecraft:enchantable": {
 				"value": 14,
 				"slot": "shovel"
 			},
-			"minecraft:use_on": {
-				"blocks": [
-					"minecraft:grass",
-					"minecraft:snow",
-					"minecraft:snow_layer"
-				]
-			},
+            		"minecraft:repairable": {
+                		"repair_items": [
+                    			{
+                        			"items": [
+                            				"{{PROJECT_PREFIX}}:{{IDENTIFIER}}"
+                        			],
+                        			"repair_amount": "context.other->query.remaining_durability + 0.12 * context.other->query.max_durability"
+                    			}
+                		]
+            		},
 			"minecraft:digger": {
 				"use_efficiency": true,
 				"destroy_speeds": [
