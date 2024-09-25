@@ -13,7 +13,8 @@
 				"properties": {
 					"durability": {
 						"title": "Durability",
-						"description": "Effects are emitted when the durability is less than or equal to this value."
+						"description": "Effects are emitted when the durability is less than or equal to this value.",
+						"type": "integer"
 					},
 					"particle_type": {
 						"title": "Particle Type",
