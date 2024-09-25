@@ -8,7 +8,10 @@
 					"$ref": "../../v1.20.20/components/allow_off_hand.json"
 				},
 				"minecraft:block_placer": {
-					"$ref": "../../v1.20.10/components/block_placer.json"
+					"$ref": "../../v1.21.40/components/block_placer.json"
+				},
+				"minecraft:bundle_interaction": {
+					"$ref": "../../v1.21.30/components/bundle_interaction.json"
 				},
 				"minecraft:can_destroy_in_creative": {
 					"$ref": "../../v1.20.10/components/can_destroy_in_creative.json"
@@ -88,6 +91,9 @@
 				"minecraft:stacked_by_data": {
 					"$ref": "../../v1.20.20/components/stacked_by_data.json"
 				},
+				"minecraft:storage_item": {
+					"$ref": "../../v1.21.30/components/storage_item.json"
+				},
 				"minecraft:use_animation": {
 					"$ref": "../../v1.20.20/components/use_animation.json"
 				},
@@ -102,21 +108,6 @@
 				},
 				"minecraft:wearable": {
 					"$ref": "../../v1.20.20/components/wearable.json"
-				}
-			}
-		},
-		{
-			// Upcoming Creator Features
-			"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
-			"then": {
-				"properties": {
-					// TODO: REMOVE ONCE BUNDLE GOES OUT OF EXPERIMENTAL IN 1.21.40
-					"minecraft:bundle_interaction": {
-						"$ref": "../../v1.21.30/components/bundle_interaction.json"
-					},
-					"minecraft:storage_item": {
-						"$ref": "../../v1.21.30/components/storage_item.json"
-					}
 				}
 			}
 		},

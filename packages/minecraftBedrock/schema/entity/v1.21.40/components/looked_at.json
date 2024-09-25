@@ -80,6 +80,10 @@
 				"once_and_keep_scanning"
 			],
 			"default": "once_and_stop_scanning"
+		},
+		"use_beta_features": {
+			"title": "Use Beta Features",
+			"type": "boolean"
 		}
 	}
 }

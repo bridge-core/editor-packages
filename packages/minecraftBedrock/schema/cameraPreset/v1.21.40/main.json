@@ -93,6 +93,11 @@
 					"title": "Align Camera and Target Forward",
 					"description": "Enables camera relative movement.",
 					"type": "boolean"
+				},
+				"continue_targeting": {
+					"title": "Continue Targeting",
+					"description": "Enables the tracking of entities outside of set rotation limits.",
+					"type": "boolean"
 				}
 			}
 		}
