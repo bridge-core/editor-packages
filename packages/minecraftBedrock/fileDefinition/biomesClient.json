@@ -1,0 +1,25 @@
+{
+	"id": "biomesClient",
+	"detect": {
+		"packType": "resourcePack",
+		"scope": "biomes_client.json",
+		"matcher": "biomes_client.json",
+		"fileExtensions": [".json"]
+	},
+
+	"schema": "file:///data/packages/minecraftBedrock/schema/biomesClient/main.json",
+	"lightningCache": "biomesClient.json",
+
+	"definitions": {
+		"fogIdentifier": [
+			{
+				"from": "fog",
+				"match": "identifier"
+			}
+		]
+	},
+
+	"highlighterConfiguration": {
+		"definitions": ["biomes"]
+	}
+}

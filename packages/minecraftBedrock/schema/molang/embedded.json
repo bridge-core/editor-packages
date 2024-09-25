@@ -66,6 +66,9 @@
 		},
 		{
 			"$ref": "./v1.21.0/query.json"
+		},
+		{
+			"$ref": "./v1.21.40/query.json"
 		}
 	]
 }

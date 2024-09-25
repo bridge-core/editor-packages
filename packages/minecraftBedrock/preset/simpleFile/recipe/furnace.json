@@ -5,7 +5,7 @@
 			"identifier": "{{PROJECT_PREFIX}}:{{FILE_NAME}}"
 		},
 		"tags": [],
-		"input": {},
-		"output": {}
+		"input": "",
+		"output": ""
 	}
 }

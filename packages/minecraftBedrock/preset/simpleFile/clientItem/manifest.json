@@ -4,8 +4,7 @@
 	"description": "Creates a blank client item.",
 	"category": "fileType.simpleFile",
 	"requires": {
-		"packTypes": ["resourcePack"],
-		"experimentalGameplay": ["!holidayCreatorFeatures"]
+		"packTypes": ["resourcePack"]
 	},
 	"additionalModels": {
 		"PRESET_PATH": "items/"

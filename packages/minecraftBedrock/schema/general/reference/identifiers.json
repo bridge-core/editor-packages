@@ -111,6 +111,9 @@
 					"$ref": "../../fog/dynamic/identifierEnum.json"
 				},
 				{
+					"$ref": "../../biomesClient/dynamic/fogIdentifierEnum.json"
+				},
+				{
 					"$ref": "../../clientBiome/dynamic/fogIdentifierEnum.json"
 				},
 				{

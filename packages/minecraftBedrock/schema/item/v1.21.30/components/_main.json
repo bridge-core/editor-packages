@@ -110,6 +110,7 @@
 			"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
 			"then": {
 				"properties": {
+					// TODO: REMOVE ONCE BUNDLE GOES OUT OF EXPERIMENTAL IN 1.21.40
 					"minecraft:bundle_interaction": {
 						"$ref": "../../v1.21.30/components/bundle_interaction.json"
 					},

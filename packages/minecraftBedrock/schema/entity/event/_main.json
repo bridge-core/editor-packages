@@ -9,10 +9,16 @@
 			"$ref": "./emit_vibration.json"
 		},
 		{
+			"$ref": "./execute_event_on_home_block.json"
+		},
+		{
 			"$ref": "./queue_command.json"
 		},
 		{
 			"$ref": "./remove.json"
+		},
+		{
+			"$ref": "./reset_target.json"
 		},
 		{
 			"$ref": "./set_property.json"

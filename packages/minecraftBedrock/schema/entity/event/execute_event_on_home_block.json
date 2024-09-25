@@ -1,0 +1,26 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"execute_event_on_home_block": {
+			"title": "Execute Event on Home Block",
+			"description": "Allows the entity to execute an event on the block at its home position, requires the 'minecraft:home' components.",
+			"type": "object",
+			"properties": {
+				"event": {
+					"title": "Event",
+					"description": "The event to fire",
+					"anyOf": [
+						{
+							"$ref": "../general/v1.16.0/eventDefinition.json"
+						},
+						{
+							"$ref": "../dynamic/currentContext/eventEnum.json"
+						}
+					]
+				}
+			},
+			"additionalProperties": false
+		}
+	}
+}

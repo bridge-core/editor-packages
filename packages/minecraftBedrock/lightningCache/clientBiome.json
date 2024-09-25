@@ -1,1 +1,10 @@
-[{ "cacheKey": "fogIdentifier", "path": "biomes/*/fog_identifier" }]
+[
+	{
+		"cacheKey": "identifier",
+		"path": "minecraft:client_biome/description/identifier"
+	},
+	{
+		"cacheKey": "fogIdentifier",
+		"path": "minecraft:client_biome/components/minecraft:fog_appearance/fog_identifier"
+	}
+]
