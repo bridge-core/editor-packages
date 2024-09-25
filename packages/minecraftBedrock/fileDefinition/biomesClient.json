@@ -1,5 +1,5 @@
 {
-	"id": "clientBiome",
+	"id": "biomesClient",
 	"detect": {
 		"packType": "resourcePack",
 		"scope": "biomes_client.json",
@@ -7,8 +7,8 @@
 		"fileExtensions": [".json"]
 	},
 
-	"schema": "file:///data/packages/minecraftBedrock/schema/clientBiome/main.json",
-	"lightningCache": "clientBiome.json",
+	"schema": "file:///data/packages/minecraftBedrock/schema/biomesClient/main.json",
+	"lightningCache": "biomesClient.json",
 
 	"definitions": {
 		"fogIdentifier": [
