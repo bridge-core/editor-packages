@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"title": "Dyeable",
-	"description": "",
+	"description": "Allows this item to be dyed with a cauldron.",
 	"type": "object",
 	"properties": {
 		"default_color": {
