@@ -13,6 +13,9 @@
 				"minecraft:can_destroy_in_creative": {
 					"$ref": "../../v1.20.10/components/can_destroy_in_creative.json"
 				},
+				"minecraft:cooldown": {
+					"$ref": "../../v1.20.10/components/cooldown.json"
+				},
 				"minecraft:damage": {
 					"$ref": "../../v1.20.20/components/damage.json"
 				},
@@ -24,6 +27,9 @@
 				},
 				"minecraft:durability": {
 					"$ref": "../../v1.20.0/components/durability.json"
+				},
+				"minecraft:enchantable": {
+					"$ref": "../../v1.20.30/components/enchantable.json"
 				},
 				"minecraft:entity_placer": {
 					"$ref": "../../v1.20.0/components/entity_placer.json"

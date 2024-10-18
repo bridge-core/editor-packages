@@ -10,6 +10,9 @@
 				"minecraft:can_destroy_in_creative": {
 					"$ref": "../../v1.20.10/components/can_destroy_in_creative.json"
 				},
+				"minecraft:cooldown": {
+					"$ref": "../../v1.20.10/components/cooldown.json"
+				},
 				"minecraft:display_name": {
 					"$ref": "../../v1.20.0/components/display_name.json"
 				},

@@ -1,0 +1,16 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"type": "object",
+	"description": "Cool down time for a component. After using an item, it becomes unusable for the duration specified by the 'duration' setting of this component.",
+	"properties": {
+		"category": {
+			"type": "string",
+			"description": "The type of cool down for this item."
+		},
+		"duration": {
+			"type": "number",
+			"description": "The duration of time (in seconds) items with a matching category will spend cooling down before becoming usable again."
+		}
+	}
+}
