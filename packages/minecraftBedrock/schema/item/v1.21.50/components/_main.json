@@ -19,6 +19,9 @@
 				"minecraft:compostable": {
 					"$ref": "../../v1.21.50/components/compostable.json"
 				},
+				"minecraft:cooldown": {
+					"$ref": "../../v1.20.10/components/cooldown.json"
+				},
 				"minecraft:custom_components": {
 					"$ref": "../../v1.21.10/components/custom_components.json"
 				},
