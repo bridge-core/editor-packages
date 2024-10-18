@@ -25,6 +25,9 @@
 				"minecraft:durability": {
 					"$ref": "../../v1.20.0/components/durability.json"
 				},
+				"minecraft:enchantable": {
+					"$ref": "../../v1.20.30/components/enchantable.json"
+				},
 				"minecraft:entity_placer": {
 					"$ref": "../../v1.20.0/components/entity_placer.json"
 				},
