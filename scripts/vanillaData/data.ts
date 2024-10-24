@@ -67,6 +67,12 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 			content: 'minecraft:biome/components/minecraft:tags/tags',
 		},
 		{
+			id: 'camera_preset_identifiers',
+			path: 'cameras/presets',
+			packType: 'behaviorPack',
+			content: 'minecraft:camera_preset/identifier'
+		},
+		{
 			id: 'family',
 			path: 'entities',
 			packType: 'behaviorPack',
@@ -216,6 +222,7 @@ export const exportRaw: ExportTarget[] = [
 			'unprefixed_entity_identifiers.json',
 			'particle_identifiers.json',
 			'biome_identifiers.json',
+			'camera_preset_identifiers.json',
 			'fog_identifiers.json',
 			'feature_identifiers.json',
 			'feature_rule_identifiers.json',

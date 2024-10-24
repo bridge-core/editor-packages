@@ -61,7 +61,7 @@
 			"type": "string",
 			"anyOf": [
 				{
-					"enum": ["minecraft:free", "free"]
+					"$ref": "../vanilla/identifiers.json#/definitions/camera_preset_identifiers"
 				},
 				{
 					"$ref": "../../cameraPreset/dynamic/identifierEnum.json"
