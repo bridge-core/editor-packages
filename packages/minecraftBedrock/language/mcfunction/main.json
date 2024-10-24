@@ -7173,6 +7173,95 @@
 			},
 			"commands": [
 				{
+					"commandName": "schedule",
+					"description": "Removes a schedule.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["clear"]
+							}
+						},
+						{
+							"argumentName": "function",
+							"description": "Specifies the function to be cleared.",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/commandPathEnum.json"
+							}
+						}
+					]
+				},
+				{
+					"commandName": "schedule",
+					"description": "Removes a schedule.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["on_area_loaded"]
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["clear"]
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["function"]
+							}
+						},
+						{
+							"argumentName": "function",
+							"description": "Specifies the function to be cleared.",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/commandPathEnum.json"
+							}
+						}
+					]
+				},
+				{
+					"commandName": "schedule",
+					"description": "Removes a schedule.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["on_area_loaded"]
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["clear"]
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["tickingarea"]
+							}
+						},
+						{
+							"argumentName": "name",
+							"description": "Specifies the name of a ticking area.",
+							"type": "string"
+						},
+						{
+							"argumentName": "function",
+							"description": "Specifies the function to be cleared.",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/commandPathEnum.json"
+							}
+						}
+					]
+				},
+				{
 					"commandName": "effect",
 					"description": "Add or remove status effects.",
 					"arguments": [
@@ -7230,6 +7319,76 @@
 							"type": "string",
 							"additionalData": {
 								"schemaReference": "/data/packages/minecraftBedrock/schema/general/effectName.json"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"requires": {
+				"targetVersion": [">=", "1.21.50"]
+			},
+			"commands": [
+				{
+					"commandName": "schedule",
+					"description": "Delays the execution of a function.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["delay"]
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["add"]
+							}
+						},
+						{
+							"argumentName": "function",
+							"description": "Specify the function to be delayed.",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/commandPathEnum.json"
+							}
+						},
+						{
+							"argumentName": "delay",
+							"description": "Specifies the delay in ticks",
+							"type": "number"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["append", "replace"]
+							}
+						}
+					]
+				},
+				{
+					"commandName": "schedule",
+					"description": "Delays the execution of a function.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["delay"]
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["clear"]
+							}
+						},
+						{
+							"argumentName": "function",
+							"description": "Specify the function to be cleared.",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/commandPathEnum.json"
 							}
 						}
 					]
