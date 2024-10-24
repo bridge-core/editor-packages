@@ -11,7 +11,7 @@
 
 	"schema": "file:///data/packages/minecraftBedrock/schema/aimAssistCategories/main.json",
 
-	"lightningCache": "aimAssistPreset.json",
+	"lightningCache": "aimAssistCategories.json",
 	"highlighterConfiguration": {
 		"typeIdentifiers": ["format_version", "identifier"]
 	}
