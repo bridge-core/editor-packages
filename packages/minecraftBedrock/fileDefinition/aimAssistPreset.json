@@ -1,0 +1,18 @@
+{
+	"id": "aimAssistPreset",
+	"icon": "mdi-crosshairs",
+	"detect": {
+		"packType": "behaviorPack",
+		"scope": "aim_assist/presets/",
+		"matcher": ["aim_assist/presets/**/*", "aim_assist/presets/*"],
+		"fileContent": ["minecraft:aim_assist_preset"],
+		"fileExtensions": [".json"]
+	},
+
+	"schema": "file:///data/packages/minecraftBedrock/schema/aimAssistPreset/main.json",
+
+	"lightningCache": "aimAssistPreset.json",
+	"highlighterConfiguration": {
+		"typeIdentifiers": ["format_version", "identifier", "categories"]
+	}
+}

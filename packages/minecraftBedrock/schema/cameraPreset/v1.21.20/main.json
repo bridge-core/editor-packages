@@ -74,25 +74,6 @@
 					"title": "Radius",
 					"type": "number",
 					"minimum": 0
-				},
-				"entity_offset": {
-					"title": "Entity Offset",
-					"type": "array",
-					"minItems": 2,
-					"maxItems": 2,
-					"items": {
-						"type": "number"
-					}
-				},
-				"rotation_speed": {
-					"title": "Rotation Speed",
-					"description": "Controls the speed of rotation for targeting an entity.",
-					"type": "number"
-				},
-				"snap_to_target": {
-					"title": "Snap to Target",
-					"description": "Enables snapping to the target entity on the first tick.",
-					"type": "boolean"
 				}
 			}
 		}
