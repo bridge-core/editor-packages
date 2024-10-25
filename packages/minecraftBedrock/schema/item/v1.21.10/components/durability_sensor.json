@@ -24,7 +24,7 @@
 					"sound_event": {
 						"title": "Sound Event",
 						"description": "Sound effect to emit when the threshold is met.",
-						"$ref": "../../../general/reference/soundDefinition.json"
+						"type": "string"
 					}
 				}
 			}
