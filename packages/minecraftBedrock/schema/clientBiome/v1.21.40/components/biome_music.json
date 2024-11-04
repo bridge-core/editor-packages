@@ -1,0 +1,15 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Biome Music",
+	"description": "Configures the biome music.",
+	"type": "object",
+	"properties": {
+		"volume_multiplier": {
+			"title": "Volume Multiplier",
+			"description": "Gradually affects music volume when the audio listener is inside the corresponding biome.",
+			"type": "number",
+			"minimum": 0
+		}
+	},
+	"additionalProperties": false
+}
