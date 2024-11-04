@@ -1,0 +1,68 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"minecraft:jigsaw": {
+			"title": "Jigsaw Definition",
+			"required": ["description"],
+			"type": "object",
+			"properties": {
+				"description": {
+					"$ref": "./description.json"
+				},
+				"biome_filters": {
+					"title": "Biome Filters",
+					"description": "Specifies the biomes in which the Jigsaw Structure can generate."
+				},
+				"step": {
+					"title": "Step",
+					"description": "Specifies the world generation phase in which the structure is generated. This is used as a grouping concept to keep similar world-generation features generally bundled together.",
+					"type": "string",
+					"enum": [
+						"raw_generation",
+						"lakes",
+						"local_modifications",
+						"underground_structures",
+						"surface_structures",
+						"strongholds",
+						"underground_ores",
+						"underground_decoration",
+						"fluid_springs",
+						"vegetal_decoration",
+						"top_layer_modification"
+					]
+				},
+				"terrain_adaptation": {
+					"title": "Terrain Adaptation",
+					"description": "How the terrain should adapt relative to the generated Jigsaw Structure.",
+					"type": "string",
+					"enum": ["bury", "beard_thin", "beard_box", "encapsulate"]
+				},
+				"start_pool": {
+					"title": "Start Pool",
+					"description": "",
+					"$ref": "../../general/reference/identifiers.json#/definitions/template_pool_identifiers"
+				},
+				"max_depth": {
+					"title": "Max Depth",
+					"description": "The maximum recursion depth for Jigsaw Structure Generation. For example, a Jigsaw Structure that builds a road with a max_depth of 5 will only have paths that are a maximum of 5 structures templates in length in any given direction from the origin.",
+					"type": "integer",
+					"minimum": 1,
+					"maximum": 20
+				},
+				"start_height": {
+					"title": "Start Height",
+					"description": "World height at which the Jigsaw Structure should begin generation.",
+					"type": "integer"
+				},
+				"heightmap_projection": {
+					"title": "Heightmap Projection",
+					"description": "Heightmap used to calculate the relative start height. For example, a heightmap_projection of ocean_floor and a start_height of 10 means the Jigsaw Structure will begin generating 10 blocks above the ocean floor.",
+					"type": "string",
+					"enum": ["world_surface", "ocean_floor"]
+				}
+			},
+			"additionalProperties": false
+		}
+	}
+}

@@ -164,6 +164,31 @@
 					"$ref": "../../biome/dynamic/identifierEnum.json"
 				}
 			]
+		},
+		// TODO: Scrape vanilla data and add it here
+		"jigsaw_structure_identifiers": {
+			"type": "string",
+			"anyOf": [
+				{
+					"$ref": "../../jigsawStructure/dynamic/identifierEnum.json"
+				}
+			]
+		},
+		"template_pool_identifiers": {
+			"type": "string",
+			"anyOf": [
+				{
+					"$ref": "../../templatePool/dynamic/identifierEnum.json"
+				}
+			]
+		},
+		"processor_list_identifiers": {
+			"type": "string",
+			"anyOf": [
+				{
+					"$ref": "../../processorList/dynamic/identifierEnum.json"
+				}
+			]
 		}
 	}
 }

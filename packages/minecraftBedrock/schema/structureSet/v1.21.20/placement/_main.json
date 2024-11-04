@@ -1,0 +1,30 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"anyOf": [
+		{
+			"properties": {
+				"type": {
+					"title": "Type",
+					"description": "The type of placement to use for this Structure Set.",
+					"type": "string",
+					"enum": ["minecraft:random_spread"]
+				}
+			},
+			"required": ["type"]
+		},
+		{
+			"if": {
+				"properties": {
+					"type": {
+						"const": "minecraft:random_spread"
+					}
+				},
+				"required": ["type"]
+			},
+			"then": {
+				"$ref": "./random_spread.json"
+			}
+		}
+	]
+}

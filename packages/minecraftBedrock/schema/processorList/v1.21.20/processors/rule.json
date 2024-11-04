@@ -1,0 +1,41 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"rules": {
+			"title": "Rules",
+			"description": "A list of block rules. Each rule contains one or more predicates and is evaluated on every block in the Structure Template. If each predicate evaluates true, the output state specifies the replacement block. Subsequent rules in the processor list are evaluated using the output state block as the source block of the next input predicate.",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"block_entity_modifier": {
+						"title": "Block Entity Modifier",
+						"type": "object" // TODO
+					},
+					"input_predicate": {
+						"title": "Input Predicate",
+						"description": "A filter evaluated on the Structure Template block.",
+						"type": "object" // TODO
+					},
+					"location_predicate": {
+						"title": "Location Predicate",
+						"description": "A filter evaluated on the target block, i.e. the block in the world where the structure block will be placed.",
+						"type": "object" // TODO
+					},
+					"position_predicate": {
+						"title": "Position Predicate",
+						"description": "A filter evaluated on the world position of the block being placed and the Jigsaw Structure's origin.",
+						"type": "object"
+					},
+					"output_state": {
+						"title": "Output State",
+						"description": "The block type that will replace the target block if all filters evaluate true. If no block is specified, then no replacement will occur.",
+						"type": "object" // TODO
+					}
+				},
+				"additionalProperties": false
+			}
+		}
+	}
+}

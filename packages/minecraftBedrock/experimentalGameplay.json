@@ -12,6 +12,10 @@
 		"id": "enableGameTestFramework" // Beta APIs toggle
 	},
 	{
+		"icon": "mdi-puzzle",
+		"id": "dataDrivenJigsawStructures"
+	},
+	{
 		"icon": "mdi-school-outline",
 		"id": "educationEdition"
 	}

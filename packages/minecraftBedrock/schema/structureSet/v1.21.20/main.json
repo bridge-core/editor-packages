@@ -1,0 +1,42 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"minecraft:structure_set": {
+			"title": "Structure Set Definition",
+			"required": ["description"],
+			"type": "object",
+			"properties": {
+				"description": {
+					"$ref": "./description.json"
+				},
+				"placement": {
+					"title": "Placement",
+					"description": "Describes where structures in the set spawn relative to one another. Currently, the only placement type supported is random_spread, which scatters structures randomly with a given separation and spacing.",
+					"$ref": "./placement/_main.json"
+				},
+				"structures": {
+					"title": "Structures",
+					"description": "A weighted list of Jigsaw Structure identifiers. Structures will be randomly chosen from this set during world generation.",
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"structure": {
+								"title": "Structure",
+								"description": "Identifier of the Jigsaw Structure.",
+								"$ref": "../../general/reference/identifiers.json#/definitions/jigsaw_structure_identifiers"
+							},
+							"weight": {
+								"title": "Weight",
+								"description": "Weight of the Jigsaw Structure in the set. Higher weights are more likely to be selected.",
+								"type": "integer"
+							}
+						}
+					}
+				}
+			},
+			"additionalProperties": false
+		}
+	}
+}

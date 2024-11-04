@@ -1,0 +1,24 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"minecraft:processor_list": {
+			"title": "Processor List Definition",
+			"required": ["description"],
+			"type": "object",
+			"properties": {
+				"description": {
+					"$ref": "./description.json"
+				},
+				"processors": {
+					"title": "Processors",
+					"type": "array",
+					"items": {
+						"$ref": "./processors/_main.json"
+					}
+				}
+			},
+			"additionalProperties": false
+		}
+	}
+}

@@ -1,0 +1,41 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"minecraft:template_pool": {
+			"title": "Template Pool Definition",
+			"type": "object",
+			"properties": {
+				"description": {
+					"$ref": "./description.json"
+				},
+				"elements": {
+					"title": "Elements",
+					"description": "An array of pool elements.",
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"element": {
+								"title": "Element",
+								"description": "A grouping of a Structure Template, the Processor List to use when placing the structure, and its weight that determines the likelihood of the element being chosen."
+							},
+							"weight": {
+								"title": "Weight",
+								"description": "The weighted probability of choosing the element from the pool. For example, a template pool containing 2 structures with weights of 1 and 3 will have a 25% and 75% chance of being chosen respectively.",
+								"type": "integer",
+								"minimum": 0
+							}
+						}
+					}
+				},
+				"fallback": {
+					"title": "Fallback",
+					"description": "Fallback template pool to use if no element in the pool can be placed successfully.",
+					"$ref": "../../general/reference/identifiers.json#/definitions/template_pool_identifiers"
+				}
+			},
+			"additionalProperties": false
+		}
+	}
+}
