@@ -165,12 +165,14 @@
 				}
 			]
 		},
-		// TODO: Scrape vanilla data and add it here
 		"jigsaw_structure_identifiers": {
 			"type": "string",
 			"anyOf": [
 				{
 					"$ref": "../../jigsawStructure/dynamic/identifierEnum.json"
+				},
+				{
+					"$ref": "../vanilla/identifiers.json#/definitions/jigsaw_structure_identifiers"
 				}
 			]
 		},
@@ -179,6 +181,9 @@
 			"anyOf": [
 				{
 					"$ref": "../../templatePool/dynamic/identifierEnum.json"
+				},
+				{
+					"$ref": "../vanilla/identifiers.json#/definitions/template_pool_identifiers"
 				}
 			]
 		},
@@ -187,6 +192,20 @@
 			"anyOf": [
 				{
 					"$ref": "../../processorList/dynamic/identifierEnum.json"
+				},
+				{
+					"$ref": "../vanilla/identifiers.json#/definitions/processor_list_identifiers"
+				}
+			]
+		},
+		"structure_set_identifiers": {
+			"type": "string",
+			"anyOf": [
+				{
+					"$ref": "../../structureSet/dynamic/identifierEnum.json"
+				},
+				{
+					"$ref": "../vanilla/identifiers.json#/definitions/structure_set_identifiers"
 				}
 			]
 		}

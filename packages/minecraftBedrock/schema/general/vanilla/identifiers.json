@@ -6405,6 +6405,8 @@
 				"minecraft:explosion_manual",
 				"minecraft:explosion_particle",
 				"minecraft:eye_of_ender_bubble_particle",
+				"minecraft:eyeblossom_close",
+				"minecraft:eyeblossom_open",
 				"minecraft:eyeofender_death_explode_particle",
 				"minecraft:falling_border_dust_particle",
 				"minecraft:falling_dust",
@@ -6452,6 +6454,7 @@
 				"minecraft:ominous_spawning_particle",
 				"minecraft:oozing_ambient",
 				"minecraft:oozing_emitter",
+				"minecraft:pale_oak_leaves_particle",
 				"minecraft:phantom_trail_particle",
 				"minecraft:portal_directional",
 				"minecraft:portal_east_west",
@@ -6967,6 +6970,38 @@
 				"minecraft:warped_fungus_feature",
 				"minecraft:warped_roots_feature",
 				"minecraft:weeping_vines_cluster_feature"
+			]
+		},
+		"jigsaw_structure_identifiers": {
+			"type": "string",
+			"enum": [
+				"minecraft:trail_ruins"
+			]
+		},
+		"template_pool_identifiers": {
+			"type": "string",
+			"enum": [
+				"minecraft:trail_ruins/buildings",
+				"minecraft:trail_ruins/buildings/grouped",
+				"minecraft:trail_ruins/decor",
+				"minecraft:trail_ruins/roads",
+				"minecraft:trail_ruins/tower",
+				"minecraft:trail_ruins/tower/additions",
+				"minecraft:trail_ruins/tower/tower_top"
+			]
+		},
+		"processor_list_identifiers": {
+			"type": "string",
+			"enum": [
+				"minecraft:trail_ruins_houses_archaeology",
+				"minecraft:trail_ruins_roads_archaeology",
+				"minecraft:trail_ruins_tower_top_archaeology"
+			]
+		},
+		"structure_set_identifiers": {
+			"type": "string",
+			"enum": [
+				"minecraft:trail_ruins"
 			]
 		}
 	}

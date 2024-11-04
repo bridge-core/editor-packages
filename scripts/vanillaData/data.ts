@@ -182,6 +182,30 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 			content: 'minecraft:feature_rules/description/identifier',
 		},
 		{
+			id: 'jigsaw_structure_identifiers',
+			path: 'worldgen/jigsaw_structures',
+			packType: 'behaviorPack',
+			content: 'minecraft:jigsaw/description/identifier'
+		},
+		{
+			id: 'template_pool_identifiers',
+			path: 'worldgen/template_pools',
+			packType: 'behaviorPack',
+			content: 'minecraft:template_pool/description/identifier'
+		},
+		{
+			id: 'processor_list_identifiers',
+			path: 'worldgen/processors',
+			packType: 'behaviorPack',
+			content: 'minecraft:processor_list/description/identifier'
+		},
+		{
+			id: 'structure_set_identifiers',
+			path: 'worldgen/structure_sets',
+			packType: 'behaviorPack',
+			content: 'minecraft:structure_set/description/identifier'
+		},
+		{
 			id: 'material',
 			path: 'entity',
 			packType: 'resourcePack',
@@ -226,6 +250,10 @@ export const exportRaw: ExportTarget[] = [
 			'fog_identifiers.json',
 			'feature_identifiers.json',
 			'feature_rule_identifiers.json',
+			'jigsaw_structure_identifiers.json',
+			'template_pool_identifiers.json',
+			'processor_list_identifiers.json',
+			'structure_set_identifiers.json'
 		],
 		to: 'general/vanilla/identifiers.json',
 	},
