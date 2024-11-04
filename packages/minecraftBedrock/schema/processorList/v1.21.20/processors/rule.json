@@ -11,7 +11,7 @@
 				"properties": {
 					"block_entity_modifier": {
 						"title": "Block Entity Modifier",
-						"type": "object" // TODO
+						"$ref": "../blockEntityModifiers/_main.json"
 					},
 					"input_predicate": {
 						"title": "Input Predicate",

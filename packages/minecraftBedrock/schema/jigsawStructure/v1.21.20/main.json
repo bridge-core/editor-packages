@@ -12,7 +12,8 @@
 				},
 				"biome_filters": {
 					"title": "Biome Filters",
-					"description": "Specifies the biomes in which the Jigsaw Structure can generate."
+					"description": "Specifies the biomes in which the Jigsaw Structure can generate.",
+					"$ref": "../../spawnRule/v1.17.0/components/biome_filter.json"
 				},
 				"step": {
 					"title": "Step",
