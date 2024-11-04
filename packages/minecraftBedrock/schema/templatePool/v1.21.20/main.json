@@ -18,7 +18,8 @@
 						"properties": {
 							"element": {
 								"title": "Element",
-								"description": "A grouping of a Structure Template, the Processor List to use when placing the structure, and its weight that determines the likelihood of the element being chosen."
+								"description": "A grouping of a Structure Template, the Processor List to use when placing the structure, and its weight that determines the likelihood of the element being chosen.",
+								"$ref": "./elements/_main.json"
 							},
 							"weight": {
 								"title": "Weight",

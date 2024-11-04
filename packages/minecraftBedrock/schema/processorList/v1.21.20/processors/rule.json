@@ -16,22 +16,40 @@
 					"input_predicate": {
 						"title": "Input Predicate",
 						"description": "A filter evaluated on the Structure Template block.",
-						"type": "object" // TODO
+						"$ref": "../predicates/_main.json"
 					},
 					"location_predicate": {
 						"title": "Location Predicate",
 						"description": "A filter evaluated on the target block, i.e. the block in the world where the structure block will be placed.",
-						"type": "object" // TODO
+						"$ref": "../predicates/_main.json"
 					},
 					"position_predicate": {
 						"title": "Position Predicate",
 						"description": "A filter evaluated on the world position of the block being placed and the Jigsaw Structure's origin.",
-						"type": "object"
+						"$ref": "../positionPredicates/_main.json"
 					},
 					"output_state": {
 						"title": "Output State",
 						"description": "The block type that will replace the target block if all filters evaluate true. If no block is specified, then no replacement will occur.",
-						"type": "object" // TODO
+						"anyOf": [
+							{
+								"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+							},
+							{
+								"additionalProperties": false,
+								"type": "object",
+								"properties": {
+									"name": {
+										"title": "Name",
+										"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+									},
+									"states": {
+										"title": "States",
+										"$ref": "../../../general/blockState.json"
+									}
+								}
+							}
+						]
 					}
 				},
 				"additionalProperties": false
