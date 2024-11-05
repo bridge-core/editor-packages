@@ -1,0 +1,132 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"minecraft:camera_preset": {
+			"title": "Camera Preset Definition",
+			"required": ["identifier"],
+			"type": "object",
+			"allOf": [
+				{
+					"properties": {
+						"identifier": {
+							"title": "Identifier",
+							"$ref": "../../general/reference/prefixedFileIdentifier.json",
+							"description": "The identifier for this camera preset. The name must include a namespace and must not use the Minecraft namespace."
+						},
+						"inherit_from": {
+							"title": "Camera Inheritor",
+							"description": "Inherits the properties of the specified camera preset.",
+							"$ref": "../../general/reference/identifiers.json#/definitions/camera_preset_identifiers"
+						},
+						"pos_x": {
+							"title": "X Position",
+							"description": "The offset of the camera on the X coordinate.",
+							"type": "integer"
+						},
+						"pos_y": {
+							"title": "Y Position",
+							"description": "The offset of the camera on the Y coordinate.",
+							"type": "integer"
+						},
+						"pos_z": {
+							"title": "Y Position",
+							"description": "The offset of the camera on the Y coordinate.",
+							"type": "integer"
+						},
+						"rot_x": {
+							"title": "X Rotation",
+							"description": "The pitch rotation of the camera, supports any value between -90 and 90.",
+							"type": "integer",
+							"minimum": -90,
+							"maximum": 90
+						},
+						"rot_y": {
+							"title": "Y Rotation",
+							"description": "The yaw rotation of the camera.",
+							"minimum": -360,
+							"maximum": 360
+						},
+						"listener": {
+							"title": "Listener",
+							"description": "Sets the audio system to use the player's position for audio positioning.",
+							"type": "string",
+							"enum": ["player"]
+						},
+						"player_effects": {
+							"title": "Player Effects",
+							"description": "If false, will disable camera effects such as night vision or darkness. Defaults to true.",
+							"type": "boolean"
+						},
+						"extend_player_rendering": {
+							"title": "Extend Player Rendering",
+							"type": "boolean",
+							"default": false
+						},
+						"view_offset": {
+							"title": "View Offset",
+							"type": "array",
+							"minItems": 2,
+							"maxItems": 2,
+							"items": {
+								"type": "number"
+							}
+						},
+						"radius": {
+							"title": "Radius",
+							"type": "number",
+							"minimum": 0
+						},
+						"entity_offset": {
+							"title": "Entity Offset",
+							"type": "array",
+							"minItems": 2,
+							"maxItems": 2,
+							"items": {
+								"type": "number"
+							}
+						},
+						"rotation_speed": {
+							"title": "Rotation Speed",
+							"description": "Controls the speed of rotation for targeting an entity.",
+							"type": "number"
+						},
+						"snap_to_target": {
+							"title": "Snap to Target",
+							"description": "Enables snapping to the target entity on the first tick.",
+							"type": "boolean"
+						},
+						"align_camera_and_target_forward": {
+							"title": "Align Camera and Target Forward",
+							"description": "Enables camera relative movement.",
+							"type": "boolean"
+						},
+						"continue_targeting": {
+							"title": "Continue Targeting",
+							"description": "Enables the tracking of entities outside of set rotation limits.",
+							"type": "boolean"
+						}
+					}
+				},
+				{
+					"$ref": "../../project/experimentalGameplay/aimAssist.json",
+					"then": {
+						"properties": {
+							"aim_assist": {
+								"title": "Aim Assist",
+								"type": "object",
+								"properties": {
+									"preset": {
+										"title": "Preset",
+										"$ref": "../../general/reference/identifiers.json#/definitions/aim_assist_preset_identifiers"
+									}
+								},
+								"additionalProperties": false
+							}
+						}
+					}
+				}
+			]
+		}
+	}
+}

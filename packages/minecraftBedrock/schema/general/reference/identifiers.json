@@ -9,6 +9,20 @@
 				},
 				{
 					"$ref": "../../aimAssistPreset/dynamic/categoriesIdentifierEnum.json"
+				},
+				{
+					"$ref": "../vanilla/identifiers.json#/definitions/aim_assist_categories_identifiers"
+				}
+			]
+		},
+		"aim_assist_preset_identifiers": {
+			"type": "string",
+			"anyOf": [
+				{
+					"$ref": "../../aimAssistPreset/dynamic/identifierEnum.json"
+				},
+				{
+					"$ref": "../vanilla/identifiers.json#/definitions/aim_assist_preset_identifiers"
 				}
 			]
 		},

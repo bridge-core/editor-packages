@@ -182,6 +182,18 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 			content: 'minecraft:feature_rules/description/identifier',
 		},
 		{
+			id: 'aim_assist_categories_identifiers',
+			path: 'aim_assist/categories',
+			packType: 'behaviorPack',
+			content: 'minecraft:aim_assist_categories/identifier'
+		},
+		{
+			id: 'aim_assist_preset_identifiers',
+			path: 'aim_assist/presets',
+			packType: 'behaviorPack',
+			content: 'minecraft:aim_assist_preset/identifier'
+		},
+		{
 			id: 'jigsaw_structure_identifiers',
 			path: 'worldgen/jigsaw_structures',
 			packType: 'behaviorPack',
@@ -250,6 +262,8 @@ export const exportRaw: ExportTarget[] = [
 			'fog_identifiers.json',
 			'feature_identifiers.json',
 			'feature_rule_identifiers.json',
+			'aim_assist_categories_identifiers.json',
+			'aim_assist_preset_identifiers.json',
 			'jigsaw_structure_identifiers.json',
 			'template_pool_identifiers.json',
 			'processor_list_identifiers.json',

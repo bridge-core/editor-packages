@@ -16,6 +16,10 @@
 		"id": "dataDrivenJigsawStructures"
 	},
 	{
+		"icon": "mdi-crosshairs",
+		"id": "aimAssist"
+	},
+	{
 		"icon": "mdi-school-outline",
 		"id": "educationEdition"
 	}

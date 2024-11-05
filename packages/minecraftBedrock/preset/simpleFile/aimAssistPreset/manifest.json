@@ -5,7 +5,7 @@
 	"category": "fileType.simpleFile",
 	"requires": {
 		"packTypes": ["behaviorPack"],
-		"targetVersion": [">=", "1.21.50"]
+		"experimentalGameplay": ["aimAssist"]
 	},
 	"additionalModels": {
 		"PRESET_PATH": "aim_assist/presets/"

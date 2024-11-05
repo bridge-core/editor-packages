@@ -6972,6 +6972,18 @@
 				"minecraft:weeping_vines_cluster_feature"
 			]
 		},
+		"aim_assist_categories_identifiers": {
+			"type": "string",
+			"enum": [
+				"minecraft:aim_assist_categories_1"
+			]
+		},
+		"aim_assist_preset_identifiers": {
+			"type": "string",
+			"enum": [
+				"minecraft:aim_assist_default"
+			]
+		},
 		"jigsaw_structure_identifiers": {
 			"type": "string",
 			"enum": [

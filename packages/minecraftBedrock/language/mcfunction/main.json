@@ -7394,6 +7394,140 @@
 					]
 				}
 			]
+		},
+		{
+			"requires": {
+				"experimentalGameplay": ["aimAssist"]
+			},
+			"commands": [
+				{
+					"commandName": "aimassist",
+					"description": "Clears the aim assist.",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["clear"]
+							}
+						}
+					]
+				},
+				{
+					"commandName": "aimassist",
+					"description": "Sets the aim assist.",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["set"]
+							}
+						},
+						{
+							"argumentName": "xAngle",
+							"type": "number"
+						},
+						{
+							"argumentName": "yAngle",
+							"type": "number"
+						},
+						{
+							"argumentName": "maxDistance",
+							"type": "number"
+						},
+						{
+							"argumentName": "targetMode",
+							"type": "string",
+							"additionalData": {
+								"values": ["angle", "distance"]
+							}
+						},
+						{
+							"argumentName": "presetId",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/aim_assist_preset_identifiers"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"requires": {
+				"experimentalGameplay": ["dataDrivenJigsawStructures"]
+			},
+			"commands": [
+				{
+					"commandName": "place",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["jigsaw"]
+							}
+						},
+						{
+							"argumentName": "pool",
+							"type": "string"
+						},
+						{
+							"argumentName": "maxDepth",
+							"type": "number"
+						},
+						{
+							"argumentName": "pos",
+							"type": "coordinate",
+							"isOptional": true
+						},
+						{
+							"argumentName": "keepJigsaws",
+							"type": "boolean",
+							"isOptional": true
+						}
+					]
+				},
+				{
+					"commandName": "place",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["structure"]
+							}
+						},
+						{
+							"argumentName": "structure",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/jigsaw_structure_identifiers"
+							}
+						},
+						{
+							"argumentName": "pos",
+							"type": "coordinate",
+							"isOptional": true
+						},
+						{
+							"argumentName": "ignoreStartHeight",
+							"type": "boolean",
+							"isOptional": true
+						},
+						{
+							"argumentName": "keepJigsaws",
+							"type": "boolean",
+							"isOptional": true
+						}
+					]
+				}
+			]
 		}
 		/*
 		{
