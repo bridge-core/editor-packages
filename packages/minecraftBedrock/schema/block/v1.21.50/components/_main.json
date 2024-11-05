@@ -67,6 +67,19 @@
 			}
 		},
 		{
+			"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
+			"then": {
+				"properties": {
+					"minecraft:item_visual": {
+						"$ref": "../../v1.21.50/components/item_visual.json"
+					},
+					"minecraft:liquid_detection": {
+						"$ref": "../../v1.21.50/components/liquid_detection.json"
+					}
+				}
+			}
+		},
+		{
 			// Deprecated
 			"properties": {
 				"minecraft:block_light_absorption": {
