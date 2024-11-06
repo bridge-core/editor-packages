@@ -7024,6 +7024,17 @@
 			"requires": {
 				"targetVersion": [">=", "1.19.80"]
 			},
+			"selectorArguments": [
+				{
+					"argumentName": "haspermission",
+					"description": "Filter target selection based on the input permissions of the target entities.",
+					"type": "scoreData", // TODO: support other object types that just score data
+					"additionalData": {
+						"multipleInstancesAllowed": "never",
+						"supportsNegation": false
+					}
+				}
+			],
 			"commands": [
 				{
 					"commandName": "inputpermission",
@@ -7043,7 +7054,19 @@
 							"argumentName": "permission",
 							"type": "string",
 							"additionalData": {
-								"values": ["movement", "camera"]
+								"values": [
+									"camera",
+									"dismount",
+									"jump",
+									"lateral_movement",
+									"mount",
+									"move_backward",
+									"move_forward",
+									"move_left",
+									"move_right",
+									"movement",
+									"sneak"
+								]
 							}
 						},
 						{
@@ -7073,7 +7096,19 @@
 							"argumentName": "permission",
 							"type": "string",
 							"additionalData": {
-								"values": ["movement", "camera"]
+								"values": [
+									"camera",
+									"dismount",
+									"jump",
+									"lateral_movement",
+									"mount",
+									"move_backward",
+									"move_forward",
+									"move_left",
+									"move_right",
+									"movement",
+									"sneak"
+								]
 							}
 						},
 						{
@@ -7120,8 +7155,10 @@
 									"horse_health",
 									"hotbar",
 									"hunger",
+									"item_text",
 									"paperdoll",
 									"progress_bar",
+									"status_effects",
 									"tooltips",
 									"touch_controls"
 								]
@@ -7164,6 +7201,22 @@
 							}
 						}
 					]
+				}
+			]
+		},
+		{
+			"requires": {
+				"targetVersion": [">=", "1.20.70"]
+			},
+			"selectorArguments": [
+				{
+					"argumentName": "has_property",
+					"description": "Filter target selection based on the property map of the target entities.",
+					"type": "scoreData", // TODO: support more than just score data!!
+					"additionalData": {
+						"multipleInstancesAllowed": "never",
+						"supportsNegation": false
+					}
 				}
 			]
 		},
