@@ -105,6 +105,11 @@
 							"title": "Continue Targeting",
 							"description": "Enables the tracking of entities outside of set rotation limits.",
 							"type": "boolean"
+						},
+						"tracking_radius": {
+							"title": "Tracking Radius",
+							"description": "Sets a listening radius for a target entity.",
+							"type": "number"
 						}
 					}
 				},

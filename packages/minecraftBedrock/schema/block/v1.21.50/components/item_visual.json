@@ -10,7 +10,13 @@
 		},
 		"material_instances": {
 			"description": "The 'minecraft:material_instances' component that will be used for the item.",
-			"$ref": "../../v1.19.40/components/material_instances.json"
+			"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
+			"then": {
+				"$ref": "../../v1.21.50/components/material_instances.json"
+			},
+			"else": {
+				"$ref": "../../v1.19.40/components/material_instances.json"
+			}
 		}
 	}
 }

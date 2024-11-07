@@ -554,6 +554,9 @@
 		"minecraft:cannot_be_attacked": {
 			"$ref": "../../v1.21.50/components/cannot_be_attacked.json"
 		},
+		"minecraft:ignore_cannot_be_attacked": {
+			"$ref": "../../v1.21.50/components/ignore_cannot_be_attacked.json"
+		},
 
 		// Deprecated
 		"minecraft:scaffolding_climber": {
