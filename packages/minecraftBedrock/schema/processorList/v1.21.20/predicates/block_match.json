@@ -1,0 +1,10 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"block": {
+			"title": "Block",
+			"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+		}
+	}
+}

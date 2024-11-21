@@ -1,0 +1,21 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Ambient Sounds",
+	"description": "Defines the biome's ambient sounds. Named sounds must be defined in 'individual_named_sounds' in sounds.json",
+	"type": "object",
+	"properties": {
+		"addition": {
+			"title": "Addition",
+			"$ref": "../../../general/reference/soundEvent.json"
+		},
+		"loop": {
+			"title": "Loop",
+			"$ref": "../../../general/reference/soundEvent.json"
+		},
+		"mood": {
+			"title": "Mood",
+			"$ref": "../../../general/reference/soundEvent.json"
+		}
+	},
+	"additionalProperties": false
+}

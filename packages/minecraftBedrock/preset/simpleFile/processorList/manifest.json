@@ -1,0 +1,32 @@
+{
+	"name": "Processor List",
+	"icon": "mdi-view-list",
+	"description": "Creates a blank processor list.",
+	"category": "fileType.simpleFile",
+	"requires": {
+		"packTypes": ["behaviorPack"],
+		"experimentalGameplay": ["dataDrivenJigsawStructures"]
+	},
+	"additionalModels": {
+		"PRESET_PATH": "worldgen/processors/"
+	},
+	"fields": [
+		[
+			"File Name",
+			"FILE_NAME",
+			{ "validate": ["required", "alphanumeric", "lowercase"] }
+		]
+	],
+
+	"createFiles": [
+		[
+			"processorList.json",
+			"{{PRESET_PATH}}{{FILE_NAME}}.json",
+			{
+				"inject": ["FILE_NAME", "PRESET_PATH"],
+				"openFile": true,
+				"packPath": "behaviorPack"
+			}
+		]
+	]
+}

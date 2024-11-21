@@ -1,0 +1,21 @@
+{
+	"id": "processorList",
+	"icon": "mdi-view-list",
+	"detect": {
+		"packType": "behaviorPack",
+		"scope": ["worldgen/processors/"],
+		"matcher": ["worldgen/processors/**/*", "worldgen/processors/*"],
+		"fileContent": ["minecraft:processor_list"],
+		"fileExtensions": [".json"]
+	},
+	"schema": "file:///data/packages/minecraftBedrock/schema/processorList/main.json",
+	"lightningCache": "processorList.json",
+	"documentation": {
+		"baseUrl": "https://learn.microsoft.com/en-us/minecraft/creator/reference/content/worldgenreference/examples/jigsawprocessors?view=minecraft-bedrock-stable",
+		"supportsQuerying": false
+	},
+	"highlighterConfiguration": {
+		"variables": ["description"],
+		"typeIdentifiers": ["format_version"]
+	}
+}

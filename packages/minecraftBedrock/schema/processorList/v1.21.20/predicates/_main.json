@@ -1,0 +1,73 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"anyOf": [
+		{
+			"properties": {
+				"predicate_type": {
+					"title": "Predicate Type",
+					"type": "string",
+					"enum": [
+						"minecraft:always_true",
+						"minecraft:block_match",
+						"minecraft:random_block_match",
+						"minecraft:tag_match"
+					]
+				}
+			},
+			"required": ["predicate_type"]
+		},
+		{
+			"if": {
+				"properties": {
+					"predicate_type": {
+						"const": "minecraft:always_true"
+					}
+				},
+				"required": ["predicate_type"]
+			},
+			"then": {
+				"$ref": "./always_true.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"predicate_type": {
+						"const": "minecraft:block_match"
+					}
+				},
+				"required": ["predicate_type"]
+			},
+			"then": {
+				"$ref": "./block_match.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"predicate_type": {
+						"const": "minecraft:random_block_match"
+					}
+				},
+				"required": ["predicate_type"]
+			},
+			"then": {
+				"$ref": "./random_block_match.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"predicate_type": {
+						"const": "minecraft:tag_match"
+					}
+				},
+				"required": ["predicate_type"]
+			},
+			"then": {
+				"$ref": "./tag_match.json"
+			}
+		}
+	]
+}

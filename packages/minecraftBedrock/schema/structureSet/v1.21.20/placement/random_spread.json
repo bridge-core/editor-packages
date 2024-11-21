@@ -1,0 +1,29 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"salt": {
+			"title": "Salt",
+			"description": "Seed used for the random generator to provide a unique scatter pattern. This is used to prevent overlap in the case where multiple structure sets use the same placement values.",
+			"type": "integer"
+		},
+		"spacing": {
+			"title": "Spacing",
+			"description": "Grid cell size (in chunks) to use when generating the structure. Structures will attempt to generate at a random position within each cell.",
+			"type": "integer",
+			"minimum": 0
+		},
+		"separation": {
+			"title": "Separation",
+			"description": "Padding (in chunks) within each grid cell. Structures will not generate within the padded area.",
+			"type": "integer",
+			"minimum": 0
+		},
+		"spread_type": {
+			"title": "Spread Type",
+			"description": "Randomness algorithm used when placing structures.",
+			"type": "string",
+			"enum": ["linear", "triangle"]
+		}
+	}
+}

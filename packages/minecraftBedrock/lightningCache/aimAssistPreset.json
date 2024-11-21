@@ -1,0 +1,10 @@
+[
+	{
+		"cacheKey": "identifier",
+		"path": "minecraft:aim_assist_preset/identifier"
+	},
+	{
+		"cacheKey": "categoriesIdentifier",
+		"path": "minecraft:aim_assist_preset/categories"
+	}
+]

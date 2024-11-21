@@ -53,6 +53,9 @@
 					"upcomingCreatorFeatures",
 					"enableGameTestFramework",
 					"experimentalMolangFeatures",
+					"focusTargetCamera",
+					"aimAssist",
+					"dataDrivenJigsawStructures",
 					"educationEdition",
 					"theWildUpdate"
 				]

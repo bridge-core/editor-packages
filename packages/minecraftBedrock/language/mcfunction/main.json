@@ -7024,6 +7024,17 @@
 			"requires": {
 				"targetVersion": [">=", "1.19.80"]
 			},
+			"selectorArguments": [
+				{
+					"argumentName": "haspermission",
+					"description": "Filter target selection based on the input permissions of the target entities.",
+					"type": "scoreData", // TODO: support other object types that just score data
+					"additionalData": {
+						"multipleInstancesAllowed": "never",
+						"supportsNegation": false
+					}
+				}
+			],
 			"commands": [
 				{
 					"commandName": "inputpermission",
@@ -7043,7 +7054,19 @@
 							"argumentName": "permission",
 							"type": "string",
 							"additionalData": {
-								"values": ["movement", "camera"]
+								"values": [
+									"camera",
+									"dismount",
+									"jump",
+									"lateral_movement",
+									"mount",
+									"move_backward",
+									"move_forward",
+									"move_left",
+									"move_right",
+									"movement",
+									"sneak"
+								]
 							}
 						},
 						{
@@ -7073,7 +7096,19 @@
 							"argumentName": "permission",
 							"type": "string",
 							"additionalData": {
-								"values": ["movement", "camera"]
+								"values": [
+									"camera",
+									"dismount",
+									"jump",
+									"lateral_movement",
+									"mount",
+									"move_backward",
+									"move_forward",
+									"move_left",
+									"move_right",
+									"movement",
+									"sneak"
+								]
 							}
 						},
 						{
@@ -7120,8 +7155,10 @@
 									"horse_health",
 									"hotbar",
 									"hunger",
+									"item_text",
 									"paperdoll",
 									"progress_bar",
+									"status_effects",
 									"tooltips",
 									"touch_controls"
 								]
@@ -7169,9 +7206,114 @@
 		},
 		{
 			"requires": {
+				"targetVersion": [">=", "1.20.70"]
+			},
+			"selectorArguments": [
+				{
+					"argumentName": "has_property",
+					"description": "Filter target selection based on the property map of the target entities.",
+					"type": "scoreData", // TODO: support more than just score data!!
+					"additionalData": {
+						"multipleInstancesAllowed": "never",
+						"supportsNegation": false
+					}
+				}
+			]
+		},
+		{
+			"requires": {
 				"targetVersion": [">=", "1.21.40"]
 			},
 			"commands": [
+				{
+					"commandName": "schedule",
+					"description": "Removes a schedule.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["clear"]
+							}
+						},
+						{
+							"argumentName": "function",
+							"description": "Specifies the function to be cleared.",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/commandPathEnum.json"
+							}
+						}
+					]
+				},
+				{
+					"commandName": "schedule",
+					"description": "Removes a schedule.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["on_area_loaded"]
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["clear"]
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["function"]
+							}
+						},
+						{
+							"argumentName": "function",
+							"description": "Specifies the function to be cleared.",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/commandPathEnum.json"
+							}
+						}
+					]
+				},
+				{
+					"commandName": "schedule",
+					"description": "Removes a schedule.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["on_area_loaded"]
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["clear"]
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["tickingarea"]
+							}
+						},
+						{
+							"argumentName": "name",
+							"description": "Specifies the name of a ticking area.",
+							"type": "string"
+						},
+						{
+							"argumentName": "function",
+							"description": "Specifies the function to be cleared.",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/commandPathEnum.json"
+							}
+						}
+					]
+				},
 				{
 					"commandName": "effect",
 					"description": "Add or remove status effects.",
@@ -7235,16 +7377,85 @@
 					]
 				}
 			]
-		}
-		/*
+		},
 		{
 			"requires": {
-				"targetVersion": [ ">=", "1.20.0" ]
+				"targetVersion": [">=", "1.21.50"]
 			},
 			"commands": [
 				{
-					"commandName": "camera",
-					"description": "",
+					"commandName": "schedule",
+					"description": "Delays the execution of a function.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["delay"]
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["add"]
+							}
+						},
+						{
+							"argumentName": "function",
+							"description": "Specify the function to be delayed.",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/commandPathEnum.json"
+							}
+						},
+						{
+							"argumentName": "delay",
+							"description": "Specifies the delay in ticks",
+							"type": "number"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["append", "replace"]
+							}
+						}
+					]
+				},
+				{
+					"commandName": "schedule",
+					"description": "Delays the execution of a function.",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["delay"]
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["clear"]
+							}
+						},
+						{
+							"argumentName": "function",
+							"description": "Specify the function to be cleared.",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/function/dynamic/commandPathEnum.json"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"requires": {
+				"experimentalGameplay": ["aimAssist"]
+			},
+			"commands": [
+				{
+					"commandName": "aimassist",
+					"description": "Clears the aim assist.",
 					"arguments": [
 						{
 							"argumentName": "players",
@@ -7253,7 +7464,285 @@
 						{
 							"type": "string",
 							"additionalData": {
-								"values": [ "set" ]
+								"values": ["clear"]
+							}
+						}
+					]
+				},
+				{
+					"commandName": "aimassist",
+					"description": "Sets the aim assist.",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["set"]
+							}
+						},
+						{
+							"argumentName": "xAngle",
+							"type": "number"
+						},
+						{
+							"argumentName": "yAngle",
+							"type": "number"
+						},
+						{
+							"argumentName": "maxDistance",
+							"type": "number"
+						},
+						{
+							"argumentName": "targetMode",
+							"type": "string",
+							"additionalData": {
+								"values": ["angle", "distance"]
+							}
+						},
+						{
+							"argumentName": "presetId",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/aim_assist_preset_identifiers"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"requires": {
+				"experimentalGameplay": ["dataDrivenJigsawStructures"]
+			},
+			"commands": [
+				{
+					"commandName": "place",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["jigsaw"]
+							}
+						},
+						{
+							"argumentName": "pool",
+							"type": "string"
+						},
+						{
+							"argumentName": "maxDepth",
+							"type": "number"
+						},
+						{
+							"argumentName": "pos",
+							"type": "coordinate",
+							"isOptional": true
+						},
+						{
+							"argumentName": "keepJigsaws",
+							"type": "boolean",
+							"isOptional": true
+						}
+					]
+				},
+				{
+					"commandName": "place",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["structure"]
+							}
+						},
+						{
+							"argumentName": "structure",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/jigsaw_structure_identifiers"
+							}
+						},
+						{
+							"argumentName": "pos",
+							"type": "coordinate",
+							"isOptional": true
+						},
+						{
+							"argumentName": "ignoreStartHeight",
+							"type": "boolean",
+							"isOptional": true
+						},
+						{
+							"argumentName": "keepJigsaws",
+							"type": "boolean",
+							"isOptional": true
+						}
+					]
+				}
+			]
+		},
+		//#region Camera
+		{
+			"commands": [
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["clear"]
+							}
+						}
+					]
+				},
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["fade"]
+							}
+						}
+					]
+				},
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["fade"]
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["color"]
+							}
+						},
+						{
+							"argumentName": "red",
+							"type": "number"
+						},
+						{
+							"argumentName": "green",
+							"type": "number"
+						},
+						{
+							"argumentName": "blue",
+							"type": "number"
+						}
+					]
+				},
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["fade"]
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["time"]
+							}
+						},
+						{
+							"argumentName": "fadeInSeconds",
+							"type": "number"
+						},
+						{
+							"argumentName": "holdSeconds",
+							"type": "number"
+						},
+						{
+							"argumentName": "fadeOutSeconds",
+							"type": "number"
+						}
+					]
+				},
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["fade"]
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["time"]
+							}
+						},
+						{
+							"argumentName": "fadeInSeconds",
+							"type": "number"
+						},
+						{
+							"argumentName": "holdSeconds",
+							"type": "number"
+						},
+						{
+							"argumentName": "fadeOutSeconds",
+							"type": "number"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["color"]
+							}
+						},
+						{
+							"argumentName": "red",
+							"type": "number"
+						},
+						{
+							"argumentName": "green",
+							"type": "number"
+						},
+						{
+							"argumentName": "blue",
+							"type": "number"
+						}
+					]
+				},
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["set"]
 							}
 						},
 						{
@@ -7262,11 +7751,1127 @@
 							"additionalData": {
 								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/camera_preset_identifiers"
 							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["default"]
+							},
+							"isOptional": true
+						}
+					]
+				},
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["set"]
+							}
+						},
+						{
+							"argumentName": "preset",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/camera_preset_identifiers"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["ease"]
+							}
+						},
+						{
+							"argumentName": "easeTime",
+							"type": "number"
+						},
+						{
+							"argumentName": "easeType",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/easeType.json"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["default"]
+							},
+							"isOptional": true
+						}
+					]
+				},
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["set"]
+							}
+						},
+						{
+							"argumentName": "preset",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/camera_preset_identifiers"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["ease"]
+							}
+						},
+						{
+							"argumentName": "easeTime",
+							"type": "number"
+						},
+						{
+							"argumentName": "easeType",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/easeType.json"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["facing"]
+							}
+						},
+						{
+							"argumentName": "lookAtEntity",
+							"type": "selector"
+						}
+					]
+				},
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["set"]
+							}
+						},
+						{
+							"argumentName": "preset",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/camera_preset_identifiers"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["ease"]
+							}
+						},
+						{
+							"argumentName": "easeTime",
+							"type": "number"
+						},
+						{
+							"argumentName": "easeType",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/easeType.json"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["facing"]
+							}
+						},
+						{
+							"argumentName": "lookAtPosition",
+							"type": "$coordinates"
+						}
+					]
+				},
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["set"]
+							}
+						},
+						{
+							"argumentName": "preset",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/camera_preset_identifiers"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["ease"]
+							}
+						},
+						{
+							"argumentName": "easeTime",
+							"type": "number"
+						},
+						{
+							"argumentName": "easeType",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/easeType.json"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["pos"]
+							}
+						},
+						{
+							"argumentName": "position",
+							"type": "$coordinates"
+						}
+					]
+				},
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["set"]
+							}
+						},
+						{
+							"argumentName": "preset",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/camera_preset_identifiers"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["ease"]
+							}
+						},
+						{
+							"argumentName": "easeTime",
+							"type": "number"
+						},
+						{
+							"argumentName": "easeType",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/easeType.json"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["pos"]
+							}
+						},
+						{
+							"argumentName": "position",
+							"type": "$coordinates"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["facing"]
+							}
+						},
+						{
+							"argumentName": "lookAtEntity",
+							"type": "selector"
+						}
+					]
+				},
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["set"]
+							}
+						},
+						{
+							"argumentName": "preset",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/camera_preset_identifiers"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["ease"]
+							}
+						},
+						{
+							"argumentName": "easeTime",
+							"type": "number"
+						},
+						{
+							"argumentName": "easeType",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/easeType.json"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["pos"]
+							}
+						},
+						{
+							"argumentName": "position",
+							"type": "$coordinates"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["facing"]
+							}
+						},
+						{
+							"argumentName": "lookAtPosition",
+							"type": "$coordinates"
+						}
+					]
+				},
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["set"]
+							}
+						},
+						{
+							"argumentName": "preset",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/camera_preset_identifiers"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["ease"]
+							}
+						},
+						{
+							"argumentName": "easeTime",
+							"type": "number"
+						},
+						{
+							"argumentName": "easeType",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/easeType.json"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["pos"]
+							}
+						},
+						{
+							"argumentName": "position",
+							"type": "$coordinates"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["rot"]
+							}
+						},
+						{
+							"argumentName": "xRot",
+							"type": "number"
+						},
+						{
+							"argumentName": "yRot",
+							"type": "number"
+						}
+					]
+				},
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["set"]
+							}
+						},
+						{
+							"argumentName": "preset",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/camera_preset_identifiers"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["ease"]
+							}
+						},
+						{
+							"argumentName": "easeTime",
+							"type": "number"
+						},
+						{
+							"argumentName": "easeType",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/easeType.json"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["rot"]
+							}
+						},
+						{
+							"argumentName": "xRot",
+							"type": "number"
+						},
+						{
+							"argumentName": "yRot",
+							"type": "number"
+						}
+					]
+				},
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["set"]
+							}
+						},
+						{
+							"argumentName": "preset",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/camera_preset_identifiers"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["entity_offset"]
+							}
+						},
+						{
+							"argumentName": "xEntityOffset",
+							"type": "number"
+						},
+						{
+							"argumentName": "yEntityOffset",
+							"type": "number"
+						},
+						{
+							"argumentName": "zEntityOffset",
+							"type": "number"
+						}
+					]
+				},
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["set"]
+							}
+						},
+						{
+							"argumentName": "preset",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/camera_preset_identifiers"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["entity_offset"]
+							}
+						},
+						{
+							"argumentName": "xEntityOffset",
+							"type": "number"
+						},
+						{
+							"argumentName": "yEntityOffset",
+							"type": "number"
+						},
+						{
+							"argumentName": "zEntityOffset",
+							"type": "number"
+						}
+					]
+				},
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["set"]
+							}
+						},
+						{
+							"argumentName": "preset",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/camera_preset_identifiers"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["facing"]
+							}
+						},
+						{
+							"argumentName": "lookAtEntity",
+							"type": "selector"
+						}
+					]
+				},
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["set"]
+							}
+						},
+						{
+							"argumentName": "preset",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/camera_preset_identifiers"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["facing"]
+							}
+						},
+						{
+							"argumentName": "lookAtPosition",
+							"type": "$coordinates"
+						}
+					]
+				},
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["set"]
+							}
+						},
+						{
+							"argumentName": "preset",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/camera_preset_identifiers"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["pos"]
+							}
+						},
+						{
+							"argumentName": "position",
+							"type": "$coordinates"
+						}
+					]
+				},
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["set"]
+							}
+						},
+						{
+							"argumentName": "preset",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/camera_preset_identifiers"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["pos"]
+							}
+						},
+						{
+							"argumentName": "position",
+							"type": "$coordinates"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["facing"]
+							}
+						},
+						{
+							"argumentName": "lookAtEntity",
+							"type": "selector"
+						}
+					]
+				},
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["set"]
+							}
+						},
+						{
+							"argumentName": "preset",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/camera_preset_identifiers"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["pos"]
+							}
+						},
+						{
+							"argumentName": "position",
+							"type": "$coordinates"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["facing"]
+							}
+						},
+						{
+							"argumentName": "lookAtPosition",
+							"type": "$coordinates"
+						}
+					]
+				},
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["set"]
+							}
+						},
+						{
+							"argumentName": "preset",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/camera_preset_identifiers"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["pos"]
+							}
+						},
+						{
+							"argumentName": "position",
+							"type": "$coordinates"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["rot"]
+							}
+						},
+						{
+							"argumentName": "xRot",
+							"type": "number"
+						},
+						{
+							"argumentName": "yRot",
+							"type": "number"
+						}
+					]
+				},
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["set"]
+							}
+						},
+						{
+							"argumentName": "preset",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/camera_preset_identifiers"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["rot"]
+							}
+						},
+						{
+							"argumentName": "xRot",
+							"type": "number"
+						},
+						{
+							"argumentName": "yRot",
+							"type": "number"
+						}
+					]
+				},
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["set"]
+							}
+						},
+						{
+							"argumentName": "preset",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/camera_preset_identifiers"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["rot"]
+							}
+						},
+						{
+							"argumentName": "xRot",
+							"type": "number"
+						},
+						{
+							"argumentName": "yRot",
+							"type": "number"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["entity_offset"]
+							}
+						},
+						{
+							"argumentName": "xEntityOffset",
+							"type": "number"
+						},
+						{
+							"argumentName": "yEntityOffset",
+							"type": "number"
+						},
+						{
+							"argumentName": "zEntityOffset",
+							"type": "number"
+						}
+					]
+				},
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["set"]
+							}
+						},
+						{
+							"argumentName": "preset",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/camera_preset_identifiers"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["rot"]
+							}
+						},
+						{
+							"argumentName": "xRot",
+							"type": "number"
+						},
+						{
+							"argumentName": "yRot",
+							"type": "number"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["view_offset"]
+							}
+						},
+						{
+							"argumentName": "xViewOffset",
+							"type": "number"
+						},
+						{
+							"argumentName": "yViewOffset",
+							"type": "number"
+						}
+					]
+				},
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["set"]
+							}
+						},
+						{
+							"argumentName": "preset",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/camera_preset_identifiers"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["rot"]
+							}
+						},
+						{
+							"argumentName": "xRot",
+							"type": "number"
+						},
+						{
+							"argumentName": "yRot",
+							"type": "number"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["view_offset"]
+							}
+						},
+						{
+							"argumentName": "xViewOffset",
+							"type": "number"
+						},
+						{
+							"argumentName": "yViewOffset",
+							"type": "number"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["entity_offset"]
+							}
+						},
+						{
+							"argumentName": "xEntityOffset",
+							"type": "number"
+						},
+						{
+							"argumentName": "yEntityOffset",
+							"type": "number"
+						},
+						{
+							"argumentName": "zEntityOffset",
+							"type": "number"
+						}
+					]
+				},
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["set"]
+							}
+						},
+						{
+							"argumentName": "preset",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/camera_preset_identifiers"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["view_offset"]
+							}
+						},
+						{
+							"argumentName": "xViewOffset",
+							"type": "number"
+						},
+						{
+							"argumentName": "yViewOffset",
+							"type": "number"
+						}
+					]
+				},
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["set"]
+							}
+						},
+						{
+							"argumentName": "preset",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/camera_preset_identifiers"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["view_offset"]
+							}
+						},
+						{
+							"argumentName": "xViewOffset",
+							"type": "number"
+						},
+						{
+							"argumentName": "yViewOffset",
+							"type": "number"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["entity_offset"]
+							}
+						},
+						{
+							"argumentName": "xEntityOffset",
+							"type": "number"
+						},
+						{
+							"argumentName": "yEntityOffset",
+							"type": "number"
+						},
+						{
+							"argumentName": "zEntityOffset",
+							"type": "number"
+						}
+					]
+				}
+			]
+		},
+		//#endregion
+		{
+			"requires": {
+				"experimentalGameplay": ["focusTargetCamera"]
+			},
+			"commands": [
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["remove_target"]
+							}
+						}
+					]
+				},
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["target_entity"]
+							}
+						},
+						{
+							"argumentName": "entity",
+							"type": "selector"
+						}
+					]
+				},
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"argumentName": "players",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["target_entity"]
+							}
+						},
+						{
+							"argumentName": "entity",
+							"type": "selector"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["target_center_offset"]
+							}
+						},
+						{
+							"argumentName": "xTargetCenterOffset",
+							"type": "number"
+						},
+						{
+							"argumentName": "yTargetCenterOffset",
+							"type": "number"
+						},
+						{
+							"argumentName": "zTargetCenterOffset",
+							"type": "number"
 						}
 					]
 				}
 			]
 		}
-		*/
 	]
 }

@@ -12,6 +12,18 @@
 		"id": "enableGameTestFramework" // Beta APIs toggle
 	},
 	{
+		"icon": "mdi-camera-control",
+		"id": "focusTargetCamera"
+	},
+	{
+		"icon": "mdi-puzzle",
+		"id": "dataDrivenJigsawStructures"
+	},
+	{
+		"icon": "mdi-crosshairs",
+		"id": "aimAssist"
+	},
+	{
 		"icon": "mdi-school-outline",
 		"id": "educationEdition"
 	}

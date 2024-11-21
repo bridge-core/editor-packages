@@ -121,6 +121,17 @@
 			}
 		},
 		{
+			// Experimental
+			"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
+			"then": {
+				"properties": {
+					"minecraft:compostable": {
+						"$ref": "../../v1.21.50/components/compostable.json"
+					}
+				}
+			}
+		},
+		{
 			// Deprecated
 			"properties": {
 				"minecraft:foil": {

@@ -1,0 +1,16 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"block": {
+			"title": "Block",
+			"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+		},
+		"probability": {
+			"title": "Probability",
+			"type": "number",
+			"minimum": 0.0,
+			"maximum": 1.0
+		}
+	}
+}

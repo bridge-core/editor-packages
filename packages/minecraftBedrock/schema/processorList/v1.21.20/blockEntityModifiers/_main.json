@@ -1,0 +1,41 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"anyOf": [
+		{
+			"properties": {
+				"type": {
+					"type": "string",
+					"enum": ["minecraft:append_loot", "minecraft:passthrough"]
+				}
+			},
+			"required": ["type"]
+		},
+		{
+			"if": {
+				"properties": {
+					"type": {
+						"const": "minecraft:append_loot"
+					}
+				},
+				"required": ["type"]
+			},
+			"then": {
+				"$ref": "./append_loot.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"type": {
+						"const": "minecraft:passthrough"
+					}
+				},
+				"required": ["type"]
+			},
+			"then": {
+				"$ref": "./passthrough.json"
+			}
+		}
+	]
+}

@@ -7,7 +7,7 @@
 		"sound_event": {
 			"type": "string",
 			"description": "A string value correseponding to a sound event in the game code.",
-			"$ref": "../../../general/reference/soundDefinition.json"
+			"$ref": "../../../general/reference/soundEvent.json"
 		},
 		"duration": {
 			"type": "integer",
