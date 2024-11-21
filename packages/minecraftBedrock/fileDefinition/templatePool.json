@@ -1,0 +1,24 @@
+{
+	"id": "templatePool",
+	"icon": "mdi-library-shelves",
+	"detect": {
+		"packType": "behaviorPack",
+		"scope": ["worldgen/template_pools/"],
+		"matcher": [
+			"worldgen/template_pools/**/*",
+			"worldgen/template_pools/*"
+		],
+		"fileContent": ["minecraft:template_pool"],
+		"fileExtensions": [".json"]
+	},
+	"schema": "file:///data/packages/minecraftBedrock/schema/templatePool/main.json",
+	"lightningCache": "templatePool.json",
+	"documentation": {
+		"baseUrl": "https://learn.microsoft.com/en-us/minecraft/creator/reference/content/worldgenreference/examples/jigsawtemplatepools?view=minecraft-bedrock-stable",
+		"supportsQuerying": false
+	},
+	"highlighterConfiguration": {
+		"variables": ["description"],
+		"typeIdentifiers": ["format_version"]
+	}
+}

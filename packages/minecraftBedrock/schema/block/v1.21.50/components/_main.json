@@ -47,7 +47,13 @@
 					"$ref": "../../v1.16.0/components/map_color.json"
 				},
 				"minecraft:material_instances": {
-					"$ref": "../../v1.19.40/components/material_instances.json"
+					"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
+					"then": {
+						"$ref": "../../v1.21.50/components/material_instances.json"
+					},
+					"else": {
+						"$ref": "../../v1.19.40/components/material_instances.json"
+					}
 				},
 				"minecraft:placement_filter": {
 					"$ref": "../../v1.19.60/components/placement_filter.json"
@@ -63,6 +69,19 @@
 				},
 				"minecraft:transformation": {
 					"$ref": "../../v1.19.80/components/transformation.json"
+				}
+			}
+		},
+		{
+			"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
+			"then": {
+				"properties": {
+					"minecraft:item_visual": {
+						"$ref": "../../v1.21.50/components/item_visual.json"
+					},
+					"minecraft:liquid_detection": {
+						"$ref": "../../v1.21.50/components/liquid_detection.json"
+					}
 				}
 			}
 		},

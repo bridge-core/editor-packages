@@ -5,12 +5,11 @@
 	"description": "Makes an item wearable.",
 	"properties": {
 		"slot": {
+			"title": "Slot",
 			"$ref": "../../../general/itemWearableType.json"
 		},
-		"dispensable": {
-			"type": "boolean"
-		},
 		"protection": {
+			"title": "Protection",
 			"description": "How much protection does the wearable item have.",
 			"type": "integer",
 			"minimum": 0

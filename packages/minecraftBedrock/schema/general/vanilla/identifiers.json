@@ -165,6 +165,7 @@
 				"minecraft:cave_vines_head_with_berries",
 				"minecraft:chain",
 				"minecraft:chain_command_block",
+				"minecraft:chalkboard",
 				"minecraft:chemical_heat",
 				"minecraft:cherry_button",
 				"minecraft:cherry_door",
@@ -192,6 +193,7 @@
 				"minecraft:chiseled_polished_blackstone",
 				"minecraft:chiseled_quartz_block",
 				"minecraft:chiseled_red_sandstone",
+				"minecraft:chiseled_resin_bricks",
 				"minecraft:chiseled_sandstone",
 				"minecraft:chiseled_stone_bricks",
 				"minecraft:chiseled_tuff",
@@ -200,6 +202,7 @@
 				"minecraft:chorus_plant",
 				"minecraft:clay",
 				"minecraft:client_request_placeholder_block",
+				"minecraft:closed_eyeblossom",
 				"minecraft:coal_block",
 				"minecraft:coal_ore",
 				"minecraft:coarse_dirt",
@@ -805,6 +808,7 @@
 				"minecraft:observer",
 				"minecraft:obsidian",
 				"minecraft:ochre_froglight",
+				"minecraft:open_eyeblossom",
 				"minecraft:orange_candle",
 				"minecraft:orange_candle_cake",
 				"minecraft:orange_carpet",
@@ -988,6 +992,13 @@
 				"minecraft:reinforced_deepslate",
 				"minecraft:repeating_command_block",
 				"minecraft:reserved6",
+				"minecraft:resin_block",
+				"minecraft:resin_brick_double_slab",
+				"minecraft:resin_brick_slab",
+				"minecraft:resin_brick_stairs",
+				"minecraft:resin_brick_wall",
+				"minecraft:resin_bricks",
+				"minecraft:resin_clump",
 				"minecraft:respawn_anchor",
 				"minecraft:rose_bush",
 				"minecraft:sand",
@@ -1412,6 +1423,7 @@
 				"cave_vines_head_with_berries",
 				"chain",
 				"chain_command_block",
+				"chalkboard",
 				"chemical_heat",
 				"cherry_button",
 				"cherry_door",
@@ -1439,6 +1451,7 @@
 				"chiseled_polished_blackstone",
 				"chiseled_quartz_block",
 				"chiseled_red_sandstone",
+				"chiseled_resin_bricks",
 				"chiseled_sandstone",
 				"chiseled_stone_bricks",
 				"chiseled_tuff",
@@ -1447,6 +1460,7 @@
 				"chorus_plant",
 				"clay",
 				"client_request_placeholder_block",
+				"closed_eyeblossom",
 				"coal_block",
 				"coal_ore",
 				"coarse_dirt",
@@ -2052,6 +2066,7 @@
 				"observer",
 				"obsidian",
 				"ochre_froglight",
+				"open_eyeblossom",
 				"orange_candle",
 				"orange_candle_cake",
 				"orange_carpet",
@@ -2235,6 +2250,13 @@
 				"reinforced_deepslate",
 				"repeating_command_block",
 				"reserved6",
+				"resin_block",
+				"resin_brick_double_slab",
+				"resin_brick_slab",
+				"resin_brick_stairs",
+				"resin_brick_wall",
+				"resin_bricks",
+				"resin_clump",
 				"respawn_anchor",
 				"rose_bush",
 				"sand",
@@ -2648,6 +2670,7 @@
 				"minecraft:blue_stained_glass_pane",
 				"minecraft:blue_terracotta",
 				"minecraft:blue_wool",
+				"minecraft:board",
 				"minecraft:boat",
 				"minecraft:bogged_spawn_egg",
 				"minecraft:bolt_armor_trim_smithing_template",
@@ -2725,6 +2748,7 @@
 				"minecraft:chainmail_chestplate",
 				"minecraft:chainmail_helmet",
 				"minecraft:chainmail_leggings",
+				"minecraft:chalkboard",
 				"minecraft:charcoal",
 				"minecraft:chemical_heat",
 				"minecraft:chemistry_table",
@@ -2761,6 +2785,7 @@
 				"minecraft:chiseled_polished_blackstone",
 				"minecraft:chiseled_quartz_block",
 				"minecraft:chiseled_red_sandstone",
+				"minecraft:chiseled_resin_bricks",
 				"minecraft:chiseled_sandstone",
 				"minecraft:chiseled_stone_bricks",
 				"minecraft:chiseled_tuff",
@@ -2772,6 +2797,7 @@
 				"minecraft:clay_ball",
 				"minecraft:client_request_placeholder_block",
 				"minecraft:clock",
+				"minecraft:closed_eyeblossom",
 				"minecraft:coal",
 				"minecraft:coal_block",
 				"minecraft:coal_ore",
@@ -3648,6 +3674,7 @@
 				"minecraft:ochre_froglight",
 				"minecraft:ominous_bottle",
 				"minecraft:ominous_trial_key",
+				"minecraft:open_eyeblossom",
 				"minecraft:orange_candle",
 				"minecraft:orange_candle_cake",
 				"minecraft:orange_carpet",
@@ -3882,6 +3909,14 @@
 				"minecraft:repeater",
 				"minecraft:repeating_command_block",
 				"minecraft:reserved6",
+				"minecraft:resin_block",
+				"minecraft:resin_brick",
+				"minecraft:resin_brick_double_slab",
+				"minecraft:resin_brick_slab",
+				"minecraft:resin_brick_stairs",
+				"minecraft:resin_brick_wall",
+				"minecraft:resin_bricks",
+				"minecraft:resin_clump",
 				"minecraft:respawn_anchor",
 				"minecraft:rib_armor_trim_smithing_template",
 				"minecraft:rose_bush",
@@ -4411,6 +4446,7 @@
 				"blue_stained_glass_pane",
 				"blue_terracotta",
 				"blue_wool",
+				"board",
 				"boat",
 				"bogged_spawn_egg",
 				"bolt_armor_trim_smithing_template",
@@ -4488,6 +4524,7 @@
 				"chainmail_chestplate",
 				"chainmail_helmet",
 				"chainmail_leggings",
+				"chalkboard",
 				"charcoal",
 				"chemical_heat",
 				"chemistry_table",
@@ -4524,6 +4561,7 @@
 				"chiseled_polished_blackstone",
 				"chiseled_quartz_block",
 				"chiseled_red_sandstone",
+				"chiseled_resin_bricks",
 				"chiseled_sandstone",
 				"chiseled_stone_bricks",
 				"chiseled_tuff",
@@ -4535,6 +4573,7 @@
 				"clay_ball",
 				"client_request_placeholder_block",
 				"clock",
+				"closed_eyeblossom",
 				"coal",
 				"coal_block",
 				"coal_ore",
@@ -5411,6 +5450,7 @@
 				"ochre_froglight",
 				"ominous_bottle",
 				"ominous_trial_key",
+				"open_eyeblossom",
 				"orange_candle",
 				"orange_candle_cake",
 				"orange_carpet",
@@ -5645,6 +5685,14 @@
 				"repeater",
 				"repeating_command_block",
 				"reserved6",
+				"resin_block",
+				"resin_brick",
+				"resin_brick_double_slab",
+				"resin_brick_slab",
+				"resin_brick_stairs",
+				"resin_brick_wall",
+				"resin_bricks",
+				"resin_clump",
 				"respawn_anchor",
 				"rib_armor_trim_smithing_template",
 				"rose_bush",
@@ -6331,9 +6379,9 @@
 				"minecraft:conduit_absorb_particle",
 				"minecraft:conduit_attack_emitter",
 				"minecraft:conduit_particle",
+				"minecraft:creaking_crumble_body",
+				"minecraft:creaking_crumble_head",
 				"minecraft:creaking_heart_trail",
-				"minecraft:creaking_teardown_body",
-				"minecraft:creaking_teardown_head",
 				"minecraft:critical_hit_emitter",
 				"minecraft:crop_growth_area_emitter",
 				"minecraft:crop_growth_emitter",
@@ -6357,6 +6405,8 @@
 				"minecraft:explosion_manual",
 				"minecraft:explosion_particle",
 				"minecraft:eye_of_ender_bubble_particle",
+				"minecraft:eyeblossom_close",
+				"minecraft:eyeblossom_open",
 				"minecraft:eyeofender_death_explode_particle",
 				"minecraft:falling_border_dust_particle",
 				"minecraft:falling_dust",
@@ -6395,6 +6445,7 @@
 				"minecraft:mobflame_single",
 				"minecraft:mobspell_ambient",
 				"minecraft:mobspell_emitter",
+				"minecraft:mobspell_lingering",
 				"minecraft:mycelium_dust_particle",
 				"minecraft:nectar_drip_particle",
 				"minecraft:note_particle",
@@ -6403,6 +6454,7 @@
 				"minecraft:ominous_spawning_particle",
 				"minecraft:oozing_ambient",
 				"minecraft:oozing_emitter",
+				"minecraft:pale_oak_leaves_particle",
 				"minecraft:phantom_trail_particle",
 				"minecraft:portal_directional",
 				"minecraft:portal_east_west",
@@ -6563,6 +6615,17 @@
 				"the_end",
 				"warm_ocean",
 				"warped_forest"
+			]
+		},
+		"camera_preset_identifiers": {
+			"type": "string",
+			"enum": [
+				"minecraft:first_person",
+				"minecraft:fixed_boom",
+				"minecraft:follow_orbit",
+				"minecraft:free",
+				"minecraft:third_person",
+				"minecraft:third_person_front"
 			]
 		},
 		"fog_identifiers": {
@@ -6907,6 +6970,50 @@
 				"minecraft:warped_fungus_feature",
 				"minecraft:warped_roots_feature",
 				"minecraft:weeping_vines_cluster_feature"
+			]
+		},
+		"aim_assist_categories_identifiers": {
+			"type": "string",
+			"enum": [
+				"minecraft:aim_assist_categories_1"
+			]
+		},
+		"aim_assist_preset_identifiers": {
+			"type": "string",
+			"enum": [
+				"minecraft:aim_assist_default"
+			]
+		},
+		"jigsaw_structure_identifiers": {
+			"type": "string",
+			"enum": [
+				"minecraft:trail_ruins"
+			]
+		},
+		"template_pool_identifiers": {
+			"type": "string",
+			"enum": [
+				"minecraft:trail_ruins/buildings",
+				"minecraft:trail_ruins/buildings/grouped",
+				"minecraft:trail_ruins/decor",
+				"minecraft:trail_ruins/roads",
+				"minecraft:trail_ruins/tower",
+				"minecraft:trail_ruins/tower/additions",
+				"minecraft:trail_ruins/tower/tower_top"
+			]
+		},
+		"processor_list_identifiers": {
+			"type": "string",
+			"enum": [
+				"minecraft:trail_ruins_houses_archaeology",
+				"minecraft:trail_ruins_roads_archaeology",
+				"minecraft:trail_ruins_tower_top_archaeology"
+			]
+		},
+		"structure_set_identifiers": {
+			"type": "string",
+			"enum": [
+				"minecraft:trail_ruins"
 			]
 		}
 	}

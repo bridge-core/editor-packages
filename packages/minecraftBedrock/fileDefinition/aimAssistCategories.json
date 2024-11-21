@@ -1,0 +1,18 @@
+{
+	"id": "aimAssistCategories",
+	"icon": "mdi-crosshairs",
+	"detect": {
+		"packType": "behaviorPack",
+		"scope": "aim_assist/categories/",
+		"matcher": ["aim_assist/categories/**/*", "aim_assist/categories/*"],
+		"fileContent": ["minecraft:aim_assist_categories"],
+		"fileExtensions": [".json"]
+	},
+
+	"schema": "file:///data/packages/minecraftBedrock/schema/aimAssistCategories/main.json",
+
+	"lightningCache": "aimAssistCategories.json",
+	"highlighterConfiguration": {
+		"typeIdentifiers": ["format_version", "identifier"]
+	}
+}

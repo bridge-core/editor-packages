@@ -1,0 +1,24 @@
+{
+	"id": "structureSet",
+	"icon": "mdi-castle",
+	"detect": {
+		"packType": "behaviorPack",
+		"scope": ["worldgen/structure_sets/"],
+		"matcher": [
+			"worldgen/structure_sets/**/*",
+			"worldgen/structure_sets/*"
+		],
+		"fileContent": ["minecraft:structure_set"],
+		"fileExtensions": [".json"]
+	},
+	"schema": "file:///data/packages/minecraftBedrock/schema/structureSet/main.json",
+	"lightningCache": "structureSet.json",
+	"documentation": {
+		"baseUrl": "https://learn.microsoft.com/en-us/minecraft/creator/reference/content/worldgenreference/examples/jigsawstructuresets?view=minecraft-bedrock-stable",
+		"supportsQuerying": false
+	},
+	"highlighterConfiguration": {
+		"variables": ["description"],
+		"typeIdentifiers": ["format_version"]
+	}
+}

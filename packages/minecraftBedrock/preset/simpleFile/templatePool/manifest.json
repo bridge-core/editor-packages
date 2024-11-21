@@ -1,0 +1,32 @@
+{
+	"name": "Template Pool",
+	"icon": "mdi-library-shelves",
+	"description": "Creates a blank template pool.",
+	"category": "fileType.simpleFile",
+	"requires": {
+		"packTypes": ["behaviorPack"],
+		"experimentalGameplay": ["dataDrivenJigsawStructures"]
+	},
+	"additionalModels": {
+		"PRESET_PATH": "worldgen/template_pools/"
+	},
+	"fields": [
+		[
+			"File Name",
+			"FILE_NAME",
+			{ "validate": ["required", "alphanumeric", "lowercase"] }
+		]
+	],
+
+	"createFiles": [
+		[
+			"templatePool.json",
+			"{{PRESET_PATH}}{{FILE_NAME}}.json",
+			{
+				"inject": ["FILE_NAME", "PRESET_PATH"],
+				"openFile": true,
+				"packPath": "behaviorPack"
+			}
+		]
+	]
+}

@@ -1,0 +1,14 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"delegate": {
+			"title": "Delegate",
+			"$ref": "./_main.json"
+		},
+		"limit": {
+			"title": "Limit",
+			"type": "integer" // TODO: constant and uniform int providers
+		}
+	}
+}

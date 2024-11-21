@@ -549,10 +549,13 @@
 			"$ref": "../../v1.21.40/components/transient.json"
 		},
 		"minecraft:looked_at": {
-			"$ref": "../../v1.21.40/components/looked_at.json"
+			"$ref": "../../v1.21.50/components/looked_at.json"
 		},
-		"minecraft:can_attack_ghast": {
-			"$ref": "../../v1.21.50/components/can_attack_ghast.json"
+		"minecraft:cannot_be_attacked": {
+			"$ref": "../../v1.21.50/components/cannot_be_attacked.json"
+		},
+		"minecraft:ignore_cannot_be_attacked": {
+			"$ref": "../../v1.21.50/components/ignore_cannot_be_attacked.json"
 		},
 
 		// Deprecated

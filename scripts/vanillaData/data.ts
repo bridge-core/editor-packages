@@ -67,6 +67,12 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 			content: 'minecraft:biome/components/minecraft:tags/tags',
 		},
 		{
+			id: 'camera_preset_identifiers',
+			path: 'cameras/presets',
+			packType: 'behaviorPack',
+			content: 'minecraft:camera_preset/identifier'
+		},
+		{
 			id: 'family',
 			path: 'entities',
 			packType: 'behaviorPack',
@@ -176,6 +182,42 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 			content: 'minecraft:feature_rules/description/identifier',
 		},
 		{
+			id: 'aim_assist_categories_identifiers',
+			path: 'aim_assist/categories',
+			packType: 'behaviorPack',
+			content: 'minecraft:aim_assist_categories/identifier'
+		},
+		{
+			id: 'aim_assist_preset_identifiers',
+			path: 'aim_assist/presets',
+			packType: 'behaviorPack',
+			content: 'minecraft:aim_assist_preset/identifier'
+		},
+		{
+			id: 'jigsaw_structure_identifiers',
+			path: 'worldgen/jigsaw_structures',
+			packType: 'behaviorPack',
+			content: 'minecraft:jigsaw/description/identifier'
+		},
+		{
+			id: 'template_pool_identifiers',
+			path: 'worldgen/template_pools',
+			packType: 'behaviorPack',
+			content: 'minecraft:template_pool/description/identifier'
+		},
+		{
+			id: 'processor_list_identifiers',
+			path: 'worldgen/processors',
+			packType: 'behaviorPack',
+			content: 'minecraft:processor_list/description/identifier'
+		},
+		{
+			id: 'structure_set_identifiers',
+			path: 'worldgen/structure_sets',
+			packType: 'behaviorPack',
+			content: 'minecraft:structure_set/description/identifier'
+		},
+		{
 			id: 'material',
 			path: 'entity',
 			packType: 'resourcePack',
@@ -216,9 +258,16 @@ export const exportRaw: ExportTarget[] = [
 			'unprefixed_entity_identifiers.json',
 			'particle_identifiers.json',
 			'biome_identifiers.json',
+			'camera_preset_identifiers.json',
 			'fog_identifiers.json',
 			'feature_identifiers.json',
 			'feature_rule_identifiers.json',
+			'aim_assist_categories_identifiers.json',
+			'aim_assist_preset_identifiers.json',
+			'jigsaw_structure_identifiers.json',
+			'template_pool_identifiers.json',
+			'processor_list_identifiers.json',
+			'structure_set_identifiers.json'
 		],
 		to: 'general/vanilla/identifiers.json',
 	},
