@@ -183,7 +183,14 @@
 										},
 										"scale": {
 											"title": "Scale",
-											"$ref": "#/definitions/frame"
+											"oneOf": [
+												{
+													"$ref": "#/definitions/frame"
+												},
+												{
+													"$ref": "../molang/embedded.json"
+												}
+											]
 										},
 										"position": {
 											"title": "Position",
