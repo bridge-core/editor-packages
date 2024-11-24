@@ -542,6 +542,9 @@
 		"minecraft:wind_burst": {
 			"$ref": "../../v1.20.70/components/wind_burst.json"
 		},
+		"minecraft:mob_effect_immunity": {
+			"$ref": "../../v1.21.0/components/mob_effect_immunity.json"
+		},
 		"minecraft:dimension_bound": {
 			"$ref": "../../v1.21.40/components/dimension_bound.json"
 		},

@@ -222,7 +222,7 @@
 			"$ref": "../../v1.16.0/components/experience_reward.json"
 		},
 		"minecraft:explode": {
-			"$ref": "../../v1.21.40/components/explode.json"
+			"$ref": "../../v1.16.0/components/explode.json"
 		},
 		"minecraft:fire_immune": {
 			"$ref": "../../v1.16.0/components/fire_immune.json"
@@ -258,7 +258,7 @@
 			"$ref": "../../v1.16.0/components/hide.json"
 		},
 		"minecraft:home": {
-			"$ref": "../../v1.21.40/components/home.json"
+			"$ref": "../../v1.16.0/components/home.json"
 		},
 		"minecraft:horse.jump_strength": {
 			"$ref": "../../v1.16.0/components/horse.jump_strength.json"
@@ -334,6 +334,9 @@
 		},
 		"minecraft:leashable": {
 			"$ref": "../../v1.16.0/components/leashable.json"
+		},
+		"minecraft:lookat": {
+			"$ref": "../../v1.16.0/components/lookat.json"
 		},
 		"minecraft:loot": {
 			"$ref": "../../v1.16.0/components/loot.json"
@@ -441,7 +444,7 @@
 			"$ref": "../../v1.16.0/components/preferred_path.json"
 		},
 		"minecraft:projectile": {
-			"$ref": "../../v1.21.10/components/projectile.json"
+			"$ref": "../../v1.16.0/components/projectile.json"
 		},
 		"minecraft:raid_trigger": {
 			"$ref": "../../v1.16.0/components/raid_trigger.json"
@@ -545,21 +548,6 @@
 		"minecraft:mob_effect_immunity": {
 			"$ref": "../../v1.21.0/components/mob_effect_immunity.json"
 		},
-		"minecraft:dimension_bound": {
-			"$ref": "../../v1.21.40/components/dimension_bound.json"
-		},
-		"minecraft:transient": {
-			"$ref": "../../v1.21.40/components/transient.json"
-		},
-		"minecraft:looked_at": {
-			"$ref": "../../v1.21.50/components/looked_at.json"
-		},
-		"minecraft:cannot_be_attacked": {
-			"$ref": "../../v1.21.50/components/cannot_be_attacked.json"
-		},
-		"minecraft:ignore_cannot_be_attacked": {
-			"$ref": "../../v1.21.50/components/ignore_cannot_be_attacked.json"
-		},
 
 		// Deprecated
 		"minecraft:scaffolding_climber": {
@@ -567,9 +555,6 @@
 		},
 		"minecraft:foot_size": {
 			"$ref": "../../v1.16.0/components/foot_size.json"
-		},
-		"minecraft:lookat": {
-			"$ref": "../../v1.21.40/components/lookat.json"
 		}
 	}
 }
