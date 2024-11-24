@@ -78,6 +78,54 @@
 					}
 				}
 			]
+		},
+		"particle_effect": {
+			"additionalProperties": false,
+			"required": ["effect"],
+			"type": "object",
+			"properties": {
+				"effect": {
+					"title": "Effect",
+					"anyOf": [
+						{
+							"$ref": "../clientEntity/dynamic/particleReferenceEnum.json"
+						},
+						{
+							"$ref": "../attachable/dynamic/particleReferenceEnum.json"
+						}
+					]
+				},
+				"locator": {
+					"title": "Locator",
+					"$ref": "../geometry/dynamic/locatorEnum.json"
+				},
+				"pre_effect_script": {
+					"title": "Pre Effect Script",
+					"$ref": "../molang/embedded.json"
+				},
+				"bind_to_actor": {
+					"title": "Bind To Actor",
+					"type": "boolean"
+				}
+			}
+		},
+		"sound_effect": {
+			"additionalProperties": false,
+			"required": ["effect"],
+			"type": "object",
+			"properties": {
+				"effect": {
+					"title": "Effect",
+					"anyOf": [
+						{
+							"$ref": "../clientEntity/dynamic/soundEffectReferenceEnum.json"
+						},
+						{
+							"$ref": "../attachable/dynamic/soundEffectReferenceEnum.json"
+						}
+					]
+				}
+			}
 		}
 	},
 	"type": "object",
@@ -135,7 +183,14 @@
 										},
 										"scale": {
 											"title": "Scale",
-											"$ref": "#/definitions/frame"
+											"oneOf": [
+												{
+													"$ref": "#/definitions/frame"
+												},
+												{
+													"$ref": "../molang/embedded.json"
+												}
+											]
 										},
 										"position": {
 											"title": "Position",
@@ -152,34 +207,17 @@
 							},
 							"patternProperties": {
 								"^\\d+(\\.\\d+)?$": {
-									"additionalProperties": false,
-									"required": ["effect"],
-									"type": "object",
-									"properties": {
-										"effect": {
-											"title": "Effect",
-											"anyOf": [
-												{
-													"$ref": "../clientEntity/dynamic/particleReferenceEnum.json"
-												},
-												{
-													"$ref": "../attachable/dynamic/particleReferenceEnum.json"
-												}
-											]
+									"oneOf": [
+										{
+											"$ref": "#/definitions/particle_effect"
 										},
-										"locator": {
-											"title": "Locator",
-											"$ref": "../geometry/dynamic/locatorEnum.json"
-										},
-										"pre_effect_script": {
-											"title": "Pre Effect Script",
-											"$ref": "../molang/embedded.json"
-										},
-										"bind_to_actor": {
-											"title": "Bind To Actor",
-											"type": "boolean"
+										{
+											"type": "array",
+											"items": {
+												"$ref": "#/definitions/particle_effect"
+											}
 										}
-									}
+									]
 								}
 							}
 						},
@@ -190,20 +228,17 @@
 							},
 							"patternProperties": {
 								"^\\d+(\\.\\d+)?$": {
-									"type": "object",
-									"properties": {
-										"effect": {
-											"title": "Effect",
-											"anyOf": [
-												{
-													"$ref": "../clientEntity/dynamic/soundEffectReferenceEnum.json"
-												},
-												{
-													"$ref": "../attachable/dynamic/soundEffectReferenceEnum.json"
-												}
-											]
+									"oneOf": [
+										{
+											"$ref": "#/definitions/sound_effect"
+										},
+										{
+											"type": "array",
+											"items": {
+												"$ref": "#/definitions/sound_effect"
+											}
 										}
-									}
+									]
 								}
 							}
 						},
