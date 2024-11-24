@@ -131,6 +131,7 @@
 						"has_tag",
 						"has_target",
 						"has_trade_supply",
+						"home_distance", // 1.21.60+
 						"hourly_clock_time",
 						"inactivity_timer",
 						"int_property", // v1.19.40+
@@ -147,6 +148,7 @@
 						"is_baby", // v1.19.30+
 						"is_biome",
 						"is_block",
+						"is_bound_to_creaking_heart", // v1.21.60+
 						"is_brightness",
 						"is_climbing",
 						"is_color",
@@ -571,6 +573,23 @@
 			"if": {
 				"properties": {
 					"test": {
+						"const": "home_distance"
+					}
+				}
+			},
+			"then": {
+				"properties": {
+					"value": {
+						"description": "Tests the distance between the subject and its home. Returns false if the subject has no home or if their home is in a different dimension.",
+						"type": "number"
+					}
+				}
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"test": {
 						"const": "hourly_clock_time"
 					}
 				}
@@ -705,6 +724,23 @@
 					"value": {
 						"description": "Returns true when the block has the given name.",
 						"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+					}
+				}
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"test": {
+						"const": "is_bound_to_creaking_heart"
+					}
+				}
+			},
+			"then": {
+				"properties": {
+					"value": {
+						"description": "Tests that the Creaking Heart that spawned the subject Creaking still exists.",
+						"type": "boolean"
 					}
 				}
 			}
