@@ -81,7 +81,7 @@
 			"$ref": "../../v1.21.60/components/breedable.json"
 		},
 		"minecraft:damage_sensor": {
-			"$ref": "../../v1.16.200/components/damage_sensor.json"
+			"$ref": "../../v1.21.40/components/damage_sensor.json"
 		},
 		"minecraft:navigation.climb": {
 			"$ref": "../../v1.16.200/components/navigation.climb.json"
