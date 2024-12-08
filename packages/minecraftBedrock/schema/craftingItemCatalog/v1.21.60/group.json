@@ -1,0 +1,44 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"group_identifier": {
+			"title": "Group Identifier",
+			"type": "object",
+			"properties": {
+				"icon": {
+					"title": "Icon",
+					"type": "string",
+					"anyOf": [
+						{
+							"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
+						},
+						{
+							"$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
+						}
+					]
+				},
+				"name": {
+					"title": "Name",
+					"$ref": "../../general/reference/prefixedItemGroup.json"
+				}
+			}
+		},
+		"items": {
+			"title": "Items",
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
+					},
+					{
+						"$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
+					}
+				]
+			}
+		}
+	},
+	"additionalProperties": false
+}

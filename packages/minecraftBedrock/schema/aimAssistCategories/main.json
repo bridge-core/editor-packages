@@ -18,6 +18,7 @@
 			}
 		},
 		{
+			// REMINDER: Remove and merge with latest once out of experimental and is in a stable release.
 			"if": {
 				"properties": {
 					"format_version": {
@@ -27,6 +28,18 @@
 			},
 			"then": {
 				"$ref": "./v1.21.50/main.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["", "1.21.60"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.21.60/main.json"
 			}
 		}
 	]

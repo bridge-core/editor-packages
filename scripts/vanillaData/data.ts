@@ -225,9 +225,17 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 		},
 		{
 			id: 'itemGroup',
-			packType: 'resourcePack',
-			path: 'texts/en_US.lang',
-			content: '^itemGroup\\.name\\.',
+			packType: 'behaviorPack',
+			path: 'item_catalog/crafting_item_catalog.json',
+			content: 'minecraft:crafting_items_catalog/categories/*/groups/*/group_identifier/name',
+			map: (val: string) => val.replace('minecraft:', ''),
+			filter: (val: string) => !['undefined_test_only'].includes(val)
+		},
+		{
+			id: 'prefixedItemGroup',
+			packType: 'behaviorPack',
+			path: 'item_catalog/crafting_item_catalog.json',
+			content: 'minecraft:crafting_items_catalog/categories/*/groups/*/group_identifier/name'
 		},
 		{
 			id: 'actionText',
@@ -339,6 +347,10 @@ export const exportRaw: ExportTarget[] = [
 	{
 		from: ['itemGroup.json'],
 		to: 'general/vanilla/itemGroup.json',
+	},
+	{
+		from: ['prefixedItemGroup.json'],
+		to: 'general/vanilla/prefixedItemGroup.json'
 	},
 	{
 		from: ['blockSound.json'],

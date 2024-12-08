@@ -560,6 +560,9 @@
 		"minecraft:ignore_cannot_be_attacked": {
 			"$ref": "../../v1.21.50/components/ignore_cannot_be_attacked.json"
 		},
+		"minecraft:renders_when_invisible": {
+			"$ref": "../../v1.21.60/components/renders_when_invisible.json"
+		},
 
 		// Deprecated
 		"minecraft:scaffolding_climber": {

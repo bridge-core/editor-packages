@@ -6722,7 +6722,6 @@
 				"minecraft:birch_tree_feature",
 				"minecraft:birch_tree_with_beehive_feature",
 				"minecraft:birch_tree_with_optional_beehive_feature",
-				"minecraft:brown_mushroom_feature",
 				"minecraft:coal_ore_feature",
 				"minecraft:cocoa_age_0_feature",
 				"minecraft:cocoa_age_1_feature",
@@ -6800,7 +6799,6 @@
 				"minecraft:optional_undecorated_jungle_tree_with_vines_feature",
 				"minecraft:optional_upper_cocoa_feature",
 				"minecraft:pine_tree_feature",
-				"minecraft:red_mushroom_feature",
 				"minecraft:redstone_ore_feature",
 				"minecraft:roofed_tree_feature",
 				"minecraft:roofed_tree_with_vines_feature",
@@ -6809,6 +6807,7 @@
 				"minecraft:scatter_jungle_tree_cocoa_feature",
 				"minecraft:scatter_jungle_tree_lower_cocoa_feature",
 				"minecraft:scatter_jungle_tree_upper_cocoa_feature",
+				"minecraft:scatter_sweet_berry_bush_feature",
 				"minecraft:scatter_tall_grass_around_forest_foliage_feature",
 				"minecraft:scatter_tall_grass_around_tree_feature",
 				"minecraft:scatter_tall_grass_feature",
@@ -6974,9 +6973,7 @@
 		},
 		"aim_assist_categories_identifiers": {
 			"type": "string",
-			"enum": [
-				"minecraft:aim_assist_categories_1"
-			]
+			"enum": []
 		},
 		"aim_assist_preset_identifiers": {
 			"type": "string",

@@ -1,0 +1,17 @@
+{
+	"id": "craftingItemCatalog",
+	"icon": "mdi-table-search",
+	"detect": {
+		"packType": "behaviorPack",
+		"scope": "item_catalog/crafting_item_catalog.json",
+		"matcher": "item_catalog/crafting_item_catalog.json",
+		"fileExtensions": [".json"]
+	},
+	"schema": "file:///data/packages/minecraftBedrock/schema/craftingItemCatalog/main.json",
+	"lightningCache": "craftingItemCatalog.json",
+
+	"highlighterConfiguration": {
+		"typeIdentifiers": ["format_version"],
+		"definitions": ["categories"]
+	}
+}
