@@ -27,10 +27,7 @@
 				},
 				"conditional_values": {
 					"title": "Conditional Values",
-					"type": "array",
-					"items": {
-						"$ref": "../../general/v1.16.0/filter.json"
-					}
+					"$ref": "../../general/v1.16.0/filter.json"
 				}
 			}
 		},
