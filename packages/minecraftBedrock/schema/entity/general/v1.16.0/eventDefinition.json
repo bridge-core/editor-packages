@@ -5,19 +5,7 @@
 		"filters": {
 			"title": "Filters",
 			"description": "A filter allows you to set a condition for the event to trigger.",
-			"anyOf": [
-				{
-					"type": "object",
-					"$ref": "./filter.json"
-				},
-				{
-					"type": "array",
-					"items": {
-						"type": "object",
-						"$ref": "./filter.json"
-					}
-				}
-			]
+			"$ref": "./filter.json"
 		},
 		"target": {
 			"title": "Target",
