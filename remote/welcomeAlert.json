@@ -5,5 +5,5 @@
     "title": "Holiday Creator Features have been removed",
     "description": "The Holiday Creator Features (HCF) experiment has been removed in 1.21.20, Add-Ons using this experiment will no longer function. HCF presets and schemas will be removed from bridge.",
     "experimentRequired": "holidayCreatorFeatures",
-    "isVisible": true
+    "isVisible": false
 }
