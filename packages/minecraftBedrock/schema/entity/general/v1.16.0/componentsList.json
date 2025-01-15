@@ -242,6 +242,7 @@
 		"minecraft:behavior.move_to_land",
 		"minecraft.behavior.move_to_poi",
 		"minecraft:behavior.move_to_lava",
+		"minecraft:behavior.move_to_liquid",
 		"minecraft:behavior.move_to_random_block",
 		"minecraft:behavior.move_to_village",
 		"minecraft:behavior.move_to_water",
