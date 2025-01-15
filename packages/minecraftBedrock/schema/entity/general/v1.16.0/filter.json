@@ -175,6 +175,7 @@
 								"is_skin_id",
 								"is_sitting", // v1.20.80+
 								"is_sleeping",
+								"is_sneak_held", // v1.20.10+
 								"is_sneaking",
 								"is_snow_covered",
 								"is_sprinting", // v1.20.60+
@@ -1169,6 +1170,23 @@
 						"properties": {
 							"value": {
 								"description": "Tests whether the Subject is sleeping.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_sneak_held"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true if the subject entity has the sneak input held.",
 								"type": "boolean"
 							}
 						}
