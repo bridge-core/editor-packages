@@ -52,19 +52,7 @@
 		"filters": {
 			"title": "Filters",
 			"description": "The list of other triggers that are required for the mob to activate play dead.",
-			"anyOf": [
-				{
-					"type": "object",
-					"$ref": "../../general/v1.16.0/filter.json"
-				},
-				{
-					"type": "array",
-					"items": {
-						"type": "object",
-						"$ref": "../../general/v1.16.0/filter.json"
-					}
-				}
-			]
+			"$ref": "../../general/v1.16.0/filter.json"
 		}
 	}
 }

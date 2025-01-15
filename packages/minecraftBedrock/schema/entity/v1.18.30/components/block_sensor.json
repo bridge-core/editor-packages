@@ -32,11 +32,7 @@
 		},
 		"sources": {
 			"description": "List of sources that break the block to listen for. If none are specified, all block breaks will be detected.",
-			"type": "array",
-			"items": {
-				"type": "object",
-				"$ref": "../../general/v1.16.0/filter.json"
-			}
+			"$ref": "../../general/v1.16.0/filter.json"
 		}
 	}
 }

@@ -15,8 +15,30 @@
 		"damage_sources": {
 			"title": "Damage Sources",
 			"description": "The list of Entity Damage Sources that will cause this mob to panic.",
-			"$ref": "../../../general/vanilla/damageType.json",
-			"default": "all"
+			"type": "array",
+			"items": {
+				"$ref": "../../../general/vanilla/damageType.json",
+				"default": [
+					"campfire",
+					"fire",
+					"fire_tick",
+					"freezing",
+					"lava",
+					"lightning",
+					"magma",
+					"soul_campfire",
+					"temperature",
+					"entity_attack",
+					"entity_explosion",
+					"fireworks",
+					"magic",
+					"projectile",
+					"ram_attack",
+					"sonic_boom",
+					"wither",
+					"mace_smash"
+				]
+			}
 		},
 		"ignore_mob_damage": {
 			"title": "Ignore Mob Damage",
