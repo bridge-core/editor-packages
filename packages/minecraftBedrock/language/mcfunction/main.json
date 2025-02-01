@@ -6997,10 +6997,6 @@
 			]
 		},
 		{
-			"requires": {
-				"experimentalGameplay": ["enableGameTestFramework"],
-				"targetVersion": [">=", "1.19.60"]
-			},
 			"commands": [
 				{
 					"commandName": "scriptevent",
@@ -8876,7 +8872,7 @@
 		{
 			"requires": {
 				"matchAll": false,
-				"experimentalGameplay": ["upcomingCreatorFeatures"],
+				"experimentalGameplay": ["upcomingCreatorFeatures"], // TODO: Remove these requirements once 1.21.60 is stable.
 				"targetVersion": [">=", "1.21.60"]
 			},
 			"commands": [
