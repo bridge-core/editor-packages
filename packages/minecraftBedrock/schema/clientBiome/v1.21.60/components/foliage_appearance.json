@@ -1,0 +1,36 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Grass Appearance",
+	"description": "Set the foliage color or color map used during rendering. Biomes without this component will have default foliage appearance.",
+	"type": "object",
+	"properties": {
+		"color": {
+			"title": "Color",
+			"description": "RGB color of foliage, or a foliage color map.",
+			"anyOf": [
+				{
+					"$ref": "../../../general/hexColor.json"
+				},
+				{
+					"type": "object",
+					"properties": {
+						"color_map": {
+							"title": "Color Map",
+							"description": "Color map from textures/colormap to determine color of foliage.",
+							"type": "string",
+							"enum": [
+								"foliage",
+								"birch",
+								"evergreen",
+								"mangrove_swamp_foliage",
+								"swamp_foliage"
+							]
+						}
+					},
+					"additionalProperties": false
+				}
+			]
+		}
+	},
+	"additionalProperties": false
+}
