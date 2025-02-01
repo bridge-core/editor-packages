@@ -63,6 +63,13 @@
 			"description": "Defines the event to trigger when an entity is detected looking at the owner entity.",
 			"$ref": "../../general/v1.16.0/eventDefinition.json"
 		},
+		"min_looked_at_duration": {
+			"title": "Minimum Looked at Duration",
+			"description": "Defines the minimum, continuous time the owner entity has to be looked at before being considered as such. Defaults to 0 if not explicitly specified.",
+			"type": "number",
+			"default": 0.0,
+			"minimum": 0.0
+		},
 		"not_looked_at_event": {
 			"title": "Event: Not Looked At",
 			"description": "Defines the event to trigger when no entity is found looking at the owner entity.",
