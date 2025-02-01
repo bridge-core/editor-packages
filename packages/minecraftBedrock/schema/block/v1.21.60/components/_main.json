@@ -46,6 +46,9 @@
 				"minecraft:light_emission": {
 					"$ref": "../../v1.19.20/components/light_emission.json"
 				},
+				"minecraft:liquid_detection": {
+					"$ref": "../../v1.21.60/components/liquid_detection.json"
+				},
 				"minecraft:map_color": {
 					"$ref": "../../v1.16.0/components/map_color.json"
 				},
@@ -66,16 +69,6 @@
 				},
 				"minecraft:transformation": {
 					"$ref": "../../v1.19.80/components/transformation.json"
-				}
-			}
-		},
-		{
-			"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
-			"then": {
-				"properties": {
-					"minecraft:liquid_detection": {
-						"$ref": "../../v1.21.50/components/liquid_detection.json"
-					}
 				}
 			}
 		},
