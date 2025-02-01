@@ -1,0 +1,16 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Creature Spawn Probability",
+	"description": "Probability that creatures will spawn within the biome when a chunk is generated.",
+	"type": "object",
+	"properties": {
+		"probability": {
+			"title": "Probability",
+			"description": "Probability between 0.0 and 0.75 of creatures spawning within the biome on chunk generation.",
+			"type": "number",
+			"minimum": 0.0,
+			"maximum": 0.75
+		}
+	},
+	"additionalProperties": false
+}
