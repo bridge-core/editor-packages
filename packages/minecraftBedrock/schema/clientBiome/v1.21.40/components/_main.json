@@ -2,12 +2,6 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"type": "object",
 	"properties": {
-		"minecraft:ambient_sounds": {
-			"$ref": "./ambient_sounds.json"
-		},
-		"minecraft:biome_music": {
-			"$ref": "./biome_music.json"
-		},
 		"minecraft:fog_appearance": {
 			"$ref": "./fog_appearance.json"
 		},

@@ -1,0 +1,21 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Water Appearance",
+	"description": "Set the water surface color used during rendering. Biomes without this component will have default water surface color behavior.",
+	"type": "object",
+	"properties": {
+		"surface_color": {
+			"title": "Surface Color",
+			"description": "RGB color of the water surface.",
+			"$ref": "../../../general/hexColor.json"
+		},
+		"surface_opacity": {
+			"title": "Surface Opacity",
+			"description": "Opacity of the water surface.",
+			"type": "number",
+			"minimum": 0.0,
+			"maximum": 1.0
+		}
+	},
+	"additionalProperties": false
+}
