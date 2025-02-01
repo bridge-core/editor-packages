@@ -251,6 +251,42 @@
 			"description": "If a color mutation will not happen, the baby will get a combination of the parents' colors if the colors are compatible. Color combinations follow the rules of dye item combinations. If the colors are not compatible the baby will get one of the parents colors chosen randomly.",
 			"type": "boolean",
 			"default": true
+		},
+		"property_inheritance": {
+			"title": "Property Inheritance",
+			"description": "List of entity properties that should be inherited from the parent entities and potentially mutated.",
+			"type": "object",
+			"additionalProperties": {
+				"type": "object",
+				"properties": {
+					"mutation_chance": {
+						"title": "Mutation Chance",
+						"description": "The chance that the baby's property will deviate from its parents.",
+						"type": "number",
+						"minimum": 0.0,
+						"maximum": 1.0
+					},
+					"mutation_values": {
+						"title": "Mutation Values",
+						"description": "A list of values to select from if mutating.",
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "number"
+							},
+							{
+								"type": "boolean"
+							}
+						]
+					}
+				},
+				"additionalProperties": false
+			},
+			"propertyNames": {
+				"$ref": "../../dynamic/currentContext/propertyEnum.json"
+			}
 		}
 	}
 }
