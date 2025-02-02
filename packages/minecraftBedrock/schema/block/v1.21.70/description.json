@@ -1,0 +1,75 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"description": "Set required block information",
+	"type": "object",
+	"properties": {
+		"identifier": {
+			"title": "Identifier",
+			"$ref": "../../general/reference/prefixedFileIdentifier.json",
+			"description": "The identifier for this item. The name must include a namespace and must not use the Minecraft namespace unless overriding a Vanilla item."
+		},
+		"is_experimental": {
+			"title": "Is Experimental",
+			"type": "boolean",
+			"description": "If this item is experimental, it will only be registered if the world is marked as experimental."
+		},
+		"properties": {
+			"title": "Properties",
+			"description": "Deprecated in favor of states (format_version: v1.20.10).",
+			"doNotSuggest": true
+		},
+		"states": {
+			"title": "States",
+			"description": "Define block states and their possible values",
+			"anyOf": [
+				{
+					"$ref": "../../project/projectPrefix.json"
+				},
+				{
+					"patternProperties": {
+						".*": {
+							"type": "array",
+							"items": {
+								"type": ["boolean", "integer", "string"]
+							}
+						}
+					}
+				}
+			]
+		},
+		"menu_category": {
+			"title": "Menu Category",
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"group": {
+					"title": "Creative Catgeory",
+					"type": "string",
+					"anyOf": [
+						{
+							"$ref": "../../general/creativeCategory.json"
+						},
+						{
+							"$ref": "../../general/reference/itemGroup.json"
+						}
+					]
+				},
+				"category": {
+					"title": "Category",
+					"type": "string",
+					"description": "Determines which category this block will be placed under in the inventory and crafting table container screens. Options are 'construction', 'nature', 'equipment', 'items', and 'none'. If omitted or 'none' is specified, the block will not appear in the inventory or crafting table container screens.",
+					"$ref": "../../general/creativeCategory.json"
+				},
+				"is_hidden_in_commands": {
+					"title": "Is Hidden In Commands",
+					"type": "boolean"
+				}
+			}
+		},
+		"traits": {
+			"title": "Block Traits",
+			"description": "Block traits are designed to be a shortcut for creators to use Vanilla block states without needing to define and manage a series of events or triggers on custom blocks.",
+			"$ref": "./blockTraits.json"
+		}
+	}
+}
