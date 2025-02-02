@@ -13,7 +13,7 @@
 	},
 	{
 		"icon": "mdi-camera-control",
-		"id": "focusTargetCamera"
+		"id": "focusTargetCamera" // TODO: remove once 1.21.60 goes into stable
 	},
 	{
 		"icon": "mdi-puzzle",
