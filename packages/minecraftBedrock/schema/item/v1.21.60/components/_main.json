@@ -16,6 +16,9 @@
 				"minecraft:can_destroy_in_creative": {
 					"$ref": "../../v1.20.10/components/can_destroy_in_creative.json"
 				},
+				"minecraft:compostable": {
+					"$ref": "../../v1.21.60/components/compostable.json"
+				},
 				"minecraft:cooldown": {
 					"$ref": "../../v1.20.10/components/cooldown.json"
 				},
@@ -120,17 +123,6 @@
 				},
 				"minecraft:wearable": {
 					"$ref": "../../v1.20.20/components/wearable.json"
-				}
-			}
-		},
-		{
-			// Experimental
-			"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
-			"then": {
-				"properties": {
-					"minecraft:compostable": {
-						"$ref": "../../v1.21.50/components/compostable.json"
-					}
 				}
 			}
 		},
