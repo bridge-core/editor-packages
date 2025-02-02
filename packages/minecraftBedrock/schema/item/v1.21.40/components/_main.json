@@ -8,7 +8,14 @@
 					"$ref": "../../v1.20.20/components/allow_off_hand.json"
 				},
 				"minecraft:block_placer": {
-					"$ref": "../../v1.20.10/components/block_placer.json"
+					// TODO: Remove once 1.21.60 goes into stable
+					"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
+					"then": {
+						"$ref": "../../v1.21.40/components/block_placer.json"
+					},
+					"else": {
+						"$ref": "../../v1.20.10/components/block_placer.json"
+					}
 				},
 				"minecraft:bundle_interaction": {
 					"$ref": "../../v1.21.30/components/bundle_interaction.json"
