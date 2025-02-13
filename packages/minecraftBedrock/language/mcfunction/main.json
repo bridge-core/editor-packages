@@ -4432,45 +4432,6 @@
 							"isOptional": true
 						}
 					]
-				},
-				{
-					"commandName": "placefeature",
-					"description": "Places a feature or feature rule in the given chunk.",
-					"arguments": [
-						{
-							"argumentName": "featureName",
-							"description": "Feature to be placed.",
-							"type": "string",
-							"additionalData": {
-								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/feature_identifiers"
-							}
-						},
-						{
-							"argumentName": "position",
-							"description": "Position to place the feature at.",
-							"type": "$coordinates",
-							"isOptional": true
-						}
-					]
-				},
-				{
-					"commandName": "placefeature",
-					"description": "Places a feature or feature rule in the given chunk.",
-					"arguments": [
-						{
-							"argumentName": "featureRule",
-							"type": "string",
-							"additionalData": {
-								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/feature_rule_identifiers"
-							}
-						},
-						{
-							"argumentName": "position",
-							"description": "Position to place the feature at.",
-							"type": "$coordinates",
-							"isOptional": true
-						}
-					]
 				}
 			]
 		},
@@ -7509,6 +7470,7 @@
 				}
 			]
 		},
+		// place command
 		{
 			"requires": {
 				"experimentalGameplay": ["dataDrivenJigsawStructures"]
@@ -7533,7 +7495,7 @@
 						},
 						{
 							"argumentName": "pos",
-							"type": "coordinate",
+							"type": "$coordinatse",
 							"isOptional": true
 						},
 						{
@@ -7561,7 +7523,7 @@
 						},
 						{
 							"argumentName": "pos",
-							"type": "coordinate",
+							"type": "$coordinates",
 							"isOptional": true
 						},
 						{
@@ -7572,6 +7534,49 @@
 						{
 							"argumentName": "keepJigsaws",
 							"type": "boolean",
+							"isOptional": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"requires": {
+				"matchAll": false,
+				"experimentalGameplay": ["upcomingCreatorFeatures"],
+				"targetVersion": [">=", "1.21.70"]
+			},
+			"commands": [
+				{
+					"commandName": "place",
+					"arguments": [
+						{
+							"argumentName": "feature",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/jfeature_identifiers"
+							}
+						},
+						{
+							"argumentName": "position",
+							"type": "$coordinates",
+							"isOptional": true
+						}
+					]
+				},
+				{
+					"commandName": "place",
+					"arguments": [
+						{
+							"argumentName": "featurerule",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/feature_rule_identifiers"
+							}
+						},
+						{
+							"argumentName": "position",
+							"type": "$coordinates",
 							"isOptional": true
 						}
 					]
@@ -8792,9 +8797,6 @@
 		},
 		//#endregion
 		{
-			"requires": {
-				"experimentalGameplay": ["focusTargetCamera"]
-			},
 			"commands": [
 				{
 					"commandName": "camera",
@@ -8870,11 +8872,6 @@
 			]
 		},
 		{
-			"requires": {
-				"matchAll": false,
-				"experimentalGameplay": ["upcomingCreatorFeatures"], // TODO: Remove these requirements once 1.21.60 is stable.
-				"targetVersion": [">=", "1.21.60"]
-			},
 			"commands": [
 				{
 					"commandName": "loot",

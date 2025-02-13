@@ -20,7 +20,7 @@
 		// @minecraft/server
 		{
 			"moduleName": "@minecraft/server",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@2.0.0-beta.1.21.70-preview.20/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@2.0.0-beta.1.21.70-preview.23/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
@@ -34,12 +34,12 @@
 		},
 		{
 			"moduleName": "@minecraft/server",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@1.18.0-rc.1.21.70-preview.20/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@1.18.0-rc.1.21.70-preview.23/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
 						"module_name": "@minecraft/server",
-						"version": "1.18.0-beta"
+						"version": "1.18.0"
 					}
 				],
 				"targetVersion": [">=", "1.21.70"]
@@ -47,7 +47,7 @@
 		},
 		{
 			"moduleName": "@minecraft/server",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@1.18.0-beta.1.21.60-preview.28/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@1.18.0-beta.1.21.60-stable/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
@@ -61,30 +61,14 @@
 		},
 		{
 			"moduleName": "@minecraft/server",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@1.17.0-rc.1.21.60-preview.28/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@1.17.0/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
 						"module_name": "@minecraft/server",
 						"version": "1.17.0"
 					}
-				],
-				"experimentalGameplay": ["enableGameTestFramework"],
-				"targetVersion": [">=", "1.21.60"]
-			}
-		},
-		{
-			"moduleName": "@minecraft/server",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@1.17.0-beta.1.21.50-stable/index.d.ts",
-			"requires": {
-				"dependencies": [
-					{
-						"module_name": "@minecraft/server",
-						"version": "1.17.0-beta"
-					}
-				],
-				"experimentalGameplay": ["enableGameTestFramework"],
-				"targetVersion": [">=", "1.21.50"]
+				]
 			}
 		},
 		{
@@ -295,7 +279,7 @@
 		// @minecraft/server-gametest
 		{
 			"moduleName": "@minecraft/server-gametest",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-gametest@1.0.0-beta.1.21.70-preview.20/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-gametest@1.0.0-beta.1.21.70-preview.23/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
@@ -309,7 +293,7 @@
 		},
 		{
 			"moduleName": "@minecraft/server-gametest",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-gametest@1.0.0-beta.1.21.50-stable/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-gametest@1.0.0-beta.1.21.60-stable/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
@@ -323,7 +307,7 @@
 		// @minecraft/server-ui
 		{
 			"moduleName": "@minecraft/server-ui",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-ui@2.0.0-beta.1.21.70-preview.20/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-ui@2.0.0-beta.1.21.70-preview.23/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
@@ -337,7 +321,7 @@
 		},
 		{
 			"moduleName": "@minecraft/server-ui",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-ui@1.4.0-beta.1.21.60-preview.28/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-ui@1.4.0-beta.1.21.60-stable.28/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
@@ -400,7 +384,7 @@
 		// @server-admin
 		{
 			"moduleName": "@minecraft/server-admin",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-admin@1.0.0-beta.1.21.70-preview.20/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-admin@1.0.0-beta.1.21.70-preview.23/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
@@ -415,7 +399,7 @@
 		// @server-net
 		{
 			"moduleName": "@minecraft/server-net",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-net@1.0.0-beta.1.21.70-preview.20/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-net@1.0.0-beta.1.21.70-preview.23/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
@@ -429,7 +413,7 @@
 		},
 		{
 			"moduleName": "@minecraft/server-net",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-net@1.0.0-beta.1.21.50-stable/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-net@1.0.0-beta.1.21.60-stable/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
@@ -444,7 +428,7 @@
 		// @server-editor
 		{
 			"moduleName": "@minecraft/server-editor",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-editor@0.1.0-beta.1.21.70-preview.20/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-editor@0.1.0-beta.1.21.70-preview.23/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
@@ -458,7 +442,7 @@
 		},
 		{
 			"moduleName": "@minecraft/server-editor",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-editor@0.1.0-beta.1.21.50-stable/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-editor@0.1.0-beta.1.21.60-stable/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
@@ -473,7 +457,7 @@
 		// @debug-utilities
 		{
 			"moduleName": "@minecraft/debug-utilities",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/debug-utilities@1.0.0-beta.1.21.70-preview.20/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/debug-utilities@1.0.0-beta.1.21.70-preview.23/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
@@ -487,7 +471,7 @@
 		},
 		{
 			"moduleName": "@minecraft/debug-utilities",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/debug-utilities@1.0.0-beta.1.21.50-stable/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/debug-utilities@1.0.0-beta.1.21.60-stable/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
