@@ -10,7 +10,7 @@
 				"particle": {
 					"title": "Particle",
 					"description": "Specifies the type of particle to emit.",
-					"$ref": "../../../general/reference/identifers.json#/definitions/particle_identifiers"
+					"$ref": "../../general/reference/identifiers.json#/definitions/particle_identifiers"
 				}
 			},
 			"additionalProperties": false

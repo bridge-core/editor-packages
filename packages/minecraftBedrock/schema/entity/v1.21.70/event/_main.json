@@ -3,34 +3,40 @@
 	"type": "object",
 	"allOf": [
 		{
-			"$ref": "./add.json"
+			"$ref": "../../event/add.json"
 		},
 		{
-			"$ref": "./emit_particle.json"
+			"$ref": "../../event/emit_particle.json"
 		},
 		{
-			"$ref": "./emit_vibration.json"
+			"$ref": "../../event/emit_vibration.json"
 		},
 		{
-			"$ref": "./execute_event_on_home_block.json"
+			"$ref": "../../event/execute_event_on_home_block.json"
 		},
 		{
-			"$ref": "./play_sound.json"
+			"$ref": "../../event/play_sound.json"
 		},
 		{
-			"$ref": "./queue_command.json"
+			"$ref": "../../event/queue_command.json"
 		},
 		{
-			"$ref": "./remove.json"
+			"$ref": "../../event/remove.json"
 		},
 		{
-			"$ref": "./reset_target.json"
+			"$ref": "../../event/reset_target.json"
 		},
 		{
-			"$ref": "./set_property.json"
+			"$ref": "./set_home_position.json"
 		},
 		{
-			"$ref": "./trigger.json"
+			"$ref": "../../event/set_property.json"
+		},
+		{
+			"$ref": "./stop_movement.json"
+		},
+		{
+			"$ref": "../../event/trigger.json"
 		},
 		{
 			"type": "object",
@@ -49,7 +55,7 @@
 									},
 									"filters": {
 										"title": "Filters",
-										"$ref": "../general/v1.16.0/filter.json"
+										"$ref": "../../general/v1.16.0/filter.json"
 									}
 								}
 							},
@@ -69,7 +75,7 @@
 								"properties": {
 									"filters": {
 										"title": "Filters",
-										"$ref": "../general/v1.16.0/filter.json"
+										"$ref": "../../general/v1.16.0/filter.json"
 									}
 								}
 							},

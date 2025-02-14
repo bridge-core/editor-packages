@@ -35,7 +35,7 @@
 					"$ref": "../../v1.20.60/components/geometry.json"
 				},
 				"minecraft:item_visual": {
-					"$ref": "../../v1.21.60/components/item_visual.json"
+					"$ref": "../../v1.21.70/components/item_visual.json"
 				},
 				"minecraft:loot": {
 					"$ref": "../../v1.16.0/components/loot.json"
@@ -53,7 +53,13 @@
 					"$ref": "../../v1.21.70/components/map_color.json"
 				},
 				"minecraft:material_instances": {
-					"$ref": "../../v1.21.60/components/material_instances.json"
+					"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
+					"then": {
+						"$ref": "../../v1.21.70/components/material_instances.json"
+					},
+					"else": {
+						"$ref": "../../v1.21.60/components/material_instances.json"
+					}
 				},
 				"minecraft:placement_filter": {
 					"$ref": "../../v1.19.60/components/placement_filter.json"

@@ -1,0 +1,12 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"set_home_position": {
+			"title": "Set Home Position",
+			"description": "Sets the entity's home position to its current position.",
+			"type": "object",
+			"additionalProperties": false
+		}
+	}
+}
