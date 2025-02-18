@@ -110,6 +110,14 @@
 									"description": "Sets up the parent bone for the attachable.",
 									"type": "string"
 								},
+								"initialize": {
+									"title": "Initialize",
+									"description": "Initializes variables.",
+									"type": "array",
+									"items": {
+										"$ref": "../molang/embedded.json"
+									}
+								},
 								"pre_animation": {
 									"title": "Pre Animation",
 									"description": "Pre-computes any expensive and complex values you may want to reuse in your scripts, long-living index variable updates, or generally any one-off computation per render tick.",

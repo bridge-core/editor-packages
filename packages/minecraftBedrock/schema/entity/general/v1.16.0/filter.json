@@ -1,1871 +1,1904 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"type": "object",
-	"properties": {
-		"all_of": {
-			"title": "All Of",
-			"type": "array",
-			"items": {
-				"$ref": "#"
-			}
-		},
-		"any_of": {
-			"title": "Any Of",
-			"type": "array",
-			"items": {
-				"$ref": "#"
-			}
-		},
-		"none_of": {
-			"title": "None Of",
-			"type": "array",
-			"items": {
-				"$ref": "#"
-			}
-		},
-		"subject": {
-			"title": "Subject",
-			"$ref": "../../../general/filter/subject.json"
-		},
-		"operator": {
-			"title": "Operator",
-			"$ref": "../../../general/filter/operator.json"
+	"definitions": {
+		"filter": {
+			"type": "object",
+			"properties": {
+				"all_of": {
+					"title": "All Of",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/filter"
+					}
+				},
+				"any_of": {
+					"title": "Any Of",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/filter"
+					}
+				},
+				"none_of": {
+					"title": "None Of",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/filter"
+					}
+				},
+				"subject": {
+					"title": "Subject",
+					"$ref": "../../../general/filter/subject.json"
+				},
+				"operator": {
+					"title": "Operator",
+					"$ref": "../../../general/filter/operator.json"
+				}
+			},
+			"allOf": [
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_equipment"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"domain": {
+								"type": "string",
+								"enum": [
+									"any",
+									"armor",
+									"feet",
+									"hand",
+									"head",
+									"leg",
+									"torso",
+									"inventory" // 1.19.60.22
+								]
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_game_rule"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"domain": {
+								"type": "string",
+								"enum": [
+									"alwaysday",
+									"commandblockoutput",
+									"commandblocksenabled",
+									"dodaylightcycle",
+									"doentitydrops",
+									"dofiretick",
+									"doimmediaterespawn",
+									"domobloot",
+									"domobspawning",
+									"dotiledrops",
+									"doweathercycle",
+									"drowningdamage",
+									"falldamage",
+									"firedamage",
+									"functioncommandlimit",
+									"keepinventory",
+									"maxcommandchainlength",
+									"mobgriefing",
+									"naturalregeneration",
+									"pvp",
+									"randomtickspeed",
+									"sendcommandfeedback",
+									"showcoordinates",
+									"showdeathmessages",
+									"tntexplodes"
+								]
+							}
+						}
+					}
+				},
+				{
+					"properties": {
+						"test": {
+							"type": "string",
+							"description": "The name of the test to apply",
+							"enum": [
+								"actor_health", // v1.19.60+
+								"any_slot_empty", // v1.20.0+
+								"all_slots_empty", // v1.20.0+
+								"bool_property", // v1.19.40+
+								"clock_time",
+								"distance_to_nearest_player",
+								"enum_property", // v1.19.40+
+								"float_property", // v1.19.40+
+								"has_ability",
+								"has_biome_tag",
+								"has_component",
+								"has_container_open",
+								"has_damage",
+								"has_damaged_equipment", // v1.20.80+
+								"has_equipment",
+								"has_mob_effect",
+								"has_nametag", // v1.18.0+
+								"has_property", // v1.19.40+
+								"has_ranged_weapon",
+								"has_silk_touch", // 1.18.30+
+								"has_tag",
+								"has_target",
+								"has_trade_supply",
+								"home_distance", // 1.21.60+
+								"hourly_clock_time",
+								"inactivity_timer",
+								"int_property", // v1.19.40+
+								"in_block",
+								"in_caravan",
+								"in_clouds",
+								"in_contact_with_water",
+								"in_lava",
+								"in_nether",
+								"in_water",
+								"in_water_or_rain",
+								"is_altitude",
+								"is_avoiding_mobs",
+								"is_baby", // v1.19.30+
+								"is_biome",
+								"is_block",
+								"is_bound_to_creaking_heart", // v1.21.60+
+								"is_brightness",
+								"is_climbing",
+								"is_color",
+								"is_daytime",
+								"is_difficulty",
+								"is_family",
+								"is_game_rule",
+								"is_humid",
+								"is_immobile",
+								"is_in_village",
+								"is_leashed",
+								"is_leashed_to",
+								"is_mark_variant",
+								"is_missing_health", // v1.18.10+
+								"is_moving",
+								"is_navigating",
+								"is_owner",
+								"is_panicking", // v1.20.60+
+								"is_persistent",
+								"is_raider", // v1.19.80+
+								"is_riding",
+								"is_skin_id",
+								"is_sitting", // v1.20.80+
+								"is_sleeping",
+								"is_sneak_held", // v1.20.10+
+								"is_sneaking",
+								"is_snow_covered",
+								"is_sprinting", // v1.20.60+
+								"is_target",
+								"is_temperature_type",
+								"is_temperature_value",
+								"is_underground",
+								"is_underwater",
+								"is_variant",
+								"is_visible",
+								"is_waterlogged", // v1.19.0+
+								"is_weather",
+								"light_level",
+								"moon_intensity",
+								"moon_phase",
+								"on_fire", // v1.19.60+
+								"on_ground",
+								"on_hot_block", // v1.19.60+
+								"on_ladder",
+								"owner_distance", // v1.21.20
+								"random_chance",
+								"rider_count",
+								"surface_mob",
+								"taking_fire_damage", // v1.19.80+
+								"target_distance", // v1.19.60+
+								"trusts",
+								"was_last_hurt_by", // v1.20.70+
+								"weather",
+								"weather_at_position"
+							]
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "actor_health"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests the health of the subject.",
+								"type": "integer"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "bool_property"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true when the bool actor property matches the value provided.",
+								"type": "boolean"
+							},
+							"domain": {
+								"description": "The property name to look for.",
+								"type": "string",
+								"$ref": "../../dynamic/currentContext/propertyEnum.json"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "clock_time"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Compares the current time with a float value in the range (0.0, 1.0). 0.0= Noon 0.25= Sunset 0.5= Midnight 0.75= Sunrise",
+								"type": "number"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "distance_to_nearest_player"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Compares the distance to the nearest Player with a float value.",
+								"type": "integer"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "enum_property"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true when the enum actor property matches the value provided.",
+								"type": "string"
+							},
+							"domain": {
+								"description": "The property name to look for.",
+								"type": "string",
+								"$ref": "../../dynamic/currentContext/propertyEnum.json"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "float_property"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true when the float actor property matches the value provided.",
+								"type": "number"
+							},
+							"domain": {
+								"description": "The property name to look for.",
+								"type": "string",
+								"$ref": "../../dynamic/currentContext/propertyEnum.json"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_ability"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true when the subject entity has the named ability.",
+								"$ref": "../../../general/ability.json"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_biome_tag"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests whether the biome the subject is in has the specified tag.",
+								"$ref": "../../../general/reference/biomeTag.json"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_component"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true when the subject entity contains the named component.",
+								"$ref": "./componentsList.json"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_container_open"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true when the subject Player entity has opened a container.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_damage"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true when the subject entity receives the named damage type.",
+								"$ref": "../../../general/vanilla/damageType.json"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_equipment"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests for the presence of a named item in the designated slot of the subject entity.",
+								"anyOf": [
+									{
+										"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
+									},
+									{
+										"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_nametag"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests if the subject has been given a custom name.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_property"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests for the presence of a property of the subject entity.",
+								"type": "string",
+								"$ref": "../../dynamic/currentContext/propertyEnum.json"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_mob_effect"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests whether the Subject has the specified mob effect.",
+								"$ref": "../../../general/effectName.json"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_ranged_weapon"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true when the subject entity is holding a ranged weapon like a bow or crossbow.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_silk_touch"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests if the subject is holding an item with silk touch.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_tag"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true if the subject entity has the tag provided.",
+								"$ref": "../../../general/reference/entityTag.json"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_target"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true if the subject entity has a valid target.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_trade_supply"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests whether the target has any trade supply left. Will return false if the target cannot be traded with.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "home_distance"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests the distance between the subject and its home. Returns false if the subject has no home or if their home is in a different dimension.",
+								"type": "number"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "hourly_clock_time"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Compares the current 24 hour time with an int value in the range[0, 24000]",
+								"$ref": "../../../general/hourlyClockTime.json"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "inactivity_timer"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests if the specified duration in seconds of inactivity for despawning has been reached.",
+								"type": "number"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "int_property"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true when the int actor property matches the value provided.",
+								"type": "number",
+								"multipleOf": 1
+							},
+							"domain": {
+								"description": "The property name to look for.",
+								"type": "string",
+								"$ref": "../../dynamic/currentContext/propertyEnum.json"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_altitude"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests the current altitude against a provided value. 0= bedrock elevation.",
+								"type": "number"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_avoiding_mobs"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true if the subject entity is fleeing from other mobs.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_baby"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true when the subject entity is a baby.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_biome"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests whether the Subject is currently in the named biome.",
+								"$ref": "../../../general/vanilla/biomeName.json"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_block"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true when the block has the given name.",
+								"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_bound_to_creaking_heart"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests that the Creaking Heart that spawned the subject Creaking still exists.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_brightness"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests the current brightness against a provided value in the range (0.0f, 1.0f).",
+								"type": "number",
+								"minimum": 0.0,
+								"maximum": 1.0
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "in_caravan"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true if the subject entity is in a caravan.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_climbing"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true if the subject entity is climbing.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "in_clouds"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true when the subject entity is in the clouds.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_color"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true if the subject entity is the named color.",
+								"$ref": "../../../general/colorPalette.json"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_daytime"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true during the daylight hours.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_difficulty"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests the current difficulty level of the game.",
+								"$ref": "../../../general/gameDifficulty.json"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_family"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true when the subject entity is a member of the named family.",
+								"$ref": "../../../general/reference/family.json"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_game_rule"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests whether a named game rule is active.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_humid"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests whether the Subject is in an area with humidity",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_immobile"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true if the subject entity is immobile. An entity is immobile if it lacks AI goals, has just changed dimensions or if it is a mob and has no health.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_in_village"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests whether the Subject is inside the bounds of a village.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_leashed"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true if the subject entity is leashed.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_leashed_to"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true if the subject entity leashed to the calling entity.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_mark_variant"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true if the subject entity is the mark variant number provided.",
+								"type": "integer"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_missing_health"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests if the subject is not at full health.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_moving"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true if the subject entity is moving.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "in_nether"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true when the subject entity is in Nether.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_navigating"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests if the subject is currently pathfinding. Requires a \"minecraft:navigation\" component.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_owner"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true if the subject entity is the owner of the calling entity.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_persistent"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests if the subject's persistence matches the bool value passed in.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_raider"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests if the subject is a raider.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_riding"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true if the subject entity is riding on another entity.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_skin_id"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true if the subject entity is the skin id number provided.",
+								"type": "integer"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_sleeping"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests whether the Subject is sleeping.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_sneak_held"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true if the subject entity has the sneak input held.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_sneaking"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true if the subject entity is sneaking.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_snow_covered"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests whether the Subject is in an area with snow cover",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_target"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true if the subject entity is the target of the calling entity.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_temperature_type"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests whether the current temperature is a given type.",
+								"type": "string",
+								"enum": ["cold", "ocean", "mild", "warm"]
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_temperature_value"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests the current temperature against a provided value in the range (0.0, 1.0) where 0.0f is the coldest temp and 1.0f is the hottest.",
+								"type": "number",
+								"minimum": 0.0,
+								"maximum": 1.0
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_underground"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true when the subject entity is underground. An entity is considered underground if there are non-solid blocks above it.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_underwater"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true when the subject entity is under water. An entity is considered underwater if it is completely submerged in water blocks.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_variant"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true if the subject entity is the variant number provided.",
+								"type": "integer"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_visible"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true if the subject entity is visible.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_waterlogged"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests if the subject block is submerged in water.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "in_water"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true when the subject entity is in water.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "in_water_or_rain"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true when the subject entity is in water or rain.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_weather"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "DEPRECATED",
+								"type": "string"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "light_level"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests is the mob is outside of the specified light level range (0, 16).",
+								"type": "integer",
+								"maximum": 15,
+								"minimum": 0
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "moon_intensity"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Compares the current moon intensity with a float value in the range (0.0, 1.0)",
+								"minimum": 0.0,
+								"maximum": 1.0,
+								"type": "number"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "moon_phase"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Compares the current moon phase with an integer value in the range (0, 7).",
+								"type": "integer",
+								"minimum": 0,
+								"maximum": 7
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "on_fire"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests if the subject is on fire.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "on_ground"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true when the subject entity is on ground.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "on_hot_block"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests if the subject is on a hot block.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "on_ladder"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true when the subject entity is on a ladder.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "owner_distance"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests the distance between the subject and its owner. Returns false if there is no owner.",
+								"type": "number"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "random_chance"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true if the random chance rolls 0 out of a specified max range.",
+								"type": "number"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "rider_count"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns the number of riders on this entity.",
+								"type": "integer"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "surface_mob"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests if the subject is a surface mob.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "taking_fire_damage"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests if the subject is taking fire damage. Requires the damage_sensor component",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "target_distance"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests the distance between the calling entity and its target.",
+								"type": "number"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "trusts"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true if the subject is trusted by entity.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "weather"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests the current weather in the dimension against a provided weather value.",
+								"type": "string",
+								"enum": [
+									"clear",
+									"rain",
+									"thunderstorm",
+									"precipitation"
+								]
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "weather_at_position"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests the current weather, at the actor's position, against a provided weather value.",
+								"type": "string",
+								"enum": [
+									"clear",
+									"rain",
+									"thunderstorm",
+									"precipitation"
+								]
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "in_contact_with_water"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true when the subject entity in contact with any water: water, rain, splash water bottle.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "in_block"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true when the subject entity is inside a specified Block type.",
+								"type": "string",
+								"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "in_lava"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true when the subject entity is in lava.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "all_slots_empty"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true when the designated equipment location for the subject entity is completely empty.",
+								"type": "string",
+								"enum": [
+									"any",
+									"armor",
+									"feet",
+									"hand",
+									"head",
+									"inventory",
+									"leg",
+									"torso"
+								]
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "any_slots_empty"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true when the designated equipment location for the subject entity is completely empty.",
+								"type": "string",
+								"enum": [
+									"any",
+									"armor",
+									"feet",
+									"hand",
+									"head",
+									"inventory",
+									"leg",
+									"torso"
+								]
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_panicking"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests if the subject is panicking.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_sprinting"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests if the subject is sprinting.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_sitting"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests if the subject is sitting.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_damaged_equipment"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests for the presence of a damaged named item in the designated slot of the subject entity.",
+								"anyOf": [
+									{
+										"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
+									},
+									{
+										"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+									}
+								]
+							}
+						}
+					}
+				}
+			]
 		}
 	},
-	"allOf": [
+	"anyOf": [
 		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "has_equipment"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"domain": {
-						"type": "string",
-						"enum": [
-							"any",
-							"armor",
-							"feet",
-							"hand",
-							"head",
-							"leg",
-							"torso",
-							"inventory" // 1.19.60.22
-						]
-					}
-				}
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/filter"
 			}
 		},
 		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_game_rule"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"domain": {
-						"type": "string",
-						"enum": [
-							"alwaysday",
-							"commandblockoutput",
-							"commandblocksenabled",
-							"dodaylightcycle",
-							"doentitydrops",
-							"dofiretick",
-							"doimmediaterespawn",
-							"domobloot",
-							"domobspawning",
-							"dotiledrops",
-							"doweathercycle",
-							"drowningdamage",
-							"falldamage",
-							"firedamage",
-							"functioncommandlimit",
-							"keepinventory",
-							"maxcommandchainlength",
-							"mobgriefing",
-							"naturalregeneration",
-							"pvp",
-							"randomtickspeed",
-							"sendcommandfeedback",
-							"showcoordinates",
-							"showdeathmessages",
-							"tntexplodes"
-						]
-					}
-				}
-			}
-		},
-		{
-			"properties": {
-				"test": {
-					"type": "string",
-					"description": "The name of the test to apply",
-					"enum": [
-						"actor_health", // v1.19.60+
-						"any_slot_empty", // v1.20.0+
-						"all_slots_empty", // v1.20.0+
-						"bool_property", // v1.19.40+
-						"clock_time",
-						"distance_to_nearest_player",
-						"enum_property", // v1.19.40+
-						"float_property", // v1.19.40+
-						"has_ability",
-						"has_biome_tag",
-						"has_component",
-						"has_container_open",
-						"has_damage",
-						"has_damaged_equipment", // v1.20.80+
-						"has_equipment",
-						"has_mob_effect",
-						"has_nametag", // v1.18.0+
-						"has_property", // v1.19.40+
-						"has_ranged_weapon",
-						"has_silk_touch", // 1.18.30+
-						"has_tag",
-						"has_target",
-						"has_trade_supply",
-						"home_distance", // 1.21.60+
-						"hourly_clock_time",
-						"inactivity_timer",
-						"int_property", // v1.19.40+
-						"in_block",
-						"in_caravan",
-						"in_clouds",
-						"in_contact_with_water",
-						"in_lava",
-						"in_nether",
-						"in_water",
-						"in_water_or_rain",
-						"is_altitude",
-						"is_avoiding_mobs",
-						"is_baby", // v1.19.30+
-						"is_biome",
-						"is_block",
-						"is_bound_to_creaking_heart", // v1.21.60+
-						"is_brightness",
-						"is_climbing",
-						"is_color",
-						"is_daytime",
-						"is_difficulty",
-						"is_family",
-						"is_game_rule",
-						"is_humid",
-						"is_immobile",
-						"is_in_village",
-						"is_leashed",
-						"is_leashed_to",
-						"is_mark_variant",
-						"is_missing_health", // v1.18.10+
-						"is_moving",
-						"is_navigating",
-						"is_owner",
-						"is_panicking", // v1.20.60+
-						"is_persistent",
-						"is_raider", // v1.19.80+
-						"is_riding",
-						"is_skin_id",
-						"is_sitting", // v1.20.80+
-						"is_sleeping",
-						"is_sneaking",
-						"is_snow_covered",
-						"is_sprinting", // v1.20.60+
-						"is_target",
-						"is_temperature_type",
-						"is_temperature_value",
-						"is_underground",
-						"is_underwater",
-						"is_variant",
-						"is_visible",
-						"is_waterlogged", // v1.19.0+
-						"is_weather",
-						"light_level",
-						"moon_intensity",
-						"moon_phase",
-						"on_fire", // v1.19.60+
-						"on_ground",
-						"on_hot_block", // v1.19.60+
-						"on_ladder",
-						"owner_distance", // v1.21.20
-						"random_chance",
-						"rider_count",
-						"surface_mob",
-						"taking_fire_damage", // v1.19.80+
-						"target_distance", // v1.19.60+
-						"trusts",
-						"was_last_hurt_by", // v1.20.70+
-						"weather",
-						"weather_at_position"
-					]
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "actor_health"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests the health of the subject.",
-						"type": "integer"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "bool_property"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true when the bool actor property matches the value provided.",
-						"type": "boolean"
-					},
-					"domain": {
-						"description": "The property name to look for.",
-						"type": "string",
-						"$ref": "../../dynamic/currentContext/propertyEnum.json"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "clock_time"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Compares the current time with a float value in the range (0.0, 1.0). 0.0= Noon 0.25= Sunset 0.5= Midnight 0.75= Sunrise",
-						"type": "number"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "distance_to_nearest_player"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Compares the distance to the nearest Player with a float value.",
-						"type": "integer"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "enum_property"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true when the enum actor property matches the value provided.",
-						"type": "string"
-					},
-					"domain": {
-						"description": "The property name to look for.",
-						"type": "string",
-						"$ref": "../../dynamic/currentContext/propertyEnum.json"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "float_property"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true when the float actor property matches the value provided.",
-						"type": "number"
-					},
-					"domain": {
-						"description": "The property name to look for.",
-						"type": "string",
-						"$ref": "../../dynamic/currentContext/propertyEnum.json"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "has_ability"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true when the subject entity has the named ability.",
-						"$ref": "../../../general/ability.json"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "has_biome_tag"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests whether the biome the subject is in has the specified tag.",
-						"$ref": "../../../general/reference/biomeTag.json"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "has_component"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true when the subject entity contains the named component.",
-						"$ref": "./componentsList.json"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "has_container_open"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true when the subject Player entity has opened a container.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "has_damage"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true when the subject entity receives the named damage type.",
-						"$ref": "../../../general/vanilla/damageType.json"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "has_equipment"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests for the presence of a named item in the designated slot of the subject entity.",
-						"anyOf": [
-							{
-								"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
-							},
-							{
-								"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
-							}
-						]
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "has_nametag"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests if the subject has been given a custom name.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "has_property"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests for the presence of a property of the subject entity.",
-						"type": "string",
-						"$ref": "../../dynamic/currentContext/propertyEnum.json"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "has_mob_effect"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests whether the Subject has the specified mob effect.",
-						"$ref": "../../../general/effectName.json"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "has_ranged_weapon"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true when the subject entity is holding a ranged weapon like a bow or crossbow.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "has_silk_touch"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests if the subject is holding an item with silk touch.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "has_tag"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true if the subject entity has the tag provided.",
-						"$ref": "../../../general/reference/entityTag.json"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "has_target"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true if the subject entity has a valid target.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "has_trade_supply"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests whether the target has any trade supply left. Will return false if the target cannot be traded with.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "home_distance"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests the distance between the subject and its home. Returns false if the subject has no home or if their home is in a different dimension.",
-						"type": "number"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "hourly_clock_time"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Compares the current 24 hour time with an int value in the range[0, 24000]",
-						"$ref": "../../../general/hourlyClockTime.json"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "inactivity_timer"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests if the specified duration in seconds of inactivity for despawning has been reached.",
-						"type": "number"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "int_property"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true when the int actor property matches the value provided.",
-						"type": "number",
-						"multipleOf": 1
-					},
-					"domain": {
-						"description": "The property name to look for.",
-						"type": "string",
-						"$ref": "../../dynamic/currentContext/propertyEnum.json"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_altitude"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests the current altitude against a provided value. 0= bedrock elevation.",
-						"type": "number"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_avoiding_mobs"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true if the subject entity is fleeing from other mobs.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_baby"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true when the subject entity is a baby.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_biome"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests whether the Subject is currently in the named biome.",
-						"$ref": "../../../general/vanilla/biomeName.json"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_block"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true when the block has the given name.",
-						"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_bound_to_creaking_heart"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests that the Creaking Heart that spawned the subject Creaking still exists.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_brightness"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests the current brightness against a provided value in the range (0.0f, 1.0f).",
-						"type": "number",
-						"minimum": 0.0,
-						"maximum": 1.0
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "in_caravan"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true if the subject entity is in a caravan.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_climbing"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true if the subject entity is climbing.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "in_clouds"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true when the subject entity is in the clouds.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_color"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true if the subject entity is the named color.",
-						"$ref": "../../../general/colorPalette.json"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_daytime"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true during the daylight hours.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_difficulty"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests the current difficulty level of the game.",
-						"$ref": "../../../general/gameDifficulty.json"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_family"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true when the subject entity is a member of the named family.",
-						"$ref": "../../../general/reference/family.json"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_game_rule"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests whether a named game rule is active.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_humid"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests whether the Subject is in an area with humidity",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_immobile"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true if the subject entity is immobile. An entity is immobile if it lacks AI goals, has just changed dimensions or if it is a mob and has no health.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_in_village"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests whether the Subject is inside the bounds of a village.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_leashed"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true if the subject entity is leashed.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_leashed_to"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true if the subject entity leashed to the calling entity.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_mark_variant"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true if the subject entity is the mark variant number provided.",
-						"type": "integer"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_missing_health"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests if the subject is not at full health.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_moving"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true if the subject entity is moving.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "in_nether"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true when the subject entity is in Nether.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_navigating"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests if the subject is currently pathfinding. Requires a \"minecraft:navigation\" component.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_owner"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true if the subject entity is the owner of the calling entity.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_persistent"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests if the subject's persistence matches the bool value passed in.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_raider"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests if the subject is a raider.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_riding"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true if the subject entity is riding on another entity.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_skin_id"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true if the subject entity is the skin id number provided.",
-						"type": "integer"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_sleeping"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests whether the Subject is sleeping.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_sneaking"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true if the subject entity is sneaking.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_snow_covered"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests whether the Subject is in an area with snow cover",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_target"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true if the subject entity is the target of the calling entity.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_temperature_type"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests whether the current temperature is a given type.",
-						"type": "string",
-						"enum": ["cold", "ocean", "mild", "warm"]
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_temperature_value"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests the current temperature against a provided value in the range (0.0, 1.0) where 0.0f is the coldest temp and 1.0f is the hottest.",
-						"type": "number",
-						"minimum": 0.0,
-						"maximum": 1.0
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_underground"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true when the subject entity is underground. An entity is considered underground if there are non-solid blocks above it.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_underwater"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true when the subject entity is under water. An entity is considered underwater if it is completely submerged in water blocks.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_variant"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true if the subject entity is the variant number provided.",
-						"type": "integer"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_visible"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true if the subject entity is visible.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_waterlogged"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests if the subject block is submerged in water.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "in_water"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true when the subject entity is in water.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "in_water_or_rain"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true when the subject entity is in water or rain.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_weather"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "DEPRECATED",
-						"type": "string"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "light_level"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests is the mob is outside of the specified light level range (0, 16).",
-						"type": "integer",
-						"maximum": 15,
-						"minimum": 0
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "moon_intensity"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Compares the current moon intensity with a float value in the range (0.0, 1.0)",
-						"minimum": 0.0,
-						"maximum": 1.0,
-						"type": "number"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "moon_phase"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Compares the current moon phase with an integer value in the range (0, 7).",
-						"type": "integer",
-						"minimum": 0,
-						"maximum": 7
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "on_fire"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests if the subject is on fire.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "on_ground"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true when the subject entity is on ground.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "on_hot_block"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests if the subject is on a hot block.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "on_ladder"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true when the subject entity is on a ladder.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "owner_distance"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests the distance between the subject and its owner. Returns false if there is no owner.",
-						"type": "number"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "random_chance"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true if the random chance rolls 0 out of a specified max range.",
-						"type": "number"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "rider_count"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns the number of riders on this entity.",
-						"type": "integer"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "surface_mob"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests if the subject is a surface mob.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "taking_fire_damage"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests if the subject is taking fire damage. Requires the damage_sensor component",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "target_distance"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests the distance between the calling entity and its target.",
-						"type": "number"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "trusts"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true if the subject is trusted by entity.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "weather"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests the current weather in the dimension against a provided weather value.",
-						"type": "string",
-						"enum": [
-							"clear",
-							"rain",
-							"thunderstorm",
-							"precipitation"
-						]
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "weather_at_position"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests the current weather, at the actor's position, against a provided weather value.",
-						"type": "string",
-						"enum": [
-							"clear",
-							"rain",
-							"thunderstorm",
-							"precipitation"
-						]
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "in_contact_with_water"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true when the subject entity in contact with any water: water, rain, splash water bottle.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "in_block"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true when the subject entity is inside a specified Block type.",
-						"type": "string",
-						"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "in_lava"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true when the subject entity is in lava.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "all_slots_empty"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true when the designated equipment location for the subject entity is completely empty.",
-						"type": "string",
-						"enum": [
-							"any",
-							"armor",
-							"feet",
-							"hand",
-							"head",
-							"inventory",
-							"leg",
-							"torso"
-						]
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "any_slots_empty"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Returns true when the designated equipment location for the subject entity is completely empty.",
-						"type": "string",
-						"enum": [
-							"any",
-							"armor",
-							"feet",
-							"hand",
-							"head",
-							"inventory",
-							"leg",
-							"torso"
-						]
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_panicking"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests if the subject is panicking.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_sprinting"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests if the subject is sprinting.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "is_sitting"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests if the subject is sitting.",
-						"type": "boolean"
-					}
-				}
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"test": {
-						"const": "has_damaged_equipment"
-					}
-				}
-			},
-			"then": {
-				"properties": {
-					"value": {
-						"description": "Tests for the presence of a damaged named item in the designated slot of the subject entity.",
-						"anyOf": [
-							{
-								"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
-							},
-							{
-								"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
-							}
-						]
-					}
-				}
-			}
+			"$ref": "#/definitions/filter"
 		}
 	]
 }

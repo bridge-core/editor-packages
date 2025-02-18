@@ -146,10 +146,6 @@
 									"items": {
 										"$ref": "../../molang/embedded.json"
 									}
-								},
-								"parent_setup": {
-									"title": "Parent Setup",
-									"$ref": "../../molang/embedded.json"
 								}
 							}
 						},
