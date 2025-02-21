@@ -35,15 +35,14 @@
 					"title": "Cause",
 					"description": "Type of damage that triggers the events.",
 					"$ref": "../../../general/vanilla/damageType.json",
-					"type": "string",
-					"enum": ["yes", "no", "no_but_side_effects_apply"],
-					"default": "yes"
+					"default": "none"
 				},
 				"deals_damage": {
 					"title": "Deals Damage",
 					"description": "If true, the damage dealt to the entity will take away health from it, set to false to make the entity ignore that damage.",
-					"type": "boolean",
-					"default": true
+					"type": "string",
+					"enum": ["yes", "no", "no_but_side_effects_apply"],
+					"default": "yes"
 				},
 				"damage_multiplier": {
 					"title": "Damage Multiplier",
