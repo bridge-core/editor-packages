@@ -67,7 +67,7 @@
 					"properties": {
 						"item": {
 							"description": "The item identifier to match for.",
-							"$ref": "../general/reference/identifiers.json#/definitions/item_identifiers"
+							"$ref": "../general/itemDescriptor.json"
 						},
 						"count": {
 							"type": "object",
