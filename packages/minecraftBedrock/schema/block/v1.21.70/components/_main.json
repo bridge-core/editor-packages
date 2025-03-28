@@ -55,10 +55,10 @@
 				"minecraft:material_instances": {
 					"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
 					"then": {
-						"$ref": "../../v1.21.70/components/material_instances.json"
+						"$ref": "../../v1.21.70/components/experimental/material_instances.json"
 					},
 					"else": {
-						"$ref": "../../v1.21.60/components/material_instances.json"
+						"$ref": "../../v1.21.70/components/material_instances.json"
 					}
 				},
 				"minecraft:placement_filter": {

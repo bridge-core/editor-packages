@@ -90,6 +90,12 @@
 					"grass",
 					"water"
 				]
+			},
+			"isotropic": {
+				"title": "Isotropic",
+				"description": "Controls rotating the face UVs randomly based on block position.",
+				"type": "boolean",
+				"default": false
 			}
 		}
 	}
