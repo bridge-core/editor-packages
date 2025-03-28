@@ -15,10 +15,16 @@
 			"$ref": "./execute_event_on_home_block.json"
 		},
 		{
+			"$ref": "./first_valid.json"
+		},
+		{
 			"$ref": "./play_sound.json"
 		},
 		{
 			"$ref": "./queue_command.json"
+		},
+		{
+			"$ref": "./randomize.json"
 		},
 		{
 			"$ref": "./remove.json"
@@ -27,59 +33,19 @@
 			"$ref": "./reset_target.json"
 		},
 		{
+			"$ref": "./sequence.json"
+		},
+		{
+			"$ref": "./set_home_position.json"
+		},
+		{
 			"$ref": "./set_property.json"
 		},
 		{
-			"$ref": "./trigger.json"
+			"$ref": "./stop_movement.json"
 		},
 		{
-			"type": "object",
-			"properties": {
-				"randomize": {
-					"title": "Randomize",
-					"type": "array",
-					"items": {
-						"allOf": [
-							{
-								"type": "object",
-								"properties": {
-									"weight": {
-										"title": "Weight",
-										"type": "number"
-									},
-									"filters": {
-										"title": "Filters",
-										"$ref": "../general/v1.16.0/filter.json"
-									}
-								}
-							},
-							{
-								"$ref": "#"
-							}
-						]
-					}
-				},
-				"sequence": {
-					"title": "Sequence",
-					"type": "array",
-					"items": {
-						"allOf": [
-							{
-								"type": "object",
-								"properties": {
-									"filters": {
-										"title": "Filters",
-										"$ref": "../general/v1.16.0/filter.json"
-									}
-								}
-							},
-							{
-								"$ref": "#"
-							}
-						]
-					}
-				}
-			}
+			"$ref": "./trigger.json"
 		}
 	]
 }

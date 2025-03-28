@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "properties": {
+        "sequence": {
+            "title": "Sequence",
+            "description": "Executes multiple events in order.",
+            "type": "array",
+            "items": {
+                "allOf": [
+                    {
+                        "type": "object",
+                        "properties": {
+                            "filters": {
+                                "title": "Filters",
+                                "$ref": "../general/v1.16.0/filter.json"
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "./_main.json"
+                    }
+                ]
+            }
+        }
+    }
+}
