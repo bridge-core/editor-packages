@@ -21,6 +21,7 @@
 							"enum": [
 								"foliage",
 								"birch",
+								"dry_foliage",
 								"evergreen",
 								"mangrove_swamp_foliage",
 								"swamp_foliage"
