@@ -30,35 +30,10 @@
 					"item": {
 						"title": "Item",
 						"description": "The items for the speed modifier.",
-						"$ref": "#/definitions/item_descriptor"
+						"$ref": "../../../general/itemDescriptor.json"
 					}
 				}
 			}
-		},
-		"item_descriptor": {
-			"oneOf": [
-				{
-					"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
-				},
-				{
-					"type": "object",
-					"properties": {
-						"tags": {
-							"oneOf": [
-								{
-									"enum": [
-										"query.any_tag()",
-										"query.all_tags()"
-									]
-								},
-								{
-									"type": "string"
-								}
-							]
-						}
-					}
-				}
-			]
 		}
 	}
 }

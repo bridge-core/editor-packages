@@ -56,7 +56,7 @@
 								},
 								"duration": {
 									"title": "Duration",
-									"type": "number"
+									"$ref": "../../../general/effectDuration.json"
 								},
 								"amplifier": {
 									"title": "Amplifier",

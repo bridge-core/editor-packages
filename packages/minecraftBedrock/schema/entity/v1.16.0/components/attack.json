@@ -41,8 +41,7 @@
 		"effect_duration": {
 			"title": "Effect Duration",
 			"description": "Duration in seconds of the status ailment applied to the damaged entity.",
-			"type": "number",
-			"default": 0.0
+			"$ref": "../../../general/effectDuration.json"
 		}
 	}
 }

@@ -7,7 +7,7 @@
 			"$ref": "./effectName.json"
 		},
 		"duration": {
-			"type": "number",
+			"$ref": "./effectDuration.json",
 			"description": "The time duration in seconds of the effect"
 		},
 		"amplifier": {

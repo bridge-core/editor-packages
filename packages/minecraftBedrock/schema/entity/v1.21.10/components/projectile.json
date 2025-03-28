@@ -226,19 +226,19 @@
 								},
 								"duration": {
 									"title": "Duration",
-									"type": "number"
+									"$ref": "../../../general/effectDuration.json"
 								},
 								"durationeasy": {
 									"title": "Duration Easy",
-									"type": "number"
+									"$ref": "../../../general/effectDuration.json"
 								},
 								"durationnormal": {
 									"title": "Duration Normal",
-									"type": "number"
+									"$ref": "../../../general/effectDuration.json"
 								},
 								"durationhard": {
 									"title": "Duration Hard",
-									"type": "number"
+									"$ref": "../../../general/effectDuration.json"
 								},
 								"amplifier": {
 									"title": "Amplifier",

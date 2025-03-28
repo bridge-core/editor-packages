@@ -8,7 +8,7 @@
 		"regeneration_duration": {
 			"title": "Regeneration Duration",
 			"description": "The duration in seconds of Regeneration I added to the mob.",
-			"type": "integer",
+			"$ref": "../../../general/effectDuration.json",
 			"default": 5
 		},
 		"apply_to_family": {
