@@ -116,6 +116,7 @@
 			"properties": {
 				"effect": {
 					"title": "Effect",
+					"description": "Valid sound effect names should be listed in the entity's resource_definition json file.",
 					"anyOf": [
 						{
 							"$ref": "../clientEntity/dynamic/soundEffectReferenceEnum.json"
@@ -124,6 +125,11 @@
 							"$ref": "../attachable/dynamic/soundEffectReferenceEnum.json"
 						}
 					]
+				},
+				"locator": {
+					"title": "Locator",
+					"description": "The name of a locator on the actor where the sound should originate from.",
+					"$ref": "../geometry/dynamic/locatorEnum.json"
 				}
 			}
 		}

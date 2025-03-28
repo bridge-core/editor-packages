@@ -63,6 +63,39 @@
 				}
 			},
 			"additionalProperties": false
+		},
+		"entity_sound_event_definitions": {
+			"type": "object",
+			"allOf": [
+				{
+					"$ref": "#/definitions/sound_event_definitions"
+				},
+				{
+					"type": "object",
+					"properties": {
+						"variants": {
+							"title": "Variants",
+							"type": "object",
+							"properties": {
+								"key": {
+									"title": "Key",
+									"description": "Accept a Molang expression that returns a string to select the sound variant."
+								},
+								"map": {
+									"title": "Map",
+									"description": "Contains key-value pairs of a variant identifiers and the sound events it overrides.",
+									"patternProperties": {
+										".*": {
+											"$ref": "#/definitions/sound_event_definitions"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			],
+			"additionalProperties": false
 		}
 	}
 }

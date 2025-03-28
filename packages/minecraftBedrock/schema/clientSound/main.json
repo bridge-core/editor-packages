@@ -27,7 +27,7 @@
 					},
 					"patternProperties": {
 						".*": {
-							"$ref": "./general.json#/definitions/sound_event_definitions"
+							"$ref": "./general.json#/definitions/entity_sound_event_definitions"
 						}
 					}
 				}

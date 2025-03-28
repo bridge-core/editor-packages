@@ -195,6 +195,11 @@
 																"$ref": "../attachable/dynamic/soundEffectReferenceEnum.json"
 															}
 														]
+													},
+													"locator": {
+														"title": "Locator",
+														"description": "The name of a locator on the actor where the sound should originate from.",
+														"$ref": "../geometry/dynamic/locatorEnum.json"
 													}
 												}
 											}
