@@ -569,6 +569,9 @@
 		"minecraft:is_collidable": {
 			"$ref": "../../v1.21.70/components/is_collidable.json"
 		},
+		"minecraft:input_air_controlled": {
+			"$ref": "../../v1.21.70/components/input_air_controlled.json"
+		},
 
 		// Deprecated
 		"minecraft:scaffolding_climber": {
