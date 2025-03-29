@@ -35,7 +35,13 @@
 					"$ref": "../../v1.20.60/components/geometry.json"
 				},
 				"minecraft:item_visual": {
-					"$ref": "../../v1.21.70/components/item_visual.json"
+					"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
+					"then": {
+						"$ref": "../../v1.21.70/components/experimental/item_visual.json"
+					},
+					"else": {
+						"$ref": "../../v1.21.60/components/item_visual.json"
+					}
 				},
 				"minecraft:loot": {
 					"$ref": "../../v1.16.0/components/loot.json"
@@ -50,7 +56,13 @@
 					"$ref": "../../v1.21.60/components/liquid_detection.json"
 				},
 				"minecraft:map_color": {
-					"$ref": "../../v1.21.70/components/map_color.json"
+					"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
+					"then": {
+						"$ref": "../../v1.21.70/components/experimental/map_color.json"
+					},
+					"else": {
+						"$ref": "../../v1.21.70/components/map_color.json"
+					}
 				},
 				"minecraft:material_instances": {
 					"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
@@ -58,7 +70,7 @@
 						"$ref": "../../v1.21.70/components/experimental/material_instances.json"
 					},
 					"else": {
-						"$ref": "../../v1.21.70/components/material_instances.json"
+						"$ref": "../../v1.21.60/components/material_instances.json"
 					}
 				},
 				"minecraft:placement_filter": {
@@ -78,6 +90,16 @@
 				},
 				"minecraft:transformation": {
 					"$ref": "../../v1.19.80/components/transformation.json"
+				}
+			}
+		},
+		{
+			"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
+			"then": {
+				"properties": {
+					"minecraft:destruction_particles": {
+						"$ref": "../../v1.21.70/components/experimental/destruction_particles.json"
+					}
 				}
 			}
 		},
