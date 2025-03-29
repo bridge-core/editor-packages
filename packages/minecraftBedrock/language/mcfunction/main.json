@@ -7406,9 +7406,6 @@
 			]
 		},
 		{
-			"requires": {
-				"experimentalGameplay": ["aimAssist"]
-			},
 			"commands": [
 				{
 					"commandName": "aimassist",

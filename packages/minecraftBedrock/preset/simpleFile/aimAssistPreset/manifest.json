@@ -4,8 +4,7 @@
 	"description": "Creates a blank aim assist preset.",
 	"category": "fileType.simpleFile",
 	"requires": {
-		"packTypes": ["behaviorPack"],
-		"experimentalGameplay": ["aimAssist"]
+		"packTypes": ["behaviorPack"]
 	},
 	"additionalModels": {
 		"PRESET_PATH": "aim_assist/presets/"

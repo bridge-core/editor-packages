@@ -110,24 +110,17 @@
 							"title": "Tracking Radius",
 							"description": "Sets a listening radius for a target entity.",
 							"type": "number"
-						}
-					}
-				},
-				{
-					"$ref": "../../project/experimentalGameplay/aimAssist.json",
-					"then": {
-						"properties": {
-							"aim_assist": {
-								"title": "Aim Assist",
-								"type": "object",
-								"properties": {
-									"preset": {
-										"title": "Preset",
-										"$ref": "../../general/reference/identifiers.json#/definitions/aim_assist_preset_identifiers"
-									}
-								},
-								"additionalProperties": false
-							}
+						},
+						"aim_assist": {
+							"title": "Aim Assist",
+							"type": "object",
+							"properties": {
+								"preset": {
+									"title": "Preset",
+									"$ref": "../../general/reference/identifiers.json#/definitions/aim_assist_preset_identifiers"
+								}
+							},
+							"additionalProperties": false
 						}
 					}
 				}

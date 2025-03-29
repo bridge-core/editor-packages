@@ -51,6 +51,7 @@
 					"creationOfCustomBiomes",
 					"additionalModdingCapabilities",
 					"upcomingCreatorFeatures",
+					"experimentalCreatorCameraFeatures",
 					"enableGameTestFramework",
 					"experimentalMolangFeatures",
 					"focusTargetCamera",
