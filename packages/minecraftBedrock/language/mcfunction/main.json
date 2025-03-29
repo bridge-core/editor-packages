@@ -7541,11 +7541,6 @@
 			]
 		},
 		{
-			"requires": {
-				"matchAll": false,
-				"experimentalGameplay": ["upcomingCreatorFeatures"],
-				"targetVersion": [">=", "1.21.70"]
-			},
 			"commands": [
 				{
 					"commandName": "place",
