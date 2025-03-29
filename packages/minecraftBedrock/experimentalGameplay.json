@@ -8,16 +8,16 @@
 		"id": "upcomingCreatorFeatures"
 	},
 	{
+		"icon": "mdi-camera",
+		"id": "experimentalCreatorCameraFeatures"
+	},
+	{
 		"icon": "mdi-ab-testing",
 		"id": "enableGameTestFramework" // Beta APIs toggle
 	},
 	{
 		"icon": "mdi-puzzle",
 		"id": "dataDrivenJigsawStructures"
-	},
-	{
-		"icon": "mdi-crosshairs",
-		"id": "aimAssist"
 	},
 	{
 		"icon": "mdi-school-outline",
