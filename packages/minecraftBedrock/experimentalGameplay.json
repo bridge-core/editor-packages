@@ -20,6 +20,10 @@
 		"id": "dataDrivenJigsawStructures"
 	},
 	{
+		"icon": "mdi-code-json",
+		"id": "customComponentsV2"
+	},
+	{
 		"icon": "mdi-school-outline",
 		"id": "educationEdition"
 	}

@@ -10,9 +10,6 @@
 				"minecraft:crafting_table": {
 					"$ref": "../../v1.19.50/components/crafting_table.json"
 				},
-				"minecraft:custom_components": {
-					"$ref": "../../v1.21.10/components/custom_components.json"
-				},
 				"minecraft:destructible_by_explosion": {
 					"$ref": "../../v1.19.20/components/destructible_by_explosion.json"
 				},
@@ -75,6 +72,23 @@
 				},
 				"minecraft:transformation": {
 					"$ref": "../../v1.19.80/components/transformation.json"
+				}
+			}
+		},
+		{
+			"$ref": "../../../project/experimentalGameplay/customComponentsV2.json",
+			"then": {
+				"properties": {
+					"minecraft:custom_components": {
+						"$ref": "../../v1.21.80/components/custom_components.json"
+					}
+				}
+			},
+			"else": {
+				"properties": {
+					"minecraft:custom_components": {
+						"$ref": "../../v1.21.10/components/custom_components.json"
+					}
 				}
 			}
 		},
