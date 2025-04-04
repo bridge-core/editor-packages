@@ -7004,6 +7004,30 @@
 			"enum": [
 				"minecraft:trail_ruins"
 			]
+		},
+		"atmosphere_settings_identifiers": {
+			"type": "string",
+			"enum": [
+				"minecraft:default_atmospherics"
+			]
+		},
+		"color_grading_settings_identifiers": {
+			"type": "string",
+			"enum": [
+				"minecraft:default_color_grading"
+			]
+		},
+		"lighting_settings_identifiers": {
+			"type": "string",
+			"enum": [
+				"minecraft:default_lighting"
+			]
+		},
+		"water_settings_identifiers": {
+			"type": "string",
+			"enum": [
+				"minecraft:default_water"
+			]
 		}
 	}
 }

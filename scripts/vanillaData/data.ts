@@ -70,7 +70,7 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 			id: 'camera_preset_identifiers',
 			path: 'cameras/presets',
 			packType: 'behaviorPack',
-			content: 'minecraft:camera_preset/identifier'
+			content: 'minecraft:camera_preset/identifier',
 		},
 		{
 			id: 'family',
@@ -136,7 +136,7 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 			id: 'musicDefinition',
 			path: 'sounds/music_definitions.json',
 			packType: 'resourcePack',
-			content: '/'
+			content: '/',
 		},
 		{
 			id: 'renderController',
@@ -191,37 +191,61 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 			id: 'aim_assist_categories_identifiers',
 			path: 'aim_assist/categories',
 			packType: 'behaviorPack',
-			content: 'minecraft:aim_assist_categories/identifier'
+			content: 'minecraft:aim_assist_categories/identifier',
 		},
 		{
 			id: 'aim_assist_preset_identifiers',
 			path: 'aim_assist/presets',
 			packType: 'behaviorPack',
-			content: 'minecraft:aim_assist_preset/identifier'
+			content: 'minecraft:aim_assist_preset/identifier',
 		},
 		{
 			id: 'jigsaw_structure_identifiers',
 			path: 'worldgen/jigsaw_structures',
 			packType: 'behaviorPack',
-			content: 'minecraft:jigsaw/description/identifier'
+			content: 'minecraft:jigsaw/description/identifier',
 		},
 		{
 			id: 'template_pool_identifiers',
 			path: 'worldgen/template_pools',
 			packType: 'behaviorPack',
-			content: 'minecraft:template_pool/description/identifier'
+			content: 'minecraft:template_pool/description/identifier',
 		},
 		{
 			id: 'processor_list_identifiers',
 			path: 'worldgen/processors',
 			packType: 'behaviorPack',
-			content: 'minecraft:processor_list/description/identifier'
+			content: 'minecraft:processor_list/description/identifier',
 		},
 		{
 			id: 'structure_set_identifiers',
 			path: 'worldgen/structure_sets',
 			packType: 'behaviorPack',
-			content: 'minecraft:structure_set/description/identifier'
+			content: 'minecraft:structure_set/description/identifier',
+		},
+		{
+			id: 'atmosphere_settings_identifiers',
+			path: 'atmospherics',
+			packType: 'resourcePack',
+			content: 'minecraft:atmosphere_settings/description/identifier',
+		},
+		{
+			id: 'color_grading_settings_identifiers',
+			path: 'color_grading',
+			packType: 'resourcePack',
+			content: 'minecraft:color_grading_settings/description/identifier',
+		},
+		{
+			id: 'lighting_settings_identifiers',
+			path: 'lighting',
+			packType: 'resourcePack',
+			content: 'minecraft:lighting_settings/description/identifier',
+		},
+		{
+			id: 'water_settings_identifiers',
+			path: 'water',
+			packType: 'resourcePack',
+			content: 'minecraft:water_settings/description/identifier',
 		},
 		{
 			id: 'material',
@@ -233,15 +257,17 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 			id: 'itemGroup',
 			packType: 'behaviorPack',
 			path: 'item_catalog/crafting_item_catalog.json',
-			content: 'minecraft:crafting_items_catalog/categories/*/groups/*/group_identifier/name',
+			content:
+				'minecraft:crafting_items_catalog/categories/*/groups/*/group_identifier/name',
 			map: (val: string) => val.replace('minecraft:', ''),
-			filter: (val: string) => !['undefined_test_only'].includes(val)
+			filter: (val: string) => !['undefined_test_only'].includes(val),
 		},
 		{
 			id: 'prefixedItemGroup',
 			packType: 'behaviorPack',
 			path: 'item_catalog/crafting_item_catalog.json',
-			content: 'minecraft:crafting_items_catalog/categories/*/groups/*/group_identifier/name'
+			content:
+				'minecraft:crafting_items_catalog/categories/*/groups/*/group_identifier/name',
 		},
 		{
 			id: 'actionText',
@@ -253,8 +279,8 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 			id: 'blockSound',
 			packType: 'resourcePack',
 			path: 'blocks.json',
-			content: '*/sound'
-		}
+			content: '*/sound',
+		},
 	],
 }
 
@@ -281,7 +307,11 @@ export const exportRaw: ExportTarget[] = [
 			'jigsaw_structure_identifiers.json',
 			'template_pool_identifiers.json',
 			'processor_list_identifiers.json',
-			'structure_set_identifiers.json'
+			'structure_set_identifiers.json',
+			'atmosphere_settings_identifiers.json',
+			'color_grading_settings_identifiers.json',
+			'lighting_settings_identifiers.json',
+			'water_settings_identifiers.json',
 		],
 		to: 'general/vanilla/identifiers.json',
 	},
@@ -360,12 +390,12 @@ export const exportRaw: ExportTarget[] = [
 	},
 	{
 		from: ['prefixedItemGroup.json'],
-		to: 'general/vanilla/prefixedItemGroup.json'
+		to: 'general/vanilla/prefixedItemGroup.json',
 	},
 	{
 		from: ['blockSound.json'],
-		to: 'general/vanilla/blockSound.json'
-	}
+		to: 'general/vanilla/blockSound.json',
+	},
 ]
 
 /**
