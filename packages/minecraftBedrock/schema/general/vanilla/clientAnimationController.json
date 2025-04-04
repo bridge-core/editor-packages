@@ -58,6 +58,8 @@
 		"controller.animation.ghast.move",
 		"controller.animation.ghast.scale",
 		"controller.animation.goat.move",
+		"controller.animation.happy_ghast.move",
+		"controller.animation.happy_ghast.scale",
 		"controller.animation.hoglin.attack",
 		"controller.animation.hoglin.baby_scaling",
 		"controller.animation.hoglin.look_at_target",

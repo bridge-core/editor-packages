@@ -59,6 +59,8 @@
 		"controller.render.glow_squid",
 		"controller.render.goat",
 		"controller.render.guardian",
+		"controller.render.happy_ghast",
+		"controller.render.harness",
 		"controller.render.hoglin",
 		"controller.render.horse.v1.and.v2",
 		"controller.render.horse.v3",

@@ -136,8 +136,7 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 			id: 'musicDefinition',
 			path: 'sounds/music_definitions.json',
 			packType: 'resourcePack',
-			content: '*',
-			filter: (val: string) => val !== 'format_version',
+			content: '/'
 		},
 		{
 			id: 'renderController',
@@ -321,6 +320,10 @@ export const exportRaw: ExportTarget[] = [
 	{
 		from: ['soundDefinition.json'],
 		to: 'general/vanilla/soundDefinition.json',
+	},
+	{
+		from: ['musicDefinition.json'],
+		to: 'general/vanilla/musicDefinition.json',
 	},
 	{
 		from: ['renderController.json'],

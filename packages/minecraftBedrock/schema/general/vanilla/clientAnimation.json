@@ -152,6 +152,8 @@
 		"animation.guardian.spikes",
 		"animation.guardian.spikes.v1.0",
 		"animation.guardian.swim",
+		"animation.happy_ghast.move",
+		"animation.happy_ghast.scale",
 		"animation.hoglin.attack",
 		"animation.hoglin.baby_scaling",
 		"animation.hoglin.look_at_target",
