@@ -2,6 +2,6 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"type": "string",
 	"enum": [
-		"query.graphics_mode_is_any"
+		"query.has_any_leashed_entity_of_type"
 	]
 }
