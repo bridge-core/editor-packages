@@ -133,6 +133,13 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 			filter: (val: string) => val !== 'format_version',
 		},
 		{
+			id: 'musicDefinition',
+			path: 'sounds/music_definitions.json',
+			packType: 'resourcePack',
+			content: '*',
+			filter: (val: string) => val !== 'format_version',
+		},
+		{
 			id: 'renderController',
 			path: 'render_controllers',
 			packType: 'resourcePack',
