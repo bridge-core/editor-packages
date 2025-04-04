@@ -7470,7 +7470,9 @@
 		// place command
 		{
 			"requires": {
-				"experimentalGameplay": ["dataDrivenJigsawStructures"]
+				"matchAll": false,
+				"experimentalGameplay": ["dataDrivenJigsawStructures"],
+				"targetVersion": [">=", "1.21.80"]
 			},
 			"commands": [
 				{
@@ -7484,7 +7486,10 @@
 						},
 						{
 							"argumentName": "pool",
-							"type": "string"
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/template_pool_identifiers"
+							}
 						},
 						{
 							"argumentName": "maxDepth",
@@ -7543,10 +7548,16 @@
 					"commandName": "place",
 					"arguments": [
 						{
+							"type": "string",
+							"additionalData": {
+								"values": ["feature"]
+							}
+						},
+						{
 							"argumentName": "feature",
 							"type": "string",
 							"additionalData": {
-								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/jfeature_identifiers"
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/feature_identifiers"
 							}
 						},
 						{
@@ -7559,6 +7570,12 @@
 				{
 					"commandName": "place",
 					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": ["featurerule"]
+							}
+						},
 						{
 							"argumentName": "featurerule",
 							"type": "string",
