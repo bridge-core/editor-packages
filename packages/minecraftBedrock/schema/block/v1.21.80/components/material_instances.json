@@ -28,7 +28,7 @@
 			"texture": {
 				"title": "Texture",
 				"description": "Name of a texture from the terrain_texture.json file.",
-				"$ref": "../../../../general/reference/terrainTexture.json"
+				"$ref": "../../../general/reference/terrainTexture.json"
 			},
 			"render_method": {
 				"title": "Render Method",
