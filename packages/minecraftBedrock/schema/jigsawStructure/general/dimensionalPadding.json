@@ -1,0 +1,29 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "oneOf": [
+        {
+            "type": "integer"
+        },
+        {
+            "$ref": "#/definitions/dimensional_padding"
+        }
+    ],
+    "definitions": {
+        "dimensional_padding": {
+            "type": "object",
+            "properties": {
+                "top": {
+                    "title": "Top",
+                    "description": "The padding from the top of the world.",
+                    "type": "integer"
+                },
+                "bottom": {
+                    "title": "Bottom",
+                    "description": "The padding from the bottom of the world.",
+                    "type": "integer"
+                }
+            },
+            "additionalProperties": false
+        }
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "properties": {
+        "alias": {
+            "title": "Alias",
+            "description": "Alias of random pool.",
+            "type": "string"
+        },
+        "targets": {
+            "title": "Targets",
+            "description": "List of potential pools.",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/weighted_random_item"
+            }
+        }
+    },
+    "definitions": {
+        "weighted_random_item": {
+            "type": "object",
+            "properties": {
+                "weight": {
+                    "title": "Weight",
+                    "description": "Weight of item."
+                },
+                "data": {
+                    "title": "Data",
+                    "description": "Item's data.",
+                    "$ref": "../../../general/reference/identifiers.json#/definitions/template_pool_identifiers"
+                }
+            }
+        }
+    },
+    "additionalProperties": false
+}

@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "properties": {
+        "groups": {
+            "title": "Groups",
+            "description": "Aliases for a random group.",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/weighted_random_item"
+            }
+        }
+    },
+    "definitions": {
+        "weighted_random_item": {
+            "type": "object",
+            "properties": {
+                "weight": {
+                    "title": "Weight",
+                    "description": "Weight of item."
+                },
+                "data": {
+                    "title": "Data",
+                    "description": "Item's data.",
+                    "$ref": "./_main.json"
+                }
+            }
+        }
+    },
+    "additionalProperties": false
+}

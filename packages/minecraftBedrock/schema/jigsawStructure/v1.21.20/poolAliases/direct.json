@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "properties": {
+        "alias": {
+            "title": "Alias",
+            "description": "Alias of direct pool.",
+            "type": "string"
+        },
+        "target": {
+            "title": "Target",
+            "description": "Target pool.",
+            "$ref": "../../../general/reference/identifiers.json#/definitions/template_pool_identifiers"
+        }
+    },
+    "additionalProperties": false
+}
