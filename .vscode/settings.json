@@ -24,5 +24,8 @@
 			"fileMatch": ["packages/*/fileDefinition/**/*.json"],
 			"url": "/packages/common/schema/bridge/fileDefinition/main.json"
 		}
-	]
+	],
+	"[json]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	}
 }

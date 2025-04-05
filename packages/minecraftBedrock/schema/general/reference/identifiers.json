@@ -222,6 +222,17 @@
 					"$ref": "../vanilla/identifiers.json#/definitions/structure_set_identifiers"
 				}
 			]
+		},
+		"lighting_settings_identifiers": {
+			"type": "string",
+			"anyOf": [
+				{
+					"$ref": "../../lightingSettings/dynamic/identifierEnum.json"
+				},
+				{
+					"$ref": "../vanilla/identifiers.json#/definitions/lighting_settings_identifiers"
+				}
+			]
 		}
 	}
 }

@@ -1,0 +1,23 @@
+{
+	"id": "lightingSettings",
+	"icon": "mdi-lightbulb",
+	"detect": {
+		"packType": "resourcePack",
+		"scope": "lighting/",
+		"matcher": ["lighting/**/*", "lighting/*"],
+		"fileContent": ["minecraft:lighting_settings"],
+		"fileExtensions": [".json"]
+	},
+	"lightningCache": "lightingSettings.json",
+	"schema": "file:///data/packages/minecraftBedrock/schema/lightingSettings/main.json",
+	"highlighterConfiguration": {
+		"variables": [
+			"description",
+			"directional_lights",
+			"emissive",
+			"ambient",
+			"sky"
+		],
+		"typeIdentifiers": ["format_version"]
+	}
+}
