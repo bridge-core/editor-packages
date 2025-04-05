@@ -33,14 +33,21 @@
                 },
                 "tone_mapping": {
                     "title": "Tone Mapping",
-                    "type": "string",
-                    "enum": [
-                        "reinhard",
-                        "reinhard_luma",
-                        "reinhard_luminance",
-                        "hable",
-                        "aces"
-                    ]
+                    "type": "object",
+                    "properties": {
+                        "operator": {
+                            "title": "Operator",
+                            "type": "string",
+                            "enum": [
+                                "generic",
+                                "reinhard",
+                                "reinhard_luma",
+                                "reinhard_luminance",
+                                "hable",
+                                "aces"
+                            ]
+                        }
+                    }
                 }
             }
         }
