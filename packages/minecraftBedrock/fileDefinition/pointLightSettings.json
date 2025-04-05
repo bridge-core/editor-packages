@@ -1,0 +1,25 @@
+{
+    "id": "pointLightSettings",
+    "icon": "mdi-lightbulb",
+    "detect": {
+        "packType": "resourcePack",
+        "scope": "point_lights/global.json",
+        "matcher": "point_lights/global.json",
+        "fileContent": [
+            "minecraft:point_light_settings"
+        ],
+        "fileExtensions": [
+            ".json"
+        ]
+    },
+    "schema": "file:///data/packages/minecraftBedrock/schema/pointLightSettings/main.json",
+    "highlighterConfiguration": {
+        "variables": [
+            "description",
+            "colors"
+        ],
+        "typeIdentifiers": [
+            "format_version"
+        ]
+    }
+}

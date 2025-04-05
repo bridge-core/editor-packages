@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "properties": {
+        "minecraft:point_light_settings": {
+            "title": "Point Light Settings Definition",
+            "type": "object",
+            "properties": {
+                "colors": {
+                    "title": "Colors",
+                    "description": "List of key-value pairs where the key is a namespace-qualified block name and the value is a color.",
+                    "propertyNames": {
+                        "$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
+                    },
+                    "patternProperties": {
+                        ".*": {
+                            "$ref": "../../general/color.json"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
