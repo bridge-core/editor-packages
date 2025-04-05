@@ -1,32 +1,36 @@
 [
-	{
-		"icon": "mdi-earth-box",
-		"id": "creationOfCustomBiomes"
-	},
-	{
-		"icon": "mdi-alarm",
-		"id": "upcomingCreatorFeatures"
-	},
-	{
-		"icon": "mdi-camera",
-		"id": "experimentalCreatorCameraFeatures"
-	},
-	{
-		"icon": "mdi-ab-testing",
-		"id": "enableGameTestFramework" // Beta APIs toggle
-	},
-	{
-		"icon": "mdi-puzzle",
-		"id": "dataDrivenJigsawStructures"
-	},
-	{
-		"icon": "mdi-code-json",
-		"id": "customComponentsV2"
-	},
-	{
-		"icon": "mdi-school-outline",
-		"id": "educationEdition"
-	}
+  {
+    "icon": "mdi-earth-box",
+    "id": "creationOfCustomBiomes"
+  },
+  {
+    "icon": "mdi-alarm",
+    "id": "upcomingCreatorFeatures"
+  },
+  {
+    "icon": "mdi-camera",
+    "id": "experimentalCreatorCameraFeatures"
+  },
+  {
+    "icon": "mdi-ab-testing",
+    "id": "enableGameTestFramework" // Beta APIs toggle
+  },
+  {
+    "icon": "mdi-puzzle",
+    "id": "dataDrivenJigsawStructures"
+  },
+  {
+    "icon": "mdi-code-json",
+    "id": "customComponentsV2"
+  },
+  {
+    "icon": "mdi-earth-box-plus",
+    "id": "renderDragonFeatures"
+  },
+  {
+    "icon": "mdi-school-outline",
+    "id": "educationEdition"
+  }
 ]
 
 /**

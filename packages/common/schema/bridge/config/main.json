@@ -1,183 +1,184 @@
 {
-	"$schema": "http://json-schema.org/draft-07/schema",
-	"title": "Project Config",
-	"type": "object",
-	"additionalProperties": false,
-	"properties": {
-		"type": {
-			"description": "Defines the type of a project.",
-			"type": "string",
-			"enum": ["minecraftBedrock", "minecraftJava"]
-		},
-		"name": {
-			"description": "The name of the project.",
-			"type": "string"
-		},
-		"description": {
-			"description": "The description of the project.",
-			"type": "string"
-		},
-		"authors": {
-			"description": "Creators of the project.",
-			"type": "array",
-			"items": {
-				"anyOf": [
-					{
-						"type": "string"
-					},
-					{
-						"type": "object",
-						"properties": {
-							"name": { "type": "string" },
-							"logo": { "type": "string" }
-						},
-						"required": ["name"],
-						"additionalProperties": false
-					}
-				]
-			}
-		},
-		"targetVersion": {
-			"description": "The Minecraft version this project targets. Used to determine auto-completions and the files you can create.",
-			"type": "string"
-		},
-		"experimentalGameplay": {
-			"description": "The experimental gameplay toggles that the project intends to use. Used to determine auto-completions and the files you can create.",
-			"type": "object",
-			"propertyNames": {
-				"enum": [
-					"cavesAndCliffs",
-					"holidayCreatorFeatures",
-					"creationOfCustomBiomes",
-					"additionalModdingCapabilities",
-					"upcomingCreatorFeatures",
-					"experimentalCreatorCameraFeatures",
-					"enableGameTestFramework",
-					"experimentalMolangFeatures",
-					"focusTargetCamera",
-					"aimAssist",
-					"dataDrivenJigsawStructures",
-					"customComponentsV2",
-					"educationEdition",
-					"theWildUpdate"
-				]
-			},
-			"additionalProperties": {
-				"type": "boolean"
-			}
-		},
-		"namespace": {
-			"description": "The namespace used for the project. The namespace 'minecraft' is not a valid string for this field.",
-			"type": "string"
-		},
-		"packs": {
-			"description": "Maps the id of packs this project contains to a path relative to the config.json.",
-			"type": "object",
-			"propertyNames": {
-				"enum": [
-					"behaviorPack",
-					"resourcePack",
-					"skinPack",
-					"worldTemplate"
-				]
-			},
-			"patternProperties": {
-				".*": {
-					"description": "Path to the pack relative to the config.json.",
-					"type": "string"
-				}
-			}
-		},
-		"worlds": {
-			"type": "array",
-			"description": "The worlds that are part of this project.",
-			"items": {
-				"type": "string"
-			}
-		},
-		"packDefinitions": {
-			"description": "Allows users to define additional data which is hard to find for tools (e.g. scoreboards setup inside of a world).",
-			"type": "object",
-			"propertyNames": {
-				"enum": ["families", "tags", "scoreboardObjectives", "names"]
-			},
-			"patternProperties": {
-				".*": {
-					"additionalProperties": false,
-					"type": "object",
-					"properties": {
-						"type": {
-							"description": "Optional: Define e.g. the type of a scoreboard objective.",
-							"type": "string"
-						},
-						"exclude": {
-							"description": "Strings to exclude from a tool's collected data.",
-							"type": "array",
-							"items": {
-								"type": "string"
-							}
-						},
-						"include": {
-							"description": "String to add to a tool's collected data.",
-							"type": "array",
-							"items": {
-								"type": "string"
-							}
-						}
-					}
-				}
-			}
-		},
-		"bridge": {
-			"description": "Additional configuration options for bridge.",
-			"type": "object"
-		},
-		"compiler": {
-			"description": "Settings for bridge.'s compiler.",
-			"type": "object",
-			"properties": {
-				"plugins": {
-					"description": "The compiler plugins to run by default, upon compilation, with the Dash compiler.",
-					"type": "array",
-					"items": {
-						"anyOf": [
-							{
-								"type": "string",
-								"description": "The ID of a compiler plugin."
-							},
-							{
-								"$ref": "./builtInPluginIds.json"
-							},
-							{
-								"type": "array",
-								"minItems": 2,
-								"maxItems": 2,
-								"items": [
-									{
-										"anyOf": [
-											{
-												"type": "string",
-												"description": "The ID of a compiler plugin."
-											},
-											{
-												"$ref": "./builtInPluginIds.json"
-											}
-										]
-									},
-									{
-										"type": "object",
-										"description": "Settings for the compiler plugin."
-									}
-								]
-							}
-						]
-					}
-				}
-			}
-		},
-		"bdsProject": {
-			"description": "Set whether this project is for Bedrock Dedicated Server software.",
-			"type": "boolean"
-		}
-	}
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "title": "Project Config",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "type": {
+      "description": "Defines the type of a project.",
+      "type": "string",
+      "enum": ["minecraftBedrock", "minecraftJava"]
+    },
+    "name": {
+      "description": "The name of the project.",
+      "type": "string"
+    },
+    "description": {
+      "description": "The description of the project.",
+      "type": "string"
+    },
+    "authors": {
+      "description": "Creators of the project.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "logo": { "type": "string" }
+            },
+            "required": ["name"],
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "targetVersion": {
+      "description": "The Minecraft version this project targets. Used to determine auto-completions and the files you can create.",
+      "type": "string"
+    },
+    "experimentalGameplay": {
+      "description": "The experimental gameplay toggles that the project intends to use. Used to determine auto-completions and the files you can create.",
+      "type": "object",
+      "propertyNames": {
+        "enum": [
+          "cavesAndCliffs",
+          "holidayCreatorFeatures",
+          "creationOfCustomBiomes",
+          "additionalModdingCapabilities",
+          "upcomingCreatorFeatures",
+          "experimentalCreatorCameraFeatures",
+          "enableGameTestFramework",
+          "experimentalMolangFeatures",
+          "focusTargetCamera",
+          "aimAssist",
+          "dataDrivenJigsawStructures",
+          "renderDragonFeatures",
+          "customComponentsV2",
+          "educationEdition",
+          "theWildUpdate"
+        ]
+      },
+      "additionalProperties": {
+        "type": "boolean"
+      }
+    },
+    "namespace": {
+      "description": "The namespace used for the project. The namespace 'minecraft' is not a valid string for this field.",
+      "type": "string"
+    },
+    "packs": {
+      "description": "Maps the id of packs this project contains to a path relative to the config.json.",
+      "type": "object",
+      "propertyNames": {
+        "enum": [
+          "behaviorPack",
+          "resourcePack",
+          "skinPack",
+          "worldTemplate"
+        ]
+      },
+      "patternProperties": {
+        ".*": {
+          "description": "Path to the pack relative to the config.json.",
+          "type": "string"
+        }
+      }
+    },
+    "worlds": {
+      "type": "array",
+      "description": "The worlds that are part of this project.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "packDefinitions": {
+      "description": "Allows users to define additional data which is hard to find for tools (e.g. scoreboards setup inside of a world).",
+      "type": "object",
+      "propertyNames": {
+        "enum": ["families", "tags", "scoreboardObjectives", "names"]
+      },
+      "patternProperties": {
+        ".*": {
+          "additionalProperties": false,
+          "type": "object",
+          "properties": {
+            "type": {
+              "description": "Optional: Define e.g. the type of a scoreboard objective.",
+              "type": "string"
+            },
+            "exclude": {
+              "description": "Strings to exclude from a tool's collected data.",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "include": {
+              "description": "String to add to a tool's collected data.",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "bridge": {
+      "description": "Additional configuration options for bridge.",
+      "type": "object"
+    },
+    "compiler": {
+      "description": "Settings for bridge.'s compiler.",
+      "type": "object",
+      "properties": {
+        "plugins": {
+          "description": "The compiler plugins to run by default, upon compilation, with the Dash compiler.",
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "type": "string",
+                "description": "The ID of a compiler plugin."
+              },
+              {
+                "$ref": "./builtInPluginIds.json"
+              },
+              {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": [
+                  {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "description": "The ID of a compiler plugin."
+                      },
+                      {
+                        "$ref": "./builtInPluginIds.json"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "description": "Settings for the compiler plugin."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    "bdsProject": {
+      "description": "Set whether this project is for Bedrock Dedicated Server software.",
+      "type": "boolean"
+    }
+  }
 }
