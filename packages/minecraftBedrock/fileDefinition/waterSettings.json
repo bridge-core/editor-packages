@@ -1,0 +1,31 @@
+{
+    "id": "waterSettings",
+    "icon": "mdi-waves",
+    "detect": {
+        "packType": "resourcePack",
+        "scope": "water/",
+        "matcher": [
+            "water/**/*",
+            "water/*"
+        ],
+        "fileContent": [
+            "minecraft:water_settings"
+        ],
+        "fileExtensions": [
+            ".json"
+        ]
+    },
+    "lightningCache": "waterSettings.json",
+    "schema": "file:///data/packages/minecraftBedrock/schema/waterSettings/main.json",
+    "highlighterConfiguration": {
+        "variables": [
+            "description",
+            "particle_concentrations",
+            "caustics",
+            "waves"
+        ],
+        "typeIdentifiers": [
+            "format_version"
+        ]
+    }
+}

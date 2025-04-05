@@ -1,0 +1,45 @@
+{
+    "name": "Water Settings",
+    "icon": "mdi-waves",
+    "description": "Creates a blank water settings.",
+    "category": "fileType.simpleFile",
+    "showIfDisabled": false,
+    "requires": {
+        "packTypes": [
+            "resourcePack"
+        ],
+        "experimentalGameplay": [
+            "renderDragonFeatures"
+        ]
+    },
+    "additionalModels": {
+        "PRESET_PATH": "water/"
+    },
+    "fields": [
+        [
+            "File Name",
+            "FILE_NAME",
+            {
+                "validate": [
+                    "required",
+                    "alphanumeric",
+                    "lowercase"
+                ]
+            }
+        ]
+    ],
+    "createFiles": [
+        [
+            "waterSettings.json",
+            "{{PRESET_PATH}}{{FILE_NAME}}.json",
+            {
+                "inject": [
+                    "FILE_NAME",
+                    "PRESET_PATH"
+                ],
+                "openFile": true,
+                "packPath": "resourcePack"
+            }
+        ]
+    ]
+}

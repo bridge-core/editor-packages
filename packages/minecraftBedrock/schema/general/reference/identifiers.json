@@ -255,6 +255,17 @@
 					"$ref": "../vanilla/identifiers.json#/definitions/lighting_settings_identifiers"
 				}
 			]
+		},
+		"water_settings_identifiers": {
+			"type": "string",
+			"anyOf": [
+				{
+					"$ref": "../../waterSettings/dynamic/identifierEnum.json"
+				},
+				{
+					"$ref": "../vanilla/identifiers.json#/definitions/water_settings_identifiers"
+				}
+			]
 		}
 	}
 }
