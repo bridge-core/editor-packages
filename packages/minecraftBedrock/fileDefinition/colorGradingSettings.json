@@ -1,0 +1,30 @@
+{
+    "id": "colorGradingSettings",
+    "icon": "mdi-palette",
+    "detect": {
+        "packType": "resourcePack",
+        "scope": "color_grading/",
+        "matcher": [
+            "color_grading/**/*",
+            "color_grading/*"
+        ],
+        "fileContent": [
+            "minecraft:color_grading_settings"
+        ],
+        "fileExtensions": [
+            ".json"
+        ]
+    },
+    "lightningCache": "colorGradingSettings.json",
+    "schema": "file:///data/packages/minecraftBedrock/schema/colorGradingSettings/main.json",
+    "highlighterConfiguration": {
+        "variables": [
+            "description",
+            "color_grading",
+            "tone_mapping"
+        ],
+        "typeIdentifiers": [
+            "format_version"
+        ]
+    }
+}

@@ -1,0 +1,104 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+        "color_grading_parameters": {
+            "type": "object",
+            "properties": {
+                "contrast": {
+                    "title": "Contrast",
+                    "$ref": "#/definitions/color_grading_parameter_4"
+                },
+                "gain": {
+                    "title": "Gain",
+                    "$ref": "#/definitions/color_grading_parameter_10"
+                },
+                "gamma": {
+                    "title": "Gamma",
+                    "$ref": "#/definitions/color_grading_parameter_4"
+                },
+                "offset": {
+                    "title": "Offset",
+                    "$ref": "#/definitions/offset"
+                },
+                "saturation": {
+                    "title": "Saturation",
+                    "$ref": "#/definitions/color_grading_parameter_10"
+                }
+            }
+        },
+        "highlights": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/color_grading_parameters"
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "enabled": {
+                            "title": "Enabled",
+                            "type": "boolean"
+                        },
+                        "highlightsMin": {
+                            "title": "Highlights Minimum",
+                            "type": "number",
+                            "minimum": 1.0,
+                            "maximum": 4.0
+                        }
+                    }
+                }
+            ]
+        },
+        "shadows": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/color_grading_parameters"
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "enabled": {
+                            "title": "Enabled",
+                            "type": "boolean"
+                        },
+                        "shadowsMax": {
+                            "title": "Shadows Maximum",
+                            "type": "number",
+                            "minimum": 0.1,
+                            "maximum": 1.0
+                        }
+                    }
+                }
+            ]
+        },
+        "color_grading_parameter_4": {
+            "type": "array",
+            "items": {
+                "type": "number",
+                "minimum": 0.0,
+                "maximum": 4.0
+            },
+            "minItems": 3,
+            "maxItems": 3
+        },
+        "color_grading_parameter_10": {
+            "type": "array",
+            "items": {
+                "type": "number",
+                "minimum": 0.0,
+                "maximum": 4.0
+            },
+            "minItems": 3,
+            "maxItems": 3
+        },
+        "offset": {
+            "type": "array",
+            "items": {
+                "type": "number",
+                "minimum": -1.0,
+                "maximum": 1.0
+            },
+            "minItems": 3,
+            "maxItems": 3
+        }
+    }
+}

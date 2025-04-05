@@ -223,17 +223,6 @@
 				}
 			]
 		},
-		"lighting_settings_identifiers": {
-			"type": "string",
-			"anyOf": [
-				{
-					"$ref": "../../lightingSettings/dynamic/identifierEnum.json"
-				},
-				{
-					"$ref": "../vanilla/identifiers.json#/definitions/lighting_settings_identifiers"
-				}
-			]
-		},
 		"atmosphere_settings_identifiers": {
 			"type": "string",
 			"anyOf": [
@@ -242,6 +231,28 @@
 				},
 				{
 					"$ref": "../vanilla/identifiers.json#/definitions/atmosphere_settings_identifiers"
+				}
+			]
+		},
+		"color_grading_settings_identifiers": {
+			"type": "string",
+			"anyOf": [
+				{
+					"$ref": "../../colorGradingSettings/dynamic/identifierEnum.json"
+				},
+				{
+					"$ref": "../vanilla/identifiers.json#/definitions/color_grading_settings_identifiers"
+				}
+			]
+		},
+		"lighting_settings_identifiers": {
+			"type": "string",
+			"anyOf": [
+				{
+					"$ref": "../../lightingSettings/dynamic/identifierEnum.json"
+				},
+				{
+					"$ref": "../vanilla/identifiers.json#/definitions/lighting_settings_identifiers"
 				}
 			]
 		}

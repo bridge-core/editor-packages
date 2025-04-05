@@ -1,0 +1,48 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "properties": {
+        "minecraft:color_grading_settings": {
+            "title": "Color Grading Definition",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "title": "Description",
+                    "$ref": "./description.json"
+                },
+                "color_grading": {
+                    "title": "Color Grading",
+                    "type": "object",
+                    "properties": {
+                        "midtones": {
+                            "title": "Midtones",
+                            "description": "Color grading parameters for midtones, and for when highlights or shadows are not specified.",
+                            "$ref": "../general.json#/definitions/color_grading_parameters"
+                        },
+                        "highlights": {
+                            "title": "Highlights",
+                            "description": "Optional color grading parameters for highlights.",
+                            "$ref": "../general.json#/definitions/highlights"
+                        },
+                        "shadows": {
+                            "title": "Shadows",
+                            "description": "Optional color grading parameters for shadows.",
+                            "$ref": "../general.json#/definitions/shadows"
+                        }
+                    }
+                },
+                "tone_mapping": {
+                    "title": "Tone Mapping",
+                    "type": "string",
+                    "enum": [
+                        "reinhard",
+                        "reinhard_luma",
+                        "reinhard_luminance",
+                        "hable",
+                        "aces"
+                    ]
+                }
+            }
+        }
+    }
+}
