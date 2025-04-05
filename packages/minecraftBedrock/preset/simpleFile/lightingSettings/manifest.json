@@ -1,45 +1,45 @@
 {
-  "name": "Lighting Settings",
-  "icon": "mdi-shape-rectangle-plus",
-  "description": "Creates a blank volume.",
-  "category": "fileType.simpleFile",
-  "showIfDisabled": false,
-  "requires": {
-    "packTypes": [
-      "resourcePack"
-    ],
-    "experimentalGameplay": [
-      "renderDragonFeatures"
-    ]
-  },
-  "additionalModels": {
-    "PRESET_PATH": "lighting/"
-  },
-  "fields": [
-    [
-      "File Name",
-      "FILE_NAME",
-      {
-        "validate": [
-          "required",
-          "alphanumeric",
-          "lowercase"
-        ]
-      }
-    ]
-  ],
-  "createFiles": [
-    [
-      "lightingSettings.json",
-      "{{PRESET_PATH}}{{FILE_NAME}}.json",
-      {
-        "inject": [
-          "FILE_NAME",
-          "PRESET_PATH"
+    "name": "Lighting Settings",
+    "icon": "mdi-lightbulb",
+    "description": "Creates a blank volume.",
+    "category": "fileType.simpleFile",
+    "showIfDisabled": false,
+    "requires": {
+        "packTypes": [
+            "resourcePack"
         ],
-        "openFile": true,
-        "packPath": "resourcePack"
-      }
+        "experimentalGameplay": [
+            "renderDragonFeatures"
+        ]
+    },
+    "additionalModels": {
+        "PRESET_PATH": "lighting/"
+    },
+    "fields": [
+        [
+            "File Name",
+            "FILE_NAME",
+            {
+                "validate": [
+                    "required",
+                    "alphanumeric",
+                    "lowercase"
+                ]
+            }
+        ]
+    ],
+    "createFiles": [
+        [
+            "lightingSettings.json",
+            "{{PRESET_PATH}}{{FILE_NAME}}.json",
+            {
+                "inject": [
+                    "FILE_NAME",
+                    "PRESET_PATH"
+                ],
+                "openFile": true,
+                "packPath": "resourcePack"
+            }
+        ]
     ]
-  ]
 }

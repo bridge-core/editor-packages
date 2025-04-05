@@ -1,6 +1,6 @@
 {
     "id": "pointLightSettings",
-    "icon": "mdi-lightbulb",
+    "icon": "mdi-spotlight",
     "detect": {
         "packType": "resourcePack",
         "scope": "point_lights/global.json",
