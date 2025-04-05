@@ -1,0 +1,72 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+        "keyframe_map": {
+            "type": "object",
+            "propertyNames": {
+                "pattern": "^\\d+(\\.\\d+)?$"
+            },
+            "patternProperties": {
+                "^\\d+(\\.\\d+)?$": {
+                    "type": "number"
+                }
+            }
+        },
+        "color_keyframe_map": {
+            "type": "object",
+            "propertyNames": {
+                "pattern": "^\\d+(\\.\\d+)?$"
+            },
+            "patternProperties": {
+                "^\\d+(\\.\\d+)?$": {
+                    "$ref": "../general/color.json"
+                }
+            }
+        },
+        "constant_or_keyframe_map": {
+            "anyOf": [
+                {
+                    "type": "number"
+                },
+                {
+                    "$ref": "#/definitions/keyframe_map"
+                }
+            ]
+        },
+        "color_constant_or_keyframe_map": {
+            "anyOf": [
+                {
+                    "$ref": "../general/color.json"
+                },
+                {
+                    "$ref": "#/definitions/color_keyframe_map"
+                }
+            ]
+        },
+        "horizon_blend_stops": {
+            "type": "object",
+            "properties": {
+                "min": {
+                    "title": "Min",
+                    "description": "The minimum horizon height.",
+                    "$ref": "#/definitions/constant_or_keyframe_map"
+                },
+                "start": {
+                    "title": "Start",
+                    "description": "The height relative to the horizon where the zenith contribution will take over.",
+                    "$ref": "#/definitions/constant_or_keyframe_map"
+                },
+                "mie_start": {
+                    "title": "Mie Start",
+                    "description": "The height relative to the horizon where mie scattering begins.",
+                    "$ref": "#/definitions/constant_or_keyframe_map"
+                },
+                "max": {
+                    "title": "Max",
+                    "description": "The maximum horizon height.",
+                    "$ref": "#/definitions/constant_or_keyframe_map"
+                }
+            }
+        }
+    }
+}

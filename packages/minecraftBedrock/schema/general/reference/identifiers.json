@@ -233,6 +233,17 @@
 					"$ref": "../vanilla/identifiers.json#/definitions/lighting_settings_identifiers"
 				}
 			]
+		},
+		"atmosphere_settings_identifiers": {
+			"type": "string",
+			"anyOf": [
+				{
+					"$ref": "../../atmosphereSettings/dynamic/identifierEnum.json"
+				},
+				{
+					"$ref": "../vanilla/identifiers.json#/definitions/atmosphere_settings_identifiers"
+				}
+			]
 		}
 	}
 }

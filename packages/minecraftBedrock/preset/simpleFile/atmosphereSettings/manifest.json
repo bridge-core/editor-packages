@@ -1,7 +1,7 @@
 {
-    "name": "Lighting Settings",
-    "icon": "mdi-lightbulb",
-    "description": "Creates a blank lighting settings.",
+    "name": "Atmosphere Settings",
+    "icon": "mdi-weather-dust",
+    "description": "Creates a blank atmosphere settings.",
     "category": "fileType.simpleFile",
     "showIfDisabled": false,
     "requires": {
@@ -13,7 +13,7 @@
         ]
     },
     "additionalModels": {
-        "PRESET_PATH": "lighting/"
+        "PRESET_PATH": "atmospherics/"
     },
     "fields": [
         [
@@ -30,7 +30,7 @@
     ],
     "createFiles": [
         [
-            "lightingSettings.json",
+            "atmosphereSettings.json",
             "{{PRESET_PATH}}{{FILE_NAME}}.json",
             {
                 "inject": [
