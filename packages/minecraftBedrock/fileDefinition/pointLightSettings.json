@@ -15,7 +15,6 @@
     "schema": "file:///data/packages/minecraftBedrock/schema/pointLightSettings/main.json",
     "highlighterConfiguration": {
         "variables": [
-            "description",
             "colors"
         ],
         "typeIdentifiers": [

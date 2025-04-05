@@ -1,0 +1,74 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "properties": {
+        "minecraft:pbr_fallback_settings": {
+            "title": "PBR Fallback Settings Definition",
+            "type": "object",
+            "properties": {
+                "blocks": {
+                    "title": "Blocks",
+                    "type": "object",
+                    "properties": {
+                        "global_metalness_emissive_roughness_subsurface": {
+                            "title": "Global MER Subsurface",
+                            "description": "The default MERS value to use for blocks when not defined via textureset.",
+                            "$ref": "#/definitions/color"
+                        }
+                    }
+                },
+                "actors": {
+                    "title": "Actors",
+                    "type": "object",
+                    "properties": {
+                        "global_metalness_emissive_roughness_subsurface": {
+                            "title": "Global MER Subsurface",
+                            "description": "The default MERS value to use for actors/mobs when not defined via textureset.",
+                            "$ref": "#/definitions/color"
+                        }
+                    }
+                },
+                "particles": {
+                    "title": "Particles",
+                    "type": "object",
+                    "properties": {
+                        "global_metalness_emissive_roughness_subsurface": {
+                            "title": "Global MER Subsurface",
+                            "description": "The default MERS value to use for particles when not defined via textureset.",
+                            "$ref": "#/definitions/color"
+                        }
+                    }
+                },
+                "items": {
+                    "title": "Items",
+                    "type": "object",
+                    "properties": {
+                        "global_metalness_emissive_roughness_subsurface": {
+                            "title": "Global MER Subsurface",
+                            "description": "The default MERS value to use for items when not defined via textureset.",
+                            "$ref": "#/definitions/color"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "color": {
+            "oneOf": [
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 255
+                    },
+                    "minItems": 4,
+                    "maxItems": 4
+                },
+                {
+                    "$ref": "../../general/hexColor.json"
+                }
+            ]
+        }
+    }
+}
