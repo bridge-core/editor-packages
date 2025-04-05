@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "title": "Color Grading Identifier",
+    "description": "Set the color grading settings used during deferred rendering. Biomes without this component will have default color grading settings.",
+    "type": "object",
+    "properties": {
+        "color_grading_identifier": {
+            "title": "Color Grading Identifier",
+            "description": "Identifier of color grading definition to use.",
+            "$ref": "../../../general/reference/identifiers.json#/definitions/color_grading_settings_identifiers"
+        }
+    },
+    "additionalProperties": false
+}

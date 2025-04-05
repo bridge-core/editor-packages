@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "title": "Lighting Identifier",
+    "description": "Set the lighting settings used during deferred rendering. Biomes without this component will have default lighting settings.",
+    "type": "object",
+    "properties": {
+        "lighting_identifier": {
+            "title": "Lighting Identifier",
+            "description": "Identifier of lighting definition to use.",
+            "$ref": "../../../general/reference/identifiers.json#/definitions/lighting_settings_identifiers"
+        }
+    },
+    "additionalProperties": false
+}
