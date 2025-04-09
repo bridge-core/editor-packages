@@ -4,7 +4,7 @@
 	"properties": {
 		"identifier": {
 			"title": "Identifier",
-			"$ref": "../../general/reference/prefixedFileIdentifier.json"
+			"$ref": "../../project/unprefixedFileIdentifierEnum.json"
 		}
 	},
 	"required": [
