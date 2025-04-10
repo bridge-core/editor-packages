@@ -76,6 +76,17 @@
 							}
 						}
 					}
+				},
+				"spawn_category": {
+					"title": "Spawn Category",
+					"type": "string",
+					"enum": [
+						"ambient",
+						"axolotls",
+						"creature",
+						"monster",
+						"water_ambient"
+					]
 				}
 			}
 		},
