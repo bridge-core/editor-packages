@@ -98,6 +98,12 @@
 					}
 				}
 			}
+		},
+		"singular_pickup": {
+			"title": "Singular Pickup",
+			"description": "Controls if the mob is able to pick up more of the same item if it is already holding that item",
+			"type": "boolean",
+			"default": false
 		}
 	}
 }

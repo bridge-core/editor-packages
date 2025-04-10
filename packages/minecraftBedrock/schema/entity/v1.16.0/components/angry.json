@@ -29,6 +29,12 @@
 			"type": "boolean",
 			"default": false
 		},
+		"broadcast_anger_when_dying": {
+			"title": "Broadcast Anger When Dying",
+			"description": "If false, when this mob is killed it does not spread its anger to other entities of the same entity definition within the broadcastRange.",
+			"type": "boolean",
+			"default": true
+		},
 		"broadcast_range": {
 			"title": "Broadcast Range",
 			"description": "Distance in blocks within which other entities of the same entity definition will become angry.",
