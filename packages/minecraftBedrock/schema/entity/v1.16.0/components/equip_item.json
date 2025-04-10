@@ -3,5 +3,20 @@
 	"additionalProperties": false,
 	"description": "The entity puts on the desired equipment.",
 	"type": "object",
-	"title": "Equip Item"
+	"title": "Equip Item",
+	"properties": {
+		"excluded_items": {
+			"title": "Excluded Items",
+			"description": "List of items that the entity should not equip.",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"item": {
+						"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
+					}
+				}
+			}
+		}
+	}
 }
