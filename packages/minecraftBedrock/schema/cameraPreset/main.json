@@ -2,7 +2,10 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"title": "Camera Preset",
 	"type": "object",
-	"required": ["format_version", "minecraft:camera_preset"],
+	"required": [
+		"format_version",
+		"minecraft:camera_preset"
+	],
 	"allOf": [
 		{
 			"properties": {
@@ -31,7 +34,8 @@
 							"1.20.40",
 							"1.20.50",
 							"1.20.60",
-							"1.20.70"
+							"1.20.70",
+							"1.20.80"
 						]
 					}
 				}
@@ -44,19 +48,10 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.20.80"]
-					}
-				}
-			},
-			"then": {
-				"$ref": "./v1.20.80/main.json"
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"format_version": {
-						"enum": ["1.20.0", "1.21.10", "v1.21.20"]
+						"enum": [
+							"1.20.0",
+							"1.21.10"
+						]
 					}
 				}
 			},
@@ -68,7 +63,23 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.21.20"]
+						"enum": [
+							"1.21.20"
+						]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.21.20/main.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": [
+							"1.21.30"
+						]
 					}
 				}
 			},
@@ -80,19 +91,9 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.21.30"]
-					}
-				}
-			},
-			"then": {
-				"$ref": "./v1.21.30/main.json"
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"format_version": {
-						"enum": ["1.21.40"]
+						"enum": [
+							"1.21.40"
+						]
 					}
 				}
 			},
@@ -104,12 +105,43 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.21.50"]
+						"enum": [
+							"1.21.50"
+						]
 					}
 				}
 			},
 			"then": {
 				"$ref": "./v1.21.50/main.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": [
+							"1.21.60"
+						]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.21.60/main.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": [
+							"1.21.70",
+							"1.21.80"
+						]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.21.70/main.json"
 			}
 		}
 	]

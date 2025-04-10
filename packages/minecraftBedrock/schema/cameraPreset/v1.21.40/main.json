@@ -4,107 +4,144 @@
 	"properties": {
 		"minecraft:camera_preset": {
 			"title": "Camera Preset Definition",
-			"required": ["identifier"],
+			"required": [
+				"identifier"
+			],
 			"type": "object",
-			"properties": {
-				"identifier": {
-					"title": "Identifier",
-					"$ref": "../../general/reference/prefixedFileIdentifier.json",
-					"description": "The identifier for this camera preset. The name must include a namespace and must not use the Minecraft namespace."
-				},
-				"inherit_from": {
-					"title": "Camera Inheritor",
-					"description": "Inherits the properties of the specified camera preset.",
-					"$ref": "../../general/reference/identifiers.json#/definitions/camera_preset_identifiers"
-				},
-				"pos_x": {
-					"title": "X Position",
-					"description": "The offset of the camera on the X coordinate.",
-					"type": "integer"
-				},
-				"pos_y": {
-					"title": "Y Position",
-					"description": "The offset of the camera on the Y coordinate.",
-					"type": "integer"
-				},
-				"pos_z": {
-					"title": "Y Position",
-					"description": "The offset of the camera on the Y coordinate.",
-					"type": "integer"
-				},
-				"rot_x": {
-					"title": "X Rotation",
-					"description": "The pitch rotation of the camera, supports any value between -90 and 90.",
-					"type": "integer",
-					"minimum": -90,
-					"maximum": 90
-				},
-				"rot_y": {
-					"title": "Y Rotation",
-					"description": "The yaw rotation of the camera.",
-					"minimum": -360,
-					"maximum": 360
-				},
-				"listener": {
-					"title": "Listener",
-					"description": "Sets the audio system to use the player's position for audio positioning.",
-					"type": "string",
-					"enum": ["player"]
-				},
-				"player_effects": {
-					"title": "Player Effects",
-					"description": "If false, will disable camera effects such as night vision or darkness. Defaults to true.",
-					"type": "boolean"
-				},
-				"extend_player_rendering": {
-					"title": "Extend Player Rendering",
-					"type": "boolean",
-					"default": false
-				},
-				"view_offset": {
-					"title": "View Offset",
-					"type": "array",
-					"minItems": 2,
-					"maxItems": 2,
-					"items": {
-						"type": "number"
+			"allOf": [
+				{
+					"properties": {
+						"identifier": {
+							"title": "Identifier",
+							"$ref": "../../general/reference/prefixedFileIdentifier.json",
+							"description": "The identifier for this camera preset. The name must include a namespace and must not use the Minecraft namespace."
+						},
+						"inherit_from": {
+							"title": "Camera Inheritor",
+							"description": "Inherits the properties of the specified camera preset.",
+							"$ref": "../../general/reference/identifiers.json#/definitions/camera_preset_identifiers"
+						}
 					}
 				},
-				"radius": {
-					"title": "Radius",
-					"type": "number",
-					"minimum": 0
-				},
-				"entity_offset": {
-					"title": "Entity Offset",
-					"type": "array",
-					"minItems": 3,
-					"maxItems": 3,
-					"items": {
-						"type": "number"
+				{
+					"properties": {
+						"align_target_and_camera_forward": {
+							"title": "Align Target and Camera Forward",
+							"description": "Whether the camera will be locked to have the same forward as its target.",
+							"type": "boolean",
+							"default": true
+						},
+						"continue_targeting": {
+							"title": "Continue Targeting",
+							"description": "Set this flag if you want the camera to continue tracking the entity even when the target moves outside the valid rotation limits.",
+							"type": "boolean"
+						},
+						"entity_offset": {
+							"title": "Entity Offset",
+							"description": "Changes the point of the entity the camera pivots around (x, y, z). x, y and z can be floats between -64 and 64.",
+							"type": "array",
+							"items": {
+								"type": "number",
+								"minimum": -64,
+								"maximum": 64
+							},
+							"minItems": 3,
+							"maxItems": 3
+						},
+						"horizontal_rotation_limit": {
+							"title": "Horizontal Rotation Limit",
+							"description": "Set the horizontal rotation limit for the target camera (x, y), where x represents rotation to the left, and y to the right. Values can be from 0 to 360.0.",
+							"type": "array",
+							"items": {
+								"type": "number",
+								"minimum": 0.0,
+								"maximum": 360.0
+							},
+							"minItems": 2,
+							"maxItems": 2
+						},
+						"listener": {
+							"title": "Listener",
+							"description": "Specify 'camera' or 'player' to control whether the camera or player is used for audio listening position when this preset is active.",
+							"type": "string",
+							"enum": [
+								"camera",
+								"player"
+							]
+						},
+						"player_effects": {
+							"title": "Player Effects",
+							"description": "Specify whether to allow effects on the player to affect how the game renders when this preset is active.",
+							"type": "boolean"
+						},
+						"pos_x": {
+							"title": "X Position",
+							"description": "Set an X position for this camera's behavior.",
+							"type": "integer"
+						},
+						"pos_y": {
+							"title": "Y Position",
+							"description": "Set a Y position for this camera's behavior.",
+							"type": "integer"
+						},
+						"pos_z": {
+							"title": "Z Position",
+							"description": "Set a Z position for this camera's behavior.",
+							"type": "integer"
+						},
+						"radius": {
+							"title": "Radius",
+							"description": "Set a radius for this camera's behavior.",
+							"type": "number",
+							"minimum": 0
+						},
+						"rotation_speed": {
+							"title": "Rotation Speed",
+							"description": "Set the rotation speed for the camera.",
+							"type": "number"
+						},
+						"rot_x": {
+							"title": "X Rotation",
+							"description": "Set an X rotation for this camera's behavior.",
+							"type": "integer",
+							"minimum": -90,
+							"maximum": 90
+						},
+						"rot_y": {
+							"title": "Y Rotation",
+							"description": "Set a Y rotation for this camera's behavior.",
+							"minimum": -360,
+							"maximum": 360
+						},
+						"snap_to_target": {
+							"title": "Snap to Target",
+							"description": "Set this flag if you want the camera to snap to your target immediately in the first frame. Only available with a valid rotation speed.",
+							"type": "boolean"
+						},
+						"vertical_rotation_limit": {
+							"title": "Vertical Rotation Limit",
+							"description": "Set the vertical rotation limit for the target camera (x, y). Values can be from 0.0 to 180.0 inclusive in world space where 0 degrees is straight down, 90 degrees is horizontal and 180 degrees is straight up.",
+							"items": {
+								"type": "number",
+								"minimum": 0,
+								"maximum": 360
+							},
+							"minItems": 2,
+							"maxItems": 2
+						},
+						"view_offset": {
+							"title": "View Offset",
+							"description": "Creates an over the shoulder type offset (x, y). x and y can be floats between -64 and 64.",
+							"type": "array",
+							"items": {
+								"type": "number"
+							},
+							"minItems": 2,
+							"maxItems": 2
+						}
 					}
-				},
-				"rotation_speed": {
-					"title": "Rotation Speed",
-					"description": "Controls the speed of rotation for targeting an entity.",
-					"type": "number"
-				},
-				"snap_to_target": {
-					"title": "Snap to Target",
-					"description": "Enables snapping to the target entity on the first tick.",
-					"type": "boolean"
-				},
-				"align_camera_and_target_forward": {
-					"title": "Align Camera and Target Forward",
-					"description": "Enables camera relative movement.",
-					"type": "boolean"
-				},
-				"continue_targeting": {
-					"title": "Continue Targeting",
-					"description": "Enables the tracking of entities outside of set rotation limits.",
-					"type": "boolean"
 				}
-			}
+			]
 		}
 	}
 }
