@@ -42,7 +42,8 @@
 								"slot.armor.head",
 								"slot.armor.chest",
 								"slot.armor.legs",
-								"slot.armor.feet"
+								"slot.armor.feet",
+								"slot.armor.body"
 							]
 						},
 						{
@@ -52,12 +53,12 @@
 						}
 					]
 				},
-                "drop_item_y_offset": {
-                    "title": "Drop Item Y Offset",
-                    "description": "Will offset the item drop position this amount in the y direction. Requires 'drop_item_slot' to be specified.",
-                    "type": "number",
-                    "default": 0
-                },
+				"drop_item_y_offset": {
+					"title": "Drop Item Y Offset",
+					"description": "Will offset the item drop position this amount in the y direction. Requires 'drop_item_slot' to be specified.",
+					"type": "number",
+					"default": 0
+				},
 				"equip_item_slot": {
 					"title": "Equip Item Slot",
 					"description": "The entity's equipment slot to equip the item to, if any, upon successful interaction.",
@@ -68,7 +69,8 @@
 								"slot.armor.head",
 								"slot.armor.chest",
 								"slot.armor.legs",
-								"slot.armor.feet"
+								"slot.armor.feet",
+								"slot.armor.body"
 							]
 						},
 						{
@@ -210,7 +212,12 @@
 					"title": "Vibration",
 					"description": "Vibration to emit when the interaction occurs. Admitted values are entity_interact (used by default), shear, and none (no vibration emitted).",
 					"type": "string",
-					"enum": ["entity_interact", "entity_act", "shear", "none"],
+					"enum": [
+						"entity_interact",
+						"entity_act",
+						"shear",
+						"none"
+					],
 					"default": "entity_interact"
 				}
 			}
