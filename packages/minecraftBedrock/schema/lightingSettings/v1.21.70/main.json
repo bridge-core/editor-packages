@@ -14,25 +14,45 @@
                     "title": "Directional Lights",
                     "type": "object",
                     "properties": {
-                        "sun": {
-                            "title": "Sun",
-                            "$ref": "#/definitions/sun"
+                        "orbit": {
+                            "title": "Orbit",
+                            "type": "object",
+                            "properties": {
+                                "sun": {
+                                    "title": "Sun",
+                                    "$ref": "#/definitions/sun"
+                                },
+                                "moon": {
+                                    "title": "Moon",
+                                    "$ref": "#/definitions/moon"
+                                },
+                                "orbital_offset_degrees": {
+                                    "title": "Orbital Offset Degrees",
+                                    "description": "The rotational offset of the sun and moon from their standard orbital axis, measured in degrees.",
+                                    "anyOf": [
+                                        {
+                                            "type": "number"
+                                        },
+                                        {
+                                            "$ref": "#/definitions/keyframe_map"
+                                        }
+                                    ]
+                                }
+                            }
                         },
-                        "moon": {
-                            "title": "Moon",
-                            "$ref": "#/definitions/moon"
-                        },
-                        "orbital_offset_degrees": {
-                            "title": "Orbital Offset Degrees",
-                            "description": "The rotational offset of the sun and moon from their standard orbital axis, measured in degrees.",
-                            "anyOf": [
-                                {
+                        "flash": {
+                            "title": "Flash",
+                            "type": "object",
+                            "properties": {
+                                "illuminance": {
+                                    "title": "Illuminance",
                                     "type": "number"
                                 },
-                                {
-                                    "$ref": "#/definitions/keyframe_map"
+                                "color": {
+                                    "title": "Color",
+                                    "$ref": "../../general/color.json"
                                 }
-                            ]
+                            }
                         }
                     }
                 },
