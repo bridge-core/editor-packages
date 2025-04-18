@@ -4,17 +4,18 @@
 		"packType": "resourcePack",
 		"scope": "sounds.json",
 		"matcher": "sounds.json",
-		"fileExtensions": [".json"]
+		"fileExtensions": [
+			".json"
+		]
 	},
-
 	"schema": "file:///data/packages/minecraftBedrock/schema/clientSound/main.json",
 	"lightningCache": "clientSound.json",
-
 	"highlighterConfiguration": {
 		"keywords": [
 			"block_sounds",
 			"entity_sounds",
 			"individual_event_sounds",
+			"individual_named_sounds",
 			"interactive_sounds"
 		]
 	}
