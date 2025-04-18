@@ -63,7 +63,7 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 		{
 			id: 'biomeTag',
 			path: 'biomes',
-			packType: 'definitions',
+			packType: 'behaviorPack',
 			content: 'minecraft:biome/components/minecraft:tags/tags',
 		},
 		{
