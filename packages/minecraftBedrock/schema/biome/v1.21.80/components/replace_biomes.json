@@ -28,7 +28,7 @@
                 "dimension": {
                     "title": "Dimension",
                     "description": "Dimension in which this replacement can happen. Must be 'minecraft:overworld'.",
-                    "const": "overworld"
+                    "const": "minecraft:overworld"
                 },
                 "noise_frequency_scale": {
                     "title": "Noise Frequency Scale",
