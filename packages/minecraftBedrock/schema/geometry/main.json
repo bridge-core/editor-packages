@@ -21,7 +21,12 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["", "1.12.0", "1.13.0", "1.14.0"]
+						"enum": [
+							"",
+							"1.12.0",
+							"1.13.0",
+							"1.14.0"
+						]
 					}
 				}
 			},
@@ -78,7 +83,10 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.21.0", "1.21.10"]
+						"enum": [
+							"1.21.0",
+							"1.21.10"
+						]
 					}
 				}
 			},
@@ -90,7 +98,15 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.21.20"]
+						"enum": [
+							"1.21.20",
+							"1.21.30",
+							"1.21.40",
+							"1.21.50",
+							"1.21.60",
+							"1.21.70",
+							"1.21.80"
+						]
 					}
 				}
 			},
@@ -99,5 +115,8 @@
 			}
 		}
 	],
-	"required": ["format_version", "minecraft:geometry"]
+	"required": [
+		"format_version",
+		"minecraft:geometry"
+	]
 }

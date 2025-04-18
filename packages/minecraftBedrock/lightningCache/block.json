@@ -3,7 +3,10 @@
 		"cacheKey": "identifier",
 		"path": "minecraft:block/description/identifier"
 	},
-	{ "cacheKey": "event", "path": "minecraft:block/events" },
+	{
+		"cacheKey": "event",
+		"path": "minecraft:block/events"
+	},
 	{
 		"cacheKey": "eventReference",
 		"pathScript": "return Bridge.paths.map(path => [`*/components/${path}/**/event`, `*/permutations/*/components/${path}/**/event`]).flat()",
@@ -90,5 +93,9 @@
 	{
 		"cacheKey": "customComponent",
 		"path": "minecraft:block/components/minecraft:custom_components"
+	},
+	{
+		"cacheKey": "cullingLayer",
+		"path": "minecraft:block/components/minecraft:geometry/culling_layer"
 	}
 ]
