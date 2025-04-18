@@ -160,7 +160,7 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 		{
 			id: 'biome_identifiers',
 			path: 'biomes',
-			packType: 'definitions',
+			packType: 'behaviorPack',
 			content: 'minecraft:biome/description/identifier',
 		},
 		{
