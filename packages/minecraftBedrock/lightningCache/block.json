@@ -97,5 +97,12 @@
 	{
 		"cacheKey": "cullingLayer",
 		"path": "minecraft:block/components/minecraft:geometry/culling_layer"
+	},
+	{
+		"cacheKey": "materialInstance",
+		"path": "minecraft:block/components/minecraft:material_instances",
+		"filter": [
+			"*"
+		]
 	}
 ]
