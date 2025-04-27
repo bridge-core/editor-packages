@@ -97,6 +97,10 @@
 						"same_block",
 						"same_block_permutation"
 					]
+				},
+				"cull_against_full_and_opaque": {
+					"title": "Cull Against Full And Opaque",
+					"type": "boolean"
 				}
 			}
 		}
