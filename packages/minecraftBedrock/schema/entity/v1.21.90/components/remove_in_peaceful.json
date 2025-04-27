@@ -1,0 +1,8 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "title": "Remove in Peaceful",
+    "description": "Denotes entities that are not allowed to exist in 'Peaceful' difficulty.",
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+}

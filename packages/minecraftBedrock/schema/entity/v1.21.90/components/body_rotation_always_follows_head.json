@@ -1,0 +1,8 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "title": "Body Rotation Always Follows Head",
+    "description": "Causes the entity's body to always be automatically rotated to align with the entity's head. Does not override the 'minecraft:body_rotation_blocked' component.",
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+}
