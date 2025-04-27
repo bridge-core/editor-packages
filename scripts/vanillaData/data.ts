@@ -1,10 +1,40 @@
 import { DocTarget, ExportTarget, GameTarget } from './interfaces.ts'
 
+type ScraperSource = {
+	documentation: DocTarget[],
+	game: GameTarget[]
+}
+
 /**
  * Define the data that should be scraped from the game files and documentation.
  */
-export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
+export const toScrape: ScraperSource = {
 	documentation: [
+		{
+			id: 'entity_ai_goals',
+			page: 'Entities',
+			target: 'AI Goals/JSON Name'
+		},
+		{
+			id: 'entity_attributes',
+			page: 'Entities',
+			target: 'Attributes/JSON Name'
+		},
+		{
+			id: 'entity_components',
+			page: 'Entities',
+			target: 'Components/JSON Name'	
+		},
+		{
+			id: 'entity_properties',
+			page: 'Entities',
+			target: 'Properties/JSON Name'
+		},
+		{
+			id: 'entity_triggers',
+			page: 'Entities',
+			target: 'Triggers/JSON Name'
+		},
 		{
 			id: 'prefixed_entity_identifiers',
 			target: 'Entities/Identifier',
@@ -396,6 +426,16 @@ export const exportRaw: ExportTarget[] = [
 		from: ['blockSound.json'],
 		to: 'general/vanilla/blockSound.json',
 	},
+	{
+		from: [
+			'entity_ai_goals.json',
+			'entity_attributes.json',
+			'entity_components.json',
+			'entity_properties.json',
+			'entity_triggers.json'
+		],
+		to: 'general/vanilla/entityComponentList.json'
+	}
 ]
 
 /**

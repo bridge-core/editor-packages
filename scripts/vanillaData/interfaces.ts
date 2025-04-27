@@ -19,6 +19,7 @@ export interface DocTarget extends ScrapeTarget {
 	/**
 	 * Target in the documentation to scrape data from in the form Section/Column.
 	 */
+	page?: string,
 	target: `${string}/${string}`
 }
 export interface GameTarget extends ScrapeTarget {
@@ -53,4 +54,9 @@ export interface ExportTarget {
 	 * Whether to export as properties or enum. Default: 'enum'.
 	 */
 	type?: 'enum' | 'property'
+}
+
+export interface PageTarget {
+	shortName: string,
+	url: string
 }

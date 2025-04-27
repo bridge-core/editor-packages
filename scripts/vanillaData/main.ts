@@ -6,12 +6,27 @@ import { basename, join } from 'path'
 
 const { MINECRAFT_DATA_PATH } = config({ safe: true })
 
-const res = await fetch(
+const addonsRes = await fetch(
 	'https://raw.githubusercontent.com/Mojang/bedrock-samples/preview/documentation/Addons.html'
 )
-const text = await res.text()
+const addonsUrl = await addonsRes.text()
 
-const docScraper = new DocumentationScraper(text, toScrape.documentation)
+const entitiesRes = await fetch(
+	'https://raw.githubusercontent.com/Mojang/bedrock-samples/preview/documentation/Entities.html'
+)
+const entitiesUrl = await entitiesRes.text()
+
+const docScraper = new DocumentationScraper([
+	{
+		shortName: 'Addons',
+		url: addonsUrl
+	},
+	{
+		shortName: 'Entities',
+		url: entitiesUrl
+	}
+], toScrape.documentation)
+
 await docScraper.run()
 
 const programFiles = Deno.env.get('PROGRAMFILES')
