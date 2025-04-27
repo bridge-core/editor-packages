@@ -66,35 +66,46 @@
 		},
 		"entity_sound_event_definitions": {
 			"type": "object",
-			"allOf": [
-				{
-					"$ref": "#/definitions/sound_event_definitions"
+			"properties": {
+				"volume": {
+					"title": "Volume",
+					"$ref": "#/definitions/number_range"
 				},
-				{
+				"pitch": {
+					"title": "Pitch",
+					"$ref": "#/definitions/number_range"
+				},
+				"events": {
+					"title": "Events",
+					"type": "object",
+					"patternProperties": {
+						".*": {
+							"$ref": "#/definitions/sound_event"
+						}
+					}
+				},
+				"variants": {
+					"title": "Variants",
 					"type": "object",
 					"properties": {
-						"variants": {
-							"title": "Variants",
+						"key": {
+							"title": "Key",
+							"description": "Accept a Molang expression that returns a string to select the sound variant.",
+							"$ref": "../molang/embedded.json"
+						},
+						"map": {
+							"title": "Map",
+							"description": "Contains key-value pairs of a variant identifiers and the sound events it overrides.",
 							"type": "object",
-							"properties": {
-								"key": {
-									"title": "Key",
-									"description": "Accept a Molang expression that returns a string to select the sound variant."
-								},
-								"map": {
-									"title": "Map",
-									"description": "Contains key-value pairs of a variant identifiers and the sound events it overrides.",
-									"patternProperties": {
-										".*": {
-											"$ref": "#/definitions/sound_event_definitions"
-										}
-									}
+							"patternProperties": {
+								".*": {
+									"$ref": "#/definitions/sound_event_definitions"
 								}
 							}
 						}
 					}
 				}
-			],
+			},
 			"additionalProperties": false
 		}
 	}
