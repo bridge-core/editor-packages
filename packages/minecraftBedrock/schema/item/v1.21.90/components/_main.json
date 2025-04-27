@@ -124,25 +124,11 @@
 			}
 		},
 		{
-			"$ref": "../../../project/experimentalGameplay/customComponentsV2.json",
-			"then": {
-				"properties": {
-					"minecraft:custom_components": {
-						"$ref": "../../v1.21.80/components/custom_components.json"
-					}
-				}
-			},
-			"else": {
-				"properties": {
-					"minecraft:custom_components": {
-						"$ref": "../../v1.21.10/components/custom_components.json"
-					}
-				}
-			}
-		},
-		{
 			// Deprecated
 			"properties": {
+				"minecraft:custom_components": {
+					"$ref": "../../v1.21.90/components/custom_components.json"
+				},
 				"minecraft:foil": {
 					"$ref": "../../v1.20.20/components/foil.json"
 				},
