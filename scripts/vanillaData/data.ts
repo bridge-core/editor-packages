@@ -23,7 +23,7 @@ export const toScrape: ScraperSource = {
 		{
 			id: 'entity_components',
 			page: 'Entities',
-			target: 'Components/JSON Name'	
+			target: 'Components/JSON Name'
 		},
 		{
 			id: 'entity_properties',
