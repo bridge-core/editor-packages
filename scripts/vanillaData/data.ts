@@ -121,21 +121,25 @@ export const toScrape: ScraperSource = {
 			id: 'entity_texture_paths',
 			path: 'textures/entity',
 			packType: 'resourcePack',
+			filter: (val) => !val.endsWith('.texture_set')
 		},
 		{
 			id: 'item_texture_paths',
 			path: 'textures/items',
 			packType: 'resourcePack',
+			filter: (val) => !val.endsWith('.texture_set')
 		},
 		{
 			id: 'particle_texture_paths',
 			path: 'textures/particle',
 			packType: 'resourcePack',
+			filter: (val) => !val.endsWith('.texture_set')
 		},
 		{
 			id: 'block_texture_paths',
 			path: 'textures/blocks',
 			packType: 'resourcePack',
+			filter: (val) => !val.endsWith('.texture_set')
 		},
 		{
 			id: 'sound_paths',
