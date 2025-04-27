@@ -8,8 +8,9 @@
         "packTypes": [
             "resourcePack"
         ],
-        "experimentalGameplay": [
-            "renderDragonFeatures"
+        "targetVersion": [
+            ">=",
+            "1.21.90"
         ]
     },
     "additionalModels": {

@@ -29,25 +29,6 @@
 					"$ref": "../../v1.21.40/components/water_appearance.json"
 				}
 			}
-		},
-		{
-			"$ref": "../../../project/experimentalGameplay/renderDragonFeatures.json",
-			"then": {
-				"properties": {
-					"minecraft:atmosphere_identifier": {
-						"$ref": "../../v1.21.70/components/atmosphere_identifier.json"
-					},
-					"minecraft:color_grading_identifier": {
-						"$ref": "../../v1.21.70/components/color_grading_identifier.json"
-					},
-					"minecraft:lighting_identifier": {
-						"$ref": "../../v1.21.70/components/lighting_identifier.json"
-					},
-					"minecraft:water_identifier": {
-						"$ref": "../../v1.21.70/components/water_identifier.json"
-					}
-				}
-			}
 		}
 	]
 }
