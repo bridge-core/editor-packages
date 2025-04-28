@@ -37,6 +37,42 @@
                         }
                     }
                 },
+                "caustics": {
+                    "title": "Caustics",
+                    "type": "object",
+                    "properties": {
+                        "enabled": {
+                            "title": "Enabled",
+                            "description": "Whether or not caustics are on or off."
+                        },
+                        "frame_length": {
+                            "title": "Frame Length",
+                            "description": "How many seconds to spend on each frame of animation in the caustics texture.",
+                            "type": "number",
+                            "minimum": 0.0,
+                            "maximum": 5.0
+                        },
+                        "power": {
+                            "title": "Power",
+                            "description": "Controls how bright the caustics effect appears.",
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 6
+                        },
+                        "scale": {
+                            "title": "Scale",
+                            "description": "Controls how size of the repetition of the caustics texture.",
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 5.0
+                        },
+                        "texture": {
+                            "title": "Texture",
+                            "description": "Resource location to a texture for controlling the shape of the caustics; if not used, a built-in Minecraft texture will be supplied automatically.",
+                            "type": "string"
+                        }
+                    }
+                },
                 "waves": {
                     "title": "Waves",
                     "type": "object",
