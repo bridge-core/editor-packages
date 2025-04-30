@@ -34,7 +34,7 @@
 				"minecraft:geometry": {
 					"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
 					"then": {
-						"$ref": "../../v1.21.80/components/experimental/geometry.json"
+						"$ref": "../../v1.21.90/components/experimental/geometry.json"
 					},
 					"else": {
 						"$ref": "../../v1.20.60/components/geometry.json"
@@ -43,7 +43,7 @@
 				"minecraft:item_visual": {
 					"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
 					"then": {
-						"$ref": "../../v1.21.80/components/experimental/item_visual.json"
+						"$ref": "../../v1.21.90/components/experimental/item_visual.json"
 					},
 					"else": {
 						"$ref": "../../v1.21.80/components/item_visual.json"
