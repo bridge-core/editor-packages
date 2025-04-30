@@ -7,8 +7,8 @@
 	"properties": {
 		"translation": {
 			"title": "Translation",
-			"type": "array",
 			"description": "The block's translation",
+			"type": "array",
 			"minItems": 3,
 			"maxItems": 3,
 			"items": {
@@ -17,18 +17,28 @@
 		},
 		"scale": {
 			"title": "Scale",
-			"type": "array",
 			"description": "The block's scale",
+			"type": "array",
 			"minItems": 3,
 			"maxItems": 3,
 			"items": {
 				"type": "number"
 			}
 		},
+		"scale_pivot": {
+			"title": "Scale Pivot",
+			"description": "The point to apply scale around.",
+			"type": "array",
+			"items": {
+				"type": "number"
+			},
+			"minItems": 3,
+			"maxItems": 3
+		},
 		"rotation": {
 			"title": "Rotation",
 			"type": "array",
-			"description": "The block's rotation",
+			"description": "The block's rotation.",
 			"minItems": 3,
 			"maxItems": 3,
 			"items": {
@@ -37,6 +47,16 @@
 				"maximum": 360,
 				"multipleOf": 90
 			}
+		},
+		"rotation_pivot": {
+			"title": "Rotation Pivot",
+			"description": "The point to apply rotation around.",
+			"type": "array",
+			"items": {
+				"type": "number"
+			},
+			"minItems": 3,
+			"maxItems": 3
 		}
 	}
 }
