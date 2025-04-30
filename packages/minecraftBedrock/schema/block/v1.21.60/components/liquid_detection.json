@@ -7,31 +7,47 @@
 			"title": "Detection Rules",
 			"type": "array",
 			"items": {
-				"can_contain_liquid": {
-					"title": "Can Contain Liquid",
-					"description": "Whether this block can contain the liquid. For example, if the liquid type is `water`, this means the block can be waterlogged.",
-					"type": "boolean",
-					"default": false
-				},
-				"liquid_type": {
-					"title": "Liquid Type",
-					"description": "The type of liquid this detection rule is for. ",
-					"type": "string",
-					"enum": ["water"]
-				},
-				"on_liquid_touches": {
-					"title": "On Liquid Touches",
-					"description": "How the block reacts to flowing water.",
-					"type": "string",
-					"enum": ["blocking", "broken", "no_reaction"]
-				},
-				"stops_liquid_flowing_from_direction": {
-					"title": "Stops Liquid Flowing From Direction",
-					"description": "When a block contains a liquid, controls the directions in which the liquid can't flow out from the block. Also controls the directions in which a block can stop liquid flowing into it if `no_reaction` is set for the `on_liquid_touches` field.",
-					"type": "array",
-					"items": {
+				"type": "object",
+				"properties": {
+					"can_contain_liquid": {
+						"title": "Can Contain Liquid",
+						"description": "Whether this block can contain the liquid. For example, if the liquid type is `water`, this means the block can be waterlogged.",
+						"type": "boolean",
+						"default": false
+					},
+					"liquid_type": {
+						"title": "Liquid Type",
+						"description": "The type of liquid this detection rule is for. ",
 						"type": "string",
-						"enum": ["up", "down", "north", "south", "east", "west"]
+						"enum": [
+							"water"
+						]
+					},
+					"on_liquid_touches": {
+						"title": "On Liquid Touches",
+						"description": "How the block reacts to flowing water.",
+						"type": "string",
+						"enum": [
+							"blocking",
+							"broken",
+							"no_reaction"
+						]
+					},
+					"stops_liquid_flowing_from_direction": {
+						"title": "Stops Liquid Flowing From Direction",
+						"description": "When a block contains a liquid, controls the directions in which the liquid can't flow out from the block. Also controls the directions in which a block can stop liquid flowing into it if `no_reaction` is set for the `on_liquid_touches` field.",
+						"type": "array",
+						"items": {
+							"type": "string",
+							"enum": [
+								"up",
+								"down",
+								"north",
+								"south",
+								"east",
+								"west"
+							]
+						}
 					}
 				}
 			}
