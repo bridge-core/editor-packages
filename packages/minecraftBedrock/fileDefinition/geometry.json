@@ -5,20 +5,29 @@
 		"packType": "resourcePack",
 		"matcher": [
 			"models/entity/**/*",
-			"models/block/**/*",
+			"models/blocks/**/*",
 			"models/entity/*",
-			"models/block/*",
+			"models/blocks/*",
 			"models/mobs.json"
 		],
 		"scope": "models/",
-		"fileContent": ["minecraft:geometry"],
-		"fileExtensions": [".json"]
+		"fileContent": [
+			"minecraft:geometry"
+		],
+		"fileExtensions": [
+			".json"
+		]
 	},
-
 	"lightningCache": "geometry.json",
 	"schema": "file:///data/packages/minecraftBedrock/schema/geometry/main.json",
 	"highlighterConfiguration": {
-		"variables": ["description", "bones", "cubes"],
-		"typeIdentifiers": ["format_version"]
+		"variables": [
+			"description",
+			"bones",
+			"cubes"
+		],
+		"typeIdentifiers": [
+			"format_version"
+		]
 	}
 }
