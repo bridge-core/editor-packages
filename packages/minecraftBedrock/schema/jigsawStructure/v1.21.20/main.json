@@ -4,7 +4,9 @@
 	"properties": {
 		"minecraft:jigsaw": {
 			"title": "Jigsaw Definition",
-			"required": ["description"],
+			"required": [
+				"description"
+			],
 			"allOf": [
 				{
 					"type": "object",
@@ -39,7 +41,12 @@
 							"title": "Terrain Adaptation",
 							"description": "How the terrain should adapt relative to the generated Jigsaw Structure.",
 							"type": "string",
-							"enum": ["bury", "beard_thin", "beard_box", "encapsulate"]
+							"enum": [
+								"bury",
+								"beard_thin",
+								"beard_box",
+								"encapsulate"
+							]
 						},
 						"start_pool": {
 							"title": "Start Pool",
@@ -57,7 +64,10 @@
 							"title": "Heightmap Projection",
 							"description": "Heightmap used to calculate the relative start height. For example, a heightmap_projection of ocean_floor and a start_height of 10 means the Jigsaw Structure will begin generating 10 blocks above the ocean floor.",
 							"type": "string",
-							"enum": ["world_surface", "ocean_floor"]
+							"enum": [
+								"world_surface",
+								"ocean_floor"
+							]
 						}
 					}
 				},
@@ -90,8 +100,17 @@
 							},
 							"pool_aliases": {
 								"title": "Pool Aliases",
-   								"description": "Used to determine which template pool can be a substitute.",
+								"description": "Used to determine which template pool can be a substitute.",
 								"$ref": "./poolAliases/_main.json"
+							},
+							"liquid_settings": {
+								"title": "Liquid Settings",
+								"description": "How to handle waterloggable blocks overlapping with existing liquid.",
+								"type": "string",
+								"enum": [
+									"apply_waterlogging",
+									"ignore_waterlogging"
+								]
 							}
 						}
 					},

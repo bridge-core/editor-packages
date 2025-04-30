@@ -8229,13 +8229,9 @@
 		// place command
 		{
 			"requires": {
-				"matchAll": false,
-				"experimentalGameplay": [
-					"dataDrivenJigsawStructures"
-				],
 				"targetVersion": [
 					">=",
-					"1.21.80"
+					"1.21.90"
 				]
 			},
 			"commands": [
@@ -8263,12 +8259,28 @@
 						},
 						{
 							"argumentName": "pos",
-							"type": "$coordinatse",
+							"type": "$coordinates",
 							"isOptional": true
 						},
 						{
 							"argumentName": "keepJigsaws",
 							"type": "boolean",
+							"isOptional": true
+						},
+						{
+							"argumentName": "includeEntities",
+							"type": "boolean",
+							"isOptional": true
+						},
+						{
+							"argumentName": "liquidSettings",
+							"type": "string",
+							"additionalData": {
+								"values": [
+									"apply_waterlogging",
+									"ignore_waterlogging"
+								]
+							},
 							"isOptional": true
 						}
 					]
@@ -8304,6 +8316,22 @@
 						{
 							"argumentName": "keepJigsaws",
 							"type": "boolean",
+							"isOptional": true
+						},
+						{
+							"argumentName": "includeEntities",
+							"type": "boolean",
+							"isOptional": true
+						},
+						{
+							"argumentName": "liquidSettings",
+							"type": "string",
+							"additionalData": {
+								"values": [
+									"apply_waterlogging",
+									"ignore_waterlogging"
+								]
+							},
 							"isOptional": true
 						}
 					]
