@@ -235,7 +235,13 @@
 					"description": "Specifies an optional rotation for the specified UV rect in 90-degree clockwise increments before applying it to a geometry cube face. If not specified, no rotation will be applied.",
 					"type": "integer",
 					"default": 0,
-					"enum": [0, 90, 180, 270, 360]
+					"enum": [
+						0,
+						90,
+						180,
+						270,
+						360
+					]
 				},
 				"material_instance": {
 					"title": "Material Instance",
@@ -323,7 +329,10 @@
 						{
 							"description": "If not specifying vertex indices, arrays of data must be a list of tris or quads, set by making this property either 'tri_list' or 'quad_list'",
 							"type": "string",
-							"enum": ["tri_list", "quad_list"]
+							"enum": [
+								"tri_list",
+								"quad_list"
+							]
 						}
 					]
 				}
@@ -365,7 +374,7 @@
 				"gui": {
 					"title": "GUI",
 					"description": "Display transformations for the GUI icon.",
-					"$ref": "#/definitions/display_transformation"
+					"$ref": "#/definitions/gui_display_transformation"
 				},
 				"firstperson_righthand": {
 					"title": "First Person Right Hand",
@@ -410,9 +419,52 @@
 					"title": "Rotation",
 					"$ref": "#/definitions/vector_3f"
 				},
+				"rotation_pivot": {
+					"title": "Rotation Pivot",
+					"description": "The pivot point for the applied rotation.",
+					"$ref": "#/definitions/vector_3f"
+				},
 				"scale": {
 					"title": "Scale",
 					"$ref": "#/definitions/vector_3f"
+				},
+				"scale_pivot": {
+					"title": "Rotation Pivot",
+					"description": "The pivot point for the applied rotation.",
+					"$ref": "#/definitions/vector_3f"
+				}
+			}
+		},
+		"gui_display_transformation": {
+			"type": "object",
+			"properties": {
+				"translation": {
+					"title": "Translation",
+					"$ref": "#/definitions/vector_3f"
+				},
+				"rotation": {
+					"title": "Rotation",
+					"$ref": "#/definitions/vector_3f"
+				},
+				"rotation_pivot": {
+					"title": "Rotation Pivot",
+					"description": "The pivot point for the applied rotation.",
+					"$ref": "#/definitions/vector_3f"
+				},
+				"scale": {
+					"title": "Scale",
+					"$ref": "#/definitions/vector_3f"
+				},
+				"scale_pivot": {
+					"title": "Rotation Pivot",
+					"description": "The pivot point for the applied rotation.",
+					"$ref": "#/definitions/vector_3f"
+				},
+				"fit_to_frame": {
+					"title": "Fit to Frame",
+					"description": "If true, the geometry will be automatically scaled and translated to fit within the GUI frame.",
+					"type": "boolean",
+					"default": true
 				}
 			}
 		},
