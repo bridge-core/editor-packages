@@ -163,7 +163,7 @@ export const toScrape: ScraperSource = {
 			id: 'soundDefinition',
 			path: 'sounds/sound_definitions.json',
 			packType: 'resourcePack',
-			content: '/',
+			content: ['/', 'sound_definitions'],
 			filter: (val: string) => val !== 'format_version',
 		},
 		{
