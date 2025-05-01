@@ -190,6 +190,7 @@ export const toScrape: ScraperSource = {
 			packType: 'resourcePack',
 			content: ['minecraft:geometry/0/description/identifier', '/'],
 			filter: (val: string) => val.startsWith('geometry.'),
+			map: (val: string) => val.split(':')[0],
 		},
 		{
 			id: 'biome_identifiers',
