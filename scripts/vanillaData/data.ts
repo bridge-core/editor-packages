@@ -188,7 +188,7 @@ export const toScrape: ScraperSource = {
 			id: 'geometry',
 			path: 'models',
 			packType: 'resourcePack',
-			content: ['minecraft:geometry/0/description/identifier', '/'],
+			content: ['minecraft:geometry/*/description/identifier', '/'],
 			filter: (val: string) => val.startsWith('geometry.'),
 			map: (val: string) => val.split(':')[0],
 		},
