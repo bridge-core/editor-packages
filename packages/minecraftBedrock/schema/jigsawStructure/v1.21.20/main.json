@@ -68,6 +68,33 @@
 								"world_surface",
 								"ocean_floor"
 							]
+						},
+						"dimensional_padding": {
+							"title": "Dimensional Padding",
+							"description": "Specifies the padding for the top and bottom of the world.",
+							"$ref": "../general/dimensionalPadding.json"
+						},
+						"max_distance_from_center": {
+							"title": "Max Distance From Center",
+							"description": "This is the max distance from the jigsaw pieces to the structure start-",
+							"type": "integer",
+							"minimum": 1,
+							"maximum": 128
+						},
+						"start_height": {
+							"title": "Start Height",
+							"description": "Height at which the Jigsaw Structure's start pool should begin.",
+							"$ref": "./startHeight/_main.json"
+						},
+						"start_jigsaw_name": {
+							"title": "Start Jigsaw Name",
+							"description": "The start jigsaw name is the name of the jigsaw block from the start pool to be placed first.",
+							"type": "string"
+						},
+						"pool_aliases": {
+							"title": "Pool Aliases",
+							"description": "Used to determine which template pool can be a substitute.",
+							"$ref": "./poolAliases/_main.json"
 						}
 					}
 				},
@@ -76,33 +103,6 @@
 					"then": {
 						"type": "object",
 						"properties": {
-							"dimensional_padding": {
-								"title": "Dimensional Padding",
-								"description": "Specifies the padding for the top and bottom of the world.",
-								"$ref": "../general/dimensionalPadding.json"
-							},
-							"max_distance_from_center": {
-								"title": "Max Distance From Center",
-								"description": "This is the max distance from the jigsaw pieces to the structure start-",
-								"type": "integer",
-								"minimum": 1,
-								"maximum": 128
-							},
-							"start_height": {
-								"title": "Start Height",
-								"description": "Height at which the Jigsaw Structure's start pool should begin.",
-								"$ref": "./startHeight/_main.json"
-							},
-							"start_jigsaw_name": {
-								"title": "Start Jigsaw Name",
-								"description": "The start jigsaw name is the name of the jigsaw block from the start pool to be placed first.",
-								"type": "string"
-							},
-							"pool_aliases": {
-								"title": "Pool Aliases",
-								"description": "Used to determine which template pool can be a substitute.",
-								"$ref": "./poolAliases/_main.json"
-							},
 							"liquid_settings": {
 								"title": "Liquid Settings",
 								"description": "How to handle waterloggable blocks overlapping with existing liquid.",
@@ -111,16 +111,6 @@
 									"apply_waterlogging",
 									"ignore_waterlogging"
 								]
-							}
-						}
-					},
-					"else": {
-						"type": "object",
-						"properties": {
-							"start_height": {
-								"title": "Start Height",
-								"description": "World height at which the Jigsaw Structure should begin generation.",
-								"type": "integer"
 							}
 						}
 					}

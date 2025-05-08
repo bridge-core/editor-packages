@@ -8389,6 +8389,85 @@
 							"isOptional": true
 						}
 					]
+				},
+				{
+					"commandName": "place",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": [
+									"jigsaw"
+								]
+							}
+						},
+						{
+							"argumentName": "pool",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/template_pool_identifiers"
+							}
+						},
+						{
+							"argumentName": "maxDepth",
+							"type": "number"
+						},
+						{
+							"argumentName": "pos",
+							"type": "$coordinates",
+							"isOptional": true
+						},
+						{
+							"argumentName": "keepJigsaws",
+							"type": "boolean",
+							"isOptional": true
+						},
+						{
+							"argumentName": "includeEntities",
+							"type": "boolean",
+							"isOptional": true
+						}
+					]
+				},
+				{
+					"commandName": "place",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": [
+									"structure"
+								]
+							}
+						},
+						{
+							"argumentName": "structure",
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/identifiers.json#/definitions/jigsaw_structure_identifiers"
+							}
+						},
+						{
+							"argumentName": "pos",
+							"type": "$coordinates",
+							"isOptional": true
+						},
+						{
+							"argumentName": "ignoreStartHeight",
+							"type": "boolean",
+							"isOptional": true
+						},
+						{
+							"argumentName": "keepJigsaws",
+							"type": "boolean",
+							"isOptional": true
+						},
+						{
+							"argumentName": "includeEntities",
+							"type": "boolean",
+							"isOptional": true
+						}
+					]
 				}
 			]
 		},

@@ -1,7 +1,10 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"title": "Aim Assist Preset",
-	"required": ["format_version", "minecraft:aim_assist_categories"],
+	"required": [
+		"format_version",
+		"minecraft:aim_assist_categories"
+	],
 	"allOf": [
 		{
 			"properties": {
@@ -22,7 +25,10 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["", "1.21.50"]
+						"enum": [
+							"",
+							"1.21.50"
+						]
 					}
 				}
 			},
@@ -34,7 +40,13 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["", "1.21.60"]
+						"enum": [
+							"",
+							"1.21.60",
+							"1.21.70",
+							"1.21.80",
+							"1.21.90"
+						]
 					}
 				}
 			},
