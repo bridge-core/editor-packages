@@ -81,7 +81,7 @@
 								{
 									"patternProperties": {
 										".*": {
-											"$ref": "../general/reference/paths.json#/definitions/entity_texture_paths"
+											"$ref": "../general/reference/paths.json#/definitions/texture_paths"
 										}
 									}
 								}
