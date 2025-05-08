@@ -118,28 +118,10 @@ export const toScrape: ScraperSource = {
 			content: 'texture_data',
 		},
 		{
-			id: 'entity_texture_paths',
-			path: 'textures/entity',
+			id: 'texture_paths',
+			path: 'textures',
 			packType: 'resourcePack',
-			filter: (val) => !val.endsWith('.texture_set')
-		},
-		{
-			id: 'item_texture_paths',
-			path: 'textures/items',
-			packType: 'resourcePack',
-			filter: (val) => !val.endsWith('.texture_set')
-		},
-		{
-			id: 'particle_texture_paths',
-			path: 'textures/particle',
-			packType: 'resourcePack',
-			filter: (val) => !val.endsWith('.texture_set')
-		},
-		{
-			id: 'block_texture_paths',
-			path: 'textures/blocks',
-			packType: 'resourcePack',
-			filter: (val) => !val.endsWith('.texture_set')
+			filter: (val) => !val.endsWith('.texture_set'),
 		},
 		{
 			id: 'sound_paths',
@@ -372,10 +354,7 @@ export const exportRaw: ExportTarget[] = [
 	},
 	{
 		from: [
-			'entity_texture_paths.json',
-			'item_texture_paths.json',
-			'particle_texture_paths.json',
-			'block_texture_paths.json',
+			'texture_paths.json',
 			'sound_paths.json',
 			'loot_table_paths.json',
 			'trade_table_paths.json',
