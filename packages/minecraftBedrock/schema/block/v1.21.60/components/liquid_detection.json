@@ -30,6 +30,7 @@
 						"enum": [
 							"blocking",
 							"broken",
+							"popped",
 							"no_reaction"
 						]
 					},
