@@ -91,7 +91,7 @@
 			"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
 			"properties": {
 				"minecraft:random_offset": {
-					"$ref": "../../v1.21.90/components/random_offset.json"
+					"$ref": "../../v1.21.90/components/experimental/random_offset.json"
 				}
 			}
 		},
