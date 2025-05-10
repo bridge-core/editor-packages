@@ -1,0 +1,46 @@
+{
+    // TODO: descriptions and type corrections(no documentation currently)
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "title": "Random Offset",
+    "type": "object",
+    "properties": {
+        "x": {
+            "title": "X",
+            "$ref": "#/definitions/offset"
+        },
+        "y": {
+            "title": "Y",
+            "$ref": "#/definitions/offset"
+        },
+        "z": {
+            "title": "Z",
+            "$ref": "#/definitions/offset"
+        }
+    },
+    "definitions": {
+        "offset": {
+            "type": "object",
+            "properties": {
+                "range": {
+                    "title": "Range",
+                    "type": "object",
+                    "properties": {
+                        "min": {
+                            "title": "Minimum",
+                            "type": "integer"
+                        },
+                        "max": {
+                            "title": "Maximum",
+                            "type": "integer"
+                        }
+                    }
+                },
+                "steps": {
+                    "title": "Steps",
+                    "type": "integer"
+                }
+            },
+            "additionalProperties": false
+        }
+    }
+}
