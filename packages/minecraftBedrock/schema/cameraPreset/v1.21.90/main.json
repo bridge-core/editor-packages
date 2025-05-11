@@ -208,7 +208,6 @@
                         }
                     }
                 },
-                // TODO: remove once 1.21.90 goes stable
                 {
                     "$ref": "../../project/experimentalGameplay/experimentalCreatorCameraFeatures.json",
                     "then": {
@@ -221,6 +220,21 @@
                                     "locked_player_relative_strafe",
                                     "camera_relative",
                                     "camera_relative_strafe",
+                                    "player_relative",
+                                    "player_relative_strafe"
+                                ]
+                            }
+                        }
+                    },
+                    "else": {
+                        "properties": {
+                            "control_scheme": {
+                                "title": "Control Scheme",
+                                "description": "Set a default scheme for this camera.",
+                                "type": "string",
+                                "enum": [
+                                    "locked_player_relative_strafe",
+                                    "camera_relative",
                                     "player_relative",
                                     "player_relative_strafe"
                                 ]
