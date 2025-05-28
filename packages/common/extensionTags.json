@@ -23,8 +23,7 @@
 		"color": "success"
 	},
 	"Presets": {
-		"icon": "description",
-		"color": "purple"
+		"icon": "description"
 	},
 	"Compiler": {
 		"icon": "manufacturing"
