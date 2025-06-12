@@ -1,12 +1,20 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"title": "Move Around Target",
+	"description": "Allows an entity to move around a target. If the entity is too close (i.e. closer than destination range min and height difference limit) it will try to move away from its target. If the entity is too far away from its target it will try to move closer to a random position within the destination range. A randomized amount of those positions will be behind the target, and the spread can be tweaked with 'destination_pos_search_spread_degrees'.",
 	"type": "object",
 	"additionalProperties": false,
 	"properties": {
 		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
+		"destination_pos_spread_degrees": {
+			"title": "Destination Pos Spread Degrees",
+			"description": "This angle (in degrees) is used for controlling the spread when picking a destination position behind the target. A zero spread angle means the destination position will be straight behind the target with no variance. A 90 degree spread angle means the destination position can be up to 45 degrees to the left and to the right of the position straight behind the target's view direction.",
+			"$ref": "../../../general/degree.json",
+			"default": 90
+		},
 		"destination_position_range": {
 			"title": "Destination Position Range",
+			"description": "The range of distances from the target entity within which the goal should look for a position to move the owner entity to.",
 			"type": "array",
 			"minItems": 2,
 			"maxItems": 2,
@@ -21,18 +29,34 @@
 				}
 			]
 		},
-		"destination_pos_spread_degrees": {
-			"title": "Destination Pos Spread Degrees",
-			"$ref": "../../../general/degree.json",
-			"default": 90
+		"filters": {
+			"title": "Filters",
+			"description": "Conditions that need to be met for the behavior to start.",
+			"$ref": "../../general/v1.16.0/filter.json"
+		},
+		"height_difference_limit": {
+			"title": "Height Difference Limit",
+			"description": "Distance in height (in blocks) between the owner entity and the target has to be less than this value when owner checks if it is too close and should move away from the target. This value needs to be bigger than zero for the move away logic to trigger.",
+			"type": "number",
+			"default": 10
+		},
+		"horizontal_search_distance": {
+			"title": "Horizontal Search Distance",
+			"description": "Horizontal search distance (in blocks) when searching for a position to move away from target.",
+			"type": "number",
+			"default": 5
 		},
 		"movement_speed": {
 			"title": "Movement Speed",
-			"type": "number"
+			"description": "The speed with which the entity should move to its target position.",
+			"type": "number",
+			"default": 0.6
 		},
-		"filters": {
-			"title": "Filters",
-			"$ref": "../../general/v1.16.0/filter.json"
+		"vertical_search_distance": {
+			"title": "Vertical Search Distance",
+			"description": "Vertical search distance (in blocks) when searching for a position to move away from target.",
+			"type": "number",
+			"default": 5
 		}
 	}
 }
