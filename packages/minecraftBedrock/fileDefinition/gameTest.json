@@ -26,7 +26,7 @@
 		// @minecraft/server
 		{
 			"moduleName": "@minecraft/server",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@2.1.0-beta.1.21.90-preview.23/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@2.1.0-beta.1.21.90-preview.28/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
@@ -45,7 +45,7 @@
 		},
 		{
 			"moduleName": "@minecraft/server",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@2.0.0-rc.1.21.90-preview.23/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@2.0.0-rc.1.21.90-preview.28/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
@@ -341,7 +341,7 @@
 		// @minecraft/server-ui
 		{
 			"moduleName": "@minecraft/server-ui",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-ui@2.1.0-beta.1.21.90-preview.23/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-ui@2.1.0-beta.1.21.90-preview.28/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
@@ -360,7 +360,7 @@
 		},
 		{
 			"moduleName": "@minecraft/server-ui",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-ui@2.0.0-rc.1.21.90-preview.23/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-ui@2.0.0-rc.1.21.90-preview.28/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
@@ -444,7 +444,7 @@
 		// @minecraft/server-admin
 		{
 			"moduleName": "@minecraft/server-admin",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-admin@1.0.0-beta.1.21.90-preview.23/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-admin@1.0.0-beta.1.21.90-preview.28/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
@@ -495,7 +495,7 @@
 		// @minecraft/server-editor
 		{
 			"moduleName": "@minecraft/server-editor",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-editor@0.1.0-beta.1.21.90-preview.23/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-editor@0.1.0-beta.1.21.90-preview.28/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
@@ -530,7 +530,7 @@
 		// @minecraft/debug-utilities
 		{
 			"moduleName": "@minecraft/debug-utilities",
-			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/debug-utilities@1.0.0-beta.1.21.90-preview.23/index.d.ts",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/debug-utilities@1.0.0-beta.1.21.90-preview.28/index.d.ts",
 			"requires": {
 				"dependencies": [
 					{
