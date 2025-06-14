@@ -1,7 +1,10 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"title": "Processor List",
-	"required": ["format_version", "minecraft:processor_list"],
+	"required": [
+		"format_version",
+		"minecraft:processor_list"
+	],
 	"allOf": [
 		{
 			"properties": {
@@ -14,12 +17,36 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["", "1.21.20", "1.21.30", "1.21.40", "1.21.50"]
+						"enum": [
+							"",
+							"1.21.20",
+							"1.21.30",
+							"1.21.40",
+							"1.21.50",
+							"1.21.60",
+							"1.21.70",
+							"1.21.80",
+							"1.21.90"
+						]
 					}
 				}
 			},
 			"then": {
 				"$ref": "./v1.21.20/main.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": [
+							"1.21.100"
+						]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.21.100/main.json"
 			}
 		}
 	]

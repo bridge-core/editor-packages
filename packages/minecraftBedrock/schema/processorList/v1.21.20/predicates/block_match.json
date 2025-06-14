@@ -4,6 +4,7 @@
 	"properties": {
 		"block": {
 			"title": "Block",
+			"description": "The block to match against.",
 			"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
 		}
 	}

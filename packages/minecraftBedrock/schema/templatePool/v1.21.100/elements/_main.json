@@ -26,7 +26,22 @@
 				]
 			},
 			"then": {
-				"$ref": "./single_pool_element.json"
+				"$ref": "../../v1.21.20/elements/single_pool_element.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"element_type": {
+						"const": "minecraft:empty_pool_element"
+					}
+				},
+				"required": [
+					"element_type"
+				]
+			},
+			"then": {
+				"$ref": "./empty_pool_element.json"
 			}
 		}
 	]

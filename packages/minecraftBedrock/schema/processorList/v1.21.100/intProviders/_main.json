@@ -1,0 +1,50 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "anyOf": [
+        {
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "constant",
+                        "uniform"
+                    ]
+                }
+            },
+            "required": [
+                "type"
+            ]
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "const": "constant"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "../../v1.21.20/intProviders/constant.json"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "const": "uniform"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "../../v1.21.20/intProviders/uniform.json"
+            }
+        }
+    ]
+}

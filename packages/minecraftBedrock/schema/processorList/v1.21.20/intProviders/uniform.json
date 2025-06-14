@@ -1,0 +1,16 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "properties": {
+        "minimum_inclusive": {
+            "title": "Minimum (Inclusive)",
+            "description": "Minimum value (inclusive)",
+            "type": "integer"
+        },
+        "maximum_inclusive": {
+            "title": "Maximum (Inclusive)",
+            "description": "Maximum value (inclusive)",
+            "type": "integer"
+        }
+    }
+}
