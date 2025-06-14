@@ -1,4 +1,3 @@
-// TODO: Deprecate this once 1.21.80 goes stable
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"title": "Nether Surface",

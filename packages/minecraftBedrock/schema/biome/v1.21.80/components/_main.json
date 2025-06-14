@@ -1,62 +1,71 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"properties": {
-		"minecraft:consolidated_features": {
-			"$ref": "../../v1.19.20/components/consolidated_features.json"
+	"type": "object",
+	"allOf": [
+		{
+			"properties": {
+				"minecraft:consolidated_features": {
+					"$ref": "../../v1.19.20/components/consolidated_features.json"
+				},
+				"minecraft:ignore_automatic_features": {
+					"$ref": "../../v1.16.0/components/ignore_automatic_features.json"
+				},
+				"minecraft:climate": {
+					"$ref": "../../v1.16.0/components/climate.json"
+				},
+				"minecraft:nether_generation_rules": {
+					"$ref": "../../v1.16.0/components/nether_generation_rules.json"
+				},
+				"minecraft:overworld_height": {
+					"$ref": "../../v1.16.0/components/overworld_height.json"
+				},
+				"minecraft:surface_parameters": {
+					"$ref": "../../v1.16.0/components/surface_parameters.json"
+				},
+				"minecraft:swamp_surface": {
+					"$ref": "../../v1.16.0/components/swamp_surface.json"
+				},
+				"minecraft:frozen_ocean_surface": {
+					"$ref": "../../v1.16.0/components/frozen_ocean_surface.json"
+				},
+				"minecraft:capped_surface": {
+					"$ref": "../../v1.16.0/components/capped_surface.json"
+				},
+				"minecraft:mesa_surface": {
+					"$ref": "../../v1.16.0/components/mesa_surface.json"
+				},
+				"minecraft:the_end_surface": {
+					"$ref": "../../v1.16.0/components/the_end_surface.json"
+				},
+				"minecraft:overworld_generation_rules": {
+					"$ref": "../../v1.16.0/components/overworld_generation_rules.json"
+				},
+				"minecraft:surface_material_adjustments": {
+					"$ref": "../../v1.16.0/components/surface_material_adjustments.json"
+				},
+				"minecraft:forced_features": {
+					"$ref": "../../v1.16.0/components/forced_features.json"
+				},
+				"minecraft:mountain_parameters": {
+					"$ref": "../../v1.16.210/components/mountain_parameters.json"
+				},
+				"minecraft:tags": {
+					"$ref": "../../v1.20.60/components/tags.json"
+				},
+				"minecraft:creature_spawn_probability": {
+					"$ref": "../../v1.21.60/components/creature_spawn_probability.json"
+				},
+				"minecraft:replace_biomes": {
+					"$ref": "./replace_biomes.json"
+				}
+			}
 		},
-		"minecraft:ignore_automatic_features": {
-			"$ref": "../../v1.16.0/components/ignore_automatic_features.json"
-		},
-		"minecraft:climate": {
-			"$ref": "../../v1.16.0/components/climate.json"
-		},
-		"minecraft:nether_generation_rules": {
-			"$ref": "../../v1.16.0/components/nether_generation_rules.json"
-		},
-		"minecraft:overworld_height": {
-			"$ref": "../../v1.16.0/components/overworld_height.json"
-		},
-		"minecraft:surface_parameters": {
-			"$ref": "../../v1.16.0/components/surface_parameters.json"
-		},
-		"minecraft:swamp_surface": {
-			"$ref": "../../v1.16.0/components/swamp_surface.json"
-		},
-		"minecraft:frozen_ocean_surface": {
-			"$ref": "../../v1.16.0/components/frozen_ocean_surface.json"
-		},
-		"minecraft:capped_surface": {
-			"$ref": "../../v1.16.0/components/capped_surface.json"
-		},
-		"minecraft:mesa_surface": {
-			"$ref": "../../v1.16.0/components/mesa_surface.json"
-		},
-		"minecraft:nether_surface": {
-			"$ref": "../../v1.16.0/components/nether_surface.json"
-		},
-		"minecraft:the_end_surface": {
-			"$ref": "../../v1.16.0/components/the_end_surface.json"
-		},
-		"minecraft:overworld_generation_rules": {
-			"$ref": "../../v1.16.0/components/overworld_generation_rules.json"
-		},
-		"minecraft:surface_material_adjustments": {
-			"$ref": "../../v1.16.0/components/surface_material_adjustments.json"
-		},
-		"minecraft:forced_features": {
-			"$ref": "../../v1.16.0/components/forced_features.json"
-		},
-		"minecraft:mountain_parameters": {
-			"$ref": "../../v1.16.210/components/mountain_parameters.json"
-		},
-		"minecraft:tags": {
-			"$ref": "../../v1.20.60/components/tags.json"
-		},
-		"minecraft:creature_spawn_probability": {
-			"$ref": "../../v1.21.60/components/creature_spawn_probability.json"
-		},
-		"minecraft:replace_biomes": {
-			"$ref": "./replace_biomes.json"
+		{
+			"properties": {
+				"minecraft:nether_surface": {
+					"$ref": "../../v1.21.80/components/nether_surface.json"
+				}
+			}
 		}
-	}
+	]
 }
