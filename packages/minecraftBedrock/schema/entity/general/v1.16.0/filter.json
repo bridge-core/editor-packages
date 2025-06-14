@@ -187,6 +187,7 @@
 								"is_underground",
 								"is_underwater",
 								"is_variant",
+								"is_vehicle_family", // v1.21.90+
 								"is_visible",
 								"is_waterlogged", // v1.19.0+
 								"is_weather",
@@ -1368,6 +1369,23 @@
 							"value": {
 								"description": "Returns true if the subject entity is the variant number provided.",
 								"type": "integer"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_vehicle_family"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true when the subject entity's vehicle is a member of the named family.",
+								"$ref": "../../../general/reference/family.json"
 							}
 						}
 					}
