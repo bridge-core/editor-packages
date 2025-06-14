@@ -4,6 +4,11 @@
 		"path": "minecraft:biome/description/identifier"
 	},
 	{
+		"cacheKey": "prefixedIdentifier",
+		"path": "minecraft:biome/description/identifier",
+		"script": "if (Bridge.value.split(':').length < 2) return `minecraft:${Bridge.value}`"
+	},
+	{
 		"cacheKey": "tags",
 		"path": "minecraft:biome/components/minecraft:tags/tags"
 	},

@@ -1,7 +1,7 @@
 import { DocTarget, ExportTarget, GameTarget } from './interfaces.ts'
 
 type ScraperSource = {
-	documentation: DocTarget[],
+	documentation: DocTarget[]
 	game: GameTarget[]
 }
 
@@ -13,27 +13,27 @@ export const toScrape: ScraperSource = {
 		{
 			id: 'entity_ai_goals',
 			page: 'Entities',
-			target: 'AI Goals/JSON Name'
+			target: 'AI Goals/JSON Name',
 		},
 		{
 			id: 'entity_attributes',
 			page: 'Entities',
-			target: 'Attributes/JSON Name'
+			target: 'Attributes/JSON Name',
 		},
 		{
 			id: 'entity_components',
 			page: 'Entities',
-			target: 'Components/JSON Name'
+			target: 'Components/JSON Name',
 		},
 		{
 			id: 'entity_properties',
 			page: 'Entities',
-			target: 'Properties/JSON Name'
+			target: 'Properties/JSON Name',
 		},
 		{
 			id: 'entity_triggers',
 			page: 'Entities',
-			target: 'Triggers/JSON Name'
+			target: 'Triggers/JSON Name',
 		},
 		{
 			id: 'prefixed_entity_identifiers',
@@ -121,25 +121,25 @@ export const toScrape: ScraperSource = {
 			id: 'entity_texture_paths',
 			path: 'textures/entity',
 			packType: 'resourcePack',
-			filter: (val) => !val.endsWith('.texture_set')
+			filter: (val) => !val.endsWith('.texture_set'),
 		},
 		{
 			id: 'item_texture_paths',
 			path: 'textures/items',
 			packType: 'resourcePack',
-			filter: (val) => !val.endsWith('.texture_set')
+			filter: (val) => !val.endsWith('.texture_set'),
 		},
 		{
 			id: 'particle_texture_paths',
 			path: 'textures/particle',
 			packType: 'resourcePack',
-			filter: (val) => !val.endsWith('.texture_set')
+			filter: (val) => !val.endsWith('.texture_set'),
 		},
 		{
 			id: 'block_texture_paths',
 			path: 'textures/blocks',
 			packType: 'resourcePack',
-			filter: (val) => !val.endsWith('.texture_set')
+			filter: (val) => !val.endsWith('.texture_set'),
 		},
 		{
 			id: 'sound_paths',
@@ -194,6 +194,13 @@ export const toScrape: ScraperSource = {
 		},
 		{
 			id: 'biome_identifiers',
+			path: 'biomes',
+			packType: 'behaviorPack',
+			content: 'minecraft:biome/description/identifier',
+			map: (val: string) => val.replace('minecraft:', ''),
+		},
+		{
+			id: 'prefixed_biome_identifiers',
 			path: 'biomes',
 			packType: 'behaviorPack',
 			content: 'minecraft:biome/description/identifier',
@@ -333,6 +340,7 @@ export const exportRaw: ExportTarget[] = [
 			'unprefixed_entity_identifiers.json',
 			'particle_identifiers.json',
 			'biome_identifiers.json',
+			'prefixed_biome_identifiers.json',
 			'camera_preset_identifiers.json',
 			'fog_identifiers.json',
 			'feature_identifiers.json',
@@ -437,10 +445,10 @@ export const exportRaw: ExportTarget[] = [
 			'entity_attributes.json',
 			'entity_components.json',
 			'entity_properties.json',
-			'entity_triggers.json'
+			'entity_triggers.json',
 		],
-		to: 'general/vanilla/entityComponentList.json'
-	}
+		to: 'general/vanilla/entityComponentList.json',
+	},
 ]
 
 /**

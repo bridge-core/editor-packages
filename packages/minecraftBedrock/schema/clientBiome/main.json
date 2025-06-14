@@ -14,7 +14,10 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["", "1.21.40"]
+						"enum": [
+							"",
+							"1.21.40"
+						]
 					}
 				}
 			},
@@ -26,7 +29,9 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.21.50"]
+						"enum": [
+							"1.21.50"
+						]
 					}
 				}
 			},
@@ -38,7 +43,9 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.21.60"]
+						"enum": [
+							"1.21.60"
+						]
 					}
 				}
 			},
@@ -50,7 +57,9 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.21.70"]
+						"enum": [
+							"1.21.70"
+						]
 					}
 				}
 			},
@@ -62,14 +71,47 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.21.80"]
+						"enum": [
+							"1.21.80"
+						]
 					}
 				}
 			},
 			"then": {
 				"$ref": "./v1.21.80/main.json"
 			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": [
+							"1.21.90"
+						]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.21.90/main.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": [
+							"1.21.100"
+						]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.21.100/main.json"
+			}
 		}
 	],
-	"required": ["format_version", "minecraft:client_biome"]
+	"required": [
+		"format_version",
+		"minecraft:client_biome"
+	]
 }

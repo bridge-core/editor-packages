@@ -179,6 +179,17 @@
 				}
 			]
 		},
+		"prefixed_biome_identifiers": {
+			"type": "string",
+			"anyOf": [
+				{
+					"$ref": "../vanilla/identifiers.json#/definitions/prefixed_biome_identifiers"
+				},
+				{
+					"$ref": "../../biome/dynamic/prefixedIdentifierEnum.json"
+				}
+			]
+		},
 		"jigsaw_structure_identifiers": {
 			"type": "string",
 			"anyOf": [

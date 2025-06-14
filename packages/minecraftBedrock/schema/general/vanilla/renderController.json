@@ -60,6 +60,7 @@
 		"controller.render.goat",
 		"controller.render.guardian",
 		"controller.render.happy_ghast",
+		"controller.render.happy_ghast_ropes",
 		"controller.render.harness",
 		"controller.render.hoglin",
 		"controller.render.horse.v1.and.v2",
