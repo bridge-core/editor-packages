@@ -26,6 +26,44 @@
 		// @minecraft/server
 		{
 			"moduleName": "@minecraft/server",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@2.2.0-beta.1.21.100-preview.20/index.d.ts",
+			"requires": {
+				"dependencies": [
+					{
+						"module_name": "@minecraft/server",
+						"version": "2.2.0-beta"
+					}
+				],
+				"experimentalGameplay": [
+					"enableGameTestFramework"
+				],
+				"targetVersion": [
+					">=",
+					"1.21.100"
+				]
+			}
+		},
+		{
+			"moduleName": "@minecraft/server",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@2.1.0-rc.1.21.100-preview.20/index.d.ts",
+			"requires": {
+				"dependencies": [
+					{
+						"module_name": "@minecraft/server",
+						"version": "2.1.0"
+					}
+				],
+				"experimentalGameplay": [
+					"enableGameTestFramework"
+				],
+				"targetVersion": [
+					">=",
+					"1.21.100"
+				]
+			}
+		},
+		{
+			"moduleName": "@minecraft/server",
 			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@2.1.0-beta.1.21.90-preview.28/index.d.ts",
 			"requires": {
 				"dependencies": [
