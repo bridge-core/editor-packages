@@ -10808,6 +10808,57 @@
 					]
 				}
 			]
+		},
+		{
+			"requires": {
+				"targetVersion": [
+					">=",
+					"1.21.100"
+				],
+				"experimentalGameplay": [
+					"experimentalCreatorCameraFeatures"
+				]
+			},
+			"commands": [
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"type": "selector",
+							"argumentName": "players"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": [
+									"fov_clear"
+								]
+							}
+						}
+					]
+				},
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"type": "selector",
+							"argumentName": "players"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": [
+									"fov_set"
+								]
+							}
+						},
+						{
+							"type": "number",
+							"argumentName": "fov_value"
+						}
+					]
+				}
+			]
 		}
 	]
 }
