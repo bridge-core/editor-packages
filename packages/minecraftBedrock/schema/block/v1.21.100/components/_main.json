@@ -32,10 +32,10 @@
 					"$ref": "../../v1.19.20/components/friction.json"
 				},
 				"minecraft:geometry": {
-					"$ref": "../../v1.20.60/components/geometry.json"
+					"$ref": "../../v1.21.100/components/geometry.json"
 				},
 				"minecraft:item_visual": {
-					"$ref": "../../v1.21.80/components/item_visual.json"
+					"$ref": "../../v1.21.100/components/item_visual.json"
 				},
 				"minecraft:loot": {
 					"$ref": "../../v1.16.0/components/loot.json"
@@ -54,6 +54,9 @@
 				},
 				"minecraft:material_instances": {
 					"$ref": "../../v1.21.80/components/material_instances.json"
+				},
+				"minecraft:movable": {
+					"$ref": "../../v1.21.100/components/movable.json"
 				},
 				"minecraft:placement_filter": {
 					"$ref": "../../v1.19.60/components/placement_filter.json"
@@ -76,18 +79,11 @@
 			}
 		},
 		{
-			"$ref": "../../../project/experimentalGameplay/customComponentsV2.json",
+			"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
 			"then": {
 				"properties": {
-					"minecraft:custom_components": {
-						"$ref": "../../v1.21.80/components/custom_components.json"
-					}
-				}
-			},
-			"else": {
-				"properties": {
-					"minecraft:custom_components": {
-						"$ref": "../../v1.21.10/components/custom_components.json"
+					"minecraft:random_offset": {
+						"$ref": "../../v1.21.90/components/experimental/random_offset.json"
 					}
 				}
 			}
@@ -100,6 +96,9 @@
 				},
 				"minecraft:block_light_filter": {
 					"$ref": "../../v1.19.40/components/block_light_filter.json"
+				},
+				"minecraft:custom_components": {
+					"$ref": "../../v1.21.90/components/custom_components.json"
 				},
 				"minecraft:destroy_time": {
 					"$ref": "../../v1.19.20/components/destroy_time.json"

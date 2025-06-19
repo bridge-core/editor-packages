@@ -5,7 +5,7 @@
     "oneOf": [
         {
             "type": "string",
-            "$ref": "../../../../general/reference/geometry.json"
+            "$ref": "../../../general/reference/geometry.json"
         },
         {
             "type": "string",
@@ -26,7 +26,7 @@
                     "oneOf": [
                         {
                             "type": "string",
-                            "$ref": "../../../../general/reference/geometry.json"
+                            "$ref": "../../../general/reference/geometry.json"
                         },
                         {
                             "type": "string",
@@ -44,18 +44,18 @@
                     "description": "A JSON object that contains a list of key/value pairs that map from bone name in a geometry file (key) to a boolean value that turns their rendering on/off (value).",
                     "patternProperties": {
                         ".+": {
-                            "$ref": "../../../../molang/embedded.json"
+                            "$ref": "../../../molang/embedded.json"
                         }
                     }
                 },
                 "culling": {
                     "title": "Culling",
                     "description": "The description identifier of the culling rules to use for this block. This identifier must match an existing culling rules in any of the currently loaded resource packs.",
-                    "$ref": "../../../../blockCulling/dynamic/identifierEnum.json"
+                    "$ref": "../../../blockCulling/dynamic/identifierEnum.json"
                 },
                 "culling_layer": {
                     "title": "Culling Layer",
-                    "$ref": "../../../../general/reference/cullingLayer.json"
+                    "$ref": "../../../general/reference/cullingLayer.json"
                 }
             }
         }

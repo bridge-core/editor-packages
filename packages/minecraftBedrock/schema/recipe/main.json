@@ -1,7 +1,9 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"title": "Recipe",
-	"required": ["format_version"],
+	"required": [
+		"format_version"
+	],
 	"type": "object",
 	"allOf": [
 		{
@@ -76,7 +78,10 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.19.40", "1.19.50"]
+						"enum": [
+							"1.19.40",
+							"1.19.50"
+						]
 					}
 				}
 			},
@@ -88,7 +93,10 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.19.60", "1.19.70"]
+						"enum": [
+							"1.19.60",
+							"1.19.70"
+						]
 					}
 				}
 			},
@@ -100,7 +108,10 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.19.80", "1.20.0"]
+						"enum": [
+							"1.19.80",
+							"1.20.0"
+						]
 					}
 				}
 			},
@@ -132,7 +143,19 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.20.80"]
+						"enum": [
+							"1.20.80",
+							"1.21.0",
+							"1.21.20",
+							"1.21.30",
+							"1.21.40",
+							"1.21.50",
+							"1.21.60",
+							"1.21.70",
+							"1.21.80",
+							"1.21.90",
+							"1.21.100"
+						]
 					}
 				}
 			},
