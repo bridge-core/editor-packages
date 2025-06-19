@@ -44,22 +44,36 @@
         "xz_range": {
             "title": "XZ Range",
             "description": "XZ range from which the entity will try and take blocks from.",
-            "type": "array",
-            "items": {
-                "type": "integer"
-            },
-            "minItems": 2,
-            "maxItems": 2
+            "anyOf": [
+                {
+                    "type": "integer"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                }
+            ]
         },
         "y_range": {
             "title": "Y Range",
             "description": "Y Range from which the entity will try and take blocks from.",
-            "type": "array",
-            "items": {
-                "type": "integer"
-            },
-            "minItems": 2,
-            "maxItems": 2
+            "anyOf": [
+                {
+                    "type": "integer"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                }
+            ]
         }
     },
     "additionalProperties": false

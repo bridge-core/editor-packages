@@ -41,28 +41,53 @@
             "description": "Weighted block descriptors for which blocks should be randomly placed, if empty the entity will try to place its carried block from placeable_carried_blocks.",
             "type": "array",
             "items": {
-                "$ref": "../../../general/blockDescriptor.json"
+                "type": "object",
+                "properties": {
+                    "block": {
+                        "title": "Block",
+                        "$ref": "../../../general/blockReference.json"
+                    },
+                    "weight": {
+                        "title": "Weight",
+                        "type": "number"
+                    }
+                },
+                "additionalProperties": false
             }
         },
         "xz_range": {
             "title": "XZ Range",
             "description": "XZ range from which the entity will try and place blocks in.",
-            "type": "array",
-            "items": {
-                "type": "integer"
-            },
-            "minItems": 2,
-            "maxItems": 2
+            "anyOf": [
+                {
+                    "type": "integer"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                }
+            ]
         },
         "y_range": {
             "title": "Y Range",
             "description": "Y Range from which the entity will try and place blocks in.",
-            "type": "array",
-            "items": {
-                "type": "integer"
-            },
-            "minItems": 2,
-            "maxItems": 2
+            "anyOf": [
+                {
+                    "type": "integer"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                }
+            ]
         }
     },
     "additionalProperties": false
