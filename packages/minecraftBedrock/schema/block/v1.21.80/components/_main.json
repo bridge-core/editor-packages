@@ -32,22 +32,10 @@
 					"$ref": "../../v1.19.20/components/friction.json"
 				},
 				"minecraft:geometry": {
-					"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
-					"then": {
-						"$ref": "./experimental/geometry.json"
-					},
-					"else": {
-						"$ref": "../../v1.20.60/components/geometry.json"
-					}
+					"$ref": "../../v1.20.60/components/geometry.json"
 				},
 				"minecraft:item_visual": {
-					"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
-					"then": {
-						"$ref": "./experimental/item_visual.json"
-					},
-					"else": {
-						"$ref": "../../v1.21.80/components/item_visual.json"
-					}
+					"$ref": "../../v1.21.80/components/item_visual.json"
 				},
 				"minecraft:loot": {
 					"$ref": "../../v1.16.0/components/loot.json"

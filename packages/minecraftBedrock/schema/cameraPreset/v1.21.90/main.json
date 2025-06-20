@@ -73,12 +73,6 @@
                             },
                             "additionalProperties": false
                         },
-                        "align_target_and_camera_forward": {
-                            "title": "Align Target and Camera Forward",
-                            "description": "Whether the camera will be locked to have the same forward as its target.",
-                            "type": "boolean",
-                            "default": true
-                        },
                         "continue_targeting": {
                             "title": "Continue Targeting",
                             "description": "Set this flag if you want the camera to continue tracking the entity even when the target moves outside the valid rotation limits.",
@@ -240,6 +234,12 @@
                                 ]
                             }
                         }
+                    }
+                },
+                {
+                    "align_target_and_camera_forward": {
+                        "doNotSuggest": true,
+                        "deprecationMessage": "Deprecated in favor of 'control_scheme' (format_version: v1.21.90)"
                     }
                 }
             ]

@@ -1,0 +1,94 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "title": "Place Block",
+    "description": "Allows an entity to place blocks in the world.",
+    "type": "object",
+    "properties": {
+        "priority": {
+            "title": "Priority",
+            "$ref": "../../general/v1.16.0/behaviorPriority.json"
+        },
+        "affected_by_griefing_rule": {
+            "title": "Affected by Griefing Rule",
+            "description": "If true, whether the goal is affected by the mob griefing game rule.",
+            "type": "boolean"
+        },
+        "can_place": {
+            "title": "Can Place",
+            "description": "Filters for if the entity should try to place its block. Self and Target are set.",
+            "$ref": "../../general/v1.16.0/filter.json"
+        },
+        "chance": {
+            "title": "Chance",
+            "description": "Chance each tick for the entity to try and place a block.",
+            "type": "number"
+        },
+        "on_place": {
+            "title": "Event: On Place",
+            "description": "Trigger ran if the entity does place its block. Self, Target, and Block are set.",
+            "$ref": "../../general/v1.16.0/eventDefinition.json"
+        },
+        "placeable_carried_blocks": {
+            "title": "Placeable Carried Blocks",
+            "description": "Block descriptors for which blocks are valid to be placed from the entity's carried item, if empty all blocks are valid.",
+            "type": "array",
+            "items": {
+                "$ref": "../../../general/blockDescriptor.json"
+            }
+        },
+        "randomly_placeable_blocks": {
+            "title": "Randomly Placeable Blocks",
+            "description": "Weighted block descriptors for which blocks should be randomly placed, if empty the entity will try to place its carried block from placeable_carried_blocks.",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "block": {
+                        "title": "Block",
+                        "$ref": "../../../general/blockReference.json"
+                    },
+                    "weight": {
+                        "title": "Weight",
+                        "type": "number"
+                    }
+                },
+                "additionalProperties": false
+            }
+        },
+        "xz_range": {
+            "title": "XZ Range",
+            "description": "XZ range from which the entity will try and place blocks in.",
+            "anyOf": [
+                {
+                    "type": "integer"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                }
+            ]
+        },
+        "y_range": {
+            "title": "Y Range",
+            "description": "Y Range from which the entity will try and place blocks in.",
+            "anyOf": [
+                {
+                    "type": "integer"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                }
+            ]
+        }
+    },
+    "additionalProperties": false
+}

@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "properties": {
+        "block_state": {
+            "title": "Block State",
+            "description": "The block state to match against.",
+            "anyOf": [
+                {
+                    "$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+                },
+                {
+                    "additionalProperties": false,
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "title": "Name",
+                            "$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+                        },
+                        "states": {
+                            "title": "States",
+                            "$ref": "../../../general/blockState.json"
+                        }
+                    }
+                }
+            ]
+        },
+        "probability": {
+            "title": "Probability",
+            "description": "Probability of the evaluating to true when the block matches.",
+            "type": "number",
+            "minimum": 0.0,
+            "maximum": 1.0
+        }
+    }
+}

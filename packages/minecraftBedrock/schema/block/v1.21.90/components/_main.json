@@ -37,7 +37,7 @@
 						"$ref": "../../v1.21.90/components/experimental/geometry.json"
 					},
 					"else": {
-						"$ref": "../../v1.20.60/components/geometry.json"
+						"$ref": "../../v1.21.90/components/geometry.json"
 					}
 				},
 				"minecraft:item_visual": {
@@ -46,7 +46,7 @@
 						"$ref": "../../v1.21.90/components/experimental/item_visual.json"
 					},
 					"else": {
-						"$ref": "../../v1.21.80/components/item_visual.json"
+						"$ref": "../../v1.21.90/components/item_visual.json"
 					}
 				},
 				"minecraft:loot": {
@@ -89,9 +89,14 @@
 		},
 		{
 			"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
-			"properties": {
-				"minecraft:random_offset": {
-					"$ref": "../../v1.21.90/components/experimental/random_offset.json"
+			"then": {
+				"properties": {
+					"minecraft:movable": {
+						"$ref": "../../v1.21.90/components/experimental/movable.json"
+					},
+					"minecraft:random_offset": {
+						"$ref": "../../v1.21.90/components/experimental/random_offset.json"
+					}
 				}
 			}
 		},

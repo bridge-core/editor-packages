@@ -1,0 +1,49 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"anyOf": [
+		{
+			"properties": {
+				"processor_type": {
+					"enum": [
+						"minecraft:capped",
+						"minecraft:rule"
+					]
+				}
+			},
+			"required": [
+				"processor_type"
+			]
+		},
+		{
+			"if": {
+				"properties": {
+					"processor_type": {
+						"const": "minecraft:capped"
+					}
+				},
+				"required": [
+					"processor_type"
+				]
+			},
+			"then": {
+				"$ref": "./capped.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"processor_type": {
+						"const": "minecraft:rule"
+					}
+				},
+				"required": [
+					"processor_type"
+				]
+			},
+			"then": {
+				"$ref": "./rule.json"
+			}
+		}
+	]
+}

@@ -10,7 +10,9 @@
 						"$ref": "./general.json#/definitions/conditions"
 					}
 				},
-				"required": ["condition"]
+				"required": [
+					"condition"
+				]
 			},
 			{
 				"if": {
@@ -19,7 +21,9 @@
 							"const": "has_mark_variant"
 						}
 					},
-					"required": ["condition"]
+					"required": [
+						"condition"
+					]
 				},
 				"then": {
 					"properties": {
@@ -36,13 +40,17 @@
 							"const": "entity_properties"
 						}
 					},
-					"required": ["condition"]
+					"required": [
+						"condition"
+					]
 				},
 				"then": {
 					"properties": {
 						"entity": {
 							"type": "string",
-							"enum": ["this"]
+							"enum": [
+								"this"
+							]
 						},
 						"properties": {
 							"properties": {
@@ -61,7 +69,9 @@
 							"const": "match_tool"
 						}
 					},
-					"required": ["condition"]
+					"required": [
+						"condition"
+					]
 				},
 				"then": {
 					"properties": {
@@ -127,7 +137,9 @@
 							"const": "random_chance"
 						}
 					},
-					"required": ["condition"]
+					"required": [
+						"condition"
+					]
 				},
 				"then": {
 					"properties": {
@@ -144,7 +156,9 @@
 							"const": "random_chance_with_looting"
 						}
 					},
-					"required": ["condition"]
+					"required": [
+						"condition"
+					]
 				},
 				"then": {
 					"properties": {
@@ -164,7 +178,9 @@
 							"const": "random_difficulty_chance"
 						}
 					},
-					"required": ["condition"]
+					"required": [
+						"condition"
+					]
 				},
 				"then": {
 					"properties": {
@@ -187,12 +203,52 @@
 							"const": "random_regional_difficulty_chance"
 						}
 					},
-					"required": ["condition"]
+					"required": [
+						"condition"
+					]
 				},
 				"then": {
 					"properties": {
 						"max_chance": {
 							"type": "number"
+						}
+					}
+				}
+			},
+			{
+				"if": {
+					"properties": {
+						"condition": {
+							"const": "killed_by_entity"
+						}
+					},
+					"required": [
+						"condition"
+					]
+				},
+				"then": {
+					"properties": {
+						"entity_type": {
+							"$ref": "../general/reference/identifiers.json#/definitions/entity_identifiers"
+						}
+					}
+				}
+			},
+			{
+				"if": {
+					"properties": {
+						"condition": {
+							"const": "damaged_by_entity"
+						}
+					},
+					"required": [
+						"condition"
+					]
+				},
+				"then": {
+					"properties": {
+						"entity_type": {
+							"$ref": "../general/reference/identifiers.json#/definitions/entity_identifiers"
 						}
 					}
 				}

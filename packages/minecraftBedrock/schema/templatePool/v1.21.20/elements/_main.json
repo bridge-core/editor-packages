@@ -10,7 +10,9 @@
 					"type": "string"
 				}
 			},
-			"required": ["element_type"]
+			"required": [
+				"element_type"
+			]
 		},
 		{
 			"if": {
@@ -19,7 +21,9 @@
 						"const": "minecraft:single_pool_element"
 					}
 				},
-				"required": ["element_type"]
+				"required": [
+					"element_type"
+				]
 			},
 			"then": {
 				"$ref": "./single_pool_element.json"

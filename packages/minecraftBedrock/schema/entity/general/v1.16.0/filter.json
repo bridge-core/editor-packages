@@ -173,6 +173,7 @@
 								"is_persistent",
 								"is_raider", // v1.19.80+
 								"is_riding",
+								"is_riding_self", // v1.21.90
 								"is_skin_id",
 								"is_sitting", // v1.20.80+
 								"is_sleeping",
@@ -186,6 +187,7 @@
 								"is_underground",
 								"is_underwater",
 								"is_variant",
+								"is_vehicle_family", // v1.21.90+
 								"is_visible",
 								"is_waterlogged", // v1.19.0+
 								"is_weather",
@@ -1163,6 +1165,23 @@
 					"if": {
 						"properties": {
 							"test": {
+								"const": "is_riding_self"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true if the subject entity is riding the calling entity.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
 								"const": "is_skin_id"
 							}
 						}
@@ -1350,6 +1369,23 @@
 							"value": {
 								"description": "Returns true if the subject entity is the variant number provided.",
 								"type": "integer"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_vehicle_family"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true when the subject entity's vehicle is a member of the named family.",
+								"$ref": "../../../general/reference/family.json"
 							}
 						}
 					}

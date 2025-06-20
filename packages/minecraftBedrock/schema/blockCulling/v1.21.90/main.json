@@ -82,12 +82,7 @@
 						"up",
 						"down"
 					]
-				}
-			}
-		},
-		"experimental_rule_properties": {
-			"type": "object",
-			"properties": {
+				},
 				"condition": {
 					"title": "Condition",
 					"type": "string",
@@ -103,6 +98,10 @@
 					"type": "boolean"
 				}
 			}
+		},
+		"experimental_rule_properties": {
+			"type": "object",
+			"properties": {}
 		}
 	}
 }
