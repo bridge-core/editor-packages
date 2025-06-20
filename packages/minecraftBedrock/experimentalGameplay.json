@@ -20,10 +20,6 @@
     "id": "dataDrivenJigsawStructures"
   },
   {
-    "icon": "mdi-code-json",
-    "id": "customComponentsV2"
-  },
-  {
     "icon": "mdi-earth-box-plus",
     "id": "renderDragonFeatures"
   },
@@ -32,7 +28,6 @@
     "id": "educationEdition"
   }
 ]
-
 /**
  * Removed toggles:
  * { "icon": "mdi-image-filter-hdr", "id": "cavesAndCliffs" } - 1.18.0
