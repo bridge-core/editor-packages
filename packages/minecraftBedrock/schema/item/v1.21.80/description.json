@@ -16,7 +16,7 @@
 					"$ref": "../../general/creativeCategory.json"
 				},
 				"group": {
-					"$ref": "../../general/reference/itemGroup.json"
+					"$ref": "../../general/reference/prefixedItemGroup.json"
 				},
 				"is_hidden_in_commands": {
 					"additionalProperties": false,

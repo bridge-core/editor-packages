@@ -30,7 +30,11 @@
 						".*": {
 							"type": "array",
 							"items": {
-								"type": ["boolean", "integer", "string"]
+								"type": [
+									"boolean",
+									"integer",
+									"string"
+								]
 							}
 						}
 					}
@@ -50,7 +54,7 @@
 							"$ref": "../../general/creativeCategory.json"
 						},
 						{
-							"$ref": "../../general/reference/itemGroup.json"
+							"$ref": "../../general/reference/prefixedItemGroup.json"
 						}
 					]
 				},
