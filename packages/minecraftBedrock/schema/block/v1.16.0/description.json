@@ -25,7 +25,11 @@
 						".*": {
 							"type": "array",
 							"items": {
-								"type": ["boolean", "integer", "string"]
+								"type": [
+									"boolean",
+									"integer",
+									"string"
+								]
 							}
 						}
 					}
@@ -38,7 +42,7 @@
 			"additionalProperties": false,
 			"properties": {
 				"group": {
-					"title": "Creative Catgeory",
+					"title": "Creative Category",
 					"type": "string",
 					"anyOf": [
 						{
