@@ -77,7 +77,7 @@
 					"properties": {
 						"item": {
 							"description": "The item identifier to match for.",
-							"$ref": "../general/itemDescriptor.json"
+							"$ref": "../general/reference/identifiers.json#/definitions/item_identifiers"
 						},
 						"count": {
 							"type": "object",
@@ -125,6 +125,27 @@
 										"description": "Maximum enchantment level for this condition to pass"
 									}
 								}
+							}
+						},
+						"minecraft:match_tool_filter_all": {
+							"type": "array",
+							"description": "Matches if the item has all of these tags",
+							"items": {
+								"$ref": "../general/reference/tags.json#/definitions/item_tags"
+							}
+						},
+						"minecraft:match_tool_filter_any": {
+							"type": "array",
+							"description": "Matches if the item has any of these tags",
+							"items": {
+								"$ref": "../general/reference/tags.json#/definitions/item_tags"
+							}
+						},
+						"minecraft:match_tool_filter_none": {
+							"type": "array",
+							"description": "Matches if the item has none of these tags",
+							"items": {
+								"$ref": "../general/reference/tags.json#/definitions/item_tags"
 							}
 						}
 					}
