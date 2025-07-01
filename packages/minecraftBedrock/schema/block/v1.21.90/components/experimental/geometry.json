@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema",
     "title": "Geometry",
     "description": "The description identifier of the geometry file to use to render this block. This identifier must match an existing geometry identifier in any of the currently loaded resource packs.",
-    "oneOf": [
+    "anyOf": [
         {
             "type": "string",
             "$ref": "../../../../general/reference/geometry.json"
@@ -23,7 +23,7 @@
             "properties": {
                 "identifier": {
                     "title": "Identifier",
-                    "oneOf": [
+                    "anyOf": [
                         {
                             "type": "string",
                             "$ref": "../../../../general/reference/geometry.json"
