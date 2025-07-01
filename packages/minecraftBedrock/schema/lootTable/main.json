@@ -66,6 +66,9 @@
 												"loot_table",
 												"empty"
 											]
+										},
+										"conditions": {
+											"$ref": "./conditions.json"
 										}
 									},
 									"required": ["type"]
