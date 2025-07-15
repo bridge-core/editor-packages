@@ -48,10 +48,6 @@
 			"type": "boolean",
 			"default": false
 		},
-		"look_distance": {
-			"title": "Look Distance",
-			"type": "number"
-		},
 		"untrackable_cooldown_delay": {
 			"title": "Untrackable Cooldown Delay",
 			"type": "number"
