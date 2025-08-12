@@ -19,24 +19,6 @@
 				"minecraft:overworld_height": {
 					"$ref": "../../v1.16.0/components/overworld_height.json"
 				},
-				"minecraft:surface_parameters": {
-					"$ref": "../../v1.16.0/components/surface_parameters.json"
-				},
-				"minecraft:swamp_surface": {
-					"$ref": "../../v1.16.0/components/swamp_surface.json"
-				},
-				"minecraft:frozen_ocean_surface": {
-					"$ref": "../../v1.16.0/components/frozen_ocean_surface.json"
-				},
-				"minecraft:capped_surface": {
-					"$ref": "../../v1.16.0/components/capped_surface.json"
-				},
-				"minecraft:mesa_surface": {
-					"$ref": "../../v1.16.0/components/mesa_surface.json"
-				},
-				"minecraft:the_end_surface": {
-					"$ref": "../../v1.16.0/components/the_end_surface.json"
-				},
 				"minecraft:overworld_generation_rules": {
 					"$ref": "../../v1.16.0/components/overworld_generation_rules.json"
 				},
@@ -57,11 +39,42 @@
 				},
 				"minecraft:replace_biomes": {
 					"$ref": "../../v1.21.100/components/replace_biomes.json"
+				},
+				"minecraft:surface_builder": {
+					"$ref": "../../v1.21.100/components/surface_builder.json"
+				},
+				"minecraft:humidity": {
+					"$ref": "../../v1.21.100/components/humidity.json"
+				},
+				"minecraft:partially_frozen": {
+					"$ref": "../../v1.21.100/components/partially_frozen.json"
+				},
+				"minecraft:map_tints": {
+					"$ref": "../../v1.21.100/components/map_tints.json"
 				}
 			}
 		},
+		// DEPRECATED
 		{
 			"properties": {
+				"minecraft:surface_parameters": {
+					"$ref": "../../v1.21.100/components/surface_parameters.json"
+				},
+				"minecraft:swamp_surface": {
+					"$ref": "../../v1.21.100/components/swamp_surface.json"
+				},
+				"minecraft:frozen_ocean_surface": {
+					"$ref": "../../v1.21.100/components/frozen_ocean_surface.json"
+				},
+				"minecraft:capped_surface": {
+					"$ref": "../../v1.21.100/components/capped_surface.json"
+				},
+				"minecraft:mesa_surface": {
+					"$ref": "../../v1.21.100/components/mesa_surface.json"
+				},
+				"minecraft:the_end_surface": {
+					"$ref": "../../v1.21.100/components/the_end_surface.json"
+				},
 				"minecraft:nether_surface": {
 					"$ref": "../../v1.21.80/components/nether_surface.json"
 				}

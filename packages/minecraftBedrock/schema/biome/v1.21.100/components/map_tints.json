@@ -1,0 +1,34 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema#",
+    "title": "Map Tints",
+    "description": "Sets the color grass and foliage will be tinted by in this biome on the map.",
+    "type": "object",
+    "properties": {
+        "foliage": {
+            "title": "Foliage",
+            "description": "Sets the color foliage will be tinted by in this biome on the map.",
+            "$ref": "../../../general/color.json"
+        },
+        "grass": {
+            "title": "Grass",
+            "description": "Controls whether the grass will use a custom tint color or a noise based tint color.",
+            "type": "object",
+            "properties": {
+                "type": {
+                    "title": "Type",
+                    "description": "Controls the type of grass tint to use.",
+                    "enum": [
+                        "tint",
+                        "noise"
+                    ]
+                },
+                "tint": {
+                    "title": "Tint",
+                    "description": "Tint color used in this biome on the map.",
+                    "$ref": "../../../general/color.json"
+                }
+            }
+        }
+    },
+    "additionalProperties": false
+}
