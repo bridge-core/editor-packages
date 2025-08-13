@@ -1,0 +1,125 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "title": "Transport Items",
+    "description": "A behavior that enables a mob to transport items from and to containers.",
+    "type": "object",
+    "properties": {
+        "priority": {
+            "title": "Priority",
+            "$ref": "../../general/v1.16.0/behaviorPriority.json"
+        },
+        "allow_simultaneous_interaction": {
+            "title": "Allow Simultaneous Interaction",
+            "description": "When true, multiple mobs with the Transport Items Goal are allowed to simultaneously interact with a container.",
+            "type": "boolean",
+            "default": false
+        },
+        "allowed_items": {
+            "title": "Allowed Items",
+            "description": "A list of item descriptors that are the only items the mob is allowed to transport. If this and \"disallowed_items\" are both empty, then all items are allowed. If non-empty \"disallowed_items\" must be empty.",
+            "type": "array",
+            "items": {
+                "$ref": "../../../general/itemDescriptor.json"
+            }
+        },
+        "destination_container_types": {
+            "title": "Destination Container Types",
+            "description": "A list of block descriptors that should be a container type to put items in.",
+            "type": "array",
+            "items": {
+                "$ref": "../../../general/blockDescriptor.json"
+            }
+        },
+        "disallowed_items": {
+            "title": "Disallowed Items",
+            "description": "A list of item descriptors that are the mob is not allowed to transport. If non-empty \"allowed_items\" must be empty.",
+            "type": "array",
+            "items": {
+                "$ref": "../../../general/itemDescriptor.json"
+            }
+        },
+        "idle_cooldown": {
+            "title": "Idle Cooldown",
+            "description": "When the mob cannot find a container in which to get or put items, the goal will stop being active for this amount of time in seconds.",
+            "type": "integer",
+            "default": 20
+        },
+        "initial_cooldown": {
+            "title": "Initial Cooldown",
+            "description": "How long the mob will wait after spawning or getting the goal added before the goal can start.",
+            "type": "integer",
+            "default": 20
+        },
+        "interaction_time": {
+            "title": "Interaction Time",
+            "description": "The amount of time in seconds spent interacting with the containers.",
+            "type": "number",
+            "minimum": 0.0
+        },
+        "max_stack_size": {
+            "title": "Max Stack Size",
+            "description": "The maximum stack size that the mob will try to take from a container.",
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 64
+        },
+        "max_visited_containers": {
+            "title": "Max Visited Containers",
+            "description": "The maximum number of containers that the mob will try to take/place items from before going on cooldown and starting over.",
+            "type": "integer"
+        },
+        "place_strategy": {
+            "title": "Place Strategy",
+            "description": "The strategy to use for placing the transported item. Any - always place if there is room, With matching - place if there is a matching item in the container, With matching or empty - like With matching but will also place in empty containers.",
+            "type": "string",
+            "enum": [
+                "any",
+                "with_matching",
+                "with_matching_or_empty"
+            ]
+        },
+        "search_distance": {
+            "title": "Search Distance",
+            "description": "The maximum search distance horizontally and vertically at which to find containers for taking or placing items.",
+            "oneOf": [
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "number"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "x": {
+                            "type": "number"
+                        },
+                        "y": {
+                            "type": "number"
+                        }
+                    }
+                }
+            ]
+        },
+        "search_strategy": {
+            "title": "Search Strategy",
+            "description": "The strategy to use for finding source or destination containers. The nearest valid container or a random valid container in range.",
+            "type": "string",
+            "enum": [
+                "nearest",
+                "random"
+            ]
+        },
+        "source_container_types": {
+            "title": "Source Container Types",
+            "description": "A list of block descriptors that should be a container type to get items from.",
+            "type": "array",
+            "items": {
+                "$ref": "../../../general/blockDescriptor.json"
+            }
+        }
+    },
+    "additionalProperties": false
+}

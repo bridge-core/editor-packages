@@ -245,12 +245,6 @@
 		"minecraft:behavior.eat_carried_item": {
 			"$ref": "../../v1.16.0/behaviors/behavior.eat_carried_item.json"
 		},
-		"minecraft:behavior.enderman_leave_block": {
-			"$ref": "../../v1.16.0/behaviors/behavior.enderman_leave_block.json"
-		},
-		"minecraft:behavior.enderman_take_block": {
-			"$ref": "../../v1.16.0/behaviors/behavior.enderman_take_block.json"
-		},
 		"minecraft:behavior.equip_item": {
 			"$ref": "../../v1.16.0/behaviors/behavior.equip_item.json"
 		},
@@ -535,6 +529,16 @@
 		},
 		"minecraft:behavior.take_block": {
 			"$ref": "../../v1.21.100/behaviors/behavior.take_block.json"
+		},
+		"minecraft:behavior.transport_items": {
+			"$ref": "../../v1.21.100/behaviors/behavior.transport_items.json"
+		},
+		// Deprecated
+		"minecraft:behavior.enderman_leave_block": {
+			"$ref": "../../v1.21.100/behaviors/behavior.enderman_leave_block.json"
+		},
+		"minecraft:behavior.enderman_take_block": {
+			"$ref": "../../v1.21.100/behaviors/behavior.enderman_take_block.json"
 		}
 	}
 }

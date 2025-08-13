@@ -64,6 +64,9 @@
 				"minecraft:redstone_conductivity": {
 					"$ref": "../../v1.21.30/components/redstone_conductivity.json"
 				},
+				"minecraft:random_offset": {
+					"$ref": "../../v1.21.100/components/random_offset.json"
+				},
 				"minecraft:replaceable": {
 					"$ref": "../../v1.21.70/components/replaceable.json"
 				},
@@ -75,16 +78,6 @@
 				},
 				"minecraft:transformation": {
 					"$ref": "../../v1.19.80/components/transformation.json"
-				}
-			}
-		},
-		{
-			"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
-			"then": {
-				"properties": {
-					"minecraft:random_offset": {
-						"$ref": "../../v1.21.90/components/experimental/random_offset.json"
-					}
 				}
 			}
 		},
