@@ -54,7 +54,7 @@
 			"$ref": "../../v1.18.30/components/exhaustion_values.json"
 		},
 		"minecraft:shareables": {
-			"$ref": "../../v1.18.20/components/shareables.json"
+			"$ref": "../../v1.21.110/components/shareables.json"
 		},
 		"minecraft:block_climber": {
 			"$ref": "../../v1.17.10/components/block_climber.json"
