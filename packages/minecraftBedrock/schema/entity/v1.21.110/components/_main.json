@@ -592,7 +592,7 @@
 			"$ref": "../../v1.21.110/components/dash.json"
 		},
 		"minecraft:input_air_controlled": {
-			"$ref": "../../v1.21.100/components/input_air_controlled.json"
+			"$ref": "../../v1.21.110/components/input_air_controlled.json"
 		},
 		"minecraft:scaffolding_climber": {
 			"$ref": "../../v1.17.10/components/scaffolding_climber.json"

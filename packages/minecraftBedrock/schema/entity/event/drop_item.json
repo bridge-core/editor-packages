@@ -1,0 +1,28 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "type": "object",
+    "properties": {
+        "drop_item": {
+            "title": "Drop Item",
+            "description": "Allows an entity to drop its item in a given slot",
+            "type": "object",
+            "properties": {
+                "slot": {
+                    "title": "Slot",
+                    "description": "The slot to drop the item from.",
+                    "type": "string",
+                    "enum": [
+                        "slot.armor.body",
+                        "slot.armor.chest",
+                        "slot.armor.feet",
+                        "slot.armor.head",
+                        "slot.armor.legs",
+                        "slot.weapon.mainhand",
+                        "slot.weapon.offhand"
+                    ]
+                }
+            },
+            "additionalProperties": false
+        }
+    }
+}
