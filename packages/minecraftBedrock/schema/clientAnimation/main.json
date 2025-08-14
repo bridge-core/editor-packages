@@ -170,7 +170,7 @@
 						},
 						"blend_weight": {
 							"title": "Blend Weight",
-							"type": "number"
+							"$ref": "../molang/embedded.json"
 						},
 						"override_previous_animation": {
 							"title": "Override Previous Animation",

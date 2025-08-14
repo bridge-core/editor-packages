@@ -67,7 +67,8 @@ export class GameScraper {
 			// File
 			if (extname(fullPath) && contentPath) {
 				const scraped =
-					extname(fullPath) === '.json'
+					extname(fullPath) === '.json' ||
+					extname(fullPath) === '.material'
 						? await this.scrapeJsonFile(fullPath, contentPath)
 						: await this.scrapeTextFile(fullPath, contentPath)
 				return scraped
@@ -94,7 +95,8 @@ export class GameScraper {
 							output.push(p)
 						} else {
 							const scraped =
-								extname(join(fullPath, file.name)) === '.json'
+								extname(join(fullPath, file.name)) === '.json' ||
+								extname(join(fullPath, file.name)) === '.material'
 									? await this.scrapeJsonFile(
 											fullPath,
 											contentPath,
