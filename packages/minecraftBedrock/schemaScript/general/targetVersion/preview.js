@@ -4,6 +4,6 @@ return {
 	type: 'custom',
 	generateFile: 'project/targetVersion/preview.json',
 	data: {
-		if: config.targetVersion && config.targetVersion == '1.21.100',
+		if: config.targetVersion && config.targetVersion == '1.21.110',
 	},
 }
