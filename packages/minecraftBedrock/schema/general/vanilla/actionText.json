@@ -14,6 +14,7 @@
 		"action.interact.creeper",
 		"action.interact.cure",
 		"action.interact.cut",
+		"action.interact.drop_item",
 		"action.interact.dye",
 		"action.interact.edit",
 		"action.interact.equipcarpet",
@@ -45,6 +46,7 @@
 		"action.interact.ride.minecart",
 		"action.interact.ride.strider",
 		"action.interact.saddle",
+		"action.interact.scrape",
 		"action.interact.shear",
 		"action.interact.sit",
 		"action.interact.stand",
@@ -56,6 +58,8 @@
 		"action.interact.unleash",
 		"action.interact.use",
 		"action.interact.wakevillager",
+		"action.interact.wax_off",
+		"action.interact.wax_on",
 		"action.interact.write"
 	]
 }
