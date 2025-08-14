@@ -1,0 +1,494 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"definitions": {
+		"geometry": {
+			"type": "object",
+			"properties": {
+				"description": {
+					"$ref": "#/definitions/description"
+				},
+				"cape": {
+					"title": "Cape",
+					"type": "string"
+				},
+				"bones": {
+					"title": "Bones",
+					"description": "Bones define the 'skeleton' of the mob: the parts that can be animated, and to which geometry and other bones are attached.",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/bone"
+					}
+				},
+				"item_display_transforms": {
+					"title": "Item Display Transforms",
+					"description": "Defines the model transformations for the item.",
+					"$ref": "#/definitions/item_display_transforms"
+				}
+			}
+		},
+		"description": {
+			"title": "Description",
+			"type": "object",
+			"properties": {
+				"identifier": {
+					"title": "Identifier",
+					"description": "Entity definition and Client Block definition files refer to this geometry via this identifier.",
+					"type": "string",
+					"pattern": "^geometry\\..*"
+				},
+				"texture_width": {
+					"title": "Texture Width",
+					"description": "Assumed width in texels of the texture that will be bound to this geometry.",
+					"type": "integer"
+				},
+				"texture_height": {
+					"title": "Texture Height",
+					"description": "Assumed height in texels of the texture that will be bound to this geometry.",
+					"type": "integer"
+				},
+				"visible_bounds_width": {
+					"title": "Visible Bounds Width",
+					"description": "Width of the visibility bounding box (in model space units).",
+					"type": "number"
+				},
+				"visible_bounds_height": {
+					"title": "Visible Bounds Height",
+					"description": "Height of the visible bounding box (in model space units).",
+					"type": "number"
+				},
+				"visible_bounds_offset": {
+					"title": "Visible Bounds Offset",
+					"description": "Offset of the visibility bounding box from the entity location point (in model space units).",
+					"$ref": "#/definitions/vector_3f"
+				}
+			}
+		},
+		"bone": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"title": "Name",
+					"description": "Animation files refer to this bone via this identifier.",
+					"type": "string"
+				},
+				"parent": {
+					"title": "Parent",
+					"description": "Bone that this bone is relative to.  If the parent bone moves, this bone will move along with it.",
+					"type": "string"
+				},
+				"pivot": {
+					"title": "Pivot",
+					"description": "The bone pivots around this point (in model space units).",
+					"$ref": "#/definitions/vector_3f"
+				},
+				"rotation": {
+					"title": "Rotation",
+					"description": "This is the initial rotation of the bone around the pivot, pre-animation (in degrees, x-then-y-then-z order).",
+					"$ref": "#/definitions/vector_3f"
+				},
+				"mirror": {
+					"title": "Mirror",
+					"description": "Mirrors the UV's of the unrotated cubes along the x axis, also causes the east/west faces to get flipped.",
+					"type": "boolean"
+				},
+				"debug": {
+					"title": "Debug",
+					"type": "boolean"
+				},
+				"inflate": {
+					"title": "Inflate",
+					"description": "Grow this box by this additive amount in all directions (in model space units).",
+					"type": "number"
+				},
+				"render_group_id": {
+					"title": "Render Group ID",
+					"type": "integer",
+					"minimum": 0
+				},
+				"cubes": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/cube"
+					}
+				},
+				"binding": {
+					"title": "Binding",
+					"description": "A molang expression specifying the bone name of the parent skeletal hierarchy that this bone should use as the root transform.  Without this field it will look for a bone in the parent entity with the same name as this bone.  If both are missing, it will assume a local skeletal hierarchy (via the 'parent' field).  If that is also missing, it will attach to the owning entity's root transform.",
+					"$ref": "../../molang/embedded.json"
+				},
+				"locators": {
+					"title": "Locators",
+					"description": "This is a list of locators associated with this bone.  A locator is a point in model space that tracks a particular bone as the bone animates (by maintaining it's relationship to the bone through the animation).",
+					"type": "object",
+					"patternProperties": {
+						".*": {
+							"oneOf": [
+								{
+									"$ref": "#/definitions/vector_3f"
+								},
+								{
+									"$ref": "#/definitions/locator"
+								}
+							]
+						}
+					}
+				},
+				"poly_mesh": {
+					"title": "Poly Mesh",
+					"description": "EXPERIMENTAL - A triangle or quad mesh object.  Can be used in conjunction with cubes and texture geometry.",
+					"type": "object",
+					"$ref": "#/definitions/poly_mesh"
+				},
+				"texture_meshes": {
+					"title": "Texture Meshes",
+					"description": "EXPERIMENTAL - Adds a mesh to the bone's geometry by converting texels in a texture into boxes",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/texture_mesh"
+					}
+				}
+			}
+		},
+		"cube": {
+			"type": "object",
+			"properties": {
+				"origin": {
+					"title": "Origin",
+					"description": "This point declares the unrotated lower corner of cube (smallest x/y/z value in model space units).",
+					"$ref": "#/definitions/vector_3f"
+				},
+				"size": {
+					"title": "Size",
+					"description": "The cube extends this amount relative to its origin (in model space units).",
+					"$ref": "#/definitions/vector_3f"
+				},
+				"rotation": {
+					"title": "Rotation",
+					"description": "The cube is rotated by this amount (in degrees, x-then-y-then-z order) around the pivot.",
+					"$ref": "#/definitions/vector_3f"
+				},
+				"pivot": {
+					"title": "Pivot",
+					"description": "If this field is specified, rotation of this cube occurs around this point, otherwise its rotation is around the center of the box.  Note that in 1.12 this is flipped upside-down, but is fixed in 1.14.",
+					"$ref": "#/definitions/vector_3f"
+				},
+				"inflate": {
+					"title": "Inflate",
+					"description": "Grow this box by this additive amount in all directions (in model space units), this field overrides the bone's inflate field for this cube only.",
+					"type": "number"
+				},
+				"mirror": {
+					"title": "Mirror",
+					"description": "Mirrors the UV's of the unrotated cubes along the x axis, also causes the east/west faces to get flipped.",
+					"type": "boolean"
+				},
+				"uv": {
+					"title": "UV",
+					"oneOf": [
+						{
+							"description": "Specifies the upper-left corner on the texture for the start of the texture mapping for this box.",
+							"$ref": "#/definitions/vector_2f"
+						},
+						{
+							"description": "This is an alternate per-face uv mapping which specifies each face of the cube.  Omitting a face will cause that face to not get drawn.",
+							"type": "object",
+							"properties": {
+								"north": {
+									"$ref": "#/definitions/uv"
+								},
+								"south": {
+									"$ref": "#/definitions/uv"
+								},
+								"east": {
+									"$ref": "#/definitions/uv"
+								},
+								"west": {
+									"$ref": "#/definitions/uv"
+								},
+								"up": {
+									"$ref": "#/definitions/uv"
+								},
+								"down": {
+									"$ref": "#/definitions/uv"
+								}
+							}
+						}
+					]
+				}
+			}
+		},
+		"uv": {
+			"type": "object",
+			"properties": {
+				"uv": {
+					"title": "UV Origin",
+					"description": "Specifies the uv origin for the face. For this face, it is the upper-left corner, when looking at the face with y being up.",
+					"$ref": "#/definitions/vector_2f"
+				},
+				"uv_size": {
+					"title": "UV Size",
+					"description": "The face maps this many texels from the uv origin. If not specified, the box dimensions are used instead.",
+					"$ref": "#/definitions/vector_2f"
+				},
+				"uv_rotation": {
+					"title": "UV Rotation",
+					"description": "Specifies an optional rotation for the specified UV rect in 90-degree clockwise increments before applying it to a geometry cube face. If not specified, no rotation will be applied.",
+					"type": "integer",
+					"default": 0,
+					"enum": [
+						0,
+						90,
+						180,
+						270,
+						360
+					]
+				},
+				"material_instance": {
+					"title": "Material Instance",
+					"type": "string"
+				}
+			}
+		},
+		"locator": {
+			"type": "object",
+			"properties": {
+				"offset": {
+					"title": "Offset",
+					"description": "Position of the locator in model space.",
+					"$ref": "#/definitions/vector_3f"
+				},
+				"rotation": {
+					"title": "Rotation",
+					"description": "Rotation of the locator in model space.",
+					"$ref": "#/definitions/vector_3f"
+				},
+				"ignore_inherited_scale": {
+					"title": "Ignore Inherited Scale",
+					"description": "Discard scale inherited from parent bone.",
+					"type": "boolean"
+				}
+			}
+		},
+		"poly_mesh": {
+			"type": "object",
+			"properties": {
+				"normalized_uvs": {
+					"title": "Normalized UVs",
+					"description": "If true, UVs are assumed to be [0-1].  If false, UVs are assumed to be [0-texture_width] and [0-texture_height] respectively.",
+					"type": "boolean"
+				},
+				"positions": {
+					"title": "Positions",
+					"description": "Vertex positions for the mesh.  Can be either indexed via the 'polys' section, or be a quad-list if mapped 1-to-1 to the normals and UVs sections.",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/vector_3f"
+					}
+				},
+				"normals": {
+					"title": "Normals",
+					"description": "Vertex normals.  Can be either indexed via the 'polys' section, or be a quad-list if mapped 1-to-1 to the positions and UVs sections.",
+					"items": {
+						"$ref": "#/definitions/vector_3f"
+					}
+				},
+				"uvs": {
+					"title": "UVs",
+					"description": "Vertex UVs.  Can be either indexed via the 'polys' section, or be a quad-list if mapped 1-to-1 to the positions and normals sections.",
+					"items": {
+						"$ref": "#/definitions/vector_3f"
+					}
+				},
+				"polys": {
+					"title": "Polys",
+					"oneOf": [
+						{
+							"description": "Poly element indices, as an array of polygons, each an array of either three or four vertices, each an array of indices into positions, normals, and UVs (in that order).",
+							"type": "array",
+							"items": {
+								"type": "array",
+								"minItems": 3,
+								"maxItems": 3,
+								"items": {
+									"$ref": "#/definitions/vector_3f"
+								}
+							}
+						},
+						{
+							"description": "Poly element indices, as an array of polygons, each an array of either three or four vertices, each an array of indices into positions, normals, and UVs (in that order).",
+							"type": "array",
+							"items": {
+								"type": "array",
+								"minItems": 4,
+								"maxItems": 4,
+								"items": {
+									"$ref": "#/definitions/vector_3f"
+								}
+							}
+						},
+						{
+							"description": "If not specifying vertex indices, arrays of data must be a list of tris or quads, set by making this property either 'tri_list' or 'quad_list'",
+							"type": "string",
+							"enum": [
+								"tri_list",
+								"quad_list"
+							]
+						}
+					]
+				}
+			}
+		},
+		"texture_mesh": {
+			"type": "object",
+			"properties": {
+				"texture": {
+					"title": "Texture",
+					"description": "The friendly-named texture to use.",
+					"type": "string"
+				},
+				"position": {
+					"title": "Position",
+					"description": "The position of the pivot point after rotation (in *entity space* not texture or bone space) of the texture geometry",
+					"$ref": "#/definitions/vector_3f"
+				},
+				"local_pivot": {
+					"title": "Local Pivot",
+					"description": "The pivot point on the texture (in *texture space* not entity or bone space) of the texture geometry",
+					"$ref": "#/definitions/vector_3f"
+				},
+				"rotation": {
+					"title": "Rotation",
+					"description": "The rotation (in degrees) of the texture geometry relative to the offset",
+					"$ref": "#/definitions/vector_3f"
+				},
+				"scale": {
+					"title": "Scale",
+					"description": "The scale (in degrees) of the texture geometry relative to the offset",
+					"$ref": "#/definitions/vector_3f"
+				},
+				"use_pixel_depth": {
+					"title": "Use Pixel Depth",
+					"description": "If true, the geometry will have a depth of one pixel (in entity space, not texture space). This causes geometries with a texture resolution different from 16x16 to appear stretched. If false, the geometry will be built from perfectly cubic voxels, no matter the texture's aspect ratio.",
+					"type": "boolean",
+					"default": true
+				}
+			}
+		},
+		"item_display_transforms": {
+			"type": "object",
+			"properties": {
+				"gui": {
+					"title": "GUI",
+					"description": "Display transformations for the GUI icon.",
+					"$ref": "#/definitions/gui_display_transformation"
+				},
+				"firstperson_righthand": {
+					"title": "First Person Right Hand",
+					"description": "Display transformations for the first person right hand.",
+					"$ref": "#/definitions/display_transformation"
+				},
+				"firstperson_lefthand": {
+					"title": "First Person Left Hand",
+					"description": "Display transformations for the first person left hand.",
+					"$ref": "#/definitions/display_transformation"
+				},
+				"thirdperson_righthand": {
+					"title": "Third Person Right Hand",
+					"description": "Display transformations for the third person right hand.",
+					"$ref": "#/definitions/display_transformation"
+				},
+				"thirdperson_lefthand": {
+					"title": "Third Person Left Hand",
+					"description": "Display transformations for the third person left hand.",
+					"$ref": "#/definitions/display_transformation"
+				},
+				"ground": {
+					"title": "Ground",
+					"description": "Display transformations for the item entity.",
+					"$ref": "#/definitions/display_transformation"
+				},
+				"fixed": {
+					"title": "Fixed",
+					"description": "Display transformations for the item frame display.",
+					"$ref": "#/definitions/display_transformation"
+				}
+			}
+		},
+		"display_transformation": {
+			"type": "object",
+			"properties": {
+				"translation": {
+					"title": "Translation",
+					"$ref": "#/definitions/vector_3f"
+				},
+				"rotation": {
+					"title": "Rotation",
+					"$ref": "#/definitions/vector_3f"
+				},
+				"rotation_pivot": {
+					"title": "Rotation Pivot",
+					"description": "The pivot point for the applied rotation.",
+					"$ref": "#/definitions/vector_3f"
+				},
+				"scale": {
+					"title": "Scale",
+					"$ref": "#/definitions/vector_3f"
+				},
+				"scale_pivot": {
+					"title": "Rotation Pivot",
+					"description": "The pivot point for the applied rotation.",
+					"$ref": "#/definitions/vector_3f"
+				}
+			}
+		},
+		"gui_display_transformation": {
+			"type": "object",
+			"properties": {
+				"translation": {
+					"title": "Translation",
+					"$ref": "#/definitions/vector_3f"
+				},
+				"rotation": {
+					"title": "Rotation",
+					"$ref": "#/definitions/vector_3f"
+				},
+				"rotation_pivot": {
+					"title": "Rotation Pivot",
+					"description": "The pivot point for the applied rotation.",
+					"$ref": "#/definitions/vector_3f"
+				},
+				"scale": {
+					"title": "Scale",
+					"$ref": "#/definitions/vector_3f"
+				},
+				"scale_pivot": {
+					"title": "Rotation Pivot",
+					"description": "The pivot point for the applied rotation.",
+					"$ref": "#/definitions/vector_3f"
+				},
+				"fit_to_frame": {
+					"title": "Fit to Frame",
+					"description": "If true, the geometry will be automatically scaled and translated to fit within the GUI frame.",
+					"type": "boolean",
+					"default": true
+				}
+			}
+		},
+		"vector_2f": {
+			"type": "array",
+			"minItems": 2,
+			"maxItems": 2,
+			"items": {
+				"type": "number"
+			}
+		},
+		"vector_3f": {
+			"type": "array",
+			"minItems": 3,
+			"maxItems": 3,
+			"items": {
+				"type": "number"
+			}
+		}
+	}
+}
