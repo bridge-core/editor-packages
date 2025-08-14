@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "title": "Climate",
+    "description": "Describes temperature, humidity, precipitation, etc.  Biomes without this component will have default values.",
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {
+        "downfall": {
+            "title": "Downfall",
+            "description": "Amount that precipitation affects colors and block changes.",
+            "type": "number"
+        },
+        "snow_accumulation": {
+            "title": "Snow Accumulation",
+            "description": "Minimum and maximum snow level, each multiple of 0.125 is another snow layer",
+            "type": "array",
+            "items": {
+                "type": "number"
+            }
+        },
+        "temperature": {
+            "title": "Temperature",
+            "description": "Temperature affects a variety of visual and behavioral things, including snow and ice placement, sponge drying, and sky color.",
+            "type": "number"
+        }
+    }
+}
