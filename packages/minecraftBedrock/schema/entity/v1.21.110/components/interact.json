@@ -43,7 +43,9 @@
 								"slot.armor.chest",
 								"slot.armor.legs",
 								"slot.armor.feet",
-								"slot.armor.body"
+								"slot.armor.body",
+								"slot.weapon.mainhand",
+								"slot.weapon.offhand"
 							]
 						},
 						{
@@ -70,7 +72,9 @@
 								"slot.armor.chest",
 								"slot.armor.legs",
 								"slot.armor.feet",
-								"slot.armor.body"
+								"slot.armor.body",
+								"slot.weapon.mainhand",
+								"slot.weapon.offhand"
 							]
 						},
 						{
@@ -99,7 +103,9 @@
 										"slot.armor.chest",
 										"slot.armor.legs",
 										"slot.armor.feet",
-										"slot.armor.body"
+										"slot.armor.body",
+										"slot.weapon.mainhand",
+										"slot.weapon.offhand"
 									]
 								},
 								{
