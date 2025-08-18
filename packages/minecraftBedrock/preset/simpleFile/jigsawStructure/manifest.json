@@ -4,26 +4,38 @@
 	"description": "Creates a blank jigsaw structure.",
 	"category": "fileType.simpleFile",
 	"requires": {
-		"packTypes": ["behaviorPack"],
-		"experimentalGameplay": ["dataDrivenJigsawStructures"]
+		"packTypes": [
+			"behaviorPack"
+		],
+		"experimentalGameplay": [
+			"dataDrivenJigsawStructures"
+		]
 	},
 	"additionalModels": {
-		"PRESET_PATH": "worldgen/jigsaw_structures/"
+		"PRESET_PATH": "worldgen/structures/"
 	},
 	"fields": [
 		[
 			"File Name",
 			"FILE_NAME",
-			{ "validate": ["required", "alphanumeric", "lowercase"] }
+			{
+				"validate": [
+					"required",
+					"alphanumeric",
+					"lowercase"
+				]
+			}
 		]
 	],
-
 	"createFiles": [
 		[
 			"jigsawStructure.json",
 			"{{PRESET_PATH}}{{FILE_NAME}}.json",
 			{
-				"inject": ["FILE_NAME", "PRESET_PATH"],
+				"inject": [
+					"FILE_NAME",
+					"PRESET_PATH"
+				],
 				"openFile": true,
 				"packPath": "behaviorPack"
 			}

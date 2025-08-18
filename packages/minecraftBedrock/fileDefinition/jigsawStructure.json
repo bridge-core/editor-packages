@@ -3,13 +3,19 @@
 	"icon": "mdi-puzzle",
 	"detect": {
 		"packType": "behaviorPack",
-		"scope": ["worldgen/jigsaw_structures/"],
-		"matcher": [
-			"worldgen/jigsaw_structures/**/*",
-			"worldgen/jigsaw_structures/*"
+		"scope": [
+			"worldgen/structures/"
 		],
-		"fileContent": ["minecraft:jigsaw"],
-		"fileExtensions": [".json"]
+		"matcher": [
+			"worldgen/structures/**/*",
+			"worldgen/structures/*"
+		],
+		"fileContent": [
+			"minecraft:jigsaw"
+		],
+		"fileExtensions": [
+			".json"
+		]
 	},
 	"schema": "file:///data/packages/minecraftBedrock/schema/jigsawStructure/main.json",
 	"lightningCache": "jigsawStructure.json",
@@ -18,7 +24,11 @@
 		"supportsQuerying": false
 	},
 	"highlighterConfiguration": {
-		"variables": ["description"],
-		"typeIdentifiers": ["format_version"]
+		"variables": [
+			"description"
+		],
+		"typeIdentifiers": [
+			"format_version"
+		]
 	}
 }
