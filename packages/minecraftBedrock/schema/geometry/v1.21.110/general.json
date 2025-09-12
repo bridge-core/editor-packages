@@ -411,6 +411,11 @@
 					"title": "Fixed",
 					"description": "Display transformations for the item frame display.",
 					"$ref": "#/definitions/display_transformation"
+				},
+				"embedded": {
+					"title": "Embedded",
+					"description": "Display transformations for when embedded into a block.",
+					"$ref": "#/definitions/display_transformation"
 				}
 			}
 		},

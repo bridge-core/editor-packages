@@ -11,7 +11,7 @@
 					"$ref": "../../v1.21.90/components/atmosphere_identifier.json"
 				},
 				"minecraft:biome_music": {
-					"$ref": "../../v1.21.80/components/biome_music.json"
+					"$ref": "../../v1.21.110/components/biome_music.json"
 				},
 				"minecraft:color_grading_identifier": {
 					"$ref": "../../v1.21.90/components/color_grading_identifier.json"

@@ -10814,9 +10814,6 @@
 				"targetVersion": [
 					">=",
 					"1.21.100"
-				],
-				"experimentalGameplay": [
-					"experimentalCreatorCameraFeatures"
 				]
 			},
 			"commands": [
