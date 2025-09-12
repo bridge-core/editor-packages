@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "required": [
+        "format_version",
+        "minecraft:local_light_settings"
+    ],
+    "allOf": [
+        {
+            "properties": {
+                "format_version": {
+                    "$ref": "../project/formatVersionEnum.json"
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "format_version": {
+                        "enum": [
+                            "",
+                            "1.21.70",
+                            "1.21.80",
+                            "1.21.90",
+                            "1.21.100",
+                            "1.21.110",
+                            "1.21.120"
+                        ]
+                    }
+                }
+            },
+            "then": {
+                "$ref": "./v1.21.120/main.json"
+            }
+        }
+    ]
+}

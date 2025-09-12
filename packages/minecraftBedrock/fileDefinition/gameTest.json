@@ -23,7 +23,43 @@
 	 *	https://www.npmjs.com/package/@minecraft/server-net?activeTab=versions
 	 */
 	"types": [
+		// TODO: "beta" latest modules
 		// @minecraft/server
+		{
+			"moduleName": "@minecraft/server",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@2.4.0-beta.1.21.120-preview.21/index.d.ts",
+			"requires": {
+				"dependencies": [
+					{
+						"module_name": "@minecraft/server",
+						"version": "2.4.0-beta"
+					}
+				],
+				"experimentalGameplay": [
+					"enableGameTestFramework"
+				],
+				"targetVersion": [
+					">=",
+					"1.21.120"
+				]
+			}
+		},
+		{
+			"moduleName": "@minecraft/server",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@2.3.0-rc.1.21.120-preview.21/index.d.ts",
+			"requires": {
+				"dependencies": [
+					{
+						"module_name": "@minecraft/server",
+						"version": "2.3.0"
+					}
+				],
+				"targetVersion": [
+					">=",
+					"1.21.120"
+				]
+			}
+		},
 		{
 			"moduleName": "@minecraft/server",
 			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server@2.3.0-beta.1.21.110-preview.26/index.d.ts",
@@ -486,6 +522,25 @@
 			}
 		},
 		// @minecraft/server-editor
+		{
+			"moduleName": "@minecraft/server-editor",
+			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-editor@0.1.0-beta.1.21.120-preview.21/index.d.ts",
+			"requires": {
+				"dependencies": [
+					{
+						"module_name": "@minecraft/server-editor",
+						"version": "0.1.0-beta"
+					}
+				],
+				"targetVersion": [
+					">=",
+					"1.21.120"
+				],
+				"experimentalGameplay": [
+					"enableGameTestFramework"
+				]
+			}
+		},
 		{
 			"moduleName": "@minecraft/server-editor",
 			"definition": "https://cdn.jsdelivr.net/npm/@minecraft/server-editor@0.1.0-beta.1.21.110-preview.26/index.d.ts",

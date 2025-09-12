@@ -1,0 +1,24 @@
+{
+    "id": "pointLightSettings",
+    "icon": "mdi-spotlight",
+    "detect": {
+        "packType": "resourcePack",
+        "scope": "local_lighting/local_lighting.json",
+        "matcher": "local_lighting/local_lighting.json",
+        "fileContent": [
+            "minecraft:local_light_settings"
+        ],
+        "fileExtensions": [
+            ".json"
+        ]
+    },
+    "schema": "file:///data/packages/minecraftBedrock/schema/localLightSettings/main.json",
+    "highlighterConfiguration": {
+        "variables": [
+            "colors"
+        ],
+        "typeIdentifiers": [
+            "format_version"
+        ]
+    }
+}

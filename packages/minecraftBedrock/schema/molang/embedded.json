@@ -85,6 +85,12 @@
 		},
 		{
 			"$ref": "./v1.21.90/query.json"
+		},
+		{
+			"$ref": "./v1.21.120/query.json"
+		},
+		{
+			"$ref": "./v1.21.120/math.json"
 		}
 	]
 }
