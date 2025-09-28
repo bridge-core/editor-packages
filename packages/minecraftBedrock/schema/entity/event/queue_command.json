@@ -14,13 +14,13 @@
 							"description": "List of slash commands to run.",
 							"type": "array",
 							"items": {
-								"$ref": "../../general/command.json"
+								"$ref": "../../general/commandNoSlash.json"
 							}
 						},
 						{
 							"description": "Slash command to run.",
 							"type": "string",
-							"$ref": "../../general/command.json"
+							"$ref": "../../general/commandNoSlash.json"
 						}
 					]
 				},
