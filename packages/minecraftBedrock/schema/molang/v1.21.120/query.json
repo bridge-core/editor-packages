@@ -4,6 +4,8 @@
 	"enum": [
 		"query.entity_biome_has_any_identifier",
 		"query.entity_biome_has_any_tags",
-		"query.entity_biome_has_all_tags"
+		"query.entity_biome_has_all_tags",
+		"query.base_swing_duration",
+		"query.modified_swing_duration"
 	]
 }

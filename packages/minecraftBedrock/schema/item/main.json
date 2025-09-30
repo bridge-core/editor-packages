@@ -281,6 +281,20 @@
 			"then": {
 				"$ref": "./v1.21.110/main.json"
 			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": [
+							"1.21.120"
+						]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.21.120/main.json"
+			}
 		}
 	]
 }

@@ -55,8 +55,7 @@
 						"version": "2.3.0-beta"
 					}
 				],
-				"experimentalGameplay": ["enableGameTestFramework"],
-				"targetVersion": [">=", "1.21.110"]
+				"experimentalGameplay": ["enableGameTestFramework"]
 			}
 		},
 		{
