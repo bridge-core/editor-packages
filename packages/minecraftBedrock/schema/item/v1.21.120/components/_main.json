@@ -116,7 +116,7 @@
 					"$ref": "../../v1.20.20/components/use_animation.json"
 				},
 				"minecraft:use_modifiers": {
-					"$ref": "../../v1.20.50/components/use_modifiers.json"
+					"$ref": "../../v1.21.120/components/use_modifiers.json"
 				},
 				"minecraft:tags": {
 					"$ref": "../../v1.20.50/components/tags.json"
