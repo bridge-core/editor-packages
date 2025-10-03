@@ -113,6 +113,10 @@
 				"emissive": {
 					"title": "Emissive",
 					"type": "boolean"
+				},
+				"alpha_masked_tint": {
+					"title": "Alpha Masked Tint",
+					"type": "boolean"
 				}
 			}
 		}

@@ -6,11 +6,11 @@
     "properties": {
         "geometry": {
             "description": "The 'minecraft:geometry' component that will be used for the embedded visual.",
-            "$ref": "../../../v1.21.100/components/geometry.json"
+            "$ref": "../../v1.21.100/components/geometry.json"
         },
         "material_instances": {
             "description": "The 'minecraft:material_instances' component that will be used for the embedded visual.",
-            "$ref": "./material_instances.json"
+            "$ref": "../../v1.21.80/components/material_instances.json"
         }
     }
 }

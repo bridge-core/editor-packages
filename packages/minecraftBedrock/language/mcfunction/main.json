@@ -10856,6 +10856,57 @@
 					]
 				}
 			]
+		},
+		{
+			"requires": {
+				"targetVersion": [
+					">=",
+					"1.21.120"
+				],
+				"experimentalGameplay": [
+					"upcomingCreatorFeatures"
+				]
+			},
+			"commands": [
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"type": "selector",
+							"argumentName": "players"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": [
+									"attach_to_entity"
+								]
+							}
+						},
+						{
+							"type": "selector",
+							"argumentName": "target"
+						}
+					]
+				},
+				{
+					"commandName": "camera",
+					"arguments": [
+						{
+							"type": "selector",
+							"argumentName": "players"
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": [
+									"detach_from_entity"
+								]
+							}
+						}
+					]
+				}
+			]
 		}
 	]
 }

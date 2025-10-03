@@ -22,11 +22,23 @@
 				"minecraft:display_name": {
 					"$ref": "../../v1.19.60/components/display_name.json"
 				},
+				"minecraft:embedded_visual": {
+					"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
+					"then": {
+						"$ref": "./experimental/embedded_visual.json"
+					},
+					"else": {
+						"$ref": "../../v1.21.120/components/embedded_visual.json"
+					}
+				},
 				"minecraft:entity_fall_on": {
 					"$ref": "../../v1.21.10/components/entity_fall_on.json"
 				},
 				"minecraft:flammable": {
 					"$ref": "../../v1.19.10/components/flammable.json"
+				},
+				"minecraft:flower_pottable": {
+					"$ref": "../../v1.21.120/components/flower_pottable.json"
 				},
 				"minecraft:friction": {
 					"$ref": "../../v1.19.20/components/friction.json"
@@ -73,11 +85,14 @@
 				"minecraft:placement_filter": {
 					"$ref": "../../v1.19.60/components/placement_filter.json"
 				},
+				"minecraft:random_offset": {
+					"$ref": "../../v1.21.100/components/random_offset.json"
+				},
 				"minecraft:redstone_conductivity": {
 					"$ref": "../../v1.21.30/components/redstone_conductivity.json"
 				},
-				"minecraft:random_offset": {
-					"$ref": "../../v1.21.100/components/random_offset.json"
+				"minecraft:redstone_producer": {
+					"$ref": "../../v1.21.120/components/redstone_producer.json"
 				},
 				"minecraft:replaceable": {
 					"$ref": "../../v1.21.70/components/replaceable.json"
@@ -97,15 +112,6 @@
 			"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
 			"then": {
 				"properties": {
-					"minecraft:embedded_visual": {
-						"$ref": "./experimental/embedded_visual.json"
-					},
-					"minecraft:flower_pottable": {
-						"$ref": "../../v1.21.110/components/experimental/flower_pottable.json"
-					},
-					"minecraft:redstone_producer": {
-						"$ref": "../../v1.21.110/components/experimental/redstone_producer.json"
-					},
 					"minecraft:precipitation_interactions": {
 						"$ref": "../../v1.21.120/components/experimental/precipitation_interactions.json"
 					}
