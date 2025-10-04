@@ -105,6 +105,17 @@
 				},
 				{
 					"type": "string",
+					"enum": [
+						"minecraft:trial_key",
+						"minecraft:ominous_trial_key",
+						"minecraft:wind_charge",
+						"trial_key",
+						"ominous_trial_key",
+						"wind_charge"
+					]
+				},
+				{
+					"type": "string",
 					"pattern": "^minecraft:[a-z_]*:[0-9]*$"
 				}
 			]

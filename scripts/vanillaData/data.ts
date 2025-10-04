@@ -14,26 +14,31 @@ export const toScrape: ScraperSource = {
 			id: 'entity_ai_goals',
 			page: 'Entities',
 			target: 'AI Goals/JSON Name',
+			map: (val) => val.split(' ')[0],
 		},
 		{
 			id: 'entity_attributes',
 			page: 'Entities',
 			target: 'Attributes/JSON Name',
+			map: (val) => val.split(' ')[0],
 		},
 		{
 			id: 'entity_components',
 			page: 'Entities',
 			target: 'Components/JSON Name',
+			map: (val) => val.split(' ')[0],
 		},
 		{
 			id: 'entity_properties',
 			page: 'Entities',
 			target: 'Properties/JSON Name',
+			map: (val) => val.split(' ')[0],
 		},
 		{
 			id: 'entity_triggers',
 			page: 'Entities',
 			target: 'Triggers/JSON Name',
+			map: (val) => val.split(' ')[0],
 		},
 		{
 			id: 'prefixed_entity_identifiers',
