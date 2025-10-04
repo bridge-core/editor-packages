@@ -4,14 +4,19 @@
 	"detect": {
 		"packType": "behaviorPack",
 		"scope": "feature_rules/",
-		"matcher": "feature_rules/*",
-		"fileContent": ["minecraft:feature_rules"],
-		"fileExtensions": [".json"]
+		"matcher": [
+			"feature_rules/**/*",
+			"feature_rules/*"
+		],
+		"fileContent": [
+			"minecraft:feature_rules"
+		],
+		"fileExtensions": [
+			".json"
+		]
 	},
-
 	"schema": "file:///data/packages/minecraftBedrock/schema/featureRule/main.json",
 	"lightningCache": "featureRule.json",
-
 	"definitions": {
 		"featureIdentifier": [
 			{
@@ -25,7 +30,13 @@
 		"supportsQuerying": false
 	},
 	"highlighterConfiguration": {
-		"variables": ["description", "conditions", "distribution"],
-		"typeIdentifiers": ["format_version"]
+		"variables": [
+			"description",
+			"conditions",
+			"distribution"
+		],
+		"typeIdentifiers": [
+			"format_version"
+		]
 	}
 }
