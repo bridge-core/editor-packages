@@ -50,12 +50,40 @@
 								"enum": [
 									"any",
 									"armor",
+									"body",
 									"feet",
 									"hand",
 									"head",
+									"inventory",
 									"leg",
-									"torso",
-									"inventory" // 1.19.60.22
+									"torso"
+								]
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_equipment_tag"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"domain": {
+								"type": "string",
+								"enum": [
+									"any",
+									"armor",
+									"body",
+									"feet",
+									"hand",
+									"head",
+									"inventory",
+									"leg",
+									"torso"
 								]
 							}
 						}
