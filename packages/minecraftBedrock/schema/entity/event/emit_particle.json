@@ -1,0 +1,19 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"emit_particle": {
+			"title": "Emit Particle",
+			"description": "Allows particles to be emitted at the center of the entity's bounding box",
+			"type": "object",
+			"properties": {
+				"particle": {
+					"title": "Particle",
+					"description": "Specifies the type of particle to emit.",
+					"$ref": "../../general/reference/identifiers.json#/definitions/particle_identifiers"
+				}
+			},
+			"additionalProperties": false
+		}
+	}
+}

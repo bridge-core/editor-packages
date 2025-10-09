@@ -1,9 +1,0 @@
-{
-	"$schema": "http://json-schema.org/draft-07/schema",
-	"additionalProperties": false,
-	"type": "string",
-	"title": "Breathability",
-	"description": "The breathing type of this block that affects the breathing state of mobs when they have their breathing points inside this block.",
-	"enum": ["air", "solid"],
-	"default": "solid"
-}

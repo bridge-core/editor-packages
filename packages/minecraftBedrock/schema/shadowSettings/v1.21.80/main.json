@@ -1,0 +1,43 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "properties": {
+        "minecraft:shadow_settings": {
+            "title": "Shadow Settings Definition",
+            "type": "object",
+            "properties": {
+                "shadow_style": {
+                    "title": "Shadow Style",
+                    "enum": [
+                        "blocky_shadows",
+                        "soft_shadows"
+                    ],
+                    "default": "blocky_shadows"
+                },
+                "texel_size": {
+                    "title": "Texel Size",
+                    "type": "integer",
+                    "default": 16
+                }
+            }
+        }
+    },
+    "definitions": {
+        "color": {
+            "oneOf": [
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 255
+                    },
+                    "minItems": 4,
+                    "maxItems": 4
+                },
+                {
+                    "$ref": "../../general/hexColor.json"
+                }
+            ]
+        }
+    }
+}

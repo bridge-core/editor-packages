@@ -1,0 +1,35 @@
+{
+    "id": "atmosphereSettings",
+    "icon": "mdi-weather-dust",
+    "detect": {
+        "packType": "resourcePack",
+        "scope": "atmospherics/",
+        "matcher": [
+            "atmospherics/**/*",
+            "atmospherics/*"
+        ],
+        "fileContent": [
+            "minecraft:atmosphere_settings"
+        ],
+        "fileExtensions": [
+            ".json"
+        ]
+    },
+    "lightningCache": "atmosphereSettings.json",
+    "schema": "file:///data/packages/minecraftBedrock/schema/atmosphereSettings/main.json",
+    "highlighterConfiguration": {
+        "variables": [
+            "description",
+            "horizon_blend_stops",
+            "rayleigh_strength",
+            "sun_mie_strength",
+            "moon_mie_strength",
+            "sun_glare_shape",
+            "sky_zenith_color",
+            "sky_horizon_color"
+        ],
+        "typeIdentifiers": [
+            "format_version"
+        ]
+    }
+}

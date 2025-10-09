@@ -8,14 +8,7 @@
 		"tags": {
 			"type": "array",
 			"items": {
-				"anyOf": [
-					{
-						"$ref": "../../../general/vanilla/biomeTagEnum.json"
-					},
-					{
-						"$ref": "../../dynamic/tagsEnum.json"
-					}
-				]
+				"$ref": "../../../general/reference/biomeTag.json"
 			}
 		}
 	}

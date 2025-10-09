@@ -8,6 +8,7 @@
 			}
 		},
 		"components": {
+			"minecraft:icon": "{{PROJECT_PREFIX}}_{{IDENTIFIER}}",
 			"minecraft:use_modifiers": {
 				"use_duration": 1.6
 			},
@@ -15,7 +16,6 @@
 				"nutrition": 4,
 				"saturation_modifier": 1
 			},
-			"minecraft:icon": "{{PROJECT_PREFIX}}_{{IDENTIFIER}}",
 			"minecraft:use_animation": "eat"
 		}
 	}

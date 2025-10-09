@@ -1,88 +1,13 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"title": "Sounds",
-	"additionalProperties": false,
-	"definitions": {
-		"number_range": {
-			"anyOf": [
-				{
-					"type": "array",
-					"minItems": 2,
-					"maxItems": 2,
-					"items": {
-						"type": "number"
-					}
-				},
-				{
-					"type": "number"
-				}
-			]
-		},
-		"sound_object": {
-			"anyOf": [
-				{
-					"$ref": "../general/reference/soundDefinition.json"
-				},
-				{
-					"additionalProperties": false,
-					"type": "object",
-					"properties": {
-						"sound": {
-							"$ref": "../general/reference/soundDefinition.json"
-						},
-						"volume": {
-							"$ref": "#/definitions/number_range"
-						},
-						"pitch": {
-							"$ref": "#/definitions/number_range"
-						}
-					}
-				}
-			]
-		}
-	},
 	"type": "object",
 	"properties": {
-		"individual_event_sounds": {
-			"title": "Individual Event Sounds",
-			"additionalProperties": false,
-			"type": "object",
-			"properties": {
-				"events": {
-					"title": "Events",
-					"patternProperties": {
-						".*": {
-							"type": "string"
-						}
-					}
-				}
-			}
-		},
 		"block_sounds": {
 			"title": "Block Sounds",
-			"additionalProperties": false,
+			"type": "object",
 			"patternProperties": {
 				".*": {
-					"additionalProperties": false,
-					"type": "object",
-					"properties": {
-						"volume": {
-							"title": "Volume",
-							"$ref": "#/definitions/number_range"
-						},
-						"pitch": {
-							"title": "Pitch",
-							"$ref": "#/definitions/number_range"
-						},
-						"events": {
-							"title": "Events",
-							"patternProperties": {
-								".*": {
-									"$ref": "#/definitions/sound_object"
-								}
-							}
-						}
-					}
+					"$ref": "./general.json#/definitions/sound_event_definitions"
 				}
 			}
 		},
@@ -92,64 +17,7 @@
 			"properties": {
 				"defaults": {
 					"title": "Defaults",
-					"additionalProperties": false,
-					"type": "object",
-					"properties": {
-						"volume": {
-							"title": "Volume",
-							"$ref": "#/definitions/number_range"
-						},
-						"pitch": {
-							"title": "Pitch",
-							"$ref": "#/definitions/number_range"
-						},
-						"events": {
-							"title": "Events",
-							"allOf": [
-								{
-									"properties": {
-										"fall.big": {},
-										"fall.small": {},
-										"splash": {},
-										"swim": {},
-										"fizz": {},
-										"drink": {},
-										"eat": {},
-										"ambient": {},
-										"ambient.tame": {},
-										"flop": {},
-										"hurt": {},
-										"death": {},
-										"ambient.in.water": {},
-										"hurt.in.water": {},
-										"death.in.water": {},
-										"ambient.in.raid": {},
-										"takeoff": {},
-										"shoot": {},
-										"step": {},
-										"attack": {},
-										"breathe": {},
-										"jump": {},
-										"mad": {},
-										"stare": {},
-										"sniff": {},
-										"sleep": {},
-										"spit": {},
-										"warn": {},
-										"scream": {},
-										"charge": {}
-									}
-								},
-								{
-									"patternProperties": {
-										".*": {
-											"$ref": "#/definitions/sound_object"
-										}
-									}
-								}
-							]
-						}
-					}
+					"$ref": "./general.json#/definitions/sound_event_definitions"
 				},
 				"entities": {
 					"title": "Entities",
@@ -159,7 +27,37 @@
 					},
 					"patternProperties": {
 						".*": {
-							"$ref": "#/properties/entity_sounds/properties/defaults"
+							"$ref": "./general.json#/definitions/entity_sound_event_definitions"
+						}
+					}
+				}
+			}
+		},
+		"individual_event_sounds": {
+			"title": "Individual Event Sounds",
+			"type": "object",
+			"properties": {
+				"events": {
+					"title": "Events",
+					"type": "object",
+					"patternProperties": {
+						".*": {
+							"$ref": "./general.json#/definitions/sound_event"
+						}
+					}
+				}
+			}
+		},
+		"individual_named_sounds": {
+			"title": "Individual Named Sounds",
+			"type": "object",
+			"properties": {
+				"sounds": {
+					"title": "Sounds",
+					"type": "object",
+					"patternProperties": {
+						".*": {
+							"$ref": "./general.json#/definitions/sound_event"
 						}
 					}
 				}
@@ -167,97 +65,16 @@
 		},
 		"interactive_sounds": {
 			"title": "Interactive Sounds",
-			"additionalProperties": false,
 			"type": "object",
 			"properties": {
 				"block_sounds": {
-					"title": "Block Sounds",
-					"patternProperties": {
-						".*": {
-							"additionalProperties": false,
-							"type": "object",
-							"properties": {
-								"volume": {
-									"title": "Volume",
-									"$ref": "#/definitions/number_range"
-								},
-								"pitch": {
-									"title": "Pitch",
-									"$ref": "#/definitions/number_range"
-								},
-								"events": {
-									"title": "Events",
-									"type": "object",
-									"properties": {
-										"default": {
-											"title": "Default",
-											"$ref": "#/definitions/sound_object"
-										},
-										"fall": {
-											"title": "Fall",
-											"$ref": "#/definitions/sound_object"
-										},
-										"step": {
-											"title": "Step",
-											"$ref": "#/definitions/sound_object"
-										},
-										"jump": {
-											"title": "Jump",
-											"$ref": "#/definitions/sound_object"
-										},
-										"land": {
-											"title": "Land",
-											"$ref": "#/definitions/sound_object"
-										}
-									}
-								}
-							}
-						}
-					}
+					"$ref": "#/properties/block_sounds"
 				},
 				"entity_sounds": {
-					"title": "Entity Sounds",
-					"patternProperties": {
-						".*": {
-							"additionalProperties": false,
-							"type": "object",
-							"properties": {
-								"volume": {
-									"title": "Volume",
-									"$ref": "#/definitions/number_range"
-								},
-								"pitch": {
-									"title": "Pitch",
-									"$ref": "#/definitions/number_range"
-								},
-								"events": {
-									"title": "Events",
-									"patternProperties": {
-										".*": {
-											"$ref": "#/definitions/sound_object"
-										}
-									}
-								}
-							}
-						}
-					},
-					"type": "object",
-					"properties": {
-						"entities": {
-							"title": "Entities",
-							"type": "object",
-							"propertyNames": {
-								"$ref": "../general/reference/identifiers.json#/definitions/entity_identifiers"
-							},
-							"patternProperties": {
-								".*": {
-									"$ref": "#/properties/entity_sounds/properties/defaults"
-								}
-							}
-						}
-					}
+					"$ref": "#/properties/entity_sounds"
 				}
 			}
 		}
-	}
+	},
+	"additionalProperties": false
 }

@@ -1,0 +1,65 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Ambient Sounds",
+	"description": "Defines the biome's ambient sounds. Named sounds must be defined in 'individual_named_sounds' in sounds.json",
+	"type": "object",
+	"properties": {
+		"addition": {
+			"title": "Addition",
+			"description": "Named sound that occasionally plays at the listener position",
+			"type": "object",
+			"properties": {
+				"asset": {
+					"title": "Asset",
+					"description": "The sound event ID.",
+					"$ref": "../../../general/reference/soundEvent.json"
+				},
+				"chance": {
+					"title": "Chance",
+					"description": "The chance an addition sound plays",
+					"type": "number"
+				}
+			},
+			"additionalProperties": false
+		},
+		"loop": {
+			"title": "Loop",
+			"description": "Named sound that loops while the listener position is inside the biome",
+			"$ref": "../../../general/reference/soundEvent.json"
+		},
+		"mood": {
+			"title": "Mood",
+			"description": "Named sound that rarely plays at a nearby air block position when the light level is low. Biomes without an ambient mood sound will use the 'ambient.cave' sound.",
+			"$ref": "../../../general/reference/soundEvent.json"
+		},
+		"underwater_addition": {
+			"title": "Underwater Addition",
+			"description": "Named sound that occasionally plays at the listener position when underwater",
+			"type": "object",
+			"properties": {
+				"asset": {
+					"title": "Asset",
+					"description": "The sound event ID.",
+					"$ref": "../../../general/reference/soundEvent.json"
+				},
+				"chance": {
+					"title": "Chance",
+					"description": "The chance an addition sound plays",
+					"type": "number"
+				}
+			},
+			"additionalProperties": false
+		},
+		"underwater_loop": {
+			"title": "Underwater Loop",
+			"description": "Named sound that loops while the listener position is inside the biome and underwater",
+			"$ref": "../../../general/reference/soundEvent.json"
+		},
+		"underwater_mood": {
+			"title": "Underwater Mood",
+			"description": "Named sound that rarely plays at a nearby water block position when the light level is low. Biomes without an underwater ambient mood sound will use the 'ambient.underwater.loop' sound.",
+			"$ref": "../../../general/reference/soundEvent.json"
+		}
+	},
+	"additionalProperties": false
+}

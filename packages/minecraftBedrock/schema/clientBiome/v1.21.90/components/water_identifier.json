@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "title": "Water Identifier",
+    "description": "Set the water settings used during deferred rendering. Biomes without this component will have default water settings.",
+    "type": "object",
+    "properties": {
+        "water_identifier": {
+            "title": "Water Identifier",
+            "description": "Identifier of water definition to use.",
+            "$ref": "../../../general/reference/identifiers.json#/definitions/water_settings_identifiers"
+        }
+    },
+    "additionalProperties": false
+}

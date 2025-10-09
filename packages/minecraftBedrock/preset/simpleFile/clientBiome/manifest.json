@@ -1,0 +1,31 @@
+{
+	"name": "Client Biome",
+	"icon": "mdi-island",
+	"description": "Creates a blank client biome.",
+	"category": "fileType.simpleFile",
+	"requires": {
+		"packTypes": ["resourcePack"],
+		"targetVersion": [">=", "1.21.40"]
+	},
+	"additionalModels": {
+		"PRESET_PATH": "biomes/"
+	},
+	"fields": [
+		[
+			"File Name",
+			"FILE_NAME",
+			{ "validate": ["required", "alphanumeric", "lowercase"] }
+		]
+	],
+	"createFiles": [
+		[
+			"clientBiome.json",
+			"{{PRESET_PATH}}{{FILE_NAME}}.json",
+			{
+				"inject": ["FILE_NAME", "PRESET_PATH"],
+				"openFile": true,
+				"packPath": "resourcePack"
+			}
+		]
+	]
+}

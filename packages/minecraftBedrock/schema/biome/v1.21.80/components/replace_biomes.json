@@ -1,0 +1,52 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "title": "Replace Biomes",
+    "description": "Replaces a specified portion of one or more Minecraft biomes.",
+    "type": "object",
+    "properties": {
+        "replacements": {
+            "title": "Replacements",
+            "description": "List of biome replacement configurations. Retroactively adding a new replacement to the front of this list will cause the world generation to change. Please add any new replacements to the end of the list.",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/biome_replacement"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "definitions": {
+        "biome_replacement": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "title": "Amount",
+                    "description": "Noise value used to determine whether or not the replacement is attempted, similar to a percentage. Must be in the range (0.0, 1.0]",
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 1.0
+                },
+                "dimension": {
+                    "title": "Dimension",
+                    "description": "Dimension in which this replacement can happen. Must be 'minecraft:overworld'.",
+                    "const": "minecraft:overworld"
+                },
+                "noise_frequency_scale": {
+                    "title": "Noise Frequency Scale",
+                    "description": "Scaling value used to alter the frequency of replacement attempts. A lower frequency will mean a bigger contiguous biome area that occurs less often. A higher frequency will mean smaller contiguous biome areas that occur more often. Must be in the range (0.0, 100.0].",
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 100.0
+                },
+                "targets": {
+                    "title": "Targets",
+                    "description": "Biomes that are going to be replaced by the overriding biome.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "../../../general/reference/identifiers.json#/definitions/biome_identifiers"
+                    }
+                }
+            },
+            "additionalProperties": false
+        }
+    }
+}

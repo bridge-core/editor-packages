@@ -1,0 +1,31 @@
+{
+	"name": "Aim Assist Categories",
+	"icon": "mdi-crosshairs",
+	"description": "Creates a blank aim assist categories.",
+	"category": "fileType.simpleFile",
+	"requires": {
+		"packTypes": ["behaviorPack"]
+	},
+	"additionalModels": {
+		"PRESET_PATH": "aim_assist/categories/"
+	},
+	"fields": [
+		[
+			"File Name",
+			"FILE_NAME",
+			{ "validate": ["required", "alphanumeric", "lowercase"] }
+		]
+	],
+
+	"createFiles": [
+		[
+			"aimAssistCategories.json",
+			"{{PRESET_PATH}}{{FILE_NAME}}.json",
+			{
+				"inject": ["FILE_NAME", "PRESET_PATH"],
+				"openFile": true,
+				"packPath": "behaviorPack"
+			}
+		]
+	]
+}

@@ -22,26 +22,7 @@
 					"item": {
 						"title": "Item",
 						"description": "Name of the item this entity dislikes and will cause it to get angry if used while untamed.",
-						"anyOf": [
-							{
-								"type": "string",
-								"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
-							},
-							{
-								"type": "object",
-								"additionalProperties": false,
-								"properties": {
-									"any_tag": {
-										"title": "Any Tag",
-										"type": "array",
-										"items": {
-											"type": "string",
-											"$ref": "../../../general/reference/tags.json#/definitions/item_tags"
-										}
-									}
-								}
-							}
-						]
+						"$ref": "../../../general/itemDescriptor.json"
 					}
 				}
 			}
@@ -57,26 +38,7 @@
 					"item": {
 						"title": "Item",
 						"description": "Name of the item this entity likes and can be used to increase this entity's temper.",
-						"anyOf": [
-							{
-								"type": "string",
-								"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
-							},
-							{
-								"type": "object",
-								"additionalProperties": false,
-								"properties": {
-									"any_tag": {
-										"title": "Any Tag",
-										"type": "array",
-										"items": {
-											"type": "string",
-											"$ref": "../../../general/reference/tags.json#/definitions/item_tags"
-										}
-									}
-								}
-							}
-						]
+						"$ref": "../../../general/itemDescriptor.json"
 					},
 					"temper_mod": {
 						"title": "Temper Modifier",

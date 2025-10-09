@@ -1,0 +1,8 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "string",
+    "enum": [
+        "minecraft:culling_layer.undefined",
+        "minecraft:culling_layer.leaves"
+    ]
+}

@@ -1,0 +1,58 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Aim Assist Preset",
+	"required": [
+		"format_version",
+		"minecraft:aim_assist_categories"
+	],
+	"allOf": [
+		{
+			"properties": {
+				"format_version": {
+					"anyOf": [
+						{
+							"$ref": "../project/formatVersionEnum.json"
+						},
+						{
+							"const": "1.21.50"
+						}
+					]
+				}
+			}
+		},
+		{
+			// REMINDER: Remove and merge with latest once out of experimental and is in a stable release.
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": [
+							"",
+							"1.21.50"
+						]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.21.50/main.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": [
+							"",
+							"1.21.60",
+							"1.21.70",
+							"1.21.80",
+							"1.21.90"
+						]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.21.60/main.json"
+			}
+		}
+	]
+}

@@ -1,0 +1,21 @@
+{
+    "id": "shadowSettings",
+    "icon": "mdi-spotlight-beam",
+    "detect": {
+        "packType": "resourcePack",
+        "scope": "shadows/global.json",
+        "matcher": "shadows/global.json",
+        "fileContent": [
+            "minecraft:shadow_settings"
+        ],
+        "fileExtensions": [
+            ".json"
+        ]
+    },
+    "schema": "file:///data/packages/minecraftBedrock/schema/shadowSettings/main.json",
+    "highlighterConfiguration": {
+        "typeIdentifiers": [
+            "format_version"
+        ]
+    }
+}

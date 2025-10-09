@@ -1,0 +1,26 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Dyeable",
+	"description": "Allows this item to be dyed with a cauldron.",
+	"type": "object",
+	"properties": {
+		"default_color": {
+			"title": "Default Color",
+			"description": "The default overlay color of this item.",
+			"oneOf": [
+				{
+					"$ref": "../../../general/hexColor.json"
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "integer"
+					},
+					"minItems": 3,
+					"maxItems": 3
+				}
+			]
+		}
+	},
+	"additionalProperties": false
+}

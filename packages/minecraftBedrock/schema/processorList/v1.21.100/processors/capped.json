@@ -1,0 +1,23 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"delegate": {
+			"title": "Delegate",
+			"description": "The processor that will be executed.",
+			"$ref": "./_main.json"
+		},
+		"limit": {
+			"title": "Limit",
+			"description": "The maximum number of times that this delegate can be applied.",
+			"anyOf": [
+				{
+					"type": "integer"
+				},
+				{
+					"$ref": "../intProviders/_main.json"
+				}
+			]
+		}
+	}
+}

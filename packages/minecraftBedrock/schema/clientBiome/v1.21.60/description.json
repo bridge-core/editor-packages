@@ -1,0 +1,14 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"identifier": {
+			"title": "Identifier",
+			"$ref": "../../project/unprefixedFileIdentifierEnum.json"
+		}
+	},
+	"required": [
+		"identifier"
+	],
+	"additionalProperties": false
+}

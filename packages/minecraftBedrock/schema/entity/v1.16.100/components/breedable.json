@@ -35,26 +35,7 @@
 				{
 					"type": "array",
 					"items": {
-						"anyOf": [
-							{
-								"type": "string",
-								"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
-							},
-							{
-								"type": "object",
-								"additionalProperties": false,
-								"properties": {
-									"any_tag": {
-										"title": "Any Tag",
-										"type": "array",
-										"items": {
-											"type": "string",
-											"$ref": "../../../general/reference/tags.json#/definitions/item_tags"
-										}
-									}
-								}
-							}
-						]
+						"$ref": "../../../general/itemDescriptor.json"
 					}
 				},
 				{

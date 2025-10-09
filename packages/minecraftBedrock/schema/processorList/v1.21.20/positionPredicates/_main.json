@@ -1,0 +1,44 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"anyOf": [
+		{
+			"properties": {
+				"predicate_type": {
+					"type": "string",
+					"enum": [
+						"minecraft:always_true",
+						"minecraft:axis_aligned_linear_pos"
+					]
+				}
+			},
+			"required": ["predicate_type"]
+		},
+		{
+			"if": {
+				"properties": {
+					"predicate_type": {
+						"const": "minecraft:always_true"
+					}
+				},
+				"required": ["predicate_type"]
+			},
+			"then": {
+				"$ref": "./always_true.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"predicate_type": {
+						"const": "minecraft:axis_aligned_linear_pos"
+					}
+				},
+				"required": ["predicate_type"]
+			},
+			"then": {
+				"$ref": "./axis_aligned_linear_pos.json"
+			}
+		}
+	]
+}

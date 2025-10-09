@@ -1,0 +1,11 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"description": "The tag to be matched",
+	"properties": {
+		"tag": {
+			"title": "Tag",
+			"type": "string"
+		}
+	}
+}

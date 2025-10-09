@@ -27,25 +27,7 @@
 					"item": {
 						"title": "Item",
 						"description": "Item identifier that can be used to heal this entity.",
-						"anyOf": [
-							{
-								"type": "string",
-								"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
-							},
-							{
-								"type": "object",
-								"additionalProperties": false,
-								"properties": {
-									"any_tag": {
-										"type": "array",
-										"items": {
-											"type": "string",
-											"$ref": "../../../general/reference/tags.json#/definitions/item_tags"
-										}
-									}
-								}
-							}
-						]
+						"$ref": "../../../general/itemDescriptor.json"
 					},
 					"heal_amount": {
 						"title": "Heal Amount",
@@ -74,7 +56,7 @@
 								},
 								"duration": {
 									"title": "Duration",
-									"type": "number"
+									"$ref": "../../../general/effectDuration.json"
 								},
 								"amplifier": {
 									"title": "Amplifier",

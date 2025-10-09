@@ -1,19 +1,27 @@
 import { DOMParser, HTMLDocument } from 'deno-dom'
-import { DocTarget } from '../interfaces.ts'
+import { DocTarget, PageTarget } from '../interfaces.ts'
 import { writeRaw } from '../writeRaw.ts'
 
 export class DocumentationScraper {
-	protected data: HTMLDocument | null
+	protected data: Record<string, HTMLDocument | null> = {}
 
-	constructor(page: string, protected targets: DocTarget[]) {
+	constructor(pages: PageTarget[], protected targets: DocTarget[]) {
 		const parser = new DOMParser()
-		this.data = parser.parseFromString(page, 'text/html')
+		
+		for (const page of pages) {
+			this.data[page.shortName] = parser.parseFromString(page.url, 'text/html')
+		}
 	}
 
 	async run() {
 		for (const target of this.targets) {
 			const [tableId, columnId] = target.target.split('/')
-			const data = this.getTableColumnData(tableId, columnId)
+
+			if (!target.page) {
+				target.page = 'Addons'
+			}
+
+			const data = this.getTableColumnData(target.page, tableId, columnId)
 			const filtered = target.filter
 				? // @ts-ignore
 				  data.filter((i) => target.filter(i) && i)
@@ -33,10 +41,11 @@ export class DocumentationScraper {
 	 * @param columnName The name of the column to search for
 	 * @returns An array of strings representing the values in the specified column
 	 */
-	getTableColumnData(tableId: string, columnName: string) {
-		if (!this.data) throw new Error(`Page not loaded correctly`)
+	getTableColumnData(page: string, tableId: string, columnName: string) {
+		const data = this.data[page]
+		if (!data) throw new Error(`Page not loaded correctly`)
 
-		const tables = this.data.getElementsByTagName('table')
+		const tables = data.getElementsByTagName('table')
 		const output = []
 		for (const table of tables) {
 			if (

@@ -1,0 +1,186 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "properties": {
+        "minecraft:lighting_settings": {
+            "title": "Lighting Settings Definition",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "title": "Description",
+                    "$ref": "./description.json"
+                },
+                "directional_lights": {
+                    "title": "Directional Lights",
+                    "type": "object",
+                    "properties": {
+                        "orbit": {
+                            "title": "Orbit",
+                            "type": "object",
+                            "properties": {
+                                "sun": {
+                                    "title": "Sun",
+                                    "$ref": "#/definitions/sun"
+                                },
+                                "moon": {
+                                    "title": "Moon",
+                                    "$ref": "#/definitions/moon"
+                                },
+                                "orbital_offset_degrees": {
+                                    "title": "Orbital Offset Degrees",
+                                    "description": "The rotational offset of the sun and moon from their standard orbital axis, measured in degrees.",
+                                    "anyOf": [
+                                        {
+                                            "type": "number"
+                                        },
+                                        {
+                                            "$ref": "#/definitions/keyframe_map"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "flash": {
+                            "title": "Flash",
+                            "type": "object",
+                            "properties": {
+                                "illuminance": {
+                                    "title": "Illuminance",
+                                    "type": "number"
+                                },
+                                "color": {
+                                    "title": "Color",
+                                    "$ref": "../../general/color.json"
+                                }
+                            }
+                        }
+                    }
+                },
+                "emissive": {
+                    "title": "Emissive",
+                    "type": "object",
+                    "properties": {
+                        "desaturation": {
+                            "title": "Desaturation",
+                            "description": "The amount of desaturation to apply to albedo color values during emissive light calculation.",
+                            "type": "number",
+                            "minimum": 0.0,
+                            "maximum": 1.0
+                        }
+                    }
+                },
+                "ambient": {
+                    "title": "Ambient",
+                    "type": "object",
+                    "properties": {
+                        "illuminance": {
+                            "title": "Illuminance",
+                            "description": "How bright the ambient light is, measured in lux.",
+                            "type": "number"
+                        },
+                        "color": {
+                            "title": "Color",
+                            "description": "The RGB color that the ambient light contributes to surface lighting.",
+                            "$ref": "../../general/color.json"
+                        }
+                    }
+                },
+                "sky": {
+                    "title": "Sky",
+                    "type": "object",
+                    "properties": {
+                        "intensity": {
+                            "title": "Intensity",
+                            "description": "Scales how much energy the sky contributes to lighting.",
+                            "type": "number",
+                            "minimum": 0.1,
+                            "maximum": 1.0
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "keyframe_map": {
+            "type": "object",
+            "propertyNames": {
+                "pattern": "^\\d+(\\.\\d+)?$"
+            },
+            "patternProperties": {
+                "^\\d+(\\.\\d+)?$": {
+                    "type": "number"
+                }
+            }
+        },
+        "color_keyframe_map": {
+            "type": "object",
+            "propertyNames": {
+                "pattern": "^\\d+(\\.\\d+)?$"
+            },
+            "patternProperties": {
+                "^\\d+(\\.\\d+)?$": {
+                    "$ref": "../../general/color.json"
+                }
+            }
+        },
+        "sun": {
+            "type": "object",
+            "properties": {
+                "illuminance": {
+                    "title": "Illuminance",
+                    "description": "How bright the sun is, measured in lux.",
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "$ref": "#/definitions/keyframe_map"
+                        }
+                    ]
+                },
+                "color": {
+                    "title": "Color",
+                    "description": "The RGB color that the sun contributes to direct surface lighting.",
+                    "anyOf": [
+                        {
+                            "$ref": "../../general/color.json"
+                        },
+                        {
+                            "$ref": "#/definitions/color_keyframe_map"
+                        }
+                    ]
+                }
+            }
+        },
+        "moon": {
+            "type": "object",
+            "properties": {
+                "illuminance": {
+                    "title": "Illuminance",
+                    "description": "How bright the moon is, measured in lux.",
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "$ref": "#/definitions/keyframe_map"
+                        }
+                    ]
+                },
+                "color": {
+                    "title": "Color",
+                    "description": "The RGB color that the moon contributes to direct surface lighting.",
+                    "anyOf": [
+                        {
+                            "$ref": "../../general/color.json"
+                        },
+                        {
+                            "$ref": "#/definitions/color_keyframe_map"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

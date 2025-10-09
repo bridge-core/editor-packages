@@ -4,13 +4,16 @@
 	"detect": {
 		"packType": "behaviorPack",
 		"scope": "features/",
-		"matcher": "features/*",
-		"fileExtensions": [".json"]
+		"matcher": [
+			"features/**/*",
+			"features/*"
+		],
+		"fileExtensions": [
+			".json"
+		]
 	},
-
 	"schema": "file:///data/packages/minecraftBedrock/schema/feature/main.json",
 	"lightningCache": "feature.json",
-
 	"definitions": {
 		"blockIdentifier": [
 			{
@@ -23,12 +26,15 @@
 			}
 		]
 	},
-
 	"documentation": {
 		"baseUrl": "https://bedrock.dev/docs/stable/Features"
 	},
 	"highlighterConfiguration": {
-		"variables": ["description"],
-		"typeIdentifiers": ["format_version"]
+		"variables": [
+			"description"
+		],
+		"typeIdentifiers": [
+			"format_version"
+		]
 	}
 }

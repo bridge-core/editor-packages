@@ -1,0 +1,19 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"play_sound": {
+			"title": "Play Sound",
+			"description": "Allows the entity to emit sounds.",
+			"type": "object",
+			"properties": {
+				"sound": {
+					"title": "Sound",
+					"description": "The sound event to play.",
+					"$ref": "../../general/reference/soundEvent.json"
+				}
+			},
+			"additionalProperties": false
+		}
+	}
+}

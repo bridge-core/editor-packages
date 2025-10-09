@@ -1,0 +1,16 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"location": {
+			"title": "Location",
+			"description": "The path of the structure file. This path is relative to the behavior pack's 'structures' folder.",
+			"$ref": "../../../structure/dynamic/structurePathEnum.json"
+		},
+		"processors": {
+			"title": "Processors",
+			"description": "The identifier of the processor list to use when placing the structure.",
+			"$ref": "../../../general/reference/identifiers.json#/definitions/processor_list_identifiers"
+		}
+	}
+}

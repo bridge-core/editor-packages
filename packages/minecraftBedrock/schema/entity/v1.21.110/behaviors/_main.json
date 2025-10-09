@@ -1,0 +1,544 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"minecraft:behavior.dig": {
+			"$ref": "../../v1.19.10/behaviors/behavior.dig.json"
+		},
+		"minecraft:behavior.go_and_give_items_to_noteblock": {
+			"$ref": "../../v1.19.0/behaviors/behavior.go_and_give_items_to_noteblock.json"
+		},
+		"minecraft:behavior.go_and_give_items_to_owner": {
+			"$ref": "../../v1.19.0/behaviors/behavior.go_and_give_items_to_owner.json"
+		},
+		"minecraft:behavior.croak": {
+			"$ref": "../../v1.19.0/behaviors/behavior.croak.json"
+		},
+		"minecraft:behavior.eat_mob": {
+			"$ref": "../../v1.19.0/behaviors/behavior.eat_mob.json"
+		},
+		"minecraft:behavior.emerge": {
+			"$ref": "../../v1.19.0/behaviors/behavior.emerge.json"
+		},
+		"minecraft:behavior.investigate_suspicious_location": {
+			"$ref": "../../v1.19.0/behaviors/behavior.investigate_suspicious_location.json"
+		},
+		"minecraft:behavior.roar": {
+			"$ref": "../../v1.19.0/behaviors/behavior.roar.json"
+		},
+		"minecraft:behavior.sniff": {
+			"$ref": "../../v1.19.0/behaviors/behavior.sniff.json"
+		},
+		"minecraft:behavior.stay_near_noteblock": {
+			"$ref": "../../v1.19.0/behaviors/behavior.stay_near_noteblock.json"
+		},
+		"minecraft:behavior.random_search_and_dig": {
+			"$ref": "../../v1.20.40/behaviors/behavior.random_search_and_dig.json"
+		},
+		"minecraft:behavior.timer_flag_1": {
+			"$ref": "../../v1.20.40/behaviors/behavior.timer_flag_1.json"
+		},
+		"minecraft:behavior.timer_flag_2": {
+			"$ref": "../../v1.20.40/behaviors/behavior.timer_flag_2.json"
+		},
+		"minecraft:behavior.timer_flag_3": {
+			"$ref": "../../v1.20.40/behaviors/behavior.timer_flag_3.json"
+		},
+		"minecraft:behavior.feeling_happy": {
+			"$ref": "../../v1.20.40/behaviors/behavior.feeling_happy.json"
+		},
+		"minecraft:behavior.rising": {
+			"$ref": "../../v1.20.40/behaviors/behavior.rising.json"
+		},
+		"minecraft:behavior.scenting": {
+			"$ref": "../../v1.20.40/behaviors/behavior.scenting.json"
+		},
+		"minecraft:behavior.trade_with_player": {
+			"$ref": "../../v1.19.60/behaviors/behavior.trade_with_player.json"
+		},
+		"minecraft:behavior.float": {
+			"$ref": "../../v1.19.50/behaviors/behavior.float.json"
+		},
+		"minecraft:behavior.take_flower": {
+			"$ref": "../../v1.19.50/behaviors/behavior.take_flower.json"
+		},
+		"minecraft:behavior.random_look_around": {
+			"$ref": "../../v1.19.50/behaviors/behavior.random_look_around.json"
+		},
+		"minecraft:behavior.random_look_around_and_sit": {
+			"$ref": "../../v1.16.0/behaviors/behavior.random_look_around_and_sit.json"
+		},
+		"minecraft:behavior.offer_flower": {
+			"$ref": "../../v1.19.50/behaviors/behavior.offer_flower.json"
+		},
+		"minecraft:behavior.play": {
+			"$ref": "../../v1.19.40/behaviors/behavior.play.json"
+		},
+		"minecraft:behavior.wither_target_highest_damage": {
+			"$ref": "../../v1.19.80/behaviors/behavior.wither_target_highest_damage.json"
+		},
+		"minecraft:behavior.vex_copy_owner_target": {
+			"$ref": "../../v1.19.80/behaviors/behavior.vex_copy_owner_target.json"
+		},
+		"minecraft:behavior.swim_with_entity": {
+			"$ref": "../../v1.19.20/behaviors/behavior.swim_with_entity.json"
+		},
+		"minecraft:behavior.sneeze": {
+			"$ref": "../../v1.19.80/behaviors/behavior.sneeze.json"
+		},
+		"minecraft:behavior.share_items": {
+			"$ref": "../../v1.19.80/behaviors/behavior.share_items.json"
+		},
+		"minecraft:behavior.owner_hurt_target": {
+			"$ref": "../../v1.19.80/behaviors/behavior.owner_hurt_target.json"
+		},
+		"minecraft:behavior.owner_hurt_by_target": {
+			"$ref": "../../v1.19.80/behaviors/behavior.owner_hurt_by_target.json"
+		},
+		"minecraft:behavior.nearest_attackable_target": {
+			"$ref": "../../v1.19.20/behaviors/behavior.nearest_attackable_target.json"
+		},
+		"minecraft:behavior.hurt_by_target": {
+			"$ref": "../../v1.19.80/behaviors/behavior.hurt_by_target.json"
+		},
+		"minecraft:behavior.follow_caravan": {
+			"$ref": "../../v1.19.80/behaviors/behavior.follow_caravan.json"
+		},
+		"minecraft:behavior.drop_item_for": {
+			"$ref": "../../v1.19.20/behaviors/behavior.drop_item_for.json"
+		},
+		"minecraft:behavior.delayed_attack": {
+			"$ref": "../../v1.19.20/behaviors/behavior.delayed_attack.json"
+		},
+		"minecraft:behavior.defend_village_target": {
+			"$ref": "../../v1.19.20/behaviors/behavior.defend_village_target.json"
+		},
+		"minecraft:behavior.defend_trusted_target": {
+			"$ref": "../../v1.19.80/behaviors/behavior.defend_trusted_target.json"
+		},
+		"minecraft:behavior.avoid_mob_type": {
+			"$ref": "../../v1.19.20/behaviors/behavior.avoid_mob_type.json"
+		},
+		"minecraft:behavior.nearest_prioritized_attackable_target": {
+			"$ref": "../../v1.19.80/behaviors/behavior.nearest_prioritized_attackable_target.json"
+		},
+		"minecraft:behavior.drink_milk": {
+			"$ref": "../../v1.19.10/behaviors/behavior.drink_milk.json"
+		},
+		"minecraft:behavior.pickup_items": {
+			"$ref": "../../v1.19.0/behaviors/behavior.pickup_items.json"
+		},
+		"minecraft:behavior.move_to_block": {
+			"$ref": "../../v1.19.0/behaviors/behavior.move_to_block.json"
+		},
+		"minecraft:behavior.sleep": {
+			"$ref": "../../v1.19.0/behaviors/behavior.sleep.json"
+		},
+		"minecraft:behavior.follow_owner": {
+			"$ref": "../../v1.21.20/behaviors/behavior.follow_owner.json"
+		},
+		"minecraft:behavior.work_composter": {
+			"$ref": "../../v1.18.30/behaviors/behavior.work_composter.json"
+		},
+		"minecraft:behavior.knockback_roar": {
+			"$ref": "../../v1.18.20/behaviors/behavior.knockback_roar.json"
+		},
+		"minecraft:behavior.go_home": {
+			"$ref": "../../v1.18.20/behaviors/behavior.go_home.json"
+		},
+		"minecraft:behavior.lay_egg": {
+			"$ref": "../../v1.18.10/behaviors/behavior.lay_egg.json"
+		},
+		"minecraft:behavior.melee_attack": {
+			"$ref": "../../v1.20.30/behaviors/behavior.melee_attack.json"
+		},
+		"minecraft:behavior.melee_box_attack": {
+			"$ref": "../../v1.20.50/behaviors/behavior.melee_box_attack.json"
+		},
+		"minecraft:behavior.play_dead": {
+			"$ref": "../../v1.16.220/behaviors/behavior.play_dead.json"
+		},
+		"minecraft:behavior.jump_to_block": {
+			"$ref": "../../v1.16.200/behaviors/behavior.jump_to_block.json"
+		},
+		"minecraft:behavior.ram_attack": {
+			"$ref": "../../v1.16.200/behaviors/behavior.ram_attack.json"
+		},
+		"minecraft:behavior.move_towards_dwelling_restriction": {
+			"$ref": "../../v1.16.100/behaviors/behavior.move_towards_dwelling_restriction.json"
+		},
+		"minecraft:behavior.move_towards_home_restriction": {
+			"$ref": "../../v1.16.100/behaviors/behavior.move_towards_home_restriction.json"
+		},
+		"minecraft:behavior.send_event": {
+			"$ref": "../../v1.16.100/behaviors/behavior.send_event.json"
+		},
+		"minecraft:behavior.admire_item": {
+			"$ref": "../../v1.16.0/behaviors/behavior.admire_item.json"
+		},
+		"minecraft:behavior.avoid_block": {
+			"$ref": "../../v1.16.0/behaviors/behavior.avoid_block.json"
+		},
+		"minecraft:behavior.barter": {
+			"$ref": "../../v1.16.0/behaviors/behavior.barter.json"
+		},
+		"minecraft:behavior.beg": {
+			"$ref": "../../v1.16.0/behaviors/behavior.beg.json"
+		},
+		"minecraft:behavior.break_door": {
+			"$ref": "../../v1.16.0/behaviors/behavior.break_door.json"
+		},
+		"minecraft:behavior.breed": {
+			"$ref": "../../v1.16.0/behaviors/behavior.breed.json"
+		},
+		"minecraft:behavior.celebrate_survive": {
+			"$ref": "../../v1.16.0/behaviors/behavior.celebrate_survive.json"
+		},
+		"minecraft:behavior.celebrate": {
+			"$ref": "../../v1.16.0/behaviors/behavior.celebrate.json"
+		},
+		"minecraft:behavior.charge_attack": {
+			"$ref": "../../v1.16.0/behaviors/behavior.charge_attack.json"
+		},
+		"minecraft:behavior.charge_held_item": {
+			"$ref": "../../v1.16.0/behaviors/behavior.charge_held_item.json"
+		},
+		"minecraft:behavior.circle_around_anchor": {
+			"$ref": "../../v1.16.0/behaviors/behavior.circle_around_anchor.json"
+		},
+		"minecraft:behavior.controlled_by_player": {
+			"$ref": "../../v1.16.0/behaviors/behavior.controlled_by_player.json"
+		},
+		"minecraft:behavior.door_interact": {
+			"$ref": "../../v1.16.0/behaviors/behavior.door_interact.json"
+		},
+		"minecraft:behavior.drink_potion": {
+			"$ref": "../../v1.16.0/behaviors/behavior.drink_potion.json"
+		},
+		"minecraft:behavior.dragonlanding": {
+			"$ref": "../../v1.16.0/behaviors/behavior.dragonlanding.json"
+		},
+		"minecraft:behavior.dragonscanning": {
+			"$ref": "../../v1.16.0/behaviors/behavior.dragonscanning.json"
+		},
+		"minecraft:behavior.dragontakeoff": {
+			"$ref": "../../v1.16.0/behaviors/behavior.dragontakeoff.json"
+		},
+		"minecraft:behavior.dragonchargeplayer": {
+			"$ref": "../../v1.16.0/behaviors/behavior.dragonchargeplayer.json"
+		},
+		"minecraft:behavior.dragonstrafeplayer": {
+			"$ref": "../../v1.16.0/behaviors/behavior.dragonstrafeplayer.json"
+		},
+		"minecraft:behavior.dragonholdingpattern": {
+			"$ref": "../../v1.16.0/behaviors/behavior.dragonholdingpattern.json"
+		},
+		"minecraft:behavior.dragondeath": {
+			"$ref": "../../v1.16.0/behaviors/behavior.dragondeath.json"
+		},
+		"minecraft:behavior.dragonflaming": {
+			"$ref": "../../v1.16.0/behaviors/behavior.dragonflaming.json"
+		},
+		"minecraft:behavior.eat_block": {
+			"$ref": "../../v1.16.0/behaviors/behavior.eat_block.json"
+		},
+		"minecraft:behavior.eat_carried_item": {
+			"$ref": "../../v1.16.0/behaviors/behavior.eat_carried_item.json"
+		},
+		"minecraft:behavior.equip_item": {
+			"$ref": "../../v1.16.0/behaviors/behavior.equip_item.json"
+		},
+		"minecraft:behavior.explore_outskirts": {
+			"$ref": "../../v1.16.0/behaviors/behavior.explore_outskirts.json"
+		},
+		"minecraft:behavior.fertilize_farm_block": {
+			"$ref": "../../v1.16.0/behaviors/behavior.fertilize_farm_block.json"
+		},
+		"minecraft:behavior.find_cover": {
+			"$ref": "../../v1.16.0/behaviors/behavior.find_cover.json"
+		},
+		"minecraft:behavior.find_mount": {
+			"$ref": "../../v1.16.0/behaviors/behavior.find_mount.json"
+		},
+		"minecraft:behavior.find_underwater_treasure": {
+			"$ref": "../../v1.16.0/behaviors/behavior.find_underwater_treasure.json"
+		},
+		"minecraft:behavior.flee_sun": {
+			"$ref": "../../v1.16.0/behaviors/behavior.flee_sun.json"
+		},
+		"minecraft:behavior.float_wander": {
+			"$ref": "../../v1.21.80/behaviors/behavior.float_wander.json"
+		},
+		"minecraft:behavior.follow_mob": {
+			"$ref": "../../v1.21.80/behaviors/behavior.follow_mob.json"
+		},
+		"minecraft:behavior.follow_parent": {
+			"$ref": "../../v1.16.0/behaviors/behavior.follow_parent.json"
+		},
+		"minecraft:behavior.follow_target_captain": {
+			"$ref": "../../v1.16.0/behaviors/behavior.follow_target_captain.json"
+		},
+		"minecraft:behavior.guardian_attack": {
+			"$ref": "../../v1.16.0/behaviors/behavior.guardian_attack.json"
+		},
+		"minecraft:behavior.harvest_farm_block": {
+			"$ref": "../../v1.16.0/behaviors/behavior.harvest_farm_block.json"
+		},
+		"minecraft:behavior.hide": {
+			"$ref": "../../v1.16.0/behaviors/behavior.hide.json"
+		},
+		"minecraft:behavior.hold_ground": {
+			"$ref": "../../v1.16.0/behaviors/behavior.hold_ground.json"
+		},
+		"minecraft:behavior.hover": {
+			"$ref": "../../v1.16.0/behaviors/behavior.hover.json"
+		},
+		"minecraft:behavior.inspect_bookshelf": {
+			"$ref": "../../v1.16.0/behaviors/behavior.inspect_bookshelf.json"
+		},
+		"minecraft:behavior.lay_down": {
+			"$ref": "../../v1.16.0/behaviors/behavior.lay_down.json"
+		},
+		"minecraft:behavior.leap_at_target": {
+			"$ref": "../../v1.16.0/behaviors/behavior.leap_at_target.json"
+		},
+		"minecraft:behavior.look_at_entity": {
+			"$ref": "../../v1.16.0/behaviors/behavior.look_at_entity.json"
+		},
+		"minecraft:behavior.look_at_player": {
+			"$ref": "../../v1.16.0/behaviors/behavior.look_at_player.json"
+		},
+		"minecraft:behavior.look_at_target": {
+			"$ref": "../../v1.16.0/behaviors/behavior.look_at_target.json"
+		},
+		"minecraft:behavior.look_at_trading_player": {
+			"$ref": "../../v1.16.0/behaviors/behavior.look_at_trading_player.json"
+		},
+		"minecraft:behavior.make_love": {
+			"$ref": "../../v1.16.0/behaviors/behavior.make_love.json"
+		},
+		"minecraft:behavior.mingle": {
+			"$ref": "../../v1.16.0/behaviors/behavior.mingle.json"
+		},
+		"minecraft:behavior.mount_pathing": {
+			"$ref": "../../v1.16.0/behaviors/behavior.mount_pathing.json"
+		},
+		"minecraft:behavior.move_indoors": {
+			"$ref": "../../v1.16.0/behaviors/behavior.move_indoors.json"
+		},
+		"minecraft:behavior.move_outdoors": {
+			"$ref": "../../v1.16.0/behaviors/behavior.move_outdoors.json"
+		},
+		"minecraft:behavior.move_through_village": {
+			"$ref": "../../v1.16.0/behaviors/behavior.move_through_village.json"
+		},
+		"minecraft:behavior.move_towards_target": {
+			"$ref": "../../v1.16.0/behaviors/behavior.move_towards_target.json"
+		},
+		"minecraft:behavior.move_to_land": {
+			"$ref": "../../v1.16.0/behaviors/behavior.move_to_land.json"
+		},
+		"minecraft:behavior.move_to_poi": {
+			"$ref": "../../v1.16.0/behaviors/behavior.move_to_poi.json"
+		},
+		"minecraft:behavior.move_to_lava": {
+			"$ref": "../../v1.16.0/behaviors/behavior.move_to_lava.json"
+		},
+		"minecraft:behavior.move_to_liquid": {
+			"$ref": "../../v1.16.0/behaviors/behavior.move_to_liquid.json"
+		},
+		"minecraft:behavior.move_to_random_block": {
+			"$ref": "../../v1.16.0/behaviors/behavior.move_to_random_block.json"
+		},
+		"minecraft:behavior.move_to_village": {
+			"$ref": "../../v1.16.0/behaviors/behavior.move_to_village.json"
+		},
+		"minecraft:behavior.move_to_water": {
+			"$ref": "../../v1.16.0/behaviors/behavior.move_to_water.json"
+		},
+		"minecraft:behavior.nap": {
+			"$ref": "../../v1.16.0/behaviors/behavior.nap.json"
+		},
+		"minecraft:behavior.ocelotattack": {
+			"$ref": "../../v1.16.0/behaviors/behavior.ocelotattack.json"
+		},
+		"minecraft:behavior.ocelot_sit_on_block": {
+			"$ref": "../../v1.16.0/behaviors/behavior.ocelot_sit_on_block.json"
+		},
+		"minecraft:behavior.open_door": {
+			"$ref": "../../v1.16.0/behaviors/behavior.open_door.json"
+		},
+		"minecraft:behavior.panic": {
+			"$ref": "../../v1.16.0/behaviors/behavior.panic.json"
+		},
+		"minecraft:behavior.pet_sleep_with_owner": {
+			"$ref": "../../v1.16.0/behaviors/behavior.pet_sleep_with_owner.json"
+		},
+		"minecraft:behavior.player_ride_tamed": {
+			"$ref": "../../v1.16.0/behaviors/behavior.player_ride_tamed.json"
+		},
+		"minecraft:behavior.raid_garden": {
+			"$ref": "../../v1.16.0/behaviors/behavior.raid_garden.json"
+		},
+		"minecraft:behavior.random_breach": {
+			"$ref": "../../v1.16.0/behaviors/behavior.random_breach.json"
+		},
+		"minecraft:behavior.random_fly": {
+			"$ref": "../../v1.16.0/behaviors/behavior.random_fly.json"
+		},
+		"minecraft:behavior.random_hover": {
+			"$ref": "../../v1.16.0/behaviors/behavior.random_hover.json"
+		},
+		"minecraft:behavior.random_sitting": {
+			"$ref": "../../v1.16.0/behaviors/behavior.random_sitting.json"
+		},
+		"minecraft:behavior.random_stroll": {
+			"$ref": "../../v1.16.0/behaviors/behavior.random_stroll.json"
+		},
+		"minecraft:behavior.random_swim": {
+			"$ref": "../../v1.16.0/behaviors/behavior.random_swim.json"
+		},
+		"minecraft:behavior.swim_up_for_breath": {
+			"$ref": "../../v1.21.20/behaviors/behavior.swim_up_for_breath.json"
+		},
+		"minecraft:behavior.ranged_attack": {
+			"$ref": "../../v1.16.0/behaviors/behavior.ranged_attack.json"
+		},
+		"minecraft:behavior.recieve_love": {
+			"$ref": "../../v1.16.0/behaviors/behavior.recieve_love.json"
+		},
+		"minecraft:behavior.restrict_sun": {
+			"$ref": "../../v1.16.0/behaviors/behavior.restrict_sun.json"
+		},
+		"minecraft:behavior.restrict_open_door": {
+			"$ref": "../../v1.16.0/behaviors/behavior.restrict_open_door.json"
+		},
+		"minecraft:behavior.rise_to_liquid_level": {
+			"$ref": "../../v1.16.0/behaviors/behavior.rise_to_liquid_level.json"
+		},
+		"minecraft:behavior.roll": {
+			"$ref": "../../v1.16.0/behaviors/behavior.roll.json"
+		},
+		"minecraft:behavior.run_around_like_crazy": {
+			"$ref": "../../v1.16.0/behaviors/behavior.run_around_like_crazy.json"
+		},
+		"minecraft:behavior.scared": {
+			"$ref": "../../v1.16.0/behaviors/behavior.scared.json"
+		},
+		"minecraft:behavior.skeleton_horse_trap": {
+			"$ref": "../../v1.16.0/behaviors/behavior.skeleton_horse_trap.json"
+		},
+		"minecraft:behavior.silverfish_wake_up_friends": {
+			"$ref": "../../v1.16.0/behaviors/behavior.silverfish_wake_up_friends.json"
+		},
+		"minecraft:behavior.silverfish_merge_with_stone": {
+			"$ref": "../../v1.16.0/behaviors/behavior.silverfish_merge_with_stone.json"
+		},
+		"minecraft:behavior.slime_float": {
+			"$ref": "../../v1.16.0/behaviors/behavior.slime_float.json"
+		},
+		"minecraft:behavior.slime_attack": {
+			"$ref": "../../v1.16.0/behaviors/behavior.slime_attack.json"
+		},
+		"minecraft:behavior.slime_random_direction": {
+			"$ref": "../../v1.16.0/behaviors/behavior.slime_random_direction.json"
+		},
+		"minecraft:behavior.slime_keep_on_jumping": {
+			"$ref": "../../v1.16.0/behaviors/behavior.slime_keep_on_jumping.json"
+		},
+		"minecraft:behavior.snacking": {
+			"$ref": "../../v1.16.0/behaviors/behavior.snacking.json"
+		},
+		"minecraft:behavior.squid_move_away_from_ground": {
+			"$ref": "../../v1.16.0/behaviors/behavior.squid_move_away_from_ground.json"
+		},
+		"minecraft:behavior.squid_flee": {
+			"$ref": "../../v1.16.0/behaviors/behavior.squid_flee.json"
+		},
+		"minecraft:behavior.squid_idle": {
+			"$ref": "../../v1.16.0/behaviors/behavior.squid_idle.json"
+		},
+		"minecraft:behavior.squid_dive": {
+			"$ref": "../../v1.16.0/behaviors/behavior.squid_dive.json"
+		},
+		"minecraft:behavior.squid_out_of_water": {
+			"$ref": "../../v1.16.0/behaviors/behavior.squid_out_of_water.json"
+		},
+		"minecraft:behavior.stalk_and_pounce_on_target": {
+			"$ref": "../../v1.16.0/behaviors/behavior.stalk_and_pounce_on_target.json"
+		},
+		"minecraft:behavior.stay_while_sitting": {
+			"$ref": "../../v1.16.0/behaviors/behavior.stay_while_sitting.json"
+		},
+		"minecraft:behavior.stomp_attack": {
+			"$ref": "../../v1.16.0/behaviors/behavior.stomp_attack.json"
+		},
+		"minecraft:behavior.stomp_turtle_egg": {
+			"$ref": "../../v1.16.0/behaviors/behavior.stomp_turtle_egg.json"
+		},
+		"minecraft:behavior.stroll_towards_village": {
+			"$ref": "../../v1.16.0/behaviors/behavior.stroll_towards_village.json"
+		},
+		"minecraft:behavior.summon_entity": {
+			"$ref": "../../v1.21.50/behaviors/behavior.summon_entity.json"
+		},
+		"minecraft:behavior.swell": {
+			"$ref": "../../v1.16.0/behaviors/behavior.swell.json"
+		},
+		"minecraft:behavior.swim_idle": {
+			"$ref": "../../v1.16.0/behaviors/behavior.swim_idle.json"
+		},
+		"minecraft:behavior.swim_wander": {
+			"$ref": "../../v1.16.0/behaviors/behavior.swim_wander.json"
+		},
+		"minecraft:behavior.swoop_attack": {
+			"$ref": "../../v1.16.0/behaviors/behavior.swoop_attack.json"
+		},
+		"minecraft:behavior.tempt": {
+			"$ref": "../../v1.21.80/behaviors/behavior.tempt.json"
+		},
+		"minecraft:behavior.trade_interest": {
+			"$ref": "../../v1.16.0/behaviors/behavior.trade_interest.json"
+		},
+		"minecraft:behavior.vex_random_move": {
+			"$ref": "../../v1.16.0/behaviors/behavior.vex_random_move.json"
+		},
+		"minecraft:behavior.wither_random_attack_pos_goal": {
+			"$ref": "../../v1.16.0/behaviors/behavior.wither_random_attack_pos_goal.json"
+		},
+		"minecraft:behavior.work": {
+			"$ref": "../../v1.16.0/behaviors/behavior.work.json"
+		},
+		"minecraft:behavior.fire_at_target": {
+			"$ref": "../../v1.20.60/behaviors/behavior.fire_at_target.json"
+		},
+		"minecraft:behavior.move_around_target": {
+			"$ref": "../../v1.21.20/behaviors/behavior.move_around_target.json"
+		},
+		"minecraft:behavior.jump_around_target": {
+			"$ref": "../../v1.20.60/behaviors/behavior.jump_around_target.json"
+		},
+		"minecraft:behavior.teleport_to_owner": {
+			"$ref": "../../v1.21.20/behaviors/behavior.teleport_to_owner.json"
+		},
+		"minecraft:behavior.float_tempt": {
+			"$ref": "../../v1.21.80/behaviors/behavior.float_tempt.json"
+		},
+		"minecraft:behavior.place_block": {
+			"$ref": "../../v1.21.100/behaviors/behavior.place_block.json"
+		},
+		"minecraft:behavior.take_block": {
+			"$ref": "../../v1.21.100/behaviors/behavior.take_block.json"
+		},
+		"minecraft:behavior.transport_items": {
+			"$ref": "../../v1.21.100/behaviors/behavior.transport_items.json"
+		},
+		// Deprecated
+		"minecraft:behavior.enderman_leave_block": {
+			"$ref": "../../v1.21.100/behaviors/behavior.enderman_leave_block.json"
+		},
+		"minecraft:behavior.enderman_take_block": {
+			"$ref": "../../v1.21.100/behaviors/behavior.enderman_take_block.json"
+		}
+	}
+}

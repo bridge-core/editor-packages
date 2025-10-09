@@ -1,0 +1,57 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"allOf": [
+		{
+			"$ref": "./add.json"
+		},
+		{
+			"$ref": "../../project/targetVersion/preview.json",
+			"then": {
+				"$ref": "./drop_item.json"
+			}
+		},
+		{
+			"$ref": "./emit_particle.json"
+		},
+		{
+			"$ref": "./emit_vibration.json"
+		},
+		{
+			"$ref": "./execute_event_on_home_block.json"
+		},
+		{
+			"$ref": "./first_valid.json"
+		},
+		{
+			"$ref": "./play_sound.json"
+		},
+		{
+			"$ref": "./queue_command.json"
+		},
+		{
+			"$ref": "./randomize.json"
+		},
+		{
+			"$ref": "./remove.json"
+		},
+		{
+			"$ref": "./reset_target.json"
+		},
+		{
+			"$ref": "./sequence.json"
+		},
+		{
+			"$ref": "./set_home_position.json"
+		},
+		{
+			"$ref": "./set_property.json"
+		},
+		{
+			"$ref": "./stop_movement.json"
+		},
+		{
+			"$ref": "./trigger.json"
+		}
+	]
+}

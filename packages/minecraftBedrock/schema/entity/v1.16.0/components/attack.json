@@ -10,16 +10,16 @@
 			"description": "Range of the random amount of damage the melee attack deals. A negative value can heal the entity instead of hurting it.",
 			"anyOf": [
 				{
-					"type": "integer"
+					"type": "number"
 				},
 				{
 					"type": "object",
 					"properties": {
 						"range_min": {
-							"type": "integer"
+							"type": "number"
 						},
 						"range_max": {
-							"type": "integer"
+							"type": "number"
 						}
 					}
 				},
@@ -28,7 +28,7 @@
 					"minItems": 2,
 					"maxItems": 2,
 					"items": {
-						"type": "integer"
+						"type": "number"
 					}
 				}
 			]
@@ -41,8 +41,7 @@
 		"effect_duration": {
 			"title": "Effect Duration",
 			"description": "Duration in seconds of the status ailment applied to the damaged entity.",
-			"type": "number",
-			"default": 0.0
+			"$ref": "../../../general/effectDuration.json"
 		}
 	}
 }

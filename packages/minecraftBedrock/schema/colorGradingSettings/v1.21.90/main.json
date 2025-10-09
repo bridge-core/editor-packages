@@ -1,0 +1,82 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "properties": {
+        "minecraft:color_grading_settings": {
+            "title": "Color Grading Definition",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "title": "Description",
+                    "$ref": "./description.json"
+                },
+                "color_grading": {
+                    "title": "Color Grading",
+                    "type": "object",
+                    "properties": {
+                        "midtones": {
+                            "title": "Midtones",
+                            "description": "Color grading parameters for midtones, and for when highlights or shadows are not specified.",
+                            "$ref": "../general.json#/definitions/color_grading_parameters"
+                        },
+                        "highlights": {
+                            "title": "Highlights",
+                            "description": "Optional color grading parameters for highlights.",
+                            "$ref": "../general.json#/definitions/highlights"
+                        },
+                        "shadows": {
+                            "title": "Shadows",
+                            "description": "Optional color grading parameters for shadows.",
+                            "$ref": "../general.json#/definitions/shadows"
+                        },
+                        "temperature": {
+                            "title": "Temperature",
+                            "description": "Controls the temperature grading.",
+                            "type": "object",
+                            "properties": {
+                                "enabled": {
+                                    "title": "Enabled",
+                                    "description": "Whether or not temperature grading is enabled.",
+                                    "type": "boolean"
+                                },
+                                "type": {
+                                    "title": "Type",
+                                    "description": "Controls the type of grading applied.",
+                                    "type": "string",
+                                    "enum": [
+                                        "color_temperature",
+                                        "white_balance"
+                                    ]
+                                },
+                                "temperature": {
+                                    "title": "Temperature",
+                                    "description": "Sets the temperature in kelvin.",
+                                    "type": "number"
+                                }
+                            },
+                            "additionalProperties": false
+                        }
+                    }
+                },
+                "tone_mapping": {
+                    "title": "Tone Mapping",
+                    "type": "object",
+                    "properties": {
+                        "operator": {
+                            "title": "Operator",
+                            "type": "string",
+                            "enum": [
+                                "generic",
+                                "reinhard",
+                                "reinhard_luma",
+                                "reinhard_luminance",
+                                "hable",
+                                "aces"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

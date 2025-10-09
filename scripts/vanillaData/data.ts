@@ -1,10 +1,45 @@
 import { DocTarget, ExportTarget, GameTarget } from './interfaces.ts'
 
+type ScraperSource = {
+	documentation: DocTarget[]
+	game: GameTarget[]
+}
+
 /**
  * Define the data that should be scraped from the game files and documentation.
  */
-export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
+export const toScrape: ScraperSource = {
 	documentation: [
+		{
+			id: 'entity_ai_goals',
+			page: 'Entities',
+			target: 'AI Goals/JSON Name',
+			map: (val) => val.split(' ')[0],
+		},
+		{
+			id: 'entity_attributes',
+			page: 'Entities',
+			target: 'Attributes/JSON Name',
+			map: (val) => val.split(' ')[0],
+		},
+		{
+			id: 'entity_components',
+			page: 'Entities',
+			target: 'Components/JSON Name',
+			map: (val) => val.split(' ')[0],
+		},
+		{
+			id: 'entity_properties',
+			page: 'Entities',
+			target: 'Properties/JSON Name',
+			map: (val) => val.split(' ')[0],
+		},
+		{
+			id: 'entity_triggers',
+			page: 'Entities',
+			target: 'Triggers/JSON Name',
+			map: (val) => val.split(' ')[0],
+		},
 		{
 			id: 'prefixed_entity_identifiers',
 			target: 'Entities/Identifier',
@@ -63,8 +98,14 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 		{
 			id: 'biomeTag',
 			path: 'biomes',
-			packType: 'definitions',
+			packType: 'behaviorPack',
 			content: 'minecraft:biome/components/minecraft:tags/tags',
+		},
+		{
+			id: 'camera_preset_identifiers',
+			path: 'cameras/presets',
+			packType: 'behaviorPack',
+			content: 'minecraft:camera_preset/identifier',
 		},
 		{
 			id: 'family',
@@ -82,29 +123,10 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 			content: 'texture_data',
 		},
 		{
-			id: 'misc_texture_paths',
-			path: 'textures/misc',
+			id: 'texture_paths',
+			path: 'textures',
 			packType: 'resourcePack',
-		},
-		{
-			id: 'entity_texture_paths',
-			path: 'textures/entity',
-			packType: 'resourcePack',
-		},
-		{
-			id: 'item_texture_paths',
-			path: 'textures/items',
-			packType: 'resourcePack',
-		},
-		{
-			id: 'particle_texture_paths',
-			path: 'textures/particle',
-			packType: 'resourcePack',
-		},
-		{
-			id: 'block_texture_paths',
-			path: 'textures/blocks',
-			packType: 'resourcePack',
+			filter: (val) => !val.endsWith('.texture_set'),
 		},
 		{
 			id: 'sound_paths',
@@ -128,8 +150,14 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 			id: 'soundDefinition',
 			path: 'sounds/sound_definitions.json',
 			packType: 'resourcePack',
-			content: '/',
+			content: ['/', 'sound_definitions'],
 			filter: (val: string) => val !== 'format_version',
+		},
+		{
+			id: 'musicDefinition',
+			path: 'sounds/music_definitions.json',
+			packType: 'resourcePack',
+			content: '/',
 		},
 		{
 			id: 'renderController',
@@ -147,22 +175,21 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 			id: 'geometry',
 			path: 'models',
 			packType: 'resourcePack',
-			content: ['minecraft:geometry/0/description/identifier', '/'],
+			content: ['minecraft:geometry/*/description/identifier', '/'],
 			filter: (val: string) => val.startsWith('geometry.'),
-		},
-		{
-			id: 'geometry2',
-			path: 'models',
-			packType: 'resourcePack',
-			content: ['minecraft:geometry/0/description/identifier', '/'],
-			filter: (val: string) =>
-				val.startsWith('geometry.') && val.includes(':'),
 			map: (val: string) => val.split(':')[0],
 		},
 		{
 			id: 'biome_identifiers',
 			path: 'biomes',
-			packType: 'definitions',
+			packType: 'behaviorPack',
+			content: 'minecraft:biome/description/identifier',
+			map: (val: string) => val.replace('minecraft:', ''),
+		},
+		{
+			id: 'prefixed_biome_identifiers',
+			path: 'biomes',
+			packType: 'behaviorPack',
 			content: 'minecraft:biome/description/identifier',
 		},
 		{
@@ -190,22 +217,100 @@ export const toScrape: { documentation: DocTarget[]; game: GameTarget[] } = {
 			content: 'minecraft:feature_rules/description/identifier',
 		},
 		{
-			id: 'material',
-			path: 'entity',
+			id: 'aim_assist_categories_identifiers',
+			path: 'aim_assist/categories',
+			packType: 'behaviorPack',
+			content: 'minecraft:aim_assist_categories/identifier',
+		},
+		{
+			id: 'aim_assist_preset_identifiers',
+			path: 'aim_assist/presets',
+			packType: 'behaviorPack',
+			content: 'minecraft:aim_assist_preset/identifier',
+		},
+		{
+			id: 'jigsaw_structure_identifiers',
+			path: 'worldgen/jigsaw_structures',
+			packType: 'behaviorPack',
+			content: 'minecraft:jigsaw/description/identifier',
+		},
+		{
+			id: 'template_pool_identifiers',
+			path: 'worldgen/template_pools',
+			packType: 'behaviorPack',
+			content: 'minecraft:template_pool/description/identifier',
+		},
+		{
+			id: 'processor_list_identifiers',
+			path: 'worldgen/processors',
+			packType: 'behaviorPack',
+			content: 'minecraft:processor_list/description/identifier',
+		},
+		{
+			id: 'structure_set_identifiers',
+			path: 'worldgen/structure_sets',
+			packType: 'behaviorPack',
+			content: 'minecraft:structure_set/description/identifier',
+		},
+		{
+			id: 'atmosphere_settings_identifiers',
+			path: 'atmospherics',
 			packType: 'resourcePack',
-			content: 'minecraft:client_entity/description/materials/*',
+			content: 'minecraft:atmosphere_settings/description/identifier',
+		},
+		{
+			id: 'color_grading_settings_identifiers',
+			path: 'color_grading',
+			packType: 'resourcePack',
+			content: 'minecraft:color_grading_settings/description/identifier',
+		},
+		{
+			id: 'lighting_settings_identifiers',
+			path: 'lighting',
+			packType: 'resourcePack',
+			content: 'minecraft:lighting_settings/description/identifier',
+		},
+		{
+			id: 'water_settings_identifiers',
+			path: 'water',
+			packType: 'resourcePack',
+			content: 'minecraft:water_settings/description/identifier',
+		},
+		{
+			id: 'material',
+			path: 'materials/entity.material',
+			packType: 'resourcePack',
+			content: 'materials',
+			filter: (val: string) => val !== 'version',
+			map: (val: string) => val.split(':')[0],
 		},
 		{
 			id: 'itemGroup',
-			packType: 'resourcePack',
-			path: 'texts/en_US.lang',
-			content: '^itemGroup\\.name\\.',
+			packType: 'behaviorPack',
+			path: 'item_catalog/crafting_item_catalog.json',
+			content:
+				'minecraft:crafting_items_catalog/categories/*/groups/*/group_identifier/name',
+			map: (val: string) => val.replace('minecraft:', ''),
+			filter: (val: string) => !['undefined_test_only'].includes(val),
+		},
+		{
+			id: 'prefixedItemGroup',
+			packType: 'behaviorPack',
+			path: 'item_catalog/crafting_item_catalog.json',
+			content:
+				'minecraft:crafting_items_catalog/categories/*/groups/*/group_identifier/name',
 		},
 		{
 			id: 'actionText',
 			packType: 'resourcePack',
 			path: 'texts/en_US.lang',
 			content: '^action\\.interact\\.',
+		},
+		{
+			id: 'blockSound',
+			packType: 'resourcePack',
+			path: 'blocks.json',
+			content: '*/sound',
 		},
 	],
 }
@@ -224,9 +329,21 @@ export const exportRaw: ExportTarget[] = [
 			'unprefixed_entity_identifiers.json',
 			'particle_identifiers.json',
 			'biome_identifiers.json',
+			'prefixed_biome_identifiers.json',
+			'camera_preset_identifiers.json',
 			'fog_identifiers.json',
 			'feature_identifiers.json',
 			'feature_rule_identifiers.json',
+			'aim_assist_categories_identifiers.json',
+			'aim_assist_preset_identifiers.json',
+			'jigsaw_structure_identifiers.json',
+			'template_pool_identifiers.json',
+			'processor_list_identifiers.json',
+			'structure_set_identifiers.json',
+			'atmosphere_settings_identifiers.json',
+			'color_grading_settings_identifiers.json',
+			'lighting_settings_identifiers.json',
+			'water_settings_identifiers.json',
 		],
 		to: 'general/vanilla/identifiers.json',
 	},
@@ -252,11 +369,7 @@ export const exportRaw: ExportTarget[] = [
 	},
 	{
 		from: [
-			'misc_texture_paths.json',
-			'entity_texture_paths.json',
-			'item_texture_paths.json',
-			'particle_texture_paths.json',
-			'block_texture_paths.json',
+			'texture_paths.json',
 			'sound_paths.json',
 			'loot_table_paths.json',
 			'trade_table_paths.json',
@@ -266,6 +379,10 @@ export const exportRaw: ExportTarget[] = [
 	{
 		from: ['soundDefinition.json'],
 		to: 'general/vanilla/soundDefinition.json',
+	},
+	{
+		from: ['musicDefinition.json'],
+		to: 'general/vanilla/musicDefinition.json',
 	},
 	{
 		from: ['renderController.json'],
@@ -278,10 +395,6 @@ export const exportRaw: ExportTarget[] = [
 	{
 		from: ['geometry.json'],
 		to: 'general/vanilla/geometry.json',
-	},
-	{
-		from: ['geometry2.json'],
-		to: 'general/vanilla/geometry2.json',
 	},
 	{
 		from: ['biomeTag.json'],
@@ -304,6 +417,24 @@ export const exportRaw: ExportTarget[] = [
 		from: ['itemGroup.json'],
 		to: 'general/vanilla/itemGroup.json',
 	},
+	{
+		from: ['prefixedItemGroup.json'],
+		to: 'general/vanilla/prefixedItemGroup.json',
+	},
+	{
+		from: ['blockSound.json'],
+		to: 'general/vanilla/blockSound.json',
+	},
+	{
+		from: [
+			'entity_ai_goals.json',
+			'entity_attributes.json',
+			'entity_components.json',
+			'entity_properties.json',
+			'entity_triggers.json',
+		],
+		to: 'general/vanilla/entityComponentList.json',
+	},
 ]
 
 /**
@@ -317,88 +448,5 @@ export const exportRaw: ExportTarget[] = [
  * ```
  */
 export const baseData: Record<string, string[]> = {
-	material: [
-		'alpha_block',
-		'alpha_block_color',
-		'armor',
-		'armor_enchanted',
-		'armor_leather',
-		'armor_leather_enchanted',
-		'banner',
-		'banner_pole',
-		'beacon_beam',
-		'beacon_beam_transparent',
-		'bed',
-		'bell',
-		'boat',
-		'chalkboard',
-		'chest',
-		'clownfish',
-		'conduit',
-		'conduit_wind',
-		'dragon_head',
-		'elytra',
-		'enchanting_table_book',
-		'entity',
-		'entity_alphablend',
-		'entity_alphablend_nocolor',
-		'entity_alphatest_change_color',
-		'entity_alphatest_change_color_glint',
-		'entity_alphatest_glint',
-		'entity_alphatest_glint_item',
-		'entity_alphatest_multicolor_tint',
-		'entity_change_color',
-		'entity_change_color_glint',
-		'entity_custom',
-		'entity_dissolve_layer0',
-		'entity_dissolve_layer1',
-		'entity_emissive',
-		'entity_emissive_alpha',
-		'entity_emissive_alpha_one_sided',
-		'entity_flat_color_line',
-		'entity_glint',
-		'entity_lead_base',
-		'entity_loyalty_rope',
-		'entity_multitexture',
-		'entity_multitexture_alpha_test',
-		'entity_multitexture_alpha_test_color_mask',
-		'entity_multitexture_color_mask',
-		'entity_multitexture_masked',
-		'entity_multitexture_multiplicative_blend',
-		'entity_nocull',
-		'entity_static',
-		'horse_saddle',
-		'item_in_hand',
-		'item_in_hand_entity_alphatest',
-		'item_in_hand_entity_alphatest_color',
-		'item_in_hand_glint',
-		'item_in_hand_multicolor_tint',
-		'map',
-		'map_decoration',
-		'map_marker',
-		'mob_head',
-		'mooshroom_mushrooms',
-		'moving_block',
-		'moving_block_alpha',
-		'moving_block_alpha_seasons',
-		'moving_block_alpha_single_side',
-		'moving_block_blend',
-		'moving_block_double_side',
-		'moving_block_seasons',
-		'npc',
-		'opaque_block',
-		'opaque_block_color',
-		'opaque_block_color_uv2',
-		'piston_arm',
-		'player',
-		'player_alphatest',
-		'player_animated',
-		'shield',
-		'shield_glint',
-		'shulker_box',
-		'trident',
-		'trident_glint',
-		'trident_riptide',
-	],
 	damageType: ['fatal', 'attack', 'any'],
 }

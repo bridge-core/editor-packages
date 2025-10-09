@@ -1,0 +1,51 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "properties": {
+        "minecraft:atmosphere_settings": {
+            "title": "Atmosphere Settings Definition",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "title": "Description",
+                    "$ref": "./description.json"
+                },
+                "horizon_blend_stops": {
+                    "title": "Horizon Blend Stops",
+                    "description": "How the atmosphere is divided up.",
+                    "$ref": "../general.json#/definitions/horizon_blend_stops"
+                },
+                "rayleigh_strength": {
+                    "title": "Rayleigh Strength",
+                    "description": "How strong the atmosphere's rayleigh scattering term is.",
+                    "$ref": "../general.json#/definitions/constant_or_keyframe_map"
+                },
+                "sun_mie_strength": {
+                    "title": "Sun Mie Strength",
+                    "description": "How strong the sun's mie scattering term is.",
+                    "$ref": "../general.json#/definitions/constant_or_keyframe_map"
+                },
+                "moon_mie_strength": {
+                    "title": "Moon Mie Strength",
+                    "description": "How strong the moon's mie scattering term is.",
+                    "$ref": "../general.json#/definitions/constant_or_keyframe_map"
+                },
+                "sun_glare_shape": {
+                    "title": "Sun Glare Strength",
+                    "description": "How the lobe of the mie scattering is shaped.",
+                    "$ref": "../general.json#/definitions/constant_or_keyframe_map"
+                },
+                "sky_zenith_color": {
+                    "title": "Sky Zenith Color",
+                    "description": "The RGB color of the zenith region of the atmosphere.",
+                    "$ref": "../general.json#/definitions/color_constant_or_keyframe_map"
+                },
+                "sky_horizon_color": {
+                    "title": "Sky Horizon Color",
+                    "description": "The RGB color of the horizon region of the atmosphere.",
+                    "$ref": "../general.json#/definitions/color_constant_or_keyframe_map"
+                }
+            }
+        }
+    }
+}

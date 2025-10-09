@@ -12,7 +12,7 @@
 			"description": "The chance of the effect being applied"
 		},
 		"duration": {
-			"type": "integer",
+			"$ref": "../../general/effectDuration.json",
 			"description": "The time duration in seconds of the effect"
 		},
 		"amplifier": {

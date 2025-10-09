@@ -1,0 +1,21 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Tick",
+	"description": "Defines the tick interval for use in custom components.",
+	"type": "object",
+	"properties": {
+		"interval_range": {
+			"type": "array",
+			"minItems": 2,
+			"maxItems": 2,
+			"items": {
+				"type": "integer"
+			}
+		},
+		"looping": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"additionalProperties": false
+}

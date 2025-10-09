@@ -1,0 +1,32 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Swim Up for Breath",
+	"additionalProperties": false,
+	"type": "object",
+	"properties": {
+		"priority": {
+			"$ref": "../../general/v1.16.0/behaviorPriority.json"
+		},
+		"material_type": {
+			"title": "Material Type",
+			"description": "The material the mob is traveling in. An air block will only be considered valid to move to with a block of this material below it.",
+			"type": "string",
+			"enum": ["water", "lava", "any"]
+		},
+		"search_height": {
+			"title": "Search Height",
+			"description": "The height (in blocks) above the mob's current position that it will search for a valid air block to move to. If a valid block cannot be found, the mob will move to the position this many blocks above it.",
+			"type": "integer"
+		},
+		"search_radius": {
+			"title": "Search Radius",
+			"description": "The radius (in blocks) around the mob's current position that it will search for a valid air block to move to.",
+			"type": "integer"
+		},
+		"speed_mod": {
+			"title": "Speed Mod",
+			"description": "Movement speed multiplier of the mob when using this Goal.",
+			"type": "number"
+		}
+	}
+}

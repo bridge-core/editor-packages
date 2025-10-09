@@ -1,0 +1,31 @@
+{
+	"name": "Aim Assist Preset",
+	"icon": "mdi-crosshairs",
+	"description": "Creates a blank aim assist preset.",
+	"category": "fileType.simpleFile",
+	"requires": {
+		"packTypes": ["behaviorPack"]
+	},
+	"additionalModels": {
+		"PRESET_PATH": "aim_assist/presets/"
+	},
+	"fields": [
+		[
+			"File Name",
+			"FILE_NAME",
+			{ "validate": ["required", "alphanumeric", "lowercase"] }
+		]
+	],
+
+	"createFiles": [
+		[
+			"aimAssistPreset.json",
+			"{{PRESET_PATH}}{{FILE_NAME}}.json",
+			{
+				"inject": ["FILE_NAME", "PRESET_PATH"],
+				"openFile": true,
+				"packPath": "behaviorPack"
+			}
+		]
+	]
+}

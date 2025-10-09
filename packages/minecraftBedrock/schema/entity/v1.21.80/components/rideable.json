@@ -1,0 +1,155 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Determines whether this entity can be ridden. Allows specifying the different seat positions and quantity.",
+	"type": "object",
+	"title": "Rideable",
+	"properties": {
+		"controlling_seat": {
+			"title": "Controlling Seat",
+			"description": "The seat that designates the driver of the entity.",
+			"type": "integer",
+			"default": 0
+		},
+		"crouching_skip_interact": {
+			"title": "Crouching Skip Interact",
+			"description": "If true, this entity can't be interacted with if the entity interacting with it is crouching.",
+			"type": "boolean",
+			"default": true
+		},
+        "dismount_mode": {
+            "title": "Dismount Mode",
+            "description": "Defines where riders are placed when dismounting this entity.",
+            "type": "string",
+            "enum": [
+                "default",
+                "on_top_center"
+            ]
+        },
+		"family_types": {
+			"title": "Family Types",
+			"description": "List of entities that can ride this entity.",
+			"type": "array",
+			"items": {
+				"$ref": "../../../general/reference/family.json"
+			}
+		},
+		"interact_text": {
+			"title": "Interact Text",
+			"description": "The text to display when the player can interact with the entity when playing with Touch-screen controls.",
+			"$ref": "../../../general/reference/actionText.json"
+		},
+        "on_rider_enter_event": {
+            "title": "Event: On Rider Enter",
+            "description": "Event to execute on the owner entity when an entity starts riding it.",
+            "$ref": "../../dynamic/currentContext/eventEnum.json"
+        },
+        "on_rider_exit_event": {
+            "title": "Event: On Rider Exit",
+            "description": "Event to execute on the owner entity when an entity stops riding it.",
+            "$ref": "../../dynamic/currentContext/eventEnum.json"
+        },
+		"passenger_max_width": {
+			"title": "Passenger Max Width",
+			"description": "The max width a mob can be to be a passenger. A value of 0 ignores this parameter.",
+			"type": "number",
+			"default": 0.00
+		},
+		"pull_in_entities": {
+			"title": "Pull In Entities",
+			"description": "If true, this entity will pull in entities that are in the correct family_types into any available seats.",
+			"type": "boolean",
+			"default": false
+		},
+		"rider_can_interact": {
+			"title": "Rider Can Interact",
+			"description": "If true, this entity will be picked when looked at by the rider.",
+			"type": "boolean",
+			"default": false
+		},
+		"seat_count": {
+			"title": "Seat Count",
+			"description": "The number of entities that can ride this entity at the same time.",
+			"type": "integer",
+			"default": 1
+		},
+		"seats": {
+			"title": "Seats",
+			"anyOf": [
+				{
+					"description": "The list of positions and number of riders for each position for entities riding this entity.",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/seat"
+					}
+				},
+				{
+					"$ref": "#/definitions/seat"
+				}
+			]
+		}
+	},
+    "definitions": {
+        "seat": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+				"camera_relax_distance_smoothing": {
+					"title": "Camera Relax Distance Smoothing",
+					"description": "Sets springiness to the camera movement when the camera moves back to its radius after being pushed closer to the player by and obstacle. A higher value means a stiffer spring.",
+					"type": "number",
+					"minimum": 1.0,
+					"maximum": 32.0
+				},
+                "lock_rider_rotation": {
+                    "title": "Lock Rider Rotation",
+                    "description": "Angle in degrees that a rider is allowed to rotate while riding this entity. Omit this property for no limit.",
+                    "$ref": "../../../general/degree.json",
+                    "default": 181.0
+                },
+                "max_rider_count": {
+                    "title": "Maximum Rider Count",
+                    "description": "Defines the maximum number of riders that can be riding this entity for this seat to be valid.",
+                    "type": "integer"
+                },
+                "min_rider_count": {
+                    "title": "Minimum Rider Count",
+                    "description": "Defines the minimum number of riders that need to be riding this entity before this seat can be used.",
+                    "type": "integer",
+                    "default": 0
+                },
+                "position": {
+                    "title": "Position",
+                    "description": "Position of this seat relative to this entity's position.",
+                    "type": "array",
+                    "minItems": 3,
+                    "maxItems": 3,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "rotate_rider_by": {
+                    "title": "Rotate Rider By",
+                    "default": 0,
+                    "description": "Offset to rotate riders by.",
+                    "anyOf": [
+                        {
+                            "$ref": "../../../general/degree.json"
+                        },
+                        {
+                            "$ref": "../../../molang/embedded.json"
+                        }
+                    ]
+                },
+				"third_person_camera_radius": {
+					"title": "Third Person Camera Radius",
+					"description": "Sets a different camera radius when in third person or third person front camera.",
+					"type": "number",
+					"default": 1.0,
+					"minimum": 1.0,
+					"maximum": 64.0
+				}
+            }
+        }
+    }
+}

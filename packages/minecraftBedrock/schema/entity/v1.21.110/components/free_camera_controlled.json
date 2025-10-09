@@ -1,0 +1,19 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "title": "Free Camera Controlled",
+    "description": "When configured as a rideable entity, the entity will be controlled using WASD controls and mouse to move in three dimensions.",
+    "type": "object",
+    "properties": {
+        "backwards_movement_modifier": {
+            "title": "Backwards Movement Modifier",
+            "description": "Modifies speed going backwards.",
+            "type": "number"
+        },
+        "strafe_speed_modifier": {
+            "title": "Strafe Speed Modifier",
+            "description": "Modifies the strafe speed.",
+            "type": "number"
+        }
+    },
+    "additionalProperties": false
+}

@@ -1,0 +1,24 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Teleport to Owner",
+	"description": "Allows an entity to teleport to its owner.",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"priority": {
+			"$ref": "../../general/v1.16.0/behaviorPriority.json"
+		},
+		"filters": {
+			"title": "Filters",
+			"description": "Conditions to be satisfied for the entity to teleport to its owner.",
+			"$ref": "../../general/v1.16.0/filter.json"
+		},
+		"cooldown": {
+			"title": "Cooldown",
+			"description": "The time in seconds that must pass for the entity to be able to try to teleport again.",
+			"type": "number",
+			"minimum": 0.0,
+			"default": 1.0
+		}
+	}
+}

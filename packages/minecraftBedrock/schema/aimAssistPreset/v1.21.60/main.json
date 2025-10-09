@@ -1,0 +1,53 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"minecraft:aim_assist_preset": {
+			"title": "Aim Assist Preset Definition",
+			"required": ["identifier"],
+			"type": "object",
+			"properties": {
+				"identifier": {
+					"title": "Identifier",
+					"$ref": "../../general/reference/prefixedFileIdentifier.json",
+					"description": "The identifier for this aim assist preset. The name must include a namespace and must not use the Minecraft namespace."
+				},
+				"item_settings": {
+					"title": "Item Settings",
+					"type": "object",
+					"patternProperties": {
+						".*": {
+							"$ref": "../../aimAssistCategories/dynamic/categoryNameEnum.json"
+						}
+					},
+					"propertyNames": {
+						"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
+					}
+				},
+				"default_item_settings": {
+					"title": "Default Item Settings",
+					"$ref": "../../aimAssistCategories/dynamic/categoryNameEnum.json"
+				},
+				"hand_settings": {
+					"title": "Hand Settings",
+					"$ref": "../../aimAssistCategories/dynamic/categoryNameEnum.json"
+				},
+				"exclusion_list": {
+					"title": "Exclusion List",
+					"type": "array",
+					"items": {
+						"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
+					}
+				},
+				"liquid_targeting_list": {
+					"title": "Liquid Targeting List",
+					"type": "array",
+					"items": {
+						"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
+					}
+				}
+			},
+			"additionalProperties": false
+		}
+	}
+}

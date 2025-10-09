@@ -1,0 +1,6 @@
+[
+	{
+		"cacheKey": "itemGroup",
+		"path": "minecraft:crafting_items_catalog/categories/*/groups/*/group_identifier/name"
+	}
+]

@@ -277,9 +277,6 @@
 		"minecraft:behavior.panic": {
 			"$ref": "../../v1.16.0/behaviors/behavior.panic.json"
 		},
-		"minecraft:behavior.peek": {
-			"$ref": "../../v1.16.0/behaviors/behavior.peek.json"
-		},
 		"minecraft:behavior.pet_sleep_with_owner": {
 			"$ref": "../../v1.16.0/behaviors/behavior.pet_sleep_with_owner.json"
 		},

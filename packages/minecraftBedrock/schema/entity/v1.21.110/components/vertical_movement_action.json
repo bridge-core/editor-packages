@@ -1,0 +1,14 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "title": "Vertical Movement Action",
+    "description": "When configured as a rideable entity, the entity will move upwards or downwards when the player uses the jump action.",
+    "type": "object",
+    "properties": {
+        "vertical_velocity": {
+            "title": "Vertical Velocity",
+            "description": "Vertical velocity to apply when jump action is issued.",
+            "type": "number"
+        }
+    },
+    "additionalProperties": false
+}

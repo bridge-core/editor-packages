@@ -54,19 +54,7 @@
 			"properties": {
 				"filters": {
 					"title": "Filters",
-					"anyOf": [
-						{
-							"type": "object",
-							"$ref": "../../general/v1.16.0/filter.json"
-						},
-						{
-							"type": "array",
-							"items": {
-								"type": "object",
-								"$ref": "../../general/v1.16.0/filter.json"
-							}
-						}
-					]
+					"$ref": "../../general/v1.16.0/filter.json"
 				}
 			}
 		},

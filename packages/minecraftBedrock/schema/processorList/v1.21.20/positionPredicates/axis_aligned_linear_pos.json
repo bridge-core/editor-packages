@@ -1,0 +1,33 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"axis": {
+			"title": "Axis",
+			"type": "string",
+			"enum": ["x", "y", "z"]
+		},
+		"max_chance": {
+			"title": "Max Chance",
+			"type": "number",
+			"minimum": 0.0,
+			"maximum": 1.0
+		},
+		"max_dist": {
+			"title": "Max Distance",
+			"type": "integer",
+			"minimum": 0
+		},
+		"min_chance": {
+			"title": "Min Chance",
+			"type": "number",
+			"minimum": 0.0,
+			"maximum": 1.0
+		},
+		"min_dist": {
+			"title": "Min Distance",
+			"type": "integer",
+			"minimum": 0
+		}
+	}
+}

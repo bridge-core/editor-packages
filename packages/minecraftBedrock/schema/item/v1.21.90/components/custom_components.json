@@ -1,0 +1,6 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "title": "Custom Components",
+    "deprecationMessage": "Deprecated in favor of Custom Components V2 (format version: 1.21.90).",
+    "doNotSuggest": true
+}

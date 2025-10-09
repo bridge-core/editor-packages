@@ -1,0 +1,234 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "properties": {
+        "minecraft:camera_preset": {
+            "title": "Camera Preset Definition",
+            "required": [
+                "identifier"
+            ],
+            "type": "object",
+            "allOf": [
+                {
+                    "properties": {
+                        "identifier": {
+                            "title": "Identifier",
+                            "$ref": "../../general/reference/prefixedFileIdentifier.json",
+                            "description": "The identifier for this camera preset. The name must include a namespace and must not use the Minecraft namespace."
+                        },
+                        "inherit_from": {
+                            "title": "Camera Inheritor",
+                            "description": "Inherits the properties of the specified camera preset.",
+                            "$ref": "../../general/reference/identifiers.json#/definitions/camera_preset_identifiers"
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "aim_assist": {
+                            "title": "Aim Assist",
+                            "type": "object",
+                            "properties": {
+                                "preset": {
+                                    "title": "Preset",
+                                    "description": "The preset ID to enable aim assist with.",
+                                    "$ref": "../../general/reference/identifiers.json#/definitions/aim_assist_preset_identifiers"
+                                },
+                                "distance": {
+                                    "title": "Distance",
+                                    "type": "number"
+                                },
+                                "target_mode": {
+                                    "title": "Target Mode",
+                                    "type": "string",
+                                    "enum": [
+                                        "angle",
+                                        "distance"
+                                    ]
+                                },
+                                "angle": {
+                                    "title": "Angle",
+                                    "oneOf": [
+                                        {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "number"
+                                            },
+                                            "minItems": 2,
+                                            "maxItems": 2
+                                        },
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "x": {
+                                                    "type": "number"
+                                                },
+                                                "y": {
+                                                    "type": "number"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            "additionalProperties": false
+                        },
+                        "align_target_and_camera_forward": {
+                            "title": "Align Target and Camera Forward",
+                            "description": "Whether the camera will be locked to have the same forward as its target.",
+                            "type": "boolean",
+                            "default": true
+                        },
+                        "continue_targeting": {
+                            "title": "Continue Targeting",
+                            "description": "Set this flag if you want the camera to continue tracking the entity even when the target moves outside the valid rotation limits.",
+                            "type": "boolean"
+                        },
+                        "entity_offset": {
+                            "title": "Entity Offset",
+                            "description": "Changes the point of the entity the camera pivots around (x, y, z). x, y and z can be floats between -64 and 64.",
+                            "type": "array",
+                            "items": {
+                                "type": "number",
+                                "minimum": -64,
+                                "maximum": 64
+                            },
+                            "minItems": 3,
+                            "maxItems": 3
+                        },
+                        "horizontal_rotation_limit": {
+                            "title": "Horizontal Rotation Limit",
+                            "description": "Set the horizontal rotation limit for the target camera (x, y), where x represents rotation to the left, and y to the right. Values can be from 0 to 360.0.",
+                            "type": "array",
+                            "items": {
+                                "type": "number",
+                                "minimum": 0.0,
+                                "maximum": 360.0
+                            },
+                            "minItems": 2,
+                            "maxItems": 2
+                        },
+                        "listener": {
+                            "title": "Listener",
+                            "description": "Specify 'camera' or 'player' to control whether the camera or player is used for audio listening position when this preset is active.",
+                            "type": "string",
+                            "enum": [
+                                "camera",
+                                "player"
+                            ]
+                        },
+                        "player_effects": {
+                            "title": "Player Effects",
+                            "description": "Specify whether to allow effects on the player to affect how the game renders when this preset is active.",
+                            "type": "boolean"
+                        },
+                        "pos_x": {
+                            "title": "X Position",
+                            "description": "Set an X position for this camera's behavior.",
+                            "type": "integer"
+                        },
+                        "pos_y": {
+                            "title": "Y Position",
+                            "description": "Set a Y position for this camera's behavior.",
+                            "type": "integer"
+                        },
+                        "pos_z": {
+                            "title": "Z Position",
+                            "description": "Set a Z position for this camera's behavior.",
+                            "type": "integer"
+                        },
+                        "radius": {
+                            "title": "Radius",
+                            "description": "Set a radius for this camera's behavior.",
+                            "type": "number",
+                            "minimum": 0
+                        },
+                        "rotation_speed": {
+                            "title": "Rotation Speed",
+                            "description": "Set the rotation speed for the camera.",
+                            "type": "number"
+                        },
+                        "rot_x": {
+                            "title": "X Rotation",
+                            "description": "Set an X rotation for this camera's behavior.",
+                            "type": "integer",
+                            "minimum": -90,
+                            "maximum": 90
+                        },
+                        "rot_y": {
+                            "title": "Y Rotation",
+                            "description": "Set a Y rotation for this camera's behavior.",
+                            "minimum": -360,
+                            "maximum": 360
+                        },
+                        "snap_to_target": {
+                            "title": "Snap to Target",
+                            "description": "Set this flag if you want the camera to snap to your target immediately in the first frame. Only available with a valid rotation speed.",
+                            "type": "boolean"
+                        },
+                        "tracking_radius": {
+                            "title": "Tracking Radius",
+                            "description": "Set a value for the block radius around the camera to keep tracking the target entity. Defaults to 50 blocks.",
+                            "type": "number"
+                        },
+                        "vertical_rotation_limit": {
+                            "title": "Vertical Rotation Limit",
+                            "description": "Set the vertical rotation limit for the target camera (x, y). Values can be from 0.0 to 180.0 inclusive in world space where 0 degrees is straight down, 90 degrees is horizontal and 180 degrees is straight up.",
+                            "items": {
+                                "type": "number",
+                                "minimum": 0,
+                                "maximum": 360
+                            },
+                            "minItems": 2,
+                            "maxItems": 2
+                        },
+                        "view_offset": {
+                            "title": "View Offset",
+                            "description": "Creates an over the shoulder type offset (x, y). x and y can be floats between -64 and 64.",
+                            "type": "array",
+                            "items": {
+                                "type": "number"
+                            },
+                            "minItems": 2,
+                            "maxItems": 2
+                        },
+                        "yaw_limits_max": {
+                            "title": "Yaw Limits Maximum",
+                            "description": "Set a max limit for the yaw of third person cameras.",
+                            "type": "number",
+                            "minimum": -180,
+                            "maximum": 180
+                        },
+                        "yaw_limits_min": {
+                            "title": "Yaw Limits Minimum",
+                            "description": "Set a min limit for the yaw of third person cameras.",
+                            "type": "number",
+                            "minimum": -180,
+                            "maximum": 180
+                        }
+                    }
+                },
+                // TODO: remove once 1.21.90 goes stable
+                {
+                    "$ref": "../../project/experimentalGameplay/experimentalCreatorCameraFeatures.json",
+                    "then": {
+                        "properties": {
+                            "control_scheme": {
+                                "title": "Control Scheme",
+                                "description": "Set a default scheme for this camera.",
+                                "type": "string",
+                                "enum": [
+                                    "locked_player_relative_strafe",
+                                    "camera_relative",
+                                    "camera_relative_strafe",
+                                    "player_relative",
+                                    "player_relative_strafe"
+                                ]
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

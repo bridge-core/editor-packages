@@ -53,7 +53,7 @@
 					"$ref": "../../v1.19.50/behaviors/behavior.random_look_around.json"
 				},
 				"minecraft:behavior.random_look_around_and_sit": {
-					"$ref": "../../v1.19.50/behaviors/behavior.random_look_around_and_sit.json"
+					"$ref": "../../v1.16.0/behaviors/behavior.random_look_around_and_sit.json"
 				},
 				"minecraft:behavior.offer_flower": {
 					"$ref": "../../v1.19.50/behaviors/behavior.offer_flower.json"
@@ -372,9 +372,6 @@
 				},
 				"minecraft:behavior.panic": {
 					"$ref": "../../v1.16.0/behaviors/behavior.panic.json"
-				},
-				"minecraft:behavior.peek": {
-					"$ref": "../../v1.16.0/behaviors/behavior.peek.json"
 				},
 				"minecraft:behavior.pet_sleep_with_owner": {
 					"$ref": "../../v1.16.0/behaviors/behavior.pet_sleep_with_owner.json"

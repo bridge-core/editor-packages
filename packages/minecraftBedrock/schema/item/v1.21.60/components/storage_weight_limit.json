@@ -1,0 +1,16 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Storage Weight Limit",
+	"description": "Specifies the maximum weight limit that a storage item can hold",
+	"type": "object",
+	"properties": {
+		"max_weight_limit": {
+			"title": "Max Weight Limit",
+			"description": "The maximum allowed weight of the sum of all contained items. Maximum is 64. Default is 64.",
+			"type": "integer",
+			"default": 64.0,
+			"maximum": 64.0
+		}
+	},
+	"additionalProperties": false
+}

@@ -1,0 +1,46 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"allOf": [
+		{
+			"properties": {
+				"minecraft:ambient_sounds": {
+					"$ref": "../../v1.21.50/components/ambient_sounds.json"
+				},
+				"minecraft:atmosphere_identifier": {
+					"$ref": "./atmosphere_identifier.json"
+				},
+				"minecraft:biome_music": {
+					"$ref": "../../v1.21.80/components/biome_music.json"
+				},
+				"minecraft:color_grading_identifier": {
+					"$ref": "./color_grading_identifier.json"
+				},
+				"minecraft:dry_foliage_color": {
+					"$ref": "../../v1.21.70/components/dry_foliage_color.json"
+				},
+				"minecraft:fog_appearance": {
+					"$ref": "../../v1.21.40/components/fog_appearance.json"
+				},
+				"minecraft:foliage_appearance": {
+					"$ref": "../../v1.21.60/components/foliage_appearance.json"
+				},
+				"minecraft:grass_appearance": {
+					"$ref": "../../v1.21.60/components/grass_appearance.json"
+				},
+				"minecraft:lighting_identifier": {
+					"$ref": "./lighting_identifier.json"
+				},
+				"minecraft:sky_color": {
+					"$ref": "../../v1.21.40/components/sky_color.json"
+				},
+				"minecraft:water_appearance": {
+					"$ref": "../../v1.21.40/components/water_appearance.json"
+				},
+				"minecraft:water_identifier": {
+					"$ref": "./water_identifier.json"
+				}
+			}
+		}
+	]
+}

@@ -1,7 +1,9 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"title": "Feature",
-	"required": ["format_version"],
+	"required": [
+		"format_version"
+	],
 	"allOf": [
 		{
 			"properties": {
@@ -52,7 +54,11 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.17.0", "1.17.10", "1.17.20"]
+						"enum": [
+							"1.17.0",
+							"1.17.10",
+							"1.17.20"
+						]
 					}
 				}
 			},
@@ -64,7 +70,10 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.17.30", "1.17.40"]
+						"enum": [
+							"1.17.30",
+							"1.17.40"
+						]
 					}
 				}
 			},
@@ -88,7 +97,10 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.18.10", "1.18.20"]
+						"enum": [
+							"1.18.10",
+							"1.18.20"
+						]
 					}
 				}
 			},
@@ -100,7 +112,9 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.18.30"]
+						"enum": [
+							"1.18.30"
+						]
 					}
 				}
 			},
@@ -157,12 +171,36 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.21.10"]
+						"enum": [
+							"1.21.10",
+							"1.21.20",
+							"1.21.30"
+						]
 					}
 				}
 			},
 			"then": {
 				"$ref": "./v1.21.10/features/_main.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": [
+							"1.21.40",
+							"1.21.50",
+							"1.21.60",
+							"1.21.70",
+							"1.21.80",
+							"1.21.90",
+							"1.21.100"
+						]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.21.40/features/_main.json"
 			}
 		}
 	]

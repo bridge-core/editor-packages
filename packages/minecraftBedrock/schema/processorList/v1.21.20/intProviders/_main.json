@@ -1,0 +1,49 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "anyOf": [
+        {
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "constant",
+                        "uniform"
+                    ]
+                }
+            },
+            "required": [
+                "type"
+            ]
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "const": "constant"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "./constant.json"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "const": "uniform"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "./uniform.json"
+            }
+        }
+    ]
+}

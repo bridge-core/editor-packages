@@ -30,6 +30,11 @@
 			"title": "Attack Cooldown",
 			"type": "number"
 		},
+		"filters": {
+			"title": "Filters",
+			"description": "Conditions that need to be met for the behavior to start.",
+			"$ref": "../../general/v1.16.0/filter.json"
+		},
 		"pre_shoot_delay": {
 			"title": "Pre-Shoot Delay",
 			"type": "number"

@@ -1,0 +1,83 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Allows the mob to be tempted by food they like.",
+	"type": "object",
+	"title": "Float Tempt",
+	"properties": {
+		"priority": { "$ref": "../../general/v1.16.0/behaviorPriority.json" },
+		"can_get_scared": {
+			"title": "Can Get Scared",
+			"description": "If true, the mob can stop being tempted if the player moves too fast while close to this mob.",
+			"type": "boolean",
+			"default": false
+		},
+		"can_tempt_vertically": {
+			"title": "Can Tempt Vertically",
+			"description": "If true, vertical distance to the player will be considered when tempting.",
+			"type": "boolean",
+			"default": false
+		},
+        "can_tempt_while_ridden": {
+			"title": "Can Tempt While Ridden",
+			"description": "If true, the mob can be tempted even if it has a passenger (i.e. if being ridden).",
+			"type": "boolean",
+			"default": false
+		},
+		"items": {
+			"title": "Items",
+			"description": "List of items this mob is tempted by.",
+			"type": "array",
+			"items": {
+				"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
+			}
+		},
+        "on_tempt_start": {
+            "title": "Event: On Tempt Start",
+            "description": "The event to trigger when the goal starts.",
+            "$ref": "../../general/v1.16.0/eventDefinition.json"
+        },
+        "on_tempt_end": {
+            "title": "Event: On Tempt End",
+            "description": "The event to trigger when the goal ends.",
+            "$ref": "../../general/v1.16.0/eventDefinition.json"
+        },
+        "sound_interval": {
+			"title": "Sound Interval",
+			"description": "Range of random ticks to wait between tempt sounds.",
+			"type": "object",
+			"properties": {
+				"range_min": {
+					"type": "number"
+				},
+				"range_max": {
+					"type": "number"
+				}
+			}
+		},
+        "speed_multiplier": {
+			"title": "Speed Multiplier",
+			"description": "Movement speed multiplier of the mob when using this AI Goal.",
+			"type": "number",
+			"default": 1.0
+		},
+        "stop_distance": {
+            "title": "Stop Distance",
+            "description": "The distance at which the mob will stop following the player.",
+            "type": "number",
+            "default": 1.5
+        },
+		"tempt_sound": {
+			"title": "Tempt Sound",
+			"description": "Sound to play while the mob is being tempted.",
+			"type": "string",
+			"$ref": "../../../general/reference/soundEvent.json"
+		},
+        "within_radius": {
+			"title": "Within Radius",
+			"description": "Distance in blocks this mob can get tempted by a player holding an item they like.",
+			"type": "number",
+			"default": 0.0
+		}
+	}
+}

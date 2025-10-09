@@ -1,0 +1,24 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"stop_movement": {
+			"title": "Stop Movement",
+			"description": "Stops the entity's movement.",
+			"type": "object",
+			"properties": {
+				"stop_vertical_movement": {
+					"title": "Stop Vertical Movement",
+					"description": "Specifies whether vertical movement should be stopped.",
+					"type": "boolean"
+				},
+				"stop_horizontal_movement": {
+					"title": "Stop Horizontal Movement",
+					"description": "Specifies whether horizontal movement should be stopped.",
+					"type": "boolean"
+				}
+			},
+			"additionalProperties": false
+		}
+	}
+}

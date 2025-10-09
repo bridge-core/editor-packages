@@ -14,10 +14,23 @@
 			"minecraft:durability": {
 				"max_durability": 250
 			},
+			"minecraft:icon": "{{PROJECT_PREFIX}}_{{IDENTIFIER}}",
 			"minecraft:damage": 3,
 			"minecraft:enchantable": {
 				"value": 14,
 				"slot": "axe"
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": ["minecraft:iron_ingot"],
+						"repair_amount": "query.max_durability * 0.25"
+					},
+					{
+						"items": ["{{PROJECT_PREFIX}}:{{IDENTIFIER}}"],
+						"repair_amount": "context.other->query.remaining_durability + 0.12 * context.other->query.max_durability"
+					}
+				]
 			},
 			"minecraft:digger": {
 				"use_efficiency": true,
@@ -38,7 +51,6 @@
 					}
 				]
 			},
-			"minecraft:icon": "{{PROJECT_PREFIX}}_{{IDENTIFIER}}",
 			"minecraft:tags": {
 				"tags": ["minecraft:is_axe"]
 			}

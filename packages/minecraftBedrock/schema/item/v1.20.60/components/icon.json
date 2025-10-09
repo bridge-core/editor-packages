@@ -12,25 +12,53 @@
 						{
 							"properties": {
 								"default": {
-									"description": "Default item icon"
+									"$ref": "../../../general/reference/itemTexture.json"
 								},
 								"icon_trim": {
-									"description": "Trim overlay icon"
+									"$ref": "../../../general/reference/itemTexture.json"
+								},
+								"bundle_open_back": {
+									"$ref": "../../../general/reference/itemTexture.json"
+								},
+								"bundle_open_front": {
+									"$ref": "../../../general/reference/itemTexture.json"
 								}
 							}
 						},
 						{
-							"$ref": "../../../general/trimPalette.json"
-						},
-						{
-							"patternProperties": {
-								"^[a-zA-Z0-9_]+_palette$": {
-									"type": "string",
-									"description": "Trim palette override",
-									"$ref": "../../../general/reference/paths.json#/definitions/item_texture_paths"
+							"properties": {
+								"amethyst_palette": {
+									"$ref": "../../../general/reference/paths.json#/definitions/texture_paths"
 								},
-								"^(?![a-zA-Z0-9_]+_palette$).*": {
-									"$ref": "../../../general/reference/itemTexture.json"
+								"copper_palette": {
+									"$ref": "../../../general/reference/paths.json#/definitions/texture_paths"
+								},
+								"diamond_palette": {
+									"$ref": "../../../general/reference/paths.json#/definitions/texture_paths"
+								},
+								"emerald_palette": {
+									"$ref": "../../../general/reference/paths.json#/definitions/texture_paths"
+								},
+								"gold_palette": {
+									"$ref": "../../../general/reference/paths.json#/definitions/texture_paths"
+								},
+								"iron_palette": {
+									"$ref": "../../../general/reference/paths.json#/definitions/texture_paths"
+								},
+								"lapis_palette": {
+									"$ref": "../../../general/reference/paths.json#/definitions/texture_paths"
+								},
+								"quartz_palette": {
+									"$ref": "../../../general/reference/paths.json#/definitions/texture_paths"
+								},
+								"netherite_palette": {
+									"$ref": "../../../general/reference/paths.json#/definitions/texture_paths"
+								},
+								"redstone_palette": {
+									"$ref": "../../../general/reference/paths.json#/definitions/texture_paths"
+								},
+								"resin_palette": {
+									"$ref": "../../../general/reference/paths.json#/definitions/texture_paths"
 								}
 							}
 						}

@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "anyOf": [
+        {
+            "$ref": "./reference/identifiers.json#/definitions/item_identifiers"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "tags": {
+                    "title": "Tags",
+                    "oneOf": [
+                        {
+                            "enum": [
+                                "query.any_tag()",
+                                "query.all_tags()"
+                            ]
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

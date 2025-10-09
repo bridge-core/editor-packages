@@ -42,7 +42,8 @@
 								"slot.armor.head",
 								"slot.armor.chest",
 								"slot.armor.legs",
-								"slot.armor.feet"
+								"slot.armor.feet",
+								"slot.armor.body"
 							]
 						},
 						{
@@ -62,7 +63,8 @@
 								"slot.armor.head",
 								"slot.armor.chest",
 								"slot.armor.legs",
-								"slot.armor.feet"
+								"slot.armor.feet",
+								"slot.armor.body"
 							]
 						},
 						{
@@ -204,7 +206,12 @@
 					"title": "Vibration",
 					"description": "Vibration to emit when the interaction occurs. Admitted values are entity_interact (used by default), shear, and none (no vibration emitted).",
 					"type": "string",
-					"enum": ["entity_interact", "entity_act", "shear", "none"],
+					"enum": [
+						"entity_interact",
+						"entity_act",
+						"shear",
+						"none"
+					],
 					"default": "entity_interact"
 				}
 			}

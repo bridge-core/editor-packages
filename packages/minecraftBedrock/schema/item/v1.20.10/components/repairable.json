@@ -1,0 +1,27 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"type": "object",
+	"description": "Repairable item component: how much damage can this item repair, what items can repair it.",
+	"properties": {
+		"repair_items": {
+			"type": "array",
+			"description": "Repair item entries.",
+			"items": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"items": {
+						"type": "array",
+						"items": {
+							"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
+						}
+					},
+					"repair_amount": {
+						"$ref": "../../../molang/embedded.json"
+					}
+				}
+			}
+		}
+	}
+}

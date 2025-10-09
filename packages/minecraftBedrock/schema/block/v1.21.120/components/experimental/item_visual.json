@@ -1,0 +1,16 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Item Visual",
+	"description": "The description identifier of the geometry and material used to render the item of this block.",
+	"type": "object",
+	"properties": {
+		"geometry": {
+			"description": "The 'minecraft:geometry' component that will be used for the item.",
+			"$ref": "../../../v1.21.100/components/geometry.json"
+		},
+		"material_instances": {
+			"description": "The 'minecraft:material_instances' component that will be used for the item.",
+			"$ref": "./material_instances.json"
+		}
+	}
+}

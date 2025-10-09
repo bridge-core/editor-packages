@@ -1,0 +1,41 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"type": "object",
+	"description": "Determines what enchantments can be applied to the item. Not all enchantments will have an effect on all item components.",
+	"properties": {
+		"slot": {
+			"description": "What enchantments can be applied.",
+			"type": "string",
+			"enum": [
+				"all",
+				"armor_feet",
+				"armor_head",
+				"armor_legs",
+				"armor_torso",
+				"axe",
+				"bow",
+				"carrot_stick",
+				"cosmetic_head",
+				"crossbow",
+				"elytra",
+				"fishing_rod",
+				"flintsteel",
+				"g_armor",
+				"g_digging",
+				"g_tool",
+				"hoe",
+				"none",
+				"pickaxe",
+				"shears",
+				"shield",
+				"shovel",
+				"spear",
+				"sword"
+			]
+		},
+		"value": {
+			"type": "integer"
+		}
+	}
+}

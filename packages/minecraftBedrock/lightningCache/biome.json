@@ -4,6 +4,11 @@
 		"path": "minecraft:biome/description/identifier"
 	},
 	{
+		"cacheKey": "prefixedIdentifier",
+		"path": "minecraft:biome/description/identifier",
+		"script": "if (Bridge.value.split(':').length < 2) return `minecraft:${Bridge.value}`"
+	},
+	{
 		"cacheKey": "tags",
 		"path": "minecraft:biome/components/minecraft:tags/tags"
 	},
@@ -23,6 +28,10 @@
 			"minecraft:nether_surface",
 			"minecraft:overworld_generation_rules",
 			"minecraft:surface_material_adjustments",
+			"minecraft:multinoise_generation_rules",
+			"minecraft:replace_biomes",
+			"minecraft:creature_spawn_probability",
+			"minecraft:tags",
 			"animal",
 			"bamboo",
 			"beach",

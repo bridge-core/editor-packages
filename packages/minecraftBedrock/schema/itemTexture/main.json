@@ -3,7 +3,11 @@
 	"title": "Item Textures",
 	"additionalProperties": false,
 	"type": "object",
-	"required": ["resource_pack_name", "texture_name", "texture_data"],
+	"required": [
+		"resource_pack_name",
+		"texture_name",
+		"texture_data"
+	],
 	"properties": {
 		"resource_pack_name": {
 			"type": "string"
@@ -20,12 +24,33 @@
 							"anyOf": [
 								{
 									"type": "string",
-									"$ref": "../general/reference/paths.json#/definitions/item_texture_paths"
+									"$ref": "../general/reference/paths.json#/definitions/texture_paths"
 								},
 								{
 									"type": "array",
 									"items": {
-										"$ref": "../general/reference/paths.json#/definitions/item_texture_paths"
+										"anyOf": [
+											{
+												"$ref": "../general/reference/paths.json#/definitions/texture_paths"
+											},
+											{
+												"type": "object",
+												"properties": {
+													"path": {
+														"title": "Path",
+														"$ref": "../general/reference/paths.json#/definitions/texture_paths"
+													},
+													"tint_color": {
+														"title": "Tint Color",
+														"$ref": "../general/hexColor.json"
+													},
+													"overlay_color": {
+														"title": "Overlay Color",
+														"$ref": "../general/hexColor.json"
+													}
+												}
+											}
+										]
 									}
 								}
 							]

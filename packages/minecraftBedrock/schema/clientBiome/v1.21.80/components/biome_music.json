@@ -1,0 +1,20 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Biome Music",
+	"description": "Configures the biome music.",
+	"type": "object",
+	"properties": {
+		"volume_multiplier": {
+			"title": "Volume Multiplier",
+			"description": "Gradually affects music volume when the audio listener is inside the corresponding biome.",
+			"type": "number",
+			"minimum": 0
+		},
+		"music_definition": {
+			"title": "Music Definition",
+			"description": "Music to be played when inside this biome. If left off or not found the default music will be determined by the dimension. Empty string will result in no music.",
+			"$ref": "../../../general/reference/musicDefinition.json"
+		}
+	},
+	"additionalProperties": false
+}

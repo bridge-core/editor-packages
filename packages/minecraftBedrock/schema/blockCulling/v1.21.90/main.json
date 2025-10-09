@@ -1,0 +1,107 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"minecraft:block_culling_rules": {
+			"title": "Block Culling Rules Definition",
+			"required": [
+				"description",
+				"rules"
+			],
+			"type": "object",
+			"properties": {
+				"description": {
+					"title": "Description",
+					"type": "object",
+					"properties": {
+						"identifier": {
+							"title": "Identifier",
+							"$ref": "../../general/reference/prefixedFileIdentifier.json"
+						}
+					}
+				},
+				"rules": {
+					"title": "Rules",
+					"type": "array",
+					"items": {
+						"type": "object",
+						"allOf": [
+							{
+								"$ref": "#/definitions/rule_properties"
+							},
+							{
+								"$ref": "../../project/experimentalGameplay/upcomingCreatorFeatures.json",
+								"then": {
+									"$ref": "#/definitions/experimental_rule_properties"
+								}
+							}
+						]
+					}
+				}
+			}
+		}
+	},
+	"definitions": {
+		"rule_properties": {
+			"type": "object",
+			"properties": {
+				"geometry_part": {
+					"title": "Geometry Part",
+					"type": "object",
+					"properties": {
+						"bone": {
+							"title": "Bone",
+							"type": "string"
+						},
+						"cube": {
+							"title": "Cube",
+							"type": "integer"
+						},
+						"face": {
+							"title": "Face",
+							"type": "string",
+							"enum": [
+								"north",
+								"east",
+								"south",
+								"west",
+								"up",
+								"down"
+							]
+						}
+					}
+				},
+				"direction": {
+					"title": "Direction",
+					"type": "string",
+					"enum": [
+						"north",
+						"east",
+						"south",
+						"west",
+						"up",
+						"down"
+					]
+				},
+				"condition": {
+					"title": "Condition",
+					"type": "string",
+					"enum": [
+						"default",
+						"same_culling_layer",
+						"same_block",
+						"same_block_permutation"
+					]
+				},
+				"cull_against_full_and_opaque": {
+					"title": "Cull Against Full And Opaque",
+					"type": "boolean"
+				}
+			}
+		},
+		"experimental_rule_properties": {
+			"type": "object",
+			"properties": {}
+		}
+	}
+}

@@ -1,0 +1,21 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"add": {
+			"title": "Add",
+			"description": "Specifies a list of component groups to add when this event is triggered.",
+			"type": "object",
+			"properties": {
+				"component_groups": {
+					"title": "Component Groups",
+					"type": "array",
+					"items": {
+						"$ref": "../dynamic/currentContext/componentGroupEnum.json"
+					}
+				}
+			},
+			"additionalProperties": false
+		}
+	}
+}

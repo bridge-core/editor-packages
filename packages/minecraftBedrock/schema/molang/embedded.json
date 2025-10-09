@@ -2,7 +2,11 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"anyOf": [
 		{
-			"type": ["string", "number", "boolean"]
+			"type": [
+				"string",
+				"number",
+				"boolean"
+			]
 		},
 		{
 			"$ref": "./v1.17.0/math.json"
@@ -66,6 +70,27 @@
 		},
 		{
 			"$ref": "./v1.21.0/query.json"
+		},
+		{
+			"$ref": "./v1.21.40/query.json"
+		},
+		{
+			"$ref": "./v1.21.50/query.json"
+		},
+		{
+			"$ref": "./v1.21.70/query.json"
+		},
+		{
+			"$ref": "./v1.21.80/query.json"
+		},
+		{
+			"$ref": "./v1.21.90/query.json"
+		},
+		{
+			"$ref": "./v1.21.120/query.json"
+		},
+		{
+			"$ref": "./v1.21.120/math.json"
 		}
 	]
 }

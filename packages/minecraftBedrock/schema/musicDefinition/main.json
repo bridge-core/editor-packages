@@ -1,21 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"title": "Music Definitions",
-	"propertyNames": {
-		"enum": [
-			"creative",
-			"credits",
-			"crimson_forset",
-			"end",
-			"endboss",
-			"game",
-			"hell",
-			"menu",
-			"nether",
-			"soulsand_valley",
-			"water"
-		]
-	},
 	"patternProperties": {
 		".*": {
 			"type": "object",
@@ -27,7 +12,7 @@
 					"type": "integer"
 				},
 				"event_name": {
-					"$ref": "../soundDefinition/dynamic/identifierEnum.json"
+					"$ref": "../general/reference/soundDefinition.json"
 				}
 			}
 		}

@@ -1,0 +1,36 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"queue_command": {
+			"title": "Queue Command",
+			"description": "Triggers a slash command or a list of slash commands.",
+			"type": "object",
+			"properties": {
+				"command": {
+					"title": "Command",
+					"anyOf": [
+						{
+							"description": "List of slash commands to run.",
+							"type": "array",
+							"items": {
+								"$ref": "../../general/commandNoSlash.json"
+							}
+						},
+						{
+							"description": "Slash command to run.",
+							"type": "string",
+							"$ref": "../../general/commandNoSlash.json"
+						}
+					]
+				},
+				"target": {
+					"title": "Target",
+					"description": "The target context to execute against.",
+					"$ref": "../../general/filter/subject.json"
+				}
+			},
+			"additionalProperties": false
+		}
+	}
+}

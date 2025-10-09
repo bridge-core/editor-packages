@@ -1,25 +1,21 @@
 {
 	"id": "clientBiome",
+	"icon": "mdi-island",
 	"detect": {
 		"packType": "resourcePack",
-		"scope": "biomes_client.json",
-		"matcher": "biomes_client.json",
+		"scope": "biomes/",
+		"matcher": ["biomes/**/*", "biomes/*"],
+		"fileContent": ["minecraft:biome"],
 		"fileExtensions": [".json"]
 	},
-
 	"schema": "file:///data/packages/minecraftBedrock/schema/clientBiome/main.json",
 	"lightningCache": "clientBiome.json",
-
-	"definitions": {
-		"fogIdentifier": [
-			{
-				"from": "fog",
-				"match": "identifier"
-			}
-		]
+	"documentation": {
+		"baseUrl": "https://bedrock.dev/docs/beta/Client%20Biomes",
+		"supportsQuerying": false
 	},
-
 	"highlighterConfiguration": {
-		"definitions": ["biomes"]
+		"variables": ["description", "components"],
+		"typeIdentifiers": ["format_version"]
 	}
 }

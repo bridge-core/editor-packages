@@ -1,0 +1,29 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "properties": {
+        "type": {
+            "title": "Uniform",
+            "description": "The type of anchor point provider to use.",
+            "const": "uniform"
+        },
+        "value": {
+            "title": "Value",
+            "description": "Uniform anchor point.",
+            "type": "object",
+            "properties": {
+                "min": {
+                    "title": "Minimum",
+                    "description": "Minimum value of the uniform distribution.",
+                    "$ref": "./_main.json#/definitions/anchor_point"
+                },
+                "max": {
+                    "title": "Maximum",
+                    "description": "Maximum value of the uniform distribution.",
+                    "$ref": "./_main.json#/definitions/anchor_point"
+                }
+            }
+        }
+    },
+    "additionalProperties": false
+}

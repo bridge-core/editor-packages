@@ -1,0 +1,21 @@
+{
+    "id": "pbrFallbackSettings",
+    "icon": "mdi-texture",
+    "detect": {
+        "packType": "resourcePack",
+        "scope": "pbr/global.json",
+        "matcher": "pbr/global.json",
+        "fileContent": [
+            "minecraft:pbr_fallback_settings"
+        ],
+        "fileExtensions": [
+            ".json"
+        ]
+    },
+    "schema": "file:///data/packages/minecraftBedrock/schema/pbrFallbackSettings/main.json",
+    "highlighterConfiguration": {
+        "typeIdentifiers": [
+            "format_version"
+        ]
+    }
+}

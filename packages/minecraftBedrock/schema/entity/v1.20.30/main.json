@@ -73,7 +73,7 @@
 								{
 									"patternProperties": {
 										".*": {
-											"$ref": "../v1.19.70/event.json"
+											"$ref": "../event/_main.json"
 										}
 									}
 								}

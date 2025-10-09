@@ -71,7 +71,7 @@
 						},
 						{
 							"additionalProperties": {
-								"$ref": "./event.json"
+								"$ref": "../event/_main.json"
 							}
 						}
 					]

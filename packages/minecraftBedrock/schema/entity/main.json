@@ -2,7 +2,10 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"title": "Entity",
 	"type": "object",
-	"required": ["format_version", "minecraft:entity"],
+	"required": [
+		"format_version",
+		"minecraft:entity"
+	],
 	"allOf": [
 		{
 			"properties": {
@@ -36,7 +39,11 @@
 		},
 		{
 			"if": {
-				"properties": { "format_version": { "const": "1.16.100" } }
+				"properties": {
+					"format_version": {
+						"const": "1.16.100"
+					}
+				}
 			},
 			"then": {
 				"$ref": "./v1.16.100/main.json"
@@ -46,7 +53,10 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.16.200", "1.16.210"]
+						"enum": [
+							"1.16.200",
+							"1.16.210"
+						]
 					}
 				}
 			},
@@ -94,7 +104,12 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.17.20", "1.17.30", "1.17.40", "1.18.0"]
+						"enum": [
+							"1.17.20",
+							"1.17.30",
+							"1.17.40",
+							"1.18.0"
+						]
 					}
 				}
 			},
@@ -118,7 +133,9 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.18.20"]
+						"enum": [
+							"1.18.20"
+						]
 					}
 				}
 			},
@@ -130,7 +147,9 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.18.30"]
+						"enum": [
+							"1.18.30"
+						]
 					}
 				}
 			},
@@ -142,7 +161,9 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.19.0"]
+						"enum": [
+							"1.19.0"
+						]
 					}
 				}
 			},
@@ -154,7 +175,9 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.19.10"]
+						"enum": [
+							"1.19.10"
+						]
 					}
 				}
 			},
@@ -166,7 +189,10 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.19.20", "1.19.30"]
+						"enum": [
+							"1.19.20",
+							"1.19.30"
+						]
 					}
 				}
 			},
@@ -178,7 +204,9 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.19.40"]
+						"enum": [
+							"1.19.40"
+						]
 					}
 				}
 			},
@@ -190,7 +218,9 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.19.50"]
+						"enum": [
+							"1.19.50"
+						]
 					}
 				}
 			},
@@ -202,7 +232,9 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.19.60"]
+						"enum": [
+							"1.19.60"
+						]
 					}
 				}
 			},
@@ -214,7 +246,9 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.19.70"]
+						"enum": [
+							"1.19.70"
+						]
 					}
 				}
 			},
@@ -226,7 +260,12 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.19.80", "1.20.0", "1.20.10", "1.20.20"]
+						"enum": [
+							"1.19.80",
+							"1.20.0",
+							"1.20.10",
+							"1.20.20"
+						]
 					}
 				}
 			},
@@ -238,7 +277,9 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.20.30"]
+						"enum": [
+							"1.20.30"
+						]
 					}
 				}
 			},
@@ -250,7 +291,9 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.20.40"]
+						"enum": [
+							"1.20.40"
+						]
 					}
 				}
 			},
@@ -262,7 +305,9 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.20.50"]
+						"enum": [
+							"1.20.50"
+						]
 					}
 				}
 			},
@@ -274,7 +319,9 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.20.60"]
+						"enum": [
+							"1.20.60"
+						]
 					}
 				}
 			},
@@ -286,7 +333,9 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.20.70"]
+						"enum": [
+							"1.20.70"
+						]
 					}
 				}
 			},
@@ -298,7 +347,9 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.20.80", "1.21.0"]
+						"enum": [
+							"1.20.80"
+						]
 					}
 				}
 			},
@@ -310,12 +361,169 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.21.10"]
+						"enum": [
+							"1.21.0"
+						]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.21.0/main.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": [
+							"1.21.10"
+						]
 					}
 				}
 			},
 			"then": {
 				"$ref": "./v1.21.10/main.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": [
+							"1.21.20",
+							"1.21.30"
+						]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.21.20/main.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": [
+							"1.21.40"
+						]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.21.40/main.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": [
+							"1.21.50"
+						]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.21.50/main.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": [
+							"1.21.60"
+						]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.21.60/main.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": [
+							"1.21.70"
+						]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.21.70/main.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": [
+							"1.21.80"
+						]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.21.80/main.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": [
+							"1.21.90"
+						]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.21.90/main.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": [
+							"1.21.100"
+						]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.21.100/main.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": [
+							"1.21.110"
+						]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.21.110/main.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": [
+							"1.21.120"
+						]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.21.120/main.json"
 			}
 		}
 	]

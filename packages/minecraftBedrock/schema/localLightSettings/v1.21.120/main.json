@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "properties": {
+        "minecraft:local_light_settings": {
+            "title": "Local Light Settings Definition",
+            "type": "object",
+            "patternProperties": {
+                ".*": {
+                    "type": "object",
+                    "properties": {
+                        "light_color": {
+                            "title": "Light Color",
+                            "description": "Supports RGB array or HEX string"
+                        },
+                        "light_type": {
+                            "title": "Light Type",
+                            "type": "string",
+                            "enum": [
+                                "static_light",
+                                "point_light"
+                            ]
+                        }
+                    }
+                }
+            },
+            "propertyNames": {
+                "$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
+            }
+        }
+    }
+}

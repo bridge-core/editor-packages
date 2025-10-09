@@ -1,0 +1,28 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "The entity puts on the desired equipment.",
+	"type": "object",
+	"title": "Equip Item",
+	"properties": {
+		"can_wear_armor": {
+			"title": "Can Wear Armor",
+			"description": "Specifies if equipped armor should be added to the armor slot or hand slot",
+			"type": "boolean",
+			"default": true
+		},
+		"excluded_items": {
+			"title": "Excluded Items",
+			"description": "List of items that the entity should not equip.",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"item": {
+						"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
+					}
+				}
+			}
+		}
+	}
+}

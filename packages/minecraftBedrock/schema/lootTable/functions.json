@@ -14,7 +14,7 @@
 			},
 			{
 				"properties": {
-					"condition": {
+					"conditions": {
 						"$ref": "./conditions.json"
 					}
 				}
@@ -404,6 +404,52 @@
 					"properties": {
 						"name": {
 							"type": "string"
+						}
+					}
+				}
+			},
+			{
+				"if": {
+					"properties": {
+						"function": {
+							"const": "set_ominous_bottle_amplifier"
+						}
+					},
+					"required": ["function"]
+				},
+				"then": {
+					"properties": {
+						"amplifier": {
+							"type": "object",
+							"properties": {
+								"min": {
+									"type": "integer",
+									"minimum": 0,
+									"maximum": 4
+								},
+								"max": {
+									"type": "integer",
+									"minimum": 0,
+									"maximum": 4
+								}
+							}
+						}
+					}
+				}
+			},
+			{
+				"if": {
+					"properties": {
+						"function": {
+							"const": "set_potion"
+						}
+					},
+					"required": ["function"]
+				},
+				"then": {
+					"properties": {
+						"id": {
+							"$ref": "../general/potionName.json"
 						}
 					}
 				}
