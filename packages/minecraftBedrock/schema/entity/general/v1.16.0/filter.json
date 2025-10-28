@@ -56,7 +56,8 @@
 									"head",
 									"inventory",
 									"leg",
-									"torso"
+									"torso",
+									"main_hand"
 								]
 							}
 						}
@@ -83,7 +84,8 @@
 									"head",
 									"inventory",
 									"leg",
-									"torso"
+									"torso",
+									"main_hand"
 								]
 							}
 						}
@@ -1866,7 +1868,8 @@
 									"head",
 									"inventory",
 									"leg",
-									"torso"
+									"torso",
+									"main_hand"
 								]
 							}
 						}
@@ -1893,7 +1896,8 @@
 									"head",
 									"inventory",
 									"leg",
-									"torso"
+									"torso",
+									"main_hand"
 								]
 							}
 						}
