@@ -4,8 +4,9 @@
 	"description": "Creates a blank template pool.",
 	"category": "fileType.simpleFile",
 	"requires": {
-		"packTypes": ["behaviorPack"],
-		"experimentalGameplay": ["dataDrivenJigsawStructures"]
+		"packTypes": [
+			"behaviorPack"
+		]
 	},
 	"additionalModels": {
 		"PRESET_PATH": "worldgen/template_pools/"
@@ -14,16 +15,24 @@
 		[
 			"File Name",
 			"FILE_NAME",
-			{ "validate": ["required", "alphanumeric", "lowercase"] }
+			{
+				"validate": [
+					"required",
+					"alphanumeric",
+					"lowercase"
+				]
+			}
 		]
 	],
-
 	"createFiles": [
 		[
 			"templatePool.json",
 			"{{PRESET_PATH}}{{FILE_NAME}}.json",
 			{
-				"inject": ["FILE_NAME", "PRESET_PATH"],
+				"inject": [
+					"FILE_NAME",
+					"PRESET_PATH"
+				],
 				"openFile": true,
 				"packPath": "behaviorPack"
 			}

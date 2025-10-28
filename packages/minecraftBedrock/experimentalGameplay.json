@@ -12,10 +12,6 @@
     "id": "enableGameTestFramework" // Beta APIs toggle
   },
   {
-    "icon": "mdi-puzzle",
-    "id": "dataDrivenJigsawStructures"
-  },
-  {
     "icon": "mdi-earth-box-plus",
     "id": "renderDragonFeatures"
   },
