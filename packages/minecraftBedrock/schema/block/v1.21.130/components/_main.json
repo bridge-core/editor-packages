@@ -1,0 +1,130 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"allOf": [
+		{
+			"properties": {
+				"minecraft:collision_box": {
+					"$ref": "../../v1.19.50/components/collision_box.json"
+				},
+				"minecraft:crafting_table": {
+					"$ref": "../../v1.19.50/components/crafting_table.json"
+				},
+				"minecraft:destructible_by_explosion": {
+					"$ref": "../../v1.19.20/components/destructible_by_explosion.json"
+				},
+				"minecraft:destructible_by_mining": {
+					"$ref": "../../v1.21.50/components/destructible_by_mining.json"
+				},
+				"minecraft:destruction_particles": {
+					"$ref": "../../v1.21.80/components/destruction_particles.json"
+				},
+				"minecraft:display_name": {
+					"$ref": "../../v1.19.60/components/display_name.json"
+				},
+				"minecraft:embedded_visual": {
+					"$ref": "../../v1.21.130/components/embedded_visual.json"
+				},
+				"minecraft:entity_fall_on": {
+					"$ref": "../../v1.21.10/components/entity_fall_on.json"
+				},
+				"minecraft:flammable": {
+					"$ref": "../../v1.19.10/components/flammable.json"
+				},
+				"minecraft:flower_pottable": {
+					"$ref": "../../v1.21.120/components/flower_pottable.json"
+				},
+				"minecraft:friction": {
+					"$ref": "../../v1.19.20/components/friction.json"
+				},
+				"minecraft:geometry": {
+					"$ref": "../../v1.21.100/components/geometry.json"
+				},
+				"minecraft:item_visual": {
+					"$ref": "../../v1.21.130/components/item_visual.json"
+				},
+				"minecraft:loot": {
+					"$ref": "../../v1.16.0/components/loot.json"
+				},
+				"minecraft:light_dampening": {
+					"$ref": "../../v1.19.40/components/light_dampening.json"
+				},
+				"minecraft:light_emission": {
+					"$ref": "../../v1.19.20/components/light_emission.json"
+				},
+				"minecraft:liquid_detection": {
+					"$ref": "../../v1.21.60/components/liquid_detection.json"
+				},
+				"minecraft:map_color": {
+					"$ref": "../../v1.21.80/components/map_color.json"
+				},
+				"minecraft:material_instances": {
+					"$ref": "../../v1.21.130/components/material_instances.json"
+				},
+				"minecraft:movable": {
+					"$ref": "../../v1.21.100/components/movable.json"
+				},
+				"minecraft:placement_filter": {
+					"$ref": "../../v1.19.60/components/placement_filter.json"
+				},
+				"minecraft:random_offset": {
+					"$ref": "../../v1.21.100/components/random_offset.json"
+				},
+				"minecraft:redstone_conductivity": {
+					"$ref": "../../v1.21.30/components/redstone_conductivity.json"
+				},
+				"minecraft:redstone_producer": {
+					"$ref": "../../v1.21.120/components/redstone_producer.json"
+				},
+				"minecraft:replaceable": {
+					"$ref": "../../v1.21.70/components/replaceable.json"
+				},
+				"minecraft:selection_box": {
+					"$ref": "../../v1.19.60/components/selection_box.json"
+				},
+				"minecraft:tick": {
+					"$ref": "../../v1.21.10/components/tick.json"
+				},
+				"minecraft:transformation": {
+					"$ref": "../../v1.19.80/components/transformation.json"
+				}
+			}
+		},
+		{
+			"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
+			"then": {
+				"properties": {
+					"minecraft:connection_rule": {
+						"$ref": "../../v1.21.130/components/experimental/connection_rule.json"
+					},
+					"minecraft:precipitation_interactions": {
+						"$ref": "../../v1.21.130/components/experimental/precipitation_interactions.json"
+					},
+					"minecraft:support": {
+						"$ref": "../../v1.21.130/components/experimental/support.json"
+					}
+				}
+			}
+		},
+		{
+			// Deprecated
+			"properties": {
+				"minecraft:block_light_absorption": {
+					"$ref": "../../v1.18.10/components/block_light_absorption.json"
+				},
+				"minecraft:block_light_filter": {
+					"$ref": "../../v1.19.40/components/block_light_filter.json"
+				},
+				"minecraft:custom_components": {
+					"$ref": "../../v1.21.90/components/custom_components.json"
+				},
+				"minecraft:destroy_time": {
+					"$ref": "../../v1.19.20/components/destroy_time.json"
+				},
+				"minecraft:explosion_resistance": {
+					"$ref": "../../v1.19.20/components/explosion_resistance.json"
+				}
+			}
+		}
+	]
+}

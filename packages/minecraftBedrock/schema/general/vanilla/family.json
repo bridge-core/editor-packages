@@ -13,6 +13,7 @@
 		"artisan",
 		"axolotl",
 		"baby_turtle",
+		"baby_zombie",
 		"bat",
 		"bee",
 		"blacksmith",
@@ -71,6 +72,7 @@
 		"monster",
 		"mule",
 		"mushroomcow",
+		"nautilus",
 		"nitwit",
 		"npc",
 		"ocelot",
@@ -136,6 +138,7 @@
 		"zombie",
 		"zombie_pigman",
 		"zombie_villager",
-		"zombiehorse"
+		"zombiehorse",
+		"zombienautilus"
 	]
 }

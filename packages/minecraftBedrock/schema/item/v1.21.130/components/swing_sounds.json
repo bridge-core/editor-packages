@@ -1,0 +1,36 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "title": "Swing Sounds",
+    "description": "",
+    "type": "object",
+    "properties": {
+        "attack_critical_hit": {
+            "title": "Attack Critical Hit",
+            "description": "Sound played when an attack hits and deals critical damage.",
+            "$ref": "#/definitions/sound_event"
+        },
+        "attack_hit": {
+            "title": "Attack Hit",
+            "description": "Sound played when an attack hits.",
+            "$ref": "#/definitions/sound_event"
+        },
+        "attack_miss": {
+            "title": "Attack Miss",
+            "description": "Sound played when an attack misses or deals no damage due to invulnerability.",
+            "$ref": "#/definitions/sound_event"
+        }
+    },
+    "additionalProperties": false,
+    "definitions": {
+        "sound_event": {
+            "anyOf": [
+                {
+                    "$ref": "../../../general/reference/individualEventSound.json"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        }
+    }
+}

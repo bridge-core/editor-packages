@@ -1,0 +1,55 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "type": "object",
+    "properties": {
+        "minecraft:cubemap_settings": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "title": "Identifier",
+                    "description": "Identifier of the Cubemap Settings.",
+                    "$ref": "../../general/reference/prefixedFileIdentifier.json"
+                },
+                "lighting": {
+                    "title": "Lighting",
+                    "type": "object",
+                    "properties": {
+                        "ambient_light_illuminance": {
+                            "title": "Ambient Light Illuminance",
+                            "description": "Contains pairs of numbers, where the first number should be between 0.0 and 1.0 (time of day) and the second number should be between 0.0 and 100000.0 (ambient light). Default value is 5.625 for all times of day.",
+                            "type": "object",
+                            "propertyNames": {
+                                "pattern": "^\\d+(\\.\\d+)?$"
+                            },
+                            "patternProperties": {
+                                "^\\d+(\\.\\d+)?$": {
+                                    "type": "number"
+                                }
+                            }
+                        },
+                        "sky_light_contribution": {
+                            "title": "Sky Light Contribution",
+                            "description": "Contribution of the sky light. It should be between 0.0 and 1.0.",
+                            "type": "number"
+                        },
+                        "directional_light_contribution": {
+                            "title": "Directional Light Contribution",
+                            "description": "Contribution of the directional light. It should be between 0.0 and 1.0. Default value is 0.0.",
+                            "type": "number"
+                        },
+                        "affected_by_atmospheric_scattering": {
+                            "title": "Affected by Atmospheric Scattering",
+                            "description": "If true, the cubemap will be affected by atmospheric scattering. Default value is false.",
+                            "type": "boolean"
+                        },
+                        "affected_by_volumetric_scattering": {
+                            "title": "Affected by Volumetric Scattering",
+                            "description": "If true, the cubemap will be affected by volumetric scattering. Default value is true.",
+                            "type": "boolean"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

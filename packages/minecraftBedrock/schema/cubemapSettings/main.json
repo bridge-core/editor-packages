@@ -1,0 +1,31 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "required": [
+        "format_version",
+        "minecraft:cubemap_settings"
+    ],
+    "allOf": [
+        {
+            "properties": {
+                "format_version": {
+                    "$ref": "../project/formatVersionEnum.json"
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "format_version": {
+                        "enum": [
+                            "",
+                            "1.21.130"
+                        ]
+                    }
+                }
+            },
+            "then": {
+                "$ref": "./v1.21.130/main.json"
+            }
+        }
+    ]
+}

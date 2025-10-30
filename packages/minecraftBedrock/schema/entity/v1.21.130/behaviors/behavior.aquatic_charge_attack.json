@@ -1,0 +1,59 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "title": "Aquatic Charge Attack",
+    "description": "Enables an aquatic mob to dash at its target with knockback; includes overshoot and cooldown settings.",
+    "type": "object",
+    "properties": {
+        "priority": {
+            "$ref": "../../general/v1.16.0/behaviorPriority.json"
+        },
+        "control_flags": {
+            "$ref": "../../general/v1.16.0/controlFlag.json"
+        },
+        "attack_reach": {
+            "title": "Attack Reach",
+            "description": "Horizontal reach grown around the mob's AABB to register a hit.",
+            "type": "number",
+            "minimum": 0
+        },
+        "charge_cooldown_time": {
+            "title": "Charge Cooldown Time",
+            "description": "Range of time in seconds to wait before starting another charge.",
+            "type": "object",
+            "properties": {
+                "min": {
+                    "title": "Minimum",
+                    "type": "number"
+                },
+                "max": {
+                    "title": "Maximum",
+                    "type": "number"
+                }
+            }
+        },
+        "charge_overshoot_distance": {
+            "title": "Charge Overshoot Distance",
+            "description": "Distance beyond the target the mob aims during a charge.",
+            "type": "number",
+            "minimum": 0
+        },
+        "charge_speed_multiplier": {
+            "title": "Charge Speed Multiplier",
+            "description": "Speed multiplier applied during the charge.",
+            "type": "number",
+            "minimum": 0
+        },
+        "knockback_force": {
+            "title": "Knockback Force",
+            "description": "Knockback force applied to the target on hit.",
+            "type": "number",
+            "minimum": 0
+        },
+        "max_charge_distance": {
+            "title": "Max Charge Distance",
+            "description": "Maximum distance at which the mob attempts a charge.",
+            "type": "number",
+            "minimum": 0
+        }
+    }
+}

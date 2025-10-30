@@ -1,0 +1,68 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"type": "object",
+	"title": "Exhaustion Values",
+	"description": "Defines how much exhaustion each player action should take.",
+	"properties": {
+		"attack": {
+			"title": "Attack",
+			"description": "Amount of exhaustion applied when attacking.",
+			"type": "number",
+			"default": 0.1
+		},
+		"damage": {
+			"title": "Damage",
+			"description": "Amount of exhaustion applied when taking damage.",
+			"type": "number",
+			"default": 0.1
+		},
+		"heal": {
+			"title": "Heal",
+			"description": "Amount of exhaustion applied when healed through food regeneration.",
+			"type": "number",
+			"default": 6.0
+		},
+		"jump": {
+			"title": "Jump",
+			"description": "Amount of exhaustion applied when jumping.",
+			"type": "number",
+			"default": 0.05
+		},
+		"lunge": {
+			"title": "Lunge",
+			"description": "Amount of exhaustion applied when using the lunge enchantment.",
+			"type": "number"
+		},
+		"mine": {
+			"title": "Mine",
+			"description": "Amount of exhaustion applied when mining.",
+			"type": "number",
+			"default": 0.005
+		},
+		"sprint": {
+			"title": "Sprint",
+			"description": "Amount of exhaustion applied when sprinting.",
+			"type": "number",
+			"default": 0.01
+		},
+		"sprint_jump": {
+			"title": "Sprint Jump",
+			"description": "Amount of exhaustion applied when sprint jumping.",
+			"type": "number",
+			"default": 0.2
+		},
+		"swim": {
+			"title": "Swim",
+			"description": "Amount of exhaustion applied when swimming.",
+			"type": "number",
+			"default": 0.01
+		},
+		"walk": {
+			"title": "Walk",
+			"description": "Amount of exhaustion applied when walking.",
+			"type": "number",
+			"default": 0.0
+		}
+	}
+}

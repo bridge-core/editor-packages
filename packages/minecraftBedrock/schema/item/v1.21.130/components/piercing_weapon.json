@@ -1,0 +1,35 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "title": "Piercing Weapon",
+    "description": "",
+    "type": "object",
+    "properties": {
+        "hitbox_margin": {
+            "title": "Hitbox Margin",
+            "description": "Added tolerance to the view vector raycast for detecting entity collisions.",
+            "type": "number"
+        },
+        "reach": {
+            "title": "Reach",
+            "description": "Defines the range (in blocks) along the user's view vector where entities can be hit. Only targets within this distance are considered. Block collisions between the user and target block damage and its effects.",
+            "$ref": "#/definitions/float_range"
+        }
+    },
+    "additionalProperties": false,
+    "definitions": {
+        "float_range": {
+            "type": "object",
+            "properties": {
+                "min": {
+                    "title": "Minimum",
+                    "type": "number"
+                },
+                "max": {
+                    "title": "Maximum",
+                    "type": "number"
+                }
+            },
+            "additionalProperties": false
+        }
+    }
+}

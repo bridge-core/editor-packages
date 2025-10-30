@@ -1,0 +1,18 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "string",
+	"enum": [
+		"query.get_kinetic_item_delay",
+		"query.get_kinetic_item_damage_duration",
+		"query.get_kinetic_item_knockback_duration",
+		"query.get_kinetic_item_dismount_duration",
+		"query.kinetic_weapon_delay",
+		"query.kinetic_weapon_damage_duration",
+		"query.kinetic_weapon_knockback_duration",
+		"query.kinetic_weapon_dismount_duration",
+		"query.ticks_since_last_kinetic_weapon_hit",
+		"query.get_pack_setting",
+		"query.is_pack_setting_enabled",
+		"query.is_pack_setting_selected"
+	]
+}

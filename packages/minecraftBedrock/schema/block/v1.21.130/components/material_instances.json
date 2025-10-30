@@ -1,0 +1,124 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"title": "Material Instances",
+	"description": "The material instances for a block. Maps face or material_instance names in a geometry file to an actual material instance. You can assign a material instance object to any of these faces: 'up', 'down', 'north', 'south', 'east', 'west', or '*'. You can also give an instance the name of your choosing such as 'my_instance', and then assign it to a face by doing 'north':'my_instance'.",
+	"type": "object",
+	"allOf": [
+		{
+			"properties": {
+				"*": {},
+				"up": {},
+				"down": {},
+				"sides": {},
+				"north": {},
+				"south": {},
+				"east": {},
+				"west": {}
+			}
+		},
+		{
+			"$ref": "../../dynamic/currentContext/materialInstanceProperty.json"
+		},
+		{
+			"patternProperties": {
+				".*": {
+					"anyOf": [
+						{
+							"$ref": "#/definitions/material_instance"
+						},
+						{
+							"$ref": "../../dynamic/currentContext/materialInstanceEnum.json"
+						}
+					]
+				}
+			}
+		}
+	],
+	"definitions": {
+		"material_instance": {
+			"type": "object",
+			"properties": {
+				"texture": {
+					"title": "Texture",
+					"description": "Name of a texture from the terrain_texture.json file.",
+					"$ref": "../../../general/reference/terrainTexture.json"
+				},
+				"render_method": {
+					"title": "Render Method",
+					"description": "The render method to use.",
+					"type": "string",
+					"default": "opaque",
+					"oneOf": [
+						{
+							"const": "opaque",
+							"description": "Used for a regular block texture without an alpha layer. Does not allow for transparency or translucency. This material enables AO (ambient occlusion) for the block, creating shadows around and underneath it."
+						},
+						{
+							"const": "blend",
+							"description": "Used for a block like stained glass. Allows for transparency and translucency (slightly transparent textures). By default, this material disables AO for the block."
+						},
+						{
+							"const": "alpha_test",
+							"description": "Used for a block like the monster spawner. Does not allow for translucency, only fully opaque or fully transparent textures. Also disables backface culling."
+						},
+						{
+							"const": "double_sided",
+							"description": "Used for completely disabling backface culling."
+						},
+						{
+							"const": "alpha_test_single_sided",
+							"description": "Used for a block like the (unstained) glass. Does not allow for transparency, only fully opaque or fully transparent textures. Also enables backface culling."
+						},
+						{
+							"const": "blend_to_opaque"
+						},
+						{
+							"const": "alpha_test_to_opaque"
+						},
+						{
+							"const": "alpha_test_single_sided_to_opaque"
+						}
+					]
+				},
+				"ambient_occlusion": {
+					"title": "Ambient Occlusion",
+					"description": "Should this material have ambient occlusion applied when lighting? If true, shadows will be created around and underneath the block. Optionally can be constructed with float to control exponent applied to ao value after lighting.",
+					"anyOf": [
+						{
+							"type": "boolean"
+						},
+						{
+							"type": "number"
+						}
+					],
+					"default": true
+				},
+				"face_dimming": {
+					"title": "Face Dimming",
+					"description": "Should this material have ambient occlusion applied when lighting.",
+					"type": "boolean",
+					"default": true
+				},
+				"tint_method": {
+					"title": "Tint Method",
+					"description": "Tint multiplied to the color. Tint method logic varies, but often refers to the rain and temperature of the biome the block is placed in to compute the tint.",
+					"$ref": "../../../general/tintMethod.json"
+				},
+				"isotropic": {
+					"title": "Isotropic",
+					"description": "Controls rotating the face UVs randomly based on block position.",
+					"type": "boolean",
+					"default": false
+				},
+				"shaded": {
+					"title": "Shaded",
+					"type": "boolean"
+				},
+				"alpha_masked_tint": {
+					"title": "Alpha Masked Tint",
+					"type": "boolean"
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "title": "Burns In Daylight",
+    "description": "Specifies if/how a mob burns in daylight.",
+    "type": "object",
+    "properties": {
+        "protection_slot": {
+            "title": "Protection Slot",
+            "type": "string",
+            "enum": [
+                "slot.weapon.offhand",
+                "slot.armor.head",
+                "slot.armor.chest",
+                "slot.armor.legs",
+                "slot.armor.feet",
+                "slot.armor.body"
+            ]
+        }
+    },
+    "additionalProperties": false
+}

@@ -1,0 +1,85 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "title": "Kinetic Weapon",
+    "description": "Allows an item to deal kinetic damage and its effects. This happens every tick while in use, in a straight line along the user's view vector, with damage computed based on both the user's and the target's velocity projected onto the view vector (via a dot product). The more the user and target move toward each other, and the more this movement is aligned with the user's view vector, the higher the damage. After 'damage_multiplier' and 'damage_modifier' are applied, the resulting damage is floored to the nearest lower integer.",
+    "properties": {
+        "damage_conditions": {
+            "title": "Damage Conditions",
+            "description": "Conditions that need to be satisfied for damage to be applied. If not specified, damage is not applied.",
+            "$ref": "#/definitions/effect_conditions"
+        },
+        "damage_modifier": {
+            "title": "Damage Modifier",
+            "description": "Value added to the the scaled dot product (after applying 'damage_multiplier').",
+            "type": "number"
+        },
+        "damage_multiplier": {
+            "title": "Damage Multiplier",
+            "description": "Value multiplied to sum of the dot products of the user and target's velocity vectors projected onto the view vector.",
+            "type": "number"
+        },
+        "delay": {
+            "title": "Delay",
+            "description": "Time, in ticks, after which kinetic damage and its effects start being applied.",
+            "type": "integer"
+        },
+        "dismount_conditions": {
+            "title": "Dismount Conditions",
+            "description": "Conditions that need to be satisfied for riders to be dismounted. If not specified, riders cannot be dismounted.",
+            "$ref": "#/definitions/effect_conditions"
+        },
+        "hitbox_margin": {
+            "title": "Hitbox Margin",
+            "description": "Added tolerance to the view vector raycast for detecting entity collisions.",
+            "type": "number"
+        },
+        "knockback_conditions": {
+            "title": "Knockback Conditions",
+            "description": "Conditions that need to be satisfied for knockback to be applied. If not specified, knockback is not applied.",
+            "$ref": "#/definitions/effect_conditions"
+        },
+        "reach": {
+            "title": "Reach",
+            "description": "Defines the range (in blocks) along the user's view vector where entities can be hit. Only targets within this distance are considered. Block collisions between the user and target block damage and its effects.",
+            "$ref": "#/definitions/float_range"
+        }
+    },
+    "additionalProperties": false,
+    "definitions": {
+        "effect_conditions": {
+            "type": "object",
+            "properties": {
+                "max_duration": {
+                    "title": "Max Duration",
+                    "description": "Time, in ticks, during which the effect can be applied after 'delay' elapses. If negative, the effect is applied indefinitely.",
+                    "type": "integer"
+                },
+                "min_relative_speed": {
+                    "title": "Decimal Number",
+                    "description": "Minimum relative speed of the user with respect to the target (projected onto the view vector via a dot product) required for the effect to be applied.",
+                    "type": "number"
+                },
+                "min_speed": {
+                    "title": "Minimum Speed",
+                    "description": "Minimum user's speed (projected onto the view vector via a dot product) required for the effect to be applied.",
+                    "type": "number"
+                }
+            },
+            "additionalProperties": false
+        },
+        "float_range": {
+            "type": "object",
+            "properties": {
+                "min": {
+                    "title": "Minimum",
+                    "type": "number"
+                },
+                "max": {
+                    "title": "Maximum",
+                    "type": "number"
+                }
+            },
+            "additionalProperties": false
+        }
+    }
+}

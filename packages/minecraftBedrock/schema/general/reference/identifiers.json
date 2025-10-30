@@ -288,6 +288,17 @@
 					"$ref": "../vanilla/identifiers.json#/definitions/water_settings_identifiers"
 				}
 			]
+		},
+		"cubemap_settings_identifiers": {
+			"type": "string",
+			"anyOf": [
+				{
+					"$ref": "../../cubemapSettings/dynamic/identifierEnum.json"
+				},
+				{
+					"$ref": "../vanilla/identifiers.json#/definitions/cubemap_settings_identifiers"
+				}
+			]
 		}
 	}
 }
