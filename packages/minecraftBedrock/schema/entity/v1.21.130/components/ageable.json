@@ -29,7 +29,7 @@
 									},
 									"result_item": {
 										"title": "Result Item",
-										"$ref": "../../../general/reference/identifiers.json#/definition/item_identifiers"
+										"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
 									},
 									"growth": {
 										"title": "Growth",
