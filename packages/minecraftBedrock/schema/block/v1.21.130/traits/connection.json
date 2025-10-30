@@ -5,10 +5,14 @@
     "properties": {
         "enabled_states": {
             "title": "Enabled States",
-            "type": "string",
-            "enum": [
-                "minecraft:cardinal_connections"
-            ]
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "minecraft:cardinal_connections"
+                ]
+            },
+            "uniqueItems": true
         }
     },
     "additionalProperties": false

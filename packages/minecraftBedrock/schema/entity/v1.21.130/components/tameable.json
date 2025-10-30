@@ -16,27 +16,27 @@
 			"description": "The list of items that can be used to tame this entity.",
 			"anyOf": [
 				{
-					"anyOf": [
-						{
-							"type": "array",
-							"items": {
-								"$ref": "../../../general/itemDescriptor.json"
-							}
-						},
-						{
-							"type": "object",
-							"properties": {
-								"item": {
-									"title": "Item",
-									"$ref": "../../../general/itemDescriptor.json"
-								},
-								"result_item": {
-									"title": "Result Item",
-									"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
+					"type": "array",
+					"items": {
+						"anyOf": [
+							{
+								"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
+							},
+							{
+								"type": "object",
+								"properties": {
+									"item": {
+										"title": "Item",
+										"$ref": "../../../general/itemDescriptor.json"
+									},
+									"result_item": {
+										"title": "Result Item",
+										"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
+									}
 								}
 							}
-						}
-					]
+						]
+					}
 				},
 				{
 					"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
