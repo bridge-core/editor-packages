@@ -7,20 +7,7 @@
             "description": "Executes multiple events in order.",
             "type": "array",
             "items": {
-                "allOf": [
-                    {
-                        "type": "object",
-                        "properties": {
-                            "filters": {
-                                "title": "Filters",
-                                "$ref": "../general/v1.16.0/filter.json"
-                            }
-                        }
-                    },
-                    {
-                        "$ref": "./_main.json"
-                    }
-                ]
+                "$ref": "./_main.json"
             }
         }
     }
