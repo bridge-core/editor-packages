@@ -173,6 +173,9 @@
 		"minecraft:can_fly": {
 			"$ref": "../../v1.16.0/components/can_fly.json"
 		},
+		"minecraft:can_power_jump": {
+			"$ref": "../../v1.16.0/components/can_power_jump.json"
+		},
 		"minecraft:celebrate_hunt": {
 			"$ref": "../../v1.16.0/components/celebrate_hunt.json"
 		},
@@ -578,7 +581,7 @@
 		"minecraft:free_camera_controlled": {
 			"$ref": "../../v1.21.110/components/free_camera_controlled.json"
 		},
-		"mincraft:vertical_movement_action": {
+		"minecraft:vertical_movement_action": {
 			"$ref": "../../v1.21.110/components/vertical_movement_action.json"
 		},
 		"minecraft:dash_action": {

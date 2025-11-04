@@ -121,6 +121,9 @@
 		"minecraft:can_fly": {
 			"$ref": "../../v1.16.0/components/can_fly.json"
 		},
+		"minecraft:can_power_jump": {
+			"$ref": "../../v1.16.0/components/can_power_jump.json"
+		},
 		"minecraft:celebrate_hunt": {
 			"$ref": "../../v1.16.0/components/celebrate_hunt.json"
 		},

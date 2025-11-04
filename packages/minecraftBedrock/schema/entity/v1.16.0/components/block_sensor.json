@@ -25,7 +25,7 @@
 					},
 					"on_block_broken": {
 						"title": "Event: On Block Broken",
-						"$ref": "../../general/v1.16.0/eventDefinition.json"
+						"$ref": "../../dynamic/currentContext/eventEnum.json"
 					}
 				}
 			}
