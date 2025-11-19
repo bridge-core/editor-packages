@@ -9,24 +9,40 @@
         "cooldown_range": {
             "title": "Cooldown Range",
             "description": "Goal cooldown range in seconds.",
-            "type": "array",
-            "minItems": 2,
-            "maxItems": 2,
-            "items": {
-                "type": "number",
-                "default": 0.0
-            }
+            "anyOf": [
+                {
+                    "type": "array",
+                    "minItems": 2,
+                    "maxItems": 2,
+                    "items": {
+                        "type": "number",
+                        "default": 0.0
+                    }
+                },
+                {
+                    "type": "number",
+                    "default": 0.0
+                }
+            ]
         },
         "duration_range": {
             "title": "Duration Range",
             "description": "Goal duration range in seconds.",
-            "type": "array",
-            "minItems": 2,
-            "maxItems": 2,
-            "items": {
-                "type": "number",
-                "default": 0.0
-            }
+            "anyOf": [
+                {
+                    "type": "array",
+                    "minItems": 2,
+                    "maxItems": 2,
+                    "items": {
+                        "type": "number",
+                        "default": 0.0
+                    }
+                },
+                {
+                    "type": "number",
+                    "default": 0.0
+                }
+            ]
         },
         "on_start": {
             "title": "Event: On Start",
