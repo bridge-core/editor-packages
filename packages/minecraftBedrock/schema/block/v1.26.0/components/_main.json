@@ -29,13 +29,7 @@
 					"$ref": "../../v1.19.60/components/display_name.json"
 				},
 				"minecraft:embedded_visual": {
-					"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
-					"then": {
-						"$ref": "../../v1.21.130/components/embedded_visual.json"
-					},
-					"else": {
-						"$ref": "../../v1.21.120/components/embedded_visual.json"
-					}
+					"$ref": "../../v1.26.0/components/embedded_visual.json"
 				},
 				"minecraft:entity_fall_on": {
 					"$ref": "../../v1.21.10/components/entity_fall_on.json"
@@ -53,13 +47,7 @@
 					"$ref": "../../v1.21.100/components/geometry.json"
 				},
 				"minecraft:item_visual": {
-					"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
-					"then": {
-						"$ref": "../../v1.21.130/components/item_visual.json"
-					},
-					"else": {
-						"$ref": "../../v1.21.100/components/item_visual.json"
-					}
+					"$ref": "../../v1.26.0/components/item_visual.json"
 				},
 				"minecraft:loot": {
 					"$ref": "../../v1.16.0/components/loot.json"
@@ -77,13 +65,7 @@
 					"$ref": "../../v1.21.80/components/map_color.json"
 				},
 				"minecraft:material_instances": {
-					"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
-					"then": {
-						"$ref": "../../v1.21.130/components/material_instances.json"
-					},
-					"else": {
-						"$ref": "../../v1.21.80/components/material_instances.json"
-					}
+					"$ref": "../../v1.26.0/components/material_instances.json"
 				},
 				"minecraft:movable": {
 					"$ref": "../../v1.21.100/components/movable.json"
@@ -99,6 +81,9 @@
 				},
 				"minecraft:redstone_conductivity": {
 					"$ref": "../../v1.21.30/components/redstone_conductivity.json"
+				},
+				"minecraft:redstone_consumer": {
+					"$ref": "../../v1.26.0/components/redstone_consumer.json"
 				},
 				"minecraft:redstone_producer": {
 					"$ref": "../../v1.21.120/components/redstone_producer.json"
@@ -126,9 +111,6 @@
 					},
 					"minecraft:leashable": {
 						"$ref": "../../v1.21.130/components/experimental/leashable.json"
-					},
-					"minecraft:redstone_consumer": {
-						"$ref": "../../v1.21.130/components/experimental/redstone_consumer.json"
 					},
 					"minecraft:support": {
 						"$ref": "../../v1.21.130/components/experimental/support.json"

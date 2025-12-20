@@ -25,11 +25,11 @@
             "description": "Time range (in seconds) between searching for an attack target, range is in (0, 'attack_interval']. Only used if 'attack_interval' is greater than 0, otherwise 'scan_interval' is used.",
             "type": "object",
             "properties": {
-                "range_min": {
+                "min": {
                     "title": "Minimum",
                     "type": "number"
                 },
-                "range_max": {
+                "max": {
                     "title": "Maximum",
                     "type": "number"
                 }
