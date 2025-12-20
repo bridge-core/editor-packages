@@ -110,10 +110,6 @@
 					"type": "boolean",
 					"default": false
 				},
-				"shaded": {
-					"title": "Shaded",
-					"type": "boolean"
-				},
 				"alpha_masked_tint": {
 					"title": "Alpha Masked Tint",
 					"type": "boolean"

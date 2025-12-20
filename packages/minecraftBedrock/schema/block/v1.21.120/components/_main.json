@@ -23,13 +23,7 @@
 					"$ref": "../../v1.19.60/components/display_name.json"
 				},
 				"minecraft:embedded_visual": {
-					"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
-					"then": {
-						"$ref": "./experimental/embedded_visual.json"
-					},
-					"else": {
-						"$ref": "../../v1.21.120/components/embedded_visual.json"
-					}
+					"$ref": "../../v1.21.120/components/embedded_visual.json"
 				},
 				"minecraft:entity_fall_on": {
 					"$ref": "../../v1.21.10/components/entity_fall_on.json"
@@ -47,13 +41,7 @@
 					"$ref": "../../v1.21.100/components/geometry.json"
 				},
 				"minecraft:item_visual": {
-					"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
-					"then": {
-						"$ref": "./experimental/item_visual.json"
-					},
-					"else": {
-						"$ref": "../../v1.21.100/components/item_visual.json"
-					}
+					"$ref": "../../v1.21.100/components/item_visual.json"
 				},
 				"minecraft:loot": {
 					"$ref": "../../v1.16.0/components/loot.json"
@@ -71,13 +59,7 @@
 					"$ref": "../../v1.21.80/components/map_color.json"
 				},
 				"minecraft:material_instances": {
-					"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
-					"then": {
-						"$ref": "./experimental/material_instances.json"
-					},
-					"else": {
-						"$ref": "../../v1.21.80/components/material_instances.json"
-					}
+					"$ref": "../../v1.21.80/components/material_instances.json"
 				},
 				"minecraft:movable": {
 					"$ref": "../../v1.21.100/components/movable.json"
@@ -105,16 +87,6 @@
 				},
 				"minecraft:transformation": {
 					"$ref": "../../v1.19.80/components/transformation.json"
-				}
-			}
-		},
-		{
-			"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
-			"then": {
-				"properties": {
-					"minecraft:precipitation_interactions": {
-						"$ref": "../../v1.21.120/components/experimental/precipitation_interactions.json"
-					}
 				}
 			}
 		},

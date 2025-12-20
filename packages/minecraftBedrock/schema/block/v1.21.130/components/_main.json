@@ -5,7 +5,13 @@
 		{
 			"properties": {
 				"minecraft:collision_box": {
-					"$ref": "../../v1.19.50/components/collision_box.json"
+					"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
+					"then": {
+						"$ref": "./experimental/collision_box.json"
+					},
+					"else": {
+						"$ref": "../../v1.19.50/components/collision_box.json"
+					}
 				},
 				"minecraft:crafting_table": {
 					"$ref": "../../v1.19.50/components/crafting_table.json"
@@ -67,6 +73,9 @@
 				"minecraft:placement_filter": {
 					"$ref": "../../v1.19.60/components/placement_filter.json"
 				},
+				"minecraft:precipitation_interactions": {
+					"$ref": "../../v1.21.130/components/precipitation_interactions.json"
+				},
 				"minecraft:random_offset": {
 					"$ref": "../../v1.21.100/components/random_offset.json"
 				},
@@ -96,9 +105,6 @@
 				"properties": {
 					"minecraft:connection_rule": {
 						"$ref": "../../v1.21.130/components/experimental/connection_rule.json"
-					},
-					"minecraft:precipitation_interactions": {
-						"$ref": "../../v1.21.130/components/experimental/precipitation_interactions.json"
 					},
 					"minecraft:support": {
 						"$ref": "../../v1.21.130/components/experimental/support.json"

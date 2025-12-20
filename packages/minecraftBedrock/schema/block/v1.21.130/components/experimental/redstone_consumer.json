@@ -1,0 +1,19 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "title": "Redstone Consumer",
+    "description": "",
+    "type": "object",
+    "properties": {
+        "min_power": {
+            "title": "Minimum Power",
+            "description": "Defines the minimum value for incoming signal stregth.",
+            "type": "integer"
+        },
+        "propogates_power": {
+            "title": "Propogates Power",
+            "description": "Whether a signal can pass through this block or not.",
+            "type": "boolean"
+        }
+    },
+    "additionalProperties": false
+}
