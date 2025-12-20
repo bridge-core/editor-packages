@@ -96,7 +96,7 @@
 			"$ref": "../../v1.19.80/behaviors/behavior.owner_hurt_by_target.json"
 		},
 		"minecraft:behavior.nearest_attackable_target": {
-			"$ref": "../../v1.19.20/behaviors/behavior.nearest_attackable_target.json"
+			"$ref": "../../v1.21.130/behaviors/behavior.nearest_attackable_target.json"
 		},
 		"minecraft:behavior.hurt_by_target": {
 			"$ref": "../../v1.19.80/behaviors/behavior.hurt_by_target.json"

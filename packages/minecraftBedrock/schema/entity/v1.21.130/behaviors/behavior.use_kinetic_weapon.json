@@ -163,6 +163,12 @@
             "description": "Maximum rotation, in degrees, on the Y-axis while the mob is trying to look at its target.",
             "type": "number",
             "minimum": 0
+        },
+        "hijack_mount_navigation": {
+            "title": "Hijack Mount Navigation",
+            "description": "Allows the mob to override its mount's navigation behavior with the logic defined by this goal. Requires the mount to be running the \"minecraft:behavior.mount_pathing\" goal, which default behavior will be ignored.",
+            "type": "boolean",
+            "default": false
         }
     }
 }

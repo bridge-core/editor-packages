@@ -156,6 +156,7 @@
 								"has_damaged_equipment", // v1.20.80+
 								"has_equipment",
 								"has_equipment_tag", // v1.21.80+
+								"has_item_with_component", // v1.21.130+
 								"has_mob_effect",
 								"has_nametag", // v1.18.0+
 								"has_property", // v1.19.40+
@@ -185,6 +186,7 @@
 								"is_brightness",
 								"is_climbing",
 								"is_color",
+								"is_controlling_passenger_family", // v1.21.130+
 								"is_daytime",
 								"is_difficulty",
 								"is_family",
@@ -481,6 +483,23 @@
 							"value": {
 								"description": "Tests for the presence of an item with the named tag in the designated slot of the subject entity.",
 								"$ref": "../../../general/reference/tags.json#/definitions/item_tags"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_item_with_component"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true when the subject entity is holding a item with the specified component.",
+								"type": "string"
 							}
 						}
 					}
@@ -881,6 +900,23 @@
 							"value": {
 								"description": "Returns true if the subject entity is the named color.",
 								"$ref": "../../../general/colorPalette.json"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_controlling_passenger_family"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns true when the subject entity's controlling passenger is a member of the named family.",
+								"$ref": "../../../general/reference/family.json"
 							}
 						}
 					}
