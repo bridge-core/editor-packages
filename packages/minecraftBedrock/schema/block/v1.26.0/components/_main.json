@@ -13,6 +13,9 @@
 						"$ref": "../../v1.19.50/components/collision_box.json"
 					}
 				},
+				"minecraft:connection_rule": {
+					"$ref": "../../v1.26.0/components/connection_rule.json"
+				},
 				"minecraft:crafting_table": {
 					"$ref": "../../v1.19.50/components/crafting_table.json"
 				},
@@ -48,6 +51,9 @@
 				},
 				"minecraft:item_visual": {
 					"$ref": "../../v1.26.0/components/item_visual.json"
+				},
+				"minecraft:leashable": {
+					"$ref": "../../v1.26.0/components/leashable.json"
 				},
 				"minecraft:loot": {
 					"$ref": "../../v1.16.0/components/loot.json"
@@ -94,27 +100,14 @@
 				"minecraft:selection_box": {
 					"$ref": "../../v1.19.60/components/selection_box.json"
 				},
+				"minecraft:support": {
+					"$ref": "../../v1.26.0/components/support.json"
+				},
 				"minecraft:tick": {
 					"$ref": "../../v1.21.10/components/tick.json"
 				},
 				"minecraft:transformation": {
 					"$ref": "../../v1.19.80/components/transformation.json"
-				}
-			}
-		},
-		{
-			"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
-			"then": {
-				"properties": {
-					"minecraft:connection_rule": {
-						"$ref": "../../v1.21.130/components/experimental/connection_rule.json"
-					},
-					"minecraft:leashable": {
-						"$ref": "../../v1.21.130/components/experimental/leashable.json"
-					},
-					"minecraft:support": {
-						"$ref": "../../v1.21.130/components/experimental/support.json"
-					}
 				}
 			}
 		},

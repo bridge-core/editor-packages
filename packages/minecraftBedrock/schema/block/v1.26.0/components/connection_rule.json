@@ -1,0 +1,27 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "title": "Connection Rule",
+    "type": "object",
+    "properties": {
+        "accepts_connections_from": {
+            "title": "Accepts Connections From",
+            "type": "string",
+            "enum": [
+                "none",
+                "only_fences",
+                "all"
+            ]
+        },
+        "enabled_directions": {
+            "title": "Enabled Directions",
+            "type": "string",
+            "enum": [
+                "north",
+                "east",
+                "south",
+                "west"
+            ]
+        }
+    },
+    "additionalProperties": false
+}
