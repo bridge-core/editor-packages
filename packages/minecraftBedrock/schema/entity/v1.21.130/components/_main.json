@@ -36,7 +36,7 @@
 			"$ref": "../../v1.19.20/components/game_event_movement_tracking.json"
 		},
 		"minecraft:mob_effect": {
-			"$ref": "../../v1.130.0/components/mob_effect.json"
+			"$ref": "../../v1.21.130/components/mob_effect.json"
 		},
 		"minecraft:movement_sound_distance_offset": {
 			"$ref": "../../v1.19.0/components/movement_sound_distance_offset.json"
