@@ -118,8 +118,7 @@
 				"type": "number"
 			},
 			"max_uses": {
-				"enum": [-1, 1, 2, 3, 4, 5, 6, 7],
-				"type": "number"
+				"type": "integer"
 			},
 			"reward_exp": {
 				"type": "boolean"

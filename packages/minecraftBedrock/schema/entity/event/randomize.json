@@ -14,10 +14,6 @@
                             "weight": {
                                 "title": "Weight",
                                 "type": "number"
-                            },
-                            "filters": {
-                                "title": "Filters",
-                                "$ref": "../general/v1.16.0/filter.json"
                             }
                         }
                     },
