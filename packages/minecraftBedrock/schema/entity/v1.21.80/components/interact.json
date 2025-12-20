@@ -146,6 +146,9 @@
 								"type": "string",
 								"$ref": "../../../general/reference/soundEvent.json"
 							}
+						},
+						{
+							"type": "string"
 						}
 					]
 				},
