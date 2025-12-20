@@ -65,7 +65,7 @@
 					"$ref": "../../v1.19.20/components/light_emission.json"
 				},
 				"minecraft:liquid_detection": {
-					"$ref": "../../v1.21.60/components/liquid_detection.json"
+					"$ref": "../../v1.26.0/components/liquid_detection.json"
 				},
 				"minecraft:map_color": {
 					"$ref": "../../v1.21.80/components/map_color.json"
