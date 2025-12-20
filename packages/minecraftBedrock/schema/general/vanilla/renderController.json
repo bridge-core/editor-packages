@@ -84,6 +84,7 @@
 		"controller.render.mule.v1.and.v2",
 		"controller.render.mule.v3",
 		"controller.render.nautilus",
+		"controller.render.nautilus_armor",
 		"controller.render.nautilus_saddle",
 		"controller.render.npc",
 		"controller.render.ocelot",

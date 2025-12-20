@@ -24,6 +24,7 @@
 		"breeze",
 		"butcher",
 		"camel",
+		"camel_husk",
 		"cartographer",
 		"cat",
 		"cavespider",
@@ -58,6 +59,7 @@
 		"hoglin_huntable",
 		"horse",
 		"husk",
+		"husk_rider",
 		"illager",
 		"inanimate",
 		"irongolem",
@@ -138,9 +140,10 @@
 		"zoglin_adult",
 		"zoglin_baby",
 		"zombie",
+		"zombie_nautilus",
 		"zombie_pigman",
+		"zombie_rider",
 		"zombie_villager",
-		"zombiehorse",
-		"zombienautilus"
+		"zombiehorse"
 	]
 }
