@@ -5,13 +5,7 @@
 		{
 			"properties": {
 				"minecraft:collision_box": {
-					"$ref": "../../../project/experimentalGameplay/upcomingCreatorFeatures.json",
-					"then": {
-						"$ref": "./experimental/collision_box.json"
-					},
-					"else": {
-						"$ref": "../../v1.19.50/components/collision_box.json"
-					}
+					"$ref": "../../v1.26.0/components/collision_box.json"
 				},
 				"minecraft:connection_rule": {
 					"$ref": "../../v1.26.0/components/connection_rule.json"
