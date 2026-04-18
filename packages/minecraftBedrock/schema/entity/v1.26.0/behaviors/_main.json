@@ -303,16 +303,16 @@
 			"$ref": "../../v1.16.0/behaviors/behavior.leap_at_target.json"
 		},
 		"minecraft:behavior.look_at_entity": {
-			"$ref": "../../v1.16.0/behaviors/behavior.look_at_entity.json"
+			"$ref": "../../v1.26.0/behaviors/behavior.look_at_entity.json"
 		},
 		"minecraft:behavior.look_at_player": {
-			"$ref": "../../v1.16.0/behaviors/behavior.look_at_player.json"
+			"$ref": "../../v1.26.0/behaviors/behavior.look_at_player.json"
 		},
 		"minecraft:behavior.look_at_target": {
-			"$ref": "../../v1.16.0/behaviors/behavior.look_at_target.json"
+			"$ref": "../../v1.26.0/behaviors/behavior.look_at_target.json"
 		},
 		"minecraft:behavior.look_at_trading_player": {
-			"$ref": "../../v1.16.0/behaviors/behavior.look_at_trading_player.json"
+			"$ref": "../../v1.26.0/behaviors/behavior.look_at_trading_player.json"
 		},
 		"minecraft:behavior.make_love": {
 			"$ref": "../../v1.16.0/behaviors/behavior.make_love.json"

@@ -75,7 +75,7 @@
 			"$ref": "../../v1.16.220/components/combat_regeneration.json"
 		},
 		"minecraft:breedable": {
-			"$ref": "../../v1.21.130/components/breedable.json"
+			"$ref": "../../v1.26.0/components/breedable.json"
 		},
 		"minecraft:damage_sensor": {
 			"$ref": "../../v1.21.40/components/damage_sensor.json"
@@ -321,7 +321,7 @@
 			"$ref": "../../v1.16.0/components/jump.static.json"
 		},
 		"minecraft:jump.dynamic": {
-			"$ref": "../../v1.16.0/components/jump.dynamic.json"
+			"$ref": "../../v1.26.0/components/jump.dynamic.json"
 		},
 		"minecraft:knockback_resistance": {
 			"$ref": "../../v1.16.0/components/knockback_resistance.json"
@@ -586,6 +586,12 @@
 		},
 		"minecraft:rotation_locked_to_vehicle": {
 			"$ref": "../../v1.21.130/components/rotation_locked_to_vehicle.json"
+		},
+		"minecraft:offspring": {
+			"$ref": "../../v1.26.0/components/offspring.json"
+		},
+		"minecraft:spawn_egg_interaction": {
+			"$ref": "../../v1.26.0/components/spawn_egg_interaction.json"
 		},
 		// Deprecated
 		"minecraft:body_rotation_axis_aligned": {
