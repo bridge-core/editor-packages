@@ -27,32 +27,18 @@
 		"on_home": {
 			"title": "Event: On Home",
 			"description": "Event to run when this mob gets home.",
-			"anyOf": [
-				{
-					"$ref": "../../general/v1.16.0/eventDefinition.json"
-				},
-				{
-					"type": "array",
-					"items": {
-						"$ref": "../../general/v1.16.0/eventDefinition.json"
-					}
-				}
-			]
+			"type": "array",
+			"items": {
+				"$ref": "../../general/v1.16.0/eventDefinition.json"
+			}
 		},
 		"on_failed": {
 			"title": "Event: On Failed",
 			"description": "Event to run if this entity fails to get home.",
-			"anyOf": [
-				{
-					"$ref": "../../general/v1.16.0/eventDefinition.json"
-				},
-				{
-					"type": "array",
-					"items": {
-						"$ref": "../../general/v1.16.0/eventDefinition.json"
-					}
-				}
-			]
+			"type": "array",
+			"items": {
+				"$ref": "../../general/v1.16.0/eventDefinition.json"
+			}
 		}
 	}
 }

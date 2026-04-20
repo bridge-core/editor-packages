@@ -3,7 +3,7 @@
     "icon": "mdi-cube-unfolded",
     "detect": {
         "packType": "resourcePack",
-        "scope": "water/",
+        "scope": "cubemaps/",
         "matcher": [
             "cubemaps/**/*",
             "cubemaps/*"

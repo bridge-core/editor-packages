@@ -4,7 +4,7 @@
 	"properties": {
 		"minecraft:recipe_brewing_container": {
 			"title": "Brewing Container Recipe",
-			"description": "Represents a recipe that for use with a potion brewing station.",
+			"description": "Represents a Potion Brewing Container Recipe.",
 			"type": "object",
 			"additionalProperties": false,
 			"properties": {
