@@ -1,0 +1,45 @@
+{
+    "name": "Voxel Shape",
+    "icon": "mdi-shape",
+    "description": "Creates a blank voxel shape.",
+    "category": "fileType.simpleFile",
+    "showIfDisabled": false,
+    "requires": {
+        "packTypes": [
+            "behaviorPack"
+        ],
+        "experimentalGameplay": [
+            "experimentalVoxelShapeFeatures"
+        ]
+    },
+    "additionalModels": {
+        "PRESET_PATH": "shapes/"
+    },
+    "fields": [
+        [
+            "File Name",
+            "FILE_NAME",
+            {
+                "validate": [
+                    "required",
+                    "alphanumeric",
+                    "lowercase"
+                ]
+            }
+        ]
+    ],
+    "createFiles": [
+        [
+            "voxelShape.json",
+            "{{PRESET_PATH}}{{FILE_NAME}}.json",
+            {
+                "inject": [
+                    "FILE_NAME",
+                    "PRESET_PATH"
+                ],
+                "openFile": true,
+                "packPath": "behaviorPack"
+            }
+        ]
+    ]
+}

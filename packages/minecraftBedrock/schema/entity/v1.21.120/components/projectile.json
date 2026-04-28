@@ -168,7 +168,7 @@
 									"title": "Set Last Hurt Requires Damage",
 									"type": "boolean"
 								},
-								"destroy_on_hit_requres_damage": {
+								"destroy_on_hit_requires_damage": {
 									"title": "Destroy On Hit Requires Damage",
 									"type": "boolean"
 								},
@@ -528,6 +528,19 @@
 			"description": "If true, this entity will be destroyed when hit.",
 			"type": "boolean",
 			"default": false
+		},
+		"ignored_entities": {
+			"title": "Ignored Entities",
+			"description": "An array of strings defining the types of entities that this entity does not collide with.",
+			"type": "array",
+			"items": {
+				"$ref": "../../../general/reference/identifiers.json#/definitions/entity_identifiers"
+			}
+		},
+		"reflect_immunity": {
+			"title": "Reflect Immunity",
+			"description": "During the specified time, in seconds, the projectile cannot be reflected by hitting it",
+			"type": "number"
 		}
 	}
 }

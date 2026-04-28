@@ -8,6 +8,10 @@
     "id": "experimentalCreatorCameraFeatures"
   },
   {
+    "icon": "mdi-shape",
+    "id": "experimentalVoxelShapeFeatures"
+  },
+  {
     "icon": "mdi-ab-testing",
     "id": "enableGameTestFramework" // Beta APIs toggle
   },
@@ -20,10 +24,3 @@
     "id": "educationEdition"
   }
 ]
-/**
- * Removed toggles:
- * { "icon": "mdi-image-filter-hdr", "id": "cavesAndCliffs" } - 1.18.0
- * { "icon": "mdi-plus-circle", "id": "additionalModdingCapabilities" } - 1.18.30
- * { "icon": "mdi-pine-tree", "id": "theWildUpdate" } - 1.19.0
- * { "icon": "md-alpha-m", "id": "experimentalMolangFeatures" } - 1.20.70
- */

@@ -299,6 +299,14 @@
 					"$ref": "../vanilla/identifiers.json#/definitions/cubemap_settings_identifiers"
 				}
 			]
+		},
+		"voxel_shape_identifiers": {
+			"type": "string",
+			"anyOf": [
+				{
+					"$ref": "../../voxelShape/dynamic/identiferEnum.json"
+				}
+			]
 		}
 	}
 }

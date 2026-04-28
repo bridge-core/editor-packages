@@ -213,6 +213,7 @@
 								"is_sneaking",
 								"is_snow_covered",
 								"is_sprinting", // v1.20.60+
+								"is_tamed", // v1.26.10+
 								"is_target",
 								"is_temperature_type",
 								"is_temperature_value",
@@ -1324,6 +1325,23 @@
 						"properties": {
 							"value": {
 								"description": "Tests whether the Subject is in an area with snow cover",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_tamed"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Tests whether the Subject is tamed.",
 								"type": "boolean"
 							}
 						}
