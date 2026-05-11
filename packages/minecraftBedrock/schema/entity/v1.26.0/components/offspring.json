@@ -1,0 +1,210 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "title": "Offspring Data",
+    "description": "Defines how an offspring of an entity is born.",
+    "type": "object",
+    "properties": {
+        "blend_attributes": {
+            "title": "Blend Attributes",
+            "description": "If true, the entities will blend their attributes in the offspring after they breed. For example, horses blend their health, movement, and jump_strength in their offspring.",
+            "type": "boolean",
+            "default": true
+        },
+        "inherit_tamed": {
+            "title": "Inherit Tamed",
+            "description": "If true, the babies will be automatically tamed if its parents are.",
+            "type": "boolean",
+            "default": true
+        },
+        "deny_parents_variant": {
+            "title": "Deny Parents Variant",
+            "description": "Determines how likely the baby of parents with the same variant will deny that variant and take a random variant within the given range instead.",
+            "type": "object",
+            "properties": {
+                "chance": {
+                    "title": "Chance",
+                    "description": "The percentage chance of denying the parents' variant.",
+                    "type": "number",
+                    "default": 0.0
+                },
+                "min_variant": {
+                    "title": "Minimum Variant",
+                    "description": "The inclusive minimum of the variant range.",
+                    "type": "integer",
+                    "default": 0
+                },
+                "max_variant": {
+                    "title": "Maximum Variant",
+                    "description": "The inclusive maximum of the variant range.",
+                    "type": "integer",
+                    "default": 0
+                }
+            }
+        },
+        "breeds_with": {
+            "title": "Breeds With",
+            "description": "The list of entity definitions that this entity can breed with.",
+            "anyOf": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "mate_type": {
+                            "title": "Mate Type",
+                            "description": "The entity definition of this entity's mate.",
+                            "$ref": "../../../general/reference/identifiers.json#/definitions/entity_identifiers"
+                        },
+                        "baby_type": {
+                            "title": "Baby Type",
+                            "description": "The entity definition of this entity's babies.",
+                            "$ref": "../../../general/reference/identifiers.json#/definitions/entity_identifiers"
+                        },
+                        "breed_event": {
+                            "title": "Event: On Breed",
+                            "description": "Event to run when this entity breeds.",
+                            "$ref": "../../general/v1.16.0/eventDefinition.json"
+                        }
+                    }
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "mate_type": {
+                                "title": "Mate Type",
+                                "description": "The entity definition of this entity's mate.",
+                                "$ref": "../../../general/reference/identifiers.json#/definitions/entity_identifiers"
+                            },
+                            "baby_type": {
+                                "title": "Baby Type",
+                                "description": "The entity definition of this entity's babies.",
+                                "$ref": "../../../general/reference/identifiers.json#/definitions/entity_identifiers"
+                            },
+                            "breed_event": {
+                                "title": "Event: On Breed",
+                                "description": "Event to run when this entity breeds.",
+                                "$ref": "../../general/v1.16.0/eventDefinition.json"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "combine_parent_colors": {
+            "title": "Combine Parent Colors",
+            "description": "If a color mutation will not happen, the baby will get a combination of the parents' colors if the colors are compatible. Color combinations follow the rules of dye item combinations. If the colors are not compatible the baby will get one of the parents colors chosen randomly.",
+            "type": "boolean",
+            "default": true
+        },
+        "mutation_factor": {
+            "title": "Mutation Factor",
+            "type": "object",
+            "description": "Determines how likely the babies are to NOT inherit one of their parent's variances. Values are between 0.0 and 1.0, with a higher number meaning more likely to mutate.",
+            "properties": {
+                "color": {
+                    "title": "Color",
+                    "description": "The percentage chance of a mutation on the entity's color.",
+                    "type": "number",
+                    "default": 0.0
+                },
+                "extra_variant": {
+                    "title": "Extra Variant",
+                    "description": "The percentage chance of a mutation on the entity's extra variant type.",
+                    "type": "number",
+                    "default": 0.0
+                },
+                "variant": {
+                    "title": "Variant",
+                    "description": "The percentage chance of a mutation on the entity's variant type.",
+                    "type": "number",
+                    "default": 0.0
+                }
+            }
+        },
+        "mutation_strategy": {
+            "title": "Mutation Strategy",
+            "type": "string",
+            "const": "random"
+        },
+        "offspring_pairs": {
+            "title": "Offspring Pairs",
+            "description": "The map of entity to offspring definitions that this entity can make offspring with.",
+            "type": "object",
+            "additionalProperties": {
+                "$ref": "../../../general/reference/identifiers.json#/definitions/entity_identifiers"
+            },
+            "propertyNames": {
+                "$ref": "../../../general/reference/identifiers.json#/definitions/entity_identifiers"
+            }
+        },
+        "parent_centric_attribute_blending": {
+            "title": "Parent Centric Attribute Blending",
+            "description": "List of attributes that should benefit from parent centric attribute blending. For example, horses blend their health, movement, and jump_strength in their offspring.",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "minecraft:health",
+                    "minecraft:movement",
+                    "minecraft:horse.jump_strength"
+                ]
+            }
+        },
+        "property_inheritance": {
+            "title": "Property Inheritance",
+            "description": "List of entity properties that should be inherited from the parent entities and potentially mutated.",
+            "type": "object",
+            "additionalProperties": {
+                "type": "object",
+                "properties": {
+                    "mutation_chance": {
+                        "title": "Mutation Chance",
+                        "description": "The chance that the baby's property will deviate from its parents.",
+                        "type": "number",
+                        "minimum": 0.0,
+                        "maximum": 1.0
+                    },
+                    "mutation_values": {
+                        "title": "Mutation Values",
+                        "description": "A list of values to select from if mutating.",
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "boolean"
+                            }
+                        ]
+                    }
+                },
+                "additionalProperties": false
+            },
+            "propertyNames": {
+                "$ref": "../../dynamic/currentContext/propertyEnum.json"
+            }
+        },
+        "random_extra_variant_mutation_interval": {
+            "title": "Random Extra Variant Mutation Interval",
+            "description": "Range used to determine random extra variant",
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+                "type": "number"
+            }
+        },
+        "random_variant_mutation_interval": {
+            "title": "Random Variant Mutation Interval",
+            "description": "Range used to determine random variant",
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+                "type": "number"
+            }
+        }
+    }
+}

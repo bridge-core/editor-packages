@@ -1,0 +1,19 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "title": "Leashable",
+    "description": "Allows a block to receive a lead attachment.",
+    "type": "object",
+    "properties": {
+        "offset": {
+            "title": "Offset",
+            "description": "Changes the position of the leash knot.",
+            "type": "array",
+            "items": {
+                "type": "number"
+            },
+            "minItems": 3,
+            "maxItems": 3
+        }
+    },
+    "additionalProperties": false
+}

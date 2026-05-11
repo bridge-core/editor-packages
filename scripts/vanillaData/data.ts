@@ -277,6 +277,12 @@ export const toScrape: ScraperSource = {
 			content: 'minecraft:water_settings/description/identifier',
 		},
 		{
+			id: 'cubemap_settings_identifiers',
+			path: 'cubemaps',
+			packType: 'resourcePack',
+			content: 'minecraft:cubemap_settings/description/identifier',
+		},
+		{
 			id: 'material',
 			path: 'materials/entity.material',
 			packType: 'resourcePack',
@@ -312,6 +318,18 @@ export const toScrape: ScraperSource = {
 			path: 'blocks.json',
 			content: '*/sound',
 		},
+		{
+			id: 'individualEventSound',
+			packType: 'resourcePack',
+			path: 'sounds.json',
+			content: ['individual_event_sounds/events'],
+		},
+		{
+			id: 'individualNamedSound',
+			packType: 'resourcePack',
+			path: 'sounds.json',
+			content: ['individual_named_sounds/sounds'],
+		},
 	],
 }
 
@@ -344,6 +362,7 @@ export const exportRaw: ExportTarget[] = [
 			'color_grading_settings_identifiers.json',
 			'lighting_settings_identifiers.json',
 			'water_settings_identifiers.json',
+			'cubemap_settings_identifiers.json',
 		],
 		to: 'general/vanilla/identifiers.json',
 	},
@@ -434,6 +453,14 @@ export const exportRaw: ExportTarget[] = [
 			'entity_triggers.json',
 		],
 		to: 'general/vanilla/entityComponentList.json',
+	},
+	{
+		from: ['individualEventSound.json'],
+		to: 'general/vanilla/individualEventSound.json',
+	},
+	{
+		from: ['individualNamedSound.json'],
+		to: 'general/vanilla/individualNamedSound.json',
 	},
 ]
 

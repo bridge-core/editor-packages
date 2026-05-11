@@ -1,0 +1,137 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"description": "Defines the way an entity can get into the 'love' state.",
+	"type": "object",
+	"title": "Breedable",
+	"properties": {
+		"allow_sitting": {
+			"title": "Allow Sitting",
+			"description": "If true, entities can breed while sitting.",
+			"type": "boolean",
+			"default": false
+		},
+		"breed_cooldown": {
+			"title": "Breed Cooldown",
+			"description": "Time in seconds before the Entity can breed again.",
+			"type": "number",
+			"default": 60.0
+		},
+		"love_filters": {
+			"title": "Love Filters",
+			"description": "The filters to run when attempting to fall in love.",
+			"$ref": "../../general/v1.16.0/filter.json"
+		},
+		"breed_items": {
+			"title": "Breed Items",
+			"description": "The list of items that can be used to get the entity into the 'love' state.",
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"anyOf": [
+							{
+								"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
+							},
+							{
+								"type": "object",
+								"properties": {
+									"item": {
+										"title": "Item",
+										"$ref": "../../../general/itemDescriptor.json"
+									},
+									"result_item": {
+										"title": "Result Item",
+										"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
+									}
+								}
+							}
+						]
+					}
+				},
+				{
+					"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
+				}
+			]
+		},
+		"causes_pregnancy": {
+			"title": "Causes Pregnancy",
+			"description": "If true, the entity will become pregnant instead of spawning a baby.",
+			"type": "boolean",
+			"default": false
+		},
+		"environment_requirements": {
+			"title": "Environment Requirements",
+			"description": "The list of nearby block requirements to get the entity into the 'love' state.",
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"type": "object",
+						"additionalProperties": false,
+						"properties": {
+							"blocks": {
+								"title": "Blocks",
+								"description": "The block types required nearby for the entity to breed.",
+								"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+							},
+							"count": {
+								"title": "Count",
+								"description": "The number of the required block types nearby for the entity to breed.",
+								"type": "number"
+							},
+							"radius": {
+								"title": "Radius",
+								"description": "How many blocks radius from the mob's center to search in for the required blocks. Bounded between 0 and 16.",
+								"type": "number"
+							}
+						}
+					}
+				},
+				{
+					"type": "object",
+					"properties": {
+						"blocks": {
+							"title": "Blocks",
+							"description": "The block types required nearby for the entity to breed.",
+							"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
+						},
+						"count": {
+							"title": "Count",
+							"description": "The number of the required block types nearby for the entity to breed.",
+							"type": "number"
+						},
+						"radius": {
+							"title": "Radius",
+							"description": "How many blocks radius from the mob's center to search in for the required blocks. Bounded between 0 and 16.",
+							"type": "number"
+						}
+					}
+				}
+			]
+		},
+		"extra_baby_chance": {
+			"title": "Extra Baby Chance",
+			"description": "Chance that up to 16 babies will spawn between 0.0 and 1.0, where 1.0 is 100%.",
+			"type": "number",
+			"default": 0.0
+		},
+		"require_tame": {
+			"title": "Require Tame",
+			"description": "If true, the entities need to be tamed first before they can breed.",
+			"type": "boolean",
+			"default": true
+		},
+		"require_full_health": {
+			"title": "Require Full Health",
+			"description": "If true, the entity needs to be at full health before it can breed.",
+			"type": "boolean",
+			"default": false
+		},
+		"transform_to_item": {
+			"title": "Transform To Item",
+			"description": "The breed item used will transform to this item upon successful interaction.",
+			"$ref": "../../../general/reference/identifiers.json#/definitions/item_identifiers"
+		}
+	}
+}

@@ -60,7 +60,7 @@
 			"$ref": "../../v1.19.50/behaviors/behavior.float.json"
 		},
 		"minecraft:behavior.take_flower": {
-			"$ref": "../../v1.19.50/behaviors/behavior.take_flower.json"
+			"$ref": "../../v1.21.110/behaviors/behavior.take_flower.json"
 		},
 		"minecraft:behavior.random_look_around": {
 			"$ref": "../../v1.19.50/behaviors/behavior.random_look_around.json"

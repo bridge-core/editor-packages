@@ -6,8 +6,7 @@
 			"$ref": "../../clientSound/dynamic/soundEventEnum.json"
 		},
 		{
-			// TODO - vanilla sound events
-			"type": "string"
+			"$ref": "../vanilla/individualNamedSound.json"
 		}
 	]
 }

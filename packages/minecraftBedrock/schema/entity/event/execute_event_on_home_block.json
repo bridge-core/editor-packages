@@ -9,15 +9,8 @@
 			"properties": {
 				"event": {
 					"title": "Event",
-					"description": "The event to fire",
-					"anyOf": [
-						{
-							"$ref": "../general/v1.16.0/eventDefinition.json"
-						},
-						{
-							"$ref": "../dynamic/currentContext/eventEnum.json"
-						}
-					]
+					"description": "The event to fire.",
+					"type": "string"
 				}
 			},
 			"additionalProperties": false

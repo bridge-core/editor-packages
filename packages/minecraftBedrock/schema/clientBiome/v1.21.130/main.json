@@ -1,0 +1,20 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"minecraft:client_biome": {
+			"type": "object",
+			"properties": {
+				"description": {
+					"title": "Description",
+					"$ref": "./description.json"
+				},
+				"components": {
+					"title": "Components",
+					"$ref": "./components/_main.json"
+				}
+			},
+			"additionalProperties": false
+		}
+	}
+}

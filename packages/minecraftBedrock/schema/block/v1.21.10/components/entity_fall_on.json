@@ -8,6 +8,7 @@
 			"title": "Minimum Fall Distance",
 			"description": "The minimum distance in blocks that an actor needs to fall to count as a valid fall.",
 			"type": "number",
+			"default": 1.0,
 			"minimum": 0.0
 		}
 	},

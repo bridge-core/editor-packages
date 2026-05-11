@@ -1,0 +1,29 @@
+{
+    "id": "voxelShape",
+    "icon": "mdi-shape",
+    "detect": {
+        "packType": "behaviorPack",
+        "scope": "shapes/",
+        "matcher": [
+            "shapes/**/*",
+            "shapes/*"
+        ],
+        "fileContent": [
+            "minecraft:voxel_shape"
+        ],
+        "fileExtensions": [
+            ".json"
+        ]
+    },
+    "lightningCache": "voxelShape.json",
+    "schema": "file:///data/packages/minecraftBedrock/schema/voxelShape/main.json",
+    "highlighterConfiguration": {
+        "variables": [
+            "description",
+            "shape"
+        ],
+        "typeIdentifiers": [
+            "format_version"
+        ]
+    }
+}

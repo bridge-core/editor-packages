@@ -1,0 +1,28 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "additionalProperties": false,
+    "description": "Allows the mob to stay afloat while swimming. Passengers will be kicked out the moment the mob's head goes underwater, which may not happen for tall mobs.",
+    "type": "object",
+    "title": "Float",
+    "properties": {
+        "priority": {
+            "$ref": "../../general/v1.16.0/behaviorPriority.json"
+        },
+        "chance_per_tick_to_float": {
+            "title": "Chance Per Tick to Float",
+            "description": "The chance per tick to cause an upward impulse.",
+            "type": "number"
+        },
+        "sink_with_passengers": {
+            "title": "Sink With Passengers",
+            "type": "boolean",
+            "description": "If true, the mob will keep sinking as long as it has passengers.",
+            "default": false
+        },
+        "time_under_water_to_dismount_passengers": {
+            "title": "Time Under Water to Dismount Passengers",
+            "description": "Time in seconds that a floating vehicles head can be underwater before it causes its passengers to dismount.",
+            "type": "number"
+        }
+    }
+}

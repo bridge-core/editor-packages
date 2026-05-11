@@ -64,23 +64,15 @@
 			}
 		}
 	},
-	"allOf": [
-		{
-			"$ref": "#/definitions/placement_rule"
-		},
-		{
-			"type": "object",
-			"properties": {
-				"conditions": {
-					"title": "Conditions",
-					"description": "List of conditions where the block can be placed/survive.",
-					"type": "array",
-					"maxLength": 64,
-					"items": {
-						"$ref": "#/definitions/placement_rule"
-					}
-				}
+	"properties": {
+		"conditions": {
+			"title": "Conditions",
+			"description": "List of conditions where the block can be placed/survive.",
+			"type": "array",
+			"maxLength": 64,
+			"items": {
+				"$ref": "#/definitions/placement_rule"
 			}
 		}
-	]
+	}
 }

@@ -1,0 +1,14 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "title": "Cubemap Identifier",
+    "description": "Set the identifier used for cubemap in Vibrant Visuals mode. Identifiers must resolve to identifiers in valid Cubemap JSON schemas under the 'cubemaps' directory. Biomes without this component will have default cubemap settings.",
+    "type": "object",
+    "properties": {
+        "cubemap_identifier": {
+            "title": "Cubemap Identifier",
+            "description": "Identifier of cubemap definition to use",
+            "$ref": "../../../general/reference/identifiers.json#/definitions/cubemap_settings_identifiers"
+        }
+    },
+    "additionalProperties": false
+}

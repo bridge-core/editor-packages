@@ -25,6 +25,7 @@
 		"geometry.breeze_wind_mid",
 		"geometry.breeze_wind_top",
 		"geometry.camel",
+		"geometry.camel_husk",
 		"geometry.cape",
 		"geometry.cat",
 		"geometry.chalkboard_large",
@@ -110,10 +111,15 @@
 		"geometry.mooshroom",
 		"geometry.mooshroom.v1.8",
 		"geometry.mooshroom.v2",
+		"geometry.nautilus",
+		"geometry.nautilus.baby",
+		"geometry.nautilus_armor",
+		"geometry.nautilus_saddle",
 		"geometry.npc",
 		"geometry.ocelot",
 		"geometry.ocelot.v1.8",
 		"geometry.panda",
+		"geometry.parched",
 		"geometry.parrot",
 		"geometry.phantom",
 		"geometry.pig",
@@ -168,6 +174,7 @@
 		"geometry.sniffer",
 		"geometry.snowgolem",
 		"geometry.snowgolem.v1.8",
+		"geometry.spear",
 		"geometry.spider",
 		"geometry.spider.v1.8",
 		"geometry.spyglass",
@@ -206,6 +213,7 @@
 		"geometry.zombie.v1.8",
 		"geometry.zombie.villager",
 		"geometry.zombie.villager.v1.8",
-		"geometry.zombie.villager_v2"
+		"geometry.zombie.villager_v2",
+		"geometry.zombie_nautilus_coral"
 	]
 }

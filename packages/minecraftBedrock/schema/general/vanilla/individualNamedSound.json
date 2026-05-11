@@ -1,0 +1,24 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "string",
+	"enum": [
+		"ambient.basalt_deltas.additions",
+		"ambient.basalt_deltas.loop",
+		"ambient.basalt_deltas.mood",
+		"ambient.cave",
+		"ambient.crimson_forest.additions",
+		"ambient.crimson_forest.loop",
+		"ambient.crimson_forest.mood",
+		"ambient.nether_wastes.additions",
+		"ambient.nether_wastes.loop",
+		"ambient.nether_wastes.mood",
+		"ambient.soulsand_valley.additions",
+		"ambient.soulsand_valley.loop",
+		"ambient.soulsand_valley.mood",
+		"ambient.underwater.additions",
+		"ambient.underwater.loop",
+		"ambient.warped_forest.additions",
+		"ambient.warped_forest.loop",
+		"ambient.warped_forest.mood"
+	]
+}

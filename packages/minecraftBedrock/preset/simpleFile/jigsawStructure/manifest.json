@@ -6,9 +6,6 @@
 	"requires": {
 		"packTypes": [
 			"behaviorPack"
-		],
-		"experimentalGameplay": [
-			"dataDrivenJigsawStructures"
 		]
 	},
 	"additionalModels": {

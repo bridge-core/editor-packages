@@ -1,0 +1,29 @@
+{
+    "id": "cubemapSettings",
+    "icon": "mdi-cube-unfolded",
+    "detect": {
+        "packType": "resourcePack",
+        "scope": "water/",
+        "matcher": [
+            "cubemaps/**/*",
+            "cubemaps/*"
+        ],
+        "fileContent": [
+            "minecraft:cubemap_settings"
+        ],
+        "fileExtensions": [
+            ".json"
+        ]
+    },
+    "lightningCache": "cubemapSettings.json",
+    "schema": "file:///data/packages/minecraftBedrock/schema/cubemapSettings/main.json",
+    "highlighterConfiguration": {
+        "variables": [
+            "description",
+            "lighting"
+        ],
+        "typeIdentifiers": [
+            "format_version"
+        ]
+    }
+}

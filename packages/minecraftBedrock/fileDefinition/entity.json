@@ -4,15 +4,20 @@
 	"detect": {
 		"packType": "behaviorPack",
 		"scope": "entities/",
-		"matcher": ["entities/**/*", "entities/*"],
-		"fileContent": ["minecraft:entity"],
-		"fileExtensions": [".json"]
+		"matcher": [
+			"entities/**/*",
+			"entities/*"
+		],
+		"fileContent": [
+			"minecraft:entity"
+		],
+		"fileExtensions": [
+			".json"
+		]
 	},
-
 	"schema": "file:///data/packages/minecraftBedrock/schema/entity/main.json",
 	"packSpider": "entity.json",
 	"lightningCache": "entity.json",
-
 	"definitions": {
 		"identifier": [
 			{
@@ -61,14 +66,17 @@
 			"components",
 			"events"
 		],
-		"typeIdentifiers": ["format_version", "event"],
+		"typeIdentifiers": [
+			"format_version",
+			"event"
+		],
 		"definitions": [
 			"animations",
 			"scripts",
 			"filters",
 			"add",
 			"remove",
-			"run_command"
+			"queue_command"
 		]
 	}
 }

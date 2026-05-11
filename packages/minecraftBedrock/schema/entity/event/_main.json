@@ -21,6 +21,9 @@
 			"$ref": "./execute_event_on_home_block.json"
 		},
 		{
+			"$ref": "./filters.json"
+		},
+		{
 			"$ref": "./first_valid.json"
 		},
 		{
