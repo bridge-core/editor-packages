@@ -1,0 +1,33 @@
+{
+	"$schema": "https://json-schema.org/draft-07/schema",
+	"title": "On Equipment Changed",
+	"description": "",
+	"type": "object",
+	"properties": {
+		"slots": {
+			"title": "Slots",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"slot": {
+						"title": "Slot",
+						"description": "The equipment slot to monitor.",
+						"$ref": "../../../general/slotType.json"
+					},
+					"on_equip": {
+						"title": "Event: On Equip",
+						"description": "Event to fire when a non-empty item is placed in the slot.",
+						"$ref": "../../dynamic/currentContext/eventEnum.json"
+					},
+					"on_unequip": {
+						"title": "Event: On Unequip",
+						"description": "Event to fire when the slot is cleared.",
+						"$ref": "../../dynamic/currentContext/eventEnum.json"
+					}
+				}
+			}
+		}
+	},
+	"additionalProperties": false
+}

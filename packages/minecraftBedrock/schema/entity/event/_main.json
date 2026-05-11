@@ -6,10 +6,7 @@
 			"$ref": "./add.json"
 		},
 		{
-			"$ref": "../../project/targetVersion/preview.json",
-			"then": {
-				"$ref": "./drop_item.json"
-			}
+			"$ref": "./drop_item.json"
 		},
 		{
 			"$ref": "./emit_particle.json"

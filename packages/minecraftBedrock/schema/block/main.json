@@ -2,10 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"title": "Block",
 	"type": "object",
-	"required": [
-		"format_version",
-		"minecraft:block"
-	],
+	"required": ["format_version", "minecraft:block"],
 	"allOf": [
 		{
 			"properties": {
@@ -51,12 +48,7 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [
-							"1.18.10",
-							"1.18.20",
-							"1.18.30",
-							"1.19.0"
-						]
+						"enum": ["1.18.10", "1.18.20", "1.18.30", "1.19.0"]
 					}
 				}
 			},
@@ -68,9 +60,7 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [
-							"1.19.10"
-						]
+						"enum": ["1.19.10"]
 					}
 				}
 			},
@@ -82,10 +72,7 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [
-							"1.19.20",
-							"1.19.30"
-						]
+						"enum": ["1.19.20", "1.19.30"]
 					}
 				}
 			},
@@ -97,9 +84,7 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [
-							"1.19.40"
-						]
+						"enum": ["1.19.40"]
 					}
 				}
 			},
@@ -111,9 +96,7 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [
-							"1.19.50"
-						]
+						"enum": ["1.19.50"]
 					}
 				}
 			},
@@ -125,10 +108,7 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [
-							"1.19.60",
-							"1.19.70"
-						]
+						"enum": ["1.19.60", "1.19.70"]
 					}
 				}
 			},
@@ -140,10 +120,7 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [
-							"1.19.80",
-							"1.20.0"
-						]
+						"enum": ["1.19.80", "1.20.0"]
 					}
 				}
 			},
@@ -155,9 +132,7 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [
-							"1.20.10"
-						]
+						"enum": ["1.20.10"]
 					}
 				}
 			},
@@ -169,12 +144,7 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [
-							"1.20.20",
-							"1.20.30",
-							"1.20.40",
-							"1.20.50"
-						]
+						"enum": ["1.20.20", "1.20.30", "1.20.40", "1.20.50"]
 					}
 				}
 			},
@@ -186,12 +156,7 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [
-							"1.20.60",
-							"1.20.70",
-							"1.20.80",
-							"1.21.0"
-						]
+						"enum": ["1.20.60", "1.20.70", "1.20.80", "1.21.0"]
 					}
 				}
 			},
@@ -203,10 +168,7 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [
-							"1.21.10",
-							"1.21.20"
-						]
+						"enum": ["1.21.10", "1.21.20"]
 					}
 				}
 			},
@@ -218,9 +180,7 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [
-							"1.21.30"
-						]
+						"enum": ["1.21.30"]
 					}
 				}
 			},
@@ -232,9 +192,7 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [
-							"1.21.40"
-						]
+						"enum": ["1.21.40"]
 					}
 				}
 			},
@@ -246,9 +204,7 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [
-							"1.21.50"
-						]
+						"enum": ["1.21.50"]
 					}
 				}
 			},
@@ -260,9 +216,7 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [
-							"1.21.60"
-						]
+						"enum": ["1.21.60"]
 					}
 				}
 			},
@@ -274,9 +228,7 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [
-							"1.21.70"
-						]
+						"enum": ["1.21.70"]
 					}
 				}
 			},
@@ -288,9 +240,7 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [
-							"1.21.80"
-						]
+						"enum": ["1.21.80"]
 					}
 				}
 			},
@@ -302,9 +252,7 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [
-							"1.21.90"
-						]
+						"enum": ["1.21.90"]
 					}
 				}
 			},
@@ -316,9 +264,7 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [
-							"1.21.100"
-						]
+						"enum": ["1.21.100"]
 					}
 				}
 			},
@@ -330,9 +276,7 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [
-							"1.21.110"
-						]
+						"enum": ["1.21.110"]
 					}
 				}
 			},
@@ -344,9 +288,7 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [
-							"1.21.120"
-						]
+						"enum": ["1.21.120"]
 					}
 				}
 			},
@@ -358,9 +300,7 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [
-							"1.21.130"
-						]
+						"enum": ["1.21.130"]
 					}
 				}
 			},
@@ -372,9 +312,7 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [
-							"1.26.0"
-						]
+						"enum": ["1.26.0"]
 					}
 				}
 			},
@@ -386,14 +324,24 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": [
-							"1.26.10"
-						]
+						"enum": ["1.26.10"]
 					}
 				}
 			},
 			"then": {
 				"$ref": "./v1.26.10/main.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.26.20"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.26.20/main.json"
 			}
 		}
 	]

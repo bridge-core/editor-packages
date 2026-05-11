@@ -230,6 +230,20 @@
 			"then": {
 				"$ref": "./v1.26.10/features/_main.json"
 			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": [
+							"1.26.20"
+						]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.26.20/features/_main.json"
+			}
 		}
 	]
 }

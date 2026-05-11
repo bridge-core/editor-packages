@@ -3,7 +3,10 @@
 		"cacheKey": "identifier",
 		"path": "minecraft:entity/description/identifier"
 	},
-	{ "cacheKey": "event", "path": "minecraft:entity/events" },
+	{
+		"cacheKey": "event",
+		"path": "minecraft:entity/events"
+	},
 	{
 		"cacheKey": "eventReference",
 		"pathScript": "return Bridge.paths.map(path => [`*/components/${path}/**/event`, `*/component_groups/*/${path}/**/event`, `*/permutations/*/components/${path}/**/event`]).flat()",
@@ -99,14 +102,12 @@
 			"minecraft:entity/components/minecraft:barter/barter_table",
 			"minecraft:entity/component_groups/*/minecraft:barter/barter_table",
 			"minecraft:entity/permutations/*/components/minecraft:barter/barter_table",
-
 			"minecraft:entity/components/minecraft:interact/interactions/add_items/table",
 			"minecraft:entity/component_groups/*/minecraft:interact/interactions/add_items/table",
 			"minecraft:entity/permutations/*/components/minecraft:interact/interactions/add_items/table",
 			"minecraft:entity/components/minecraft:interact/interactions/*/add_items/table",
 			"minecraft:entity/component_groups/*/minecraft:interact/interactions/*/add_items/table",
 			"minecraft:entity/permutations/*/components/minecraft:interact/interactions/*/add_items/table",
-
 			"minecraft:entity/components/minecraft:interact/interactions/spawn_items/table",
 			"minecraft:entity/component_groups/*/minecraft:interact/interactions/spawn_items/table",
 			"minecraft:entity/permutations/*/components/minecraft:interact/interactions/spawn_items/table",
@@ -130,7 +131,10 @@
 	},
 	{
 		"cacheKey": "functionPath",
-		"path": ["minecraft:entity/events/**/run_command/command", "minecraft:entity/events/**/run_command/command/*"],
+		"path": [
+			"minecraft:entity/events/**/run_command/command",
+			"minecraft:entity/events/**/run_command/command/*"
+		],
 		"script": "const func = /\\/function\\s+([aA-zZ0-9\\/]+)/g.exec(Bridge.value); if (func) return Bridge.resolvePackPath('behaviorPack', `functions/${func[1]}.mcfunction`)"
 	},
 	{
@@ -147,12 +151,25 @@
 	},
 	{
 		"cacheKey": "entityTag",
-		"path": ["minecraft:entity/events/**/run_command/command", "minecraft:entity/events/**/run_command/command/*"],
+		"path": [
+			"minecraft:entity/events/**/run_command/command",
+			"minecraft:entity/events/**/run_command/command/*"
+		],
 		"script": "const entityTags = Bridge.value.match(/(tag\\s@[a-z][\\[.+\\]]?)\\s(add|remove)\\s([a-zA-z_0-9]+)/); if (entityTags) return entityTags[3]"
 	},
 	{
 		"cacheKey": "scoreboardObjective",
-		"path": ["minecraft:entity/events/**/run_command/command", "minecraft:entity/events/**/run_command/command/*"],
+		"path": [
+			"minecraft:entity/events/**/run_command/command",
+			"minecraft:entity/events/**/run_command/command/*"
+		],
 		"script": "const scoreboardObjective = Bridge.value.match(/(scoreboard\\s+objectives\\s+add\\s+)(.+)(\\s+dummy)/); if (scoreboardObjective) return scoreboardObjective[2]"
+	},
+	{
+		"cacheKey": "upgrade",
+		"path": [
+			"minecraft:entity/upgrades",
+			"minecraft:entity/description/entity_version/*/name"
+		]
 	}
 ]

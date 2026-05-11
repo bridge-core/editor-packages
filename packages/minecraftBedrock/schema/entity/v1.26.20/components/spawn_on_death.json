@@ -1,0 +1,40 @@
+{
+	"$schema": "https://json-schema.org/draft-07/schema",
+	"title": "Spawn on Death",
+	"description": "Spawning entities when an entity perishes.",
+	"type": "object",
+	"properties": {
+		"entity_to_spawn": {
+			"title": "Entity to Spawn",
+			"description": "What entity to spawn, defaults to owning entity when not set.",
+			"$ref": "../../../general/reference/identifiers.json#/"
+		},
+		"spawn_method": {
+			"title": "Spawn Method",
+			"description": "Specifies the spawn method.",
+			"type": "string",
+			"enum": ["born", "spawned", "summoned"]
+		},
+		"spawn_amount": {
+			"title": "Spawn Amount",
+			"description": "How many entities to spawn.",
+			"type": "number"
+		},
+		"inherit_parent_name": {
+			"title": "Inherit Parent Name",
+			"description": "If true, the entity will inherit the name of the parent entity.",
+			"type": "boolean"
+		},
+		"additional_spawn_range": {
+			"title": "Additional Spawn Range",
+			"description": "Additional random range of entities to spawn, defaults to 0, 0 when not set.",
+			"type": "number"
+		},
+		"filters": {
+			"title": "Filters",
+			"description": "The conditions needed to spawn entities on death.",
+			"$ref": "../../general/v1.16.0/filter.json"
+		}
+	},
+	"additionalProperties": false
+}

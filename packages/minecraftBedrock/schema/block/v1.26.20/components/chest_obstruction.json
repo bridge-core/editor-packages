@@ -1,0 +1,18 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "title": "Chest Obstruction",
+    "description": "The description identifier of the chest obstruction component",
+    "type": "object",
+    "properties": {
+        "obstruction_rule": {
+            "title": "Obstruction Rule",
+            "description": "How the block should be evaluated by a chest during chest opening.",
+            "type": "string",
+            "enum": [
+                "always",
+                "never",
+                "shape"
+            ]
+        }
+    }
+}

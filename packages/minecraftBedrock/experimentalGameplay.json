@@ -4,6 +4,10 @@
     "id": "upcomingCreatorFeatures"
   },
   {
+    "icon": "mdi-arrow-projectile",
+    "id": "experimentalCustomProjectileFeatures"
+  },
+  {
     "icon": "mdi-camera",
     "id": "experimentalCreatorCameraFeatures"
   },

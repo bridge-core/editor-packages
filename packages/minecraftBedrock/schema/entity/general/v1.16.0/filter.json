@@ -39,35 +39,11 @@
 					"if": {
 						"properties": {
 							"test": {
-								"const": "has_equipment"
-							}
-						}
-					},
-					"then": {
-						"properties": {
-							"domain": {
-								"type": "string",
 								"enum": [
-									"any",
-									"armor",
-									"body",
-									"feet",
-									"hand",
-									"head",
-									"inventory",
-									"leg",
-									"torso",
-									"main_hand"
+									"has_equipment",
+									"has_equipment_tag",
+									"has_same_equipment_in_slot_as"
 								]
-							}
-						}
-					}
-				},
-				{
-					"if": {
-						"properties": {
-							"test": {
-								"const": "has_equipment_tag"
 							}
 						}
 					},
@@ -161,6 +137,7 @@
 								"has_nametag", // v1.18.0+
 								"has_property", // v1.19.40+
 								"has_ranged_weapon",
+								"has_same_equipment_in_slot_as", // v1.26.20+
 								"has_silk_touch", // 1.18.30+
 								"has_tag",
 								"has_target",
@@ -451,7 +428,10 @@
 					"if": {
 						"properties": {
 							"test": {
-								"const": "has_equipment"
+								"enum": [
+									"has_equipment",
+									"has_equipment_tag"
+								]
 							}
 						}
 					},
@@ -467,23 +447,6 @@
 										"$ref": "../../../general/reference/identifiers.json#/definitions/block_identifiers"
 									}
 								]
-							}
-						}
-					}
-				},
-				{
-					"if": {
-						"properties": {
-							"test": {
-								"const": "has_equipment_tag"
-							}
-						}
-					},
-					"then": {
-						"properties": {
-							"value": {
-								"description": "Tests for the presence of an item with the named tag in the designated slot of the subject entity.",
-								"$ref": "../../../general/reference/tags.json#/definitions/item_tags"
 							}
 						}
 					}
@@ -569,6 +532,23 @@
 						"properties": {
 							"value": {
 								"description": "Returns true when the subject entity is holding a ranged weapon like a bow or crossbow.",
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_same_equipment_in_slot_as"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"value": {
+								"description": "Returns whether the subject entity has the same item equipped in the specified slot as calling entity.",
 								"type": "boolean"
 							}
 						}
