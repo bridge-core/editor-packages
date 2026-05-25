@@ -2,7 +2,9 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"title": "Loot Table",
 	"type": "object",
-	"required": ["pools"],
+	"required": [
+		"pools"
+	],
 	"additionalProperties": false,
 	"properties": {
 		"pools": {
@@ -71,7 +73,9 @@
 											"$ref": "./conditions.json"
 										}
 									},
-									"required": ["type"]
+									"required": [
+										"type"
+									]
 								},
 								{
 									"if": {
@@ -80,7 +84,9 @@
 												"const": "item"
 											}
 										},
-										"required": ["type"]
+										"required": [
+											"type"
+										]
 									},
 									"then": {
 										"properties": {
@@ -88,7 +94,6 @@
 												"type": "integer"
 											},
 											"name": {
-												"type": "string",
 												"anyOf": [
 													{
 														"$ref": "../general/reference/identifiers.json#/definitions/item_identifiers"
@@ -114,7 +119,9 @@
 												"const": "loot_table"
 											}
 										},
-										"required": ["type"]
+										"required": [
+											"type"
+										]
 									},
 									"then": {
 										"properties": {
@@ -135,7 +142,9 @@
 												"const": "empty"
 											}
 										},
-										"required": ["type"]
+										"required": [
+											"type"
+										]
 									},
 									"then": {
 										"properties": {
