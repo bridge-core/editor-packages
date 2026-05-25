@@ -7,7 +7,7 @@
 		"entity_to_spawn": {
 			"title": "Entity to Spawn",
 			"description": "What entity to spawn, defaults to owning entity when not set.",
-			"$ref": "../../../general/reference/identifiers.json#/"
+			"$ref": "../../../general/reference/identifiers.json#/definitions/entity_identifiers"
 		},
 		"spawn_method": {
 			"title": "Spawn Method",
