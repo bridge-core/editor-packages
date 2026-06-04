@@ -36,13 +36,13 @@
 			"$ref": "../../v1.26.10/behaviors/behavior.random_search_and_dig.json"
 		},
 		"minecraft:behavior.timer_flag_1": {
-			"$ref": "../../v1.20.40/behaviors/behavior.timer_flag_1.json"
+			"$ref": "../../v1.26.0/behaviors/behavior.timer_flag_1.json"
 		},
 		"minecraft:behavior.timer_flag_2": {
-			"$ref": "../../v1.20.40/behaviors/behavior.timer_flag_2.json"
+			"$ref": "../../v1.26.0/behaviors/behavior.timer_flag_2.json"
 		},
 		"minecraft:behavior.timer_flag_3": {
-			"$ref": "../../v1.20.40/behaviors/behavior.timer_flag_3.json"
+			"$ref": "../../v1.26.0/behaviors/behavior.timer_flag_3.json"
 		},
 		"minecraft:behavior.feeling_happy": {
 			"$ref": "../../v1.20.40/behaviors/behavior.feeling_happy.json"
@@ -156,7 +156,7 @@
 			"$ref": "../../v1.20.50/behaviors/behavior.melee_box_attack.json"
 		},
 		"minecraft:behavior.play_dead": {
-			"$ref": "../../v1.16.220/behaviors/behavior.play_dead.json"
+			"$ref": "../../v1.26.10/behaviors/behavior.play_dead.json"
 		},
 		"minecraft:behavior.jump_to_block": {
 			"$ref": "../../v1.16.200/behaviors/behavior.jump_to_block.json"
