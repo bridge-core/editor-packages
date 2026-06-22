@@ -305,6 +305,9 @@
 			"anyOf": [
 				{
 					"$ref": "../../voxelShape/dynamic/identifierEnum.json"
+				},
+				{
+					"$ref": "../vanilla/identifiers.json#/definitions/voxel_shape_identifiers"
 				}
 			]
 		}

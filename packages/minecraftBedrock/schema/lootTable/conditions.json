@@ -18,6 +18,25 @@
 				"if": {
 					"properties": {
 						"condition": {
+							"const": "biome_has_tag"
+						}
+					},
+					"required": [
+						"condition"
+					]
+				},
+				"then": {
+					"properties": {
+						"tag": {
+							"$ref": "../general/reference/biomeTag.json"
+						}
+					}
+				}
+			},
+			{
+				"if": {
+					"properties": {
+						"condition": {
 							"const": "has_mark_variant"
 						}
 					},

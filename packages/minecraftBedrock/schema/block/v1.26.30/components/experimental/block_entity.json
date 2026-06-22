@@ -1,0 +1,12 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "title": "Block Entity",
+    "type": "object",
+    "properties": {
+        "dynamic_properties": {
+            "title": "Dynamic Properties",
+            "type": "boolean"
+        }
+    },
+    "additionalProperties": false
+}

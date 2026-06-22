@@ -1,0 +1,81 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "title": "Pushable by Entity",
+    "description": "Allows an entity to be pushed by other entities.",
+    "type": "object",
+    "properties": {
+        "presets": {
+            "title": "Presets",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "filters": {
+                        "title": "Filters",
+                        "$ref": "../../general/v1.16.0/filter.json"
+                    },
+                    "strength_multiplier": {
+                        "title": "Strength Multiplier",
+                        "type": "number"
+                    },
+                    "push_mode": {
+                        "title": "Push Mode",
+                        "type": "string",
+                        "enum": [
+                            "none",
+                            "default",
+                            "legacy_boat",
+                            "legacy_minecart",
+                            "ball"
+                        ]
+                    },
+                    "min_distance": {
+                        "title": "Minimum Distance",
+                        "type": "number"
+                    },
+                    "max_distance": {
+                        "title": "Maximum Distance",
+                        "type": "number"
+                    },
+                    "push_scale_self": {
+                        "title": "Push Scale Self",
+                        "type": "number"
+                    },
+                    "push_scale_other": {
+                        "title": "Push Scale Other",
+                        "type": "number"
+                    },
+                    "kick_speed_scale": {
+                        "title": "Kick Speed Scale",
+                        "type": "number"
+                    },
+                    "min_kick_speed": {
+                        "title": "Minimum Kick Speed",
+                        "type": "number"
+                    },
+                    "max_kick_speed": {
+                        "title": "Maximum Kick Speed",
+                        "type": "number"
+                    },
+                    "vertical_kick_multiplier": {
+                        "title": "Vertical Kick Multiplier",
+                        "type": "number"
+                    },
+                    "play_sound": {
+                        "title": "Play Sound",
+                        "type": "boolean"
+                    },
+                    "play_sound_impulse_threshold": {
+                        "title": "Play Sound Impulse Threshold",
+                        "type": "number"
+                    },
+                    "play_sound_cooldown_in_seconds": {
+                        "title": "Play Sound Cooldown in Seconds",
+                        "type": "number"
+                    }
+                }
+            }
+        }
+    },
+    "additionalProperties": false
+}

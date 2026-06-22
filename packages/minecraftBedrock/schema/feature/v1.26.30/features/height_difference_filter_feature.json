@@ -1,0 +1,56 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "title": "Height Difference Filter Feature",
+    "description": "Filters away positions based on the heightmap around the placement position.The filter will check for surface blocks in each cardinal direction within the `search_radius`. Each block will be checked against all given conditions.",
+    "type": "object",
+    "properties": {
+        "description": {
+            "title": "Description",
+            "additionalProperties": false,
+            "type": "object",
+            "properties": {
+                "identifier": {
+                    "title": "Identifier",
+                    // Needs to strictly match file name - don't change reference to "general/reference..." schema
+                    "$ref": "../../../project/prefixedFileIdentifierEnum.json"
+                }
+            }
+        },
+        "places_feature": {
+            "title": "Places Feature",
+            "description": "Named reference of feature to be placed",
+            "$ref": "../../../general/reference/identifiers.json#/definitions/feature_identifiers"
+        },
+        "min_required_upward_height_diff": {
+            "title": "Minimum Required Upward Height Difference",
+            "description": "Specifies the minimum height difference required upwards.",
+            "type": "integer",
+            "minimum": 0
+        },
+        "min_required_downward_height_diff": {
+            "title": "Minimum Required Downward Height Difference",
+            "description": "Specifies the minimum height difference required downwards.",
+            "type": "integer",
+            "minimum": 0
+        },
+        "max_allowed_upward_height_diff": {
+            "title": "Maximum Allowed Upward Height Difference",
+            "description": "Specifies the maximum height difference allowed upwards.",
+            "type": "integer",
+            "minimum": 0
+        },
+        "max_allowed_downward_height_diff": {
+            "title": "Maximum Allowed Downward Height Difference",
+            "description": "Specifies the maximum height difference allowed downwards.",
+            "type": "integer",
+            "minimum": 0
+        },
+        "search_radius": {
+            "title": "Search Radius",
+            "description": "Specifies the length in each cardinal direction the filter will check for blocks against the given differences.",
+            "type": "integer",
+            "minimum": 0
+        }
+    },
+    "additionalProperties": false
+}

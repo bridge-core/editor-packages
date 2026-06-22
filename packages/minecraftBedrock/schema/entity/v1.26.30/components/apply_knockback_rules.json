@@ -1,0 +1,62 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "title": "Apply Knockback Rules",
+    "type": "object",
+    "properties": {
+        "presets": {
+            "title": "Presets",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "filter": {
+                        "title": "Filter",
+                        "$ref": "../../general/v1.16.0/filter.json"
+                    },
+                    "horizontal_power": {
+                        "title": "Horizontal Power",
+                        "type": "number"
+                    },
+                    "vertical_power": {
+                        "title": "Vertical Power",
+                        "type": "number"
+                    },
+                    "vertical_velocity_cap": {
+                        "title": "Vertical Velocity Cap",
+                        "type": "number"
+                    },
+                    "scale_previous_velocity": {
+                        "title": "Scale Previous Velocity",
+                        "type": "number"
+                    },
+                    "horizontal_hit_angle_scale": {
+                        "title": "Horizontal Hit Angle Scale",
+                        "type": "number"
+                    },
+                    "vertical_hit_angle_scale": {
+                        "title": "Vertical Hit Angle Scale",
+                        "type": "number"
+                    },
+                    "vertical_position_angle_scale": {
+                        "title": "Vertical Position Angle Scale",
+                        "type": "number"
+                    },
+                    "scale_with_damage": {
+                        "title": "Scale with Damage",
+                        "type": "boolean"
+                    },
+                    "extra_knockback_approach": {
+                        "title": "Extra Knockback Approach",
+                        "type": "string",
+                        "enum": [
+                            "reapply_default",
+                            "multiply_reduced"
+                        ]
+                    }
+                },
+                "additionalProperties": false
+            }
+        }
+    },
+    "additionalProperties": false
+}

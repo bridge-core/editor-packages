@@ -86,7 +86,7 @@
 					"$ref": "../../v1.21.80/components/map_color.json"
 				},
 				"minecraft:material_instances": {
-					"$ref": "../../v1.26.0/components/material_instances.json"
+					"$ref": "../../v1.26.20/components/material_instances.json"
 				},
 				"minecraft:movable": {
 					"$ref": "../../v1.21.100/components/movable.json"

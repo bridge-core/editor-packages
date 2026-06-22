@@ -253,6 +253,12 @@ export const toScrape: ScraperSource = {
 			content: 'minecraft:structure_set/description/identifier',
 		},
 		{
+			id: 'voxel_shape_identifiers',
+			path: 'shapes',
+			packType: 'behaviorPack',
+			content: 'minecraft:voxel_shape/description/identifier',
+		},
+		{
 			id: 'atmosphere_settings_identifiers',
 			path: 'atmospherics',
 			packType: 'resourcePack',
@@ -358,6 +364,7 @@ export const exportRaw: ExportTarget[] = [
 			'template_pool_identifiers.json',
 			'processor_list_identifiers.json',
 			'structure_set_identifiers.json',
+			'voxel_shape_identifiers.json',
 			'atmosphere_settings_identifiers.json',
 			'color_grading_settings_identifiers.json',
 			'lighting_settings_identifiers.json',
