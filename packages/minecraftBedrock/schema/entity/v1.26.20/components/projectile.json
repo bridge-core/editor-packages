@@ -285,7 +285,11 @@
 						"arrow_effect": {
 							"title": "Arrow Effect",
 							"type": "object",
-							"additionalProperties": false
+							"properties": {
+								"apply_effect_to_blocking_targets": {
+									"type": "boolean"
+								}
+							}
 						},
 						"remove_on_hit": {
 							"title": "Remove On Hit",
@@ -368,10 +372,7 @@
 									"shape": {
 										"title": "Shape",
 										"type": "string",
-										"enum": [
-											"sphere",
-											"cube"
-										]
+										"enum": ["sphere", "cube"]
 									},
 									"snap_to_block": {
 										"title": "Snap To Block",
