@@ -7,6 +7,5 @@
 			"description": "THe identifier of the feature to place.",
 			"$ref": "../../../general/reference/identifiers.json#/definitions/feature_identifiers"
 		}
-	},
-	"additionalProperties": false
+	}
 }

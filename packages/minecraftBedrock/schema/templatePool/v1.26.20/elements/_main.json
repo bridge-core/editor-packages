@@ -7,10 +7,17 @@
 				"element_type": {
 					"title": "Element Type",
 					"description": "The type of element.",
-					"type": "string"
+					"type": "string",
+					"enum": [
+						"minecraft:empty_pool_element",
+						"minecraft:feature_pool_element",
+						"minecraft:single_pool_element"
+					]
 				}
 			},
-			"required": ["element_type"]
+			"required": [
+				"element_type"
+			]
 		},
 		{
 			"if": {
@@ -19,7 +26,9 @@
 						"const": "minecraft:single_pool_element"
 					}
 				},
-				"required": ["element_type"]
+				"required": [
+					"element_type"
+				]
 			},
 			"then": {
 				"$ref": "./single_pool_element.json"
@@ -32,7 +41,9 @@
 						"const": "minecraft:empty_pool_element"
 					}
 				},
-				"required": ["element_type"]
+				"required": [
+					"element_type"
+				]
 			},
 			"then": {
 				"$ref": "./empty_pool_element.json"
@@ -45,7 +56,9 @@
 						"const": "minecraft:feature_pool_element"
 					}
 				},
-				"required": ["element_type"]
+				"required": [
+					"element_type"
+				]
 			},
 			"then": {
 				"$ref": "./feature_pool_element.json"
