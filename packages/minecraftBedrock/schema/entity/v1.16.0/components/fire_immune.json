@@ -3,5 +3,5 @@
 	"additionalProperties": false,
 	"description": "Sets that this entity doesn't take damage from fire.",
 	"title": "Fire Immune",
-	"type": ["boolean", "object"]
+	"type": "object"
 }

@@ -10,51 +10,15 @@
 		},
 		"minecraft:texture_set": {
 			"additionalProperties": false,
-			"required": ["color"],
 			"type": "object",
 			"properties": {
 				"color": {
 					"$ref": "./color.json"
 				},
-				"color_unlit": {
-					"$ref": "./color.json"
-				},
 				"normal": {
 					"$ref": "./color.json"
 				},
-				"metalness": {
-					"anyOf": [
-						{
-							"$ref": "../general/hexColor.json"
-						},
-						{
-							"type": "string",
-							"$ref": "../general/reference/terrainTexture.json"
-						},
-						{
-							"type": "integer",
-							"minimum": 0,
-							"maximum": 256
-						}
-					]
-				},
-				"emissive": {
-					"anyOf": [
-						{
-							"$ref": "../general/hexColor.json"
-						},
-						{
-							"type": "string",
-							"$ref": "../general/reference/terrainTexture.json"
-						},
-						{
-							"type": "integer",
-							"minimum": 0,
-							"maximum": 256
-						}
-					]
-				},
-				"roughness": {
+				"heightmap": {
 					"anyOf": [
 						{
 							"$ref": "../general/hexColor.json"
@@ -73,23 +37,26 @@
 				"metalness_emissive_roughness": {
 					"$ref": "./color.json"
 				},
-				"heightmap": {
-					"anyOf": [
-						{
-							"$ref": "../general/hexColor.json"
-						},
-						{
-							"type": "string",
-							"$ref": "../general/reference/terrainTexture.json"
-						},
-						{
-							"type": "integer",
-							"minimum": 0,
-							"maximum": 256
-						}
-					]
+				"metalness_emissive_roughness_subsurface": {
+					"$ref": "./color.json"
 				}
-			}
+			},
+			"required": ["color"],
+			"allOf": [
+				{
+					"not": {
+						"required": ["normal", "heightmap"]
+					}
+				},
+				{
+					"not": {
+						"required": [
+							"metalness_emissive_roughness",
+							"metalness_emissive_roughness_subsurface"
+						]
+					}
+				}
+			]
 		}
 	}
 }

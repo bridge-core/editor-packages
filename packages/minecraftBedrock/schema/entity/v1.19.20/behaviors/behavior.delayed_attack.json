@@ -18,6 +18,12 @@
 			"type": "boolean",
 			"default": false
 		},
+		"can_spread_on_fire": {
+			"title": "Can Spread On Fire",
+			"description": "If the entity is on fire, this allows the entity's target to catch on fire after being hit.",
+			"type": "boolean",
+			"default": false
+		},
 		"require_complete_path": {
 			"title": "Require Complete Path",
 			"description": "Toggles (on/off) the need to have a full path from the entity to the target when using this melee attack behavior.",
