@@ -1,6 +1,6 @@
 import { zipFolder } from './components/Zip/ZipFolder.ts'
 import { packageDirectory } from './components/Packager/Packager.ts'
-import { sha256 } from 'https://denopkg.com/chiefbiiko/sha256@v1.0.0/mod.ts'
+import { encodeHex } from 'jsr:@std/encoding/hex'
 
 export async function build(
 	zipOutputPath: string,
@@ -29,11 +29,12 @@ export async function build(
 	// 			`./dist/packages/${entry.name}.zip`
 	// 		)
 	// }
+	const text = await Deno.readTextFile(zipOutputPath)
+	const textBuffer = new TextEncoder().encode(text)
+	const hashBuffer = await crypto.subtle.digest('SHA-256', textBuffer)
+	const hash = encodeHex(hashBuffer)
 
-	await Deno.writeTextFile(
-		hashOutputPath,
-		sha256(await Deno.readTextFile(zipOutputPath), 'utf8', 'hex') as string
-	)
+	await Deno.writeTextFile(hashOutputPath, hash)
 }
 
 if (import.meta.main) {

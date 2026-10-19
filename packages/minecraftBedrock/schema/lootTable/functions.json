@@ -10,7 +10,9 @@
 						"$ref": "./general.json#/definitions/functions"
 					}
 				},
-				"required": ["function"]
+				"required": [
+					"function"
+				]
 			},
 			{
 				"properties": {
@@ -26,7 +28,9 @@
 							"const": "enchant_book_for_trading"
 						}
 					},
-					"required": ["function"]
+					"required": [
+						"function"
+					]
 				},
 				"then": {
 					"properties": {
@@ -52,7 +56,9 @@
 							"const": "enchant_random_gear"
 						}
 					},
-					"required": ["function"]
+					"required": [
+						"function"
+					]
 				},
 				"then": {
 					"properties": {
@@ -69,7 +75,9 @@
 							"const": "enchant_randomly"
 						}
 					},
-					"required": ["function"]
+					"required": [
+						"function"
+					]
 				},
 				"then": {
 					"properties": {
@@ -86,7 +94,9 @@
 							"const": "enchant_with_levels"
 						}
 					},
-					"required": ["function"]
+					"required": [
+						"function"
+					]
 				},
 				"then": {
 					"properties": {
@@ -113,7 +123,9 @@
 							"const": "exploration_map"
 						}
 					},
-					"required": ["function"]
+					"required": [
+						"function"
+					]
 				},
 				"then": {
 					"properties": {
@@ -130,7 +142,9 @@
 							"const": "fill_container"
 						}
 					},
-					"required": ["function"]
+					"required": [
+						"function"
+					]
 				},
 				"then": {
 					"properties": {
@@ -147,7 +161,9 @@
 							"const": "random_aux_val"
 						}
 					},
-					"required": ["function"]
+					"required": [
+						"function"
+					]
 				},
 				"then": {
 					"properties": {
@@ -171,7 +187,9 @@
 							"const": "random_block_state"
 						}
 					},
-					"required": ["function"]
+					"required": [
+						"function"
+					]
 				},
 				"then": {
 					"properties": {
@@ -205,7 +223,9 @@
 							"const": "looting_enchant"
 						}
 					},
-					"required": ["function"]
+					"required": [
+						"function"
+					]
 				},
 				"then": {
 					"properties": {
@@ -229,7 +249,9 @@
 							"const": "set_actor_id"
 						}
 					},
-					"required": ["function"]
+					"required": [
+						"function"
+					]
 				},
 				"then": {
 					"properties": {
@@ -246,12 +268,17 @@
 							"const": "set_banner_details"
 						}
 					},
-					"required": ["function"]
+					"required": [
+						"function"
+					]
 				},
 				"then": {
 					"properties": {
 						"type": {
-							"enum": ["default", "illager_captain"]
+							"enum": [
+								"default",
+								"illager_captain"
+							]
 						},
 						"base_color": {
 							"$ref": "../general/colorPalette.json"
@@ -280,7 +307,9 @@
 							"const": "set_book_contents"
 						}
 					},
-					"required": ["function"]
+					"required": [
+						"function"
+					]
 				},
 				"then": {
 					"properties": {
@@ -306,7 +335,9 @@
 							"const": "set_count"
 						}
 					},
-					"required": ["function"]
+					"required": [
+						"function"
+					]
 				},
 				"then": {
 					"properties": {
@@ -330,7 +361,9 @@
 							"const": "set_damage"
 						}
 					},
-					"required": ["function"]
+					"required": [
+						"function"
+					]
 				},
 				"then": {
 					"properties": {
@@ -354,7 +387,9 @@
 							"const": "set_data"
 						}
 					},
-					"required": ["function"]
+					"required": [
+						"function"
+					]
 				},
 				"then": {
 					"properties": {
@@ -378,7 +413,9 @@
 							"const": "set_lore"
 						}
 					},
-					"required": ["function"]
+					"required": [
+						"function"
+					]
 				},
 				"then": {
 					"properties": {
@@ -398,7 +435,9 @@
 							"const": "set_name"
 						}
 					},
-					"required": ["function"]
+					"required": [
+						"function"
+					]
 				},
 				"then": {
 					"properties": {
@@ -415,7 +454,9 @@
 							"const": "set_ominous_bottle_amplifier"
 						}
 					},
-					"required": ["function"]
+					"required": [
+						"function"
+					]
 				},
 				"then": {
 					"properties": {
@@ -444,7 +485,9 @@
 							"const": "set_potion"
 						}
 					},
-					"required": ["function"]
+					"required": [
+						"function"
+					]
 				},
 				"then": {
 					"properties": {
@@ -461,7 +504,9 @@
 							"const": "specific_enchants"
 						}
 					},
-					"required": ["function"]
+					"required": [
+						"function"
+					]
 				},
 				"then": {
 					"properties": {
@@ -490,6 +535,29 @@
 										]
 									}
 								}
+							}
+						}
+					}
+				}
+			},
+			{
+				"$ref": "../project/experimentalGameplay/upcomingCreatorFeatures.json",
+				"then": {
+					"if": {
+						"properties": {
+							"condition": {
+								"const": "carry_over_block_entity_data"
+							}
+						},
+						"required": [
+							"condition"
+						]
+					},
+					"then": {
+						"properties": {
+							"dynamic_properties": {
+								"description": "Whether or not to carry over block entity dynamic properties.",
+								"type": "boolean"
 							}
 						}
 					}

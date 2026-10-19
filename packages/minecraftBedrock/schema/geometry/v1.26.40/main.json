@@ -1,0 +1,27 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"debug": {
+			"title": "Debug",
+			"type": "boolean"
+		},
+		"minecraft:geometry": {
+			"title": "Geometry",
+			"anyOf": [
+				{
+					"description": "Definition of a single geometry.",
+					"$ref": "./general.json#/definitions/geometry"
+				},
+				{
+					"description": "Definition of a list of geometries.",
+					"type": "array",
+					"items": {
+						"$ref": "./general.json#/definitions/geometry"
+					}
+				}
+			]
+		}
+	},
+	"required": ["format_version", "minecraft:geometry"]
+}

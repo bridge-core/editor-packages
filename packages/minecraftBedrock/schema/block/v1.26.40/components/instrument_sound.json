@@ -1,0 +1,50 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "title": "Instrument Sound",
+    "type": "object",
+    "properties": {
+        "up": {
+            "title": "Up",
+            "$ref": "#/definitions/instrument_sound_type"
+        },
+        "down": {
+            "title": "Down",
+            "$ref": "#/definitions/instrument_sound_type"
+        }
+    },
+    "definitions": {
+        "instrument_sound_type": {
+            "type": "string",
+            "enum": [
+                "note.banjo",
+                "note.bassattack",
+                "note.bd",
+                "note.bell",
+                "note.bit",
+                "note.chime",
+                "note.cow_bell",
+                "note.creeper",
+                "note.didgeridoo",
+                "note.enderdragon",
+                "note.flute",
+                "note.guitar",
+                "note.harp",
+                "note.hat",
+                "note.iron_xylophone",
+                "note.none",
+                "note.piglin",
+                "note.pling",
+                "note.skeleton",
+                "note.snare",
+                "note.trumpet",
+                "note.trumpet_exposed",
+                "note.trumpet_oxidized",
+                "note.trumpet_weathered",
+                "note.witherskeleton",
+                "note.xylophone",
+                "note.zombie"
+            ]
+        }
+    },
+    "additionalProperties": false
+}

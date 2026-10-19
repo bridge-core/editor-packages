@@ -55,7 +55,7 @@
 				},
 				"culling_layer": {
 					"title": "Culling Layer",
-					"$ref": "../../../general/reference/cullingLayer.json"
+					"$ref": "../../../../general/reference/cullingLayer.json"
 				},
 				"culling_shape": {
 					"title": "Culling Shape",

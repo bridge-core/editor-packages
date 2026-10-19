@@ -1,0 +1,21 @@
+{
+    "id": "serverSoundDefinition",
+    "detect": {
+        "packType": "behaviorPack",
+        "scope": "sounds/sound_definitions.json",
+        "matcher": "sounds/sound_definitions.json",
+        "fileExtensions": [
+            ".json"
+        ]
+    },
+    "schema": "file:///data/packages/minecraftBedrock/schema/serverSoundDefinition/main.json",
+    "lightningCache": "serverSoundDefinition.json",
+    "highlighterConfiguration": {
+        "typeIdentifiers": [
+            "format_version"
+        ],
+        "definitions": [
+            "minecraft:server_sound_definitions"
+        ]
+    }
+}
