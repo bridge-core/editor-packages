@@ -21,23 +21,33 @@ export class SchemaExporter {
 			for (const target of importEntry.targets) {
 				let scraped = await target.run()
 
-				if (importEntry.map) {
-					scraped = scraped.map(importEntry.map)
-				}
+				const filtered = importEntry.filter
+					? scraped.filter((i) =>
+							// @ts-ignore
+							i ? importEntry.filter(i) : false
+						)
+					: scraped
 
-				if (importEntry.filter) {
-					scraped = scraped.filter(importEntry.filter)
-				}
+				const mapped = importEntry.map
+					? // @ts-ignore
+						filtered.map((i) => importEntry.map(i))
+					: filtered
 
-				output = output.concat(scraped)
+				output = output.concat(mapped)
 			}
+
+			console.log(`Writing raw data ${importEntry.id}`)
 
 			await writeRaw(importEntry.id, output)
 		}
 
+		console.log('Started compiling schemas')
+
 		if (shouldExport) {
 			await this.exportSchemas()
 		}
+
+		console.log('Finished compiling schemas')
 	}
 
 	private async exportSchemas() {
@@ -104,6 +114,8 @@ export class SchemaExporter {
 					join('./packages/minecraftBedrock/schema', exportEntry.to),
 					JSON.stringify(schema, null, '\t')
 				)
+
+				console.log(`Pushing schema to ${exportEntry.to}`)
 			}
 		}
 	}

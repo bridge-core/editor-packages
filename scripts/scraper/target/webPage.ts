@@ -11,8 +11,11 @@ export class WebPageTarget implements ScrapeTarget {
 	}
 
 	public async run() {
+		const pageResponse = await fetch(this.url)
+		const pageText = await pageResponse.text()
+
 		const pageParser = new DOMParser()
-		const pageData = pageParser.parseFromString(this.url, 'text/html')
+		const pageData = pageParser.parseFromString(pageText, 'text/html')
 
 		if (!pageData) throw new Error(`Page ${this.url} not loaded correctly`)
 

@@ -8,8 +8,6 @@ export interface ScrapeTarget {
 	run: () => Promise<string[]>
 }
 
-export interface FileTarget {}
-
 export interface ScrapeImport {
 	id: string
 	targets: ScrapeTarget[]
