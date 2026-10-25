@@ -7,7 +7,7 @@ dist/minecraftBedrock/*
 !dist/minecraftBedrock/fileDefinitions.json
 
 .env
-scripts/vanillaData/raw
+scripts/scraper/raw
 
 hash
 DataPackage.ts
