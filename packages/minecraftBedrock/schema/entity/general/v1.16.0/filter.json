@@ -386,7 +386,7 @@
 						"properties": {
 							"value": {
 								"description": "Returns true when the subject entity contains the named component.",
-								"$ref": "./componentsList.json"
+								"$ref": "../../../general/vanilla/entityComponent.json"
 							}
 						}
 					}

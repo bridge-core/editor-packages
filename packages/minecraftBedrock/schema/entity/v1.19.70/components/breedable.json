@@ -231,7 +231,10 @@
 			"title": "Mutation Strategy",
 			"description": "Strategy used for mutating variants and extra variants for offspring.",
 			"type": "string",
-			"enum": ["random", "none"],
+			"enum": [
+				"random",
+				"none"
+			],
 			"default": "none"
 		},
 		"random_extra_variant_mutation_interval": {
@@ -262,7 +265,7 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"$ref": "../../general/v1.16.0/componentsList.json"
+				"$ref": "../../../general/vanilla/entityComponent.json"
 			}
 		}
 	}

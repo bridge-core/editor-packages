@@ -144,6 +144,17 @@ export const IMPORTS: ScrapeImport[] = [
 				'minecraft:biome/description/identifier'
 			),
 		],
+		map: (val: string) => val.replace('minecraft:', ''),
+	},
+	{
+		id: 'prefixed_biome_identifiers',
+		targets: [
+			scrapeFileContents(
+				PackType.BEHAVIOR_PACK,
+				'biomes',
+				'minecraft:biome/description/identifier'
+			),
+		],
 	},
 	{
 		id: 'particle_identifiers',
@@ -455,6 +466,7 @@ export const EXPORTS: ScrapeExport[] = [
 			'entity_identifiers.json',
 			'particle_identifiers.json',
 			'biome_identifiers.json',
+			'prefixed_biome_identifiers.json',
 			'camera_preset_identifiers.json',
 			'fog_identifiers.json',
 			'feature_identifiers.json',
@@ -553,7 +565,7 @@ export const EXPORTS: ScrapeExport[] = [
 	},
 	{
 		from: ['entityComponent.json'],
-		to: 'general/vanilla/entityComponentList.json',
+		to: 'general/vanilla/entityComponent.json',
 	},
 	{
 		from: ['individualEventSound.json'],

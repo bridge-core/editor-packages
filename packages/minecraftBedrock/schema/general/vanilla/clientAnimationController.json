@@ -61,6 +61,7 @@
 		"controller.animation.frog.croaking",
 		"controller.animation.frog.eat_mob",
 		"controller.animation.frog.general",
+		"controller.animation.frostbite.attack",
 		"controller.animation.ghast.move",
 		"controller.animation.ghast.scale",
 		"controller.animation.goat.move",
