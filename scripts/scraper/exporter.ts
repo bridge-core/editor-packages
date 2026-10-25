@@ -55,11 +55,11 @@ export class SchemaExporter {
 			if (exportEntry.from.length === 1) {
 				const raw = exportEntry.from[0]
 				const data = await Deno.readTextFile(
-					join('./scripts/vanillaData/raw', raw)
+					join('./scripts/scraper/raw', raw)
 				).catch(() => {
 					console.warn(
 						`Could not find raw data for ${join(
-							'./scripts/vanillaData/raw',
+							'./scripts/scraper/raw',
 							raw
 						)}`
 					)
@@ -89,11 +89,11 @@ export class SchemaExporter {
 				let defs: any = {}
 				for (const raw of exportEntry.from) {
 					const data = await Deno.readTextFile(
-						join('./scripts/vanillaData/raw', raw)
+						join('./scripts/scraper/raw', raw)
 					).catch(() => {
 						console.warn(
 							`Could not find raw data for ${join(
-								'./scripts/vanillaData/raw',
+								'./scripts/scraper/raw',
 								raw
 							)}`
 						)
