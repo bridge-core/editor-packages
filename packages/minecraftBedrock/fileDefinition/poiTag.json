@@ -1,0 +1,34 @@
+{
+    "id": "poiType",
+    "icon": "mdi-map-marker-plus",
+    "detect": {
+        "packType": "behaviorPack",
+        "scope": [
+            "poi/tags/"
+        ],
+        "matcher": [
+            "poi/tags/**/*",
+            "poi/tags/*"
+        ],
+        "fileContent": [
+            "minecraft:poi_tag"
+        ],
+        "fileExtensions": [
+            ".json"
+        ]
+    },
+    "schema": "file:///data/packages/minecraftBedrock/schema/poiTag/main.json",
+    "lightningCache": "poiTag.json",
+    "documentation": {
+        "baseUrl": "https://learn.microsoft.com/en-au/minecraft/creator/documents/pointsofinterest?view=minecraft-bedrock-stable",
+        "supportsQuerying": false
+    },
+    "highlighterConfiguration": {
+        "variables": [
+            "description"
+        ],
+        "typeIdentifiers": [
+            "format_version"
+        ]
+    }
+}

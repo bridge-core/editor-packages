@@ -1,0 +1,27 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"minecraft:dimension": {
+			"title": "Dimension Definition",
+			"additionalProperties": false,
+			"type": "object",
+			"properties": {
+				"description": {
+					"title": "Description",
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"identifier": {
+							"$ref": "../../general/reference/prefixedFileIdentifier.json"
+						}
+					}
+				},
+				"components": {
+					"title": "Components",
+					"$ref": "./components/_main.json"
+				}
+			}
+		}
+	}
+}

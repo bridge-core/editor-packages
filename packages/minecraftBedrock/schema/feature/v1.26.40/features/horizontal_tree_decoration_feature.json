@@ -1,0 +1,32 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "type": "object",
+    "properties": {
+        "description": {
+            "title": "Description",
+            "additionalProperties": false,
+            "type": "object",
+            "properties": {
+                "identifier": {
+                    "title": "Identifier",
+                    // Needs to strictly match file name - don't change reference to "general/reference..." schema
+                    "$ref": "../../../project/prefixedFileIdentifierEnum.json"
+                }
+            }
+        },
+        // TODO: make sure this is valid
+        "places_block": {
+            "description": "Block to place.",
+            "$ref": "../../general.json#/definitions/block_reference"
+        },
+        "allow_adjacent": {
+            "description": "Whether neighbors of the same block type are allowed. Will result in blocks being placed with at least one block gap when set to false.",
+            "type": "boolean"
+        },
+        "bark_side_only": {
+            "description": "If true, will never place the block on the 'open' side of a block (imagine the block is a fallen tree trunk).",
+            "type": "boolean"
+        }
+    },
+    "additionalProperties": false
+}

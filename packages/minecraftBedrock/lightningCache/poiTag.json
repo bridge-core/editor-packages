@@ -1,0 +1,11 @@
+[
+    {
+        "cacheKey": "identifier",
+        "path": "minecraft:poi_tag/description/identifier"
+    },
+    {
+        "cacheKey": "hashPrefixedIdentifier",
+        "path": "minecraft:poi_tag/description/identifier",
+        "script": "return `#${Bridge.value}`"
+    }
+]

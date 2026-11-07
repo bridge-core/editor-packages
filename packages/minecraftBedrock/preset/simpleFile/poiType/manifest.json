@@ -1,0 +1,44 @@
+{
+	"name": "Point of Interest Type",
+	"icon": "mdi-map-marker",
+	"description": "Creates a blank POI type.",
+	"category": "fileType.simpleFile",
+	"requires": {
+		"packTypes": [
+			"behaviorPack"
+		],
+		"experimentalGameplay": [
+			"pointsOfInterest"
+		]
+	},
+	"additionalModels": {
+		"PRESET_PATH": "poi/blocks/"
+	},
+	"fields": [
+		[
+			"File Name",
+			"FILE_NAME",
+			{
+				"validate": [
+					"required",
+					"alphanumeric",
+					"lowercase"
+				]
+			}
+		]
+	],
+	"createFiles": [
+		[
+			"poiType.json",
+			"{{PRESET_PATH}}{{FILE_NAME}}.json",
+			{
+				"inject": [
+					"FILE_NAME",
+					"PRESET_PATH"
+				],
+				"openFile": true,
+				"packPath": "behaviorPack"
+			}
+		]
+	]
+}

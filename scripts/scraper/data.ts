@@ -457,6 +457,47 @@ export const IMPORTS: ScrapeImport[] = [
 			),
 		],
 	},
+	{
+		id: 'poi_type_identifiers',
+		targets: [
+			scrapeFileContents(
+				PackType.BEHAVIOR_PACK,
+				'poi/blocks',
+				'minecraft:poi_block/description/identifier'
+			),
+		],
+	},
+	{
+		id: 'voxel_shape_identifiers',
+		targets: [
+			scrapeFileContents(
+				PackType.BEHAVIOR_PACK,
+				'shapes',
+				'minecraft:voxel_shape/description/identifier'
+			),
+		],
+	},
+	{
+		id: 'poi_tag_identifiers',
+		targets: [
+			scrapeFileContents(
+				PackType.BEHAVIOR_PACK,
+				'poi/tags',
+				'minecraft:poi_tag/description/identifier'
+			),
+		],
+	},
+	{
+		id: 'hash_prefixed_poi_tag_identifiers',
+		targets: [
+			scrapeFileContents(
+				PackType.BEHAVIOR_PACK,
+				'poi/tags',
+				'minecraft:poi_tag/description/identifier'
+			),
+		],
+		map: (val: string) => `#${val}`,
+	},
 ]
 export const EXPORTS: ScrapeExport[] = [
 	{
@@ -482,6 +523,10 @@ export const EXPORTS: ScrapeExport[] = [
 			'lighting_settings_identifiers.json',
 			'water_settings_identifiers.json',
 			'cubemap_settings_identifiers.json',
+			'voxel_shape_identifiers.json',
+			'poi_type_identifiers.json',
+			'poi_tag_identifiers.json',
+			'hash_prefixed_poi_tag_identifiers.json',
 		],
 		to: 'general/vanilla/identifiers.json',
 	},

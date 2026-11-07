@@ -42,7 +42,11 @@
 			"title": "Early Out Scheme",
 			"description": "Denote whether placement should end on first successful placement or first passed condition.",
 			"type": "string",
-			"enum": ["condition_success", "placement_success"]
+			"enum": [
+				"condition_success",
+				"placement_success",
+				"none"
+			]
 		}
 	}
 }

@@ -1,0 +1,12 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "title": "Default Biome",
+    "description": "Specifies the default biome of the dimension.",
+    "properties": {
+        "biome": {
+            "$ref": "../../../general/reference/identifiers.json#/definitions/prefixed_biome_identifiers"
+        }
+    }
+}

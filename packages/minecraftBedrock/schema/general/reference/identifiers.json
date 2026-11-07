@@ -301,6 +301,39 @@
 					"$ref": "../vanilla/identifiers.json#/definitions/voxel_shape_identifiers"
 				}
 			]
+		},
+		"poi_type_identifiers": {
+			"type": "string",
+			"anyOf": [
+				{
+					"$ref": "../../poiType/dynamic/identifierEnum.json"
+				},
+				{
+					"$ref": "../vanilla/identifiers.json#/definitions/poi_type_identifiers"
+				}
+			]
+		},
+		"poi_tag_identifiers": {
+			"type": "string",
+			"anyOf": [
+				{
+					"$ref": "../../poiTag/dynamic/identifierEnum.json"
+				},
+				{
+					"$ref": "../vanilla/identifiers.json#/definitions/poi_tag_identifiers"
+				}
+			]
+		},
+		"hash_prefixed_poi_tag_identifiers": {
+			"type": "string",
+			"anyOf": [
+				{
+					"$ref": "../../poiType/dynamic/hashPrefixedIdentifierEnum.json"
+				},
+				{
+					"$ref": "../vanilla/identifiers.json#/definitions/hash_prefixed_poi_type_identifiers"
+				}
+			]
 		}
 	}
 }

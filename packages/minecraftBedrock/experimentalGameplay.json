@@ -1,6 +1,6 @@
 [
   {
-    "icon": "mdi-alarm",
+    "icon": "mdi-creation",
     "id": "upcomingCreatorFeatures"
   },
   {
@@ -12,11 +12,19 @@
     "id": "experimentalVoxelShapeFeatures"
   },
   {
+    "icon": "mdi-clock",
+    "id": "creatorWorldClocksFeatures"
+  },
+  {
+    "icon": "mdi-map-marker",
+    "id": "pointsOfInterest"
+  },
+  {
     "icon": "mdi-ab-testing",
     "id": "enableGameTestFramework" // Beta APIs toggle
   },
   {
-    "icon": "mdi-earth-box-plus",
+    "icon": "mdi-monitor-shimmer",
     "id": "renderDragonFeatures"
   },
   {

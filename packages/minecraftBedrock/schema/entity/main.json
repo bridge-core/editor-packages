@@ -609,6 +609,20 @@
 			"then": {
 				"$ref": "./v1.26.40/main.json"
 			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": [
+							"1.26.50"
+						]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./v1.26.50/main.json"
+			}
 		}
 	]
 }

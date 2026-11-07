@@ -1,0 +1,44 @@
+{
+	"name": "Point of Interest Tag",
+	"icon": "mdi-map-marker-plus",
+	"description": "Creates a blank POI tag.",
+	"category": "fileType.simpleFile",
+	"requires": {
+		"packTypes": [
+			"behaviorPack"
+		],
+		"experimentalGameplay": [
+			"pointsOfInterest"
+		]
+	},
+	"additionalModels": {
+		"PRESET_PATH": "poi/tags/"
+	},
+	"fields": [
+		[
+			"File Name",
+			"FILE_NAME",
+			{
+				"validate": [
+					"required",
+					"alphanumeric",
+					"lowercase"
+				]
+			}
+		]
+	],
+	"createFiles": [
+		[
+			"poiTag.json",
+			"{{PRESET_PATH}}{{FILE_NAME}}.json",
+			{
+				"inject": [
+					"FILE_NAME",
+					"PRESET_PATH"
+				],
+				"openFile": true,
+				"packPath": "behaviorPack"
+			}
+		]
+	]
+}

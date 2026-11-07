@@ -3,6 +3,15 @@
 	"type": "array",
 	"items": {
 		"type": "object",
+		"properties": {
+			"operator": {
+				"type": "string",
+				"enum": [
+					"==",
+					"!="
+				]
+			}
+		},
 		"anyOf": [
 			{
 				"properties": {

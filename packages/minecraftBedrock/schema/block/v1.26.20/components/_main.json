@@ -5,7 +5,7 @@
 		{
 			"properties": {
 				"minecraft:chest_obstruction": {
-					"$ref": "../../v1.26.10/components/experimental/chest_obstruction.json"
+					"$ref": "../../v1.26.20/components/chest_obstruction.json"
 				},
 				"minecraft:collision_box": {
 					"$ref": "../../v1.26.0/components/collision_box.json"

@@ -1,0 +1,12 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "type": "string",
+    "anyOf": [
+        {
+            "$ref": "./reference/identifiers.json#/definitions/poi_type_identifiers"
+        },
+        {
+            "$ref": "./reference/identifiers.json#/definitions/hash_prefixed_poi_tag_identifiers"
+        }
+    ]
+}

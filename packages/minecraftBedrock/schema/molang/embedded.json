@@ -94,6 +94,9 @@
 		},
 		{
 			"$ref": "./v1.26.0/query.json"
+		},
+		{
+			"$ref": "./v1.26.50/query.json"
 		}
 	]
 }

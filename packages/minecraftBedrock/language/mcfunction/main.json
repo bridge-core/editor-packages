@@ -10907,6 +10907,210 @@
 					]
 				}
 			]
+		},
+		{
+			"requires": {
+				"targetVersion": [
+					">=",
+					"1.26.50"
+				]
+			},
+			"commands": [
+				{
+					"commandName": "serveridentity",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": [
+									"delete",
+									"save",
+									"status"
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"requires": {
+				"targetVersion": [
+					">=",
+					"1.26.50"
+				],
+				"experimentalGameplay": [
+					"creatorWorldClocksFeatures"
+				]
+			},
+			"commands": [
+				{
+					"commandName": "time",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": [
+									"of"
+								]
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/worldClock.json"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": [
+									"set",
+									"add"
+								]
+							}
+						},
+						{
+							"type": "number",
+							"argumentName": "time"
+						}
+					]
+				},
+				{
+					"commandName": "time",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": [
+									"of"
+								]
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/worldClock.json"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": [
+									"pause",
+									"resume"
+								]
+							}
+						}
+					]
+				},
+				{
+					"commandName": "time",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": [
+									"of"
+								]
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/worldClock.json"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": [
+									"set"
+								]
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": [
+									"day",
+									"night",
+									"noon",
+									"midnight",
+									"sunrise",
+									"sunset"
+								]
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": [
+									"next",
+									"previous",
+									"stay"
+								]
+							},
+							"isOptional": true
+						}
+					]
+				},
+				{
+					"commandName": "time",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": [
+									"of"
+								]
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/reference/worldClock.json"
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": [
+									"query"
+								]
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": [
+									"time"
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"requires": {
+				"experimentalGameplay": [
+					"pointsOfInterest"
+				]
+			},
+			"commands": [
+				{
+					"commandName": "locate",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"schemaReference": "/data/packages/minecraftBedrock/schema/general/poiReference.json"
+							}
+						}
+					]
+				}
+			]
 		}
 	]
 }

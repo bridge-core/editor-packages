@@ -1,0 +1,9 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "string",
+    "enum": [
+        "query.has_all_biome_tags",
+        "query.has_any_biome_tags",
+        "query.head_is_in_water"
+    ]
+}

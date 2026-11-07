@@ -1,0 +1,50 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "type": "object",
+    "properties": {
+        "format_version": {
+            "$ref": "../project/formatVersionEnum.json"
+        },
+        "minecraft:poi_type": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "object",
+                    "properties": {
+                        "identifier": {
+                            "title": "Identifier",
+                            "$ref": "../general/reference/prefixedFileIdentifier.json"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "blocks": {
+                    "description": "Block identifiers that become POIs of this type. A block identifier can belong to more than one POI type.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "../general/reference/identifiers.json#/definitions/block_identifiers"
+                    }
+                },
+                "tickets": {
+                    "description": "Number of concurrent reservations the POI supports. The value can range from 0 through 255.",
+                    "type": "integer",
+                    "default": 0
+                },
+                "usable_distance": {
+                    "description": "Distance, in blocks, at which an actor is considered to have reached the POI. The value can range from 0 through 255.",
+                    "type": "number",
+                    "default": 1
+                },
+                "tags": {
+                    "description": "POI tag identifiers associated with this type.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "../general/reference/identifiers.json#/definitions/poi_tag_identifiers"
+                    }
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "additionalProperties": false
+}
