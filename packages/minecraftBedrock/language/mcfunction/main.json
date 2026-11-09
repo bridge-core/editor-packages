@@ -10937,13 +10937,82 @@
 			"requires": {
 				"targetVersion": [
 					">=",
-					"1.26.50"
-				],
-				"experimentalGameplay": [
-					"creatorWorldClocksFeatures"
+					"1.26.60"
 				]
 			},
 			"commands": [
+				{
+					"commandName": "time",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": [
+									"pause",
+									"resume"
+								]
+							}
+						}
+					]
+				},
+				{
+					"commandName": "time",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": [
+									"query"
+								]
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": [
+									"time"
+								]
+							}
+						}
+					]
+				},
+				{
+					"commandName": "time",
+					"arguments": [
+						{
+							"type": "string",
+							"additionalData": {
+								"values": [
+									"set"
+								]
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": [
+									"day",
+									"night",
+									"noon",
+									"midnight",
+									"sunrise",
+									"sunset"
+								]
+							}
+						},
+						{
+							"type": "string",
+							"additionalData": {
+								"values": [
+									"next",
+									"previous",
+									"stay"
+								]
+							},
+							"isOptional": true
+						}
+					]
+				},
 				{
 					"commandName": "time",
 					"arguments": [
@@ -10965,7 +11034,6 @@
 							"type": "string",
 							"additionalData": {
 								"values": [
-									"set",
 									"add"
 								]
 							}

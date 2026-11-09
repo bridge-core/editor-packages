@@ -463,7 +463,7 @@ export const IMPORTS: ScrapeImport[] = [
 			scrapeFileContents(
 				PackType.BEHAVIOR_PACK,
 				'poi/blocks',
-				'minecraft:poi_block/description/identifier'
+				'minecraft:poi_type/description/identifier'
 			),
 		],
 	},

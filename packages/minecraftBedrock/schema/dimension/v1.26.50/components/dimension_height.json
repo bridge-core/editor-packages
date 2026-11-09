@@ -1,0 +1,19 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "type": "object",
+    "properties": {
+        "height_range": {
+            "description": "The total vertical height of the custom dimension.",
+            "type": "integer",
+            "minimum": 16,
+            "maximum": 1024
+        },
+        "min_y": {
+            "description": "The minimum Y coordinate of the custom dimension.",
+            "type": "integer",
+            "minimum": -512,
+            "maximum": 512
+        }
+    },
+    "additionalProperties": false
+}

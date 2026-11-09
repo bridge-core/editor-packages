@@ -24,6 +24,7 @@ export class WebPageTarget implements ScrapeTarget {
 		return this.getTableColumnData(pageData, tableId, columnId)
 	}
 
+	// TODO: Allow tableId to be optional in order to scan for all tables (will be useful for scanning wiki.bedrock.dev data)
 	private getTableColumnData(
 		pageData: HTMLDocument,
 		tableId: string,

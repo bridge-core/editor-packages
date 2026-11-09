@@ -1,0 +1,13 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "type": "object",
+    "properties": {
+        "height": {
+            "description": "The Y coordinate at which clouds are rendered in the custom dimension.",
+            "type": "integer",
+            "minimum": -512,
+            "maximum": 512
+        }
+    },
+    "additionalProperties": false
+}

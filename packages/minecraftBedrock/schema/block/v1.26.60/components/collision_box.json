@@ -1,0 +1,61 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "description": "Defines the area of the block that collides with entities. If set to true, default values are used. If set to false, the block's collision with entities is disabled. If this component is omitted, default values are used.",
+    "title": "Collision Box",
+    "type": "array",
+    "items": {
+        "$ref": "#/definitions/box"
+    },
+    "definitions": {
+        "box": {
+            "oneOf": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "min": {
+                            "type": "array",
+                            "items": {
+                                "type": "number"
+                            },
+                            "maxItems": 3,
+                            "minItems": 3
+                        },
+                        "max": {
+                            "type": "array",
+                            "items": {
+                                "type": "number"
+                            },
+                            "maxItems": 3,
+                            "minItems": 3
+                        }
+                    }
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "size": {
+                            "title": "Size",
+                            "description": "Size of each side of the collision box. Size is specified as [x, y, z]. 'origin' + 'size' must be in the range (-8, 0, -8) to (8, 16, 8), inclusive.",
+                            "type": "array",
+                            "items": {
+                                "type": "number"
+                            },
+                            "maxItems": 3,
+                            "minItems": 3
+                        },
+                        "origin": {
+                            "title": "Origin",
+                            "description": "Minimal position of the bounds of the collision box. 'origin' is specified as [x, y, z] and must be in the range (-8, 0, -8) to (8, 16, 8), inclusive.",
+                            "type": "array",
+                            "items": {
+                                "type": "number"
+                            },
+                            "maxItems": 3,
+                            "minItems": 3
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -91,7 +91,8 @@
 				"properties": {
 					"format_version": {
 						"enum": [
-							"1.26.50"
+							"1.26.50",
+							"1.26.60"
 						]
 					}
 				}

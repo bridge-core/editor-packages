@@ -1,0 +1,33 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "title": "Block Entity",
+    "description": "Adds per-instance metadata for this block.",
+    "type": "object",
+    "properties": {
+        "container": {
+            "description": "Adds a container to this block.",
+            "type": "object",
+            "properties": {
+                "title": {
+                    "description": "Optional container title, stored as a language file key or raw text. Must be nonempty and at most 256 characters.",
+                    "type": "string"
+                },
+                "slot_count": {
+                    "description": "Sets the number of slots in the container.",
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 54
+                }
+            }
+        },
+        "dynamic_properties": {
+            "description": "Dynamic-properties can store and retrieve variables on a block via scripting.",
+            "type": "boolean"
+        },
+        "entity_storage": {
+            "description": "Stores serialized entities in this block via scripting.",
+            "type": "boolean"
+        }
+    },
+    "additionalProperties": false
+}

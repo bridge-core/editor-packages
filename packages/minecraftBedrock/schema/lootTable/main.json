@@ -7,6 +7,9 @@
 	],
 	"additionalProperties": false,
 	"properties": {
+		"format_version": {
+			"$ref": "../project/formatVersionEnum.json"
+		},
 		"pools": {
 			"description": "Lists the loot pools for this loot table.",
 			"type": "array",

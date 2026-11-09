@@ -1,0 +1,6 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "title": "Enchantment Power Transmitter",
+    "description": "Describes the enchantment power transmission properties of this block. If set to true and this block is placed in the 1 block gap between an enchantment table and a bookshelf, the enchantment table will remain powered by the bookshelf.",
+    "type": "boolean"
+}

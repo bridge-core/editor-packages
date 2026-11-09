@@ -12,10 +12,6 @@
     "id": "experimentalVoxelShapeFeatures"
   },
   {
-    "icon": "mdi-clock",
-    "id": "creatorWorldClocksFeatures"
-  },
-  {
     "icon": "mdi-map-marker",
     "id": "pointsOfInterest"
   },
