@@ -26,7 +26,7 @@ jobs:
             - name: Setup Deno 🚧
               uses: denolib/setup-deno@v2
               with:
-                  deno-version: v1.37.X
+                  deno-version: v2.X
 
             - name: Build data 🔧
               run: |
