@@ -5,7 +5,7 @@
         "format_version": {
             "$ref": "../project/formatVersionEnum.json"
         },
-        "minecraft:poi_type": {
+        "minecraft:poi_block": {
             "type": "object",
             "properties": {
                 "description": {
